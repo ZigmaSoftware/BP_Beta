@@ -522,38 +522,140 @@ case "invoice_items_datatable":
     break;
 
 
+    // case "get_item_details":
+    //     $item_code = $_POST["item_code"];
+
+    //     $table = "item_master";
+    //     $columns = ["description", "uom_unique_id"];
+    //     $where = ["unique_id" => $item_code, "is_delete" => 0];
+
+    //     $result = $pdo->select([$table, $columns], $where);
+
+    //     if ($result->status && !empty($result->data)) {
+    //         $description = $result->data[0]['description'];
+    //         $uom_id = $result->data[0]['uom_unique_id'];
+
+    //         // Convert uom_unique_id to readable UOM name
+    //         $uom_data = unit_name($uom_id);
+    //         $uom_name = !empty($uom_data[0]['unit_name']) ? $uom_data[0]['unit_name'] : "";
+
+    //         echo json_encode([
+    //             "status" => true,
+    //             "data" => [
+    //                 "description" => $description,
+    //                 "uom" => $uom_name,      // For display
+    //                 "uom_id" => $uom_id      // For saving
+    //             ]
+    //         ]);
+    //     } else {
+    //         echo json_encode([
+    //             "status" => false,
+    //             "error" => "Item not found"
+    //         ]);
+    //     }
+    //     break;
+    
+    
+    // case "get_item_details":
+    // header('Content-Type: application/json');
+
+    // $key  = $_POST['item_code']      ?? $_POST['item_id']      ?? '';
+    // $name = $_POST['item_name_text'] ?? '';
+
+    // if (empty($key) && empty($name)) {
+    //     echo json_encode(["status" => false, "error" => "Missing item identifier"]);
+    //     exit;
+    // }
+
+    // $table   = "item_master";
+    // $columns = ["unit_price","gst"];
+    // $base    = [$table, $columns];
+
+    // // Try a few reasonable matching strategies
+    // $where = [];
+
+    // if (!empty($key)) {
+    //     $where = ["unique_id"   => $key, "is_delete" => 0];
+    // }
+
+    // $item = null;
+    // $q = $pdo->select($base, $where);
+    // error_log(print_r($q, true) . "\n", 3, "q.log");
+    // if ($q->status && !empty($q->data)) {
+    //     $item = $q->data[0];
+        
+    //     if (!$item) {
+    //         echo json_encode(["status" => false, "error" => "Item not found"]);
+    //         break;
+    //     } else {
+    //         echo json_encode([
+    //             "status" => true,
+    //             "data" => [
+    //                 "unit_price"  => $item['unit_price'] ?? 0,
+    //                 "gst"   => $item['gst']  ?? 0
+    //             ]
+    //         ]);
+    //         break;
+    //     }
+        
+    // }
+    
+    // break;
+
+    
     case "get_item_details":
-        $item_code = $_POST["item_code"];
+    header('Content-Type: application/json');
 
-        $table = "item_master";
-        $columns = ["description", "uom_unique_id"];
-        $where = ["unique_id" => $item_code, "is_delete" => 0];
+    $key = $_POST['item_code'] ?? $_POST['item_id'] ?? '';
+    if (empty($key)) {
+        echo json_encode(["status" => false, "error" => "Missing item identifier"]);
+        exit;
+    }
 
-        $result = $pdo->select([$table, $columns], $where);
+    // Step 1: fetch unit_price and gst ID from item_master
+    $q = $pdo->select(
+        ["item_master", ["unit_price", "gst"]],
+        ["unique_id" => $key, "is_delete" => 0]
+    );
 
-        if ($result->status && !empty($result->data)) {
-            $description = $result->data[0]['description'];
-            $uom_id = $result->data[0]['uom_unique_id'];
+    if (!$q->status || empty($q->data)) {
+        echo json_encode(["status" => false, "error" => "Item not found"]);
+        exit;
+    }
 
-            // Convert uom_unique_id to readable UOM name
-            $uom_data = unit_name($uom_id);
-            $uom_name = !empty($uom_data[0]['unit_name']) ? $uom_data[0]['unit_name'] : "";
+    $item = $q->data[0];
+    $gst_id = $item['gst'];
+    $unit_price = $item['unit_price'];
 
-            echo json_encode([
-                "status" => true,
-                "data" => [
-                    "description" => $description,
-                    "uom" => $uom_name,      // For display
-                    "uom_id" => $uom_id      // For saving
-                ]
-            ]);
-        } else {
-            echo json_encode([
-                "status" => false,
-                "error" => "Item not found"
-            ]);
+    // Step 2: fetch actual tax percentage or name from tax table
+    $tax_val = 0;
+    if (!empty($gst_id)) {
+        $tq = $pdo->select(
+            ["tax", ["tax_name", "tax_value"]],
+            ["unique_id" => $gst_id, "is_delete" => 0]
+        );
+
+        if ($tq->status && !empty($tq->data)) {
+            $tax_val = $tq->data[0]['tax_value']; // numeric % like 18
         }
-        break;
+    }
+
+    // Step 3: return combined data
+    echo json_encode([
+        "status" => true,
+        "data" => [
+            "unit_price" => $unit_price,
+            "gst"        => $tax_val
+        ]
+    ]);
+    break;
+
+
+    
+
+    
+    
+    
     case "get_items_by_group":
         $group_id = $_POST["group_id"];
 

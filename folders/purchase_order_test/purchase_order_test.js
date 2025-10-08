@@ -237,72 +237,84 @@ function total_amount_calculation() {
   let total_basic = 0;
   let item_gst_total = 0;
 
+  // --- Loop through items in table ---
   $("#purchase_order_sub_datatable tbody tr").each(function () {
     let qty = parseFloat($(this).find("td:eq(3)").text()) || 0;
     let rate = parseFloat($(this).find("td:eq(4)").text()) || 0;
     let discount = parseFloat($(this).find("td:eq(6)").text()) || 0;
-    let discount_type_text = $(this).find("td:eq(5)").text().trim(); // e.g., %, ₹
+    let discount_type_text = $(this).find("td:eq(5)").text().trim(); // %, ₹
     let tax_text = $(this).find("td:eq(7)").text();
     let tax_percent = parseFloat(tax_text.match(/\d+/)) || 0;
 
+    // Base total for item
     let item_total = qty * rate;
-    let discount_amt = 0;
 
+    // Discount
+    let discount_amt = 0;
     if (discount_type_text === "₹") {
       discount_amt = discount;
     } else if (discount_type_text === "%") {
       discount_amt = (discount / 100) * item_total;
     }
 
+    // Apply discount
     item_total -= discount_amt;
 
+    // Add to total basic (pre-tax)
+    total_basic += item_total;
+
+    // Calculate GST
     let gst_amt = (tax_percent / 100) * item_total;
     item_gst_total += gst_amt;
-
-    total_basic += item_total;
   });
 
-  // Charges Input
+  // --- Additional charges ---
   let freight_value = parseFloat($("#freight_value").val()) || 0;
   let packing_value = parseFloat($("#packing_forwarding").val()) || 0;
   let other_value = parseFloat($("#other_charges").val()) || 0;
 
-  // Tax %
   let freight_tax = parseFloat($("#freight_tax option:selected").data("extra")) || 0;
   let packing_tax = parseFloat($("#packing_forwarding_tax option:selected").data("extra")) || 0;
   let other_tax = parseFloat($("#other_tax option:selected").data("extra")) || 0;
 
-  // GST from Charges
+  // GST on charges
   let freight_gst = (freight_value * freight_tax) / 100;
   let packing_gst = (packing_value * packing_tax) / 100;
   let other_gst = (other_value * other_tax) / 100;
 
-  // Totals with GST
+  // Amounts including GST
   let freight_amount = freight_value + freight_gst;
   let packing_amount = packing_value + packing_gst;
   let other_amount = other_value + other_gst;
-  let item_net = total_basic + item_gst_total;
 
-  let gross = item_net + freight_amount + packing_amount + other_amount;
+  // --- Combine totals ---
+  let total_gst = item_gst_total + freight_gst + packing_gst + other_gst;
 
+  // ✅ Gross = (total_basic + all charge values) + total_gst
+  //   (no double counting)
+  let gross = total_basic + freight_value + packing_value + other_value + total_gst;
+
+  // --- TCS & Round-off ---
   let tcs_percentage = parseFloat($("#tcs_percentage").val()) || 0;
+  let tcs_amount = (gross * tcs_percentage) / 100;
   let round_off = parseFloat($("#round_off").val()) || 0;
-  let tcs_amount = (gross * tcs_percentage / 100);
 
   gross += tcs_amount + round_off;
 
-  // Populate UI
+  // --- Populate UI ---
   $("#freight_amount").val(freight_amount.toFixed(2));
   $("#packing_forwarding_amount").val(packing_amount.toFixed(2));
   $("#other_charges_percentage").val(other_amount.toFixed(2));
   $("#tcs_amount").val(tcs_amount.toFixed(2));
-  $("#net_amount").val(item_net.toFixed(2));
-  $("#gross_amount").val(gross.toFixed(2));
-  $("#total_sub_amount").val(item_net.toFixed(2));
+  $("#round_off").val(round_off.toFixed(2));
 
-  let total_gst = item_gst_total + freight_gst + packing_gst + other_gst;
-  $("#total_gst_amount").val(total_gst.toFixed(2));
+  // ✅ Output fields
+  $("#net_amount").val(total_basic.toFixed(2));       // Total after discount, before any tax
+  $("#total_gst_amount").val(total_gst.toFixed(2));   // Total GST from items + charges
+  $("#gross_amount").val(gross.toFixed(2));           // Grand total after GST, TCS, Round off
+  $("#total_sub_amount").val((total_basic + item_gst_total).toFixed(2)); // Items with GST only
 }
+
 
 
 

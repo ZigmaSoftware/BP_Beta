@@ -324,9 +324,9 @@ function open_lvl_2_modal(id) {
 }
 
 
+
 // 🔄 Bulk Level 2 status dropdown action
 $(document).on("change", "#bulk_status_select_lvl_2", function () {
-    // alert("22");
   const selectedValue = $(this).val();
   const main_unique_id = $("#approval_main_id").val();
 
@@ -336,7 +336,8 @@ $(document).on("change", "#bulk_status_select_lvl_2", function () {
     return;
   }
 
-  const actionText = selectedValue === "1" ? "approve all items" : "reject all items";
+  const actionText =
+    selectedValue === "1" ? "approve all items" : "reject all items";
 
   Swal.fire({
     title: "Confirm Level 2 Bulk Action",
@@ -345,24 +346,24 @@ $(document).on("change", "#bulk_status_select_lvl_2", function () {
     showCancelButton: true,
     confirmButtonColor: "#3085d6",
     cancelButtonColor: "#d33",
-    confirmButtonText: "Yes, proceed!"
+    confirmButtonText: "Yes, proceed!",
   }).then((result) => {
     if (result.isConfirmed) {
       $.ajax({
         type: "POST",
         url: ajax_url,
         data: {
-          action: "bulk_update_status_lvl_2",
+          action: "bulk_update_status_lvl_2", // <-- your Level 2 CRUD case
           main_unique_id: main_unique_id,
-          selectedValue: selectedValue
+          selectedValue: selectedValue,
         },
         success: function (response) {
           try {
             var res = JSON.parse(response);
             if (res.status) {
-              // ✅ Reload Level 2 tables
-              $('#requisition_approval_modal').DataTable().ajax.reload(null, false);
-              $('#purchase_requisition_datatable').DataTable().ajax.reload(null, false);
+              // ✅ Reload both tables
+              $("#requisition_approval_modal").DataTable().ajax.reload(null, false);
+              $("#purchase_requisition_datatable").DataTable().ajax.reload(null, false);
 
               // ✅ Update status field display in modal
               const statusText =
@@ -370,20 +371,23 @@ $(document).on("change", "#bulk_status_select_lvl_2", function () {
                   ? "<span style='color: green; font-weight: bold;'>Approved</span>"
                   : "<span style='color: red; font-weight: bold;'>Rejected</span>";
 
-              $('#requisition_approval_modal')
-                .find('td:nth-child(10)') // assuming Status is 10th column
+              // Replace all dropdowns (if any) in modal with status text
+              $("#requisition_approval_modal")
+                .find("select.status-select-lvl2")
                 .each(function () {
-                  $(this).html(statusText);
+                  $(this).replaceWith(statusText);
                 });
 
               // ✅ Success message
               sweetalert(
                 "All items successfully " +
-                  (selectedValue === "1" ? "approved (Level 2)!" : "rejected (Level 2)!"),
+                  (selectedValue === "1"
+                    ? "approved (Level 2)!"
+                    : "rejected (Level 2)!"),
                 "success"
               );
 
-              // ✅ Change the dropdown display text to match new state
+              // ✅ Change dropdown text & disable for this record
               const newLabel = selectedValue === "1" ? "Approved" : "Rejected";
               $("#bulk_status_select_lvl_2 option:selected").text(newLabel);
               $("#bulk_status_select_lvl_2").prop("disabled", true);
@@ -396,10 +400,10 @@ $(document).on("change", "#bulk_status_select_lvl_2", function () {
         },
         error: function () {
           sweetalert("Network error occurred!", "error");
-        }
+        },
       });
     } else {
-      // Reset dropdown if canceled
+      // Reset dropdown if cancelled
       $("#bulk_status_select_lvl_2").val("");
     }
   });

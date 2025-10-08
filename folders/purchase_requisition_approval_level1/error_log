@@ -485,3 +485,88 @@ Stack trace:
     [result] => 
 )
 
+[08-Oct-2025 18:01:41 Asia/Kolkata] Passed into the empty item data condition
+[08-Oct-2025 18:01:41 Asia/Kolkata] stdClass Object
+(
+    [sql] => SELECT  product_name,  product_code,  description FROM product_master WHERE unique_id = :unique_id AND is_delete = :is_delete<br />
+    [data] => Array
+        (
+        )
+
+    [status] => 1
+    [error] => PDOStatement Object
+        (
+            [queryString] => SELECT  product_name,  product_code,  description FROM product_master WHERE unique_id = :unique_id AND is_delete = :is_delete
+        )
+
+    [result] => 
+)
+
+[08-Oct-2025 18:01:41 Asia/Kolkata] Passed into the empty item data condition
+[08-Oct-2025 18:01:41 Asia/Kolkata] stdClass Object
+(
+    [sql] => SELECT  product_name,  product_code,  description FROM product_master WHERE unique_id = :unique_id AND is_delete = :is_delete<br />
+    [data] => Array
+        (
+        )
+
+    [status] => 1
+    [error] => PDOStatement Object
+        (
+            [queryString] => SELECT  product_name,  product_code,  description FROM product_master WHERE unique_id = :unique_id AND is_delete = :is_delete
+        )
+
+    [result] => 
+)
+
+[08-Oct-2025 18:01:41 Asia/Kolkata] Passed into the empty item data condition
+[08-Oct-2025 18:01:41 Asia/Kolkata] stdClass Object
+(
+    [sql] => SELECT  product_name,  product_code,  description FROM product_master WHERE unique_id = :unique_id AND is_delete = :is_delete<br />
+    [data] => Array
+        (
+        )
+
+    [status] => 1
+    [error] => PDOStatement Object
+        (
+            [queryString] => SELECT  product_name,  product_code,  description FROM product_master WHERE unique_id = :unique_id AND is_delete = :is_delete
+        )
+
+    [result] => 
+)
+
+[08-Oct-2025 18:01:41 Asia/Kolkata] Passed into the empty item data condition
+[08-Oct-2025 18:01:41 Asia/Kolkata] stdClass Object
+(
+    [sql] => SELECT  product_name,  product_code,  description FROM product_master WHERE unique_id = :unique_id AND is_delete = :is_delete<br />
+    [data] => Array
+        (
+        )
+
+    [status] => 1
+    [error] => PDOStatement Object
+        (
+            [queryString] => SELECT  product_name,  product_code,  description FROM product_master WHERE unique_id = :unique_id AND is_delete = :is_delete
+        )
+
+    [result] => 
+)
+
+[08-Oct-2025 18:01:41 Asia/Kolkata] Passed into the empty item data condition
+[08-Oct-2025 18:01:41 Asia/Kolkata] stdClass Object
+(
+    [sql] => SELECT  product_name,  product_code,  description FROM product_master WHERE unique_id = :unique_id AND is_delete = :is_delete<br />
+    [data] => Array
+        (
+        )
+
+    [status] => 1
+    [error] => PDOStatement Object
+        (
+            [queryString] => SELECT  product_name,  product_code,  description FROM product_master WHERE unique_id = :unique_id AND is_delete = :is_delete
+        )
+
+    [result] => 
+)
+

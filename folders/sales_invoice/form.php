@@ -239,9 +239,11 @@ $today = date('Y-m-d');
                     <!--  <?//= select_option(item_name_list(), "Select Item", "") ?>-->
                     <!--</select>-->
                     
-                    <select id="item_name" name="item_name" class="form-control select2" onchange="fetch_item_details(this.value);">
+                   <select id="item_name" name="item_name" class="form-control select2"
+                            onchange="fetch_item_details(this.value);">
                       <?= select_option(item_name_list(), "Select Item", "") ?>
                     </select>
+
 
                     
                   </td>

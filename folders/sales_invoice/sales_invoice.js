@@ -584,27 +584,50 @@ function new_external_window_image(image_url) {
 }
 
 
+function fetch_item_details(val) {
+    if (!val) return;
 
-function fetch_item_details(item_id) {
-    if (!item_id) return;
+    const ajax_url = sessionStorage.getItem("folder_crud_link") || "function.php";
+    const item_text = $("#item_name option:selected").text();
 
     $.ajax({
-        url: "function.php",
+        url: ajax_url,
         type: "POST",
-        data: { action: "get_item_details", item_id: item_id },
         dataType: "json",
-        success: function (response) {
-            if (response.status === 1 && response.data) {
-                $("#rate").val(response.data.unit_price);
-                $("#tax").val(response.data.tax_value).trigger('change');
+        data: {
+            action: "get_item_details",
+            // send several identifiers so backend can resolve robustly
+            item_code: val,
+            item_id: val,
+            item_name_text: item_text
+        },
+        success: function (res) {
+            // For debugging:
+            // console.log("get_item_details =>", res);
+
+            if (res && res.status && res.data) {
+                if (res.data.uom_id) {
+                    $("#unit").val(res.data.uom_id).trigger("change");
+                }
+                if (res.data.unit_price !== undefined) {
+                    $("#rate").val(res.data.unit_price);
+                }
+                if (res.data.gst !== undefined) {
+                    $("#tax").val(res.data.gst).trigger("change");
+                }
+                if (res.data.description) {
+                    // Optional: show in remarks field for user context
+                    $("#remarks").val(res.data.description);
+                }
                 calculate_amount();
             } else {
+                // Clear on miss to avoid stale values
                 $("#rate").val("");
-                $("#tax").val("0").trigger('change');
+                $("#tax").val("0").trigger("change");
             }
         },
-        error: function (xhr, status, error) {
-            console.error("Error fetching item details:", error);
+        error: function (xhr) {
+            console.error("get_item_details error:", xhr.responseText || xhr.statusText);
         }
     });
 }
