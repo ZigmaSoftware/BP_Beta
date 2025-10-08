@@ -1,0 +1,46 @@
+[07-Oct-2025 11:36:30 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbconfig.php on line 2
+[07-Oct-2025 11:37:00 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbconfig.php on line 2
+[07-Oct-2025 11:43:29 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbconfig.php on line 2
+[07-Oct-2025 11:53:51 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbconfig.php on line 2
+[07-Oct-2025 11:54:11 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbconfig.php on line 2
+[07-Oct-2025 11:56:03 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbconfig.php on line 2
+[07-Oct-2025 12:02:42 UTC] PHP Warning:  include(../../config/dbconfig3.php): failed to open stream: No such file or directory in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/manual_attendance/crud.php on line 8
+[07-Oct-2025 12:02:42 UTC] PHP Warning:  include(): Failed opening '../../config/dbconfig3.php' for inclusion (include_path='.:/opt/alt/php74/usr/share/pear') in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/manual_attendance/crud.php on line 8
+[07-Oct-2025 12:02:42 UTC] PHP Notice:  Undefined variable: att_pdo in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/manual_attendance/crud.php on line 50
+[07-Oct-2025 12:02:42 UTC] PHP Fatal error:  Uncaught Error: Call to a member function insert() on null in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/manual_attendance/crud.php:50
+Stack trace:
+#0 {main}
+  thrown in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/manual_attendance/crud.php on line 50
+[07-Oct-2025 12:10:23 UTC] PHP Warning:  include(../../config/dbconfig3.php): failed to open stream: No such file or directory in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/manual_attendance/crud.php on line 8
+[07-Oct-2025 12:10:23 UTC] PHP Warning:  include(): Failed opening '../../config/dbconfig3.php' for inclusion (include_path='.:/opt/alt/php74/usr/share/pear') in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/manual_attendance/crud.php on line 8
+[07-Oct-2025 12:10:23 UTC] PHP Notice:  Undefined variable: att_pdo in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/manual_attendance/crud.php on line 50
+[07-Oct-2025 12:10:23 UTC] PHP Fatal error:  Uncaught Error: Call to a member function insert() on null in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/manual_attendance/crud.php:50
+Stack trace:
+#0 {main}
+  thrown in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/manual_attendance/crud.php on line 50
+[07-Oct-2025 17:44:29 Asia/Kolkata] PDOException: SQLSTATE[HY000] [2002] Connection timed out in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:48
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(48): PDO->__construct('mysql:host=192....', 'my_root', 'my@123456', Array)
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbconfig3.php(34): db->__construct('mysql', '192.168.1.200', 'my_root', 'my@123456', 'blueplanet')
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/manual_attendance/crud.php(8): include('/home/ie9owkuzk...')
+#3 {main}
+[07-Oct-2025 17:47:33 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'acc_year' in 'INSERT INTO' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:579
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(579): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/manual_attendance/crud.php(59): db->insert('zigfly_recogniz...', Array)
+#2 {main}
+[07-Oct-2025 17:47:51 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'acc_year' in 'INSERT INTO' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:579
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(579): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/manual_attendance/crud.php(59): db->insert('zigfly_recogniz...', Array)
+#2 {main}
+[07-Oct-2025 17:48:35 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'acc_year' in 'INSERT INTO' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:579
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(579): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/manual_attendance/crud.php(59): db->insert('zigfly_recogniz...', Array)
+#2 {main}
+[07-Oct-2025 17:58:25 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'acc_year' in 'INSERT INTO' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:579
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(579): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/manual_attendance/crud.php(59): db->insert('zigfly_recogniz...', Array)
+#2 {main}

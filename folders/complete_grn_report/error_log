@@ -1,0 +1,30 @@
+[19-Sep-2025 10:46:34 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_beta.staff_creation' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/complete_grn_report/crud.php(106): db->select(Array, 'grn.is_delete =...', '10', '0', '', 'SQL_CALC_FOUND_...', 'grn.grn_number,...')
+#2 {main}
+[19-Sep-2025 10:47:11 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_beta.staff_creation' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/complete_grn_report/crud.php(106): db->select(Array, 'grn.is_delete =...', '10', '0', '', 'SQL_CALC_FOUND_...', 'grn.grn_number,...')
+#2 {main}
+[19-Sep-2025 10:47:16 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_beta.staff_creation' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/complete_grn_report/crud.php(106): db->select(Array, 'grn.is_delete =...', '10', '0', '', 'SQL_CALC_FOUND_...', 'grn.grn_number,...')
+#2 {main}
+[19-Sep-2025 10:47:47 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_beta.staff_creation' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/complete_grn_report/crud.php(106): db->select(Array, 'grn.is_delete =...', '10', '0', '', 'SQL_CALC_FOUND_...', 'grn.grn_number,...')
+#2 {main}
+[19-Sep-2025 10:48:11 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'gs.rejected_qty' in 'SELECT' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/complete_grn_report/crud.php(106): db->select(Array, 'grn.is_delete =...', '10', '0', '', 'SQL_CALC_FOUND_...', 'grn.grn_number,...')
+#2 {main}
+[19-Sep-2025 10:54:25 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'u1.staff_name' in 'SELECT' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/complete_grn_report/crud.php(106): db->select(Array, 'grn.is_delete =...', '10', '0', '', 'SQL_CALC_FOUND_...', 'grn.grn_number,...')
+#2 {main}

@@ -1,0 +1,40 @@
+[18-Sep-2025 10:49:38 Asia/Kolkata] PDOException: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'device_id' cannot be null in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:579
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(579): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/user/crud.php(126): db->insert('user', Array)
+#2 {main}
+[18-Sep-2025 10:49:41 Asia/Kolkata] PDOException: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'device_id' cannot be null in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:579
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(579): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/user/crud.php(126): db->insert('user', Array)
+#2 {main}
+[18-Sep-2025 11:02:30 Asia/Kolkata] PDOException: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'device_id' cannot be null in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:579
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(579): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/user/crud.php(126): db->insert('user', Array)
+#2 {main}
+[18-Sep-2025 11:02:43 Asia/Kolkata] PDOException: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'device_id' cannot be null in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:579
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(579): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/user/crud.php(126): db->insert('user', Array)
+#2 {main}
+[18-Sep-2025 11:02:59 Asia/Kolkata] PDOException: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'device_id' cannot be null in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:579
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(579): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/user/crud.php(126): db->insert('user', Array)
+#2 {main}
+[18-Sep-2025 11:03:39 Asia/Kolkata] PDOException: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'device_id' cannot be null in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:579
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(579): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/user/crud.php(126): db->insert('user', Array)
+#2 {main}
+[18-Sep-2025 11:03:42 Asia/Kolkata] PDOException: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'device_id' cannot be null in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:579
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(579): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/user/crud.php(126): db->insert('user', Array)
+#2 {main}
+[18-Sep-2025 11:03:54 Asia/Kolkata] PDOException: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'device_id' cannot be null in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:579
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(579): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/user/crud.php(126): db->insert('user', Array)
+#2 {main}

@@ -1,0 +1,195 @@
+[14-Jun-2025 22:04:13 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_beta.complaint_creation' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/new_task/crud.php(509): db->select(Array, ' is_delete = 0 ...', '10', '0', '', 'SQL_CALC_FOUND_...')
+#2 {main}
+[14-Jun-2025 22:04:20 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_beta.complaint_creation_doc_upload' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/new_task/crud.php(1411): db->select(Array, 'screen_unique_i...', NULL, NULL, '', 'SQL_CALC_FOUND_...')
+#2 {main}
+[14-Jun-2025 22:04:27 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_beta.complaint_creation' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/new_task/crud.php(509): db->select(Array, ' is_delete = 0 ...', '10', '0', '', 'SQL_CALC_FOUND_...')
+#2 {main}
+[09-Jul-2025 10:25:13 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_beta.complaint_creation' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/new_task/crud.php(509): db->select(Array, ' is_delete = 0 ...', '10', '0', '', 'SQL_CALC_FOUND_...')
+#2 {main}
+[09-Jul-2025 10:25:36 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_beta.complaint_creation_doc_upload' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/new_task/crud.php(1411): db->select(Array, 'screen_unique_i...', NULL, NULL, '', 'SQL_CALC_FOUND_...')
+#2 {main}
+[09-Jul-2025 10:28:19 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_beta.complaint_creation' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/new_task/crud.php(509): db->select(Array, ' is_delete = 0 ...', '10', '0', '', 'SQL_CALC_FOUND_...')
+#2 {main}
+[09-Jul-2025 10:28:21 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_beta.complaint_creation' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/new_task/crud.php(509): db->select(Array, ' is_delete = 0 ...', '10', '0', 'complaint_no as...', 'SQL_CALC_FOUND_...')
+#2 {main}
+[09-Jul-2025 10:39:14 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_beta.complaint_creation_doc_upload' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/new_task/crud.php(1411): db->select(Array, 'screen_unique_i...', NULL, NULL, '', 'SQL_CALC_FOUND_...')
+#2 {main}
+[09-Jul-2025 12:12:32 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_beta.complaint_creation' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/new_task/crud.php(509): db->select(Array, ' is_delete = 0 ...', '10', '0', '', 'SQL_CALC_FOUND_...')
+#2 {main}
+[10-Jul-2025 15:54:34 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_beta.complaint_creation' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/new_task/crud.php(509): db->select(Array, ' is_delete = 0 ...', '10', '0', '', 'SQL_CALC_FOUND_...')
+#2 {main}
+[10-Jul-2025 15:54:43 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_beta.complaint_creation_doc_upload' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/new_task/crud.php(1411): db->select(Array, 'screen_unique_i...', NULL, NULL, '', 'SQL_CALC_FOUND_...')
+#2 {main}
+[14-Jul-2025 12:05:24 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_beta.complaint_creation' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/new_task/crud.php(509): db->select(Array, ' is_delete = 0 ...', '10', '0', '', 'SQL_CALC_FOUND_...')
+#2 {main}
+[14-Jul-2025 12:05:28 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_beta.complaint_creation_doc_upload' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/new_task/crud.php(1411): db->select(Array, 'screen_unique_i...', NULL, NULL, '', 'SQL_CALC_FOUND_...')
+#2 {main}
+[15-Jul-2025 10:20:43 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_beta.complaint_creation' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/new_task/crud.php(509): db->select(Array, ' is_delete = 0 ...', '10', '0', '', 'SQL_CALC_FOUND_...')
+#2 {main}
+[15-Jul-2025 10:21:24 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_beta.complaint_creation_doc_upload' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/new_task/crud.php(1411): db->select(Array, 'screen_unique_i...', NULL, NULL, '', 'SQL_CALC_FOUND_...')
+#2 {main}
+[15-Jul-2025 12:11:07 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'department_type' in 'WHERE' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/comfun.php(3035): db->select(Array, 'department_type...')
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/new_task/crud.php(1957): main_category_creation('', '')
+#3 {main}
+[15-Jul-2025 12:11:16 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'department_type' in 'WHERE' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/comfun.php(3035): db->select(Array, 'department_type...')
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/new_task/crud.php(1957): main_category_creation('', '')
+#3 {main}
+[15-Jul-2025 12:12:12 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'department_type' in 'WHERE' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/comfun.php(3035): db->select(Array, 'department_type...')
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/new_task/crud.php(1957): main_category_creation('', '')
+#3 {main}
+[15-Jul-2025 12:12:29 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'department_type' in 'WHERE' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/comfun.php(3035): db->select(Array, 'department_type...')
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/new_task/crud.php(1957): main_category_creation('', '6541cf5d2327934...')
+#3 {main}
+[15-Jul-2025 12:12:36 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'department_type' in 'WHERE' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/comfun.php(3035): db->select(Array, 'department_type...')
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/new_task/crud.php(1957): main_category_creation('', '6541cf70e167f60...')
+#3 {main}
+[15-Jul-2025 12:14:31 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'department_type' in 'WHERE' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/comfun.php(3035): db->select(Array, 'department_type...')
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/new_task/crud.php(1957): main_category_creation('', '')
+#3 {main}
+[15-Jul-2025 12:14:42 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'department_type' in 'WHERE' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/comfun.php(3035): db->select(Array, 'department_type...')
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/new_task/crud.php(1957): main_category_creation('', '6541cf66bb99464...')
+#3 {main}
+[15-Jul-2025 12:14:44 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'department_type' in 'WHERE' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/comfun.php(3035): db->select(Array, 'department_type...')
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/new_task/crud.php(1957): main_category_creation('', '6541cf5d2327934...')
+#3 {main}
+[15-Jul-2025 12:14:49 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'department_type' in 'WHERE' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/comfun.php(3035): db->select(Array, 'department_type...')
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/new_task/crud.php(1957): main_category_creation('', '6541cf7b4467441...')
+#3 {main}
+[15-Jul-2025 12:14:51 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'department_type' in 'WHERE' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/comfun.php(3035): db->select(Array, 'department_type...')
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/new_task/crud.php(1957): main_category_creation('', '6541cf85cc13851...')
+#3 {main}
+[15-Jul-2025 17:08:55 Asia/Kolkata] PDOException: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'site_name' cannot be null in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:579
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(579): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/new_task/crud.php(174): db->insert('complaint_creat...', Array)
+#2 {main}
+[15-Jul-2025 17:08:59 Asia/Kolkata] PDOException: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'site_name' cannot be null in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:579
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(579): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/new_task/crud.php(174): db->insert('complaint_creat...', Array)
+#2 {main}
+[15-Jul-2025 17:38:12 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_beta.view_level_all_departments' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/new_task/view.php(91): db->select(Array, Array)
+#2 {main}
+[15-Jul-2025 17:38:12 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_beta.stage_1' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/new_task/view.php(468): db->select(Array, 'screen_unique_i...', NULL, NULL, '', 'SQL_CALC_FOUND_...')
+#2 {main}
+[15-Jul-2025 23:44:26 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_beta.view_level_all_departments' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/new_task/view.php(91): db->select(Array, Array)
+#2 {main}
+[15-Jul-2025 23:44:26 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_beta.stage_1' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/new_task/view.php(468): db->select(Array, 'screen_unique_i...', NULL, NULL, '', 'SQL_CALC_FOUND_...')
+#2 {main}
+[16-Jul-2025 00:03:13 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_beta.view_level_all_departments' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/new_task/view.php(91): db->select(Array, Array)
+#2 {main}
+[16-Jul-2025 00:03:13 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_beta.stage_1' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/new_task/view.php(468): db->select(Array, 'screen_unique_i...', NULL, NULL, '', 'SQL_CALC_FOUND_...')
+#2 {main}
+[28-Jul-2025 17:59:55 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_beta.view_level_all_departments' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/new_task/view.php(91): db->select(Array, Array)
+#2 {main}
+[28-Jul-2025 17:59:55 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_beta.stage_1' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/new_task/view.php(468): db->select(Array, 'screen_unique_i...', NULL, NULL, '', 'SQL_CALC_FOUND_...')
+#2 {main}
+[10-Sep-2025 14:40:57 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_beta.view_level_all_departments' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/new_task/view.php(91): db->select(Array, Array)
+#2 {main}
+[10-Sep-2025 14:40:57 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_beta.stage_1' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/new_task/view.php(468): db->select(Array, 'screen_unique_i...', NULL, NULL, '', 'SQL_CALC_FOUND_...')
+#2 {main}

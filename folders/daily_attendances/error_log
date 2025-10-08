@@ -1,0 +1,28 @@
+[28-Jul-2025 21:21:33 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_beta.company_and_branch_creation' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/comfun.php(4441): db->select(Array, Array)
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/daily_attendances/crud.php(597): branch('')
+#3 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/daily_attendances/crud.php(491): day_status('staff67c1843845...')
+#4 {main}
+[06-Aug-2025 10:50:32 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_beta.company_and_branch_creation' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/comfun.php(4442): db->select(Array, Array)
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/daily_attendances/crud.php(597): branch('')
+#3 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/daily_attendances/crud.php(491): day_status('staff67c1843845...')
+#4 {main}
+[22-Aug-2025 10:04:21 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_beta.company_and_branch_creation' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/comfun.php(4442): db->select(Array, Array)
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/daily_attendances/crud.php(597): branch('')
+#3 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/daily_attendances/crud.php(491): day_status('staff67c1843845...')
+#4 {main}
+[12-Sep-2025 16:40:55 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_beta.company_and_branch_creation' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/comfun.php(4441): db->select(Array, Array)
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/daily_attendances/crud.php(597): branch('')
+#3 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/daily_attendances/crud.php(491): day_status('staff67c1843845...')
+#4 {main}

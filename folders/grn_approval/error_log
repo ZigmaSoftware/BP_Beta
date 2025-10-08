@@ -1,0 +1,15 @@
+[23-Jul-2025 12:43:19 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'grn_sub.total_received_qty' in 'SELECT' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/grn_approval/crud.php(689): db->select(Array)
+#2 {main}
+[25-Jul-2025 17:06:40 Asia/Kolkata] PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ' (SELECT @a:=0) AS a WHERE grn_unique_id = '6880835184f4613840' AND is_active...' at line 1 in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/grn_approval/crud.php(408): db->select(Array, Array, '', '0', '', 'SQL_CALC_FOUND_...')
+#2 {main}
+[25-Jul-2025 17:06:51 Asia/Kolkata] PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ' (SELECT @a:=0) AS a WHERE grn_unique_id = '6880835184f4613840' AND is_active...' at line 1 in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/grn_approval/crud.php(408): db->select(Array, Array, '', '0', '', 'SQL_CALC_FOUND_...')
+#2 {main}

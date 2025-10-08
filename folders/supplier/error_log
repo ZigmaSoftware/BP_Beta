@@ -1,0 +1,126 @@
+[24-Jul-2025 09:58:57 Asia/Kolkata] PDOException: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'city' cannot be null in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:579
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(579): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/supplier/crud.php(1802): db->insert('supplier_shippi...', Array)
+#2 {main}
+[26-Jul-2025 11:12:17 Asia/Kolkata] PDOException: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'city' cannot be null in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:579
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(579): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/supplier/crud.php(166): db->insert('supplier_profil...', Array)
+#2 {main}
+[26-Jul-2025 11:12:26 Asia/Kolkata] PDOException: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'city' cannot be null in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:579
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(579): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/supplier/crud.php(166): db->insert('supplier_profil...', Array)
+#2 {main}
+[26-Jul-2025 11:12:38 Asia/Kolkata] PDOException: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'city' cannot be null in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:579
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(579): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/supplier/crud.php(166): db->insert('supplier_profil...', Array)
+#2 {main}
+[26-Jul-2025 12:23:10 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'customer_profile_unique_id' in 'WHERE' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/supplier/crud.php(386): db->select(Array, 'customer_profil...')
+#2 {main}
+[26-Jul-2025 12:40:57 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'customer_profile_unique_id' in 'WHERE' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/supplier/crud.php(386): db->select(Array, 'customer_profil...')
+#2 {main}
+[26-Jul-2025 12:48:04 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'customer_profile_unique_id' in 'WHERE' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/supplier/crud.php(386): db->select(Array, 'customer_profil...')
+#2 {main}
+[26-Jul-2025 12:48:09 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'customer_profile_unique_id' in 'WHERE' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/supplier/crud.php(386): db->select(Array, 'customer_profil...')
+#2 {main}
+[26-Jul-2025 12:48:38 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'customer_profile_unique_id' in 'WHERE' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/supplier/crud.php(386): db->select(Array, 'customer_profil...')
+#2 {main}
+[26-Jul-2025 13:01:12 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'customer_profile_unique_id' in 'WHERE' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/supplier/crud.php(386): db->select(Array, 'customer_profil...')
+#2 {main}
+[26-Jul-2025 13:03:29 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'customer_profile_unique_id' in 'WHERE' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/supplier/crud.php(386): db->select(Array, 'customer_profil...')
+#2 {main}
+[26-Jul-2025 13:06:21 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'customer_profile_unique_id' in 'WHERE' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/supplier/crud.php(388): db->select(Array, 'customer_profil...')
+#2 {main}
+[26-Jul-2025 13:09:40 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'customer_profile_unique_id' in 'WHERE' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/supplier/crud.php(388): db->select(Array, 'customer_profil...')
+#2 {main}
+[26-Jul-2025 13:11:12 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'customer_profile_unique_id' in 'WHERE' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/supplier/crud.php(388): db->select(Array, 'customer_profil...')
+#2 {main}
+[26-Jul-2025 13:11:32 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'customer_profile_unique_id' in 'WHERE' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/supplier/crud.php(388): db->select(Array, 'customer_profil...')
+#2 {main}
+[26-Jul-2025 13:15:25 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'customer_profile_unique_id' in 'WHERE' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/supplier/crud.php(386): db->select(Array, 'customer_profil...')
+#2 {main}
+[26-Jul-2025 13:18:23 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'customer_profile_unique_id' in 'WHERE' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/supplier/crud.php(385): db->select(Array, 'customer_profil...')
+#2 {main}
+[01-Aug-2025 17:57:25 Asia/Kolkata] PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '= "c74f30ee6e01162490"' at line 1 in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/supplier/crud.php(139): db->select(Array, 'is_delete = 0 A...')
+#2 {main}
+[01-Aug-2025 18:04:31 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'ledger_balance' in 'SET' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:817
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(817): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/supplier/crud.php(161): db->update('supplier_profil...', Array, Array)
+#2 {main}
+[01-Aug-2025 18:06:54 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'ledger_balance' in 'SET' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:817
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(817): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/supplier/crud.php(161): db->update('supplier_profil...', Array, Array)
+#2 {main}
+[01-Aug-2025 18:07:24 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'ledger_balance' in 'INSERT INTO' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:579
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(579): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/supplier/crud.php(170): db->insert('supplier_profil...', Array)
+#2 {main}
+[01-Aug-2025 18:11:01 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'ledger_balance' in 'INSERT INTO' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:579
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(579): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/supplier/crud.php(170): db->insert('supplier_profil...', Array)
+#2 {main}
+[01-Aug-2025 13:15:41 UTC] PHP Parse error:  syntax error, unexpected 'unique_id' (T_STRING), expecting ']' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/supplier/crud.php on line 125
+[06-Sep-2025 12:57:28 Asia/Kolkata] PDOException: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'acc_year' cannot be null in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:579
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(579): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/supplier/crud.php(425): db->insert('sp_statuatory_d...', Array)
+#2 {main}
+[06-Sep-2025 12:57:48 Asia/Kolkata] PDOException: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'acc_year' cannot be null in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:579
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(579): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/supplier/crud.php(425): db->insert('sp_statuatory_d...', Array)
+#2 {main}
+[06-Sep-2025 12:57:58 Asia/Kolkata] PDOException: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'acc_year' cannot be null in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:579
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(579): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/supplier/crud.php(425): db->insert('sp_statuatory_d...', Array)
+#2 {main}

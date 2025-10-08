@@ -1,0 +1,10 @@
+[19-Jul-2025 13:10:14 Asia/Kolkata] PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE unique_id='687b49b240b9a46108'' at line 1 in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:817
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(817): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sub_group/crud.php(112): db->update('sub_group', 'ArrayArray', Array)
+#2 {main}
+[19-Jul-2025 13:10:21 Asia/Kolkata] PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE unique_id='687b49b240b9a46108'' at line 1 in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:817
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(817): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sub_group/crud.php(112): db->update('sub_group', 'ArrayArray', Array)
+#2 {main}

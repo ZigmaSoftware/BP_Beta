@@ -1,0 +1,173 @@
+[14-Jul-2025 11:09:05 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'appr_net_amount' in 'SELECT' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/level_2/crud.php(217): db->select(Array, 'is_delete = '0'...', '10', '0', '', 'SQL_CALC_FOUND_...')
+#2 {main}
+[14-Jul-2025 11:09:14 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'appr_net_amount' in 'SELECT' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/level_2/crud.php(217): db->select(Array, 'is_delete = '0'...', '10', '0', '', 'SQL_CALC_FOUND_...')
+#2 {main}
+[14-Jul-2025 11:09:28 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'appr_net_amount' in 'SELECT' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/level_2/crud.php(217): db->select(Array, 'is_delete = '0'...', '10', '0', '', 'SQL_CALC_FOUND_...')
+#2 {main}
+[14-Jul-2025 11:13:51 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'qc_approval' in 'WHERE' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/level_2/crud.php(1018): db->select(Array, Array)
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/level_2/crud.php(128): into_qc('PO/BSF/2025-202...')
+#3 {main}
+[14-Jul-2025 11:18:26 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'qc_approval' in 'WHERE' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/level_2/crud.php(1021): db->select(Array, Array)
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/level_2/crud.php(131): into_qc('PO/BSF/2025-202...')
+#3 {main}
+[14-Jul-2025 11:20:51 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'qc_approval' in 'WHERE' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/level_2/crud.php(1021): db->select(Array, Array)
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/level_2/crud.php(131): into_qc('PO/BSF/2025-202...')
+#3 {main}
+[14-Jul-2025 11:31:54 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'qc_approval' in 'WHERE' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/level_2/crud.php(1021): db->select(Array, Array)
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/level_2/crud.php(131): into_qc('PO/BSF/2025-202...')
+#3 {main}
+[14-Jul-2025 11:35:09 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'qc_approval' in 'WHERE' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/level_2/crud.php(1021): db->select(Array, Array)
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/level_2/crud.php(131): into_qc('PO/BSF/2025-202...')
+#3 {main}
+[14-Jul-2025 11:40:30 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'qc_approval' in 'WHERE' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/level_2/crud.php(1021): db->select(Array, Array)
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/level_2/crud.php(131): into_qc('PO/BSF/2025-202...')
+#3 {main}
+[14-Jul-2025 07:30:07 UTC] PHP Warning:  require(../../vendor/autoload.php): failed to open stream: No such file or directory in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/level_2/crud.php on line 9
+[14-Jul-2025 07:30:07 UTC] PHP Fatal error:  require(): Failed opening required '../../vendor/autoload.php' (include_path='.:/opt/alt/php74/usr/share/pear') in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/level_2/crud.php on line 9
+[14-Jul-2025 13:01:28 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'qc_approval' in 'WHERE' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/level_2/crud.php(1005): db->select(Array, Array)
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/level_2/crud.php(133): into_qc('PO/BSF/2025-202...')
+#3 {main}
+[14-Jul-2025 13:05:23 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'qc_approval' in 'WHERE' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/level_2/crud.php(1005): db->select(Array, Array)
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/level_2/crud.php(133): into_qc('PO/BSF/2025-202...')
+#3 {main}
+[14-Jul-2025 14:03:37 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'qc_approval' in 'WHERE' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/level_2/crud.php(1005): db->select(Array, Array)
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/level_2/crud.php(133): into_qc('PO/BSF/2025-202...')
+#3 {main}
+[14-Jul-2025 14:06:34 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'qc_approval' in 'WHERE' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/level_2/crud.php(1005): db->select(Array, Array)
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/level_2/crud.php(133): into_qc('PO/BSF/2025-202...')
+#3 {main}
+[14-Jul-2025 14:22:26 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'qc_approval' in 'WHERE' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/level_2/crud.php(1005): db->select(Array, Array)
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/level_2/crud.php(133): into_qc('PO/BSF/2025-202...')
+#3 {main}
+[14-Jul-2025 14:28:44 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'qc_approval' in 'WHERE' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/level_2/crud.php(1009): db->select(Array, Array)
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/level_2/crud.php(133): into_qc('PO/BSF/2025-202...')
+#3 {main}
+[14-Jul-2025 14:34:31 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'qc_approval' in 'WHERE' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/level_2/crud.php(1006): db->select(Array, Array)
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/level_2/crud.php(133): into_qc('PO/BSF/2025-202...')
+#3 {main}
+[14-Jul-2025 14:42:34 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'qc_approval' in 'WHERE' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/level_2/crud.php(1009): db->select(Array, Array)
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/level_2/crud.php(133): into_qc('PO/BSF/2025-202...')
+#3 {main}
+[14-Jul-2025 14:44:53 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'qc_approval' in 'WHERE' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/level_2/crud.php(1009): db->select(Array, Array)
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/level_2/crud.php(133): into_qc('PO/BSF/2025-202...')
+#3 {main}
+[14-Jul-2025 14:46:28 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'qc_approval' in 'WHERE' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/level_2/crud.php(1009): db->select(Array, Array)
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/level_2/crud.php(133): into_qc('PO/BSF/2025-202...')
+#3 {main}
+[14-Jul-2025 14:48:43 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'qc_approval' in 'WHERE' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/level_2/crud.php(1010): db->select(Array, Array)
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/level_2/crud.php(133): into_qc('PO/BSF/2025-202...')
+#3 {main}
+[14-Jul-2025 14:51:39 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'qc_approval' in 'WHERE' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/level_2/crud.php(1010): db->select(Array, Array)
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/level_2/crud.php(133): into_qc('PO/BSF/2025-202...')
+#3 {main}
+[14-Jul-2025 14:54:24 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'qc_approval' in 'WHERE' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/level_2/crud.php(1009): db->select(Array, Array)
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/level_2/crud.php(133): into_qc('PO/BSF/2025-202...')
+#3 {main}
+[14-Jul-2025 15:05:54 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'qc_approval' in 'WHERE' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/level_2/crud.php(1009): db->select(Array, Array)
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/level_2/crud.php(133): into_qc('PO/BSF/2025-202...')
+#3 {main}
+[14-Jul-2025 15:09:12 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'qc_approval' in 'WHERE' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/level_2/crud.php(1009): db->select(Array, Array)
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/level_2/crud.php(133): into_qc('PO/BSF/2025-202...')
+#3 {main}
+[14-Jul-2025 15:14:45 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'qc_approval' in 'WHERE' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/level_2/crud.php(1010): db->select(Array, Array)
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/level_2/crud.php(133): into_qc('PO/BSF/2025-202...')
+#3 {main}
+[15-Jul-2025 17:25:46 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'qc_approval' in 'WHERE' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/level_2/crud.php(1010): db->select(Array, Array)
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/level_2/crud.php(133): into_qc('PO/BSF/2025-202...')
+#3 {main}
+[15-Jul-2025 17:30:10 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'qc_approval' in 'WHERE' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/level_2/crud.php(1010): db->select(Array, Array)
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/level_2/crud.php(133): into_qc('PO/BSF/2025-202...')
+#3 {main}
+[15-Jul-2025 17:50:14 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'qc_approval' in 'WHERE' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/level_2/crud.php(1010): db->select(Array, Array)
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/level_2/crud.php(133): into_qc('PO/BSF/2025-202...')
+#3 {main}
+[15-Jul-2025 17:53:36 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'qc_approval' in 'WHERE' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/level_2/crud.php(1010): db->select(Array, Array)
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/level_2/crud.php(133): into_qc('PO/BSF/2025-202...')
+#3 {main}

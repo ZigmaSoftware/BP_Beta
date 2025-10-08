@@ -1,0 +1,95 @@
+[17-Sep-2025 16:59:19 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'po.currency' in 'SELECT' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/PO_report/crud.php(93): db->select(Array, ' po.is_delete =...', '10', '0', '', 'SQL_CALC_FOUND_...')
+#2 {main}
+[17-Sep-2025 16:59:31 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'po.currency' in 'SELECT' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/PO_report/crud.php(93): db->select(Array, ' po.is_delete =...', '10', '0', '', 'SQL_CALC_FOUND_...')
+#2 {main}
+[17-Sep-2025 17:10:34 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'sup.supplier_code' in 'SELECT' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/PO_report/crud.php(100): db->select(Array, ' po.is_delete =...', '10', '0', '', 'SQL_CALC_FOUND_...')
+#2 {main}
+[17-Sep-2025 17:15:06 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'po.discount' in 'SELECT' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/PO_report/crud.php(102): db->select(Array, ' po.is_delete =...', '10', '0', '', 'SQL_CALC_FOUND_...')
+#2 {main}
+[17-Sep-2025 17:18:42 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'grn.po_unique_id' in 'ON' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/PO_report/crud.php(103): db->select(Array, ' po.is_delete =...', '10', '0', '', 'SQL_CALC_FOUND_...')
+#2 {main}
+[17-Sep-2025 17:22:09 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'pr.pr_number' in 'SELECT' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/PO_report/crud.php(103): db->select(Array, ' po.is_delete =...', '10', '0', '', 'SQL_CALC_FOUND_...')
+#2 {main}
+[17-Sep-2025 17:22:44 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'pr.pr_number' in 'SELECT' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/PO_report/crud.php(103): db->select(Array, ' po.is_delete =...', '10', '0', '', 'SQL_CALC_FOUND_...')
+#2 {main}
+[17-Sep-2025 17:45:10 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_beta.obom_child' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/PO_report/crud.php(122): db->select(Array, ' po.is_delete =...', '10', '50', '', 'SQL_CALC_FOUND_...', 'po.unique_id')
+#2 {main}
+[17-Sep-2025 17:45:14 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_beta.obom_child' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/PO_report/crud.php(122): db->select(Array, ' po.is_delete =...', '10', '50', '', 'SQL_CALC_FOUND_...', 'po.unique_id')
+#2 {main}
+[17-Sep-2025 17:45:45 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_beta.obom_child' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/PO_report/crud.php(122): db->select(Array, ' po.is_delete =...', '10', '50', '', 'SQL_CALC_FOUND_...', 'po.unique_id')
+#2 {main}
+[17-Sep-2025 17:46:41 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'grn.po_unique_id' in 'ON' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/PO_report/crud.php(122): db->select(Array, ' po.is_delete =...', '10', '50', '', 'SQL_CALC_FOUND_...', 'po.unique_id')
+#2 {main}
+[17-Sep-2025 17:47:35 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'grn.po_unique_id' in 'ON' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/PO_report/crud.php(122): db->select(Array, ' po.is_delete =...', '10', '50', '', 'SQL_CALC_FOUND_...', 'po.unique_id')
+#2 {main}
+[24-Sep-2025 14:10:01 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'DATE' in 'WHERE' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/PO_report/crud.php(222): db->select(Array, ' po.is_delete =...', '10', '0', '', 'SQL_CALC_FOUND_...', 'po.unique_id')
+#2 {main}
+[24-Sep-2025 14:10:08 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'DATE' in 'WHERE' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/PO_report/crud.php(222): db->select(Array, ' po.is_delete =...', '10', '0', '', 'SQL_CALC_FOUND_...', 'po.unique_id')
+#2 {main}
+[24-Sep-2025 14:11:33 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'DATE' in 'WHERE' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/PO_report/crud.php(222): db->select(Array, ' po.is_delete =...', '10', '0', '', 'SQL_CALC_FOUND_...', 'po.unique_id')
+#2 {main}
+[24-Sep-2025 14:12:03 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'DATE' in 'WHERE' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/PO_report/crud.php(222): db->select(Array, ' po.is_delete =...', '10', '0', '', 'SQL_CALC_FOUND_...', 'po.unique_id')
+#2 {main}
+[24-Sep-2025 14:19:39 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'unit' in 'WHERE' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/PO_report/crud.php(224): db->select(Array, ' po.is_delete =...', '10', '0', '', 'SQL_CALC_FOUND_...', 'po.unique_id')
+#2 {main}
+[24-Sep-2025 14:19:43 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'unit' in 'WHERE' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/PO_report/crud.php(224): db->select(Array, ' po.is_delete =...', '10', '0', '', 'SQL_CALC_FOUND_...', 'po.unique_id')
+#2 {main}
+[24-Sep-2025 14:19:48 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'unit' in 'WHERE' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/PO_report/crud.php(224): db->select(Array, ' po.is_delete =...', '10', '0', '', 'SQL_CALC_FOUND_...', 'po.unique_id')
+#2 {main}

@@ -1,0 +1,605 @@
+[20-May-2025 17:08:50 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'data_type' in 'SELECT' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/product_creation/crud.php(257): db->select(Array, ' is_delete = '0...', '10', '0', '', 'SQL_CALC_FOUND_...')
+#2 {main}
+[20-May-2025 17:41:30 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'data_type' in 'SELECT' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/product_creation/crud.php(257): db->select(Array, ' is_delete = '0...', '10', '0', '', 'SQL_CALC_FOUND_...')
+#2 {main}
+[20-May-2025 17:52:59 Asia/Kolkata] PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'AND sub_group_unique_id =  "682c66b742aad34939" AND product_name = "dsds" AND...' at line 1 in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/product_creation/crud.php(82): db->select(Array, 'AND sub_group_u...')
+#2 {main}
+[20-May-2025 17:52:59 Asia/Kolkata] PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE  is_delete = '0' AND unique_id = ''' at line 1 in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/product_creation/crud.php(128): db->select(Array, ' is_delete = '0...')
+#2 {main}
+[20-May-2025 17:53:20 Asia/Kolkata] PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'AND sub_group_unique_id =  "682c66b742aad34939" AND product_name = "dsds" AND...' at line 1 in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/product_creation/crud.php(82): db->select(Array, 'AND sub_group_u...')
+#2 {main}
+[20-May-2025 17:53:20 Asia/Kolkata] PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE  is_delete = '0' AND unique_id = ''' at line 1 in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/product_creation/crud.php(128): db->select(Array, ' is_delete = '0...')
+#2 {main}
+[20-May-2025 17:55:21 Asia/Kolkata] PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'AND sub_group_unique_id =  "682c6690d521e25066" AND product_name = "21" AND i...' at line 1 in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/product_creation/crud.php(84): db->select(Array, 'AND sub_group_u...')
+#2 {main}
+[20-May-2025 17:55:21 Asia/Kolkata] PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE  is_delete = '0' AND unique_id = ''' at line 1 in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/product_creation/crud.php(130): db->select(Array, ' is_delete = '0...')
+#2 {main}
+[20-May-2025 17:56:50 Asia/Kolkata] PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'AND sub_group_unique_id =  "682c6690d521e25066" AND product_name = "21" AND i...' at line 1 in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/product_creation/crud.php(84): db->select(Array, 'AND sub_group_u...')
+#2 {main}
+[20-May-2025 17:56:50 Asia/Kolkata] PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE  is_delete = '0' AND unique_id = ''' at line 1 in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/product_creation/crud.php(130): db->select(Array, ' is_delete = '0...')
+#2 {main}
+[20-May-2025 18:00:28 Asia/Kolkata] PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'AND sub_group_unique_id =  "682c6690d521e25066" AND product_name = "21" AND i...' at line 1 in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/product_creation/crud.php(84): db->select(Array, 'AND sub_group_u...')
+#2 {main}
+[20-May-2025 18:00:28 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'product_name' in 'INSERT INTO' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:579
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(579): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/product_creation/crud.php(121): db->insert('product_master', Array)
+#2 {main}
+[20-May-2025 18:01:25 Asia/Kolkata] PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'AND sub_group_unique_id =  "682c6690d521e25066" AND product_name = "21" AND i...' at line 1 in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/product_creation/crud.php(84): db->select(Array, 'AND sub_group_u...')
+#2 {main}
+[20-May-2025 18:01:27 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'data_type' in 'SELECT' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/product_creation/crud.php(241): db->select(Array, ' is_delete = '0...', '10', '0', '', 'SQL_CALC_FOUND_...')
+#2 {main}
+[20-May-2025 23:18:43 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'data_type' in 'SELECT' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/product_creation/crud.php(243): db->select(Array, ' is_delete = '0...', '10', '0', '', 'SQL_CALC_FOUND_...')
+#2 {main}
+[20-May-2025 23:21:21 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'data_type' in 'SELECT' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/product_creation/crud.php(243): db->select(Array, ' is_delete = '0...', '10', '0', '', 'SQL_CALC_FOUND_...')
+#2 {main}
+[20-May-2025 23:32:21 Asia/Kolkata] PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'AND sub_group_unique_id =  "682597a4d24c632813" AND product_name = "cxv" AND ...' at line 1 in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/product_creation/crud.php(84): db->select(Array, 'AND sub_group_u...')
+#2 {main}
+[20-May-2025 23:36:40 Asia/Kolkata] PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'AND sub_group_unique_id =  "682c6690d521e25066" AND product_name = "ewe" AND ...' at line 1 in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/product_creation/crud.php(84): db->select(Array, 'AND sub_group_u...')
+#2 {main}
+[20-May-2025 23:38:24 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'data_type' in 'SELECT' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/product_creation/crud.php(243): db->select(Array, ' is_delete = '0...', '10', '0', '', 'SQL_CALC_FOUND_...')
+#2 {main}
+[20-May-2025 23:39:45 Asia/Kolkata] PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'AND sub_group_unique_id =  "682c66b742aad34939" AND product_name = "as" AND i...' at line 1 in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/product_creation/crud.php(84): db->select(Array, 'AND sub_group_u...')
+#2 {main}
+[20-May-2025 23:53:20 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'data_type' in 'SELECT' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/product_creation/crud.php(243): db->select(Array, ' is_delete = '0...', '10', '0', '', 'SQL_CALC_FOUND_...')
+#2 {main}
+[21-May-2025 09:20:46 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'data_type' in 'SELECT' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/product_creation/crud.php(294): db->select(Array, ' is_delete = '0...', '10', '0', '', 'SQL_CALC_FOUND_...')
+#2 {main}
+[21-May-2025 09:22:34 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'data_type' in 'SELECT' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/product_creation/crud.php(294): db->select(Array, ' is_delete = '0...', '10', '0', '', 'SQL_CALC_FOUND_...')
+#2 {main}
+[21-May-2025 09:23:35 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'data_type' in 'SELECT' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/product_creation/crud.php(294): db->select(Array, ' is_delete = '0...', '10', '0', '', 'SQL_CALC_FOUND_...')
+#2 {main}
+[21-May-2025 10:43:40 Asia/Kolkata] PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE  is_delete = '0' AND unique_id = '68257e4e7c27f12410'' at line 1 in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/product_creation/crud.php(399): db->select(Array, ' is_delete = '0...')
+#2 {main}
+[21-May-2025 10:56:26 Asia/Kolkata] PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE bank_name ="" AND is_delete = 0  AND ifsc_code = "" AND account_no = ""' at line 1 in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/product_creation/crud.php(482): db->select(Array, 'bank_name ="" A...')
+#2 {main}
+[21-May-2025 10:56:26 Asia/Kolkata] PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'AND sub_group_unique_id =  "682c6690d521e25066" AND product_name = "434" AND ...' at line 1 in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/product_creation/crud.php(130): db->select(Array, 'AND sub_group_u...')
+#2 {main}
+[21-May-2025 10:58:32 Asia/Kolkata] PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE bank_name ="" AND is_delete = 0  AND ifsc_code = "" AND account_no = ""' at line 1 in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/product_creation/crud.php(482): db->select(Array, 'bank_name ="" A...')
+#2 {main}
+[21-May-2025 11:03:15 Asia/Kolkata] PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE bank_name ="" AND is_delete = 0  AND ifsc_code = "" AND account_no = ""' at line 1 in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/product_creation/crud.php(482): db->select(Array, 'bank_name ="" A...')
+#2 {main}
+[21-May-2025 11:03:15 Asia/Kolkata] PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'AND sub_group_unique_id =  "682c6690d521e25066" AND product_name = "434" AND ...' at line 1 in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/product_creation/crud.php(131): db->select(Array, 'AND sub_group_u...')
+#2 {main}
+[21-May-2025 11:04:39 Asia/Kolkata] PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE bank_name ="" AND is_delete = 0  AND ifsc_code = "" AND account_no = ""' at line 1 in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/product_creation/crud.php(482): db->select(Array, 'bank_name ="" A...')
+#2 {main}
+[21-May-2025 11:04:39 Asia/Kolkata] PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'AND sub_group_unique_id =  "682c6690d521e25066" AND product_name = "434" AND ...' at line 1 in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/product_creation/crud.php(131): db->select(Array, 'AND sub_group_u...')
+#2 {main}
+[21-May-2025 11:04:39 Asia/Kolkata] PDOException: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'unique_id' cannot be null in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:579
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(579): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/product_creation/crud.php(167): db->insert('product_master', Array)
+#2 {main}
+[21-May-2025 11:06:25 Asia/Kolkata] PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE bank_name ="" AND is_delete = 0  AND ifsc_code = "" AND account_no = ""' at line 1 in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/product_creation/crud.php(482): db->select(Array, 'bank_name ="" A...')
+#2 {main}
+[21-May-2025 11:06:25 Asia/Kolkata] PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'AND sub_group_unique_id =  "682c6690d521e25066" AND product_name = "ew" AND i...' at line 1 in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/product_creation/crud.php(131): db->select(Array, 'AND sub_group_u...')
+#2 {main}
+[21-May-2025 11:30:22 Asia/Kolkata] PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE bank_name ="" AND is_delete = 0  AND ifsc_code = "" AND account_no = ""' at line 1 in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/product_creation/crud.php(482): db->select(Array, 'bank_name ="" A...')
+#2 {main}
+[21-May-2025 11:30:22 Asia/Kolkata] PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'AND sub_group_unique_id =  "682c66d15cd7127906" AND product_name = "ew" AND i...' at line 1 in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/product_creation/crud.php(131): db->select(Array, 'AND sub_group_u...')
+#2 {main}
+[21-May-2025 11:43:57 Asia/Kolkata] PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '(unique_id, acc_year, session_id, sess_user_type, sess_user_id, sess_company_...' at line 1 in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:579
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(579): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/product_creation/crud.php(503): db->insert(NULL, Array)
+#2 {main}
+[21-May-2025 11:43:57 Asia/Kolkata] PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'AND sub_group_unique_id =  "682c670218b7869420" AND product_name = "re" AND i...' at line 1 in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/product_creation/crud.php(132): db->select(Array, 'AND sub_group_u...')
+#2 {main}
+[21-May-2025 11:48:30 Asia/Kolkata] PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'AND sub_group_unique_id =  "682c6690d521e25066" AND product_name = "43" AND i...' at line 1 in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/product_creation/crud.php(132): db->select(Array, 'AND sub_group_u...')
+#2 {main}
+[21-May-2025 11:48:30 Asia/Kolkata] PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '(unique_id, acc_year, session_id, sess_user_type, sess_user_id, sess_company_...' at line 1 in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:579
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(579): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/product_creation/crud.php(503): db->insert(NULL, Array)
+#2 {main}
+[21-May-2025 11:57:25 Asia/Kolkata] PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '(unique_id, acc_year, session_id, sess_user_type, sess_user_id, sess_company_...' at line 1 in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:579
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(579): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/product_creation/crud.php(502): db->insert(NULL, Array)
+#2 {main}
+[21-May-2025 11:57:25 Asia/Kolkata] PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'AND sub_group_unique_id =  "682c670218b7869420" AND product_name = "re" AND i...' at line 1 in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/product_creation/crud.php(132): db->select(Array, 'AND sub_group_u...')
+#2 {main}
+[21-May-2025 12:01:57 Asia/Kolkata] PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '(unique_id, acc_year, session_id, sess_user_type, sess_user_id, sess_company_...' at line 1 in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:579
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(579): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/product_creation/crud.php(502): db->insert(NULL, Array)
+#2 {main}
+[21-May-2025 12:01:57 Asia/Kolkata] PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'AND sub_group_unique_id =  "682c670218b7869420" AND product_name = "43" AND i...' at line 1 in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/product_creation/crud.php(132): db->select(Array, 'AND sub_group_u...')
+#2 {main}
+[21-May-2025 12:04:54 Asia/Kolkata] PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'AND sub_group_unique_id =  "682c670218b7869420" AND product_name = "43" AND i...' at line 1 in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/product_creation/crud.php(132): db->select(Array, 'AND sub_group_u...')
+#2 {main}
+[21-May-2025 12:04:54 Asia/Kolkata] PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '(group_unique_id, unique_id, acc_year, session_id, sess_user_type, sess_user_...' at line 1 in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:579
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(579): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/product_creation/crud.php(506): db->insert(NULL, Array)
+#2 {main}
+[21-May-2025 12:07:06 Asia/Kolkata] PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'AND sub_group_unique_id =  "682c670218b7869420" AND product_name = "43" AND i...' at line 1 in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/product_creation/crud.php(132): db->select(Array, 'AND sub_group_u...')
+#2 {main}
+[21-May-2025 12:11:33 Asia/Kolkata] PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'AND sub_group_unique_id =  "682c6690d521e25066" AND product_name = "32" AND i...' at line 1 in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/product_creation/crud.php(132): db->select(Array, 'AND sub_group_u...')
+#2 {main}
+[21-May-2025 12:11:38 Asia/Kolkata] PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'AND sub_group_unique_id =  "682c6690d521e25066" AND product_name = "32" AND i...' at line 1 in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/product_creation/crud.php(132): db->select(Array, 'AND sub_group_u...')
+#2 {main}
+[21-May-2025 12:20:13 Asia/Kolkata] PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'AND sub_group_unique_id =  "682c6690d521e25066" AND product_name = "32" AND i...' at line 1 in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/product_creation/crud.php(132): db->select(Array, 'AND sub_group_u...')
+#2 {main}
+[21-May-2025 12:20:52 Asia/Kolkata] PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'AND sub_group_unique_id =  "682c670218b7869420" AND product_name = "43" AND i...' at line 1 in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/product_creation/crud.php(132): db->select(Array, 'AND sub_group_u...')
+#2 {main}
+[21-May-2025 12:30:45 Asia/Kolkata] PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'AND sub_group_unique_id =  "682c6690d521e25066" AND product_name = "s32" AND ...' at line 1 in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/product_creation/crud.php(132): db->select(Array, 'AND sub_group_u...')
+#2 {main}
+[21-May-2025 12:35:49 Asia/Kolkata] PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'AND sub_group_unique_id =  "682c66b742aad34939" AND product_name = "34" AND i...' at line 1 in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/product_creation/crud.php(132): db->select(Array, 'AND sub_group_u...')
+#2 {main}
+[21-May-2025 12:40:19 Asia/Kolkata] PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'AND sub_group_unique_id =  "682c66b742aad34939" AND product_name = "34" AND i...' at line 1 in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/product_creation/crud.php(132): db->select(Array, 'AND sub_group_u...')
+#2 {main}
+[21-May-2025 16:32:39 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'unit_unique_id' in 'SELECT' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/product_creation/crud.php(567): db->select(Array, Array, '', '0', '', 'SQL_CALC_FOUND_...')
+#2 {main}
+[21-May-2025 16:33:02 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'unit_unique_id' in 'SELECT' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/product_creation/crud.php(567): db->select(Array, Array, '', '0', '', 'SQL_CALC_FOUND_...')
+#2 {main}
+[21-May-2025 16:42:01 Asia/Kolkata] PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE  is_delete = '0' AND unique_id = '6826dd627e4b447342'' at line 1 in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/product_creation/crud.php(372): db->select(Array, ' is_delete = '0...')
+#2 {main}
+[21-May-2025 18:10:36 Asia/Kolkata] PDOException: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'description' cannot be null in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:579
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(579): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/product_creation/crud.php(169): db->insert('product_master', Array)
+#2 {main}
+[21-May-2025 23:26:09 Asia/Kolkata] PDOException: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'description' cannot be null in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:579
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(579): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/product_creation/crud.php(169): db->insert('product_master', Array)
+#2 {main}
+[22-May-2025 09:17:08 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'is_actice' in 'INSERT INTO' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:579
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(579): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/product_creation/crud.php(502): db->insert('product_sublist', Array)
+#2 {main}
+[22-May-2025 09:17:18 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'is_actice' in 'INSERT INTO' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:579
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(579): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/product_creation/crud.php(502): db->insert('product_sublist', Array)
+#2 {main}
+[22-May-2025 09:17:49 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'is_actice' in 'INSERT INTO' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:579
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(579): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/product_creation/crud.php(502): db->insert('product_sublist', Array)
+#2 {main}
+[22-May-2025 09:18:17 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'is_actice' in 'INSERT INTO' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:579
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(579): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/product_creation/crud.php(502): db->insert('product_sublist', Array)
+#2 {main}
+[22-May-2025 09:18:40 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'is_actice' in 'INSERT INTO' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:579
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(579): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/product_creation/crud.php(502): db->insert('product_sublist', Array)
+#2 {main}
+[22-May-2025 09:22:38 Asia/Kolkata] PDOException: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'description' cannot be null in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:579
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(579): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/product_creation/crud.php(169): db->insert('product_master', Array)
+#2 {main}
+[22-May-2025 09:22:41 Asia/Kolkata] PDOException: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'description' cannot be null in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:579
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(579): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/product_creation/crud.php(169): db->insert('product_master', Array)
+#2 {main}
+[22-May-2025 09:33:47 Asia/Kolkata] PDOException: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'description' cannot be null in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:579
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(579): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/product_creation/crud.php(169): db->insert('product_master', Array)
+#2 {main}
+[22-May-2025 09:34:01 Asia/Kolkata] PDOException: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'description' cannot be null in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:579
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(579): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/product_creation/crud.php(169): db->insert('product_master', Array)
+#2 {main}
+[22-May-2025 09:37:58 Asia/Kolkata] PDOException: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'description' cannot be null in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:579
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(579): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/product_creation/crud.php(169): db->insert('product_master', Array)
+#2 {main}
+[22-May-2025 09:46:19 Asia/Kolkata] PDOException: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'description' cannot be null in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:579
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(579): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/product_creation/crud.php(169): db->insert('product_master', Array)
+#2 {main}
+[22-May-2025 09:46:32 Asia/Kolkata] PDOException: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'description' cannot be null in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:579
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(579): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/product_creation/crud.php(169): db->insert('product_master', Array)
+#2 {main}
+[22-May-2025 09:50:34 Asia/Kolkata] PDOException: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'description' cannot be null in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:579
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(579): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/product_creation/crud.php(169): db->insert('product_master', Array)
+#2 {main}
+[22-May-2025 09:50:42 Asia/Kolkata] PDOException: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'description' cannot be null in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:579
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(579): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/product_creation/crud.php(169): db->insert('product_master', Array)
+#2 {main}
+[22-May-2025 09:56:03 Asia/Kolkata] PDOException: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'description' cannot be null in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:579
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(579): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/product_creation/crud.php(169): db->insert('product_master', Array)
+#2 {main}
+[22-May-2025 09:56:56 Asia/Kolkata] PDOException: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'description' cannot be null in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:579
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(579): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/product_creation/crud.php(169): db->insert('product_master', Array)
+#2 {main}
+[22-May-2025 09:56:59 Asia/Kolkata] PDOException: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'description' cannot be null in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:579
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(579): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/product_creation/crud.php(169): db->insert('product_master', Array)
+#2 {main}
+[22-May-2025 09:59:38 Asia/Kolkata] PDOException: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'description' cannot be null in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:579
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(579): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/product_creation/crud.php(169): db->insert('product_master', Array)
+#2 {main}
+[22-May-2025 09:59:51 Asia/Kolkata] PDOException: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'description' cannot be null in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:579
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(579): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/product_creation/crud.php(169): db->insert('product_master', Array)
+#2 {main}
+[22-May-2025 09:59:56 Asia/Kolkata] PDOException: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'description' cannot be null in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:579
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(579): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/product_creation/crud.php(169): db->insert('product_master', Array)
+#2 {main}
+[22-May-2025 09:59:56 Asia/Kolkata] PDOException: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'description' cannot be null in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:579
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(579): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/product_creation/crud.php(169): db->insert('product_master', Array)
+#2 {main}
+[22-May-2025 09:59:57 Asia/Kolkata] PDOException: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'description' cannot be null in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:579
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(579): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/product_creation/crud.php(169): db->insert('product_master', Array)
+#2 {main}
+[22-May-2025 09:59:57 Asia/Kolkata] PDOException: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'description' cannot be null in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:579
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(579): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/product_creation/crud.php(169): db->insert('product_master', Array)
+#2 {main}
+[22-May-2025 09:59:57 Asia/Kolkata] PDOException: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'description' cannot be null in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:579
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(579): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/product_creation/crud.php(169): db->insert('product_master', Array)
+#2 {main}
+[22-May-2025 09:59:58 Asia/Kolkata] PDOException: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'description' cannot be null in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:579
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(579): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/product_creation/crud.php(169): db->insert('product_master', Array)
+#2 {main}
+[22-May-2025 10:00:11 Asia/Kolkata] PDOException: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'description' cannot be null in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:579
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(579): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/product_creation/crud.php(169): db->insert('product_master', Array)
+#2 {main}
+[22-May-2025 10:00:17 Asia/Kolkata] PDOException: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'description' cannot be null in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:579
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(579): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/product_creation/crud.php(169): db->insert('product_master', Array)
+#2 {main}
+[22-May-2025 10:01:28 Asia/Kolkata] PDOException: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'description' cannot be null in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:579
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(579): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/product_creation/crud.php(169): db->insert('product_master', Array)
+#2 {main}
+[22-May-2025 10:14:51 Asia/Kolkata] PDOException: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'description' cannot be null in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:579
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(579): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/product_creation/crud.php(169): db->insert('product_master', Array)
+#2 {main}
+[22-May-2025 13:24:26 Asia/Kolkata] PDOException: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'is_active' cannot be null in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:579
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(579): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/purchase_requisition/crud.php(169): db->insert('product_master', Array)
+#2 {main}
+[22-May-2025 15:12:34 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'acc_year' in 'INSERT INTO' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:579
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(579): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/purchase_requisition/crud.php(755): db->insert('purchase_requis...', Array)
+#2 {main}
+[22-May-2025 22:30:17 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'created' in 'INSERT INTO' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:579
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(579): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/purchase_requisition_test/crud.php(87): db->insert('purchase_requis...', Array)
+#2 {main}
+[22-May-2025 23:52:01 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'updated' in 'SET' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:817
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(817): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/purchase_requisition_test/crud.php(82): db->update('purchase_requis...', Array, Array)
+#2 {main}
+[22-May-2025 23:52:21 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'updated' in 'SET' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:817
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(817): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/purchase_requisition_test/crud.php(82): db->update('purchase_requis...', Array, Array)
+#2 {main}
+[23-May-2025 12:45:58 Asia/Kolkata] PDOException: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'sess_branch_id' cannot be null in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:579
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(579): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/purchase_requisition_test/crud.php(233): db->insert('purchase_requis...', Array)
+#2 {main}
+[23-May-2025 12:46:19 Asia/Kolkata] PDOException: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'sess_branch_id' cannot be null in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:579
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(579): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/purchase_requisition_test/crud.php(233): db->insert('purchase_requis...', Array)
+#2 {main}
+[23-May-2025 12:46:29 Asia/Kolkata] PDOException: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'sess_branch_id' cannot be null in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:579
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(579): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/purchase_requisition_test/crud.php(233): db->insert('purchase_requis...', Array)
+#2 {main}
+[23-May-2025 12:46:39 Asia/Kolkata] PDOException: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'sess_branch_id' cannot be null in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:579
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(579): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/purchase_requisition_test/crud.php(233): db->insert('purchase_requis...', Array)
+#2 {main}
+[23-May-2025 12:49:24 Asia/Kolkata] PDOException: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'sess_branch_id' cannot be null in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:579
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(579): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/purchase_requisition_test/crud.php(233): db->insert('purchase_requis...', Array)
+#2 {main}
+[23-May-2025 12:50:54 Asia/Kolkata] PDOException: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'sess_branch_id' cannot be null in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:579
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(579): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/purchase_requisition_test/crud.php(210): db->insert('purchase_requis...', Array)
+#2 {main}
+[23-May-2025 12:52:30 Asia/Kolkata] PDOException: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'sess_branch_id' cannot be null in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:579
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(579): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/purchase_requisition_test/crud.php(232): db->insert('purchase_requis...', Array)
+#2 {main}
+[23-May-2025 12:53:09 Asia/Kolkata] PDOException: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'sess_branch_id' cannot be null in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:579
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(579): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/purchase_requisition_test/crud.php(210): db->insert('purchase_requis...', Array)
+#2 {main}
+[26-May-2025 14:56:27 Asia/Kolkata] PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'SET is_delete='1' WHERE unique_id=''' at line 1 in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:817
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(817): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/purchase_requisition_test/crud.php(433): db->update(NULL, Array, Array)
+#2 {main}
+[26-May-2025 14:56:36 Asia/Kolkata] PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'SET is_delete='1' WHERE unique_id='682ef955df18d82524'' at line 1 in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:817
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(817): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/purchase_requisition_test/crud.php(433): db->update(NULL, Array, Array)
+#2 {main}
+[26-May-2025 14:56:41 Asia/Kolkata] PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'SET is_delete='1' WHERE unique_id='682ef955df18d82524'' at line 1 in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:817
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(817): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/purchase_requisition_test/crud.php(433): db->update(NULL, Array, Array)
+#2 {main}
+[27-May-2025 15:26:37 Asia/Kolkata] PDOException: SQLSTATE[23000]: Integrity constraint violation: 1052 Column 'is_delete' in WHERE is ambiguous in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/purchase_order_test/crud.php(296): db->select(Array, 'sub.main_unique...')
+#2 {main}
+[27-May-2025 15:27:02 Asia/Kolkata] PDOException: SQLSTATE[23000]: Integrity constraint violation: 1052 Column 'is_delete' in WHERE is ambiguous in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/purchase_order_test/crud.php(296): db->select(Array, 'sub.main_unique...')
+#2 {main}
+[27-May-2025 15:27:53 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'mai.is_delete' in 'WHERE' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/purchase_order_test/crud.php(296): db->select(Array, 'sub.main_unique...')
+#2 {main}
+[27-May-2025 15:28:08 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'is_active' in 'WHERE' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/purchase_order_test/crud.php(296): db->select(Array, 'sub.main_unique...')
+#2 {main}
+[28-May-2025 00:16:07 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'pr_number' in 'SELECT' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/purchase_order_test/crud.php(239): db->select(Array, ' is_delete = '0...', '10', '0', '', 'SQL_CALC_FOUND_...')
+#2 {main}
+[28-May-2025 00:22:17 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'pr_number' in 'SELECT' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/purchase_order_test/crud.php(253): db->select(Array, ' is_delete = '0...', '10', '0', '', 'SQL_CALC_FOUND_...')
+#2 {main}
+[28-May-2025 00:25:42 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'pr_number' in 'SELECT' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/purchase_order_test/crud.php(254): db->select(Array, ' is_delete = '0...', '10', '0', '', 'SQL_CALC_FOUND_...')
+#2 {main}
+[28-May-2025 00:26:07 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'company_id' in 'INSERT INTO' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:579
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(579): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/purchase_order_test/crud.php(88): db->insert('purchase_order', Array)
+#2 {main}
+[28-May-2025 00:27:27 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'pr_number' in 'SELECT' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/purchase_order_test/crud.php(254): db->select(Array, ' is_delete = '0...', '10', '0', '', 'SQL_CALC_FOUND_...')
+#2 {main}
+[28-May-2025 00:28:32 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'pr_number' in 'SELECT' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/purchase_order_test/crud.php(254): db->select(Array, ' is_delete = '0...', '10', '0', '', 'SQL_CALC_FOUND_...')
+#2 {main}
+[28-May-2025 00:30:23 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'pr_number' in 'SELECT' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/purchase_order_test/crud.php(255): db->select(Array, ' is_delete = '0...', '10', '0', '', 'SQL_CALC_FOUND_...')
+#2 {main}
+[28-May-2025 02:14:30 Asia/Kolkata] PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'AND company_id = '6826e9361ac2847410'  LIMIT 10' at line 1 in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/purchase_order_test/crud.php(215): db->select(Array, ' AND company_id...', '10', '0', '', 'SQL_CALC_FOUND_...')
+#2 {main}
+[28-May-2025 02:14:43 Asia/Kolkata] PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'AND company_id = '6826e9361ac2847410' AND project_id = '68273028a799458946'  ...' at line 1 in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/purchase_order_test/crud.php(215): db->select(Array, ' AND company_id...', '10', '0', '', 'SQL_CALC_FOUND_...')
+#2 {main}
+[29-May-2025 14:39:31 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'pr_sublist_unique_id' in 'INSERT INTO' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:579
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(579): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/purchase_order_test/crud.php(343): db->insert('purchase_order_...', Array)
+#2 {main}
+[25-Jul-2025 09:19:01 UTC] PHP Parse error:  syntax error, unexpected 'else' (T_ELSE), expecting end of file in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/purchase_order_approval_test/crud.php on line 411
+[08-Aug-2025 12:47:55 Asia/Kolkata] PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ' (SELECT @a:=0) AS a WHERE po_unique_id = '68494d436cc6f75725' AND is_active ...' at line 1 in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/purchase_order_approval_test/crud.php(466): db->select(Array, Array, '', '0', '', 'SQL_CALC_FOUND_...')
+#2 {main}
+[28-Aug-2025 12:30:05 UTC] PHP Parse error:  syntax error, unexpected 'else' (T_ELSE), expecting end of file in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/purchase_order_approval_test/crud.php on line 638
+[28-Aug-2025 12:32:42 UTC] PHP Parse error:  syntax error, unexpected 'else' (T_ELSE), expecting end of file in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/purchase_order_approval_test/crud.php on line 637
+[28-Aug-2025 12:32:45 UTC] PHP Parse error:  syntax error, unexpected 'else' (T_ELSE), expecting end of file in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/purchase_order_approval_test/crud.php on line 637
+[28-Aug-2025 12:32:55 UTC] PHP Parse error:  syntax error, unexpected 'else' (T_ELSE), expecting end of file in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/purchase_order_approval_test/crud.php on line 637

@@ -1,0 +1,215 @@
+[15-May-2025 11:00:35 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'company_branch_type' in 'SELECT' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/company_and_branch_creation/crud.php(223): db->select(Array, ' is_delete = '0...', '10', '0', '', 'SQL_CALC_FOUND_...')
+#2 {main}
+[15-May-2025 11:12:34 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'company_branch_type' in 'SELECT' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/company_creation/crud.php(223): db->select(Array, ' is_delete = '0...', '10', '0', '', 'SQL_CALC_FOUND_...')
+#2 {main}
+[15-May-2025 11:34:09 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'contact_person' in 'INSERT INTO' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:579
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(579): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/company_creation/crud.php(132): db->insert('company_creatio...', Array)
+#2 {main}
+[15-May-2025 11:35:45 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'contact_person' in 'INSERT INTO' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:579
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(579): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/company_creation/crud.php(132): db->insert('company_creatio...', Array)
+#2 {main}
+[15-May-2025 11:37:14 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'contact_person' in 'INSERT INTO' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:579
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(579): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/company_creation/crud.php(132): db->insert('company_creatio...', Array)
+#2 {main}
+[15-May-2025 11:40:28 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'contact_person' in 'INSERT INTO' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:579
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(579): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/company_creation/crud.php(132): db->insert('company_creatio...', Array)
+#2 {main}
+[15-May-2025 11:43:43 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'company_branch_type' in 'SELECT' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/company_creation/crud.php(224): db->select(Array, ' is_delete = '0...', '10', '0', '', 'SQL_CALC_FOUND_...')
+#2 {main}
+[15-May-2025 11:43:46 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'company_branch_type' in 'SELECT' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/company_creation/crud.php(224): db->select(Array, ' is_delete = '0...', '10', '0', '', 'SQL_CALC_FOUND_...')
+#2 {main}
+[15-May-2025 11:43:58 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'contact_person' in 'INSERT INTO' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:579
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(579): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/company_creation/crud.php(132): db->insert('company_creatio...', Array)
+#2 {main}
+[15-May-2025 11:48:22 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'company_branch_type' in 'SELECT' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/company_creation/crud.php(224): db->select(Array, ' is_delete = '0...', '10', '0', '', 'SQL_CALC_FOUND_...')
+#2 {main}
+[15-May-2025 11:50:29 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'company_branch_type' in 'SELECT' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/company_creation/crud.php(224): db->select(Array, ' is_delete = '0...', '10', '0', '', 'SQL_CALC_FOUND_...')
+#2 {main}
+[15-May-2025 11:52:10 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'company_branch_type' in 'SELECT' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/company_creation/crud.php(224): db->select(Array, ' is_delete = '0...', '10', '0', '', 'SQL_CALC_FOUND_...')
+#2 {main}
+[15-May-2025 11:53:54 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'company_branch_type' in 'SELECT' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/company_creation/crud.php(224): db->select(Array, ' is_delete = '0...', '10', '0', '', 'SQL_CALC_FOUND_...')
+#2 {main}
+[15-May-2025 11:57:14 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'company_branch_type' in 'SELECT' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/company_creation/crud.php(224): db->select(Array, ' is_delete = '0...', '10', '0', '', 'SQL_CALC_FOUND_...')
+#2 {main}
+[15-May-2025 12:01:56 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'company_branch_type' in 'SELECT' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/company_creation/crud.php(224): db->select(Array, ' is_delete = '0...', '10', '0', '', 'SQL_CALC_FOUND_...')
+#2 {main}
+[15-May-2025 12:05:39 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'company_branch_type' in 'SELECT' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/company_creation/crud.php(224): db->select(Array, ' is_delete = '0...', '10', '0', '', 'SQL_CALC_FOUND_...')
+#2 {main}
+[15-May-2025 12:08:22 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'company_branch_type' in 'SELECT' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/company_creation/crud.php(224): db->select(Array, ' is_delete = '0...', '10', '0', '', 'SQL_CALC_FOUND_...')
+#2 {main}
+[15-May-2025 16:00:40 Asia/Kolkata] PDOException: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'company_code' cannot be null in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:579
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(579): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/company_creation/crud.php(226): db->insert('company_creatio...', Array)
+#2 {main}
+[16-May-2025 13:28:43 Asia/Kolkata] PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'company_name LIKE '%z%'  OR company_code LIKE '%z%'  OR state LIKE '%z%'  OR ...' at line 1 in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/company_creation/crud.php(309): db->select(Array, ' is_delete = '0...', '10', '0', '', 'SQL_CALC_FOUND_...')
+#2 {main}
+[16-May-2025 13:29:19 Asia/Kolkata] PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'company_name LIKE '%z%'  OR company_code LIKE '%z%'  OR state LIKE '%z%'  OR ...' at line 1 in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/company_creation/crud.php(309): db->select(Array, ' is_delete = '0...', '10', '0', '', 'SQL_CALC_FOUND_...')
+#2 {main}
+[16-May-2025 15:55:28 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_beta.project_creation' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/project_creation/crud.php(303): db->select(Array, ' is_delete = '0...', '10', '0', '', 'SQL_CALC_FOUND_...')
+#2 {main}
+[17-May-2025 11:40:40 Asia/Kolkata] PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'LIMIT 10' at line 1 in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/project_creation/crud.php(280): db->select(Array, ' is_delete = '0...', '10', '0', '', 'SQL_CALC_FOUND_...')
+#2 {main}
+[17-May-2025 11:40:42 Asia/Kolkata] PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'LIMIT 10' at line 1 in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/project_creation/crud.php(280): db->select(Array, ' is_delete = '0...', '10', '0', '', 'SQL_CALC_FOUND_...')
+#2 {main}
+[21-May-2025 12:37:45 Asia/Kolkata] Received company_id: 66cea80139d7410966
+[21-May-2025 12:37:53 Asia/Kolkata] Received company_id: 681b2af1b69db76868
+[21-May-2025 13:03:22 Asia/Kolkata] Received company_id: 681b2af1b69db76868
+[21-May-2025 13:04:08 Asia/Kolkata] Received company_id: 682c083cb844b80481
+[21-May-2025 23:13:22 Asia/Kolkata] PDOException: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'client_name' cannot be null in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:579
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(579): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/project_creation/crud.php(189): db->insert('project_creatio...', Array)
+#2 {main}
+[06-Sep-2025 11:56:48 Asia/Kolkata] PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '(grn_unique_id, type, file_attach, unique_id, acc_year, session_id, sess_user...' at line 1 in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:579
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(579): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/project_creation/crud.php(347): db->insert(NULL, Array)
+#2 {main}
+[06-Sep-2025 12:23:45 Asia/Kolkata] PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '(project_unique_id, type, file_attach, unique_id, acc_year, session_id, sess_...' at line 1 in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:579
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(579): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/project_creation/crud.php(347): db->insert(NULL, Array)
+#2 {main}
+[06-Sep-2025 12:24:11 Asia/Kolkata] PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '(project_unique_id, type, file_attach, unique_id, acc_year, session_id, sess_...' at line 1 in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:579
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(579): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/project_creation/crud.php(347): db->insert(NULL, Array)
+#2 {main}
+[24-Sep-2025 18:27:29 Asia/Kolkata] PDOException: SQLSTATE[42000]: Syntax error or access violation: 1327 Undeclared variable: Array in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/project_creation/crud.php(275): db->select('project_creatio...', Array, Array)
+#2 {main}
+[24-Sep-2025 18:28:08 Asia/Kolkata] PDOException: SQLSTATE[42000]: Syntax error or access violation: 1327 Undeclared variable: Array in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/project_creation/crud.php(275): db->select('project_creatio...', Array, Array)
+#2 {main}
+[24-Sep-2025 18:28:50 Asia/Kolkata] PDOException: SQLSTATE[42000]: Syntax error or access violation: 1327 Undeclared variable: Array in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/project_creation/crud.php(275): db->select('project_creatio...', Array, Array)
+#2 {main}
+[24-Sep-2025 18:31:58 Asia/Kolkata] PDOException: SQLSTATE[42000]: Syntax error or access violation: 1327 Undeclared variable: Array in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/project_creation/crud.php(275): db->select('project_creatio...', Array, Array)
+#2 {main}
+[24-Sep-2025 18:32:59 Asia/Kolkata] PDOException: SQLSTATE[42000]: Syntax error or access violation: 1327 Undeclared variable: Array in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/project_creation/crud.php(275): db->select('project_creatio...', Array, Array)
+#2 {main}
+[24-Sep-2025 18:34:26 Asia/Kolkata] PDOException: SQLSTATE[42000]: Syntax error or access violation: 1327 Undeclared variable: Array in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/project_creation/crud.php(275): db->select('project_creatio...', Array, Array)
+#2 {main}
+[24-Sep-2025 18:48:37 Asia/Kolkata] PDOException: SQLSTATE[42000]: Syntax error or access violation: 1327 Undeclared variable: Array in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/project_creation/crud.php(300): db->select('project_creatio...', Array, Array)
+#2 {main}
+[24-Sep-2025 18:50:09 Asia/Kolkata] PDOException: SQLSTATE[42000]: Syntax error or access violation: 1327 Undeclared variable: Array in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/project_creation/crud.php(300): db->select('project_creatio...', Array, Array)
+#2 {main}
+[24-Sep-2025 18:51:23 Asia/Kolkata] PDOException: SQLSTATE[42000]: Syntax error or access violation: 1327 Undeclared variable: Array in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/project_creation/crud.php(300): db->select('project_creatio...', Array, Array)
+#2 {main}
+[25-Sep-2025 09:36:24 Asia/Kolkata] 1
+[25-Sep-2025 09:36:24 Asia/Kolkata] PDOException: SQLSTATE[42000]: Syntax error or access violation: 1327 Undeclared variable: Array in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/project_creation/crud.php(301): db->select('project_creatio...', Array, Array)
+#2 {main}
+[25-Sep-2025 09:46:50 Asia/Kolkata] PDOException: SQLSTATE[42000]: Syntax error or access violation: 1327 Undeclared variable: Array in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/project_creation/crud.php(272): db->select('project_uploads', Array, Array)
+#2 {main}
+[25-Sep-2025 09:49:22 Asia/Kolkata] PDOException: SQLSTATE[42000]: Syntax error or access violation: 1327 Undeclared variable: Array in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/project_creation/crud.php(272): db->select('project_creatio...', Array, Array)
+#2 {main}
+[25-Sep-2025 09:49:22 Asia/Kolkata] PDOException: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'project_unique_id' cannot be null in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:579
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(579): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/project_creation/crud.php(400): db->insert('project_uploads', Array)
+#2 {main}
+[25-Sep-2025 09:50:35 Asia/Kolkata] PDOException: SQLSTATE[42000]: Syntax error or access violation: 1327 Undeclared variable: Array in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/project_creation/crud.php(272): db->select('project_creatio...', Array, Array)
+#2 {main}
+[25-Sep-2025 09:54:17 Asia/Kolkata] PDOException: SQLSTATE[42000]: Syntax error or access violation: 1327 Undeclared variable: Array in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/project_creation/crud.php(272): db->select('project_creatio...', Array, Array)
+#2 {main}

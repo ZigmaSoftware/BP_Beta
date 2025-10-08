@@ -1,0 +1,422 @@
+[16-Jul-2025 23:24:12 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'subtask' in 'SELECT' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/crud.php(404): db->select(Array, Array)
+#2 {main}
+[16-Jul-2025 23:24:18 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'subtask' in 'SELECT' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/crud.php(404): db->select(Array, Array)
+#2 {main}
+[16-Jul-2025 23:24:35 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'subtask' in 'SELECT' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/crud.php(404): db->select(Array, Array)
+#2 {main}
+[16-Jul-2025 23:25:47 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'subtask' in 'INSERT INTO' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:579
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(579): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/crud.php(363): db->insert('sales_order_sub...', Array)
+#2 {main}
+[18-Jul-2025 16:43:30 Asia/Kolkata] PDOException: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'acc_year' cannot be null in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:579
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(579): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/crud.php(107): db->insert('sales_order', Array)
+#2 {main}
+[18-Jul-2025 16:43:35 Asia/Kolkata] PDOException: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'acc_year' cannot be null in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:579
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(579): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/crud.php(107): db->insert('sales_order', Array)
+#2 {main}
+[18-Jul-2025 16:43:37 Asia/Kolkata] PDOException: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'acc_year' cannot be null in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:579
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(579): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/crud.php(107): db->insert('sales_order', Array)
+#2 {main}
+[18-Jul-2025 16:43:48 Asia/Kolkata] PDOException: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'acc_year' cannot be null in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:579
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(579): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/crud.php(107): db->insert('sales_order', Array)
+#2 {main}
+[18-Jul-2025 16:43:48 Asia/Kolkata] PDOException: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'acc_year' cannot be null in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:579
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(579): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/crud.php(107): db->insert('sales_order', Array)
+#2 {main}
+[18-Jul-2025 16:43:48 Asia/Kolkata] PDOException: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'acc_year' cannot be null in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:579
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(579): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/crud.php(107): db->insert('sales_order', Array)
+#2 {main}
+[18-Jul-2025 16:43:48 Asia/Kolkata] PDOException: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'acc_year' cannot be null in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:579
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(579): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/crud.php(107): db->insert('sales_order', Array)
+#2 {main}
+[18-Jul-2025 16:43:49 Asia/Kolkata] PDOException: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'acc_year' cannot be null in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:579
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(579): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/crud.php(107): db->insert('sales_order', Array)
+#2 {main}
+[18-Jul-2025 16:43:49 Asia/Kolkata] PDOException: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'acc_year' cannot be null in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:579
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(579): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/crud.php(107): db->insert('sales_order', Array)
+#2 {main}
+[18-Aug-2025 18:18:50 Asia/Kolkata] PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE unique_id = '688c6c58ae67b25814'' at line 1 in /home/ie9owkuzkgd4/public_html/blue_planet_dev/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_dev/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_dev/folders/sales_order_approval/crud.php(1071): db->select(Array, Array)
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_dev/folders/sales_order_approval/crud.php(504): fetch_approval('688c6c58ae67b25...')
+#3 {main}
+[18-Aug-2025 18:18:50 Asia/Kolkata] PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE unique_id = '689061433f8ce31893'' at line 1 in /home/ie9owkuzkgd4/public_html/blue_planet_dev/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_dev/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_dev/folders/sales_order_approval/crud.php(1071): db->select(Array, Array)
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_dev/folders/sales_order_approval/crud.php(504): fetch_approval('689061433f8ce31...')
+#3 {main}
+[18-Aug-2025 18:18:50 Asia/Kolkata] PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE unique_id = '689daeb28b38620499'' at line 1 in /home/ie9owkuzkgd4/public_html/blue_planet_dev/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_dev/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_dev/folders/sales_order_approval/crud.php(1071): db->select(Array, Array)
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_dev/folders/sales_order_approval/crud.php(504): fetch_approval('689daeb28b38620...')
+#3 {main}
+[18-Aug-2025 18:18:50 Asia/Kolkata] PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE unique_id = '68a012158768d59740'' at line 1 in /home/ie9owkuzkgd4/public_html/blue_planet_dev/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_dev/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_dev/folders/sales_order_approval/crud.php(1071): db->select(Array, Array)
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_dev/folders/sales_order_approval/crud.php(504): fetch_approval('68a012158768d59...')
+#3 {main}
+[18-Aug-2025 18:18:52 Asia/Kolkata] PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE unique_id = '688c6c58ae67b25814'' at line 1 in /home/ie9owkuzkgd4/public_html/blue_planet_dev/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_dev/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_dev/folders/sales_order_approval/crud.php(1071): db->select(Array, Array)
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_dev/folders/sales_order_approval/crud.php(504): fetch_approval('688c6c58ae67b25...')
+#3 {main}
+[18-Aug-2025 18:18:52 Asia/Kolkata] PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE unique_id = '689061433f8ce31893'' at line 1 in /home/ie9owkuzkgd4/public_html/blue_planet_dev/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_dev/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_dev/folders/sales_order_approval/crud.php(1071): db->select(Array, Array)
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_dev/folders/sales_order_approval/crud.php(504): fetch_approval('689061433f8ce31...')
+#3 {main}
+[18-Aug-2025 18:18:52 Asia/Kolkata] PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE unique_id = '689daeb28b38620499'' at line 1 in /home/ie9owkuzkgd4/public_html/blue_planet_dev/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_dev/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_dev/folders/sales_order_approval/crud.php(1071): db->select(Array, Array)
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_dev/folders/sales_order_approval/crud.php(504): fetch_approval('689daeb28b38620...')
+#3 {main}
+[18-Aug-2025 18:18:52 Asia/Kolkata] PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE unique_id = '68a012158768d59740'' at line 1 in /home/ie9owkuzkgd4/public_html/blue_planet_dev/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_dev/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_dev/folders/sales_order_approval/crud.php(1071): db->select(Array, Array)
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_dev/folders/sales_order_approval/crud.php(504): fetch_approval('68a012158768d59...')
+#3 {main}
+[18-Aug-2025 18:18:53 Asia/Kolkata] PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE unique_id = '688c6c58ae67b25814'' at line 1 in /home/ie9owkuzkgd4/public_html/blue_planet_dev/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_dev/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_dev/folders/sales_order_approval/crud.php(1071): db->select(Array, Array)
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_dev/folders/sales_order_approval/crud.php(504): fetch_approval('688c6c58ae67b25...')
+#3 {main}
+[18-Aug-2025 18:18:53 Asia/Kolkata] PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE unique_id = '689061433f8ce31893'' at line 1 in /home/ie9owkuzkgd4/public_html/blue_planet_dev/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_dev/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_dev/folders/sales_order_approval/crud.php(1071): db->select(Array, Array)
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_dev/folders/sales_order_approval/crud.php(504): fetch_approval('689061433f8ce31...')
+#3 {main}
+[18-Aug-2025 18:18:53 Asia/Kolkata] PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE unique_id = '689daeb28b38620499'' at line 1 in /home/ie9owkuzkgd4/public_html/blue_planet_dev/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_dev/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_dev/folders/sales_order_approval/crud.php(1071): db->select(Array, Array)
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_dev/folders/sales_order_approval/crud.php(504): fetch_approval('689daeb28b38620...')
+#3 {main}
+[18-Aug-2025 18:18:53 Asia/Kolkata] PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE unique_id = '68a012158768d59740'' at line 1 in /home/ie9owkuzkgd4/public_html/blue_planet_dev/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_dev/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_dev/folders/sales_order_approval/crud.php(1071): db->select(Array, Array)
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_dev/folders/sales_order_approval/crud.php(504): fetch_approval('68a012158768d59...')
+#3 {main}
+[18-Aug-2025 18:18:55 Asia/Kolkata] PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE unique_id = '688c6c58ae67b25814'' at line 1 in /home/ie9owkuzkgd4/public_html/blue_planet_dev/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_dev/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_dev/folders/sales_order_approval/crud.php(1071): db->select(Array, Array)
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_dev/folders/sales_order_approval/crud.php(504): fetch_approval('688c6c58ae67b25...')
+#3 {main}
+[18-Aug-2025 18:18:56 Asia/Kolkata] PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE unique_id = '689061433f8ce31893'' at line 1 in /home/ie9owkuzkgd4/public_html/blue_planet_dev/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_dev/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_dev/folders/sales_order_approval/crud.php(1071): db->select(Array, Array)
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_dev/folders/sales_order_approval/crud.php(504): fetch_approval('689061433f8ce31...')
+#3 {main}
+[18-Aug-2025 18:18:56 Asia/Kolkata] PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE unique_id = '689daeb28b38620499'' at line 1 in /home/ie9owkuzkgd4/public_html/blue_planet_dev/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_dev/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_dev/folders/sales_order_approval/crud.php(1071): db->select(Array, Array)
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_dev/folders/sales_order_approval/crud.php(504): fetch_approval('689daeb28b38620...')
+#3 {main}
+[18-Aug-2025 18:18:56 Asia/Kolkata] PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE unique_id = '68a012158768d59740'' at line 1 in /home/ie9owkuzkgd4/public_html/blue_planet_dev/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_dev/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_dev/folders/sales_order_approval/crud.php(1071): db->select(Array, Array)
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_dev/folders/sales_order_approval/crud.php(504): fetch_approval('68a012158768d59...')
+#3 {main}
+[18-Aug-2025 18:20:06 Asia/Kolkata] PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE unique_id = '688c6c58ae67b25814'' at line 1 in /home/ie9owkuzkgd4/public_html/blue_planet_dev/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_dev/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_dev/folders/sales_order_approval/crud.php(1072): db->select(Array, Array)
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_dev/folders/sales_order_approval/crud.php(504): fetch_approval('688c6c58ae67b25...')
+#3 {main}
+[18-Aug-2025 18:20:06 Asia/Kolkata] PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE unique_id = '689061433f8ce31893'' at line 1 in /home/ie9owkuzkgd4/public_html/blue_planet_dev/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_dev/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_dev/folders/sales_order_approval/crud.php(1072): db->select(Array, Array)
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_dev/folders/sales_order_approval/crud.php(504): fetch_approval('689061433f8ce31...')
+#3 {main}
+[18-Aug-2025 18:20:06 Asia/Kolkata] PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE unique_id = '689daeb28b38620499'' at line 1 in /home/ie9owkuzkgd4/public_html/blue_planet_dev/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_dev/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_dev/folders/sales_order_approval/crud.php(1072): db->select(Array, Array)
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_dev/folders/sales_order_approval/crud.php(504): fetch_approval('689daeb28b38620...')
+#3 {main}
+[18-Aug-2025 18:20:06 Asia/Kolkata] PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE unique_id = '68a012158768d59740'' at line 1 in /home/ie9owkuzkgd4/public_html/blue_planet_dev/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_dev/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_dev/folders/sales_order_approval/crud.php(1072): db->select(Array, Array)
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_dev/folders/sales_order_approval/crud.php(504): fetch_approval('68a012158768d59...')
+#3 {main}
+[18-Aug-2025 18:20:24 Asia/Kolkata] PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE unique_id = '688c6c58ae67b25814'' at line 1 in /home/ie9owkuzkgd4/public_html/blue_planet_dev/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_dev/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_dev/folders/sales_order_approval/crud.php(1072): db->select(Array, Array)
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_dev/folders/sales_order_approval/crud.php(504): fetch_approval('688c6c58ae67b25...')
+#3 {main}
+[18-Aug-2025 18:20:24 Asia/Kolkata] PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE unique_id = '689061433f8ce31893'' at line 1 in /home/ie9owkuzkgd4/public_html/blue_planet_dev/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_dev/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_dev/folders/sales_order_approval/crud.php(1072): db->select(Array, Array)
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_dev/folders/sales_order_approval/crud.php(504): fetch_approval('689061433f8ce31...')
+#3 {main}
+[18-Aug-2025 18:20:24 Asia/Kolkata] PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE unique_id = '689daeb28b38620499'' at line 1 in /home/ie9owkuzkgd4/public_html/blue_planet_dev/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_dev/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_dev/folders/sales_order_approval/crud.php(1072): db->select(Array, Array)
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_dev/folders/sales_order_approval/crud.php(504): fetch_approval('689daeb28b38620...')
+#3 {main}
+[18-Aug-2025 18:20:24 Asia/Kolkata] PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE unique_id = '68a012158768d59740'' at line 1 in /home/ie9owkuzkgd4/public_html/blue_planet_dev/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_dev/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_dev/folders/sales_order_approval/crud.php(1072): db->select(Array, Array)
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_dev/folders/sales_order_approval/crud.php(504): fetch_approval('68a012158768d59...')
+#3 {main}
+[18-Aug-2025 18:20:27 Asia/Kolkata] PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE unique_id = '688c6c58ae67b25814'' at line 1 in /home/ie9owkuzkgd4/public_html/blue_planet_dev/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_dev/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_dev/folders/sales_order_approval/crud.php(1072): db->select(Array, Array)
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_dev/folders/sales_order_approval/crud.php(504): fetch_approval('688c6c58ae67b25...')
+#3 {main}
+[18-Aug-2025 18:20:27 Asia/Kolkata] PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE unique_id = '689061433f8ce31893'' at line 1 in /home/ie9owkuzkgd4/public_html/blue_planet_dev/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_dev/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_dev/folders/sales_order_approval/crud.php(1072): db->select(Array, Array)
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_dev/folders/sales_order_approval/crud.php(504): fetch_approval('689061433f8ce31...')
+#3 {main}
+[18-Aug-2025 18:20:27 Asia/Kolkata] PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE unique_id = '689daeb28b38620499'' at line 1 in /home/ie9owkuzkgd4/public_html/blue_planet_dev/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_dev/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_dev/folders/sales_order_approval/crud.php(1072): db->select(Array, Array)
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_dev/folders/sales_order_approval/crud.php(504): fetch_approval('689daeb28b38620...')
+#3 {main}
+[18-Aug-2025 18:20:27 Asia/Kolkata] PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE unique_id = '68a012158768d59740'' at line 1 in /home/ie9owkuzkgd4/public_html/blue_planet_dev/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_dev/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_dev/folders/sales_order_approval/crud.php(1072): db->select(Array, Array)
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_dev/folders/sales_order_approval/crud.php(504): fetch_approval('68a012158768d59...')
+#3 {main}
+[18-Aug-2025 18:23:19 Asia/Kolkata] PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE unique_id = '688c6c58ae67b25814'' at line 1 in /home/ie9owkuzkgd4/public_html/blue_planet_dev/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_dev/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_dev/folders/sales_order_approval/crud.php(1072): db->select(Array, Array)
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_dev/folders/sales_order_approval/crud.php(504): fetch_approval('688c6c58ae67b25...')
+#3 {main}
+[18-Aug-2025 18:23:19 Asia/Kolkata] PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE unique_id = '689061433f8ce31893'' at line 1 in /home/ie9owkuzkgd4/public_html/blue_planet_dev/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_dev/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_dev/folders/sales_order_approval/crud.php(1072): db->select(Array, Array)
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_dev/folders/sales_order_approval/crud.php(504): fetch_approval('689061433f8ce31...')
+#3 {main}
+[18-Aug-2025 18:23:19 Asia/Kolkata] PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE unique_id = '689daeb28b38620499'' at line 1 in /home/ie9owkuzkgd4/public_html/blue_planet_dev/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_dev/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_dev/folders/sales_order_approval/crud.php(1072): db->select(Array, Array)
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_dev/folders/sales_order_approval/crud.php(504): fetch_approval('689daeb28b38620...')
+#3 {main}
+[18-Aug-2025 18:23:19 Asia/Kolkata] PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE unique_id = '68a012158768d59740'' at line 1 in /home/ie9owkuzkgd4/public_html/blue_planet_dev/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_dev/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_dev/folders/sales_order_approval/crud.php(1072): db->select(Array, Array)
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_dev/folders/sales_order_approval/crud.php(504): fetch_approval('68a012158768d59...')
+#3 {main}
+[18-Aug-2025 18:23:28 Asia/Kolkata] PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE unique_id = '688c6c58ae67b25814'' at line 1 in /home/ie9owkuzkgd4/public_html/blue_planet_dev/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_dev/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_dev/folders/sales_order_approval/crud.php(1072): db->select(Array, Array)
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_dev/folders/sales_order_approval/crud.php(504): fetch_approval('688c6c58ae67b25...')
+#3 {main}
+[18-Aug-2025 18:23:28 Asia/Kolkata] PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE unique_id = '689061433f8ce31893'' at line 1 in /home/ie9owkuzkgd4/public_html/blue_planet_dev/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_dev/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_dev/folders/sales_order_approval/crud.php(1072): db->select(Array, Array)
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_dev/folders/sales_order_approval/crud.php(504): fetch_approval('689061433f8ce31...')
+#3 {main}
+[18-Aug-2025 18:23:28 Asia/Kolkata] PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE unique_id = '689daeb28b38620499'' at line 1 in /home/ie9owkuzkgd4/public_html/blue_planet_dev/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_dev/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_dev/folders/sales_order_approval/crud.php(1072): db->select(Array, Array)
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_dev/folders/sales_order_approval/crud.php(504): fetch_approval('689daeb28b38620...')
+#3 {main}
+[18-Aug-2025 18:23:28 Asia/Kolkata] PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE unique_id = '68a012158768d59740'' at line 1 in /home/ie9owkuzkgd4/public_html/blue_planet_dev/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_dev/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_dev/folders/sales_order_approval/crud.php(1072): db->select(Array, Array)
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_dev/folders/sales_order_approval/crud.php(504): fetch_approval('68a012158768d59...')
+#3 {main}
+[18-Aug-2025 18:23:30 Asia/Kolkata] PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE unique_id = '688c6c58ae67b25814'' at line 1 in /home/ie9owkuzkgd4/public_html/blue_planet_dev/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_dev/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_dev/folders/sales_order_approval/crud.php(1072): db->select(Array, Array)
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_dev/folders/sales_order_approval/crud.php(504): fetch_approval('688c6c58ae67b25...')
+#3 {main}
+[18-Aug-2025 18:23:30 Asia/Kolkata] PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE unique_id = '689061433f8ce31893'' at line 1 in /home/ie9owkuzkgd4/public_html/blue_planet_dev/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_dev/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_dev/folders/sales_order_approval/crud.php(1072): db->select(Array, Array)
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_dev/folders/sales_order_approval/crud.php(504): fetch_approval('689061433f8ce31...')
+#3 {main}
+[18-Aug-2025 18:23:30 Asia/Kolkata] PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE unique_id = '689daeb28b38620499'' at line 1 in /home/ie9owkuzkgd4/public_html/blue_planet_dev/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_dev/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_dev/folders/sales_order_approval/crud.php(1072): db->select(Array, Array)
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_dev/folders/sales_order_approval/crud.php(504): fetch_approval('689daeb28b38620...')
+#3 {main}
+[18-Aug-2025 18:23:30 Asia/Kolkata] PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE unique_id = '68a012158768d59740'' at line 1 in /home/ie9owkuzkgd4/public_html/blue_planet_dev/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_dev/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_dev/folders/sales_order_approval/crud.php(1072): db->select(Array, Array)
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_dev/folders/sales_order_approval/crud.php(504): fetch_approval('68a012158768d59...')
+#3 {main}
+[18-Aug-2025 18:24:21 Asia/Kolkata] PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE unique_id = '688c6c58ae67b25814'' at line 1 in /home/ie9owkuzkgd4/public_html/blue_planet_dev/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_dev/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_dev/folders/sales_order_approval/crud.php(1073): db->select(Array, Array)
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_dev/folders/sales_order_approval/crud.php(504): fetch_approval('688c6c58ae67b25...')
+#3 {main}
+[18-Aug-2025 18:24:21 Asia/Kolkata] PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE unique_id = '689061433f8ce31893'' at line 1 in /home/ie9owkuzkgd4/public_html/blue_planet_dev/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_dev/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_dev/folders/sales_order_approval/crud.php(1073): db->select(Array, Array)
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_dev/folders/sales_order_approval/crud.php(504): fetch_approval('689061433f8ce31...')
+#3 {main}
+[18-Aug-2025 18:24:21 Asia/Kolkata] PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE unique_id = '689daeb28b38620499'' at line 1 in /home/ie9owkuzkgd4/public_html/blue_planet_dev/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_dev/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_dev/folders/sales_order_approval/crud.php(1073): db->select(Array, Array)
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_dev/folders/sales_order_approval/crud.php(504): fetch_approval('689daeb28b38620...')
+#3 {main}
+[18-Aug-2025 18:24:21 Asia/Kolkata] PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE unique_id = '68a012158768d59740'' at line 1 in /home/ie9owkuzkgd4/public_html/blue_planet_dev/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_dev/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_dev/folders/sales_order_approval/crud.php(1073): db->select(Array, Array)
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_dev/folders/sales_order_approval/crud.php(504): fetch_approval('68a012158768d59...')
+#3 {main}
+[18-Aug-2025 18:26:10 Asia/Kolkata] PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE unique_id = '688c6c58ae67b25814'' at line 1 in /home/ie9owkuzkgd4/public_html/blue_planet_dev/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_dev/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_dev/folders/sales_order_approval/crud.php(1081): db->select(Array, Array)
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_dev/folders/sales_order_approval/crud.php(504): fetch_approval('688c6c58ae67b25...')
+#3 {main}
+[18-Aug-2025 18:26:10 Asia/Kolkata] PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE unique_id = '689061433f8ce31893'' at line 1 in /home/ie9owkuzkgd4/public_html/blue_planet_dev/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_dev/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_dev/folders/sales_order_approval/crud.php(1081): db->select(Array, Array)
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_dev/folders/sales_order_approval/crud.php(504): fetch_approval('689061433f8ce31...')
+#3 {main}
+[18-Aug-2025 18:26:10 Asia/Kolkata] PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE unique_id = '689daeb28b38620499'' at line 1 in /home/ie9owkuzkgd4/public_html/blue_planet_dev/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_dev/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_dev/folders/sales_order_approval/crud.php(1081): db->select(Array, Array)
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_dev/folders/sales_order_approval/crud.php(504): fetch_approval('689daeb28b38620...')
+#3 {main}
+[18-Aug-2025 18:26:10 Asia/Kolkata] PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE unique_id = '68a012158768d59740'' at line 1 in /home/ie9owkuzkgd4/public_html/blue_planet_dev/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_dev/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_dev/folders/sales_order_approval/crud.php(1081): db->select(Array, Array)
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_dev/folders/sales_order_approval/crud.php(504): fetch_approval('68a012158768d59...')
+#3 {main}
+[18-Aug-2025 18:26:13 Asia/Kolkata] PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE unique_id = '688c6c58ae67b25814'' at line 1 in /home/ie9owkuzkgd4/public_html/blue_planet_dev/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_dev/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_dev/folders/sales_order_approval/crud.php(1081): db->select(Array, Array)
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_dev/folders/sales_order_approval/crud.php(504): fetch_approval('688c6c58ae67b25...')
+#3 {main}
+[18-Aug-2025 18:26:13 Asia/Kolkata] PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE unique_id = '689061433f8ce31893'' at line 1 in /home/ie9owkuzkgd4/public_html/blue_planet_dev/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_dev/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_dev/folders/sales_order_approval/crud.php(1081): db->select(Array, Array)
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_dev/folders/sales_order_approval/crud.php(504): fetch_approval('689061433f8ce31...')
+#3 {main}
+[18-Aug-2025 18:26:13 Asia/Kolkata] PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE unique_id = '689daeb28b38620499'' at line 1 in /home/ie9owkuzkgd4/public_html/blue_planet_dev/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_dev/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_dev/folders/sales_order_approval/crud.php(1081): db->select(Array, Array)
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_dev/folders/sales_order_approval/crud.php(504): fetch_approval('689daeb28b38620...')
+#3 {main}
+[18-Aug-2025 18:26:13 Asia/Kolkata] PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE unique_id = '68a012158768d59740'' at line 1 in /home/ie9owkuzkgd4/public_html/blue_planet_dev/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_dev/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_dev/folders/sales_order_approval/crud.php(1081): db->select(Array, Array)
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_dev/folders/sales_order_approval/crud.php(504): fetch_approval('68a012158768d59...')
+#3 {main}
+[16-Sep-2025 09:51:57 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'product_id' in 'SELECT' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_approval/crud.php(494): db->select(Array, ' is_delete = '0...', '10', '0', '', 'SQL_CALC_FOUND_...')
+#2 {main}
+[16-Sep-2025 09:52:29 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'item_name_id' in 'SELECT' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_approval/crud.php(494): db->select(Array, ' is_delete = '0...', '10', '0', '', 'SQL_CALC_FOUND_...')
+#2 {main}
+[16-Sep-2025 09:53:13 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'item_name_id' in 'SELECT' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_approval/crud.php(494): db->select(Array, ' is_delete = '0...', '10', '0', '', 'SQL_CALC_FOUND_...')
+#2 {main}
+[16-Sep-2025 10:47:58 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'item_name_id' in 'SELECT' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_approval/crud.php(494): db->select(Array, ' is_delete = '0...', '10', '0', '', 'SQL_CALC_FOUND_...')
+#2 {main}
+[16-Sep-2025 11:08:48 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'item_name_id' in 'SELECT' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_approval/crud.php(494): db->select(Array, ' is_delete = '0...', '10', '0', '', 'SQL_CALC_FOUND_...')
+#2 {main}
+[16-Sep-2025 15:32:06 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'item_name_id' in 'SELECT' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_approval/crud.php(494): db->select(Array, ' is_delete = '0...', '10', '0', '', 'SQL_CALC_FOUND_...')
+#2 {main}
+[16-Sep-2025 15:34:08 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'item_name_id' in 'SELECT' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_approval/crud.php(494): db->select(Array, ' is_delete = '0...', '10', '0', '', 'SQL_CALC_FOUND_...')
+#2 {main}
+[16-Sep-2025 15:44:58 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'item_name_id' in 'SELECT' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_approval/crud.php(494): db->select(Array, ' is_delete = '0...', '10', '0', '', 'SQL_CALC_FOUND_...')
+#2 {main}
+[16-Sep-2025 15:49:41 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'product_id' in 'SELECT' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_approval/crud.php(494): db->select(Array, ' is_delete = '0...', '10', '0', '', 'SQL_CALC_FOUND_...')
+#2 {main}

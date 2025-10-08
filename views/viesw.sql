@@ -1,0 +1,24 @@
+
+create view view_staff_user as 
+SELECT user.unique_id,staff.unique_id as staff_unique_id,staff.staff_name from user inner join staff where user.staff_unique_id = staff.unique_id;
+
+create view view_branch_staff_name as
+select '' as unique_id,unique_id as staff_unique_id,branch_name as name from company_and_branch_creation where is_active = '1' and is_delete ='0' union
+select unique_id,staff_unique_id,staff_name as name from view_staff_user;
+
+
+create view view_follow_up_travel_expense as
+select entry_date,travel_exp_no as expense_no,unique_id,followup_call_unique_id,call_unique_id,sum(total_cost + ticket_cost + amount) as amount,'Call Expense' as type,(select staff_unique_id from follow_ups where follow_ups.unique_id = follow_up_call_travel_expense.	followup_call_unique_id) as staff_id,is_active,is_delete from follow_up_call_travel_expense where is_active = '1' and is_delete ='0' group by call_unique_id,entry_date;
+
+create view view_expense as 
+select entry_date,exp_no as expense_no,unique_id,'' as 	followup_call_unique_id,'' as call_unique_id,(select sum(amount) from expense_creation_sub where expense_creation_sub.exp_main_unique_id = expense_creation_main.unique_id) as amount,'Other Expense' as type,branch_unique_id as staff_id,approve_status,user_approval_id,is_active,is_delete from expense_creation_main where is_active = '1' and is_delete ='0' group by unique_id;
+
+create view view_call_expense as
+SELECT a.entry_date, a.expense_no, a.unique_id, a.followup_call_unique_id, a.call_unique_id, a.amount, a.type, a.staff_id,b.staff_name,a.is_active,a.is_delete,c.approve_status,c.user_approval_id FROM view_follow_up_travel_expense as a  inner join staff as b on a.staff_id = b. unique_id inner join follow_ups as c on a.followup_call_unique_id = c.unique_id;
+
+create view view_other_expense as 
+SELECT a.entry_date, a.expense_no,a.unique_id, a.followup_call_unique_id, a.call_unique_id, a.amount, a.type, a.staff_id,b.staff_name,a.approve_status,a.user_approval_id,a.is_active,a.is_delete FROM view_expense as a inner join  staff as b on a.staff_id = b. unique_id;
+
+create view view_call_other_expense as 
+select 	entry_date,expense_no,unique_id,followup_call_unique_id,call_unique_id,amount as expense_amount,'' as call_amount,type,staff_id,staff_name, approve_status,user_approval_id,is_active,is_delete from view_other_expense union 
+select 	entry_date,	expense_no,unique_id,followup_call_unique_id,call_unique_id,'' as expense_amount,amount as call_amount,type,staff_id,staff_name,approve_status,user_approval_id,is_active,is_delete from view_call_expense;

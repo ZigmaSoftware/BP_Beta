@@ -1,0 +1,512 @@
+
+
+$(document).ready(function () { 
+	var table_id = "stage_1_datatable";
+	init_datatable(table_id, form_name, action);
+	//sub_list_datatable("document_upload_sub_datatable");
+	sub_list_datatable("status_sub_datatable", form_name, "status_sub_datatable");
+
+	var table_id_2 = "stage_2_datatable";
+	init_datatable(table_id_2, form_name, table_id_2);
+
+	var table_id_3 = "stage_3_datatable";
+	init_datatable(table_id_3, form_name, table_id_3);
+
+	var table_id_4 = "stage_4_datatable";
+	init_datatable(table_id_4, form_name, table_id_4);
+
+	var table_id_5 = "stage_5_datatable";
+	init_datatable(table_id_5, form_name, table_id_5);
+
+	var table_id_6 = "stage_6_datatable";
+	init_datatable(table_id_6, form_name, table_id_6);
+
+	var table_id_7 = "stage_7_datatable";
+	init_datatable(table_id_7, form_name, table_id_7);
+	//sub_list_datatable("document_upload_sub_datatable");
+	
+});
+
+
+ 
+var company_name = sessionStorage.getItem("company_name");
+var company_address = sessionStorage.getItem("company_name");
+var company_phone = sessionStorage.getItem("company_name");
+var company_email = sessionStorage.getItem("company_name");
+var company_logo = sessionStorage.getItem("company_name");
+
+var form_name = 'Complaint Category';
+var form_header = '';
+var form_footer = '';
+var table_name = '';
+var table_id = 'stage_1_datatable';
+var action = "datatable";
+
+function init_datatable(table_id = '', form_name = '', action = '') {
+	var table = $("#" + table_id); 
+	// var from_date           = $("#from_date").val();
+	// var to_date             = $("#to_date").val();
+	var department_type 	= $("#department_type").val();
+	var complaint_name 	= $("#complaint_name").val();
+	var zone_name 			= $('#zone_name').val();
+	var ward_name 			= $('#ward_name').val();
+	var stage 				= $('#stage').val();
+	var status_name      = $('#status_name').val();
+	// var department_type     = $("#department_type").val();
+	var data = {
+		"action"				: action,
+		"department_type"	: department_type,
+		"complaint_name"	: complaint_name,
+		"zone_name"			: zone_name,
+		"ward_name"			: ward_name,
+		"stage"	 			: stage,
+		"status_name"	 	: status_name,
+		// "department_type" : department_type,
+	};
+	data = { 
+		...data,
+
+	};
+	var ajax_url = sessionStorage.getItem("folder_crud_link");
+
+	var datatable = table.DataTable({
+
+		ordering: true,
+		searching: true,
+		"searching": true,
+
+		"ajax": {
+			url: ajax_url,
+			type: "POST",
+			data: data
+		},
+		dom: 'Blfrtip',
+		buttons: [
+			'copy', 'csv', 'excel', 'pdf', 'print'
+		]
+	});
+}
+
+
+
+function sub_list_datatable(table_id = "", form_name = "", action = "") {
+
+	var unique_id = $("#unique_id").val();
+	var screen_unique_id = $("#screen_unique_id").val();
+
+	var table = $("#" + table_id);
+	var data = {
+		"unique_id": unique_id,
+		"screen_unique_id": screen_unique_id,
+		"action": table_id,
+	};
+	var ajax_url = sessionStorage.getItem("folder_crud_link");
+	var datatable = new DataTable(table, {
+		destroy: true,
+		"searching": false,
+		"paging": false,
+		"ordering": false,
+		"info": false,
+		"ajax": {
+			url: ajax_url,
+			type: "POST",
+			data: data
+		}
+
+	});
+}
+
+function print(file_name) {
+	onmouseover = window.open('uploads/complaint_category/' + file_name, 'onmouseover', 'height=600,width=900,scrollbars=yes,resizable=no,left=200,top=150,toolbar=no,location=no,directories=no,status=no,menubar=no');
+}
+
+
+function new_external_window_print(event, url, unique_id) {
+	var unique_id = $('#unique_id').val();
+	alert(unique_id);
+
+	var link = url + '?unique_id=' + unique_id;
+
+	onmouseover = window.open(link, 'onmouseover', 'height=550,width=950,resizable=no,left=200,top=150,toolbar=no,location=no,directories=no,status=no,menubar=no');
+	event.preventDefault();
+}
+
+
+
+function status_sub_add_update(unique_id = "") { // au = add,update
+
+	var internet_status = is_online();
+
+	var status_option = $("#status_option").val();
+	var doc_option = $("#doc_option").val();
+	var entry_date = $("#entry_date").val();
+	
+	var status_description = $("#status_description").val();
+	var screen_unique_id = $("#screen_unique_id").val();
+
+	if (!internet_status) {
+		sweetalert("no_internet");
+		return false;
+	}
+
+	if ((status_option) && (status_description)) {
+
+		var data = new FormData();
+		if (doc_option) {
+
+		//var data = new FormData();
+		var image_s = document.getElementById("test_file");
+		if (image_s != '') {
+			for (var i = 0; i < image_s.files.length; i++) {
+				data.append("test_file", document.getElementById('test_file').files[i]);
+
+			}
+		} else {
+			data.append("test_file", '');
+		}
+	}
+		data.append("status_option", status_option);
+		data.append("doc_option", doc_option);
+		data.append("status_description", status_description);
+		data.append("screen_unique_id", screen_unique_id);
+		data.append("entry_date", entry_date);
+		data.append("action", "status_sub_add_update");
+		data.append("unique_id", unique_id);
+
+		var ajax_url = sessionStorage.getItem("folder_crud_link");
+		var url = '';
+
+		$.ajax({
+			type: "POST",
+			url: ajax_url,
+			data: data,
+			cache: false,
+			contentType: false,
+			processData: false,
+			method: 'POST',
+			beforeSend: function () {
+				$(".status_sub_add_update_btn").attr("disabled", "disabled");
+				$(".status_sub_add_update_btn").text("Loading...");
+			},
+			success: function (data) {
+
+				var obj = JSON.parse(data);
+				var msg = obj.msg;
+				var status = obj.status;
+				var error = obj.error;
+
+				if (!status) {
+					$(".status_sub_add_update_btn").text("Error");
+					console.log(error);
+				} else {
+					if (msg !== "already") {
+						//form_reset("periodic_sub_form");
+						$("#status_option").val(null).trigger('change');
+						$("#status_description").val("");
+						sweetalert(msg, url);
+
+					}
+					$(".status_sub_add_update_btn").removeAttr("disabled", "disabled");
+					if (unique_id && msg == "already") {
+						$(".status_sub_add_update_btn").text("Update");
+						sweetalert("custom", '', '', 'The Complaint has already completed');
+					} else {
+						$(".status_sub_add_update_btn").text("Add");
+						$(".status_sub_add_update_btn").attr("onclick", "status_sub_add_update('')");
+						if (msg == 'already') {
+
+							sweetalert("custom", '', '', 'The Complaint has already completed');
+						} else {
+							sweetalert(msg, url);
+						}
+
+					}
+					// Init Datatable
+					sub_list_datatable("status_sub_datatable");
+
+				}
+
+			},
+			error: function (data) {
+				alert("Network Error");
+			}
+		});
+
+
+	} else {
+
+		sweetalert("custom", '', '', 'Create Sub Details');
+
+		if (status_option == '') {
+			document.getElementById('status_option').focus();
+		} else if (status_description == '') {
+			document.getElementById('status_description').focus();
+		}
+	}
+}
+
+
+
+function status_sub_delete(unique_id = "", screen_unique_id = "") {
+
+	if (unique_id) {
+
+		var ajax_url = sessionStorage.getItem("folder_crud_link");
+		var url = sessionStorage.getItem("list_link");
+
+		confirm_delete('delete')
+			.then((result) => {
+				if (result.isConfirmed) {
+
+					var data = {
+						"unique_id": unique_id,
+						"screen_unique_id": screen_unique_id,
+						"action": "status_sub_delete"
+					}
+
+					$.ajax({
+						type: "POST",
+						url: ajax_url,
+						data: data,
+						success: function (data) {
+
+							var obj = JSON.parse(data);
+							var msg = obj.msg;
+							var status = obj.status;
+							var error = obj.error;
+
+							if (!status) {
+								url = '';
+							} else {
+								sub_list_datatable("status_sub_datatable");
+							}
+							$("#status_option").val(null).trigger('change');
+							$("#status_description").val("");
+							sweetalert(msg, url);
+						}
+					});
+
+				} else {
+					// alert("cancel");
+				}
+			});
+	}
+}
+
+
+
+function stage_1_cu(unique_id = "") {
+
+
+	var msg = "update";
+	var url = sessionStorage.getItem("list_link");
+	sweetalert(msg, url);
+
+
+}
+
+
+function complaint_category_filter(filter_action = 0) {
+	var internet_status = is_online();
+
+	if (!internet_status) {
+		sweetalert("no_internet");
+		return false;
+	}
+
+	var is_form = form_validity_check("was-validated");
+	// var from_date           = $("#from_date").val();
+	// var to_date             = $("#to_date").val();
+	var department_type = $("#department_type").val();
+	var complaint_name 	= $("#complaint_name").val();
+	var zone_name 		= $('#zone_name').val();
+	var ward_name 		= $('#ward_name').val();
+	var stage     		= $('#stage').val(); 
+	var status_name     = $('#status_name').val();
+	//alert(zone_name);
+	// alert(stage);
+
+	//var is_vaild = fromToDateValidity(from_date, to_date);
+
+	// sessionStorage.setItem("from_date",from_date);
+	// sessionStorage.setItem("to_date",to_date);
+	sessionStorage.setItem("department_type", department_type);
+	sessionStorage.setItem("complaint_name", complaint_name);
+	sessionStorage.setItem("zone_name", zone_name);
+	sessionStorage.setItem("ward_name", ward_name);
+	sessionStorage.setItem("stage",stage);
+	sessionStorage.setItem("status_name",status_name);
+
+
+	var filter_data = {
+		// "from_date"             : from_date,
+		// "to_date"               : to_date,
+		"department_type": department_type,
+		"complaint_name": complaint_name,
+		"zone_name"		: zone_name,
+		"ward_name"		: ward_name,
+		"stage"	   		: stage,
+		"status_name"	: status_name,
+
+	};
+
+	console.log(filter_data);
+
+	init_datatable(table_id, form_name, action, filter_data);
+}
+
+function category_entry_filter(department_name) {
+	var department_name = $('#department_type').val();
+	// var data      = $(".was-validated").serialize();
+	var data = "&department_type=" + department_name + "&action=category_name_option";
+
+	var ajax_url = sessionStorage.getItem("folder_crud_link");
+
+	// if (zone_id) {
+
+
+	$.ajax({
+		type: "POST",
+		url: ajax_url,
+		data: data,
+		success: function (data) {
+
+
+			if (data) {
+				$("#complaint_name").html(data);
+			}
+		}
+	});
+
+}
+
+function get_ward_name() {
+	var zone_id = $('#zone_name').val();
+	var ajax_url = sessionStorage.getItem("folder_crud_link");
+	var url = sessionStorage.getItem("list_link");
+
+
+	var data = {
+		"zone_id": zone_id,
+		"action": "ward_name"
+	}
+
+	$.ajax({
+		type: "POST",
+		url: ajax_url,
+		data: data,
+		success: function (data) {
+			var obj = JSON.parse(data);
+			var data = obj.data;
+			$('#ward_name').html(data);
+		}
+	});
+}
+
+function new_complaint() {
+	window.location.href = 'index.php?file=complaint_category/create';
+}
+
+function print(file_name)
+    {
+       onmouseover= window.open('uploads/stage_1/'+file_name,'onmouseover','height=600,width=900,scrollbars=yes,resizable=no,left=200,top=150,toolbar=no,location=no,directories=no,status=no,menubar=no');
+    }  
+
+function get_status_value(val) { // au = add,update
+
+	var internet_status = is_online();
+
+	var status_option = $("#status_option").val();
+	var complaint_no = $("#complaint_no").val();
+	
+	var unique_id = $("#unique_id").val();
+	var screen_unique_id = $("#screen_unique_id").val();
+
+	if (!internet_status) {
+		sweetalert("no_internet");
+		return false;
+	}
+
+	if (status_option == "4") {
+
+		var data = new FormData();
+		
+		data.append("status_option", status_option);
+		data.append("complaint_no", complaint_no);
+		data.append("status_description", status_description);
+		data.append("screen_unique_id", screen_unique_id);
+		data.append("action", "reopen_status_update");
+		data.append("unique_id", unique_id);
+
+		var ajax_url = sessionStorage.getItem("folder_crud_link");
+		var url = '';
+
+		$.ajax({
+			type: "POST",
+			url: ajax_url,
+			data: data,
+			cache: false,
+			contentType: false,
+			processData: false,
+			method: 'POST',
+			// beforeSend: function () {
+			// 	$(".status_sub_add_update_btn").attr("disabled", "disabled");
+			// 	$(".status_sub_add_update_btn").text("Loading...");
+			// },
+			success: function (data) {alert(data);
+
+				var obj = JSON.parse(data);
+				var msg = obj.msg;
+				var status = obj.status;
+				var error = obj.error;
+
+				// if (!status) {
+				// 	$(".status_sub_add_update_btn").text("Error");
+				// 	console.log(error);
+				// } else {
+				// 	if (msg !== "already") {
+				// 		//form_reset("periodic_sub_form");
+				// 		$("#status_option").val(null).trigger('change');
+				// 		$("#status_description").val("");
+				// 		sweetalert(msg, url);
+
+				// 	}
+				// 	$(".status_sub_add_update_btn").removeAttr("disabled", "disabled");
+				// 	if (unique_id && msg == "already") {
+				// 		$(".status_sub_add_update_btn").text("Update");
+				// 		sweetalert("custom", '', '', 'The Complaint has already completed');
+				// 	} else {
+				// 		$(".status_sub_add_update_btn").text("Add");
+				// 		$(".status_sub_add_update_btn").attr("onclick", "status_sub_add_update('')");
+				// 		if (msg == 'already') {
+
+				// 			sweetalert("custom", '', '', 'The Complaint has already completed');
+				// 		} else {
+				// 			sweetalert(msg, url);
+				// 		}
+
+				// 	}
+				// 	// Init Datatable
+				// 	sub_list_datatable("status_sub_datatable");
+
+				// }
+
+			},
+			error: function (data) {
+				alert("Network Error");
+			}
+		});
+
+
+	 } 
+		// else {
+
+	// 	sweetalert("custom", '', '', 'Create Sub Details');
+
+	// 	if (status_option == '') {
+	// 		document.getElementById('status_option').focus();
+	// 	} else if (status_description == '') {
+	// 		document.getElementById('status_description').focus();
+	// 	}
+	// }
+}

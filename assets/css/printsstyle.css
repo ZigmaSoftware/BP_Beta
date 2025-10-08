@@ -1,0 +1,128 @@
+
+    /*body {*/
+    /*  background: #fff;*/
+    /*  font-size: 14px; font-family: "Poppins", sans-serif;*/
+    /*}*/
+    .invoice-box {
+      max-width: 970px;
+      margin: auto;
+      padding: 20px;
+      /*border: 1px solid #ddd;*/
+      /*box-shadow: 0 0 10px rgba(0,0,0,0.15);*/
+      background-color: #fff;
+      
+    }
+    .header-box {
+      /*border-bottom: 1px solid #888;*/
+      margin-bottom: 15px;
+      padding-bottom: 0px;
+    }
+    .company-info h4 {
+      margin: 0;
+      font-size: 18px;
+      font-weight: bold;
+    }
+    .company-info p {
+      margin: 0;
+      font-size: 13px;
+      line-height: 1.4;
+    }
+    .po-details {
+      text-align: right;
+    }
+    .po-details h2 {
+      margin: 0;
+      font-size: 18px;
+      font-weight: bold;
+          color: #03407f;
+    }
+    .po-details p {
+      margin: 0;
+      font-size: 13px;
+    }
+    .table th, .table td {
+      vertical-align: middle !important;
+    }
+    .table-bordered td, .table-bordered th {
+      border: 1px solid #666 !important;
+    }
+    .totals td {
+      font-weight: bold;
+    }
+    .footer-note {
+      margin-top: 20px;
+      font-size: 12px;
+      color: #555;
+    }
+    .backgrinfo h6 {
+background-color: #ececec;
+    padding: 6px;
+    border-left: 3px solid #0d58a6;
+    font-size: 16px;
+    font-weight: 600;
+}
+.table .thead-light th
+ {
+    background-color: #e9ecef!important;
+}
+
+.invoice-inner-2 {
+    text-align: justify;
+    color: #000;
+    font-size: 16px;
+}
+.invoice-inner-2 p {
+        margin-bottom:10px;
+}
+table.table.table-borderless.totals tr td
+ {
+    padding: 2px 8px;
+}
+.page-break {
+   page-break-before: always;
+}
+ol.d {
+    list-style-type: lower-alpha;
+        margin-bottom: 0px;
+    /*padding-left: 10px;*/
+}
+.invoice-inner-2 h6 {
+    font-weight: 600;
+    font-size: 18px;
+    margin-bottom: 5px;
+    margin-top: 6px;
+}
+ol.d.sublist_or li {
+    margin-bottom: 0px;
+    margin-top: 0px;
+}
+table.term_con tr th
+ {
+    vertical-align: top;
+}
+.status-watermark {
+  display: none;
+}
+
+
+
+    @media print {
+      .no-print { display: none; }
+      body { margin: 0; background-color:#fff!important}
+     .status-watermark {
+display: block;
+    position: fixed;
+    top: 40%;
+    left: -1%;
+    font-size: 120px;
+    font-weight: bold;
+    color: #ff00003b;
+    transform: rotate(-30deg);
+    z-index: 9999;
+    width: 100%;
+    text-align: center;
+    pointer-events: none;
+    user-select: none;
+  }
+    }
+ 

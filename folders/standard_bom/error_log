@@ -1,0 +1,216 @@
+[09-Aug-2025 12:19:13 Asia/Kolkata] PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ' (SELECT @a:= 0) AS a  WHERE  is_delete = '0'   LIMIT 10' at line 1 in /home/ie9owkuzkgd4/public_html/blue_planet_dev/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_dev/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_dev/folders/standard_bom/crud.php(331): db->select(Array, ' is_delete = '0...', '10', '0', '', 'SQL_CALC_FOUND_...')
+#2 {main}
+[09-Aug-2025 12:20:10 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'product_name' in 'SELECT' in /home/ie9owkuzkgd4/public_html/blue_planet_dev/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_dev/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_dev/folders/standard_bom/crud.php(331): db->select(Array, ' is_delete = '0...', '10', '0', '', 'SQL_CALC_FOUND_...')
+#2 {main}
+[11-Aug-2025 12:04:15 Asia/Kolkata] PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ')  LIMIT 10' at line 4 in /home/ie9owkuzkgd4/public_html/blue_planet_dev/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_dev/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_dev/folders/standard_bom/crud.php(375): db->select(Array, '1 AND prod_uniq...', '10', '0', '', 'SQL_CALC_FOUND_...')
+#2 {main}
+[11-Aug-2025 12:19:17 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_dev.pm' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_dev/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_dev/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_dev/folders/standard_bom/crud.php(354): db->select(Array, '1', '10', '0', '', 'SQL_CALC_FOUND_...')
+#2 {main}
+[11-Aug-2025 12:19:48 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_dev.pm' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_dev/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_dev/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_dev/folders/standard_bom/crud.php(354): db->select(Array, '1', '10', '0', '', 'SQL_CALC_FOUND_...')
+#2 {main}
+[11-Aug-2025 12:20:45 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'ps.prod_unique_id' in 'SELECT' in /home/ie9owkuzkgd4/public_html/blue_planet_dev/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_dev/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_dev/folders/standard_bom/crud.php(354): db->select(Array, '1', '10', '0', '', 'SQL_CALC_FOUND_...')
+#2 {main}
+[11-Aug-2025 12:21:40 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'ps.prod_unique_id' in 'SELECT' in /home/ie9owkuzkgd4/public_html/blue_planet_dev/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_dev/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_dev/folders/standard_bom/crud.php(354): db->select(Array, '1', '10', '0', '', 'SQL_CALC_FOUND_...')
+#2 {main}
+[11-Aug-2025 08:49:31 UTC] PHP Warning:  include(function.php): failed to open stream: No such file or directory in /home/ie9owkuzkgd4/public_html/blue_planet_dev/folders/standard_bom/view.php on line 2
+[11-Aug-2025 08:49:31 UTC] PHP Warning:  include(): Failed opening 'function.php' for inclusion (include_path='.:/opt/alt/php74/usr/share/pear') in /home/ie9owkuzkgd4/public_html/blue_planet_dev/folders/standard_bom/view.php on line 2
+[11-Aug-2025 08:49:31 UTC] PHP Notice:  Undefined variable: pdo in /home/ie9owkuzkgd4/public_html/blue_planet_dev/folders/standard_bom/view.php on line 29
+[11-Aug-2025 08:49:31 UTC] PHP Fatal error:  Uncaught Error: Call to a member function select() on null in /home/ie9owkuzkgd4/public_html/blue_planet_dev/folders/standard_bom/view.php:29
+Stack trace:
+#0 {main}
+  thrown in /home/ie9owkuzkgd4/public_html/blue_planet_dev/folders/standard_bom/view.php on line 29
+[11-Aug-2025 08:49:34 UTC] PHP Warning:  include(function.php): failed to open stream: No such file or directory in /home/ie9owkuzkgd4/public_html/blue_planet_dev/folders/standard_bom/view.php on line 2
+[11-Aug-2025 08:49:34 UTC] PHP Warning:  include(): Failed opening 'function.php' for inclusion (include_path='.:/opt/alt/php74/usr/share/pear') in /home/ie9owkuzkgd4/public_html/blue_planet_dev/folders/standard_bom/view.php on line 2
+[11-Aug-2025 08:49:34 UTC] PHP Notice:  Undefined variable: pdo in /home/ie9owkuzkgd4/public_html/blue_planet_dev/folders/standard_bom/view.php on line 29
+[11-Aug-2025 08:49:34 UTC] PHP Fatal error:  Uncaught Error: Call to a member function select() on null in /home/ie9owkuzkgd4/public_html/blue_planet_dev/folders/standard_bom/view.php:29
+Stack trace:
+#0 {main}
+  thrown in /home/ie9owkuzkgd4/public_html/blue_planet_dev/folders/standard_bom/view.php on line 29
+[11-Aug-2025 08:50:27 UTC] PHP Warning:  include(function.php): failed to open stream: No such file or directory in /home/ie9owkuzkgd4/public_html/blue_planet_dev/folders/standard_bom/view.php on line 2
+[11-Aug-2025 08:50:27 UTC] PHP Warning:  include(): Failed opening 'function.php' for inclusion (include_path='.:/opt/alt/php74/usr/share/pear') in /home/ie9owkuzkgd4/public_html/blue_planet_dev/folders/standard_bom/view.php on line 2
+[11-Aug-2025 08:50:27 UTC] PHP Notice:  Undefined variable: pdo in /home/ie9owkuzkgd4/public_html/blue_planet_dev/folders/standard_bom/view.php on line 29
+[11-Aug-2025 08:50:27 UTC] PHP Fatal error:  Uncaught Error: Call to a member function select() on null in /home/ie9owkuzkgd4/public_html/blue_planet_dev/folders/standard_bom/view.php:29
+Stack trace:
+#0 {main}
+  thrown in /home/ie9owkuzkgd4/public_html/blue_planet_dev/folders/standard_bom/view.php on line 29
+[11-Aug-2025 08:50:52 UTC] PHP Warning:  include(function.php): failed to open stream: No such file or directory in /home/ie9owkuzkgd4/public_html/blue_planet_dev/folders/standard_bom/view.php on line 2
+[11-Aug-2025 08:50:52 UTC] PHP Warning:  include(): Failed opening 'function.php' for inclusion (include_path='.:/opt/alt/php74/usr/share/pear') in /home/ie9owkuzkgd4/public_html/blue_planet_dev/folders/standard_bom/view.php on line 2
+[11-Aug-2025 08:50:52 UTC] PHP Notice:  Undefined variable: pdo in /home/ie9owkuzkgd4/public_html/blue_planet_dev/folders/standard_bom/view.php on line 29
+[11-Aug-2025 08:50:52 UTC] PHP Fatal error:  Uncaught Error: Call to a member function select() on null in /home/ie9owkuzkgd4/public_html/blue_planet_dev/folders/standard_bom/view.php:29
+Stack trace:
+#0 {main}
+  thrown in /home/ie9owkuzkgd4/public_html/blue_planet_dev/folders/standard_bom/view.php on line 29
+[11-Aug-2025 08:50:59 UTC] PHP Warning:  include(function.php): failed to open stream: No such file or directory in /home/ie9owkuzkgd4/public_html/blue_planet_dev/folders/standard_bom/view.php on line 2
+[11-Aug-2025 08:50:59 UTC] PHP Warning:  include(): Failed opening 'function.php' for inclusion (include_path='.:/opt/alt/php74/usr/share/pear') in /home/ie9owkuzkgd4/public_html/blue_planet_dev/folders/standard_bom/view.php on line 2
+[11-Aug-2025 08:50:59 UTC] PHP Notice:  Undefined variable: pdo in /home/ie9owkuzkgd4/public_html/blue_planet_dev/folders/standard_bom/view.php on line 29
+[11-Aug-2025 08:50:59 UTC] PHP Fatal error:  Uncaught Error: Call to a member function select() on null in /home/ie9owkuzkgd4/public_html/blue_planet_dev/folders/standard_bom/view.php:29
+Stack trace:
+#0 {main}
+  thrown in /home/ie9owkuzkgd4/public_html/blue_planet_dev/folders/standard_bom/view.php on line 29
+[11-Aug-2025 08:51:30 UTC] PHP Warning:  include(function.php): failed to open stream: No such file or directory in /home/ie9owkuzkgd4/public_html/blue_planet_dev/folders/standard_bom/view.php on line 2
+[11-Aug-2025 08:51:30 UTC] PHP Warning:  include(): Failed opening 'function.php' for inclusion (include_path='.:/opt/alt/php74/usr/share/pear') in /home/ie9owkuzkgd4/public_html/blue_planet_dev/folders/standard_bom/view.php on line 2
+[11-Aug-2025 08:51:30 UTC] PHP Notice:  Undefined variable: pdo in /home/ie9owkuzkgd4/public_html/blue_planet_dev/folders/standard_bom/view.php on line 29
+[11-Aug-2025 08:51:30 UTC] PHP Fatal error:  Uncaught Error: Call to a member function select() on null in /home/ie9owkuzkgd4/public_html/blue_planet_dev/folders/standard_bom/view.php:29
+Stack trace:
+#0 {main}
+  thrown in /home/ie9owkuzkgd4/public_html/blue_planet_dev/folders/standard_bom/view.php on line 29
+[11-Aug-2025 08:52:19 UTC] PHP Warning:  include(function.php): failed to open stream: No such file or directory in /home/ie9owkuzkgd4/public_html/blue_planet_dev/folders/standard_bom/view.php on line 2
+[11-Aug-2025 08:52:19 UTC] PHP Warning:  include(): Failed opening 'function.php' for inclusion (include_path='.:/opt/alt/php74/usr/share/pear') in /home/ie9owkuzkgd4/public_html/blue_planet_dev/folders/standard_bom/view.php on line 2
+[11-Aug-2025 08:52:19 UTC] PHP Notice:  Undefined variable: pdo in /home/ie9owkuzkgd4/public_html/blue_planet_dev/folders/standard_bom/view.php on line 35
+[11-Aug-2025 08:52:19 UTC] PHP Fatal error:  Uncaught Error: Call to a member function select() on null in /home/ie9owkuzkgd4/public_html/blue_planet_dev/folders/standard_bom/view.php:35
+Stack trace:
+#0 {main}
+  thrown in /home/ie9owkuzkgd4/public_html/blue_planet_dev/folders/standard_bom/view.php on line 35
+[11-Aug-2025 08:53:38 UTC] PHP Warning:  include(function.php): failed to open stream: No such file or directory in /home/ie9owkuzkgd4/public_html/blue_planet_dev/folders/standard_bom/view.php on line 2
+[11-Aug-2025 08:53:38 UTC] PHP Warning:  include(): Failed opening 'function.php' for inclusion (include_path='.:/opt/alt/php74/usr/share/pear') in /home/ie9owkuzkgd4/public_html/blue_planet_dev/folders/standard_bom/view.php on line 2
+[11-Aug-2025 08:53:38 UTC] PHP Notice:  Undefined variable: pdo in /home/ie9owkuzkgd4/public_html/blue_planet_dev/folders/standard_bom/view.php on line 29
+[11-Aug-2025 08:53:38 UTC] PHP Fatal error:  Uncaught Error: Call to a member function select() on null in /home/ie9owkuzkgd4/public_html/blue_planet_dev/folders/standard_bom/view.php:29
+Stack trace:
+#0 {main}
+  thrown in /home/ie9owkuzkgd4/public_html/blue_planet_dev/folders/standard_bom/view.php on line 29
+[11-Aug-2025 08:54:08 UTC] PHP Warning:  include(function.php): failed to open stream: No such file or directory in /home/ie9owkuzkgd4/public_html/blue_planet_dev/folders/standard_bom/view.php on line 2
+[11-Aug-2025 08:54:08 UTC] PHP Warning:  include(): Failed opening 'function.php' for inclusion (include_path='.:/opt/alt/php74/usr/share/pear') in /home/ie9owkuzkgd4/public_html/blue_planet_dev/folders/standard_bom/view.php on line 2
+[11-Aug-2025 08:54:08 UTC] PHP Notice:  Undefined variable: pdo in /home/ie9owkuzkgd4/public_html/blue_planet_dev/folders/standard_bom/view.php on line 29
+[11-Aug-2025 08:54:08 UTC] PHP Fatal error:  Uncaught Error: Call to a member function select() on null in /home/ie9owkuzkgd4/public_html/blue_planet_dev/folders/standard_bom/view.php:29
+Stack trace:
+#0 {main}
+  thrown in /home/ie9owkuzkgd4/public_html/blue_planet_dev/folders/standard_bom/view.php on line 29
+[11-Aug-2025 08:55:10 UTC] PHP Warning:  include(function.php): failed to open stream: No such file or directory in /home/ie9owkuzkgd4/public_html/blue_planet_dev/folders/standard_bom/view.php on line 7
+[11-Aug-2025 08:55:10 UTC] PHP Warning:  include(): Failed opening 'function.php' for inclusion (include_path='.:/opt/alt/php74/usr/share/pear') in /home/ie9owkuzkgd4/public_html/blue_planet_dev/folders/standard_bom/view.php on line 7
+[11-Aug-2025 08:55:10 UTC] PHP Notice:  Undefined variable: pdo in /home/ie9owkuzkgd4/public_html/blue_planet_dev/folders/standard_bom/view.php on line 34
+[11-Aug-2025 08:55:10 UTC] PHP Fatal error:  Uncaught Error: Call to a member function select() on null in /home/ie9owkuzkgd4/public_html/blue_planet_dev/folders/standard_bom/view.php:34
+Stack trace:
+#0 {main}
+  thrown in /home/ie9owkuzkgd4/public_html/blue_planet_dev/folders/standard_bom/view.php on line 34
+[11-Aug-2025 08:59:54 UTC] PHP Warning:  include(function.php): failed to open stream: No such file or directory in /home/ie9owkuzkgd4/public_html/blue_planet_dev/folders/standard_bom/view.php on line 7
+[11-Aug-2025 08:59:54 UTC] PHP Warning:  include(): Failed opening 'function.php' for inclusion (include_path='.:/opt/alt/php74/usr/share/pear') in /home/ie9owkuzkgd4/public_html/blue_planet_dev/folders/standard_bom/view.php on line 7
+[11-Aug-2025 08:59:54 UTC] PHP Notice:  Undefined variable: result in /home/ie9owkuzkgd4/public_html/blue_planet_dev/folders/standard_bom/view.php on line 35
+[11-Aug-2025 08:59:54 UTC] PHP Notice:  Trying to get property 'status' of non-object in /home/ie9owkuzkgd4/public_html/blue_planet_dev/folders/standard_bom/view.php on line 35
+[11-Aug-2025 08:59:54 UTC] PHP Notice:  Undefined variable: pdo in /home/ie9owkuzkgd4/public_html/blue_planet_dev/folders/standard_bom/view.php on line 67
+[11-Aug-2025 08:59:54 UTC] PHP Fatal error:  Uncaught Error: Call to a member function select() on null in /home/ie9owkuzkgd4/public_html/blue_planet_dev/folders/standard_bom/view.php:67
+Stack trace:
+#0 {main}
+  thrown in /home/ie9owkuzkgd4/public_html/blue_planet_dev/folders/standard_bom/view.php on line 67
+[11-Aug-2025 09:00:29 UTC] PHP Warning:  include(function.php): failed to open stream: No such file or directory in /home/ie9owkuzkgd4/public_html/blue_planet_dev/folders/standard_bom/view.php on line 7
+[11-Aug-2025 09:00:29 UTC] PHP Warning:  include(): Failed opening 'function.php' for inclusion (include_path='.:/opt/alt/php74/usr/share/pear') in /home/ie9owkuzkgd4/public_html/blue_planet_dev/folders/standard_bom/view.php on line 7
+[11-Aug-2025 09:00:29 UTC] PHP Notice:  Undefined variable: result in /home/ie9owkuzkgd4/public_html/blue_planet_dev/folders/standard_bom/view.php on line 35
+[11-Aug-2025 09:00:29 UTC] PHP Notice:  Trying to get property 'status' of non-object in /home/ie9owkuzkgd4/public_html/blue_planet_dev/folders/standard_bom/view.php on line 35
+[11-Aug-2025 09:00:29 UTC] PHP Notice:  Undefined variable: pdo in /home/ie9owkuzkgd4/public_html/blue_planet_dev/folders/standard_bom/view.php on line 67
+[11-Aug-2025 09:00:29 UTC] PHP Fatal error:  Uncaught Error: Call to a member function select() on null in /home/ie9owkuzkgd4/public_html/blue_planet_dev/folders/standard_bom/view.php:67
+Stack trace:
+#0 {main}
+  thrown in /home/ie9owkuzkgd4/public_html/blue_planet_dev/folders/standard_bom/view.php on line 67
+[11-Aug-2025 09:03:40 UTC] PHP Warning:  include(function.php): failed to open stream: No such file or directory in /home/ie9owkuzkgd4/public_html/blue_planet_dev/folders/standard_bom/view.php on line 7
+[11-Aug-2025 09:03:40 UTC] PHP Warning:  include(): Failed opening 'function.php' for inclusion (include_path='.:/opt/alt/php74/usr/share/pear') in /home/ie9owkuzkgd4/public_html/blue_planet_dev/folders/standard_bom/view.php on line 7
+[11-Aug-2025 09:03:40 UTC] PHP Notice:  Undefined variable: pdo in /home/ie9owkuzkgd4/public_html/blue_planet_dev/config/comfun.php on line 530
+[11-Aug-2025 09:03:40 UTC] PHP Fatal error:  Uncaught Error: Call to a member function select() on null in /home/ie9owkuzkgd4/public_html/blue_planet_dev/config/comfun.php:530
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_dev/folders/standard_bom/view.php(8): include()
+#1 {main}
+  thrown in /home/ie9owkuzkgd4/public_html/blue_planet_dev/config/comfun.php on line 530
+[11-Aug-2025 09:03:59 UTC] PHP Warning:  include(function.php): failed to open stream: No such file or directory in /home/ie9owkuzkgd4/public_html/blue_planet_dev/folders/standard_bom/view.php on line 7
+[11-Aug-2025 09:03:59 UTC] PHP Warning:  include(): Failed opening 'function.php' for inclusion (include_path='.:/opt/alt/php74/usr/share/pear') in /home/ie9owkuzkgd4/public_html/blue_planet_dev/folders/standard_bom/view.php on line 7
+[11-Aug-2025 09:47:57 UTC] PHP Warning:  include(function.php): failed to open stream: No such file or directory in /home/ie9owkuzkgd4/public_html/blue_planet_dev/folders/standard_bom/view.php on line 7
+[11-Aug-2025 09:47:57 UTC] PHP Warning:  include(): Failed opening 'function.php' for inclusion (include_path='.:/opt/alt/php74/usr/share/pear') in /home/ie9owkuzkgd4/public_html/blue_planet_dev/folders/standard_bom/view.php on line 7
+[14-Aug-2025 05:59:44 UTC] PHP Parse error:  syntax error, unexpected 'else' (T_ELSE), expecting end of file in /home/ie9owkuzkgd4/public_html/blue_planet_dev/folders/standard_bom/crud.php on line 316
+[14-Aug-2025 11:34:02 Asia/Kolkata] PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE ps.is_delete = '0') AS t, (SELECT @a:=0) AS a LIMIT 10' at line 8 in /home/ie9owkuzkgd4/public_html/blue_planet_dev/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_dev/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_dev/folders/standard_bom/crud.php(382): db->select(Array, '0', '10', '0', '', 'SQL_CALC_FOUND_...')
+#2 {main}
+[14-Aug-2025 11:53:18 Asia/Kolkata] PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'LIMIT 10' at line 26 in /home/ie9owkuzkgd4/public_html/blue_planet_dev/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_dev/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_dev/folders/standard_bom/crud.php(415): db->select(Array, '0', 'LIMIT 10', 0, '', 'SQL_CALC_FOUND_...')
+#2 {main}
+[14-Aug-2025 14:19:00 Asia/Kolkata] PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'AS t, (SELECT @a:=0) AS a LIMIT 25' at line 13 in /home/ie9owkuzkgd4/public_html/blue_planet_dev/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_dev/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_dev/folders/standard_bom/crud.php(407): db->select(Array, '0', '25', '0', '', 'SQL_CALC_FOUND_...')
+#2 {main}
+[14-Aug-2025 14:19:09 Asia/Kolkata] PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'AS t, (SELECT @a:=0) AS a LIMIT 25' at line 13 in /home/ie9owkuzkgd4/public_html/blue_planet_dev/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_dev/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_dev/folders/standard_bom/crud.php(407): db->select(Array, '0', '25', '0', '', 'SQL_CALC_FOUND_...')
+#2 {main}
+[16-Aug-2025 09:10:31 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 't.material_type' in 'SELECT' in /home/ie9owkuzkgd4/public_html/blue_planet_dev/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_dev/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_dev/folders/standard_bom/crud.php(385): db->select(Array, '0', '10', '0', '', 'SQL_CALC_FOUND_...')
+#2 {main}
+[16-Aug-2025 09:10:35 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 't.material_type' in 'SELECT' in /home/ie9owkuzkgd4/public_html/blue_planet_dev/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_dev/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_dev/folders/standard_bom/crud.php(385): db->select(Array, '0', '10', '10', '', 'SQL_CALC_FOUND_...')
+#2 {main}
+[16-Aug-2025 09:43:59 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'material_type' in 'SELECT' in /home/ie9owkuzkgd4/public_html/blue_planet_dev/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_dev/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_dev/config/comfun.php(1844): db->select(Array, Array)
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_dev/folders/standard_bom/crud.php(753): category_item('b9aaf3306d26179...')
+#3 {main}
+[16-Aug-2025 09:43:59 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'material_type' in 'SELECT' in /home/ie9owkuzkgd4/public_html/blue_planet_dev/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_dev/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_dev/config/comfun.php(1844): db->select(Array, Array)
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_dev/folders/standard_bom/crud.php(753): category_item('b9aaf1836d26178...')
+#3 {main}
+[16-Aug-2025 09:43:59 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'material_type' in 'SELECT' in /home/ie9owkuzkgd4/public_html/blue_planet_dev/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_dev/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_dev/config/comfun.php(1844): db->select(Array, Array)
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_dev/folders/standard_bom/crud.php(753): category_item('b9ab08226d26178...')
+#3 {main}
+[16-Aug-2025 09:43:59 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'material_type' in 'SELECT' in /home/ie9owkuzkgd4/public_html/blue_planet_dev/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_dev/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_dev/config/comfun.php(1844): db->select(Array, Array)
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_dev/folders/standard_bom/crud.php(753): category_item('b9a9bd726d26125...')
+#3 {main}
+[16-Aug-2025 09:43:59 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'material_type' in 'SELECT' in /home/ie9owkuzkgd4/public_html/blue_planet_dev/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_dev/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_dev/config/comfun.php(1844): db->select(Array, Array)
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_dev/folders/standard_bom/crud.php(753): category_item('689c87e56595371...')
+#3 {main}
+[25-Aug-2025 16:46:37 Asia/Kolkata] PDOException: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'sess_branch_id' cannot be null in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:579
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(579): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/standard_bom/crud.php(412): db->insert('standard_bom_up...', Array)
+#2 {main}
+[25-Aug-2025 16:47:35 Asia/Kolkata] PDOException: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'sess_branch_id' cannot be null in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:579
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(579): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/standard_bom/crud.php(412): db->insert('standard_bom_up...', Array)
+#2 {main}
+[25-Aug-2025 16:49:14 Asia/Kolkata] PDOException: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'sess_branch_id' cannot be null in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:579
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(579): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/standard_bom/crud.php(412): db->insert('standard_bom_up...', Array)
+#2 {main}
+[25-Aug-2025 16:49:25 Asia/Kolkata] PDOException: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'sess_branch_id' cannot be null in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:579
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(579): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/standard_bom/crud.php(412): db->insert('standard_bom_up...', Array)
+#2 {main}

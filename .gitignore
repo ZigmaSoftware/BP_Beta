@@ -1,0 +1,9 @@
+# Default ignore patterns
+*.log
+*.zip
+*.tmp
+node_modules/
+vendor/
+.DS_Store
+.idea/
+__pycache__/

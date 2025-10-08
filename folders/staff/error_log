@@ -1,0 +1,12 @@
+[26-Sep-2025 07:29:18 UTC] PHP Deprecated:  Array and string offset access syntax with curly braces is deprecated in /home/ie9owkuzkgd4/public_html/blue_planet_beta/assets/PHPExcel-1.8/Classes/PHPExcel/Calculation.php on line 2676
+[26-Sep-2025 07:29:18 UTC] PHP Deprecated:  Array and string offset access syntax with curly braces is deprecated in /home/ie9owkuzkgd4/public_html/blue_planet_beta/assets/PHPExcel-1.8/Classes/PHPExcel/Calculation.php on line 2768
+[26-Sep-2025 07:29:18 UTC] PHP Deprecated:  Array and string offset access syntax with curly braces is deprecated in /home/ie9owkuzkgd4/public_html/blue_planet_beta/assets/PHPExcel-1.8/Classes/PHPExcel/Cell.php on line 812
+[26-Sep-2025 07:29:18 UTC] PHP Deprecated:  Array and string offset access syntax with curly braces is deprecated in /home/ie9owkuzkgd4/public_html/blue_planet_beta/assets/PHPExcel-1.8/Classes/PHPExcel/Cell.php on line 813
+[26-Sep-2025 07:29:18 UTC] PHP Deprecated:  Array and string offset access syntax with curly braces is deprecated in /home/ie9owkuzkgd4/public_html/blue_planet_beta/assets/PHPExcel-1.8/Classes/PHPExcel/Cell.php on line 816
+[26-Sep-2025 07:29:18 UTC] PHP Deprecated:  Array and string offset access syntax with curly braces is deprecated in /home/ie9owkuzkgd4/public_html/blue_planet_beta/assets/PHPExcel-1.8/Classes/PHPExcel/Cell.php on line 819
+[26-Sep-2025 07:29:18 UTC] PHP Deprecated:  Array and string offset access syntax with curly braces is deprecated in /home/ie9owkuzkgd4/public_html/blue_planet_beta/assets/PHPExcel-1.8/Classes/PHPExcel/Cell.php on line 824
+[26-Sep-2025 07:29:18 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet.staff' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/staff/excel.php:70
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/staff/excel.php(70): PDO->query('SELECT *  from ...')
+#1 {main}
+  thrown in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/staff/excel.php on line 70

@@ -1,0 +1,487 @@
+[20-Aug-2025 15:37:48 Asia/Kolkata] PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '... END) AS item_status,  pr.unique_id FROM purchase_requisition pr
+     LEF...' at line 1 in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/purchase_requisition_approval_level1/crud.php(204): db->select(Array, ' pr.is_delete =...', '10', '0', '', 'SQL_CALC_FOUND_...')
+#2 {main}
+[25-Aug-2025 15:22:34 Asia/Kolkata] PDOException: SQLSTATE[42000]: Syntax error or access violation: 1327 Undeclared variable: Array in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/purchase_requisition_approval_level1/crud.php(304): db->select('purchase_requis...', Array, Array)
+#2 {main}
+[18-Sep-2025 12:12:55 Asia/Kolkata] PDOException: SQLSTATE[42000]: Syntax error or access violation: 1327 Undeclared variable: Array in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/purchase_requisition_approval_level1/print.php(263): db->select(Array, Array, Array)
+#2 {main}
+[18-Sep-2025 12:13:02 Asia/Kolkata] PDOException: SQLSTATE[42000]: Syntax error or access violation: 1327 Undeclared variable: Array in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/purchase_requisition_approval_level1/print.php(263): db->select(Array, Array, Array)
+#2 {main}
+[18-Sep-2025 12:13:08 Asia/Kolkata] PDOException: SQLSTATE[42000]: Syntax error or access violation: 1327 Undeclared variable: Array in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/purchase_requisition_approval_level1/print.php(263): db->select(Array, Array, Array)
+#2 {main}
+[18-Sep-2025 12:13:13 Asia/Kolkata] PDOException: SQLSTATE[42000]: Syntax error or access violation: 1327 Undeclared variable: Array in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/purchase_requisition_approval_level1/print.php(263): db->select(Array, Array, Array)
+#2 {main}
+[18-Sep-2025 12:13:16 Asia/Kolkata] PDOException: SQLSTATE[42000]: Syntax error or access violation: 1327 Undeclared variable: Array in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/purchase_requisition_approval_level1/print.php(263): db->select(Array, Array, Array)
+#2 {main}
+[18-Sep-2025 12:13:21 Asia/Kolkata] PDOException: SQLSTATE[42000]: Syntax error or access violation: 1327 Undeclared variable: Array in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/purchase_requisition_approval_level1/print.php(263): db->select(Array, Array, Array)
+#2 {main}
+[18-Sep-2025 12:14:53 Asia/Kolkata] PDOException: SQLSTATE[42000]: Syntax error or access violation: 1327 Undeclared variable: Array in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/purchase_requisition_approval_level1/print.php(263): db->select(Array, Array, Array)
+#2 {main}
+[18-Sep-2025 12:17:04 Asia/Kolkata] PDOException: SQLSTATE[42000]: Syntax error or access violation: 1327 Undeclared variable: Array in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/purchase_requisition_approval_level1/print.php(263): db->select(Array, Array, Array)
+#2 {main}
+[18-Sep-2025 12:22:08 Asia/Kolkata] PDOException: SQLSTATE[42000]: Syntax error or access violation: 1327 Undeclared variable: Array in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/purchase_requisition_approval_level1/print.php(267): db->select(Array, Array, Array)
+#2 {main}
+[18-Sep-2025 12:22:17 Asia/Kolkata] PDOException: SQLSTATE[42000]: Syntax error or access violation: 1327 Undeclared variable: Array in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/purchase_requisition_approval_level1/print.php(267): db->select(Array, Array, Array)
+#2 {main}
+[18-Sep-2025 12:23:33 Asia/Kolkata] PDOException: SQLSTATE[42000]: Syntax error or access violation: 1327 Undeclared variable: Array in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/purchase_requisition_approval_level1/print.php(267): db->select(Array, Array, Array)
+#2 {main}
+[18-Sep-2025 12:24:50 Asia/Kolkata] PDOException: SQLSTATE[42000]: Syntax error or access violation: 1327 Undeclared variable: Array in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/purchase_requisition_approval_level1/print.php(267): db->select(Array, Array, Array)
+#2 {main}
+[18-Sep-2025 12:24:54 Asia/Kolkata] PDOException: SQLSTATE[42000]: Syntax error or access violation: 1327 Undeclared variable: Array in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/purchase_requisition_approval_level1/print.php(267): db->select(Array, Array, Array)
+#2 {main}
+[18-Sep-2025 12:25:43 Asia/Kolkata] PDOException: SQLSTATE[42000]: Syntax error or access violation: 1327 Undeclared variable: Array in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/purchase_requisition_approval_level1/print.php(267): db->select(Array, Array, Array)
+#2 {main}
+[18-Sep-2025 12:27:26 Asia/Kolkata] PDOException: SQLSTATE[42000]: Syntax error or access violation: 1327 Undeclared variable: Array in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/purchase_requisition_approval_level1/print.php(268): db->select(Array, Array, Array)
+#2 {main}
+[18-Sep-2025 12:29:24 Asia/Kolkata] PDOException: SQLSTATE[42000]: Syntax error or access violation: 1327 Undeclared variable: Array in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/purchase_requisition_approval_level1/print.php(268): db->select(Array, Array, Array)
+#2 {main}
+[18-Sep-2025 12:29:33 Asia/Kolkata] PDOException: SQLSTATE[42000]: Syntax error or access violation: 1327 Undeclared variable: Array in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/purchase_requisition_approval_level1/print.php(268): db->select(Array, Array, Array)
+#2 {main}
+[18-Sep-2025 12:30:24 Asia/Kolkata] PDOException: SQLSTATE[42000]: Syntax error or access violation: 1327 Undeclared variable: Array in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/purchase_requisition_approval_level1/print.php(268): db->select(Array, Array, Array)
+#2 {main}
+[18-Sep-2025 12:31:09 Asia/Kolkata] PDOException: SQLSTATE[42000]: Syntax error or access violation: 1327 Undeclared variable: Array in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/purchase_requisition_approval_level1/print.php(268): db->select(Array, Array, Array)
+#2 {main}
+[24-Sep-2025 10:17:39 Asia/Kolkata] Passed into the empty item data condition
+[24-Sep-2025 10:18:29 Asia/Kolkata] Passed into the empty item data condition
+[24-Sep-2025 10:18:52 Asia/Kolkata] Passed into the empty item data condition
+[24-Sep-2025 10:20:00 Asia/Kolkata] Passed into the empty item data condition
+[24-Sep-2025 10:20:00 Asia/Kolkata] stdClass Object
+(
+    [sql] => SELECT  product_name,  product_code,  description FROM product_master WHERE unique_id = :unique_id AND is_delete = :is_delete<br />
+    [data] => Array
+        (
+        )
+
+    [status] => 1
+    [error] => PDOStatement Object
+        (
+            [queryString] => SELECT  product_name,  product_code,  description FROM product_master WHERE unique_id = :unique_id AND is_delete = :is_delete
+        )
+
+    [result] => 
+)
+
+[24-Sep-2025 10:20:42 Asia/Kolkata] Passed into the empty item data condition
+[24-Sep-2025 10:20:42 Asia/Kolkata] stdClass Object
+(
+    [sql] => SELECT  product_name,  product_code,  description FROM product_master WHERE unique_id = :unique_id AND is_delete = :is_delete<br />
+    [data] => Array
+        (
+            [0] => Array
+                (
+                    [product_name] => Boat watch 131
+                    [product_code] => 
+                    [description] => Test
+                )
+
+        )
+
+    [status] => 1
+    [error] => PDOStatement Object
+        (
+            [queryString] => SELECT  product_name,  product_code,  description FROM product_master WHERE unique_id = :unique_id AND is_delete = :is_delete
+        )
+
+    [result] => 
+)
+
+[24-Sep-2025 10:20:42 Asia/Kolkata] Array
+(
+    [0] => Array
+        (
+            [item_name] => Boat watch 131
+            [item_code] => 
+            [description] => Test
+        )
+
+)
+
+[24-Sep-2025 10:22:25 Asia/Kolkata] Passed into the empty item data condition
+[24-Sep-2025 10:22:25 Asia/Kolkata] stdClass Object
+(
+    [sql] => SELECT  product_name,  product_code,  description FROM product_master WHERE unique_id = :unique_id AND is_delete = :is_delete<br />
+    [data] => Array
+        (
+            [0] => Array
+                (
+                    [product_name] => Boat watch 131
+                    [product_code] => 
+                    [description] => Test
+                )
+
+        )
+
+    [status] => 1
+    [error] => PDOStatement Object
+        (
+            [queryString] => SELECT  product_name,  product_code,  description FROM product_master WHERE unique_id = :unique_id AND is_delete = :is_delete
+        )
+
+    [result] => 
+)
+
+[24-Sep-2025 10:22:25 Asia/Kolkata] Array
+(
+    [0] => Array
+        (
+            [item_name] => Boat watch 131
+            [item_code] => 
+            [description] => Test
+        )
+
+)
+
+[24-Sep-2025 10:22:29 Asia/Kolkata] Passed into the empty item data condition
+[24-Sep-2025 10:22:29 Asia/Kolkata] stdClass Object
+(
+    [sql] => SELECT  product_name,  product_code,  description FROM product_master WHERE unique_id = :unique_id AND is_delete = :is_delete<br />
+    [data] => Array
+        (
+            [0] => Array
+                (
+                    [product_name] => Boat watch 131
+                    [product_code] => 
+                    [description] => Test
+                )
+
+        )
+
+    [status] => 1
+    [error] => PDOStatement Object
+        (
+            [queryString] => SELECT  product_name,  product_code,  description FROM product_master WHERE unique_id = :unique_id AND is_delete = :is_delete
+        )
+
+    [result] => 
+)
+
+[24-Sep-2025 10:22:29 Asia/Kolkata] Array
+(
+    [0] => Array
+        (
+            [item_name] => Boat watch 131
+            [item_code] => 
+            [description] => Test
+        )
+
+)
+
+[08-Oct-2025 12:10:01 Asia/Kolkata] Passed into the empty item data condition
+[08-Oct-2025 12:10:01 Asia/Kolkata] stdClass Object
+(
+    [sql] => SELECT  product_name,  product_code,  description FROM product_master WHERE unique_id = :unique_id AND is_delete = :is_delete<br />
+    [data] => Array
+        (
+        )
+
+    [status] => 1
+    [error] => PDOStatement Object
+        (
+            [queryString] => SELECT  product_name,  product_code,  description FROM product_master WHERE unique_id = :unique_id AND is_delete = :is_delete
+        )
+
+    [result] => 
+)
+
+[08-Oct-2025 12:10:01 Asia/Kolkata] Passed into the empty item data condition
+[08-Oct-2025 12:10:01 Asia/Kolkata] stdClass Object
+(
+    [sql] => SELECT  product_name,  product_code,  description FROM product_master WHERE unique_id = :unique_id AND is_delete = :is_delete<br />
+    [data] => Array
+        (
+        )
+
+    [status] => 1
+    [error] => PDOStatement Object
+        (
+            [queryString] => SELECT  product_name,  product_code,  description FROM product_master WHERE unique_id = :unique_id AND is_delete = :is_delete
+        )
+
+    [result] => 
+)
+
+[08-Oct-2025 12:10:01 Asia/Kolkata] Passed into the empty item data condition
+[08-Oct-2025 12:10:01 Asia/Kolkata] stdClass Object
+(
+    [sql] => SELECT  product_name,  product_code,  description FROM product_master WHERE unique_id = :unique_id AND is_delete = :is_delete<br />
+    [data] => Array
+        (
+        )
+
+    [status] => 1
+    [error] => PDOStatement Object
+        (
+            [queryString] => SELECT  product_name,  product_code,  description FROM product_master WHERE unique_id = :unique_id AND is_delete = :is_delete
+        )
+
+    [result] => 
+)
+
+[08-Oct-2025 12:10:01 Asia/Kolkata] Passed into the empty item data condition
+[08-Oct-2025 12:10:01 Asia/Kolkata] stdClass Object
+(
+    [sql] => SELECT  product_name,  product_code,  description FROM product_master WHERE unique_id = :unique_id AND is_delete = :is_delete<br />
+    [data] => Array
+        (
+        )
+
+    [status] => 1
+    [error] => PDOStatement Object
+        (
+            [queryString] => SELECT  product_name,  product_code,  description FROM product_master WHERE unique_id = :unique_id AND is_delete = :is_delete
+        )
+
+    [result] => 
+)
+
+[08-Oct-2025 12:10:01 Asia/Kolkata] Passed into the empty item data condition
+[08-Oct-2025 12:10:01 Asia/Kolkata] stdClass Object
+(
+    [sql] => SELECT  product_name,  product_code,  description FROM product_master WHERE unique_id = :unique_id AND is_delete = :is_delete<br />
+    [data] => Array
+        (
+        )
+
+    [status] => 1
+    [error] => PDOStatement Object
+        (
+            [queryString] => SELECT  product_name,  product_code,  description FROM product_master WHERE unique_id = :unique_id AND is_delete = :is_delete
+        )
+
+    [result] => 
+)
+
+[08-Oct-2025 12:34:10 Asia/Kolkata] Passed into the empty item data condition
+[08-Oct-2025 12:34:10 Asia/Kolkata] stdClass Object
+(
+    [sql] => SELECT  product_name,  product_code,  description FROM product_master WHERE unique_id = :unique_id AND is_delete = :is_delete<br />
+    [data] => Array
+        (
+        )
+
+    [status] => 1
+    [error] => PDOStatement Object
+        (
+            [queryString] => SELECT  product_name,  product_code,  description FROM product_master WHERE unique_id = :unique_id AND is_delete = :is_delete
+        )
+
+    [result] => 
+)
+
+[08-Oct-2025 12:34:10 Asia/Kolkata] Passed into the empty item data condition
+[08-Oct-2025 12:34:10 Asia/Kolkata] stdClass Object
+(
+    [sql] => SELECT  product_name,  product_code,  description FROM product_master WHERE unique_id = :unique_id AND is_delete = :is_delete<br />
+    [data] => Array
+        (
+        )
+
+    [status] => 1
+    [error] => PDOStatement Object
+        (
+            [queryString] => SELECT  product_name,  product_code,  description FROM product_master WHERE unique_id = :unique_id AND is_delete = :is_delete
+        )
+
+    [result] => 
+)
+
+[08-Oct-2025 12:34:10 Asia/Kolkata] Passed into the empty item data condition
+[08-Oct-2025 12:34:10 Asia/Kolkata] stdClass Object
+(
+    [sql] => SELECT  product_name,  product_code,  description FROM product_master WHERE unique_id = :unique_id AND is_delete = :is_delete<br />
+    [data] => Array
+        (
+        )
+
+    [status] => 1
+    [error] => PDOStatement Object
+        (
+            [queryString] => SELECT  product_name,  product_code,  description FROM product_master WHERE unique_id = :unique_id AND is_delete = :is_delete
+        )
+
+    [result] => 
+)
+
+[08-Oct-2025 12:47:20 Asia/Kolkata] Passed into the empty item data condition
+[08-Oct-2025 12:47:20 Asia/Kolkata] stdClass Object
+(
+    [sql] => SELECT  product_name,  product_code,  description FROM product_master WHERE unique_id = :unique_id AND is_delete = :is_delete<br />
+    [data] => Array
+        (
+        )
+
+    [status] => 1
+    [error] => PDOStatement Object
+        (
+            [queryString] => SELECT  product_name,  product_code,  description FROM product_master WHERE unique_id = :unique_id AND is_delete = :is_delete
+        )
+
+    [result] => 
+)
+
+[08-Oct-2025 12:47:20 Asia/Kolkata] Passed into the empty item data condition
+[08-Oct-2025 12:47:20 Asia/Kolkata] stdClass Object
+(
+    [sql] => SELECT  product_name,  product_code,  description FROM product_master WHERE unique_id = :unique_id AND is_delete = :is_delete<br />
+    [data] => Array
+        (
+        )
+
+    [status] => 1
+    [error] => PDOStatement Object
+        (
+            [queryString] => SELECT  product_name,  product_code,  description FROM product_master WHERE unique_id = :unique_id AND is_delete = :is_delete
+        )
+
+    [result] => 
+)
+
+[08-Oct-2025 12:47:20 Asia/Kolkata] Passed into the empty item data condition
+[08-Oct-2025 12:47:20 Asia/Kolkata] stdClass Object
+(
+    [sql] => SELECT  product_name,  product_code,  description FROM product_master WHERE unique_id = :unique_id AND is_delete = :is_delete<br />
+    [data] => Array
+        (
+        )
+
+    [status] => 1
+    [error] => PDOStatement Object
+        (
+            [queryString] => SELECT  product_name,  product_code,  description FROM product_master WHERE unique_id = :unique_id AND is_delete = :is_delete
+        )
+
+    [result] => 
+)
+
+[08-Oct-2025 12:47:33 Asia/Kolkata] Passed into the empty item data condition
+[08-Oct-2025 12:47:33 Asia/Kolkata] stdClass Object
+(
+    [sql] => SELECT  product_name,  product_code,  description FROM product_master WHERE unique_id = :unique_id AND is_delete = :is_delete<br />
+    [data] => Array
+        (
+            [0] => Array
+                (
+                    [product_name] => Boat watch 131
+                    [product_code] => 
+                    [description] => Test
+                )
+
+        )
+
+    [status] => 1
+    [error] => PDOStatement Object
+        (
+            [queryString] => SELECT  product_name,  product_code,  description FROM product_master WHERE unique_id = :unique_id AND is_delete = :is_delete
+        )
+
+    [result] => 
+)
+
+[08-Oct-2025 12:47:33 Asia/Kolkata] Array
+(
+    [0] => Array
+        (
+            [item_name] => Boat watch 131
+            [item_code] => 
+            [description] => Test
+        )
+
+)
+
+[08-Oct-2025 13:23:38 Asia/Kolkata] Passed into the empty item data condition
+[08-Oct-2025 13:23:38 Asia/Kolkata] stdClass Object
+(
+    [sql] => SELECT  product_name,  product_code,  description FROM product_master WHERE unique_id = :unique_id AND is_delete = :is_delete<br />
+    [data] => Array
+        (
+        )
+
+    [status] => 1
+    [error] => PDOStatement Object
+        (
+            [queryString] => SELECT  product_name,  product_code,  description FROM product_master WHERE unique_id = :unique_id AND is_delete = :is_delete
+        )
+
+    [result] => 
+)
+
+[08-Oct-2025 13:23:42 Asia/Kolkata] Passed into the empty item data condition
+[08-Oct-2025 13:23:42 Asia/Kolkata] stdClass Object
+(
+    [sql] => SELECT  product_name,  product_code,  description FROM product_master WHERE unique_id = :unique_id AND is_delete = :is_delete<br />
+    [data] => Array
+        (
+        )
+
+    [status] => 1
+    [error] => PDOStatement Object
+        (
+            [queryString] => SELECT  product_name,  product_code,  description FROM product_master WHERE unique_id = :unique_id AND is_delete = :is_delete
+        )
+
+    [result] => 
+)
+

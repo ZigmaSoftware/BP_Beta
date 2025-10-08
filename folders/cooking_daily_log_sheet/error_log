@@ -1,0 +1,137 @@
+[30-Jun-2025 15:50:20 Asia/Kolkata] PDOException: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'sess_branch_id' cannot be null in /home/ie9owkuzkgd4/public_html/blue_planet/config/dbclass.php:579
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet/config/dbclass.php(579): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet/folders/date_wise_feed_rejection/crud.php(54): db->insert('date_wise_feed_...', Array)
+#2 {main}
+[30-Jun-2025 15:51:01 Asia/Kolkata] PDOException: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'sess_branch_id' cannot be null in /home/ie9owkuzkgd4/public_html/blue_planet/config/dbclass.php:579
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet/config/dbclass.php(579): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet/folders/date_wise_feed_rejection/crud.php(54): db->insert('date_wise_feed_...', Array)
+#2 {main}
+[30-Jun-2025 15:52:14 Asia/Kolkata] PDOException: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'sess_branch_id' cannot be null in /home/ie9owkuzkgd4/public_html/blue_planet/config/dbclass.php:579
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet/config/dbclass.php(579): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet/folders/date_wise_feed_rejection/crud.php(54): db->insert('date_wise_feed_...', Array)
+#2 {main}
+[30-Jun-2025 15:55:33 Asia/Kolkata] PDOException: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'sess_branch_id' cannot be null in /home/ie9owkuzkgd4/public_html/blue_planet/config/dbclass.php:579
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet/config/dbclass.php(579): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet/folders/date_wise_feed_rejection/crud.php(60): db->insert('date_wise_feed_...', Array)
+#2 {main}
+[30-Jun-2025 15:55:53 Asia/Kolkata] PDOException: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'sess_branch_id' cannot be null in /home/ie9owkuzkgd4/public_html/blue_planet/config/dbclass.php:579
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet/config/dbclass.php(579): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet/folders/date_wise_feed_rejection/crud.php(60): db->insert('date_wise_feed_...', Array)
+#2 {main}
+[30-Jun-2025 15:56:28 Asia/Kolkata] PDOException: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'sess_branch_id' cannot be null in /home/ie9owkuzkgd4/public_html/blue_planet/config/dbclass.php:579
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet/config/dbclass.php(579): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet/folders/date_wise_feed_rejection/crud.php(54): db->insert('date_wise_feed_...', Array)
+#2 {main}
+[30-Jun-2025 15:56:58 Asia/Kolkata] PDOException: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'sess_branch_id' cannot be null in /home/ie9owkuzkgd4/public_html/blue_planet/config/dbclass.php:579
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet/config/dbclass.php(579): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet/folders/date_wise_feed_rejection/crud.php(54): db->insert('date_wise_feed_...', Array)
+#2 {main}
+[30-Jun-2025 16:07:20 Asia/Kolkata] PDOException: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'sess_branch_id' cannot be null in /home/ie9owkuzkgd4/public_html/blue_planet/config/dbclass.php:579
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet/config/dbclass.php(579): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet/folders/date_wise_feed_rejection/crud.php(54): db->insert('date_wise_feed_...', Array)
+#2 {main}
+[30-Jun-2025 16:08:49 Asia/Kolkata] PDOException: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'sess_branch_id' cannot be null in /home/ie9owkuzkgd4/public_html/blue_planet/config/dbclass.php:579
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet/config/dbclass.php(579): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet/folders/date_wise_feed_rejection/crud.php(54): db->insert('date_wise_feed_...', Array)
+#2 {main}
+[30-Jun-2025 17:26:00 Asia/Kolkata] PDOException: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'sess_branch_id' cannot be null in /home/ie9owkuzkgd4/public_html/blue_planet/config/dbclass.php:579
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet/config/dbclass.php(579): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet/folders/date_wise_feed_rejection/crud.php(72): db->insert('date_wise_feed_...', Array)
+#2 {main}
+[30-Jun-2025 17:26:40 Asia/Kolkata] PDOException: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'sess_branch_id' cannot be null in /home/ie9owkuzkgd4/public_html/blue_planet/config/dbclass.php:579
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet/config/dbclass.php(579): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet/folders/date_wise_feed_rejection/crud.php(54): db->insert('date_wise_feed_...', Array)
+#2 {main}
+[01-Jul-2025 12:26:16 Asia/Kolkata] PDOException: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'is_active' cannot be null in /home/ie9owkuzkgd4/public_html/blue_planet/config/dbclass.php:579
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet/config/dbclass.php(579): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet/folders/date_wise_feed_rejection/crud.php(92): db->insert('date_wise_feed_...', Array)
+#2 {main}
+[02-Jul-2025 07:35:24 UTC] PHP Parse error:  syntax error, unexpected 'case' (T_CASE), expecting end of file in /home/ie9owkuzkgd4/public_html/blue_planet/folders/date_wise_feed_rejection/crud.php on line 112
+[02-Jul-2025 07:36:01 UTC] PHP Parse error:  syntax error, unexpected 'case' (T_CASE), expecting end of file in /home/ie9owkuzkgd4/public_html/blue_planet/folders/date_wise_feed_rejection/crud.php on line 112
+[02-Jul-2025 07:36:11 UTC] PHP Parse error:  syntax error, unexpected 'case' (T_CASE), expecting end of file in /home/ie9owkuzkgd4/public_html/blue_planet/folders/date_wise_feed_rejection/crud.php on line 112
+[02-Jul-2025 07:36:49 UTC] PHP Parse error:  syntax error, unexpected 'case' (T_CASE), expecting end of file in /home/ie9owkuzkgd4/public_html/blue_planet/folders/date_wise_feed_rejection/crud.php on line 112
+[02-Jul-2025 07:36:55 UTC] PHP Parse error:  syntax error, unexpected 'case' (T_CASE), expecting end of file in /home/ie9owkuzkgd4/public_html/blue_planet/folders/date_wise_feed_rejection/crud.php on line 112
+[02-Jul-2025 07:37:45 UTC] PHP Parse error:  syntax error, unexpected 'case' (T_CASE), expecting end of file in /home/ie9owkuzkgd4/public_html/blue_planet/folders/date_wise_feed_rejection/crud.php on line 112
+[02-Jul-2025 07:37:52 UTC] PHP Parse error:  syntax error, unexpected 'case' (T_CASE), expecting end of file in /home/ie9owkuzkgd4/public_html/blue_planet/folders/date_wise_feed_rejection/crud.php on line 112
+[10-Sep-2025 09:25:28 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_beta.tcs_kolkata_daily_log' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/daily_log_sheet/crud.php(131): db->select(Array, ' is_delete = '0...', '10', '0', '', 'SQL_CALC_FOUND_...')
+#2 {main}
+[10-Sep-2025 09:25:52 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_beta.tcs_kolkata_daily_log' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/daily_log_sheet/crud.php(131): db->select(Array, ' is_delete = '0...', '10', '0', '', 'SQL_CALC_FOUND_...')
+#2 {main}
+[10-Sep-2025 09:35:08 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_beta.tcs_kolkata_daily_log' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/daily_log_sheet/crud.php(131): db->select(Array, ' is_delete = '0...', '10', '0', '', 'SQL_CALC_FOUND_...')
+#2 {main}
+[10-Sep-2025 09:36:42 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_beta.tcs_kolkata_daily_log' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/daily_log_sheet/crud.php(131): db->select(Array, ' is_delete = '0...', '10', '0', '', 'SQL_CALC_FOUND_...')
+#2 {main}
+[10-Sep-2025 09:37:57 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_beta.tcs_kolkata_daily_log' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/daily_log_sheet/crud.php(131): db->select(Array, ' is_delete = '0...', '10', '0', '', 'SQL_CALC_FOUND_...')
+#2 {main}
+[10-Sep-2025 09:38:52 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_beta.tcs_kolkata_daily_log' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/daily_log_sheet/crud.php(131): db->select(Array, ' is_delete = '0...', '10', '0', '', 'SQL_CALC_FOUND_...')
+#2 {main}
+[18-Sep-2025 19:29:46 Asia/Kolkata] PDOException: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'acc_year' cannot be null in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:579
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(579): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/cooking_daily_log_sheet/crud.php(66): db->insert('tcs_kolkata_dai...', Array)
+#2 {main}
+[18-Sep-2025 19:29:54 Asia/Kolkata] PDOException: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'acc_year' cannot be null in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:579
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(579): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/cooking_daily_log_sheet/crud.php(66): db->insert('tcs_kolkata_dai...', Array)
+#2 {main}
+[18-Sep-2025 19:30:01 Asia/Kolkata] PDOException: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'acc_year' cannot be null in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:579
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(579): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/cooking_daily_log_sheet/crud.php(66): db->insert('tcs_kolkata_dai...', Array)
+#2 {main}
+[18-Sep-2025 19:30:27 Asia/Kolkata] PDOException: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'acc_year' cannot be null in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:579
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(579): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/cooking_daily_log_sheet/crud.php(66): db->insert('tcs_kolkata_dai...', Array)
+#2 {main}
+[18-Sep-2025 19:30:27 Asia/Kolkata] PDOException: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'acc_year' cannot be null in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:579
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(579): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/cooking_daily_log_sheet/crud.php(66): db->insert('tcs_kolkata_dai...', Array)
+#2 {main}
+[18-Sep-2025 19:30:27 Asia/Kolkata] PDOException: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'acc_year' cannot be null in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:579
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(579): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/cooking_daily_log_sheet/crud.php(66): db->insert('tcs_kolkata_dai...', Array)
+#2 {main}
+[18-Sep-2025 19:30:28 Asia/Kolkata] PDOException: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'acc_year' cannot be null in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:579
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(579): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/cooking_daily_log_sheet/crud.php(66): db->insert('tcs_kolkata_dai...', Array)
+#2 {main}
+[18-Sep-2025 19:30:28 Asia/Kolkata] PDOException: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'acc_year' cannot be null in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:579
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(579): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/cooking_daily_log_sheet/crud.php(66): db->insert('tcs_kolkata_dai...', Array)
+#2 {main}

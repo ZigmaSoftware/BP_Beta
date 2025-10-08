@@ -1,0 +1,20 @@
+[22-Sep-2025 12:39:03 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'grn.company_id' in 'WHERE' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/pending_srn_report/crud.php(131): db->select(Array, ' po.is_delete =...', '10', '0', '', 'SQL_CALC_FOUND_...', 'poi.unique_id')
+#2 {main}
+[22-Sep-2025 13:13:04 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'po.po_date' in 'WHERE' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/pending_srn_report/crud.php(133): db->select(Array, ' po.is_delete =...', '10', '0', '', 'SQL_CALC_FOUND_...', 'poi.unique_id')
+#2 {main}
+[22-Sep-2025 18:08:19 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'grn_sub.has_approved' in 'WHERE' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/pending_srn_report/crud.php(162): db->select(Array, ' po.is_delete =...', '10', '0', '', 'SQL_CALC_FOUND_...', 'poi.unique_id')
+#2 {main}
+[22-Sep-2025 18:08:32 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'grn_sub.has_approved' in 'WHERE' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/pending_srn_report/crud.php(162): db->select(Array, ' po.is_delete =...', '10', '0', '', 'SQL_CALC_FOUND_...', 'poi.unique_id')
+#2 {main}

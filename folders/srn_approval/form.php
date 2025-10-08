@@ -1,0 +1,644 @@
+<style>
+.col-2-5 {
+    flex: 0 0 20.833333%;
+    max-width: 18.33333%;
+}
+</style>
+<?php
+// ini_set('display_errors', 1);
+// ini_set('display_startup_errors', 1);
+// error_reporting(E_ALL);
+include 'crud.php';
+file_put_contents("form_debug.txt", "✅ form.php loaded\n", FILE_APPEND);
+
+error_log("checkpoint 1!!" . "\n", 3, "srn_debug.txt");
+// Form variables
+$btn_text           = "Save";
+$btn_action         = "create";
+$is_btn_disable     = "";
+
+$unique_id          = "";
+$screen_unique_id = "";
+
+if (!isset($_GET["screen_unique_id"])) {
+    $screen_unique_id = unique_id();
+} else {
+    $screen_unique_id = $_GET["screen_unique_id"];
+}
+error_log("screen_unique_id: " . $screen_unique_id . "\n", 3, "srn_debug.txt");
+
+$is_update_mode = isset($_GET['unique_id']) && !empty($_GET['unique_id']);
+error_log("is_update_mode: " . $is_update_mode . "\n", 3, "srn_debug.txt");
+if(isset($_GET["unique_id"])) {
+    if (!empty($_GET["unique_id"])) {
+
+        $unique_id  = $_GET["unique_id"];
+        $where      = [
+            "unique_id" => $unique_id
+        ];
+
+        error_log("Checking srn update load for UID: $unique_id", 3, "srn_debug.txt");
+
+        $table      =  "srn";
+
+        $columns    = [
+            "entry_date",
+            "company_id",
+            "project_id",
+            "supplier_invoice_no",
+            "invoice_date",
+            "dc_no",
+            "inward_type",
+            "supplier_name",
+            "eway_bill_no",
+            "eway_bill_date",
+            "received",
+            "transporter_name",
+            "vehicle_no",
+            "o_invoice",
+            "deli_challan",
+            "test_cert",
+            "om_manual",
+            "amd_no",
+            "cost_center",
+            "deli_challan_no",
+            "tax_invoice_no",
+            "tax_invoice_date",
+            "paf",
+            "freight",
+            "other",
+            "round",
+            "gst_paf",
+            "gst_freight",
+            "gst_other",
+            "po_number",
+            "srn_number",
+            "screen_unique_id",
+            "description",
+            "check_status",
+            "checked_by",
+            "check_remarks",
+            "approve_status",
+            "approved_by",
+            "status_remark"
+        ];
+
+        $table_details   = [
+            $table,
+            $columns
+        ]; 
+
+        $city_values            = $pdo->select($table_details,$where);
+        
+        // print_r($city_values);
+        // error_log("City values fetch result: " . print_r($city_values, true), 3, "srn_debug.log");
+
+        if ($city_values->status) {
+
+            $state_id = '';
+            $city_values        = $city_values->data;
+
+            $entry_date          = $city_values[0]["entry_date"];
+            $company_name         = $city_values[0]["company_id"];
+            $project_id           = $city_values[0]["project_id"];
+            $supplier_invoice_no          = $city_values[0]["supplier_invoice_no"];
+            $invoice_date          = $city_values[0]["invoice_date"];
+            $dc_no          = $city_values[0]["dc_no"];
+            $inward_type          = $city_values[0]["inward_type"];
+            $supplier_name          = $city_values[0]["supplier_name"];
+            $eway_bill_no          = $city_values[0]["eway_bill_no"];
+            $eway_bill_date          = $city_values[0]["eway_bill_date"];
+            $received               = $city_values[0]["received"];
+            $transporter_name          = $city_values[0]["transporter_name"];
+            $vehicle_no          = $city_values[0]["vehicle_no"];
+            $o_invoice          = $city_values[0]["o_invoice"];
+            $deli_challan          = $city_values[0]["deli_challan"];
+            $test_cert          = $city_values[0]["test_cert"];
+            $om_manual          = $city_values[0]["om_manual"];
+            $amd_no          = $city_values[0]["amd_no"];
+            $cost_center          = $city_values[0]["cost_center"];
+            $deli_challan_no          = $city_values[0]["deli_challan_no"];
+            $tax_invoice_no          = $city_values[0]["tax_invoice_no"];
+            $tax_invoice_date          = $city_values[0]["tax_invoice_date"];
+            $paf                = $city_values[0]['paf'];
+            $freight                = $city_values[0]['freight'];
+            $other                = $city_values[0]['other'];
+            $round                = $city_values[0]['round'];
+            $gst_paf                = $city_values[0]['gst_paf'];
+            $gst_freight               = $city_values[0]['gst_freight'];
+            $gst_other                = $city_values[0]['gst_other'];
+            $purchase_number        = $city_values[0]["po_number"];
+            $srn_number        = $city_values[0]["srn_number"];
+            $screen_unique_id        = $city_values[0]["screen_unique_id"];
+            $description        = $city_values[0]["description"];
+            $check_status        = $city_values[0]["check_status"];
+            $checked_by        = $city_values[0]["checked_by"];
+            $check_remarks        = $city_values[0]["check_remarks"];
+            $approve_status        = $city_values[0]["approve_status"];
+            $approved_by        = $city_values[0]["approved_by"];
+            $approve_remarks        = $city_values[0]["status_remark"];
+
+            error_log("check: " . $gst_paf . $paf . "\n", 3, "check_log.txt");
+
+            $state_options      = state();
+            $state_options      = select_option($state_options,"Select the State",$state_id); 
+
+            $btn_text           = "Check";
+            $btn_action         = "update";
+        } else {
+            $btn_text           = "Error";
+            $btn_action         = "error";
+            $is_btn_disable     = "disabled='disabled'";
+            error_log("srn Load failed: " . print_r($city_values->error, true), 3, "srn_debug.log");
+        }
+    }
+} else {
+    $is_update_mode = false;
+}
+
+$tax = 0;
+$discount = 0;
+
+if ($is_update_mode) {
+    $po_sc_unique_id = fetch_po_sc_unique_id($purchase_number); // Ensure $purchase_number is valid
+    $td_data = fetch_tax_discount($po_sc_unique_id);
+
+    if (is_array($td_data) && isset($td_data['tax'], $td_data['discount'])) {
+        $tax = $td_data['tax'];
+        $discount = $td_data['discount'];
+    }
+}
+
+$company_name_options        = company_name();
+$company_name_options        = select_option($company_name_options,"Select the Company",$company_name);
+
+
+$uom_unique_id      = unit_name();
+$uom_unique_id      = select_option($uom_unique_id,"Select", $uom);
+
+$product_unique_id      = product_name();
+$product_unique_id      = select_option($product_unique_id, "Select", $group_unique_id);
+
+$project_options  = get_project_name();
+$project_options  = select_option($project_options,"Select the Project Name",$project_id);
+
+$purchase_order_no  = get_po_number();
+$purchase_order_no = select_option($purchase_order_no, "Select Purchase Order No",$purchase_number);
+
+$gst_paf_options     = select_option(tax(), "Select GST", $gst_paf);
+$gst_freight_options = select_option(tax(), "Select GST", $gst_freight);
+$gst_other_options   = select_option(tax(), "Select GST", $gst_other);
+
+$supplier_name_options     = supplier($supplier_name);
+error_log("Supplier return for '$supplier_name': " . print_r($supplier_name_options, true), 3, "srn_debug.log");
+
+// $supplier_name_options     = select_option($supplier_name_options,"Select", $supplier_name);
+if (!empty($supplier_name_options) && is_array($supplier_name_options)) {
+    $supplier_data = $supplier_name_options[0]; // First result
+
+    $supplier_id = $supplier_data['unique_id'];
+    $supplier_name = $supplier_data['supplier_name'];
+}
+
+?>
+
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-body">
+                <form class="was-validated funnel_form" id="srn_form" name="funnel_form">
+                    <input type="hidden" id="unique_id" name="unique_id" value="<?= $unique_id ?>" readonly>
+                    <input type="hidden" id="screen_unique_id" name="screen_unique_id" value="<?= $screen_unique_id ?>" readonly>
+                    <input type="hidden" name="sublist_unique_id" id="sublist_unique_id" value="" readonly>
+                    <input type="hidden" name="sess_user_id" id="sess_user_id" value="<?= $_SESSION['sess_user_id']; ?>" readonly>
+                    <!-- Hidden Inputs for project_id and po_number -->
+                    <?php if ($is_update_mode): ?>
+                        <input type="hidden" id="project_id" name="project_id" value="<?= $project_id ?>" readonly>
+                       
+                         <input type="hidden" id="purchase_order_no" name="purchase_order_no" value="<?= $purchase_number ?>" readonly>
+                         
+                    <?php endif; ?>
+                    <input type="hidden" id="is_update_mode" name="is_update_mode" value="<?= $is_update_mode ? 'true' : 'false' ?>" readonly>
+                    <div class="row">
+                         <div class="col-md-4">
+                             <div class="form-group row">
+        <label class="col-md-5 col-form-label labelright" for="srn_number" <?= $is_update_mode ? '' : 'style="display:none;"' ?>>SRN Number</label>
+        <div class="col-md-7" <?= $is_update_mode ? '' : 'style="display:none;"' ?>>
+            <input type="text" name="srn_number" id="srn_number" class="form-control"
+                value = "<?= $srn_number ?>" readonly>
+        </div>
+        </div>
+        </div>
+        <div class="col-md-4">
+            <div class="form-group row">
+        <label class="col-md-5 col-form-label labelright" for="srn_date" <?= $is_update_mode ? '' : 'style="display:none;"' ?>>SRN Date</label>
+        <div class="col-md-7" <?= $is_update_mode ? '' : 'style="display:none;"' ?>>
+            <input type="date" name="srn_date" id="srn_date" class="form-control"
+                value = "<?= $entry_date ?>" readonly>
+        </div>
+        </div>  
+        </div>
+          <div class="col-md-4">
+              <div class="form-group row">
+        <label class="col-md-5 col-form-label labelright" for="po_date">PO Date</label>
+        <div class="col-md-7">
+            <input type="date" name="po_date" id="po_date" class="form-control"
+                value = "" readonly>
+        </div>
+        </div>
+        </div>
+     </div>
+     <div class="row">
+        <!-- Column 1 -->
+        <div class="col-md-4 col-sm-12 col-12">
+            <div class="form-group row">
+                <label class="col-md-5 col-form-label labelright">Company Name</label>
+                    <div class="col-md-7">
+                        <select name="company_id" id="company_id"  class="form-control select2" <?= $is_update_mode ? 'disabled' : '' ?> onchange="get_project_name(this.value);" readonly>
+                                <?= $company_name_options ?>
+                           </select>
+                    </div>
+                </div>
+            <div class="form-group row">
+
+                <label class="col-md-5 col-form-label labelright" for="supplier_invoice_no">Supplier Invoice No</label>
+                <div class="col-md-7">
+                    <input type="text" id="supplier_invoice_no" name="supplier_invoice_no" class="form-control" value="<?= $supplier_invoice_no ?>" readonly>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-md-5 col-form-label labelright" for="eway_bill_no">eWay Bill No</label>
+                <div class="col-md-7">
+                    <input type="text" id="eway_bill_no" name="eway_bill_no" class="form-control" value="<?= $eway_bill_no ?>" readonly>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-md-5 col-form-label labelright" for="o_invoice">Original Invoice</label>
+                <div class="col-md-7">
+                    <select id="o_invoice" name="o_invoice" class="form-control select2" disabled>
+                        <option value="" selected disabled>Select Yes/No</option>
+                        <option value="1" <?= ($o_invoice === '1') ? 'selected' : ''; ?>>Yes</option>
+                        <option value="0" <?= ($o_invoice === '0') ? 'selected' : ''; ?>>No</option>
+                    </select>
+                </div>
+            </div>
+            <!--<div class="form-group row">-->
+            <!--    <label class="col-md-4 col-form-label" for="product_code">Product Code</label>-->
+            <!--    <div class="col-md-8">-->
+            <!--        <input type="text" id="product_code" name="product_code" class="form-control" value="">-->
+            <!--    </div>-->
+            <!--</div>-->
+            <div class="form-group row">
+                <label class="col-md-5 col-form-label labelright" for="om_manual">O&M Manual</label>
+                <div class="col-md-7">
+                    <select id="om_manual" name="om_manual" class="form-control select2" disabled>
+                        <option value="" selected disabled>Select Yes/No</option>
+                        <option value="1" <?= ($om_manual === '1') ? 'selected' : ''; ?> var="<?= $om_manual; ?>">Yes</option>
+                        <option value="0" <?= ($om_manual === '0') ? 'selected' : ''; ?>>No</option>
+                        <option value="2" <?= ($om_manual === '2') ? 'selected' : ''; ?>>N.A</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-md-5 col-form-label labelright" for="deli_challan_no">Delivery Challan No</label>
+                <div class="col-md-7">
+                    <input type="text" id="deli_challan_no" name="deli_challan_no" class="form-control" value="<?= $deli_challan_no; ?>" readonly>
+                </div>
+            </div>
+
+            <!--<div class="form-group row">-->
+            <!--    <label class="col-md-4 col-form-label" for="mode_type">Mode Type</label>-->
+            <!--    <div class="col-md-8">-->
+            <!--        <input type="text" id="mode_type" name="mode_type" class="form-control" required>-->
+            <!--    </div>-->
+            <!--</div>-->
+            <div class="form-group row">
+                <label class="col-md-5 col-form-label labelright" for="dc_no">DC No</label>
+                <div class="col-md-7">
+                    <input type="text" id="dc_no" name="dc_no" class="form-control" value="<?= $dc_no ?>" readonly>
+                </div>
+            </div>
+        </div>
+
+        <!-- Column 2 -->
+        <div class="col-md-4 col-sm-12 col-12">
+            <div class ="form-group row">
+                <label class="col-md-5 col-form-label labelright">Project Name</label>
+                <div class="col-md-7">
+                    <select name="project_id" id="project_id" class="form-control select2" onchange="get_supplier_names(this.value); get_project_address(this.value); get_cost_center(this.value);" <?= $is_update_mode ? 'disabled' : '' ?> readonly>
+                        <?= $project_options ?>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="form-group row">
+                <label class="col-md-5 col-form-label labelright" for="po_number">PO Number</label>
+                <div class="col-md-7">
+                    <select name="purchase_order_no" id="purchase_order_no" class="form-control select2" <?= $is_update_mode ? 'disabled' : '' ?> onchange="get_po_date(this.value);" readonly>
+                        <?= $purchase_order_no ?>
+                    </select>
+                </div>
+            </div>
+            <br>
+            <div class="form-group row">
+                <label class="col-md-5 col-form-label labelright" for="eway_bill_date">eWay Bill Date</label>
+                <div class="col-md-7">
+                    <input type="date" id="eway_bill_date" name="eway_bill_date" class="form-control" value="<?= $eway_bill_date ?>" readonly>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-md-5 col-form-label labelright" for="deli_challan">Delivery Challan</label>
+                <div class="col-md-7">
+                    <select id="deli_challan" name="deli_challan" class="form-control select2" disabled>
+                        <option value="" selected disabled>Select Yes/No</option>
+                        <option value="1" <?= ($deli_challan === '1') ? 'selected' : ''; ?>>Yes</option>
+                        <option value="0" <?= ($deli_challan === '0') ? 'selected' : ''; ?>>No</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-md-5 col-form-label labelright" for="amd_no">AMD No</label>
+                <div class="col-md-7">
+                    <input type="text" id="amd_no" name="amd_no" class="form-control" onkeypress='number_only(event);' value="<?= $amd_no; ?>" readonly>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-md-5 col-form-label labelright" for="tax_invoice_no">Tax Invoice No</label>
+                <div class="col-md-7">
+                    <input type="text" id="tax_invoice_no" name="tax_invoice_no" class="form-control" value="<?= $tax_invoice_no; ?>" readonly>
+                </div>
+            </div>
+             <div class="form-group row">
+             <label class="col-md-5 col-form-label labelright" for="received">Received At</label>
+                <div class="col-md-7">
+                    <input type="text" id="received" name="received" class="form-control" value="<?= $received ?>" readonly>
+                </div> </div>
+        </div>
+
+        <!-- Column 3 -->
+        <div class="col-md-4 col-sm-12 col-12">
+            <div class="form-group row">
+                <label class="col-md-5 col-form-label labelright" for="invoice_date">Invoice Date</label>
+                <div class="col-md-7">
+                    <input type="date" id="invoice_date" name="invoice_date" class="form-control" value="<?= $invoice_date ?>" readonly>
+                </div>
+            </div>
+            
+            <div class="form-group row">
+                <label class="col-md-5 col-form-label labelright" for="supplier_name">Supplier Name</label>
+                <div class="col-md-7">
+                    <select id="supplier_name" name="supplier_name" class="form-control select2" onchange="get_purchase_order_no(this.value)" <?= $is_update_mode ? 'disabled' : '' ?> readonly>
+                        <?= $supplier_name_options ?>
+                    </select>
+                    <input type="hidden" name="supplier_id" id="supplier_id"  value="<?= $supplier_id ?>" readonly>
+                </div>
+                <label class="col-md-5 col-form-label labelright" for="transporter_name">Transporter</label>
+                <div class="col-md-7">
+                    <input type="text" id="transporter_name" name="transporter_name" class="form-control" value="<?= $transporter_name; ?>" readonly>
+                </div>
+
+                <label class="col-md-5 col-form-label labelright" for="test_cert">Test Certificate</label>
+                <div class="col-md-7">
+                    <select id="test_cert" name="test_cert" class="form-control select2" disabled>
+                        <option value="" selected disabled>Select Yes/No</option>
+                        <option value="1"  <?= ($test_cert === '1') ? 'selected' : ''; ?>>Yes</option>
+                        <option value="0" <?= ($test_cert === '0') ? 'selected' : ''; ?>>No</option>
+                        <option value="2" <?= ($test_cert === '2') ? 'selected' : ''; ?>>N.A</option>
+                    </select>
+                </div>
+                <label class="col-md-5 col-form-label labelright" for="cost_center">Cost Center</label>
+                <div class="col-md-7">
+                    <input type="text" id="cost_center" name="cost_center" class="form-control" value="<?= $cost_center; ?>" readonly>
+                </div>
+                <label class="col-md-5 col-form-label labelright" for="tax_invoice_date">Tax Invoice Date</label>
+                <div class="col-md-7">
+                    <input type="date" id="tax_invoice_date" name="tax_invoice_date" class="form-control" value="<?= $tax_invoice_date; ?>" readonly>
+                </div>
+                 <label class="col-md-5 col-form-label labelright" for="vehicle_no">Vehicle No</label>
+                <div class="col-md-7">
+                    <input type="text" id="vehicle_no" name="vehicle_no" class="form-control" value="<?= $vehicle_no; ?>" readonly>
+                </div>
+            </div>
+        </div>
+
+        <!-- Column 4 -->
+       
+    </div>          <div class="col-12">                            
+                        <div class="row">
+                            <div class="col-12">
+                            <!-- Table Begiins -->
+                                <table id="srn_sublist_datatable" class="table table-bordered dt-responsive nowrap w-100">
+                                    <thead class="table-light">
+                                        <tr>
+                                            <th>#</th>
+                                            <th>Product Name</th>
+                                            <th>Order Qty</th>
+                                            <!-- <th>Prev Receipt</th> -->
+                                            <th>UOM</th>
+                                            <th>Previously Received Qty</th>
+                                            <th>Now Received Qty</th>
+                                            <th>Rate</th>
+                                            <th>Tax (%)</th>
+                                            <th>Discount Type</th>
+                                            <th>Discount</th>
+                                            <th>Amount</th>
+                                            <!-- <th>Accepted Qty</th>
+                                            <th>Rejected Qty</th>
+                                            <th>Rejected Reason</th> -->
+                                            <th>Remarks</th>
+                                            <!--<th>Action</th>-->
+                                        </tr>
+                                        <!--<tr id="requisition_details_form">-->
+        
+                                        <!--    <th>#</th>-->
+                                        <!--    <th> -->
+                                        <!--    <select id="item_code" name="item_code" class="form-control select2" disabled >-->
+                                        <!--        <?= select_option(item_name_list(), "Select Item", "") ?>-->
+                                        <!--    </select>-->
+                                        <!--    </th>-->
+                                        <!--    <th>-->
+                                        <!--        <input type="text" id="order_qty" name="order_qty" class="form-control" value="" onkeypress='number_only(event);' readonly>-->
+                                        <!--    </th>-->
+                                        <!--    <th>-->
+                                        <!--        <select name="uom" id="uom" class="select2 form-control" <?php echo $is_update_mode ? 'disabled' : ''; ?>>  -->
+                                        <!--            <?php echo $uom_unique_id; ?>-->
+                                        <!--        </select>-->
+                                        <!--    </th>-->
+                                        <!--    <th>-->
+                                        <!--        <input type="text" id="already_received_qty" name="already_received_qty" class="form-control" value="" readonly>-->
+                                        <!--    </th>-->
+                                        <!--    <th>-->
+                                        <!--        <input type="text" id="now_received_qty" name="now_received_qty" class="form-control" value="" onkeypress='number_only(event);' readonly>-->
+                                        <!--    </th>-->
+                                        <!--    <th>-->
+                                        <!--        <input type="text" id="rate" name="rate" class="form-control" value="" onkeypress='number_only(event);' readonly>-->
+                                        <!--    </th>-->
+                                        <!--    <th>-->
+                                        <!--        <input type="text" id="tax" name="tax" class="form-control" value="" readonly>-->
+                                        <!--    </th>-->
+                                        <!--    <th>-->
+                                        <!--        <select id="discount_type" name="discount_type" class="form-control" <?php echo $is_update_mode ? 'disabled' : 'disabled'; ?>>-->
+                                        <!--            <option value="0">Select Discount Type</option>-->
+                                        <!--            <option value="1">Percentage</option>-->
+                                        <!--            <option value="2">Amount</option>-->
+                                        <!--        </select>-->
+                                        <!--    </th>-->
+                                        <!--    <th>-->
+                                        <!--        <input type="text" id="discount" name="discount" class="form-control" value="" onkeypress='number_only(event);' readonly>-->
+                                        <!--    </th>-->
+                                        <!--    <th>-->
+                                        <!--        <input type="text" id="amount" name="amount" class="form-control" value="" onkeypress='number_only(event);' readonly>-->
+                                        <!--    </th>-->
+                                        <!--    <th>-->
+                                        <!--        <input type="text" id="remarks" name="remarks" class="form-control" value="" readonly>-->
+                                        <!--    </th>-->
+                                        <!--    <th>-->
+                                        <!--        <button type="button" class=" btn btn-success waves-effect  waves-light srn_add_update_btn" onclick="srn_sublist_add_update()">ADD</button>-->
+                                        <!--    </th>-->
+                                        <!--</tr>-->
+                                    </thead>
+                                    <tbody>
+                                       
+                                    </tbody>
+                                    
+                                </table>
+                                <!-- Table Ends -->
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-3"></div>
+                            <div class="col-md-3 text-end">
+                                <label for="basic">Basic</label>
+                            </div>
+                            <div class="col-md-6">
+                                <input type="text" class="form-control" id="basic" name="basic" placeholder="Basic total amount" onkeypress='number_only(event);' readonly>
+                            </div>
+
+                            <div class="col-md-3"></div>
+                            <div class="col-md-3 text-end">
+                                <label for="paf">PAF</label>
+                            </div>
+                            <div class="col-md-3">
+                                <input type="text" class="form-control" id="paf" name="paf" placeholder="Enter PAF" onkeypress='number_only(event);' step="0.01" value="<?= $paf; ?>" readonly>
+                            </div>
+                            <div class="col-md-3">
+                                <select class="form-control" id="gst_paf" name="gst_paf" <?= $is_update_mode ? 'disabled' : '' ?>>
+                                    <?= $gst_paf_options ?>
+                                </select>
+                            </div>
+                            
+                            <div class="col-md-3"></div>
+                            <div class="col-md-3 text-end">
+                                <label for="freight">Freight Charges</label>
+                            </div>
+                            <div class="col-md-3">
+                                <input type="text" class="form-control" id="freight" name="freight" placeholder="Enter Freight" onkeypress='number_only(event);' step="0.01" value="<?= $freight; ?>" readonly>
+                            </div>
+                            <div class="col-md-3">
+                                <select class="form-control" id="gst_freight" name="gst_freight" <?= $is_update_mode ? 'disabled' : '' ?>>
+                                    <?= $gst_freight_options ?>
+                                </select>
+                            </div>
+
+                            <div class="col-md-3"></div>
+                            <div class="col-md-3 text-end">
+                                <label for="other_charges">Other Charges</label>
+                            </div>
+                            <div class="col-md-3">
+                                <input type="text" class="form-control" id="other_charges" name="other" placeholder="Enter Other Charges" onkeypress='number_only(event);' step="0.01" value="<?= $other; ?>" readonly>
+                            </div>
+                            <div class="col-md-3">
+                                <select class="form-control" id="gst_other" name="gst_other" <?= $is_update_mode ? 'disabled' : '' ?>>
+                                    <?= $gst_other_options ?>
+                                </select>
+                            </div>
+
+                        </div>
+
+                        <div class="form-group row">
+                            <div class="col-md-3"></div>
+                            <div class="col-md-3 text-end">
+                                <label for="tot_gst">Total GST</label>
+                            </div>
+                            <div class="col-md-6">
+                                <input type="hidden" class="form-control" id="tot_gst1" name="tot_gst1" placeholder="Total GST" onkeypress='number_only(event);' step="0.01" readonly> 
+                                <input type="text" class="form-control" id="tot_gst" name="tot_gst" placeholder="Total GST" onkeypress='number_only(event);' step="0.01" readonly> 
+                            </div>
+
+                            <div class="col-md-3"></div>
+                            <div class="col-md-3 text-end">
+                                <label for="round_off">Round Off</label>
+                            </div>
+                            <div class="col-md-6">
+                                <input type="number" class="form-control" id="round_off" name="round_off" placeholder="Enter Round Off" step="0.01" min="-10" max="10" value="<?= $round ?>" readonly> 
+                            </div>
+
+                            <div class="col-md-3"></div>
+                            <div class="col-md-3 text-end">
+                                <h5 class="mb-0 mt-0">Total Amount</h5>
+                            </div>
+                            <div class="col-md-6">
+                                <span id="final_total">0.00</span>
+                            </div>
+                        </div>
+
+                        <div class="row form-group">
+                            <label class="col-md-2 col-form-label" for="description"> Description</label>
+                        </div>
+                        <div class="row form-group">
+                           <div class="col-md-6">
+                                <textarea id="description" name="description" rows="5" class="form-control"  readonly><?= $description ?></textarea>
+                            </div>
+                        </div>
+
+                        <div class="form-group row" <?php if ($approve_status != 2) echo 'style="display: none;"'; ?>>
+                            <label for="srn_approval_2" class="col-md-2 col-form-label">Approval Status</label>
+                            <div class="col-md-4">
+                                <select name="srn_approval_2" id="srn_approval_2" class="form-control" disabled>
+                                    <option value="0" <?= $approve_status == 0 ? 'selected' : '' ?>>Select Approval Status</option>
+                                    <option value="1" <?= $approve_status == 1 ? 'selected' : ''?>>Approve</option>
+                                    <option value="2" <?= $approve_status == 2 ? 'selected' : ''?>>Reject</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group row" id="status_remark_div_2" <?php if ($approve_status != 2) echo 'style="display: none;"'; ?>>
+                            <label for="status_remark_2" class="col-md-2 col-form-label">Approval Remark</label>
+                            <div class="col-md-6">
+                                <textarea name="status_remark_2" id="status_remark_2" class="form-control" rows="3" placeholder="Enter your remark" readonly><?= $approve_remarks ?></textarea>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="srn_approval" class="col-md-2 col-form-label">Check Status</label>
+                            <div class="col-md-4">
+                                <select name="srn_approval" id="srn_approval" class="form-control" onchange="toggleRemark()">
+                                    <option value="0" <?= $check_status == 0 ? 'selected' : '' ?>>Select Check Status</option>
+                                    <option value="1" <?= $check_status == 1 ? 'selected' : ''?>>Approve</option>
+                                    <option value="2" <?= $check_status == 2 ? 'selected' : ''?>>Reject</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group row" id="status_remark_div" style="display: none;">
+                            <label for="status_remark" class="col-md-2 col-form-label">Status Remark</label>
+                            <div class="col-md-6">
+                                <textarea name="status_remark" id="status_remark" class="form-control" rows="3" placeholder="Enter your remark"><?= $check_remark ?></textarea>
+                            </div>
+                        </div>
+
+
+                        <div class="form-group row ">
+                            <div class="col-md-12 text-end">
+                                 <!--Cancel,save and update Buttons -->
+                                <?php echo btn_cancel($btn_cancel);?>
+                                <?php echo btn_createupdate($folder_name_org,$unique_id,$btn_text);?>
+                            </div>                                
+                        </div>
+                    </div>
+                    <input type="hidden" id="tax_val" value="" readonly>
+                </form>
+            </div> <!-- end card-body -->
+        </div> <!-- end card -->
+    </div><!-- end col -->
+</div>  

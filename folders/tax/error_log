@@ -1,0 +1,5 @@
+[21-Aug-2025 10:56:39 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'tax_nation' in 'SET' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:817
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(817): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/tax/crud.php(89): db->update('tax', Array, Array)
+#2 {main}

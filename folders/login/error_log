@@ -1,0 +1,27 @@
+[19-Aug-2025 19:14:17 Asia/Kolkata] PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' at line 1 in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/login/crud.php(280): db->select(Array, '(user_name = 'A...')
+#2 {main}
+[19-Aug-2025 19:14:21 Asia/Kolkata] PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' at line 1 in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/login/crud.php(280): db->select(Array, '(user_name = 'A...')
+#2 {main}
+[19-Aug-2025 19:14:24 Asia/Kolkata] PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' at line 1 in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/login/crud.php(280): db->select(Array, '(user_name = 'A...')
+#2 {main}
+[19-Aug-2025 19:14:26 Asia/Kolkata] PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' at line 1 in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/login/crud.php(280): db->select(Array, '(user_name = 'A...')
+#2 {main}
+[20-Aug-2025 09:34:09 Asia/Kolkata] PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' at line 1 in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/login/crud.php(280): db->select(Array, '(user_name = 'A...')
+#2 {main}
+[06-Oct-2025 02:58:25 UTC] PHP Warning:  session_start(): open(/opt/alt/php74/var/lib/php/session/sess_e34c6550a93b2f5368de1130164a6461, O_RDWR) failed: Disk quota exceeded (122) in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbconfig.php on line 2
+[06-Oct-2025 02:58:25 UTC] PHP Warning:  session_start(): Failed to read session data: files (path: /opt/alt/php74/var/lib/php/session) in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbconfig.php on line 2

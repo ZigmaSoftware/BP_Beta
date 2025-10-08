@@ -1,0 +1,391 @@
+    <link href="../assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" id="bs-default-stylesheet" />
+    <link href="../assets/css/app.min.css" rel="stylesheet" type="text/css" id="app-default-stylesheet" />
+    <style>
+    	body {
+    		background-color: #fff;
+    	}
+
+    	.state_recom {
+    		border: 1px solid #ccc;
+    		padding: 14px;
+    		margin-bottom: 30px;
+    	}
+
+    	.box1 h3 {
+    		background-color: #f0f0f0;
+    		padding: 4px;
+    		text-align: center;
+    		font-weight: 700;
+    		color: #333;
+    		font-size: 14px;
+    	}
+
+    	.bd-highlight {
+    		font-size: 14px;
+    		color: #444;
+    	}
+
+    	.contn_info.d-flex h6 {
+    		text-align: right;
+    		font-size: 11.5px;
+    		margin-bottom: 4px;
+    	}
+
+    	.contn_info.d-flex h5 {
+    		color: #000;
+    		font-size: 11.5px;
+    		margin-bottom: 4px;
+    	}
+
+    	.contn_info.d-flex p {
+    		margin-bottom: 4px;
+    	}
+
+    	.state_boxbor {
+
+    		margin-bottom: 20px;
+    		margin-top: 30px;
+
+    	}
+
+    	.state_recom1,
+    	.state_recom3 {
+    		border: 1px solid #ccc;
+    		padding: 4px;
+    	}
+
+    	.state_recom2 {
+    		/* border-left: 1px solid #ccc;
+	border-right: 1px solid #ccc;
+	*/
+    		border: 1px solid #ccc;
+    		padding: 4px;
+    	}
+
+    	.col-md-4 {
+    		width: 33.33333333%;
+    		padding-left: 5px;
+    		padding-right: 5px;
+    	}
+
+    	.col-md-8 {
+    		flex: 0 0 auto;
+    		width: 66.66666667%;
+    	}
+
+    	.col-md-4.wid1 {
+    		width: 45%;
+    	}
+
+    	.col-md-8.wid2 {
+    		width: 55%;
+    	}
+
+    	table, th, td {
+    border: 1px solid #ccc;
+    border-collapse: collapse;
+}
+th, td {
+    padding: 5px;
+    text-align: left;    
+}
+.print_icon {
+    text-align: right;
+    font-size: 33px;
+  
+    </style>
+    <?php
+
+	include '../../config/dbconfig.php';
+
+	if (isset($_GET["days_cnt"])) {
+		$days_cnt = disname($_GET['days_cnt']." Age Wise Tasks");
+	}
+	
+	$session_id = $_SESSION['user_id'];
+	
+	?>.
+
+    <div class="container-fluid" style="background-color:#fff;">
+    	<div class="compl_print pt-4">
+    	    <div class="row">
+    <div style="display: flex; align-items: center; justify-content: center;">
+        <img src="../../assets/images/logo1.png" width="80px" style="margin-right: 10px;" />
+        <div>
+            <h2 style="margin: 0;"><b>Zigma Global Environ Solutions Private Limited</b></h2>
+            <br>
+            <h5 style="margin: 0;">No. 178, Indu nagar, Palayapalayam, Perundurai Road, Erode 638 011.</h5>
+            <h5>04242225157&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;connect@zigma.in&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;www.zigma.in</h5>
+        </div>
+    </div>
+</div>
+    		<div class="state_boxbor">
+    			<div class="row">
+    				<div class="col-md-12">
+    					<div class="state_recom3">
+    						<div class="box1">
+    							<h3><?=$days_cnt;?></h3>
+    							<table cellspacing="0" cellpadding="0" class="" width="100%" style="font-family: monospace;">
+								    <thead class="colspanHead">
+								        <tr>
+								            <th width = "5%" colspan="1" class="blankCell">S.No</th>
+											<th width = "10%"  colspan="1" class="blankCell">Reg Date / Reg No</th>
+											<th width = "10%"  colspan="1" class="blankCell">Site</th>
+											<th width = "10%"  colspan="1" class="blankCell">Department / Category</th>
+											<th width = "15%"  colspan="1" class="blankCell">Description</th>
+											<th width = "10%"  colspan="1" class="blankCell">Ageing Days / Assign By</th>
+											<th width = "10%"  colspan="1" class="blankCell">Status / Stage</th>
+								        </tr>
+								    </thead>
+								    <?php
+								    	$start = 0;
+								         $table_main = "view_pending_days_cnt";
+								       	$today  =  date('Y-m-d');
+
+								        if($_GET['days_cnt'] == "1_days"){
+								       	    $where_list = "stage_1_status NOT IN (2,3) AND days_cnt <= 1";
+								        }
+
+								        if($_GET['days_cnt'] == "<=5_days"){
+								       	// 	$where_list = "days_cnt <= 5";
+								       	    $where_list = "stage_1_status NOT IN (2,3) AND days_cnt > 1 AND days_cnt <= 5";
+								        }
+
+								        if($_GET['days_cnt'] == "<=10_days"){
+								       		$where_list = "stage_1_status NOT IN (2,3) AND days_cnt >5 AND days_cnt <= 10";
+								        }
+
+								        if($_GET['days_cnt'] == "<=15_days"){
+								       		$where_list = "stage_1_status NOT IN (2,3) AND days_cnt >10 AND days_cnt <=15";
+								        }
+								        
+								        if($_GET['days_cnt'] == "<=30_days"){
+								       		$where_list = "stage_1_status NOT IN (2,3) AND days_cnt >15 AND days_cnt <=30";
+								        }
+								        
+								        if($_GET['days_cnt'] == ">30_days"){
+								       		$where_list = "stage_1_status NOT IN (2,3) AND days_cnt > 30";
+								        }
+								        
+								        if($_SESSION['sess_department_name'] != 'All'){
+                                    if ($_SESSION['user_id'] != '5ff562ed542d625323') {
+                                        $rep_dept = str_replace(',', "','", $_SESSION['sess_department_name']);
+                                        $where_list .= " and department_name in ('" . $rep_dept . "')";
+                                    }
+                                }
+                                
+                                if($_SESSION['sess_type_user'] == 1){
+                                            $where_list .= " and assign_by = '".$_SESSION['user_id']."'";
+                                        }
+                                        
+                                if($_SESSION['sess_site_name'] != 'All'){
+                                    if($_SESSION['user_id'] != '5ff562ed542d625323'){
+                                        $rep_site = str_replace(',', "','", $_SESSION['sess_site_name']);
+                                        $where_list .= " and site_name in ('".$rep_site."')";
+                                    }
+                                }
+
+								        $columns_list    = [
+								            "@a:=@a+1 s_no",
+								            "entry_date",
+								            // "state_name",
+								            "department_name",
+								            "complaint_description",
+								            "source_name",
+								            "assign_by",
+								            "stage_1_status",
+								            "unique_id",
+								            "site_name",
+								            "complaint_category",
+								            "complaint_no",
+            								"stage",
+            								"days_cnt",
+								            
+								        ];
+
+								        $table_details_list  = [
+								            $table_main.", (SELECT @a:= ".$start.") AS a ",
+								            $columns_list
+								        ];
+
+								        $result         = $pdo->select($table_details_list,$where_list);
+								        // print_r($result);
+								        // die();
+								       
+								        if ($result->status) {
+
+								            $res_array      = $result->data;
+
+								            $table_data     = "";
+
+								        foreach ($res_array as $key => $value) {
+								            	$stage_1_ending_date  = get_ending_date($value['assign_by'], $value['department_name'], 1);
+								                $stage_2_ending_date  = get_ending_date($value['assign_by'], $value['department_name'], 2);
+								                $ent_date = date('Y-m-d');
+								                $date1 = date_create($value['entry_date']);
+								                $date2 = date_create($ent_date);
+								                $diff = date_diff($date1, $date2);
+								                $current_date =  $diff->format("%a");
+
+								        switch ($value['stage_1_status']) 
+								        {
+								            case 1:
+								                $stage_status = "<span style='font-size:12px;font-weight : bold;color:Orange'> <1days </span>";
+								            break;
+								            case 2:
+								                $stage_status = "<span style='font-size:12px;font-weight : bold;color:#1fcb6b'><=5days</span>";
+								            break;
+								            case 3:
+								                $stage_status = "<span style='font-size:12px;font-weight : bold;color:Red'><=10days</span>";
+								            break;
+								            case 4:
+								                $stage_status = "<span style='font-size:12px;font-weight : bold;color:Red'><=15days</span>";
+								            break;
+								            case 5:
+								                $stage_status = "<span style='font-size:12px;font-weight : bold;color:Red'><=30days</span>";
+								            break;
+								            default:
+								                $stage_status = "<span style='font-size:12px;font-weight : bold;color:blue'>>30days</span>";
+								            break;
+								        }
+
+                                         $entry_date1=$value['entry_date'];
+								        $value['entry_date']        = disdate($value['entry_date']);
+								                // $stage_1_update_date       = date_create($value['stage_1_update_date']);
+
+								        if((date_format($stage_1_update_date,"Y-m-d") == $today)&&($value['stage_1_status'] == 2)){
+								                	$value['stage_1_update_date'] = "<span style='font-size:12px;font-weight : bold;color:#1fcb6b'>".date_format($stage_1_update_date,"d-m-Y H:i:s")."</span>";
+								                }
+								                else{
+								                	if($value['stage_1_status'] == 0){
+								                		$value['stage_1_update_date'] = "<b> - </b>";
+								                	}else{
+								                		$value['stage_1_update_date'] = date_format($stage_1_update_date,"d-m-Y H:i:s");
+								                	}
+								                }
+								                
+								                //need to add in live
+										$folder_name = "stage_1";
+										$menu_screen            = $folder_name."/view";
+                                        $file_name_update       = base64_encode(openssl_encrypt($menu_screen, $enc_method, $enc_password, OPENSSL_RAW_DATA, $enc_iv));
+                                    
+                                        $uni_id = base64_encode(openssl_encrypt($value['unique_id'], $enc_method, $enc_password, OPENSSL_RAW_DATA, $enc_iv));
+                                        
+                                        //need to add above in live
+                                        
+								            
+								        // $value['state_name']         = state_name($value['state_name'])[0]['state_name'];
+								        $value['site_name']         = site_name($value['site_name'])[0]['site_name'];
+								        $value['source_name']       = source_type($value['source_name'])[0]['source'];
+								        $value['assign_by']         = disname(user_name($value['assign_by'])[0]['staff_name']);
+								        $value['days_cnt']          = days_type($value['days_cnt'])[0]['days_cnt'];
+								        $value['department_name']   = department_type($value['department_name'])[0]['department_type'];
+								        $value['complaint_category']= category_creation($value['complaint_category'])[0]['category_name'];
+					                    $value['state_name']             =   "<b>" . $value['site_name'] . " </b><br>" ;
+							            $value['department_name']       =   "<b>" . $value['department_name'] . " </b><br><span style=font-size:12px;>" . $value['complaint_category'] . '</span>';
+							         //   $value['entry_date']            =   "<b>" . $value['entry_date'] . " </b><br><span style=font-size:12px;>" . $value['complaint_no'] . '</span>';
+							         
+							         //Need to add in live
+									    $value['entry_date'] = "<b>" . $value['entry_date'] . "</b><br><a href='../../index.php?file=" . $file_name_update . "&unique_id=" . $uni_id . "' target='_blank'><span style='font-size:12px;'>" . $value['complaint_no'] . '</span></a>';
+                                        //Need to add above in live
+                                        
+							                    // $value['assign_by']     = "<b>".$value['assign_by']." </span> </b><br><span style='font-size:12px;'>".$current_date." Days</span>";
+							            $value['assign_by']     = "<b>" . $current_date . " Days</b><br><span style='font-size:12px;'>" . $value['assign_by'] . " </span>";
+							            $value['stage_1_status']             = "<b>".$stage_status."</b><br><span style='font-size:12px;'>".$value['stage']." </span>";
+								        $table_data .="<tr>";
+
+								        $table_data .="<td>".$value['s_no']."</td>";
+								                // $table_data .="<td>".$value['EmpCode']."</td>";
+								        $table_data .="<td style = 'text-align : left'>".$value['entry_date']."</td>";
+								        $table_data .="<td style = 'text-align : left'>".$value['state_name']."</td>";
+								        $table_data .="<td style = 'text-align : left'>".$value['department_name']."</td>";
+								        // $table_data .="<td style = 'text-align : left'>".$value['complaint_description']."</td>";
+								        
+								        if($session_id == "661a3fec00a1641026") {
+                                                $table_data .= "<td style='text-align: left'>
+                                                <a href='javascript:void(0);' 
+                                                   onclick=\"addcommends('" . addslashes($entry_date1) . "', '" . addslashes($value['complaint_no']) . "')\">" . 
+                                                   htmlspecialchars($value['complaint_description']) . 
+                                                "</a>
+                                            </td>";
+
+                                            } else {
+                                                $table_data .= "<td style='text-align: left'>" . $value['complaint_description'] . "</td>";
+                                            }
+                                            
+                                            
+								        $table_data .="<td style = 'text-align : left'>".$value['assign_by']."</td>";
+								        $table_data .="<td style = 'text-align : left'>".$value['stage_1_status']."</td>";
+								                // $table_data .="<td style = 'text-align : left'>".$value['days_cnt']."</td>";
+								        $table_data .="</tr>";
+
+								            }
+								        }
+									   ?>
+								    <tbody>
+        								<?php echo $table_data; ?>
+    								</tbody>
+								</table>
+    						</div>
+    					</div>
+    				</div>
+    			
+    				
+    			</div>
+    		</div>
+
+    
+    	</div>
+    </div>
+    
+    
+    <script>
+
+    function addcommends(entry_date1, complaint_no) {
+        // alert(complaint_no);
+    window.open(
+        'commend.php?entry_date=' + encodeURIComponent(entry_date1) + '&complaint_no=' + encodeURIComponent(complaint_no),
+        '_blank',
+        'width=800,height=600'
+    );
+}
+
+
+    </script>
+    
+    
+    <?php 
+    function get_ending_date($assign_by, $department, $stage)
+{
+    global $pdo;
+
+    $table_name    = "periodic_creation_sub";
+    $where         = [];
+    $table_columns = [
+        "ending_count",
+    ];
+
+    $table_details = [
+        "periodic_creation_sub",
+        $table_columns
+    ];
+
+    $where  = "department_name = '" . $department . "' and level = " . $stage . " and is_delete = 0 and form_unique_id != ''";
+
+
+    $cnt_status = $pdo->select($table_details, $where);
+    //echo $cnt_status;
+    if (!($cnt_status->status)) {
+
+        print_r($cnt_status);
+    } else {
+
+        if (!empty($cnt_status->data[0])) {
+            $cnt_sts    = $cnt_status->data[0]['ending_count'];
+        } else {
+            $cnt_sts    = "";
+        }
+    }
+    return $cnt_sts;
+}
+?>

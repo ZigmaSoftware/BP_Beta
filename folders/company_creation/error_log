@@ -1,0 +1,1052 @@
+[24-Jul-2025 09:55:00 Asia/Kolkata] PDOException: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'sess_branch_id' cannot be null in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:579
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(579): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/company_creation/crud.php(179): db->insert('company_creatio...', Array)
+#2 {main}
+[24-Jul-2025 09:55:17 Asia/Kolkata] PDOException: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'sess_branch_id' cannot be null in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:579
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(579): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/company_creation/crud.php(179): db->insert('company_creatio...', Array)
+#2 {main}
+[24-Jul-2025 11:27:57 UTC] PHP Parse error:  syntax error, unexpected 'else' (T_ELSE), expecting end of file in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/company_creation/crud.php on line 461
+[02-Sep-2025 10:39:06 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'branch_name' in 'WHERE' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/company_creation/crud.php(401): db->select(Array, ' is_delete = '0...', '10', '0', 'pin_code asc', 'SQL_CALC_FOUND_...')
+#2 {main}
+[02-Sep-2025 10:39:09 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'branch_name' in 'WHERE' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/company_creation/crud.php(401): db->select(Array, ' is_delete = '0...', '10', '0', 'pin_code asc', 'SQL_CALC_FOUND_...')
+#2 {main}
+[02-Sep-2025 10:41:37 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_beta.state' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/company_creation/crud.php(384): db->select(Array, ' is_delete = '0...', '10', '0', 'pin_code asc', 'SQL_CALC_FOUND_...')
+#2 {main}
+[02-Sep-2025 10:42:17 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_beta.state' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/company_creation/crud.php(388): db->select(Array, ' is_delete = '0...', '10', '0', 'pin_code asc', 'SQL_CALC_FOUND_...')
+#2 {main}
+[02-Sep-2025 10:42:22 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_beta.state' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/company_creation/crud.php(388): db->select(Array, ' is_delete = '0...', '10', '0', 'pin_code asc', 'SQL_CALC_FOUND_...')
+#2 {main}
+[02-Sep-2025 10:51:40 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'country_name' in 'WHERE' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/company_creation/crud.php(379): db->select(Array, ' is_delete = '0...', '10', '0', 'pin_code asc', 'SQL_CALC_FOUND_...')
+#2 {main}
+[02-Sep-2025 10:51:44 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'country_name' in 'WHERE' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/company_creation/crud.php(379): db->select(Array, ' is_delete = '0...', '10', '0', 'pin_code asc', 'SQL_CALC_FOUND_...')
+#2 {main}
+[02-Sep-2025 10:52:45 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'country_name' in 'WHERE' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/company_creation/crud.php(380): db->select(Array, ' is_delete = '0...', '10', '0', 'pin_code asc', 'SQL_CALC_FOUND_...')
+#2 {main}
+[02-Sep-2025 10:52:45 Asia/Kolkata] stdClass Object
+(
+    [sql] => SELECT SQL_CALC_FOUND_ROWS @a:=@a+1 s_no,  company_name,  company_code,  state,  city,  pin_code,  latitude,  longitude,  logo,  file_attach,  is_active,  unique_id FROM company_creation , (SELECT @a:= 0) AS a  WHERE  is_delete = '0'  AND (
+            company_name LIKE '%u%' 
+            OR country IN (SELECT country_id FROM countries WHERE country_name LIKE '%u%') 
+            OR state IN (SELECT state_id FROM states WHERE state_name LIKE '%u%') 
+            OR city IN (SELECT city_id FROM cities WHERE city_name LIKE '%u%')
+        )  ORDER BY pin_code asc LIMIT 10<br />
+    [data] => 
+    [status] => 0
+    [error] => PDOException Object
+        (
+            [message:protected] => SQLSTATE[42S22]: Column not found: 1054 Unknown column 'country_name' in 'WHERE'
+            [string:Exception:private] => PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'country_name' in 'WHERE' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/company_creation/crud.php(380): db->select(Array, ' is_delete = '0...', '10', '0', 'pin_code asc', 'SQL_CALC_FOUND_...')
+#2 {main}
+            [code:protected] => 42S22
+            [file:protected] => /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php
+            [line:protected] => 306
+            [trace:Exception:private] => Array
+                (
+                    [0] => Array
+                        (
+                            [file] => /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php
+                            [line] => 306
+                            [function] => execute
+                            [class] => PDOStatement
+                            [type] => ->
+                            [args] => Array
+                                (
+                                )
+
+                        )
+
+                    [1] => Array
+                        (
+                            [file] => /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/company_creation/crud.php
+                            [line] => 380
+                            [function] => select
+                            [class] => db
+                            [type] => ->
+                            [args] => Array
+                                (
+                                    [0] => Array
+                                        (
+                                            [0] => company_creation , (SELECT @a:= 0) AS a 
+                                            [1] => Array
+                                                (
+                                                    [0] => @a:=@a+1 s_no
+                                                    [1] => company_name
+                                                    [2] => company_code
+                                                    [3] => state
+                                                    [4] => city
+                                                    [5] => pin_code
+                                                    [6] => latitude
+                                                    [7] => longitude
+                                                    [8] => logo
+                                                    [9] => file_attach
+                                                    [10] => is_active
+                                                    [11] => unique_id
+                                                )
+
+                                        )
+
+                                    [1] =>  is_delete = '0'  AND (
+            company_name LIKE '%u%' 
+            OR country IN (SELECT country_id FROM countries WHERE country_name LIKE '%u%') 
+            OR state IN (SELECT state_id FROM states WHERE state_name LIKE '%u%') 
+            OR city IN (SELECT city_id FROM cities WHERE city_name LIKE '%u%')
+        )
+                                    [2] => 10
+                                    [3] => 0
+                                    [4] => pin_code asc
+                                    [5] => SQL_CALC_FOUND_ROWS
+                                )
+
+                        )
+
+                )
+
+            [previous:Exception:private] => 
+            [errorInfo] => Array
+                (
+                    [0] => 42S22
+                    [1] => 1054
+                    [2] => Unknown column 'country_name' in 'WHERE'
+                )
+
+        )
+
+    [result] => PDOStatement Object
+        (
+            [queryString] => SELECT SQL_CALC_FOUND_ROWS @a:=@a+1 s_no,  company_name,  company_code,  state,  city,  pin_code,  latitude,  longitude,  logo,  file_attach,  is_active,  unique_id FROM company_creation , (SELECT @a:= 0) AS a  WHERE  is_delete = '0'  AND (
+            company_name LIKE '%u%' 
+            OR country IN (SELECT country_id FROM countries WHERE country_name LIKE '%u%') 
+            OR state IN (SELECT state_id FROM states WHERE state_name LIKE '%u%') 
+            OR city IN (SELECT city_id FROM cities WHERE city_name LIKE '%u%')
+        )  ORDER BY pin_code asc LIMIT 10
+        )
+
+)
+
+[02-Sep-2025 10:52:46 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'country_name' in 'WHERE' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/company_creation/crud.php(380): db->select(Array, ' is_delete = '0...', '10', '0', 'pin_code asc', 'SQL_CALC_FOUND_...')
+#2 {main}
+[02-Sep-2025 10:52:46 Asia/Kolkata] stdClass Object
+(
+    [sql] => SELECT SQL_CALC_FOUND_ROWS @a:=@a+1 s_no,  company_name,  company_code,  state,  city,  pin_code,  latitude,  longitude,  logo,  file_attach,  is_active,  unique_id FROM company_creation , (SELECT @a:= 0) AS a  WHERE  is_delete = '0'  AND (
+            company_name LIKE '%ut%' 
+            OR country IN (SELECT country_id FROM countries WHERE country_name LIKE '%ut%') 
+            OR state IN (SELECT state_id FROM states WHERE state_name LIKE '%ut%') 
+            OR city IN (SELECT city_id FROM cities WHERE city_name LIKE '%ut%')
+        )  ORDER BY pin_code asc LIMIT 10<br />
+    [data] => 
+    [status] => 0
+    [error] => PDOException Object
+        (
+            [message:protected] => SQLSTATE[42S22]: Column not found: 1054 Unknown column 'country_name' in 'WHERE'
+            [string:Exception:private] => PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'country_name' in 'WHERE' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/company_creation/crud.php(380): db->select(Array, ' is_delete = '0...', '10', '0', 'pin_code asc', 'SQL_CALC_FOUND_...')
+#2 {main}
+            [code:protected] => 42S22
+            [file:protected] => /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php
+            [line:protected] => 306
+            [trace:Exception:private] => Array
+                (
+                    [0] => Array
+                        (
+                            [file] => /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php
+                            [line] => 306
+                            [function] => execute
+                            [class] => PDOStatement
+                            [type] => ->
+                            [args] => Array
+                                (
+                                )
+
+                        )
+
+                    [1] => Array
+                        (
+                            [file] => /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/company_creation/crud.php
+                            [line] => 380
+                            [function] => select
+                            [class] => db
+                            [type] => ->
+                            [args] => Array
+                                (
+                                    [0] => Array
+                                        (
+                                            [0] => company_creation , (SELECT @a:= 0) AS a 
+                                            [1] => Array
+                                                (
+                                                    [0] => @a:=@a+1 s_no
+                                                    [1] => company_name
+                                                    [2] => company_code
+                                                    [3] => state
+                                                    [4] => city
+                                                    [5] => pin_code
+                                                    [6] => latitude
+                                                    [7] => longitude
+                                                    [8] => logo
+                                                    [9] => file_attach
+                                                    [10] => is_active
+                                                    [11] => unique_id
+                                                )
+
+                                        )
+
+                                    [1] =>  is_delete = '0'  AND (
+            company_name LIKE '%ut%' 
+            OR country IN (SELECT country_id FROM countries WHERE country_name LIKE '%ut%') 
+            OR state IN (SELECT state_id FROM states WHERE state_name LIKE '%ut%') 
+            OR city IN (SELECT city_id FROM cities WHERE city_name LIKE '%ut%')
+        )
+                                    [2] => 10
+                                    [3] => 0
+                                    [4] => pin_code asc
+                                    [5] => SQL_CALC_FOUND_ROWS
+                                )
+
+                        )
+
+                )
+
+            [previous:Exception:private] => 
+            [errorInfo] => Array
+                (
+                    [0] => 42S22
+                    [1] => 1054
+                    [2] => Unknown column 'country_name' in 'WHERE'
+                )
+
+        )
+
+    [result] => PDOStatement Object
+        (
+            [queryString] => SELECT SQL_CALC_FOUND_ROWS @a:=@a+1 s_no,  company_name,  company_code,  state,  city,  pin_code,  latitude,  longitude,  logo,  file_attach,  is_active,  unique_id FROM company_creation , (SELECT @a:= 0) AS a  WHERE  is_delete = '0'  AND (
+            company_name LIKE '%ut%' 
+            OR country IN (SELECT country_id FROM countries WHERE country_name LIKE '%ut%') 
+            OR state IN (SELECT state_id FROM states WHERE state_name LIKE '%ut%') 
+            OR city IN (SELECT city_id FROM cities WHERE city_name LIKE '%ut%')
+        )  ORDER BY pin_code asc LIMIT 10
+        )
+
+)
+
+[02-Sep-2025 10:52:46 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'country_name' in 'WHERE' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/company_creation/crud.php(380): db->select(Array, ' is_delete = '0...', '10', '0', 'pin_code asc', 'SQL_CALC_FOUND_...')
+#2 {main}
+[02-Sep-2025 10:52:46 Asia/Kolkata] stdClass Object
+(
+    [sql] => SELECT SQL_CALC_FOUND_ROWS @a:=@a+1 s_no,  company_name,  company_code,  state,  city,  pin_code,  latitude,  longitude,  logo,  file_attach,  is_active,  unique_id FROM company_creation , (SELECT @a:= 0) AS a  WHERE  is_delete = '0'  AND (
+            company_name LIKE '%utta%' 
+            OR country IN (SELECT country_id FROM countries WHERE country_name LIKE '%utta%') 
+            OR state IN (SELECT state_id FROM states WHERE state_name LIKE '%utta%') 
+            OR city IN (SELECT city_id FROM cities WHERE city_name LIKE '%utta%')
+        )  ORDER BY pin_code asc LIMIT 10<br />
+    [data] => 
+    [status] => 0
+    [error] => PDOException Object
+        (
+            [message:protected] => SQLSTATE[42S22]: Column not found: 1054 Unknown column 'country_name' in 'WHERE'
+            [string:Exception:private] => PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'country_name' in 'WHERE' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/company_creation/crud.php(380): db->select(Array, ' is_delete = '0...', '10', '0', 'pin_code asc', 'SQL_CALC_FOUND_...')
+#2 {main}
+            [code:protected] => 42S22
+            [file:protected] => /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php
+            [line:protected] => 306
+            [trace:Exception:private] => Array
+                (
+                    [0] => Array
+                        (
+                            [file] => /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php
+                            [line] => 306
+                            [function] => execute
+                            [class] => PDOStatement
+                            [type] => ->
+                            [args] => Array
+                                (
+                                )
+
+                        )
+
+                    [1] => Array
+                        (
+                            [file] => /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/company_creation/crud.php
+                            [line] => 380
+                            [function] => select
+                            [class] => db
+                            [type] => ->
+                            [args] => Array
+                                (
+                                    [0] => Array
+                                        (
+                                            [0] => company_creation , (SELECT @a:= 0) AS a 
+                                            [1] => Array
+                                                (
+                                                    [0] => @a:=@a+1 s_no
+                                                    [1] => company_name
+                                                    [2] => company_code
+                                                    [3] => state
+                                                    [4] => city
+                                                    [5] => pin_code
+                                                    [6] => latitude
+                                                    [7] => longitude
+                                                    [8] => logo
+                                                    [9] => file_attach
+                                                    [10] => is_active
+                                                    [11] => unique_id
+                                                )
+
+                                        )
+
+                                    [1] =>  is_delete = '0'  AND (
+            company_name LIKE '%utta%' 
+            OR country IN (SELECT country_id FROM countries WHERE country_name LIKE '%utta%') 
+            OR state IN (SELECT state_id FROM states WHERE state_name LIKE '%utta%') 
+            OR city IN (SELECT city_id FROM cities WHERE city_name LIKE '%utta%')
+        )
+                                    [2] => 10
+                                    [3] => 0
+                                    [4] => pin_code asc
+                                    [5] => SQL_CALC_FOUND_ROWS
+                                )
+
+                        )
+
+                )
+
+            [previous:Exception:private] => 
+            [errorInfo] => Array
+                (
+                    [0] => 42S22
+                    [1] => 1054
+                    [2] => Unknown column 'country_name' in 'WHERE'
+                )
+
+        )
+
+    [result] => PDOStatement Object
+        (
+            [queryString] => SELECT SQL_CALC_FOUND_ROWS @a:=@a+1 s_no,  company_name,  company_code,  state,  city,  pin_code,  latitude,  longitude,  logo,  file_attach,  is_active,  unique_id FROM company_creation , (SELECT @a:= 0) AS a  WHERE  is_delete = '0'  AND (
+            company_name LIKE '%utta%' 
+            OR country IN (SELECT country_id FROM countries WHERE country_name LIKE '%utta%') 
+            OR state IN (SELECT state_id FROM states WHERE state_name LIKE '%utta%') 
+            OR city IN (SELECT city_id FROM cities WHERE city_name LIKE '%utta%')
+        )  ORDER BY pin_code asc LIMIT 10
+        )
+
+)
+
+[02-Sep-2025 10:52:47 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'country_name' in 'WHERE' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/company_creation/crud.php(380): db->select(Array, ' is_delete = '0...', '10', '0', 'pin_code asc', 'SQL_CALC_FOUND_...')
+#2 {main}
+[02-Sep-2025 10:52:47 Asia/Kolkata] stdClass Object
+(
+    [sql] => SELECT SQL_CALC_FOUND_ROWS @a:=@a+1 s_no,  company_name,  company_code,  state,  city,  pin_code,  latitude,  longitude,  logo,  file_attach,  is_active,  unique_id FROM company_creation , (SELECT @a:= 0) AS a  WHERE  is_delete = '0'  AND (
+            company_name LIKE '%uttar%' 
+            OR country IN (SELECT country_id FROM countries WHERE country_name LIKE '%uttar%') 
+            OR state IN (SELECT state_id FROM states WHERE state_name LIKE '%uttar%') 
+            OR city IN (SELECT city_id FROM cities WHERE city_name LIKE '%uttar%')
+        )  ORDER BY pin_code asc LIMIT 10<br />
+    [data] => 
+    [status] => 0
+    [error] => PDOException Object
+        (
+            [message:protected] => SQLSTATE[42S22]: Column not found: 1054 Unknown column 'country_name' in 'WHERE'
+            [string:Exception:private] => PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'country_name' in 'WHERE' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/company_creation/crud.php(380): db->select(Array, ' is_delete = '0...', '10', '0', 'pin_code asc', 'SQL_CALC_FOUND_...')
+#2 {main}
+            [code:protected] => 42S22
+            [file:protected] => /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php
+            [line:protected] => 306
+            [trace:Exception:private] => Array
+                (
+                    [0] => Array
+                        (
+                            [file] => /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php
+                            [line] => 306
+                            [function] => execute
+                            [class] => PDOStatement
+                            [type] => ->
+                            [args] => Array
+                                (
+                                )
+
+                        )
+
+                    [1] => Array
+                        (
+                            [file] => /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/company_creation/crud.php
+                            [line] => 380
+                            [function] => select
+                            [class] => db
+                            [type] => ->
+                            [args] => Array
+                                (
+                                    [0] => Array
+                                        (
+                                            [0] => company_creation , (SELECT @a:= 0) AS a 
+                                            [1] => Array
+                                                (
+                                                    [0] => @a:=@a+1 s_no
+                                                    [1] => company_name
+                                                    [2] => company_code
+                                                    [3] => state
+                                                    [4] => city
+                                                    [5] => pin_code
+                                                    [6] => latitude
+                                                    [7] => longitude
+                                                    [8] => logo
+                                                    [9] => file_attach
+                                                    [10] => is_active
+                                                    [11] => unique_id
+                                                )
+
+                                        )
+
+                                    [1] =>  is_delete = '0'  AND (
+            company_name LIKE '%uttar%' 
+            OR country IN (SELECT country_id FROM countries WHERE country_name LIKE '%uttar%') 
+            OR state IN (SELECT state_id FROM states WHERE state_name LIKE '%uttar%') 
+            OR city IN (SELECT city_id FROM cities WHERE city_name LIKE '%uttar%')
+        )
+                                    [2] => 10
+                                    [3] => 0
+                                    [4] => pin_code asc
+                                    [5] => SQL_CALC_FOUND_ROWS
+                                )
+
+                        )
+
+                )
+
+            [previous:Exception:private] => 
+            [errorInfo] => Array
+                (
+                    [0] => 42S22
+                    [1] => 1054
+                    [2] => Unknown column 'country_name' in 'WHERE'
+                )
+
+        )
+
+    [result] => PDOStatement Object
+        (
+            [queryString] => SELECT SQL_CALC_FOUND_ROWS @a:=@a+1 s_no,  company_name,  company_code,  state,  city,  pin_code,  latitude,  longitude,  logo,  file_attach,  is_active,  unique_id FROM company_creation , (SELECT @a:= 0) AS a  WHERE  is_delete = '0'  AND (
+            company_name LIKE '%uttar%' 
+            OR country IN (SELECT country_id FROM countries WHERE country_name LIKE '%uttar%') 
+            OR state IN (SELECT state_id FROM states WHERE state_name LIKE '%uttar%') 
+            OR city IN (SELECT city_id FROM cities WHERE city_name LIKE '%uttar%')
+        )  ORDER BY pin_code asc LIMIT 10
+        )
+
+)
+
+[02-Sep-2025 10:52:47 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'country_name' in 'WHERE' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/company_creation/crud.php(380): db->select(Array, ' is_delete = '0...', '10', '0', 'pin_code asc', 'SQL_CALC_FOUND_...')
+#2 {main}
+[02-Sep-2025 10:52:47 Asia/Kolkata] stdClass Object
+(
+    [sql] => SELECT SQL_CALC_FOUND_ROWS @a:=@a+1 s_no,  company_name,  company_code,  state,  city,  pin_code,  latitude,  longitude,  logo,  file_attach,  is_active,  unique_id FROM company_creation , (SELECT @a:= 0) AS a  WHERE  is_delete = '0'  AND (
+            company_name LIKE '%utta%' 
+            OR country IN (SELECT country_id FROM countries WHERE country_name LIKE '%utta%') 
+            OR state IN (SELECT state_id FROM states WHERE state_name LIKE '%utta%') 
+            OR city IN (SELECT city_id FROM cities WHERE city_name LIKE '%utta%')
+        )  ORDER BY pin_code asc LIMIT 10<br />
+    [data] => 
+    [status] => 0
+    [error] => PDOException Object
+        (
+            [message:protected] => SQLSTATE[42S22]: Column not found: 1054 Unknown column 'country_name' in 'WHERE'
+            [string:Exception:private] => PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'country_name' in 'WHERE' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/company_creation/crud.php(380): db->select(Array, ' is_delete = '0...', '10', '0', 'pin_code asc', 'SQL_CALC_FOUND_...')
+#2 {main}
+            [code:protected] => 42S22
+            [file:protected] => /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php
+            [line:protected] => 306
+            [trace:Exception:private] => Array
+                (
+                    [0] => Array
+                        (
+                            [file] => /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php
+                            [line] => 306
+                            [function] => execute
+                            [class] => PDOStatement
+                            [type] => ->
+                            [args] => Array
+                                (
+                                )
+
+                        )
+
+                    [1] => Array
+                        (
+                            [file] => /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/company_creation/crud.php
+                            [line] => 380
+                            [function] => select
+                            [class] => db
+                            [type] => ->
+                            [args] => Array
+                                (
+                                    [0] => Array
+                                        (
+                                            [0] => company_creation , (SELECT @a:= 0) AS a 
+                                            [1] => Array
+                                                (
+                                                    [0] => @a:=@a+1 s_no
+                                                    [1] => company_name
+                                                    [2] => company_code
+                                                    [3] => state
+                                                    [4] => city
+                                                    [5] => pin_code
+                                                    [6] => latitude
+                                                    [7] => longitude
+                                                    [8] => logo
+                                                    [9] => file_attach
+                                                    [10] => is_active
+                                                    [11] => unique_id
+                                                )
+
+                                        )
+
+                                    [1] =>  is_delete = '0'  AND (
+            company_name LIKE '%utta%' 
+            OR country IN (SELECT country_id FROM countries WHERE country_name LIKE '%utta%') 
+            OR state IN (SELECT state_id FROM states WHERE state_name LIKE '%utta%') 
+            OR city IN (SELECT city_id FROM cities WHERE city_name LIKE '%utta%')
+        )
+                                    [2] => 10
+                                    [3] => 0
+                                    [4] => pin_code asc
+                                    [5] => SQL_CALC_FOUND_ROWS
+                                )
+
+                        )
+
+                )
+
+            [previous:Exception:private] => 
+            [errorInfo] => Array
+                (
+                    [0] => 42S22
+                    [1] => 1054
+                    [2] => Unknown column 'country_name' in 'WHERE'
+                )
+
+        )
+
+    [result] => PDOStatement Object
+        (
+            [queryString] => SELECT SQL_CALC_FOUND_ROWS @a:=@a+1 s_no,  company_name,  company_code,  state,  city,  pin_code,  latitude,  longitude,  logo,  file_attach,  is_active,  unique_id FROM company_creation , (SELECT @a:= 0) AS a  WHERE  is_delete = '0'  AND (
+            company_name LIKE '%utta%' 
+            OR country IN (SELECT country_id FROM countries WHERE country_name LIKE '%utta%') 
+            OR state IN (SELECT state_id FROM states WHERE state_name LIKE '%utta%') 
+            OR city IN (SELECT city_id FROM cities WHERE city_name LIKE '%utta%')
+        )  ORDER BY pin_code asc LIMIT 10
+        )
+
+)
+
+[02-Sep-2025 10:52:47 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'country_name' in 'WHERE' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/company_creation/crud.php(380): db->select(Array, ' is_delete = '0...', '10', '0', 'pin_code asc', 'SQL_CALC_FOUND_...')
+#2 {main}
+[02-Sep-2025 10:52:47 Asia/Kolkata] stdClass Object
+(
+    [sql] => SELECT SQL_CALC_FOUND_ROWS @a:=@a+1 s_no,  company_name,  company_code,  state,  city,  pin_code,  latitude,  longitude,  logo,  file_attach,  is_active,  unique_id FROM company_creation , (SELECT @a:= 0) AS a  WHERE  is_delete = '0'  AND (
+            company_name LIKE '%utt%' 
+            OR country IN (SELECT country_id FROM countries WHERE country_name LIKE '%utt%') 
+            OR state IN (SELECT state_id FROM states WHERE state_name LIKE '%utt%') 
+            OR city IN (SELECT city_id FROM cities WHERE city_name LIKE '%utt%')
+        )  ORDER BY pin_code asc LIMIT 10<br />
+    [data] => 
+    [status] => 0
+    [error] => PDOException Object
+        (
+            [message:protected] => SQLSTATE[42S22]: Column not found: 1054 Unknown column 'country_name' in 'WHERE'
+            [string:Exception:private] => PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'country_name' in 'WHERE' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/company_creation/crud.php(380): db->select(Array, ' is_delete = '0...', '10', '0', 'pin_code asc', 'SQL_CALC_FOUND_...')
+#2 {main}
+            [code:protected] => 42S22
+            [file:protected] => /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php
+            [line:protected] => 306
+            [trace:Exception:private] => Array
+                (
+                    [0] => Array
+                        (
+                            [file] => /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php
+                            [line] => 306
+                            [function] => execute
+                            [class] => PDOStatement
+                            [type] => ->
+                            [args] => Array
+                                (
+                                )
+
+                        )
+
+                    [1] => Array
+                        (
+                            [file] => /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/company_creation/crud.php
+                            [line] => 380
+                            [function] => select
+                            [class] => db
+                            [type] => ->
+                            [args] => Array
+                                (
+                                    [0] => Array
+                                        (
+                                            [0] => company_creation , (SELECT @a:= 0) AS a 
+                                            [1] => Array
+                                                (
+                                                    [0] => @a:=@a+1 s_no
+                                                    [1] => company_name
+                                                    [2] => company_code
+                                                    [3] => state
+                                                    [4] => city
+                                                    [5] => pin_code
+                                                    [6] => latitude
+                                                    [7] => longitude
+                                                    [8] => logo
+                                                    [9] => file_attach
+                                                    [10] => is_active
+                                                    [11] => unique_id
+                                                )
+
+                                        )
+
+                                    [1] =>  is_delete = '0'  AND (
+            company_name LIKE '%utt%' 
+            OR country IN (SELECT country_id FROM countries WHERE country_name LIKE '%utt%') 
+            OR state IN (SELECT state_id FROM states WHERE state_name LIKE '%utt%') 
+            OR city IN (SELECT city_id FROM cities WHERE city_name LIKE '%utt%')
+        )
+                                    [2] => 10
+                                    [3] => 0
+                                    [4] => pin_code asc
+                                    [5] => SQL_CALC_FOUND_ROWS
+                                )
+
+                        )
+
+                )
+
+            [previous:Exception:private] => 
+            [errorInfo] => Array
+                (
+                    [0] => 42S22
+                    [1] => 1054
+                    [2] => Unknown column 'country_name' in 'WHERE'
+                )
+
+        )
+
+    [result] => PDOStatement Object
+        (
+            [queryString] => SELECT SQL_CALC_FOUND_ROWS @a:=@a+1 s_no,  company_name,  company_code,  state,  city,  pin_code,  latitude,  longitude,  logo,  file_attach,  is_active,  unique_id FROM company_creation , (SELECT @a:= 0) AS a  WHERE  is_delete = '0'  AND (
+            company_name LIKE '%utt%' 
+            OR country IN (SELECT country_id FROM countries WHERE country_name LIKE '%utt%') 
+            OR state IN (SELECT state_id FROM states WHERE state_name LIKE '%utt%') 
+            OR city IN (SELECT city_id FROM cities WHERE city_name LIKE '%utt%')
+        )  ORDER BY pin_code asc LIMIT 10
+        )
+
+)
+
+[02-Sep-2025 10:52:49 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'country_name' in 'WHERE' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/company_creation/crud.php(380): db->select(Array, ' is_delete = '0...', '10', '0', 'pin_code asc', 'SQL_CALC_FOUND_...')
+#2 {main}
+[02-Sep-2025 10:52:49 Asia/Kolkata] stdClass Object
+(
+    [sql] => SELECT SQL_CALC_FOUND_ROWS @a:=@a+1 s_no,  company_name,  company_code,  state,  city,  pin_code,  latitude,  longitude,  logo,  file_attach,  is_active,  unique_id FROM company_creation , (SELECT @a:= 0) AS a  WHERE  is_delete = '0'  AND (
+            company_name LIKE '%b%' 
+            OR country IN (SELECT country_id FROM countries WHERE country_name LIKE '%b%') 
+            OR state IN (SELECT state_id FROM states WHERE state_name LIKE '%b%') 
+            OR city IN (SELECT city_id FROM cities WHERE city_name LIKE '%b%')
+        )  ORDER BY pin_code asc LIMIT 10<br />
+    [data] => 
+    [status] => 0
+    [error] => PDOException Object
+        (
+            [message:protected] => SQLSTATE[42S22]: Column not found: 1054 Unknown column 'country_name' in 'WHERE'
+            [string:Exception:private] => PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'country_name' in 'WHERE' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/company_creation/crud.php(380): db->select(Array, ' is_delete = '0...', '10', '0', 'pin_code asc', 'SQL_CALC_FOUND_...')
+#2 {main}
+            [code:protected] => 42S22
+            [file:protected] => /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php
+            [line:protected] => 306
+            [trace:Exception:private] => Array
+                (
+                    [0] => Array
+                        (
+                            [file] => /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php
+                            [line] => 306
+                            [function] => execute
+                            [class] => PDOStatement
+                            [type] => ->
+                            [args] => Array
+                                (
+                                )
+
+                        )
+
+                    [1] => Array
+                        (
+                            [file] => /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/company_creation/crud.php
+                            [line] => 380
+                            [function] => select
+                            [class] => db
+                            [type] => ->
+                            [args] => Array
+                                (
+                                    [0] => Array
+                                        (
+                                            [0] => company_creation , (SELECT @a:= 0) AS a 
+                                            [1] => Array
+                                                (
+                                                    [0] => @a:=@a+1 s_no
+                                                    [1] => company_name
+                                                    [2] => company_code
+                                                    [3] => state
+                                                    [4] => city
+                                                    [5] => pin_code
+                                                    [6] => latitude
+                                                    [7] => longitude
+                                                    [8] => logo
+                                                    [9] => file_attach
+                                                    [10] => is_active
+                                                    [11] => unique_id
+                                                )
+
+                                        )
+
+                                    [1] =>  is_delete = '0'  AND (
+            company_name LIKE '%b%' 
+            OR country IN (SELECT country_id FROM countries WHERE country_name LIKE '%b%') 
+            OR state IN (SELECT state_id FROM states WHERE state_name LIKE '%b%') 
+            OR city IN (SELECT city_id FROM cities WHERE city_name LIKE '%b%')
+        )
+                                    [2] => 10
+                                    [3] => 0
+                                    [4] => pin_code asc
+                                    [5] => SQL_CALC_FOUND_ROWS
+                                )
+
+                        )
+
+                )
+
+            [previous:Exception:private] => 
+            [errorInfo] => Array
+                (
+                    [0] => 42S22
+                    [1] => 1054
+                    [2] => Unknown column 'country_name' in 'WHERE'
+                )
+
+        )
+
+    [result] => PDOStatement Object
+        (
+            [queryString] => SELECT SQL_CALC_FOUND_ROWS @a:=@a+1 s_no,  company_name,  company_code,  state,  city,  pin_code,  latitude,  longitude,  logo,  file_attach,  is_active,  unique_id FROM company_creation , (SELECT @a:= 0) AS a  WHERE  is_delete = '0'  AND (
+            company_name LIKE '%b%' 
+            OR country IN (SELECT country_id FROM countries WHERE country_name LIKE '%b%') 
+            OR state IN (SELECT state_id FROM states WHERE state_name LIKE '%b%') 
+            OR city IN (SELECT city_id FROM cities WHERE city_name LIKE '%b%')
+        )  ORDER BY pin_code asc LIMIT 10
+        )
+
+)
+
+[02-Sep-2025 10:52:50 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'country_name' in 'WHERE' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/company_creation/crud.php(380): db->select(Array, ' is_delete = '0...', '10', '0', 'pin_code asc', 'SQL_CALC_FOUND_...')
+#2 {main}
+[02-Sep-2025 10:52:50 Asia/Kolkata] stdClass Object
+(
+    [sql] => SELECT SQL_CALC_FOUND_ROWS @a:=@a+1 s_no,  company_name,  company_code,  state,  city,  pin_code,  latitude,  longitude,  logo,  file_attach,  is_active,  unique_id FROM company_creation , (SELECT @a:= 0) AS a  WHERE  is_delete = '0'  AND (
+            company_name LIKE '%boa%' 
+            OR country IN (SELECT country_id FROM countries WHERE country_name LIKE '%boa%') 
+            OR state IN (SELECT state_id FROM states WHERE state_name LIKE '%boa%') 
+            OR city IN (SELECT city_id FROM cities WHERE city_name LIKE '%boa%')
+        )  ORDER BY pin_code asc LIMIT 10<br />
+    [data] => 
+    [status] => 0
+    [error] => PDOException Object
+        (
+            [message:protected] => SQLSTATE[42S22]: Column not found: 1054 Unknown column 'country_name' in 'WHERE'
+            [string:Exception:private] => PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'country_name' in 'WHERE' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/company_creation/crud.php(380): db->select(Array, ' is_delete = '0...', '10', '0', 'pin_code asc', 'SQL_CALC_FOUND_...')
+#2 {main}
+            [code:protected] => 42S22
+            [file:protected] => /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php
+            [line:protected] => 306
+            [trace:Exception:private] => Array
+                (
+                    [0] => Array
+                        (
+                            [file] => /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php
+                            [line] => 306
+                            [function] => execute
+                            [class] => PDOStatement
+                            [type] => ->
+                            [args] => Array
+                                (
+                                )
+
+                        )
+
+                    [1] => Array
+                        (
+                            [file] => /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/company_creation/crud.php
+                            [line] => 380
+                            [function] => select
+                            [class] => db
+                            [type] => ->
+                            [args] => Array
+                                (
+                                    [0] => Array
+                                        (
+                                            [0] => company_creation , (SELECT @a:= 0) AS a 
+                                            [1] => Array
+                                                (
+                                                    [0] => @a:=@a+1 s_no
+                                                    [1] => company_name
+                                                    [2] => company_code
+                                                    [3] => state
+                                                    [4] => city
+                                                    [5] => pin_code
+                                                    [6] => latitude
+                                                    [7] => longitude
+                                                    [8] => logo
+                                                    [9] => file_attach
+                                                    [10] => is_active
+                                                    [11] => unique_id
+                                                )
+
+                                        )
+
+                                    [1] =>  is_delete = '0'  AND (
+            company_name LIKE '%boa%' 
+            OR country IN (SELECT country_id FROM countries WHERE country_name LIKE '%boa%') 
+            OR state IN (SELECT state_id FROM states WHERE state_name LIKE '%boa%') 
+            OR city IN (SELECT city_id FROM cities WHERE city_name LIKE '%boa%')
+        )
+                                    [2] => 10
+                                    [3] => 0
+                                    [4] => pin_code asc
+                                    [5] => SQL_CALC_FOUND_ROWS
+                                )
+
+                        )
+
+                )
+
+            [previous:Exception:private] => 
+            [errorInfo] => Array
+                (
+                    [0] => 42S22
+                    [1] => 1054
+                    [2] => Unknown column 'country_name' in 'WHERE'
+                )
+
+        )
+
+    [result] => PDOStatement Object
+        (
+            [queryString] => SELECT SQL_CALC_FOUND_ROWS @a:=@a+1 s_no,  company_name,  company_code,  state,  city,  pin_code,  latitude,  longitude,  logo,  file_attach,  is_active,  unique_id FROM company_creation , (SELECT @a:= 0) AS a  WHERE  is_delete = '0'  AND (
+            company_name LIKE '%boa%' 
+            OR country IN (SELECT country_id FROM countries WHERE country_name LIKE '%boa%') 
+            OR state IN (SELECT state_id FROM states WHERE state_name LIKE '%boa%') 
+            OR city IN (SELECT city_id FROM cities WHERE city_name LIKE '%boa%')
+        )  ORDER BY pin_code asc LIMIT 10
+        )
+
+)
+
+[02-Sep-2025 10:52:50 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'country_name' in 'WHERE' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/company_creation/crud.php(380): db->select(Array, ' is_delete = '0...', '10', '0', 'pin_code asc', 'SQL_CALC_FOUND_...')
+#2 {main}
+[02-Sep-2025 10:52:50 Asia/Kolkata] stdClass Object
+(
+    [sql] => SELECT SQL_CALC_FOUND_ROWS @a:=@a+1 s_no,  company_name,  company_code,  state,  city,  pin_code,  latitude,  longitude,  logo,  file_attach,  is_active,  unique_id FROM company_creation , (SELECT @a:= 0) AS a  WHERE  is_delete = '0'  AND (
+            company_name LIKE '%boat%' 
+            OR country IN (SELECT country_id FROM countries WHERE country_name LIKE '%boat%') 
+            OR state IN (SELECT state_id FROM states WHERE state_name LIKE '%boat%') 
+            OR city IN (SELECT city_id FROM cities WHERE city_name LIKE '%boat%')
+        )  ORDER BY pin_code asc LIMIT 10<br />
+    [data] => 
+    [status] => 0
+    [error] => PDOException Object
+        (
+            [message:protected] => SQLSTATE[42S22]: Column not found: 1054 Unknown column 'country_name' in 'WHERE'
+            [string:Exception:private] => PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'country_name' in 'WHERE' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/company_creation/crud.php(380): db->select(Array, ' is_delete = '0...', '10', '0', 'pin_code asc', 'SQL_CALC_FOUND_...')
+#2 {main}
+            [code:protected] => 42S22
+            [file:protected] => /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php
+            [line:protected] => 306
+            [trace:Exception:private] => Array
+                (
+                    [0] => Array
+                        (
+                            [file] => /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php
+                            [line] => 306
+                            [function] => execute
+                            [class] => PDOStatement
+                            [type] => ->
+                            [args] => Array
+                                (
+                                )
+
+                        )
+
+                    [1] => Array
+                        (
+                            [file] => /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/company_creation/crud.php
+                            [line] => 380
+                            [function] => select
+                            [class] => db
+                            [type] => ->
+                            [args] => Array
+                                (
+                                    [0] => Array
+                                        (
+                                            [0] => company_creation , (SELECT @a:= 0) AS a 
+                                            [1] => Array
+                                                (
+                                                    [0] => @a:=@a+1 s_no
+                                                    [1] => company_name
+                                                    [2] => company_code
+                                                    [3] => state
+                                                    [4] => city
+                                                    [5] => pin_code
+                                                    [6] => latitude
+                                                    [7] => longitude
+                                                    [8] => logo
+                                                    [9] => file_attach
+                                                    [10] => is_active
+                                                    [11] => unique_id
+                                                )
+
+                                        )
+
+                                    [1] =>  is_delete = '0'  AND (
+            company_name LIKE '%boat%' 
+            OR country IN (SELECT country_id FROM countries WHERE country_name LIKE '%boat%') 
+            OR state IN (SELECT state_id FROM states WHERE state_name LIKE '%boat%') 
+            OR city IN (SELECT city_id FROM cities WHERE city_name LIKE '%boat%')
+        )
+                                    [2] => 10
+                                    [3] => 0
+                                    [4] => pin_code asc
+                                    [5] => SQL_CALC_FOUND_ROWS
+                                )
+
+                        )
+
+                )
+
+            [previous:Exception:private] => 
+            [errorInfo] => Array
+                (
+                    [0] => 42S22
+                    [1] => 1054
+                    [2] => Unknown column 'country_name' in 'WHERE'
+                )
+
+        )
+
+    [result] => PDOStatement Object
+        (
+            [queryString] => SELECT SQL_CALC_FOUND_ROWS @a:=@a+1 s_no,  company_name,  company_code,  state,  city,  pin_code,  latitude,  longitude,  logo,  file_attach,  is_active,  unique_id FROM company_creation , (SELECT @a:= 0) AS a  WHERE  is_delete = '0'  AND (
+            company_name LIKE '%boat%' 
+            OR country IN (SELECT country_id FROM countries WHERE country_name LIKE '%boat%') 
+            OR state IN (SELECT state_id FROM states WHERE state_name LIKE '%boat%') 
+            OR city IN (SELECT city_id FROM cities WHERE city_name LIKE '%boat%')
+        )  ORDER BY pin_code asc LIMIT 10
+        )
+
+)
+
+[02-Sep-2025 11:03:12 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_beta.country_creation' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/company_creation/crud.php(415): db->select(Array, ' is_delete = '0...', '10', '0', 'pin_code asc', 'SQL_CALC_FOUND_...')
+#2 {main}
+[02-Sep-2025 11:03:15 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_beta.country_creation' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/company_creation/crud.php(415): db->select(Array, ' is_delete = '0...', '10', '0', 'pin_code asc', 'SQL_CALC_FOUND_...')
+#2 {main}
+[02-Sep-2025 11:03:22 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_beta.country_creation' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/company_creation/crud.php(415): db->select(Array, ' is_delete = '0...', '10', '0', 'pin_code asc', 'SQL_CALC_FOUND_...')
+#2 {main}
+[02-Sep-2025 11:07:39 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_beta.country_creation' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/company_creation/crud.php(411): db->select(Array, ' is_delete = '0...', '10', '0', 'pin_code asc', 'SQL_CALC_FOUND_...')
+#2 {main}
+[02-Sep-2025 11:07:41 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_beta.country_creation' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/company_creation/crud.php(411): db->select(Array, ' is_delete = '0...', '10', '0', 'pin_code asc', 'SQL_CALC_FOUND_...')
+#2 {main}

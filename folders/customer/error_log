@@ -1,0 +1,283 @@
+[19-Jul-2025 12:01:31 Asia/Kolkata] PDOException: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'acc_year' cannot be null in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:579
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(579): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/customer/crud.php(368): db->insert('customer_contac...', Array)
+#2 {main}
+[19-Jul-2025 06:51:01 UTC] PHP Notice:  Undefined variable: sql in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/customer/excel.php on line 21
+[19-Jul-2025 06:51:01 UTC] PHP Deprecated:  Array and string offset access syntax with curly braces is deprecated in /home/ie9owkuzkgd4/public_html/blue_planet_beta/assets/PHPExcel-1.8/Classes/PHPExcel/Calculation.php on line 2676
+[19-Jul-2025 06:51:01 UTC] PHP Deprecated:  Array and string offset access syntax with curly braces is deprecated in /home/ie9owkuzkgd4/public_html/blue_planet_beta/assets/PHPExcel-1.8/Classes/PHPExcel/Calculation.php on line 2768
+[19-Jul-2025 06:51:01 UTC] PHP Deprecated:  Array and string offset access syntax with curly braces is deprecated in /home/ie9owkuzkgd4/public_html/blue_planet_beta/assets/PHPExcel-1.8/Classes/PHPExcel/Cell.php on line 812
+[19-Jul-2025 06:51:01 UTC] PHP Deprecated:  Array and string offset access syntax with curly braces is deprecated in /home/ie9owkuzkgd4/public_html/blue_planet_beta/assets/PHPExcel-1.8/Classes/PHPExcel/Cell.php on line 813
+[19-Jul-2025 06:51:01 UTC] PHP Deprecated:  Array and string offset access syntax with curly braces is deprecated in /home/ie9owkuzkgd4/public_html/blue_planet_beta/assets/PHPExcel-1.8/Classes/PHPExcel/Cell.php on line 816
+[19-Jul-2025 06:51:01 UTC] PHP Deprecated:  Array and string offset access syntax with curly braces is deprecated in /home/ie9owkuzkgd4/public_html/blue_planet_beta/assets/PHPExcel-1.8/Classes/PHPExcel/Cell.php on line 819
+[19-Jul-2025 06:51:01 UTC] PHP Deprecated:  Array and string offset access syntax with curly braces is deprecated in /home/ie9owkuzkgd4/public_html/blue_planet_beta/assets/PHPExcel-1.8/Classes/PHPExcel/Cell.php on line 824
+[19-Jul-2025 06:51:01 UTC] PHP Notice:  Undefined variable: conn in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/customer/excel.php on line 61
+[19-Jul-2025 06:51:01 UTC] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/customer/excel.php:61
+Stack trace:
+#0 {main}
+  thrown in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/customer/excel.php on line 61
+[19-Jul-2025 13:28:15 Asia/Kolkata] PDOException: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'city' cannot be null in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:579
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(579): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/customer/crud.php(1936): db->insert('cust_billing_de...', Array)
+#2 {main}
+[23-Jul-2025 16:14:51 Asia/Kolkata] PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'SELECT customer_name,customer_no,currency,customer_sub_category_id,customer_g...' at line 1 in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/customer/excel.php(29): db->select('SELECT customer...')
+#2 {main}
+[23-Jul-2025 16:14:52 Asia/Kolkata] PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'SELECT customer_name,customer_no,currency,customer_sub_category_id,customer_g...' at line 1 in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/customer/excel.php(29): db->select('SELECT customer...')
+#2 {main}
+[23-Jul-2025 16:14:59 Asia/Kolkata] PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'SELECT customer_name,customer_no,currency,customer_sub_category_id,customer_g...' at line 1 in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/customer/excel.php(29): db->select('SELECT customer...')
+#2 {main}
+[23-Jul-2025 16:15:02 Asia/Kolkata] PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'SELECT customer_name,customer_no,currency,customer_sub_category_id,customer_g...' at line 1 in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/customer/excel.php(29): db->select('SELECT customer...')
+#2 {main}
+[24-Jul-2025 15:22:37 Asia/Kolkata] PDOException: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'gst_status' cannot be null in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:579
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(579): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/customer/crud.php(195): db->insert('customer_profil...', Array)
+#2 {main}
+[24-Jul-2025 15:22:51 Asia/Kolkata] PDOException: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'gst_status' cannot be null in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:579
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(579): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/customer/crud.php(195): db->insert('customer_profil...', Array)
+#2 {main}
+[24-Jul-2025 15:25:11 Asia/Kolkata] PDOException: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'provisional_no' cannot be null in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:579
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(579): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/customer/crud.php(195): db->insert('customer_profil...', Array)
+#2 {main}
+[25-Jul-2025 10:58:33 Asia/Kolkata] PDOException: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'city' cannot be null in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:579
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(579): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/customer/crud.php(1937): db->insert('cust_billing_de...', Array)
+#2 {main}
+[25-Jul-2025 10:58:51 Asia/Kolkata] PDOException: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'state' cannot be null in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:579
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(579): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/customer/crud.php(1937): db->insert('cust_billing_de...', Array)
+#2 {main}
+[30-Jul-2025 22:42:05 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'file_attach' in 'SELECT' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/customer/crud.php(1052): db->select(Array, ' is_delete = 0 ', '10', '0', '', 'SQL_CALC_FOUND_...')
+#2 {main}
+[30-Jul-2025 22:42:11 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'file_attach' in 'SELECT' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/customer/crud.php(1052): db->select(Array, ' is_delete = 0 ', '10', '20', '', 'SQL_CALC_FOUND_...')
+#2 {main}
+[30-Jul-2025 22:42:13 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'file_attach' in 'SELECT' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/customer/crud.php(1052): db->select(Array, ' is_delete = 0 ', '10', '10', '', 'SQL_CALC_FOUND_...')
+#2 {main}
+[30-Jul-2025 22:42:14 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'file_attach' in 'SELECT' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/customer/crud.php(1052): db->select(Array, ' is_delete = 0 ', '10', '0', '', 'SQL_CALC_FOUND_...')
+#2 {main}
+[31-Jul-2025 09:18:03 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'file_attach' in 'SELECT' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/customer/crud.php(1052): db->select(Array, ' is_delete = 0 ', '10', '0', '', 'SQL_CALC_FOUND_...')
+#2 {main}
+[31-Jul-2025 09:18:08 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'file_attach' in 'SELECT' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/customer/crud.php(1052): db->select(Array, ' is_delete = 0 ', '10', '10', '', 'SQL_CALC_FOUND_...')
+#2 {main}
+[31-Jul-2025 09:18:09 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'file_attach' in 'SELECT' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/customer/crud.php(1052): db->select(Array, ' is_delete = 0 ', '10', '0', '', 'SQL_CALC_FOUND_...')
+#2 {main}
+[31-Jul-2025 09:18:15 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'file_attach' in 'SELECT' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/customer/crud.php(1052): db->select(Array, ' is_delete = 0 ', '10', '0', '', 'SQL_CALC_FOUND_...')
+#2 {main}
+[31-Jul-2025 09:18:26 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'file_attach' in 'SELECT' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/customer/crud.php(1052): db->select(Array, ' is_delete = 0 ', '10', '30', '', 'SQL_CALC_FOUND_...')
+#2 {main}
+[31-Jul-2025 09:18:26 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'file_attach' in 'SELECT' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/customer/crud.php(1052): db->select(Array, ' is_delete = 0 ', '10', '20', '', 'SQL_CALC_FOUND_...')
+#2 {main}
+[31-Jul-2025 09:18:27 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'file_attach' in 'SELECT' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/customer/crud.php(1052): db->select(Array, ' is_delete = 0 ', '10', '0', '', 'SQL_CALC_FOUND_...')
+#2 {main}
+[31-Jul-2025 09:18:40 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'file_attach' in 'SELECT' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/customer/crud.php(1052): db->select(Array, ' is_delete = 0 ', '10', '0', ' customer_sub_c...', 'SQL_CALC_FOUND_...')
+#2 {main}
+[31-Jul-2025 09:18:53 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'file_attach' in 'SELECT' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/customer/crud.php(1052): db->select(Array, ' is_delete = 0 ', '10', '0', ' customer_sub_c...', 'SQL_CALC_FOUND_...')
+#2 {main}
+[31-Jul-2025 09:19:38 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'file_attach' in 'SELECT' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/customer/crud.php(1052): db->select(Array, ' is_delete = 0 ', '10', '20', ' customer_sub_c...', 'SQL_CALC_FOUND_...')
+#2 {main}
+[31-Jul-2025 09:19:40 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'file_attach' in 'SELECT' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/customer/crud.php(1052): db->select(Array, ' is_delete = 0 ', '10', '0', ' customer_sub_c...', 'SQL_CALC_FOUND_...')
+#2 {main}
+[31-Jul-2025 09:19:41 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'file_attach' in 'SELECT' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/customer/crud.php(1052): db->select(Array, ' is_delete = 0 ', '10', '10', ' customer_sub_c...', 'SQL_CALC_FOUND_...')
+#2 {main}
+[31-Jul-2025 09:19:43 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'file_attach' in 'SELECT' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/customer/crud.php(1052): db->select(Array, ' is_delete = 0 ', '10', '0', ' customer_sub_c...', 'SQL_CALC_FOUND_...')
+#2 {main}
+[31-Jul-2025 09:20:02 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'file_attach' in 'SELECT' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/customer/crud.php(1052): db->select(Array, ' is_delete = 0 ', '10', '20', ' customer_sub_c...', 'SQL_CALC_FOUND_...')
+#2 {main}
+[31-Jul-2025 09:20:18 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'file_attach' in 'SELECT' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/customer/crud.php(1052): db->select(Array, ' is_delete = 0 ', '10', '0', ' customer_sub_c...', 'SQL_CALC_FOUND_...')
+#2 {main}
+[31-Jul-2025 09:20:19 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'file_attach' in 'SELECT' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/customer/crud.php(1052): db->select(Array, ' is_delete = 0 ', '10', '10', ' customer_sub_c...', 'SQL_CALC_FOUND_...')
+#2 {main}
+[31-Jul-2025 09:20:42 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'file_attach' in 'SELECT' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/customer/crud.php(1052): db->select(Array, ' is_delete = 0 ', '10', '20', ' customer_sub_c...', 'SQL_CALC_FOUND_...')
+#2 {main}
+[31-Jul-2025 09:20:43 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'file_attach' in 'SELECT' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/customer/crud.php(1052): db->select(Array, ' is_delete = 0 ', '10', '0', ' customer_sub_c...', 'SQL_CALC_FOUND_...')
+#2 {main}
+[31-Jul-2025 09:20:44 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'file_attach' in 'SELECT' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/customer/crud.php(1052): db->select(Array, ' is_delete = 0 ', '10', '10', ' customer_sub_c...', 'SQL_CALC_FOUND_...')
+#2 {main}
+[31-Jul-2025 09:20:47 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'file_attach' in 'SELECT' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/customer/crud.php(1052): db->select(Array, ' is_delete = 0 ', '10', '20', ' customer_sub_c...', 'SQL_CALC_FOUND_...')
+#2 {main}
+[31-Jul-2025 09:20:48 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'file_attach' in 'SELECT' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/customer/crud.php(1052): db->select(Array, ' is_delete = 0 ', '10', '0', ' customer_sub_c...', 'SQL_CALC_FOUND_...')
+#2 {main}
+[31-Jul-2025 09:28:20 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'file_attach' in 'SELECT' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/customer/crud.php(1052): db->select(Array, ' is_delete = 0 ', '10', '10', ' customer_sub_c...', 'SQL_CALC_FOUND_...')
+#2 {main}
+[31-Jul-2025 09:28:24 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'file_attach' in 'SELECT' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/customer/crud.php(1052): db->select(Array, ' is_delete = 0 ', '10', '0', ' customer_sub_c...', 'SQL_CALC_FOUND_...')
+#2 {main}
+[31-Jul-2025 09:29:41 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'file_attach' in 'SELECT' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/customer/crud.php(1052): db->select(Array, ' is_delete = 0 ', '10', '0', ' customer_sub_c...', 'SQL_CALC_FOUND_...')
+#2 {main}
+[31-Jul-2025 09:34:44 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'file_attach' in 'SELECT' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/customer/crud.php(1052): db->select(Array, ' is_delete = 0 ', '10', '0', ' customer_sub_c...', 'SQL_CALC_FOUND_...')
+#2 {main}
+[31-Jul-2025 09:39:06 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'file_attach' in 'SELECT' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/customer/crud.php(1052): db->select(Array, ' is_delete = 0 ', '10', '0', ' customer_sub_c...', 'SQL_CALC_FOUND_...')
+#2 {main}
+[31-Jul-2025 09:45:28 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'file_attach' in 'SELECT' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/customer/crud.php(1053): db->select(Array, ' is_delete = 0 ', '10', '0', ' customer_sub_c...', 'SQL_CALC_FOUND_...')
+#2 {main}
+[31-Jul-2025 09:45:36 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'file_attach' in 'SELECT' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/customer/crud.php(1053): db->select(Array, ' is_delete = 0 ', '10', '0', ' customer_sub_c...', 'SQL_CALC_FOUND_...')
+#2 {main}
+[31-Jul-2025 09:45:39 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'file_attach' in 'SELECT' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/customer/crud.php(1053): db->select(Array, ' is_delete = 0 ', '10', '20', ' customer_sub_c...', 'SQL_CALC_FOUND_...')
+#2 {main}
+[31-Jul-2025 09:45:40 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'file_attach' in 'SELECT' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/customer/crud.php(1053): db->select(Array, ' is_delete = 0 ', '10', '10', ' customer_sub_c...', 'SQL_CALC_FOUND_...')
+#2 {main}
+[31-Jul-2025 09:45:41 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'file_attach' in 'SELECT' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/customer/crud.php(1053): db->select(Array, ' is_delete = 0 ', '10', '0', ' customer_sub_c...', 'SQL_CALC_FOUND_...')
+#2 {main}
+[31-Jul-2025 09:46:47 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'file_attach' in 'SELECT' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/customer/crud.php(1052): db->select(Array, ' is_delete = 0 ', '10', '0', ' customer_sub_c...', 'SQL_CALC_FOUND_...')
+#2 {main}
+[02-Aug-2025 10:06:41 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'crntly_acc_hndl_by' in 'SET' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:817
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(817): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/customer/crud.php(192): db->update('customer_profil...', Array, Array)
+#2 {main}
+[02-Aug-2025 10:06:50 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'crntly_acc_hndl_by' in 'SET' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:817
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(817): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/customer/crud.php(192): db->update('customer_profil...', Array, Array)
+#2 {main}
+[19-Aug-2025 14:31:35 Asia/Kolkata] PDOException: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'gst_status' cannot be null in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:579
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(579): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/customer/crud.php(1936): db->insert('cust_billing_de...', Array)
+#2 {main}
+[19-Aug-2025 14:41:22 Asia/Kolkata] PDOException: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'gst_status' cannot be null in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:579
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(579): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/customer/crud.php(1936): db->insert('cust_billing_de...', Array)
+#2 {main}
+[19-Aug-2025 15:08:20 Asia/Kolkata] PDOException: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'state' cannot be null in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:579
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(579): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/customer/crud.php(1937): db->insert('cust_billing_de...', Array)
+#2 {main}
+[03-Sep-2025 14:00:48 Asia/Kolkata] PDOException: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'state' cannot be null in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:579
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(579): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/customer/crud.php(1936): db->insert('cust_billing_de...', Array)
+#2 {main}
+[24-Sep-2025 10:38:24 Asia/Kolkata] PDOException: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'city' cannot be null in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:579
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(579): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/customer/crud.php(1936): db->insert('cust_billing_de...', Array)
+#2 {main}

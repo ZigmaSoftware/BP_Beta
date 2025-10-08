@@ -1,0 +1,610 @@
+<link href="../assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" id="bs-default-stylesheet" />
+<link href="../assets/css/app.min.css" rel="stylesheet" type="text/css" id="app-default-stylesheet" />
+<style>
+	body {
+		background-color: #fff;
+	}
+
+	.box1 h3 {
+		background-color: #f0f0f0;
+		padding: 6px 0px;
+		text-align: center;
+		font-weight: 700;
+		color: #333;
+		font-size: 14px;
+		margin: 4px 0px;
+	}
+
+	.bd-highlight {
+		font-size: 14px;
+		color: #444;
+	}
+
+	.contn_info.d-flex h6 {
+		text-align: right;
+		font-size: 12px;
+		margin-bottom: 6px;
+		margin-top: 6px;
+		font-weight: bold;
+	}
+
+	.contn_info.d-flex h5 {
+		color: #555;
+		font-size: 11.5px;
+		margin-bottom: 6px;
+		margin-top: 6px;
+	}
+
+	.contn_info.d-flex p {
+		margin-bottom: 6px;
+		margin-top: 6px;
+	}
+
+	.zone_boxbor {
+
+		margin-bottom: 10px;
+		margin-top: 20px;
+
+	}
+
+	.col-md-4 {
+		width: 33.33333333%;
+		padding-left: 5px;
+		padding-right: 5px;
+	}
+
+	.col-md-8 {
+		flex: 0 0 auto;
+		width: 66.66666667%;
+	}
+
+	.col-md-4.wid1 {
+		width: 45%;
+	}
+
+	.col-md-8.wid2 {
+		width: 55%;
+	}
+
+	.prio {
+		border: 1px solid #f1f1f1;
+		padding: 0px 4px;
+		margin: 0px;
+		margin-top: 10px;
+	}
+
+	.prio h6 {
+		font-size: 16px !important;
+		color: #cb8015;
+		letter-spacing: 0.04rem;
+	}
+
+	hr {
+		margin: 1rem 0 !important;
+	}
+
+	.prio h5 {
+		font-size: 14px !important;
+	}
+</style>
+<?php
+
+include '../../config/dbconfig.php';
+include 'function.php';
+
+if (isset($_GET["unique_id"])) {
+	if (!empty($_GET["unique_id"])) {
+
+		$unique_id = $_GET["unique_id"];
+		$where = [
+			"unique_id" => $unique_id
+		];
+
+		$table = "complaint_creation";
+
+		$columns = [
+			"person_name",
+			"mobile_no",
+			"email_id",
+			"age",
+			"zone_name",
+			"ward_name",
+			"locality_name",
+			"address",
+			"landmark",
+			"department_name",
+			"complaint_category",
+			"source_name",
+			"assign_by",
+			"complaint_description",
+			"screen_unique_id",
+			"unique_id",
+			"complaint_no",
+			"entry_date",
+			"(SELECT designation_id from user where user.unique_id = complaint_creation.assign_by) as designation_name",
+			"stage_1_status",
+			"stage_1_update_date"
+
+		];
+
+		$table_details = [
+			$table,
+			$columns
+		];
+
+		$result_values = $pdo->select($table_details, $where);
+
+		if ($result_values->status) {
+
+			$result_values = $result_values->data[0];
+
+			$person_name            = $result_values["person_name"];
+			$mobile_no              = $result_values["mobile_no"];
+			$email_id               = $result_values["email_id"];
+			$age                    = $result_values["age"];
+			$zone_name              = zone_name($result_values["zone_name"])[0]['zone_name'];
+			$ward_name              = ward_name($result_values["ward_name"])[0]['ward_name'];
+			$locality_name          = locality_name($result_values["locality_name"])[0]['locality'];
+			$location_address       = $result_values["address"];
+			$landmark               = $result_values["landmark"];
+			$department_name        = department_type($result_values["department_name"])[0]['department_type'];
+			$complaint_category     = category_creation($result_values["complaint_category"])[0]['category_name'];
+			$source_name            = source_type($result_values["source_name"])[0]['source'];
+			$complaint_description  = $result_values["complaint_description"];
+			$screen_unique_id       = $result_values["screen_unique_id"];
+			$unique_id              = $result_values["unique_id"];
+			$complaint_no           = $result_values["complaint_no"];
+			$designation_id           = $result_values["designation_name"];
+			$designation_name           = designation_name($result_values["designation_name"])[0]['designation_name'];
+
+			$assign_by              = disname(user_name($result_values['assign_by'])[0]['user_name']);
+			$assign_by_mobile            = disname(user_name($result_values['assign_by'])[0]['mobile_no']);
+			$ass_email_id           = disname(user_name($result_values['assign_by'])[0]['email_id']);
+			$entry_date             = disdate($result_values["entry_date"]);
+			$user_id                = $_SESSION['user_id'];
+			$staff_name             = user_name($_SESSION['user_id'])[0]['staff_name'];
+			$comp_status            = $result_values['stage_1_status'];
+			switch ($comp_status) {
+				case 1:
+					$complaint_status = "In Progress";
+					$completed_date   = "Not Mentioned";
+					break;
+				case 2:
+					$complaint_status = "Completed";
+					$date = date_create($result_values['stage_1_update_date']);
+					$completed_date   = date_format($date,'d-m-Y');
+					break;
+				case 3:
+					$complaint_status = "Cancel";
+					$completed_date   = "Not Mentioned";
+					break;
+				default:
+					$complaint_status = "Pending";
+					$completed_date   = "Not Mentioned";
+					break;
+			}
+
+			$form_type  = "Update";
+			$btn_text   = "Update";
+			$btn_action = "update";
+		} else {
+			$btn_text       = "Error";
+			$btn_action     = "error";
+			$is_btn_disable = "disabled='disabled'";
+		}
+	}
+}
+?>
+
+<div class="container" style="background-color:#fff;">
+	<div class="compl_print pt-2">
+		<center><img src="../assets/images/tmc-logo.png" width="230px" /></center>
+		<div class="zone_boxbor">
+			<div class="row">
+				<div class="" style="width: 33.33%;padding: 10px;background: #ffffff;border: 1px solid #cecece;">
+					<div class="zone_recom3">
+						<div class="box1">
+							<h3>User Information</h3>
+							<div class="contn_info d-flex">
+								<div class="col-md-4 wid1">
+									<h5>Name</h5>
+								</div>
+								<div class="col-md-8 wid2">
+									<h6><?= $person_name; ?></h6>
+								</div>
+							</div>
+							<div class="contn_info d-flex">
+								<div class="col-md-4 wid1">
+									<h5>Phone</h5>
+								</div>
+								<div class="col-md-8 wid2">
+									<h6><?= $mobile_no; ?></h6>
+								</div>
+							</div>
+							<div class="contn_info d-flex">
+								<div class="col-md-4 wid1">
+									<h5>Email ID</h5>
+								</div>
+								<div class="col-md-8 wid2">
+									<h6 style="word-wrap: break-word;"><?= $email_id; ?></h6>
+								</div>
+							</div>
+							<div class="contn_info d-flex">
+								<div class="col-md-4 wid1">
+									<h5>Address</h5>
+								</div>
+								<div class="col-md-8 wid2">
+									<h6><?= $location_address; ?></h6>
+								</div>
+							</div>
+							<div class="contn_info d-flex">
+								<div class="col-md-4 wid1">
+									<h5>Source</h5>
+								</div>
+								<div class="col-md-8 wid2">
+									<h6><?= $source_name; ?></h6>
+								</div>
+							</div>
+						</div>
+						<div class="prio">
+							<div class="contn_info d-flex">
+								<div class="col-md-4 wid1">
+									<h5>Priority</h5>
+								</div>
+								<div class="col-md-8 wid2">
+									<h6><b>LEVEL 1</b></h6>
+								</div>
+							</div>
+
+						</div>
+
+					</div>
+				</div>
+				<div class="" style="width: 33.33%;padding: 10px;background: #ffffff;border: 1px solid #cecece;">
+					<div class="zone_recom2">
+						<div class="box1">
+							<h3>Grievance Information</h3>
+							<div class="contn_info d-flex">
+								<div class="col-md-4 wid1">
+									<h5>Grievance ID</h5>
+								</div>
+								<div class="col-md-8 wid2">
+									<h6><?= $complaint_no; ?></h6>
+								</div>
+							</div>
+							<div class="contn_info d-flex">
+								<div class="col-md-4 wid1">
+									<h5>Date & Time</h5>
+								</div>
+								<div class="col-md-8 wid2">
+									<h6><?= $entry_date; ?></h6>
+								</div>
+							</div>
+
+							<div class="contn_info d-flex">
+								<div class="col-md-4 wid1">
+									<h5>Department </h5>
+								</div>
+								<div class="col-md-8 wid2">
+									<h6><?= $department_name; ?></h6>
+								</div>
+							</div>
+							<div class="contn_info d-flex">
+								<div class="col-md-4 wid1">
+									<h5>Category</h5>
+								</div>
+								<div class="col-md-8 wid2">
+									<h6><?= $complaint_category; ?></h6>
+								</div>
+							</div>
+							<div class="contn_info d-flex">
+								<div class="col-md-4 wid1">
+									<h5>Zone & Ward</h5>
+								</div>
+								<div class="col-md-8  wid2">
+									<h6><?= $zone_name; ?> /Ward - <?= $ward_name; ?></h6>
+								</div>
+							</div>
+							<div class="contn_info d-flex">
+								<div class="col-md-4 wid1">
+									<h5>Completed Date</h5>
+								</div>
+								<div class="col-md-8 wid2">
+									<h6><?= $completed_date; ?></h6>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="" style="width: 33.33%;padding: 10px;background: #ffffff;border: 1px solid #cecece;">
+					<div class="zone_recom1">
+						<div class="box1">
+							<h3>Grievance Allotted Employee</h3>
+							<div class="contn_info d-flex">
+								<div class="col-md-4 wid1">
+									<h5>Name</h5>
+								</div>
+								<div class="col-md-8 wid2">
+									<h6><?= $assign_by; ?></h6>
+								</div>
+							</div>
+							<div class="contn_info d-flex">
+								<div class="col-md-4 wid1">
+									<h5>Phone Number</h5>
+								</div>
+								<div class="col-md-8 wid2">
+									<h6><?=$assign_by_mobile;?></h6>
+								</div>
+							</div>
+							<div class="contn_info d-flex">
+								<div class="col-md-4 wid1">
+									<h5>Email ID</h5>
+								</div>
+								<div class="col-md-8 wid2">
+									<h6 style="word-wrap: break-word;"><?php if($ass_email_id=='') {echo"-" ;}else{echo $ass_email_id;}?></h6>
+								</div>
+							</div>
+						</div>
+						<div class="prio">
+							<div class="text-center">
+
+								<h5>Complaint Status</h5>
+
+								<h3 style="color: #1a6dd8;text-transform: uppercase;font-weight: bold;letter-spacing: 0.06rem;"><?= $complaint_status; ?></h3>
+
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="" style="width: 100%;padding: 10px;background: #ffffff;border: 1px solid #cecece;">
+				<div class="zone_recom">
+					<div class="box1">
+						<h3>Description</h3>
+						<p> <?= $complaint_description; ?> </p>
+						<!---<p> CALL RECEIVED BY <b><?= $assign_by; ?></b></p>--->
+
+						<hr />
+						<h5><b>User Attachments</b></h5>
+						<div class="row">
+							<?php
+							$columns = [
+								"@a:=@a+1 s_no",
+								"doc_name",
+								"file_name",
+								"unique_id"
+							];
+							$table_details = [
+								"complaint_creation_doc_upload",
+								$columns
+							];
+
+							$where = "screen_unique_id ='" . $screen_unique_id . "' AND is_active = 1 AND is_delete = 0 ";
+
+
+							$result = $pdo->select($table_details, $where, $limit, $start, $order_by, $sql_function);
+							//print_r($result);
+							if ($result->status) {
+
+								$res_array = $result->data;
+
+								foreach ($res_array as $key => $value) {
+									$cfile_name = explode('.', $value['file_name']);
+
+									// switch ($value['doc_name']) {
+									// 	case 1:
+									// 		$value['doc_name'] = "Image";
+									// 		break;
+									// 	case 2:
+									// 		$value['doc_name'] = "Document";
+									// 		break;
+									// 	case 3:
+									// 		$value['doc_name'] = "Audio";
+									// 		break;
+									// 	case :
+									// 		$value['doc_name'] = "Audio";
+									// 		break;
+									// }
+									if($value['doc_name'] == "1"){
+										$url = 'https://thiranmigutiruppur.com/pgp_admin/uploads/complaint_category/image/'.$value['file_name'];?>
+									
+											<div style="width: 33.33%;padding: 10px;">
+										<div class="form-check mb-1 form-check-primary">
+                                                    <input class="form-check-input" type="checkbox" value="" id="customckeck1" >
+										<a href="javascript:print('image/<?=$value['file_name'];?>')"><img src="<?=$url;?>"  width="200px" ></a> </div></div>
+									<?php }
+									else if($value['doc_name'] == "2"){
+										if(($cfile_name[1]=='xls')||($cfile_name[1]=='xlsx')) {
+											$url = 'https://thiranmigutiruppur.com/pgp_admin/assets/images/excel_icon.png'; ?>
+
+											<div style="width: 33.33%;padding: 10px;">
+												<div class="form-check mb-1 form-check-primary">
+                                                    <input class="form-check-input" type="checkbox" value="" id="customckeck1" >
+
+											<a href="javascript:print('document/<?=$file_name;?>')"><img src="<?=$url;?>"  height="43px" width="53px" >Complaint Details</a></div></div>
+									<?php  }else{ 
+										$url = 'https://thiranmigutiruppur.com/pgp_admin/assets/images/pdf.png'; ?>
+										<div style="width: 33.33%;padding: 10px;">
+											<div class="form-check mb-1 form-check-primary">
+                                                    <input class="form-check-input" type="checkbox" value="" id="customckeck1" >
+										<a href="javascript:print('document/<?=$file_name;?>')"><img src="<?=$url;?>" width="100%" ></a> 
+									</div></div>
+										<?php }
+
+
+									}
+
+									else if($value['doc_name'] == "3"){
+										$url = 'https://thiranmigutiruppur.com/pgp_admin/uploads/complaint_category/audio/'.$value['file_name']; ?>
+										<div style="width: 33.33%;padding: 10px;">
+											<div class="form-check mb-1 form-check-primary">
+                                                    <input class="form-check-input" type="checkbox" value="" id="customckeck1" >
+										<audio controls style="width: 100%;"> <source src="<?=$url;?>" type="audio/ogg"></audio></div> </div>
+									<?php }
+									else if($value['doc_name'] == "4"){
+										$url = $value['file_name']?>
+									
+											<div style="width: 33.33%;padding: 10px;">
+										<div class="form-check mb-1 form-check-primary">
+                                                    <input class="form-check-input" type="checkbox" value="" id="customckeck1" >
+										<a href="#"><img src="<?=$url;?>"  width="100%" ></a> </div></div>
+									<?php }
+									else{ ?>
+										<div style="width: 33.33%;padding: 10px;">
+											<div class="form-check mb-1 form-check-primary">
+                                                    <input class="form-check-input" type="checkbox" value="" id="customckeck1" >
+                                                
+										<img src='https://thiranmigutiruppur.com/pgp_admin/folders/assets/images/images.jpg'>
+										</div>
+									</div>
+									<?php }
+									?>
+
+							<?php }
+							} ?>
+
+
+						</div>
+					</div>
+				</div>
+			</div>
+
+
+		</div>
+	</div>
+
+
+	<div class="row">
+		<div class="mt-2" style="width: 100%;padding: 10px;background: #ffffff;border: 1px solid #cecece;">
+			<div class="zone_recom">
+				<div class="box1">
+					<h3>Status Updates</h3>
+					<div class="row">
+						<div class="col-sm-12">
+							<table id="status_sub_datatable" class="table" style="font-size:13px;">
+								<thead>
+									<tr>
+										<th class="sorting_disabled" rowspan="1" colspan="1" style="width: 5%;">#</th>
+										<th class="sorting_disabled" rowspan="1" colspan="1" style="width: 20%;">Date / Time</th>
+										<th class="sorting_disabled" rowspan="1" colspan="1" style="width: 20%;">Staff Name</th>
+										
+										<th class="sorting_disabled" rowspan="1" colspan="1" style="width: 40%;">Closed Images</th>
+										<th class="sorting_disabled" rowspan="1" colspan="1" style="width: 40%;">Description</th>
+										<th class="sorting_disabled" rowspan="1" colspan="1" style="width: 20%">Status</th>
+
+									</tr>
+								</thead>
+								<tbody>
+
+									<?php
+									$columns = [
+										"@a:=@a+1 s_no",
+										"date_time",
+										"approve_by",
+										"status_description",
+										"status_option",
+										"unique_id",
+										"screen_unique_id",
+										"file_name",
+										"doc_name"
+									];
+									$table_details = [
+										"stage_1",
+										$columns
+									];
+
+									$where = "screen_unique_id ='" . $screen_unique_id . "' AND is_active = 1 AND is_delete = 0 ";
+
+
+
+									$order_by = "";
+
+
+									$sql_function = "SQL_CALC_FOUND_ROWS";
+
+									$result = $pdo->select($table_details, $where, $limit, $start, $order_by, $sql_function);
+									// print_r($result);
+									$total_records = total_records();
+
+									if ($result->status) {
+
+										$res_array = $result->data;
+										$sno = 1;
+
+										foreach ($res_array as $key => $value) {
+											switch ($value['status_option']) {
+												case 1:
+													$value['status_option'] = "In Progress";
+													break;
+												case 2:
+													$value['status_option'] = "Completed";
+													break;
+												case 3:
+													$value['status_option'] = "Cancel";
+													break;
+												case 4:
+												$value['status_option'] = "Reopened";
+												break;
+											}
+
+											
+
+											$date = date_create($value['date_time']);
+											$value['date_time'] = date_format($date, 'd-m-Y H:i:s'); 
+											$value['approve_by']     = user_name($value['approve_by'])[0]['staff_name']; 
+											$value['file_name'] = image_view_print("stage_1", $value['unique_id'], $value['file_name'],$value['doc_name']); 
+											switch ($value['doc_name']) {
+						                        case 1:
+						                            $value['doc_name'] = "Image";
+						                            break;
+						                        case 2:
+						                            $value['doc_name'] = "Document";
+						                            break;
+						                        case 3:
+						                            $value['doc_name'] = "Audio";
+						                            break;
+						                        case 4:
+						                            $value['doc_name'] = "Chatbot";
+						                            break;
+						                    }
+											?>
+
+
+											<tr>
+												<td><?= $sno++; ?></td>
+												<td><?= $value['date_time']; ?></td>
+												<td><?= $value['approve_by']; ?></td>												
+												<td><?= $value['file_name']; ?></td>
+												<td><?= $value['status_description']; ?></td>
+												<td><?= $value['status_option']; ?></td>
+											</tr>
+
+
+									<?php    }
+									}
+
+
+
+									?>
+
+
+								</tbody>
+							</table>
+						</div>
+					</div>
+
+
+
+
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</div>
+</div>
+

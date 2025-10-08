@@ -1,0 +1,1111 @@
+[16-Jul-2025 23:24:12 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'subtask' in 'SELECT' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/crud.php(404): db->select(Array, Array)
+#2 {main}
+[16-Jul-2025 23:24:18 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'subtask' in 'SELECT' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/crud.php(404): db->select(Array, Array)
+#2 {main}
+[16-Jul-2025 23:24:35 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'subtask' in 'SELECT' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/crud.php(404): db->select(Array, Array)
+#2 {main}
+[16-Jul-2025 23:25:47 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'subtask' in 'INSERT INTO' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:579
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(579): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/crud.php(363): db->insert('sales_order_sub...', Array)
+#2 {main}
+[18-Jul-2025 16:43:30 Asia/Kolkata] PDOException: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'acc_year' cannot be null in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:579
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(579): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/crud.php(107): db->insert('sales_order', Array)
+#2 {main}
+[18-Jul-2025 16:43:35 Asia/Kolkata] PDOException: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'acc_year' cannot be null in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:579
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(579): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/crud.php(107): db->insert('sales_order', Array)
+#2 {main}
+[18-Jul-2025 16:43:37 Asia/Kolkata] PDOException: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'acc_year' cannot be null in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:579
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(579): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/crud.php(107): db->insert('sales_order', Array)
+#2 {main}
+[18-Jul-2025 16:43:48 Asia/Kolkata] PDOException: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'acc_year' cannot be null in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:579
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(579): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/crud.php(107): db->insert('sales_order', Array)
+#2 {main}
+[18-Jul-2025 16:43:48 Asia/Kolkata] PDOException: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'acc_year' cannot be null in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:579
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(579): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/crud.php(107): db->insert('sales_order', Array)
+#2 {main}
+[18-Jul-2025 16:43:48 Asia/Kolkata] PDOException: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'acc_year' cannot be null in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:579
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(579): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/crud.php(107): db->insert('sales_order', Array)
+#2 {main}
+[18-Jul-2025 16:43:48 Asia/Kolkata] PDOException: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'acc_year' cannot be null in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:579
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(579): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/crud.php(107): db->insert('sales_order', Array)
+#2 {main}
+[18-Jul-2025 16:43:49 Asia/Kolkata] PDOException: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'acc_year' cannot be null in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:579
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(579): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/crud.php(107): db->insert('sales_order', Array)
+#2 {main}
+[18-Jul-2025 16:43:49 Asia/Kolkata] PDOException: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'acc_year' cannot be null in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:579
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(579): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/crud.php(107): db->insert('sales_order', Array)
+#2 {main}
+[25-Aug-2025 15:43:46 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'product_name' in 'SELECT' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/crud.php(515): db->select(Array, ' is_delete = '0...', '10', '0', '', 'SQL_CALC_FOUND_...')
+#2 {main}
+[25-Aug-2025 15:48:00 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'product_name' in 'SELECT' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/crud.php(515): db->select(Array, ' is_delete = '0...', '10', '0', '', 'SQL_CALC_FOUND_...')
+#2 {main}
+[25-Aug-2025 15:54:04 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'product_name' in 'SELECT' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/crud.php(515): db->select(Array, ' is_delete = '0...', '10', '0', '', 'SQL_CALC_FOUND_...')
+#2 {main}
+[25-Aug-2025 16:15:06 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'product_id' in 'SELECT' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/crud.php(515): db->select(Array, ' is_delete = '0...', '10', '0', '', 'SQL_CALC_FOUND_...')
+#2 {main}
+[25-Aug-2025 16:15:31 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'product_id' in 'SELECT' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/crud.php(515): db->select(Array, ' is_delete = '0...', '10', '0', '', 'SQL_CALC_FOUND_...')
+#2 {main}
+[25-Aug-2025 16:15:42 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'product_id' in 'SELECT' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/crud.php(515): db->select(Array, ' is_delete = '0...', '10', '0', '', 'SQL_CALC_FOUND_...')
+#2 {main}
+[25-Aug-2025 16:15:51 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'product_id' in 'SELECT' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/crud.php(515): db->select(Array, ' is_delete = '0...', '10', '0', '', 'SQL_CALC_FOUND_...')
+#2 {main}
+[25-Aug-2025 16:17:29 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'product_id' in 'SELECT' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/crud.php(515): db->select(Array, ' is_delete = '0...', '10', '0', '', 'SQL_CALC_FOUND_...')
+#2 {main}
+[25-Aug-2025 16:19:40 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'product_id' in 'SELECT' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/crud.php(515): db->select(Array, ' is_delete = '0...', '10', '0', '', 'SQL_CALC_FOUND_...')
+#2 {main}
+[25-Aug-2025 16:24:47 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'product_id' in 'SELECT' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/crud.php(515): db->select(Array, ' is_delete = '0...', '10', '0', '', 'SQL_CALC_FOUND_...')
+#2 {main}
+[25-Aug-2025 16:25:20 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'product_id' in 'SELECT' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/crud.php(515): db->select(Array, ' is_delete = '0...', '10', '0', '', 'SQL_CALC_FOUND_...')
+#2 {main}
+[26-Aug-2025 10:34:07 Asia/Kolkata] PDOException: SQLSTATE[23000]: Integrity constraint violation: 1052 Column 'is_delete' in WHERE is ambiguous in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/crud.php(520): db->select(Array, ' is_delete = '0...', '10', '10', 'so.sales_order_...', 'SQL_CALC_FOUND_...')
+#2 {main}
+[26-Aug-2025 10:34:27 Asia/Kolkata] PDOException: SQLSTATE[23000]: Integrity constraint violation: 1052 Column 'is_delete' in WHERE is ambiguous in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/crud.php(520): db->select(Array, ' is_delete = '0...', '10', '10', 'so.sales_order_...', 'SQL_CALC_FOUND_...')
+#2 {main}
+[28-Aug-2025 15:19:32 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'product_id' in 'SELECT' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/crud.php(515): db->select(Array, ' is_delete = '0...', '10', '0', '', 'SQL_CALC_FOUND_...')
+#2 {main}
+[28-Aug-2025 15:19:38 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'product_id' in 'SELECT' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/crud.php(515): db->select(Array, ' is_delete = '0...', '10', '0', '', 'SQL_CALC_FOUND_...')
+#2 {main}
+[28-Aug-2025 15:20:02 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'product_id' in 'SELECT' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/crud.php(515): db->select(Array, ' is_delete = '0...', '10', '0', '', 'SQL_CALC_FOUND_...')
+#2 {main}
+[28-Aug-2025 15:34:28 Asia/Kolkata] PDOException: SQLSTATE[23000]: Integrity constraint violation: 1052 Column 'unique_id' in SELECT is ambiguous in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/crud.php(518): db->select(Array, ' is_delete = '0...', '10', '0', '', 'SQL_CALC_FOUND_...')
+#2 {main}
+[28-Aug-2025 15:35:08 Asia/Kolkata] PDOException: SQLSTATE[23000]: Integrity constraint violation: 1052 Column 'unique_id' in SELECT is ambiguous in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/crud.php(518): db->select(Array, ' is_delete = '0...', '10', '0', '', 'SQL_CALC_FOUND_...')
+#2 {main}
+[28-Aug-2025 15:43:21 Asia/Kolkata] PDOException: SQLSTATE[23000]: Integrity constraint violation: 1052 Column 'is_delete' in WHERE is ambiguous in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/crud.php(519): db->select(Array, ' is_delete = '0...', '10', '0', '', 'SQL_CALC_FOUND_...')
+#2 {main}
+[28-Aug-2025 15:49:53 Asia/Kolkata] PDOException: SQLSTATE[23000]: Integrity constraint violation: 1052 Column 'is_delete' in WHERE is ambiguous in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/crud.php(520): db->select(Array, ' is_delete = '0...', '10', '0', '', 'SQL_CALC_FOUND_...')
+#2 {main}
+[30-Aug-2025 09:37:19 Asia/Kolkata] PDOException: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'sess_branch_id' cannot be null in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:579
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(579): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/crud.php(700): db->insert('sales_order_sub...', Array)
+#2 {main}
+[30-Aug-2025 09:37:23 Asia/Kolkata] PDOException: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'sess_branch_id' cannot be null in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:579
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(579): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/crud.php(700): db->insert('sales_order_sub...', Array)
+#2 {main}
+[30-Aug-2025 09:37:41 Asia/Kolkata] PDOException: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'sess_branch_id' cannot be null in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:579
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(579): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/crud.php(700): db->insert('sales_order_sub...', Array)
+#2 {main}
+[30-Aug-2025 09:38:03 Asia/Kolkata] PDOException: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'sess_branch_id' cannot be null in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:579
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(579): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/crud.php(700): db->insert('sales_order_sub...', Array)
+#2 {main}
+[30-Aug-2025 09:38:41 Asia/Kolkata] PDOException: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'sess_branch_id' cannot be null in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:579
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(579): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/crud.php(700): db->insert('sales_order_sub...', Array)
+#2 {main}
+[30-Aug-2025 09:40:13 Asia/Kolkata] PDOException: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'sess_branch_id' cannot be null in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:579
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(579): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/crud.php(700): db->insert('sales_order_sub...', Array)
+#2 {main}
+[04-Sep-2025 04:57:18 UTC] PHP Notice:  Undefined variable: company_name in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 50
+[04-Sep-2025 04:57:18 UTC] PHP Notice:  Undefined variable: company_address in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 51
+[04-Sep-2025 04:57:18 UTC] PHP Notice:  Undefined variable: billing_address in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 68
+[04-Sep-2025 04:57:18 UTC] PHP Notice:  Undefined variable: shipping_address in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 72
+[04-Sep-2025 04:57:18 UTC] PHP Notice:  Undefined variable: remarks_header in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 76
+[04-Sep-2025 04:57:18 UTC] PHP Notice:  Undefined variable: project_name in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 86
+[04-Sep-2025 04:57:18 UTC] PHP Notice:  Undefined variable: po_type in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 90
+[04-Sep-2025 04:57:18 UTC] PHP Notice:  Undefined variable: supplier_name in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 94
+[04-Sep-2025 04:57:18 UTC] PHP Notice:  Undefined variable: entry_date in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 98
+[04-Sep-2025 04:57:18 UTC] PHP Notice:  Undefined variable: gst_no in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 102
+[04-Sep-2025 04:57:18 UTC] PHP Notice:  Undefined variable: pan_no in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 106
+[04-Sep-2025 04:57:18 UTC] PHP Notice:  Undefined variable: msme_no in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 110
+[04-Sep-2025 04:57:18 UTC] PHP Notice:  Undefined variable: msme_no in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 110
+[04-Sep-2025 04:57:18 UTC] PHP Notice:  Undefined variable: msme_no in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 110
+[04-Sep-2025 04:57:18 UTC] PHP Notice:  Undefined variable: supplier_email in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 114
+[04-Sep-2025 04:57:18 UTC] PHP Notice:  Undefined variable: contact_person in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 126
+[04-Sep-2025 04:57:18 UTC] PHP Notice:  Undefined variable: vendor_contact_no in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 130
+[04-Sep-2025 04:57:18 UTC] PHP Notice:  Undefined variable: quotation_no in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 134
+[04-Sep-2025 04:57:18 UTC] PHP Notice:  Undefined variable: quotation_date in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 138
+[04-Sep-2025 04:57:18 UTC] PHP Notice:  Undefined variable: terms_payment_days in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 201
+[04-Sep-2025 04:57:18 UTC] PHP Notice:  Undefined variable: terms_delivery in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 206
+[04-Sep-2025 04:57:18 UTC] PHP Notice:  Undefined variable: terms_remarks in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 211
+[04-Sep-2025 04:57:18 UTC] PHP Notice:  Undefined variable: total_basic_value in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 218
+[04-Sep-2025 04:57:18 UTC] PHP Notice:  Undefined variable: freight_amount_display in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 223
+[04-Sep-2025 04:57:18 UTC] PHP Notice:  Undefined variable: other_charges_display in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 228
+[04-Sep-2025 04:57:18 UTC] PHP Notice:  Undefined variable: packing_forwarding_display in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 233
+[04-Sep-2025 04:57:18 UTC] PHP Notice:  Undefined variable: total_gst_amount in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 238
+[04-Sep-2025 04:57:18 UTC] PHP Notice:  Undefined variable: gross_amount in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 243
+[05-Sep-2025 03:50:47 UTC] PHP Notice:  Undefined variable: company_name in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 50
+[05-Sep-2025 03:50:47 UTC] PHP Notice:  Undefined variable: company_address in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 51
+[05-Sep-2025 03:50:47 UTC] PHP Notice:  Undefined variable: billing_address in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 68
+[05-Sep-2025 03:50:47 UTC] PHP Notice:  Undefined variable: shipping_address in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 72
+[05-Sep-2025 03:50:47 UTC] PHP Notice:  Undefined variable: remarks_header in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 76
+[05-Sep-2025 03:50:47 UTC] PHP Notice:  Undefined variable: project_name in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 86
+[05-Sep-2025 03:50:47 UTC] PHP Notice:  Undefined variable: po_type in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 90
+[05-Sep-2025 03:50:47 UTC] PHP Notice:  Undefined variable: supplier_name in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 94
+[05-Sep-2025 03:50:47 UTC] PHP Notice:  Undefined variable: entry_date in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 98
+[05-Sep-2025 03:50:47 UTC] PHP Notice:  Undefined variable: gst_no in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 102
+[05-Sep-2025 03:50:47 UTC] PHP Notice:  Undefined variable: pan_no in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 106
+[05-Sep-2025 03:50:47 UTC] PHP Notice:  Undefined variable: msme_no in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 110
+[05-Sep-2025 03:50:47 UTC] PHP Notice:  Undefined variable: msme_no in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 110
+[05-Sep-2025 03:50:47 UTC] PHP Notice:  Undefined variable: msme_no in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 110
+[05-Sep-2025 03:50:47 UTC] PHP Notice:  Undefined variable: supplier_email in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 114
+[05-Sep-2025 03:50:47 UTC] PHP Notice:  Undefined variable: contact_person in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 126
+[05-Sep-2025 03:50:47 UTC] PHP Notice:  Undefined variable: vendor_contact_no in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 130
+[05-Sep-2025 03:50:47 UTC] PHP Notice:  Undefined variable: quotation_no in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 134
+[05-Sep-2025 03:50:47 UTC] PHP Notice:  Undefined variable: quotation_date in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 138
+[05-Sep-2025 03:50:47 UTC] PHP Notice:  Undefined variable: terms_payment_days in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 201
+[05-Sep-2025 03:50:47 UTC] PHP Notice:  Undefined variable: terms_delivery in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 206
+[05-Sep-2025 03:50:47 UTC] PHP Notice:  Undefined variable: terms_remarks in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 211
+[05-Sep-2025 03:50:47 UTC] PHP Notice:  Undefined variable: total_basic_value in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 218
+[05-Sep-2025 03:50:47 UTC] PHP Notice:  Undefined variable: freight_amount_display in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 223
+[05-Sep-2025 03:50:47 UTC] PHP Notice:  Undefined variable: other_charges_display in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 228
+[05-Sep-2025 03:50:47 UTC] PHP Notice:  Undefined variable: packing_forwarding_display in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 233
+[05-Sep-2025 03:50:47 UTC] PHP Notice:  Undefined variable: total_gst_amount in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 238
+[05-Sep-2025 03:50:47 UTC] PHP Notice:  Undefined variable: gross_amount in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 243
+[05-Sep-2025 06:24:33 UTC] PHP Notice:  Undefined variable: company_name in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 50
+[05-Sep-2025 06:24:33 UTC] PHP Notice:  Undefined variable: company_address in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 51
+[05-Sep-2025 06:24:33 UTC] PHP Notice:  Undefined variable: billing_address in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 68
+[05-Sep-2025 06:24:33 UTC] PHP Notice:  Undefined variable: shipping_address in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 72
+[05-Sep-2025 06:24:33 UTC] PHP Notice:  Undefined variable: remarks_header in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 76
+[05-Sep-2025 06:24:33 UTC] PHP Notice:  Undefined variable: project_name in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 86
+[05-Sep-2025 06:24:33 UTC] PHP Notice:  Undefined variable: po_type in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 90
+[05-Sep-2025 06:24:33 UTC] PHP Notice:  Undefined variable: supplier_name in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 94
+[05-Sep-2025 06:24:33 UTC] PHP Notice:  Undefined variable: entry_date in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 98
+[05-Sep-2025 06:24:33 UTC] PHP Notice:  Undefined variable: gst_no in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 102
+[05-Sep-2025 06:24:33 UTC] PHP Notice:  Undefined variable: pan_no in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 106
+[05-Sep-2025 06:24:33 UTC] PHP Notice:  Undefined variable: msme_no in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 110
+[05-Sep-2025 06:24:33 UTC] PHP Notice:  Undefined variable: msme_no in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 110
+[05-Sep-2025 06:24:33 UTC] PHP Notice:  Undefined variable: msme_no in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 110
+[05-Sep-2025 06:24:33 UTC] PHP Notice:  Undefined variable: supplier_email in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 114
+[05-Sep-2025 06:24:33 UTC] PHP Notice:  Undefined variable: contact_person in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 126
+[05-Sep-2025 06:24:33 UTC] PHP Notice:  Undefined variable: vendor_contact_no in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 130
+[05-Sep-2025 06:24:33 UTC] PHP Notice:  Undefined variable: quotation_no in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 134
+[05-Sep-2025 06:24:33 UTC] PHP Notice:  Undefined variable: quotation_date in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 138
+[05-Sep-2025 06:24:33 UTC] PHP Notice:  Undefined variable: terms_payment_days in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 201
+[05-Sep-2025 06:24:33 UTC] PHP Notice:  Undefined variable: terms_delivery in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 206
+[05-Sep-2025 06:24:33 UTC] PHP Notice:  Undefined variable: terms_remarks in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 211
+[05-Sep-2025 06:24:33 UTC] PHP Notice:  Undefined variable: total_basic_value in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 218
+[05-Sep-2025 06:24:33 UTC] PHP Notice:  Undefined variable: freight_amount_display in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 223
+[05-Sep-2025 06:24:33 UTC] PHP Notice:  Undefined variable: other_charges_display in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 228
+[05-Sep-2025 06:24:33 UTC] PHP Notice:  Undefined variable: packing_forwarding_display in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 233
+[05-Sep-2025 06:24:33 UTC] PHP Notice:  Undefined variable: total_gst_amount in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 238
+[05-Sep-2025 06:24:33 UTC] PHP Notice:  Undefined variable: gross_amount in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 243
+[08-Sep-2025 15:42:01 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_beta.customers' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/print.php(126): db->select(Array, Array)
+#2 {main}
+[08-Sep-2025 15:42:01 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_beta.customer_contacts' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/print.php(135): db->select(Array, Array)
+#2 {main}
+[08-Sep-2025 15:42:05 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_beta.customers' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/print.php(126): db->select(Array, Array)
+#2 {main}
+[08-Sep-2025 15:42:05 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_beta.customer_contacts' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/print.php(135): db->select(Array, Array)
+#2 {main}
+[08-Sep-2025 15:42:45 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_beta.customers' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/print.php(126): db->select(Array, Array)
+#2 {main}
+[08-Sep-2025 15:42:45 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_beta.customer_contacts' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/print.php(135): db->select(Array, Array)
+#2 {main}
+[08-Sep-2025 15:42:49 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_beta.customers' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/print.php(126): db->select(Array, Array)
+#2 {main}
+[08-Sep-2025 15:42:49 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_beta.customer_contacts' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/print.php(135): db->select(Array, Array)
+#2 {main}
+[08-Sep-2025 15:45:16 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_beta.customers' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/print.php(126): db->select(Array, Array)
+#2 {main}
+[08-Sep-2025 15:45:16 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_beta.customer_contacts' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/print.php(135): db->select(Array, Array)
+#2 {main}
+[08-Sep-2025 15:47:13 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_beta.customers' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/print.php(178): db->select(Array, Array)
+#2 {main}
+[08-Sep-2025 15:47:13 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_beta.customer_contacts' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/print.php(187): db->select(Array, Array)
+#2 {main}
+[08-Sep-2025 15:52:25 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_beta.customers' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/print.php(178): db->select(Array, Array)
+#2 {main}
+[08-Sep-2025 15:52:25 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_beta.customer_contacts' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/print.php(187): db->select(Array, Array)
+#2 {main}
+[08-Sep-2025 15:53:09 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_beta.customers' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/print.php(178): db->select(Array, Array)
+#2 {main}
+[08-Sep-2025 15:53:09 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_beta.customer_contacts' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/print.php(187): db->select(Array, Array)
+#2 {main}
+[08-Sep-2025 15:53:13 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_beta.customers' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/print.php(178): db->select(Array, Array)
+#2 {main}
+[08-Sep-2025 15:53:13 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_beta.customer_contacts' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/print.php(187): db->select(Array, Array)
+#2 {main}
+[08-Sep-2025 16:41:40 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_beta.customers' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/print.php(178): db->select(Array, Array)
+#2 {main}
+[08-Sep-2025 16:41:40 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_beta.customer_contacts' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/print.php(187): db->select(Array, Array)
+#2 {main}
+[08-Sep-2025 16:47:28 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_beta.customers' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/print.php(179): db->select(Array, Array)
+#2 {main}
+[08-Sep-2025 16:47:28 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_beta.customer_contacts' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/print.php(188): db->select(Array, Array)
+#2 {main}
+[08-Sep-2025 16:49:06 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_beta.customers' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/print.php(179): db->select(Array, Array)
+#2 {main}
+[08-Sep-2025 16:49:06 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_beta.customer_contacts' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/print.php(188): db->select(Array, Array)
+#2 {main}
+[08-Sep-2025 16:50:25 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_beta.customers' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/print.php(179): db->select(Array, Array)
+#2 {main}
+[08-Sep-2025 16:50:25 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_beta.customer_contacts' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/print.php(188): db->select(Array, Array)
+#2 {main}
+[08-Sep-2025 16:51:08 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_beta.customers' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/print.php(179): db->select(Array, Array)
+#2 {main}
+[08-Sep-2025 16:51:08 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_beta.customer_contacts' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/print.php(188): db->select(Array, Array)
+#2 {main}
+[08-Sep-2025 16:53:32 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_beta.customers' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/print.php(179): db->select(Array, Array)
+#2 {main}
+[08-Sep-2025 16:53:32 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_beta.customer_contacts' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/print.php(188): db->select(Array, Array)
+#2 {main}
+[08-Sep-2025 16:53:45 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_beta.customers' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/print.php(179): db->select(Array, Array)
+#2 {main}
+[08-Sep-2025 16:53:45 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_beta.customer_contacts' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/print.php(188): db->select(Array, Array)
+#2 {main}
+[08-Sep-2025 16:55:03 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_beta.customers' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/print.php(179): db->select(Array, Array)
+#2 {main}
+[08-Sep-2025 16:55:03 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_beta.customer_contacts' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/print.php(188): db->select(Array, Array)
+#2 {main}
+[08-Sep-2025 16:56:05 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_beta.customers' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/print.php(179): db->select(Array, Array)
+#2 {main}
+[08-Sep-2025 16:56:05 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_beta.customer_contacts' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/print.php(188): db->select(Array, Array)
+#2 {main}
+[08-Sep-2025 16:56:14 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_beta.customers' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/print.php(179): db->select(Array, Array)
+#2 {main}
+[08-Sep-2025 16:56:14 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_beta.customer_contacts' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/print.php(188): db->select(Array, Array)
+#2 {main}
+[08-Sep-2025 16:56:17 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_beta.customers' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/print.php(179): db->select(Array, Array)
+#2 {main}
+[08-Sep-2025 16:56:17 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_beta.customer_contacts' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/print.php(188): db->select(Array, Array)
+#2 {main}
+[08-Sep-2025 16:56:19 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_beta.customers' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/print.php(179): db->select(Array, Array)
+#2 {main}
+[08-Sep-2025 16:56:19 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_beta.customer_contacts' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/print.php(188): db->select(Array, Array)
+#2 {main}
+[08-Sep-2025 16:56:19 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_beta.customers' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/print.php(179): db->select(Array, Array)
+#2 {main}
+[08-Sep-2025 16:56:19 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_beta.customer_contacts' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/print.php(188): db->select(Array, Array)
+#2 {main}
+[08-Sep-2025 16:56:49 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_beta.customers' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/print.php(179): db->select(Array, Array)
+#2 {main}
+[08-Sep-2025 16:56:49 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_beta.customer_contacts' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/print.php(188): db->select(Array, Array)
+#2 {main}
+[08-Sep-2025 16:56:59 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_beta.customers' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/print.php(179): db->select(Array, Array)
+#2 {main}
+[08-Sep-2025 16:56:59 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_beta.customer_contacts' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/print.php(188): db->select(Array, Array)
+#2 {main}
+[08-Sep-2025 16:57:01 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_beta.customers' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/print.php(179): db->select(Array, Array)
+#2 {main}
+[08-Sep-2025 16:57:01 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_beta.customer_contacts' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/print.php(188): db->select(Array, Array)
+#2 {main}
+[08-Sep-2025 16:57:04 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_beta.customers' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/print.php(179): db->select(Array, Array)
+#2 {main}
+[08-Sep-2025 16:57:04 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_beta.customer_contacts' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/print.php(188): db->select(Array, Array)
+#2 {main}
+[08-Sep-2025 16:57:04 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_beta.customers' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/print.php(179): db->select(Array, Array)
+#2 {main}
+[08-Sep-2025 16:57:04 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_beta.customer_contacts' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/print.php(188): db->select(Array, Array)
+#2 {main}
+[08-Sep-2025 16:57:04 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_beta.customers' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/print.php(179): db->select(Array, Array)
+#2 {main}
+[08-Sep-2025 16:57:04 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_beta.customer_contacts' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/print.php(188): db->select(Array, Array)
+#2 {main}
+[08-Sep-2025 16:57:04 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_beta.customers' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/print.php(179): db->select(Array, Array)
+#2 {main}
+[08-Sep-2025 16:57:04 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_beta.customer_contacts' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/print.php(188): db->select(Array, Array)
+#2 {main}
+[08-Sep-2025 16:57:04 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_beta.customers' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/print.php(179): db->select(Array, Array)
+#2 {main}
+[08-Sep-2025 16:57:04 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_beta.customer_contacts' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/print.php(188): db->select(Array, Array)
+#2 {main}
+[08-Sep-2025 16:57:05 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_beta.customers' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/print.php(179): db->select(Array, Array)
+#2 {main}
+[08-Sep-2025 16:57:05 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_beta.customer_contacts' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/print.php(188): db->select(Array, Array)
+#2 {main}
+[08-Sep-2025 16:57:05 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_beta.customers' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/print.php(179): db->select(Array, Array)
+#2 {main}
+[08-Sep-2025 16:57:05 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_beta.customer_contacts' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/print.php(188): db->select(Array, Array)
+#2 {main}
+[08-Sep-2025 16:57:05 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_beta.customers' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/print.php(179): db->select(Array, Array)
+#2 {main}
+[08-Sep-2025 16:57:05 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_beta.customer_contacts' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/print.php(188): db->select(Array, Array)
+#2 {main}
+[08-Sep-2025 16:57:05 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_beta.customers' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/print.php(179): db->select(Array, Array)
+#2 {main}
+[08-Sep-2025 16:57:05 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_beta.customer_contacts' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/print.php(188): db->select(Array, Array)
+#2 {main}
+[08-Sep-2025 16:57:06 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_beta.customers' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/print.php(179): db->select(Array, Array)
+#2 {main}
+[08-Sep-2025 16:57:06 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_beta.customer_contacts' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/print.php(188): db->select(Array, Array)
+#2 {main}
+[08-Sep-2025 16:57:06 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_beta.customers' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/print.php(179): db->select(Array, Array)
+#2 {main}
+[08-Sep-2025 16:57:06 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_beta.customer_contacts' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/print.php(188): db->select(Array, Array)
+#2 {main}
+[08-Sep-2025 16:57:06 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_beta.customers' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/print.php(179): db->select(Array, Array)
+#2 {main}
+[08-Sep-2025 16:57:06 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_beta.customer_contacts' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/print.php(188): db->select(Array, Array)
+#2 {main}
+[08-Sep-2025 16:57:06 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_beta.customers' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/print.php(179): db->select(Array, Array)
+#2 {main}
+[08-Sep-2025 16:57:06 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_beta.customer_contacts' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/print.php(188): db->select(Array, Array)
+#2 {main}
+[08-Sep-2025 16:58:47 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_beta.customers' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/print.php(179): db->select(Array, Array)
+#2 {main}
+[08-Sep-2025 16:58:47 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_beta.customer_contacts' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/print.php(188): db->select(Array, Array)
+#2 {main}
+[08-Sep-2025 16:58:50 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_beta.customers' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/print.php(179): db->select(Array, Array)
+#2 {main}
+[08-Sep-2025 16:58:50 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_beta.customer_contacts' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/print.php(188): db->select(Array, Array)
+#2 {main}
+[08-Sep-2025 16:58:50 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_beta.customers' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/print.php(179): db->select(Array, Array)
+#2 {main}
+[08-Sep-2025 16:58:50 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_beta.customer_contacts' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/print.php(188): db->select(Array, Array)
+#2 {main}
+[08-Sep-2025 16:58:51 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_beta.customers' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/print.php(179): db->select(Array, Array)
+#2 {main}
+[08-Sep-2025 16:58:51 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_beta.customer_contacts' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/print.php(188): db->select(Array, Array)
+#2 {main}
+[08-Sep-2025 16:58:51 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_beta.customers' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/print.php(179): db->select(Array, Array)
+#2 {main}
+[08-Sep-2025 16:58:51 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_beta.customer_contacts' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/print.php(188): db->select(Array, Array)
+#2 {main}
+[08-Sep-2025 16:58:51 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_beta.customers' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/print.php(179): db->select(Array, Array)
+#2 {main}
+[08-Sep-2025 16:58:51 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_beta.customer_contacts' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/print.php(188): db->select(Array, Array)
+#2 {main}
+[08-Sep-2025 16:58:51 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_beta.customers' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/print.php(179): db->select(Array, Array)
+#2 {main}
+[08-Sep-2025 16:58:51 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_beta.customer_contacts' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/print.php(188): db->select(Array, Array)
+#2 {main}
+[08-Sep-2025 16:58:51 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_beta.customers' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/print.php(179): db->select(Array, Array)
+#2 {main}
+[08-Sep-2025 16:58:51 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_beta.customer_contacts' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/print.php(188): db->select(Array, Array)
+#2 {main}
+[08-Sep-2025 16:58:52 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_beta.customers' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/print.php(179): db->select(Array, Array)
+#2 {main}
+[08-Sep-2025 16:58:52 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_beta.customer_contacts' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/print.php(188): db->select(Array, Array)
+#2 {main}
+[08-Sep-2025 16:58:52 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_beta.customers' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/print.php(179): db->select(Array, Array)
+#2 {main}
+[08-Sep-2025 16:58:52 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_beta.customer_contacts' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/print.php(188): db->select(Array, Array)
+#2 {main}
+[08-Sep-2025 16:58:52 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_beta.customers' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/print.php(179): db->select(Array, Array)
+#2 {main}
+[08-Sep-2025 16:58:52 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_beta.customer_contacts' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/print.php(188): db->select(Array, Array)
+#2 {main}
+[08-Sep-2025 16:59:38 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_beta.customers' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/print.php(179): db->select(Array, Array)
+#2 {main}
+[08-Sep-2025 16:59:38 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_beta.customer_contacts' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/print.php(188): db->select(Array, Array)
+#2 {main}
+[08-Sep-2025 11:34:31 UTC] PHP Notice:  Undefined variable: company_name in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 50
+[08-Sep-2025 11:34:31 UTC] PHP Notice:  Undefined variable: company_address in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 51
+[08-Sep-2025 11:34:31 UTC] PHP Notice:  Undefined variable: billing_address in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 68
+[08-Sep-2025 11:34:31 UTC] PHP Notice:  Undefined variable: shipping_address in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 72
+[08-Sep-2025 11:34:31 UTC] PHP Notice:  Undefined variable: remarks_header in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 76
+[08-Sep-2025 11:34:31 UTC] PHP Notice:  Undefined variable: project_name in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 86
+[08-Sep-2025 11:34:31 UTC] PHP Notice:  Undefined variable: po_type in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 90
+[08-Sep-2025 11:34:31 UTC] PHP Notice:  Undefined variable: supplier_name in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 94
+[08-Sep-2025 11:34:31 UTC] PHP Notice:  Undefined variable: entry_date in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 98
+[08-Sep-2025 11:34:31 UTC] PHP Notice:  Undefined variable: gst_no in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 102
+[08-Sep-2025 11:34:31 UTC] PHP Notice:  Undefined variable: pan_no in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 106
+[08-Sep-2025 11:34:31 UTC] PHP Notice:  Undefined variable: msme_no in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 110
+[08-Sep-2025 11:34:31 UTC] PHP Notice:  Undefined variable: msme_no in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 110
+[08-Sep-2025 11:34:31 UTC] PHP Notice:  Undefined variable: msme_no in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 110
+[08-Sep-2025 11:34:31 UTC] PHP Notice:  Undefined variable: supplier_email in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 114
+[08-Sep-2025 11:34:31 UTC] PHP Notice:  Undefined variable: contact_person in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 126
+[08-Sep-2025 11:34:31 UTC] PHP Notice:  Undefined variable: vendor_contact_no in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 130
+[08-Sep-2025 11:34:31 UTC] PHP Notice:  Undefined variable: quotation_no in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 134
+[08-Sep-2025 11:34:31 UTC] PHP Notice:  Undefined variable: quotation_date in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 138
+[08-Sep-2025 11:34:31 UTC] PHP Notice:  Undefined variable: terms_payment_days in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 201
+[08-Sep-2025 11:34:31 UTC] PHP Notice:  Undefined variable: terms_delivery in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 206
+[08-Sep-2025 11:34:31 UTC] PHP Notice:  Undefined variable: terms_remarks in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 211
+[08-Sep-2025 11:34:31 UTC] PHP Notice:  Undefined variable: total_basic_value in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 218
+[08-Sep-2025 11:34:31 UTC] PHP Notice:  Undefined variable: freight_amount_display in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 223
+[08-Sep-2025 11:34:31 UTC] PHP Notice:  Undefined variable: other_charges_display in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 228
+[08-Sep-2025 11:34:31 UTC] PHP Notice:  Undefined variable: packing_forwarding_display in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 233
+[08-Sep-2025 11:34:31 UTC] PHP Notice:  Undefined variable: total_gst_amount in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 238
+[08-Sep-2025 11:34:31 UTC] PHP Notice:  Undefined variable: gross_amount in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 243
+[08-Sep-2025 11:34:49 UTC] PHP Notice:  Undefined variable: company_name in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 50
+[08-Sep-2025 11:34:49 UTC] PHP Notice:  Undefined variable: company_address in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 51
+[08-Sep-2025 11:34:49 UTC] PHP Notice:  Undefined variable: billing_address in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 68
+[08-Sep-2025 11:34:49 UTC] PHP Notice:  Undefined variable: shipping_address in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 72
+[08-Sep-2025 11:34:49 UTC] PHP Notice:  Undefined variable: remarks_header in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 76
+[08-Sep-2025 11:34:49 UTC] PHP Notice:  Undefined variable: project_name in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 86
+[08-Sep-2025 11:34:49 UTC] PHP Notice:  Undefined variable: po_type in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 90
+[08-Sep-2025 11:34:49 UTC] PHP Notice:  Undefined variable: supplier_name in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 94
+[08-Sep-2025 11:34:49 UTC] PHP Notice:  Undefined variable: entry_date in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 98
+[08-Sep-2025 11:34:49 UTC] PHP Notice:  Undefined variable: gst_no in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 102
+[08-Sep-2025 11:34:49 UTC] PHP Notice:  Undefined variable: pan_no in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 106
+[08-Sep-2025 11:34:49 UTC] PHP Notice:  Undefined variable: msme_no in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 110
+[08-Sep-2025 11:34:49 UTC] PHP Notice:  Undefined variable: msme_no in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 110
+[08-Sep-2025 11:34:49 UTC] PHP Notice:  Undefined variable: msme_no in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 110
+[08-Sep-2025 11:34:49 UTC] PHP Notice:  Undefined variable: supplier_email in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 114
+[08-Sep-2025 11:34:49 UTC] PHP Notice:  Undefined variable: contact_person in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 126
+[08-Sep-2025 11:34:49 UTC] PHP Notice:  Undefined variable: vendor_contact_no in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 130
+[08-Sep-2025 11:34:49 UTC] PHP Notice:  Undefined variable: quotation_no in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 134
+[08-Sep-2025 11:34:49 UTC] PHP Notice:  Undefined variable: quotation_date in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 138
+[08-Sep-2025 11:34:49 UTC] PHP Notice:  Undefined variable: terms_payment_days in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 201
+[08-Sep-2025 11:34:49 UTC] PHP Notice:  Undefined variable: terms_delivery in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 206
+[08-Sep-2025 11:34:49 UTC] PHP Notice:  Undefined variable: terms_remarks in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 211
+[08-Sep-2025 11:34:49 UTC] PHP Notice:  Undefined variable: total_basic_value in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 218
+[08-Sep-2025 11:34:49 UTC] PHP Notice:  Undefined variable: freight_amount_display in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 223
+[08-Sep-2025 11:34:49 UTC] PHP Notice:  Undefined variable: other_charges_display in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 228
+[08-Sep-2025 11:34:49 UTC] PHP Notice:  Undefined variable: packing_forwarding_display in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 233
+[08-Sep-2025 11:34:49 UTC] PHP Notice:  Undefined variable: total_gst_amount in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 238
+[08-Sep-2025 11:34:49 UTC] PHP Notice:  Undefined variable: gross_amount in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 243
+[08-Sep-2025 17:19:38 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_beta.so_sublist' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/print.php(200): db->select(Array, Array)
+#2 {main}
+[08-Sep-2025 17:21:19 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_beta.so_sublist' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/print.php(201): db->select(Array, Array)
+#2 {main}
+[08-Sep-2025 17:21:22 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_beta.so_sublist' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/print.php(201): db->select(Array, Array)
+#2 {main}
+[08-Sep-2025 17:21:22 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_beta.so_sublist' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/print.php(201): db->select(Array, Array)
+#2 {main}
+[08-Sep-2025 17:21:23 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_beta.so_sublist' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/print.php(201): db->select(Array, Array)
+#2 {main}
+[08-Sep-2025 17:21:24 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_beta.so_sublist' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/print.php(201): db->select(Array, Array)
+#2 {main}
+[08-Sep-2025 17:21:24 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_beta.so_sublist' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/print.php(201): db->select(Array, Array)
+#2 {main}
+[08-Sep-2025 17:21:25 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_beta.so_sublist' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/print.php(201): db->select(Array, Array)
+#2 {main}
+[08-Sep-2025 17:21:25 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_beta.so_sublist' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/print.php(201): db->select(Array, Array)
+#2 {main}
+[08-Sep-2025 17:21:26 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_beta.so_sublist' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/print.php(201): db->select(Array, Array)
+#2 {main}
+[08-Sep-2025 17:21:49 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'delivery_date' in 'SELECT' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/print.php(201): db->select(Array, Array)
+#2 {main}
+[08-Sep-2025 17:21:51 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'delivery_date' in 'SELECT' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/print.php(201): db->select(Array, Array)
+#2 {main}
+[08-Sep-2025 17:21:51 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'delivery_date' in 'SELECT' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/print.php(201): db->select(Array, Array)
+#2 {main}
+[08-Sep-2025 17:21:51 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'delivery_date' in 'SELECT' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/print.php(201): db->select(Array, Array)
+#2 {main}
+[08-Sep-2025 17:21:52 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'delivery_date' in 'SELECT' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/print.php(201): db->select(Array, Array)
+#2 {main}
+[08-Sep-2025 17:22:51 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'delivery_date' in 'SELECT' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/print.php(201): db->select(Array, Array)
+#2 {main}
+[11-Sep-2025 09:46:09 UTC] PHP Notice:  Undefined variable: company_name in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 50
+[11-Sep-2025 09:46:09 UTC] PHP Notice:  Undefined variable: company_address in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 51
+[11-Sep-2025 09:46:09 UTC] PHP Notice:  Undefined variable: billing_address in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 68
+[11-Sep-2025 09:46:09 UTC] PHP Notice:  Undefined variable: shipping_address in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 72
+[11-Sep-2025 09:46:09 UTC] PHP Notice:  Undefined variable: remarks_header in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 76
+[11-Sep-2025 09:46:09 UTC] PHP Notice:  Undefined variable: project_name in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 86
+[11-Sep-2025 09:46:09 UTC] PHP Notice:  Undefined variable: po_type in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 90
+[11-Sep-2025 09:46:09 UTC] PHP Notice:  Undefined variable: supplier_name in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 94
+[11-Sep-2025 09:46:09 UTC] PHP Notice:  Undefined variable: entry_date in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 98
+[11-Sep-2025 09:46:09 UTC] PHP Notice:  Undefined variable: gst_no in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 102
+[11-Sep-2025 09:46:09 UTC] PHP Notice:  Undefined variable: pan_no in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 106
+[11-Sep-2025 09:46:09 UTC] PHP Notice:  Undefined variable: msme_no in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 110
+[11-Sep-2025 09:46:09 UTC] PHP Notice:  Undefined variable: msme_no in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 110
+[11-Sep-2025 09:46:09 UTC] PHP Notice:  Undefined variable: msme_no in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 110
+[11-Sep-2025 09:46:09 UTC] PHP Notice:  Undefined variable: supplier_email in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 114
+[11-Sep-2025 09:46:09 UTC] PHP Notice:  Undefined variable: contact_person in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 126
+[11-Sep-2025 09:46:09 UTC] PHP Notice:  Undefined variable: vendor_contact_no in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 130
+[11-Sep-2025 09:46:09 UTC] PHP Notice:  Undefined variable: quotation_no in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 134
+[11-Sep-2025 09:46:09 UTC] PHP Notice:  Undefined variable: quotation_date in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 138
+[11-Sep-2025 09:46:09 UTC] PHP Notice:  Undefined variable: terms_payment_days in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 201
+[11-Sep-2025 09:46:09 UTC] PHP Notice:  Undefined variable: terms_delivery in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 206
+[11-Sep-2025 09:46:09 UTC] PHP Notice:  Undefined variable: terms_remarks in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 211
+[11-Sep-2025 09:46:09 UTC] PHP Notice:  Undefined variable: total_basic_value in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 218
+[11-Sep-2025 09:46:09 UTC] PHP Notice:  Undefined variable: freight_amount_display in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 223
+[11-Sep-2025 09:46:09 UTC] PHP Notice:  Undefined variable: other_charges_display in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 228
+[11-Sep-2025 09:46:09 UTC] PHP Notice:  Undefined variable: packing_forwarding_display in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 233
+[11-Sep-2025 09:46:09 UTC] PHP Notice:  Undefined variable: total_gst_amount in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 238
+[11-Sep-2025 09:46:09 UTC] PHP Notice:  Undefined variable: gross_amount in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 243
+[15-Sep-2025 11:34:39 UTC] PHP Notice:  Undefined variable: company_name in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 50
+[15-Sep-2025 11:34:39 UTC] PHP Notice:  Undefined variable: company_address in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 51
+[15-Sep-2025 11:34:39 UTC] PHP Notice:  Undefined variable: billing_address in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 68
+[15-Sep-2025 11:34:39 UTC] PHP Notice:  Undefined variable: shipping_address in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 72
+[15-Sep-2025 11:34:39 UTC] PHP Notice:  Undefined variable: remarks_header in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 76
+[15-Sep-2025 11:34:39 UTC] PHP Notice:  Undefined variable: project_name in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 86
+[15-Sep-2025 11:34:39 UTC] PHP Notice:  Undefined variable: po_type in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 90
+[15-Sep-2025 11:34:39 UTC] PHP Notice:  Undefined variable: supplier_name in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 94
+[15-Sep-2025 11:34:39 UTC] PHP Notice:  Undefined variable: entry_date in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 98
+[15-Sep-2025 11:34:39 UTC] PHP Notice:  Undefined variable: gst_no in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 102
+[15-Sep-2025 11:34:39 UTC] PHP Notice:  Undefined variable: pan_no in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 106
+[15-Sep-2025 11:34:39 UTC] PHP Notice:  Undefined variable: msme_no in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 110
+[15-Sep-2025 11:34:39 UTC] PHP Notice:  Undefined variable: msme_no in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 110
+[15-Sep-2025 11:34:39 UTC] PHP Notice:  Undefined variable: msme_no in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 110
+[15-Sep-2025 11:34:39 UTC] PHP Notice:  Undefined variable: supplier_email in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 114
+[15-Sep-2025 11:34:39 UTC] PHP Notice:  Undefined variable: contact_person in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 126
+[15-Sep-2025 11:34:39 UTC] PHP Notice:  Undefined variable: vendor_contact_no in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 130
+[15-Sep-2025 11:34:39 UTC] PHP Notice:  Undefined variable: quotation_no in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 134
+[15-Sep-2025 11:34:39 UTC] PHP Notice:  Undefined variable: quotation_date in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 138
+[15-Sep-2025 11:34:39 UTC] PHP Notice:  Undefined variable: terms_payment_days in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 201
+[15-Sep-2025 11:34:39 UTC] PHP Notice:  Undefined variable: terms_delivery in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 206
+[15-Sep-2025 11:34:39 UTC] PHP Notice:  Undefined variable: terms_remarks in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 211
+[15-Sep-2025 11:34:39 UTC] PHP Notice:  Undefined variable: total_basic_value in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 218
+[15-Sep-2025 11:34:39 UTC] PHP Notice:  Undefined variable: freight_amount_display in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 223
+[15-Sep-2025 11:34:39 UTC] PHP Notice:  Undefined variable: other_charges_display in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 228
+[15-Sep-2025 11:34:39 UTC] PHP Notice:  Undefined variable: packing_forwarding_display in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 233
+[15-Sep-2025 11:34:39 UTC] PHP Notice:  Undefined variable: total_gst_amount in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 238
+[15-Sep-2025 11:34:39 UTC] PHP Notice:  Undefined variable: gross_amount in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 243
+[22-Sep-2025 12:25:44 UTC] PHP Notice:  Undefined variable: company_name in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 50
+[22-Sep-2025 12:25:44 UTC] PHP Notice:  Undefined variable: company_address in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 51
+[22-Sep-2025 12:25:44 UTC] PHP Notice:  Undefined variable: billing_address in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 68
+[22-Sep-2025 12:25:44 UTC] PHP Notice:  Undefined variable: shipping_address in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 72
+[22-Sep-2025 12:25:44 UTC] PHP Notice:  Undefined variable: remarks_header in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 76
+[22-Sep-2025 12:25:44 UTC] PHP Notice:  Undefined variable: project_name in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 86
+[22-Sep-2025 12:25:44 UTC] PHP Notice:  Undefined variable: po_type in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 90
+[22-Sep-2025 12:25:44 UTC] PHP Notice:  Undefined variable: supplier_name in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 94
+[22-Sep-2025 12:25:44 UTC] PHP Notice:  Undefined variable: entry_date in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 98
+[22-Sep-2025 12:25:44 UTC] PHP Notice:  Undefined variable: gst_no in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 102
+[22-Sep-2025 12:25:44 UTC] PHP Notice:  Undefined variable: pan_no in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 106
+[22-Sep-2025 12:25:44 UTC] PHP Notice:  Undefined variable: msme_no in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 110
+[22-Sep-2025 12:25:44 UTC] PHP Notice:  Undefined variable: msme_no in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 110
+[22-Sep-2025 12:25:44 UTC] PHP Notice:  Undefined variable: msme_no in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 110
+[22-Sep-2025 12:25:44 UTC] PHP Notice:  Undefined variable: supplier_email in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 114
+[22-Sep-2025 12:25:44 UTC] PHP Notice:  Undefined variable: contact_person in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 126
+[22-Sep-2025 12:25:44 UTC] PHP Notice:  Undefined variable: vendor_contact_no in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 130
+[22-Sep-2025 12:25:44 UTC] PHP Notice:  Undefined variable: quotation_no in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 134
+[22-Sep-2025 12:25:44 UTC] PHP Notice:  Undefined variable: quotation_date in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 138
+[22-Sep-2025 12:25:44 UTC] PHP Notice:  Undefined variable: terms_payment_days in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 201
+[22-Sep-2025 12:25:44 UTC] PHP Notice:  Undefined variable: terms_delivery in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 206
+[22-Sep-2025 12:25:44 UTC] PHP Notice:  Undefined variable: terms_remarks in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 211
+[22-Sep-2025 12:25:44 UTC] PHP Notice:  Undefined variable: total_basic_value in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 218
+[22-Sep-2025 12:25:44 UTC] PHP Notice:  Undefined variable: freight_amount_display in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 223
+[22-Sep-2025 12:25:44 UTC] PHP Notice:  Undefined variable: other_charges_display in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 228
+[22-Sep-2025 12:25:44 UTC] PHP Notice:  Undefined variable: packing_forwarding_display in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 233
+[22-Sep-2025 12:25:44 UTC] PHP Notice:  Undefined variable: total_gst_amount in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 238
+[22-Sep-2025 12:25:44 UTC] PHP Notice:  Undefined variable: gross_amount in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 243
+[22-Sep-2025 12:26:03 UTC] PHP Notice:  Undefined variable: company_name in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 50
+[22-Sep-2025 12:26:03 UTC] PHP Notice:  Undefined variable: company_address in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 51
+[22-Sep-2025 12:26:03 UTC] PHP Notice:  Undefined variable: billing_address in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 68
+[22-Sep-2025 12:26:03 UTC] PHP Notice:  Undefined variable: shipping_address in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 72
+[22-Sep-2025 12:26:03 UTC] PHP Notice:  Undefined variable: remarks_header in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 76
+[22-Sep-2025 12:26:03 UTC] PHP Notice:  Undefined variable: project_name in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 86
+[22-Sep-2025 12:26:03 UTC] PHP Notice:  Undefined variable: po_type in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 90
+[22-Sep-2025 12:26:03 UTC] PHP Notice:  Undefined variable: supplier_name in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 94
+[22-Sep-2025 12:26:03 UTC] PHP Notice:  Undefined variable: entry_date in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 98
+[22-Sep-2025 12:26:03 UTC] PHP Notice:  Undefined variable: gst_no in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 102
+[22-Sep-2025 12:26:03 UTC] PHP Notice:  Undefined variable: pan_no in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 106
+[22-Sep-2025 12:26:03 UTC] PHP Notice:  Undefined variable: msme_no in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 110
+[22-Sep-2025 12:26:03 UTC] PHP Notice:  Undefined variable: msme_no in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 110
+[22-Sep-2025 12:26:03 UTC] PHP Notice:  Undefined variable: msme_no in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 110
+[22-Sep-2025 12:26:03 UTC] PHP Notice:  Undefined variable: supplier_email in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 114
+[22-Sep-2025 12:26:03 UTC] PHP Notice:  Undefined variable: contact_person in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 126
+[22-Sep-2025 12:26:03 UTC] PHP Notice:  Undefined variable: vendor_contact_no in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 130
+[22-Sep-2025 12:26:03 UTC] PHP Notice:  Undefined variable: quotation_no in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 134
+[22-Sep-2025 12:26:03 UTC] PHP Notice:  Undefined variable: quotation_date in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 138
+[22-Sep-2025 12:26:03 UTC] PHP Notice:  Undefined variable: terms_payment_days in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 201
+[22-Sep-2025 12:26:03 UTC] PHP Notice:  Undefined variable: terms_delivery in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 206
+[22-Sep-2025 12:26:03 UTC] PHP Notice:  Undefined variable: terms_remarks in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 211
+[22-Sep-2025 12:26:03 UTC] PHP Notice:  Undefined variable: total_basic_value in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 218
+[22-Sep-2025 12:26:03 UTC] PHP Notice:  Undefined variable: freight_amount_display in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 223
+[22-Sep-2025 12:26:03 UTC] PHP Notice:  Undefined variable: other_charges_display in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 228
+[22-Sep-2025 12:26:03 UTC] PHP Notice:  Undefined variable: packing_forwarding_display in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 233
+[22-Sep-2025 12:26:03 UTC] PHP Notice:  Undefined variable: total_gst_amount in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 238
+[22-Sep-2025 12:26:03 UTC] PHP Notice:  Undefined variable: gross_amount in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 243
+[22-Sep-2025 12:26:18 UTC] PHP Notice:  Undefined variable: company_name in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 50
+[22-Sep-2025 12:26:18 UTC] PHP Notice:  Undefined variable: company_address in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 51
+[22-Sep-2025 12:26:18 UTC] PHP Notice:  Undefined variable: billing_address in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 68
+[22-Sep-2025 12:26:18 UTC] PHP Notice:  Undefined variable: shipping_address in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 72
+[22-Sep-2025 12:26:18 UTC] PHP Notice:  Undefined variable: remarks_header in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 76
+[22-Sep-2025 12:26:18 UTC] PHP Notice:  Undefined variable: project_name in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 86
+[22-Sep-2025 12:26:18 UTC] PHP Notice:  Undefined variable: po_type in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 90
+[22-Sep-2025 12:26:18 UTC] PHP Notice:  Undefined variable: supplier_name in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 94
+[22-Sep-2025 12:26:18 UTC] PHP Notice:  Undefined variable: entry_date in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 98
+[22-Sep-2025 12:26:18 UTC] PHP Notice:  Undefined variable: gst_no in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 102
+[22-Sep-2025 12:26:18 UTC] PHP Notice:  Undefined variable: pan_no in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 106
+[22-Sep-2025 12:26:18 UTC] PHP Notice:  Undefined variable: msme_no in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 110
+[22-Sep-2025 12:26:18 UTC] PHP Notice:  Undefined variable: msme_no in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 110
+[22-Sep-2025 12:26:18 UTC] PHP Notice:  Undefined variable: msme_no in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 110
+[22-Sep-2025 12:26:18 UTC] PHP Notice:  Undefined variable: supplier_email in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 114
+[22-Sep-2025 12:26:18 UTC] PHP Notice:  Undefined variable: contact_person in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 126
+[22-Sep-2025 12:26:18 UTC] PHP Notice:  Undefined variable: vendor_contact_no in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 130
+[22-Sep-2025 12:26:18 UTC] PHP Notice:  Undefined variable: quotation_no in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 134
+[22-Sep-2025 12:26:18 UTC] PHP Notice:  Undefined variable: quotation_date in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 138
+[22-Sep-2025 12:26:18 UTC] PHP Notice:  Undefined variable: terms_payment_days in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 201
+[22-Sep-2025 12:26:18 UTC] PHP Notice:  Undefined variable: terms_delivery in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 206
+[22-Sep-2025 12:26:18 UTC] PHP Notice:  Undefined variable: terms_remarks in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 211
+[22-Sep-2025 12:26:18 UTC] PHP Notice:  Undefined variable: total_basic_value in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 218
+[22-Sep-2025 12:26:18 UTC] PHP Notice:  Undefined variable: freight_amount_display in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 223
+[22-Sep-2025 12:26:18 UTC] PHP Notice:  Undefined variable: other_charges_display in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 228
+[22-Sep-2025 12:26:18 UTC] PHP Notice:  Undefined variable: packing_forwarding_display in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 233
+[22-Sep-2025 12:26:18 UTC] PHP Notice:  Undefined variable: total_gst_amount in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 238
+[22-Sep-2025 12:26:18 UTC] PHP Notice:  Undefined variable: gross_amount in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 243
+[22-Sep-2025 12:26:48 UTC] PHP Notice:  Undefined variable: company_name in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 50
+[22-Sep-2025 12:26:48 UTC] PHP Notice:  Undefined variable: company_address in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 51
+[22-Sep-2025 12:26:48 UTC] PHP Notice:  Undefined variable: billing_address in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 68
+[22-Sep-2025 12:26:48 UTC] PHP Notice:  Undefined variable: shipping_address in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 72
+[22-Sep-2025 12:26:48 UTC] PHP Notice:  Undefined variable: remarks_header in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 76
+[22-Sep-2025 12:26:48 UTC] PHP Notice:  Undefined variable: project_name in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 86
+[22-Sep-2025 12:26:48 UTC] PHP Notice:  Undefined variable: po_type in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 90
+[22-Sep-2025 12:26:48 UTC] PHP Notice:  Undefined variable: supplier_name in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 94
+[22-Sep-2025 12:26:48 UTC] PHP Notice:  Undefined variable: entry_date in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 98
+[22-Sep-2025 12:26:48 UTC] PHP Notice:  Undefined variable: gst_no in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 102
+[22-Sep-2025 12:26:48 UTC] PHP Notice:  Undefined variable: pan_no in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 106
+[22-Sep-2025 12:26:48 UTC] PHP Notice:  Undefined variable: msme_no in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 110
+[22-Sep-2025 12:26:48 UTC] PHP Notice:  Undefined variable: msme_no in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 110
+[22-Sep-2025 12:26:48 UTC] PHP Notice:  Undefined variable: msme_no in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 110
+[22-Sep-2025 12:26:48 UTC] PHP Notice:  Undefined variable: supplier_email in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 114
+[22-Sep-2025 12:26:48 UTC] PHP Notice:  Undefined variable: contact_person in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 126
+[22-Sep-2025 12:26:48 UTC] PHP Notice:  Undefined variable: vendor_contact_no in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 130
+[22-Sep-2025 12:26:48 UTC] PHP Notice:  Undefined variable: quotation_no in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 134
+[22-Sep-2025 12:26:48 UTC] PHP Notice:  Undefined variable: quotation_date in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 138
+[22-Sep-2025 12:26:48 UTC] PHP Notice:  Undefined variable: terms_payment_days in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 201
+[22-Sep-2025 12:26:48 UTC] PHP Notice:  Undefined variable: terms_delivery in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 206
+[22-Sep-2025 12:26:48 UTC] PHP Notice:  Undefined variable: terms_remarks in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 211
+[22-Sep-2025 12:26:48 UTC] PHP Notice:  Undefined variable: total_basic_value in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 218
+[22-Sep-2025 12:26:48 UTC] PHP Notice:  Undefined variable: freight_amount_display in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 223
+[22-Sep-2025 12:26:48 UTC] PHP Notice:  Undefined variable: other_charges_display in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 228
+[22-Sep-2025 12:26:48 UTC] PHP Notice:  Undefined variable: packing_forwarding_display in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 233
+[22-Sep-2025 12:26:48 UTC] PHP Notice:  Undefined variable: total_gst_amount in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 238
+[22-Sep-2025 12:26:48 UTC] PHP Notice:  Undefined variable: gross_amount in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 243
+[04-Oct-2025 06:41:27 UTC] PHP Notice:  Undefined variable: company_name in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 50
+[04-Oct-2025 06:41:27 UTC] PHP Notice:  Undefined variable: company_address in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 51
+[04-Oct-2025 06:41:27 UTC] PHP Notice:  Undefined variable: billing_address in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 68
+[04-Oct-2025 06:41:27 UTC] PHP Notice:  Undefined variable: shipping_address in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 72
+[04-Oct-2025 06:41:27 UTC] PHP Notice:  Undefined variable: remarks_header in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 76
+[04-Oct-2025 06:41:27 UTC] PHP Notice:  Undefined variable: project_name in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 86
+[04-Oct-2025 06:41:27 UTC] PHP Notice:  Undefined variable: po_type in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 90
+[04-Oct-2025 06:41:27 UTC] PHP Notice:  Undefined variable: supplier_name in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 94
+[04-Oct-2025 06:41:27 UTC] PHP Notice:  Undefined variable: entry_date in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 98
+[04-Oct-2025 06:41:27 UTC] PHP Notice:  Undefined variable: gst_no in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 102
+[04-Oct-2025 06:41:27 UTC] PHP Notice:  Undefined variable: pan_no in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 106
+[04-Oct-2025 06:41:27 UTC] PHP Notice:  Undefined variable: msme_no in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 110
+[04-Oct-2025 06:41:27 UTC] PHP Notice:  Undefined variable: msme_no in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 110
+[04-Oct-2025 06:41:27 UTC] PHP Notice:  Undefined variable: msme_no in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 110
+[04-Oct-2025 06:41:27 UTC] PHP Notice:  Undefined variable: supplier_email in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 114
+[04-Oct-2025 06:41:27 UTC] PHP Notice:  Undefined variable: contact_person in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 126
+[04-Oct-2025 06:41:27 UTC] PHP Notice:  Undefined variable: vendor_contact_no in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 130
+[04-Oct-2025 06:41:27 UTC] PHP Notice:  Undefined variable: quotation_no in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 134
+[04-Oct-2025 06:41:27 UTC] PHP Notice:  Undefined variable: quotation_date in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 138
+[04-Oct-2025 06:41:27 UTC] PHP Notice:  Undefined variable: terms_payment_days in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 201
+[04-Oct-2025 06:41:27 UTC] PHP Notice:  Undefined variable: terms_delivery in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 206
+[04-Oct-2025 06:41:27 UTC] PHP Notice:  Undefined variable: terms_remarks in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 211
+[04-Oct-2025 06:41:27 UTC] PHP Notice:  Undefined variable: total_basic_value in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 218
+[04-Oct-2025 06:41:27 UTC] PHP Notice:  Undefined variable: freight_amount_display in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 223
+[04-Oct-2025 06:41:27 UTC] PHP Notice:  Undefined variable: other_charges_display in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 228
+[04-Oct-2025 06:41:27 UTC] PHP Notice:  Undefined variable: packing_forwarding_display in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 233
+[04-Oct-2025 06:41:27 UTC] PHP Notice:  Undefined variable: total_gst_amount in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 238
+[04-Oct-2025 06:41:27 UTC] PHP Notice:  Undefined variable: gross_amount in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_order_2/view.php on line 243

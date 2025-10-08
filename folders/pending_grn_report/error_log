@@ -1,0 +1,110 @@
+[18-Sep-2025 17:19:56 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_beta.grn_items' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/pending_grn_report/crud.php(94): db->select(Array, ' po.is_delete =...', '10', '0', '', 'SQL_CALC_FOUND_...', 'poi.unique_id')
+#2 {main}
+[18-Sep-2025 17:20:02 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_beta.grn_items' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/pending_grn_report/crud.php(94): db->select(Array, ' po.is_delete =...', '10', '0', '', 'SQL_CALC_FOUND_...', 'poi.unique_id')
+#2 {main}
+[18-Sep-2025 17:20:44 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'grn_sublist.po_item_id' in 'SELECT' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/pending_grn_report/crud.php(94): db->select(Array, ' po.is_delete =...', '10', '0', '', 'SQL_CALC_FOUND_...', 'poi.unique_id')
+#2 {main}
+[18-Sep-2025 17:21:22 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'poi.item_name' in 'SELECT' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/pending_grn_report/crud.php(94): db->select(Array, ' po.is_delete =...', '10', '0', '', 'SQL_CALC_FOUND_...', 'poi.unique_id')
+#2 {main}
+[18-Sep-2025 17:22:10 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'poi.order_qty' in 'SELECT' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/pending_grn_report/crud.php(94): db->select(Array, ' po.is_delete =...', '10', '0', '', 'SQL_CALC_FOUND_...', 'poi.unique_id')
+#2 {main}
+[18-Sep-2025 17:26:43 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'poi.order_qty' in 'SELECT' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/pending_grn_report/crud.php(94): db->select(Array, ' po.is_delete =...', '10', '0', '', 'SQL_CALC_FOUND_...', 'poi.unique_id')
+#2 {main}
+[18-Sep-2025 17:26:46 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'poi.order_qty' in 'SELECT' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/pending_grn_report/crud.php(94): db->select(Array, ' po.is_delete =...', '10', '0', '', 'SQL_CALC_FOUND_...', 'poi.unique_id')
+#2 {main}
+[18-Sep-2025 17:43:58 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'gs.now_received_qty' in 'SELECT' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/pending_grn_report/crud.php(94): db->select(Array, ' po.is_delete =...', '10', '70', '', 'SQL_CALC_FOUND_...', 'poi.unique_id')
+#2 {main}
+[18-Sep-2025 17:44:20 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'grn_sub.total_received_qty' in 'SELECT' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/pending_grn_report/crud.php(94): db->select(Array, ' po.is_delete =...', '10', '70', '', 'SQL_CALC_FOUND_...', 'poi.unique_id')
+#2 {main}
+[18-Sep-2025 17:44:39 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'grn_sub.total_received_qty' in 'SELECT' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/pending_grn_report/crud.php(94): db->select(Array, ' po.is_delete =...', '10', '70', '', 'SQL_CALC_FOUND_...', 'poi.unique_id')
+#2 {main}
+[18-Sep-2025 17:44:45 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'grn_sub.total_received_qty' in 'SELECT' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/pending_grn_report/crud.php(94): db->select(Array, ' po.is_delete =...', '10', '70', '', 'SQL_CALC_FOUND_...', 'poi.unique_id')
+#2 {main}
+[18-Sep-2025 17:59:04 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'gs.grn_number' in 'ON' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/pending_grn_report/crud.php(100): db->select(Array, ' po.is_delete =...', '10', '80', '', 'SQL_CALC_FOUND_...', 'poi.unique_id')
+#2 {main}
+[18-Sep-2025 17:59:10 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'gs.grn_number' in 'ON' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/pending_grn_report/crud.php(100): db->select(Array, ' po.is_delete =...', '10', '80', '', 'SQL_CALC_FOUND_...', 'poi.unique_id')
+#2 {main}
+[18-Sep-2025 18:01:00 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'grn_sub.has_approved' in 'SELECT' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/pending_grn_report/crud.php(95): db->select(Array, ' po.is_delete =...', '10', '80', '', 'SQL_CALC_FOUND_...', 'poi.unique_id')
+#2 {main}
+[18-Sep-2025 18:02:25 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'gs.grn_number' in 'ON' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/pending_grn_report/crud.php(101): db->select(Array, ' po.is_delete =...', '10', '80', '', 'SQL_CALC_FOUND_...', 'poi.unique_id')
+#2 {main}
+[18-Sep-2025 18:13:56 Asia/Kolkata] PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'AND po.purchase_order_type != '683568ca2fe8263239'   GROUP BY poi.unique_id L...' at line 23 in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/pending_grn_report/crud.php(103): db->select(Array, ' po.is_delete =...', '10', '70', '', 'SQL_CALC_FOUND_...', 'poi.unique_id')
+#2 {main}
+[18-Sep-2025 18:14:39 Asia/Kolkata] PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'AND po_type != '683568ca2fe8263239'   GROUP BY poi.unique_id LIMIT 70, 10' at line 23 in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/pending_grn_report/crud.php(103): db->select(Array, ' po.is_delete =...', '10', '70', '', 'SQL_CALC_FOUND_...', 'poi.unique_id')
+#2 {main}
+[18-Sep-2025 18:15:13 Asia/Kolkata] PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'AND po.purchase_order_type = '683588840086c13657' AND po.purchase_order_type ...' at line 23 in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/pending_grn_report/crud.php(103): db->select(Array, ' po.is_delete =...', '10', '70', '', 'SQL_CALC_FOUND_...', 'poi.unique_id')
+#2 {main}
+[22-Sep-2025 17:57:22 Asia/Kolkata] PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'GROUP BY poi.unique_id LIMIT 10' at line 43 in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/pending_grn_report/crud.php(153): db->select(Array, ' po.is_delete =...', '10', '0', '', 'SQL_CALC_FOUND_...', 'poi.unique_id')
+#2 {main}
+[22-Sep-2025 17:59:28 Asia/Kolkata] PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'GROUP BY poi.unique_id LIMIT 10' at line 43 in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/pending_grn_report/crud.php(153): db->select(Array, ' po.is_delete =...', '10', '0', '', 'SQL_CALC_FOUND_...', 'poi.unique_id')
+#2 {main}
+[22-Sep-2025 18:00:50 Asia/Kolkata] PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'GROUP BY poi.unique_id LIMIT 10' at line 43 in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/pending_grn_report/crud.php(153): db->select(Array, ' po.is_delete =...', '10', '0', '', 'SQL_CALC_FOUND_...', 'poi.unique_id')
+#2 {main}
+[22-Sep-2025 18:01:01 Asia/Kolkata] PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'GROUP BY poi.unique_id LIMIT 10' at line 43 in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/pending_grn_report/crud.php(153): db->select(Array, ' po.is_delete =...', '10', '0', '', 'SQL_CALC_FOUND_...', 'poi.unique_id')
+#2 {main}
