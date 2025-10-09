@@ -38,3 +38,18 @@ Stack trace:
 #0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(579): PDOStatement->execute()
 #1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/user/crud.php(126): db->insert('user', Array)
 #2 {main}
+[09-Oct-2025 15:50:30 Asia/Kolkata] PDOException: SQLSTATE[21000]: Cardinality violation: 1242 Subquery returns more than 1 row in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/user/crud.php(194): db->select(Array, ' is_delete = '0...', '10', '0', '', 'SQL_CALC_FOUND_...')
+#2 {main}
+[09-Oct-2025 15:50:40 Asia/Kolkata] PDOException: SQLSTATE[21000]: Cardinality violation: 1242 Subquery returns more than 1 row in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/user/crud.php(194): db->select(Array, ' is_delete = '0...', '10', '0', '', 'SQL_CALC_FOUND_...')
+#2 {main}
+[09-Oct-2025 15:50:51 Asia/Kolkata] PDOException: SQLSTATE[21000]: Cardinality violation: 1242 Subquery returns more than 1 row in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/user/crud.php(194): db->select(Array, ' is_delete = '0...', '10', '0', '', 'SQL_CALC_FOUND_...')
+#2 {main}

@@ -193,159 +193,166 @@ function purchase_sublist_datatable(table_id = "purchase_sublist_datatable") {
     });
 }
 
-
 function open_modal(id) {
-    var tablepop = $("#requisition_approval_modal");
-    $("#approval_modal_form").modal("show");
-    $("#bulk_status_select").prop("disabled", false).val("");
-    $("#bulk_status_select option:first").text("Select Status");
+  var tablepop = $("#requisition_approval_modal");
+  $("#approval_modal_form").modal("show");
 
-    $("#approval_main_id").val(id);  // ✅ store current PR ID
+  // ✅ reset dropdown state first
+  $("#bulk_status_select").prop("disabled", false).val("");
+  $("#bulk_status_select option:first").text("Select Status");
 
+  $("#approval_main_id").val(id);
 
-    var data = { action: "approval_modal", id: id };
-    var ajax_url = sessionStorage.getItem("folder_crud_link");
+  var data = { action: "approval_modal", id: id };
+  var ajax_url = sessionStorage.getItem("folder_crud_link");
 
-    var datatable = tablepop.DataTable({
-        destroy: true,
-        ajax: {
-            url: ajax_url,
-            type: "POST",
-            data: data,
-            dataSrc: function (json) {
-                if (json.main_data) {
-                    $("#pr_number_approval").text(json.main_data.pr_number || "-");
-                    $("#date_approval").text(json.main_data.date || "-");
-                    $("#requisition_date_approval").text(json.main_data.requisition_date || "-");
+  var datatable = tablepop.DataTable({
+    destroy: true,
+    ajax: {
+      url: ajax_url,
+      type: "POST",
+      data: data,
+      dataSrc: function (json) {
+        if (json.main_data) {
+          $("#pr_number_approval").text(json.main_data.pr_number || "-");
+          $("#date_approval").text(json.main_data.date || "-");
+          $("#requisition_date_approval").text(json.main_data.requisition_date || "-");
 
-                    const requisitionForMap = { "1": "Direct", "2": "SO", "3": "Ordered BOM" };
-                    $("#requisition_for_approval").text(requisitionForMap[json.main_data.requisition_for] || "-");
+          const requisitionForMap = { "1": "Direct", "2": "SO", "3": "Ordered BOM" };
+          $("#requisition_for_approval").text(requisitionForMap[json.main_data.requisition_for] || "-");
 
-                    const requisitiontypeMap = {
-                        "1": "Regular",
-                        "683568ca2fe8263239": "Service",
-                        "683588840086c13657": "Capital"
-                    };
-                    $("#requisition_type_approval").text(requisitiontypeMap[json.main_data.requisition_type] || "-");
+          const requisitiontypeMap = {
+            "1": "Regular",
+            "683568ca2fe8263239": "Service",
+            "683588840086c13657": "Capital"
+          };
+          $("#requisition_type_approval").text(requisitiontypeMap[json.main_data.requisition_type] || "-");
 
-                    $("#company_id_approval").text(json.main_data.company_id || "-");
-                    $("#project_id_approval").text(json.main_data.project_id || "-");
-                }
-                return json.data;
-            },
-        },
-        columns: [
-            { data: "s_no", title: "#" },
-            {
-                data: "item_code",
-                title: "Item Code",
-                render: function (data, type, row) {
-                    let displayText = (data && data !== "null") ? data : (row.item_description || "-");
+          $("#company_id_approval").text(json.main_data.company_id || "-");
+          $("#project_id_approval").text(json.main_data.project_id || "-");
 
-                    if (row.sublist && Array.isArray(row.sublist) && row.sublist.length > 0) {
-                        return `<span class="item-code-toggle" 
-                                    style="cursor:pointer; color:#e96f26;" 
-                                    data-sno="${row.s_no}">
-                                    ${displayText}
-                                </span>`;
-                    } else {
-                        return `<span>${displayText}</span>`;
-                    }
-                }
-            },
-            { data: "item_description", title: "Description", defaultContent: "-" },
-            { data: "pr_qty", title: "PR Qty", defaultContent: "-" },
-            { data: "quantity", title: "Qty", defaultContent: "-" },
-            { data: "uom", title: "UOM", defaultContent: "-" },
-            // { data: "budgetary_rate", title: "Rate", defaultContent: "-" },
-            { data: "item_remarks", title: "Item Remarks", defaultContent: "-" },
-            { data: "required_delivery_date", title: "Delivery Date", defaultContent: "-" },
-            { data: "status", title: "Status", defaultContent: "-" },
-            { data: "reason", title: "Cancelled Reason", defaultContent: "-" }
-        ]
-    });
+          // ✅ Handle bulk_status value from PHP
+          if (json.main_data.bulk_status === "1") {
+            $("#bulk_status_select")
+              .html("<option value='1' selected>Approved</option>")
+              .prop("disabled", true);
+          } else if (json.main_data.bulk_status === "2") {
+            $("#bulk_status_select")
+              .html("<option value='2' selected>Rejected</option>")
+              .prop("disabled", true);
+          } else {
+            // Not finalized yet
+            $("#bulk_status_select").html(`
+              <option value="">Select Status</option>
+              <option value="1">Approve All</option>
+              <option value="2">Reject All</option>
+            `);
+          }
+        }
+        return json.data;
+      },
+    },
+    columns: [
+      { data: "s_no", title: "#" },
+      {
+        data: "item_code",
+        title: "Item Code",
+        render: function (data, type, row) {
+          let displayText = (data && data !== "null") ? data : (row.item_description || "-");
 
-    // Toggle child items on item_code click
-// Toggle child items on item_code click
-tablepop.off("click", "span.item-code-toggle").on("click", "span.item-code-toggle", function () {
+          if (row.sublist && Array.isArray(row.sublist) && row.sublist.length > 0) {
+            return `<span class="item-code-toggle" 
+                        style="cursor:pointer; color:#e96f26;" 
+                        data-sno="${row.s_no}">
+                        ${displayText}
+                    </span>`;
+          } else {
+            return `<span>${displayText}</span>`;
+          }
+        }
+      },
+      { data: "item_description", title: "Description", defaultContent: "-" },
+      { data: "pr_qty", title: "PR Qty", defaultContent: "-" },
+      { data: "quantity", title: "Qty", defaultContent: "-" },
+      { data: "uom", title: "UOM", defaultContent: "-" },
+      { data: "item_remarks", title: "Item Remarks", defaultContent: "-" },
+      { data: "required_delivery_date", title: "Delivery Date", defaultContent: "-" },
+      { data: "status", title: "Status", defaultContent: "-" },
+      { data: "reason", title: "Cancelled Reason", defaultContent: "-" }
+    ]
+  });
+
+  // 🔁 Toggle child sublist
+  tablepop.off("click", "span.item-code-toggle").on("click", "span.item-code-toggle", function () {
     var tr = $(this).closest("tr");
     var row = datatable.row(tr);
 
     if (row.child.isShown()) {
-        row.child.hide();
-        tr.removeClass("shown");
+      row.child.hide();
+      tr.removeClass("shown");
     } else {
-        let rowData = row.data();
-        let sublist = (rowData && Array.isArray(rowData.sublist)) ? rowData.sublist : [];
-        let parentSno = $(this).data("sno");
+      let rowData = row.data();
+      let sublist = Array.isArray(rowData.sublist) ? rowData.sublist : [];
+      let parentSno = $(this).data("sno");
 
-        if (sublist.length > 0) {
-            // Render child table
-            let childHtml = `
-                <table class='table table-bordered table-sm child-table' data-parent-id="${rowData.unique_id}">
-                    <thead>
-                        <tr>
-                            <th>S.No</th>
-                            <th>Item</th>
-                            <th>Qty</th>
-                            <th>UOM</th>
-                            <th>Remarks</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-            `;
+      if (sublist.length > 0) {
+        let childHtml = `
+          <table class='table table-bordered table-sm child-table' data-parent-id="${rowData.unique_id}">
+            <thead>
+              <tr>
+                <th>S.No</th>
+                <th>Item</th>
+                <th>Qty</th>
+                <th>UOM</th>
+                <th>Remarks</th>
+              </tr>
+            </thead>
+            <tbody>
+        `;
 
-            let quantityInputHtml = rowData.quantity;
-            let parentQty = parseFloat($(quantityInputHtml).val()) || 0;
+        let quantityInputHtml = rowData.quantity;
+        let parentQty = parseFloat($(quantityInputHtml).val()) || 0;
 
-            sublist.forEach(function (sub, index) {
-                let childQty = parseFloat(sub.qty) || 0;
-                let totalQty = parentQty * childQty;
+        sublist.forEach(function (sub, index) {
+          let childQty = parseFloat(sub.qty) || 0;
+          let totalQty = parentQty * childQty;
 
-                childHtml += `
-                    <tr>
-                        <td>${parentSno}.${index + 1}</td>
-                        <td>${sub.item}</td>
-                        <td class="child-qty" data-child-qty="${childQty}">${totalQty}</td>
-                        <td>${sub.uom}</td>
-                        <td>${sub.remarks || "-"}</td>
-                    </tr>
-                `;
-            });
+          childHtml += `
+            <tr>
+              <td>${parentSno}.${index + 1}</td>
+              <td>${sub.item}</td>
+              <td class="child-qty" data-child-qty="${childQty}">${totalQty}</td>
+              <td>${sub.uom}</td>
+              <td>${sub.remarks || "-"}</td>
+            </tr>
+          `;
+        });
 
-            childHtml += "</tbody></table>";
+        childHtml += "</tbody></table>";
+        row.child(childHtml).show();
+        tr.addClass("shown");
 
-            // Show child table
-            row.child(childHtml).show();
-            tr.addClass("shown");
-
-            // Attach dynamic L1 qty listener
-            const qtyInput = $(`#quantity_${rowData.unique_id}`);
-
-            qtyInput.off("input.updateChildQty").on("input.updateChildQty", function () {
-                let newParentQty = parseFloat($(this).val()) || 0;
-
-                // Update all child qtys under this parent
-                row.child().find("td.child-qty").each(function () {
-                    let baseChildQty = parseFloat($(this).data("child-qty")) || 0;
-                    $(this).text((newParentQty * baseChildQty).toFixed(2));
-                });
-
-                console.log(`L1 Qty changed → unique_id: ${rowData.unique_id}, new value: ${newParentQty}`);
-            });
-        }
+        const qtyInput = $(`#quantity_${rowData.unique_id}`);
+        qtyInput.off("input.updateChildQty").on("input.updateChildQty", function () {
+          let newParentQty = parseFloat($(this).val()) || 0;
+          row.child().find("td.child-qty").each(function () {
+            let baseChildQty = parseFloat($(this).data("child-qty")) || 0;
+            $(this).text((newParentQty * baseChildQty).toFixed(2));
+          });
+        });
+      }
     }
-});
+  });
 }
-
 
 
 // 🔄 Bulk status dropdown action
 $(document).on("change", "#bulk_status_select", function () {
   const selectedValue = $(this).val();
   const main_unique_id = $("#approval_main_id").val();
+  const ajax_url = sessionStorage.getItem("folder_crud_link");
 
-  if (!selectedValue) return; // nothing selected
+  if (!selectedValue) return;
   if (!main_unique_id) {
     sweetalert("No requisition selected.", "error");
     return;
@@ -375,36 +382,30 @@ $(document).on("change", "#bulk_status_select", function () {
           try {
             var res = JSON.parse(response);
             if (res.status) {
-              // ✅ Reload both tables
               $('#requisition_approval_modal').DataTable().ajax.reload(null, false);
               $('#purchase_requisition_datatable').DataTable().ajax.reload(null, false);
 
-              // ✅ Update status field display in modal
               const statusText = selectedValue === "1"
                 ? "<span style='color: green; font-weight: bold;'>Approved</span>"
                 : "<span style='color: red; font-weight: bold;'>Rejected</span>";
 
-              // Replace all dropdowns in the modal with chosen status
               $('#requisition_approval_modal')
                 .find('select.status-select')
                 .each(function () {
                   $(this).replaceWith(statusText);
                 });
 
-              // Sweet alert confirmation
-              // ✅ Success message
-            sweetalert(
-              "All items successfully " +
-                (selectedValue === "1" ? "approved!" : "rejected!"),
-              "success"
-            );
-            
-            // ✅ Change the dropdown display text to match new state
-            const newLabel = selectedValue === "1" ? "Approved" : "Rejected";
-            $("#bulk_status_select option:selected").text(newLabel);
-            
-            // ✅ Optionally disable dropdown for this record (prevents re-use)
-            $("#bulk_status_select").prop("disabled", true);
+              sweetalert(
+                "All items successfully " +
+                  (selectedValue === "1" ? "approved!" : "rejected!"),
+                "success"
+              );
+
+              // ✅ Reflect in dropdown header
+              const newLabel = selectedValue === "1" ? "Approved" : "Rejected";
+              $("#bulk_status_select")
+                .html(`<option value="${selectedValue}" selected>${newLabel}</option>`)
+                .prop("disabled", true);
 
             } else {
               sweetalert("Error: " + res.error, "error");
@@ -418,12 +419,10 @@ $(document).on("change", "#bulk_status_select", function () {
         }
       });
     } else {
-      // Reset dropdown if canceled
       $("#bulk_status_select").val("");
     }
   });
 });
-
 
 
 

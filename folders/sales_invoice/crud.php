@@ -46,6 +46,142 @@ switch ($action) {
 
 
 
+// case "invoice_item_add_update":
+//     $main_unique_id    = $_POST["main_unique_id"];
+//     $sublist_unique_id = $_POST["sublist_unique_id"];
+//     $item_name         = $_POST["item_name"];
+//     $unit              = $_POST["unit"];
+//     $quantity          = $_POST["quantity"] ?: 0;
+//     $rate              = $_POST["rate"] ?: 0;
+//     $discount_type     = $_POST["discount_type"] ?: 0;
+//     $discount          = $_POST["discount"] ?: 0;
+//     $tax               = $_POST["tax"] ?: 0;
+//     $amount            = $_POST["amount"] ?: 0;
+//     $remarks           = $_POST["remarks"];
+
+//     $columns = [
+//         "main_unique_id" => $main_unique_id,
+//         "item_name"      => $item_name,
+//         "unit"           => $unit,
+//         "quantity"       => $quantity,
+//         "rate"           => $rate,
+//         "discount_type"  => $discount_type,
+//         "discount"       => $discount,
+//         "tax"            => $tax,
+//         "amount"         => $amount,
+//         "remarks"        => $remarks
+//     ];
+
+   
+//     if (!empty($sublist_unique_id)) {
+//         // Update existing sublist row
+//         $columns["updated"]         = $date;
+//         $columns["updated_user_id"] = $user_id;
+//         $where = ["unique_id" => $sublist_unique_id];
+//         $action_obj = $pdo->update("sales_invoice_items", $columns, $where);
+//         $msg = "update";
+//     } else {
+//         // Insert new sublist row
+//         $columns["unique_id"]       = unique_id();
+//         $columns["created"]         = $date;
+//         $columns["created_user_id"] = $user_id;
+//         $action_obj = $pdo->insert("sales_invoice_items", $columns);
+//         $msg = "add";
+//     }
+
+//     echo json_encode([
+//         "status" => $action_obj->status,
+//         "msg"    => $msg,
+//         "data"   => $action_obj->data,
+//         "error"  => $action_obj->error,
+//         "sql"    => $action_obj->sql
+//     ]);
+//     break;
+
+
+
+
+
+//     case "createupdate":
+//     $company_id   = $_POST["company_id"];
+//     $project_id   = $_POST["project_id"];
+//     $customer_id  = $_POST["customer_id"];
+//     $invoice_date = $_POST["invoice_date"];
+//     $due_date     = $_POST["due_date"];
+//     $remarks     = $_POST["remarks"];
+//     // $invoice_no   = !empty($_POST["invoice_no"]) ? $_POST["invoice_no"] : generate_invoice_number($pdo);
+        
+//     $labelData = [];
+//     $labelData = fetch_si_number($table);
+    
+//     $company_data                   = company_code($company_id);
+//     $company_name                   = $company_data[0]['company_code'];
+    
+//     if (!empty($_POST["unique_id"])) {
+//         // If unique_id exists, fetch the existing invoice_no for this unique_id
+//         $existing_si = $pdo->select([$table, ["invoice_no"]], ['unique_id' => $_POST["unique_id"], 'is_delete' => 0]);
+//         if ($existing_si->status && !empty($existing_si->data[0]['invoice_no'])) {
+//         $invoice_no = $existing_si->data[0]['invoice_no'];
+//         } else {
+//         // Fallback: generate a new GRN if not found (should not happen in normal update)
+//         $invoice_no = generateSI($company_name, $labelData);
+//         }
+        
+        
+//     } else {
+//         // No unique_id, so generate a new GRN number
+//         $invoice_no = generateSI($company_name, $labelData);
+//     }
+    
+    
+//     $remarks      = $_POST["remarks"];
+//     $unique_id    = !empty($_POST["unique_id"]) ? $_POST["unique_id"] : unique_id();
+
+//     $columns = [
+//         "unique_id"       => $unique_id,
+//         "company_id"      => $company_id,
+//         "project_id"      => $project_id,
+//         "customer_id"     => $customer_id,
+//         "invoice_date"    => $invoice_date,
+//         "due_date"        => $due_date,
+//         "invoice_no"      => $invoice_no,
+//         "remarks"         => $remarks,
+//         "created_user_id" => $user_id,
+//         "created"         => $date
+//     ];
+
+//     // Check if record exists
+//     $check_query = [$table, ["COUNT(unique_id) AS count"]];
+//     $check_where = 'unique_id = "' . $unique_id . '" AND is_delete = 0';
+//     $action_obj = $pdo->select($check_query, $check_where);
+//     // error_log(print_r($action_obj, true) . "\n");
+
+//     if ($action_obj->status && $action_obj->data[0]["count"]) {
+//         // Update
+//         unset($columns["unique_id"], $columns["created_user_id"], $columns["created"]);
+//         $columns["updated_user_id"] = $user_id;
+//         $columns["updated"]         = $date;
+
+//         $update_where = ["unique_id" => $unique_id];
+//         $action_obj   = $pdo->update($table, $columns, $update_where);
+//         $msg          = "update";
+//     } else {
+//         // Insert
+//         $action_obj = $pdo->insert($table, $columns);
+//         $msg        = "create";
+//     }
+
+//     echo json_encode([
+//         "status" => $action_obj->status,
+//         "data"   => ["unique_id" => $unique_id],
+//         "error"  => $action_obj->error,
+//         "msg"    => $msg,
+//         "sql"    => $action_obj->sql
+//     ]);
+//     break;
+
+
+
 case "invoice_item_add_update":
     $main_unique_id    = $_POST["main_unique_id"];
     $sublist_unique_id = $_POST["sublist_unique_id"];
@@ -56,86 +192,72 @@ case "invoice_item_add_update":
     $discount_type     = $_POST["discount_type"] ?: 0;
     $discount          = $_POST["discount"] ?: 0;
     $tax               = $_POST["tax"] ?: 0;
-    $amount            = $_POST["amount"] ?: 0;
-    $remarks           = $_POST["remarks"];
+    $remarks           = $_POST["remarks"] ?? '';
 
-    $columns = [
-        "main_unique_id" => $main_unique_id,
-        "item_name"      => $item_name,
-        "unit"           => $unit,
-        "quantity"       => $quantity,
-        "rate"           => $rate,
-        "discount_type"  => $discount_type,
-        "discount"       => $discount,
-        "tax"            => $tax,
-        "amount"         => $amount,
-        "remarks"        => $remarks
-    ];
+    // Calculate line total
+    $base = $quantity * $rate;
+$discount_amt = 0;
 
-   
-    if (!empty($sublist_unique_id)) {
-        // Update existing sublist row
-        $columns["updated"]         = $date;
-        $columns["updated_user_id"] = $user_id;
-        $where = ["unique_id" => $sublist_unique_id];
-        $action_obj = $pdo->update("sales_invoice_items", $columns, $where);
+if ($discount_type == 1) {
+    $discount_amt = ($base * $discount) / 100;
+} elseif ($discount_type == 2) {
+    $discount_amt = $discount;
+}
+
+$after_discount = $base - $discount_amt;
+if ($after_discount < 0) $after_discount = 0;
+
+$tax_amt = ($after_discount * $tax) / 100;
+$final_total = $after_discount + $tax_amt; // exact value, no rounding
+
+$columns = [
+    "main_unique_id" => $main_unique_id,
+    "item_name"      => $item_name,
+    "unit"           => $unit,
+    "quantity"       => $quantity,
+    "rate"           => $rate,
+    "discount_type"  => $discount_type,
+    "discount"       => $discount,
+    "tax"            => $tax,
+    "amount"         => $final_total,
+    "remarks"        => $remarks
+];
+
+
+
+
+    if ($sublist_unique_id) {
+        $columns["updated_user_id"] = $_SESSION["sess_user_id"];
+        $columns["updated"] = date("Y-m-d H:i:s");
+        $pdo->update("sales_invoice_items", $columns, ["unique_id" => $sublist_unique_id]);
         $msg = "update";
     } else {
-        // Insert new sublist row
-        $columns["unique_id"]       = unique_id();
-        $columns["created"]         = $date;
-        $columns["created_user_id"] = $user_id;
-        $action_obj = $pdo->insert("sales_invoice_items", $columns);
+        $columns["unique_id"] = unique_id();
+        $columns["created_user_id"] = $_SESSION["sess_user_id"];
+        $columns["created"] = date("Y-m-d H:i:s");
+        $pdo->insert("sales_invoice_items", $columns);
         $msg = "add";
     }
 
-    echo json_encode([
-        "status" => $action_obj->status,
-        "msg"    => $msg,
-        "data"   => $action_obj->data,
-        "error"  => $action_obj->error,
-        "sql"    => $action_obj->sql
-    ]);
-    break;
+    echo json_encode(["status" => true, "msg" => $msg]);
+break;
 
 
 
-
-
-    case "createupdate":
+case "createupdate":
     $company_id   = $_POST["company_id"];
     $project_id   = $_POST["project_id"];
     $customer_id  = $_POST["customer_id"];
     $invoice_date = $_POST["invoice_date"];
     $due_date     = $_POST["due_date"];
-    $remarks     = $_POST["remarks"];
-    // $invoice_no   = !empty($_POST["invoice_no"]) ? $_POST["invoice_no"] : generate_invoice_number($pdo);
-        
-    $labelData = [];
-    $labelData = fetch_si_number($table);
-    
-    $company_data                   = company_code($company_id);
-    $company_name                   = $company_data[0]['company_code'];
-    
-    if (!empty($_POST["unique_id"])) {
-        // If unique_id exists, fetch the existing invoice_no for this unique_id
-        $existing_si = $pdo->select([$table, ["invoice_no"]], ['unique_id' => $_POST["unique_id"], 'is_delete' => 0]);
-        if ($existing_si->status && !empty($existing_si->data[0]['invoice_no'])) {
-        $invoice_no = $existing_si->data[0]['invoice_no'];
-        } else {
-        // Fallback: generate a new GRN if not found (should not happen in normal update)
-        $invoice_no = generateSI($company_name, $labelData);
-        }
-        
-        
-    } else {
-        // No unique_id, so generate a new GRN number
-        $invoice_no = generateSI($company_name, $labelData);
-    }
-    
-    
     $remarks      = $_POST["remarks"];
     $unique_id    = !empty($_POST["unique_id"]) ? $_POST["unique_id"] : unique_id();
+
+    // Totals
+    $basic       = (float)($_POST["basic"] ?? 0);
+    $total_gst   = (float)($_POST["total_gst"] ?? 0);
+    $roundoff    = (float)($_POST["roundoff"] ?? 0);
+    $tot_amount  = (float)($_POST["tot_amount"] ?? 0);
 
     $columns = [
         "unique_id"       => $unique_id,
@@ -144,41 +266,31 @@ case "invoice_item_add_update":
         "customer_id"     => $customer_id,
         "invoice_date"    => $invoice_date,
         "due_date"        => $due_date,
-        "invoice_no"      => $invoice_no,
         "remarks"         => $remarks,
-        "created_user_id" => $user_id,
-        "created"         => $date
+        "basic"           => $basic,
+        "total_gst"       => $total_gst,
+        "roundoff"        => $roundoff,
+        "tot_amount"      => $tot_amount,
+        "created_user_id" => $_SESSION["sess_user_id"],
+        "created"         => date("Y-m-d H:i:s")
     ];
 
-    // Check if record exists
-    $check_query = [$table, ["COUNT(unique_id) AS count"]];
-    $check_where = 'unique_id = "' . $unique_id . '" AND is_delete = 0';
-    $action_obj = $pdo->select($check_query, $check_where);
-    // error_log(print_r($action_obj, true) . "\n");
+    $check = $pdo->select(["sales_invoice", ["COUNT(*) AS c"]], ["unique_id" => $unique_id, "is_delete" => 0]);
 
-    if ($action_obj->status && $action_obj->data[0]["count"]) {
-        // Update
+    if ($check->status && $check->data[0]["c"]) {
         unset($columns["unique_id"], $columns["created_user_id"], $columns["created"]);
-        $columns["updated_user_id"] = $user_id;
-        $columns["updated"]         = $date;
-
-        $update_where = ["unique_id" => $unique_id];
-        $action_obj   = $pdo->update($table, $columns, $update_where);
-        $msg          = "update";
+        $columns["updated_user_id"] = $_SESSION["sess_user_id"];
+        $columns["updated"] = date("Y-m-d H:i:s");
+        $pdo->update("sales_invoice", $columns, ["unique_id" => $unique_id]);
+        $msg = "update";
     } else {
-        // Insert
-        $action_obj = $pdo->insert($table, $columns);
-        $msg        = "create";
+        $pdo->insert("sales_invoice", $columns);
+        $msg = "create";
     }
 
-    echo json_encode([
-        "status" => $action_obj->status,
-        "data"   => ["unique_id" => $unique_id],
-        "error"  => $action_obj->error,
-        "msg"    => $msg,
-        "sql"    => $action_obj->sql
-    ]);
-    break;
+    echo json_encode(["status" => true, "msg" => $msg, "data" => ["unique_id" => $unique_id]]);
+break;
+
 
 
    
@@ -350,7 +462,7 @@ case "invoice_item_add_update":
 
         $company_id          = $_POST['company_id'];
 
-        $project_name_options  = get_project_name("", $company_id);
+        $project_name_options  = get_project_name_all("", $company_id);
 
         $project_name_options  = select_option($project_name_options, "Select the Project Name");
 

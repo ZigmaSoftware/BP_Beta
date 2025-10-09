@@ -264,7 +264,7 @@ switch ($action) {
             "profile_image AS user_image1",
             "(SELECT file_name FROM staff_test WHERE unique_id = $table.staff_unique_id) AS user_image",
             "is_team_head",
-            "(SELECT work_location from staff_test where employee_id = $table.staff_unique_id) AS work_location",
+            "work_location",
             "unique_id",
             "password_updated",
             "password_status"

@@ -1,14 +1,31 @@
+// ===============================
+// Document Ready Initialization
+// ===============================
 $(document).ready(function () { 
-	// var table_id 	= "user_datatable";
-	init_datatable(table_id,form_name,action);
+	const table_id = 'user_datatable';
+	const form_name = 'user';
+	const action = 'datatable';
+
+	init_datatable(table_id, form_name, action);
 	team_users_div($("#is_team_head").prop("checked"));
+
+	// Trigger initial role toggle state
+	toggleRoleFields($('#role').val());
+
+	// React to role changes dynamically
+	$('#role').on('change', function () {
+		toggleRoleFields(this.value);
+	});
 });
 
+// ===============================
+// Session Variables
+// ===============================
 var company_name 	= sessionStorage.getItem("company_name");
-var company_address	= sessionStorage.getItem("company_name");
-var company_phone 	= sessionStorage.getItem("company_name");
-var company_email 	= sessionStorage.getItem("company_name");
-var company_logo 	= sessionStorage.getItem("company_name");
+var company_address	= sessionStorage.getItem("company_address");
+var company_phone 	= sessionStorage.getItem("company_phone");
+var company_email 	= sessionStorage.getItem("company_email");
+var company_logo 	= sessionStorage.getItem("company_logo");
 
 var form_name 		= 'user';
 var form_header		= '';
@@ -17,244 +34,188 @@ var table_name 		= '';
 var table_id 		= 'user_datatable';
 var action 			= "datatable";
 
+// ===============================
+// Create / Update User
+// ===============================
 function user_cu(unique_id = "") {
+	const work_location = $('#work_location').val();
+	const internet_status = is_online();
 
-	var work_location= $('#work_location').val();
-// 	alert(work_location);
-    var internet_status  = is_online();
-
-    if (!internet_status) {
-        sweetalert("no_internet");
-        return false;
-	}
-	
-	var password 		= $("#password").val();
-	var con_password 	= $("#confirm_password").val();
-
-	if (password !== con_password) {
-		sweetalert("custom","","","Password Dosen't Match");
+	if (!internet_status) {
+		sweetalert("no_internet");
 		return false;
 	}
-	
-	 // Check password strength
-    const strength = validatePassword();
-    if (strength < 5) {
-        alert("Please create a stronger password before submitting.");
-        return false;
-    }
 
-    var is_form = form_validity_check("was-validated");
+	const password = $("#password").val();
+	const con_password = $("#confirm_password").val();
 
-    if (is_form) {
+	if (password !== con_password) {
+		sweetalert("custom","","","Password Doesn't Match");
+		return false;
+	}
 
-        var data 	 = $(".was-validated").serialize();
-        data 		+= "&unique_id="+unique_id+"&action=createupdate";
+	// Check password strength
+	const strength = validatePassword(true);
+	if (strength < 5) {
+		alert("Please create a stronger password before submitting.");
+		return false;
+	}
 
-        var ajax_url = sessionStorage.getItem("folder_crud_link");
-        var url      = sessionStorage.getItem("list_link");
+	const is_form = form_validity_check("was-validated");
+	if (!is_form) {
+		sweetalert("form_alert");
+		return false;
+	}
 
-        // console.log(data);
-        $.ajax({
-			type 	: "POST",
-			url 	: ajax_url,
-			data 	: data,
-			beforeSend 	: function() {
-				$(".createupdate_btn").attr("disabled","disabled");
-				$(".createupdate_btn").text("Loading...");
-			},
-			success		: function(data) {
+	let data = $(".was-validated").serialize();
+	data += "&unique_id=" + unique_id + "&action=createupdate";
 
-				var obj     = JSON.parse(data);
-				var msg     = obj.msg;
-				var status  = obj.status;
-				var error   = obj.error;
+	const ajax_url = sessionStorage.getItem("folder_crud_link");
+	const url = sessionStorage.getItem("list_link");
 
-				if (!status) {
-					url 	= '';
-                    $(".createupdate_btn").text("Error");
-                    console.log(error);
-				} else {
-					if (msg=="already") {
-						// Button Change Attribute
-						url 		= '';
+	$.ajax({
+		type: "POST",
+		url: ajax_url,
+		data: data,
+		beforeSend: function () {
+			$(".createupdate_btn").attr("disabled", "disabled").text("Loading...");
+		},
+		success: function (data) {
+			const obj = JSON.parse(data);
+			const msg = obj.msg;
+			const status = obj.status;
+			const error = obj.error;
 
-						$(".createupdate_btn").removeAttr("disabled","disabled");
-						if (unique_id) {
-							$(".createupdate_btn").text("Update");
-						} else {
-							$(".createupdate_btn").text("Save");
-						}
-					}
+			if (!status) {
+				console.error(error);
+				$(".createupdate_btn").text("Error");
+			} else {
+				if (msg == "already") {
+					$(".createupdate_btn").removeAttr("disabled");
+					$(".createupdate_btn").text(unique_id ? "Update" : "Save");
 				}
-				sweetalert(msg,url);
-			},
-			error 		: function(data) {
-				alert("Network Error");
 			}
-		});
-
-
-    } else {
-        sweetalert("form_alert");
-    }
-}
-function togglePasswords() {
-  const fields = [document.getElementById("password"), document.getElementById("confirm_password")];
-  const eyes = document.querySelectorAll(".password-eye");
-
-  fields.forEach((field, index) => {
-    if (field.type === "password") {
-      field.type = "text";
-      eyes[index]?.classList.remove("fa-eye");
-      eyes[index]?.classList.add("fa-eye-slash");
-    } else {
-      field.type = "password";
-      eyes[index]?.classList.remove("fa-eye-slash");
-      eyes[index]?.classList.add("fa-eye");
-    }
-  });
-}
-
-function init_datatable(table_id='',form_name='',action='') {
-
-	var table = $("#"+table_id);
-	var data 	  = {
-		"action"	: action, 
-	};
-	var ajax_url = sessionStorage.getItem("folder_crud_link");
-
-	var datatable = table.DataTable({
-		ordering    : true,
-		searching   : true,
-		"ajax"		: {
-			url 	: ajax_url,
-			type 	: "POST",
-			data 	: data
+			sweetalert(msg, url);
+		},
+		error: function () {
+			alert("Network Error");
 		}
 	});
 }
 
-function user_toggle(unique_id = "", new_status = 0) {
-    const ajax_url = sessionStorage.getItem("folder_crud_link");
-    const url = sessionStorage.getItem("list_link");
+// ===============================
+// DataTable Initialization
+// ===============================
+function init_datatable(table_id = '', form_name = '', action = '') {
+	const ajax_url = sessionStorage.getItem("folder_crud_link");
 
-    $.ajax({
-        type: "POST",
-        url: ajax_url,
-        data: {
-            unique_id: unique_id,
-            action: "toggle",
-            is_active: new_status
-        },
-        success: function (data) {
-            const obj = JSON.parse(data);
-            const msg = obj.msg;
-            const status = obj.status;
-
-            if (status) {
-                $("#" + table_id).DataTable().ajax.reload(null, false);
-            }
-
-            sweetalert(msg, url);
-        }
-    });
+	$("#" + table_id).DataTable({
+		ordering: true,
+		searching: true,
+		ajax: {
+			url: ajax_url,
+			type: "POST",
+			data: { action: action },
+		},
+	});
 }
 
-function get_under_users (under_user = "") {
+// ===============================
+// Active Status Toggle
+// ===============================
+function user_toggle(unique_id = "", new_status = 0) {
+	const ajax_url = sessionStorage.getItem("folder_crud_link");
+	const url = sessionStorage.getItem("list_link");
 
-$("#under_user_name").html('');
-	var ajax_url = sessionStorage.getItem("folder_crud_link");
+	$.ajax({
+		type: "POST",
+		url: ajax_url,
+		data: { unique_id: unique_id, action: "toggle", is_active: new_status },
+		success: function (data) {
+			const obj = JSON.parse(data);
+			const msg = obj.msg;
+			const status = obj.status;
+
+			if (status) {
+				$("#" + table_id).DataTable().ajax.reload(null, false);
+			}
+			sweetalert(msg, url);
+		}
+	});
+}
+
+// ===============================
+// Dependent Dropdowns
+// ===============================
+function get_under_users(under_user = "") {
+	$("#under_user_name").html('');
+	const ajax_url = sessionStorage.getItem("folder_crud_link");
 
 	if (under_user) {
-		var data = {
-			"under_user" 	: under_user,
-			"action"	: "user_options"
-		}
-
-		$.ajax({
-			type 	: "POST",
-			url 	: ajax_url,
-			data 	: data,
-			success : function(data) {
-
-				if (data) { 
-					$("#under_user_name").html(data);
-				}
-
-			}
-		});
-	}
-}
-
-
-  
-function isNumber(evt) {
-    evt = (evt) ? evt : window.event;
-    var charCode = (evt.which) ? evt.which : evt.keyCode;
-    if (charCode > 31 && (charCode < 48 || charCode > 57)) {
-        return false;
-    }
-    return true;
-}
-
-function get_under_user_ids()
-{
-	var under_user= $('#under_user_name').val();
-	$('#under_user').val(under_user);
-}
-
-function get_team_users_ids()
-{
-	var under_user= $('#team_users_name').val();
-	$('#team_users').val(under_user);
-}
-
-// $(document).ready(function () {
-// 	$("#confirm_password").change(function() { 
-//    var password = $("#password").val();
-//    var confirmPassword = $("#confirm_password").val();
-
-// 	    if (password !== confirmPassword)
-// 	    {
-// 	       alert("Confirm Password Doesn't match with Password");
-// 	       $("#confirm_password").focus();
-// 	    }
-//     });
-// });
-
-
-
-// Get Group Names Based On Category Selection
-function get_mobile_no(staff_id = "") {
-
-
-	var ajax_url = sessionStorage.getItem("folder_crud_link");
-
-
-	if (staff_id) {
-		var data = {
-			"staff_id": staff_id,
-			"action": "mobile"
-		}
-
+		const data = { under_user: under_user, action: "user_options" };
 		$.ajax({
 			type: "POST",
 			url: ajax_url,
 			data: data,
 			success: function (data) {
-
-				if (data) {
-					// $("#phone_no").html(data);
-				document.getElementById('phone_no').value = data;
-
-				}
-
-				
+				if (data) $("#under_user_name").html(data);
 			}
 		});
 	}
 }
 
+function get_under_user_ids() {
+	const under_user = $('#under_user_name').val();
+	$('#under_user').val(under_user);
+}
+
+function get_team_users_ids() {
+	const team_users = $('#team_users_name').val();
+	$('#team_users').val(team_users);
+}
+
+// ===============================
+// Get Mobile No by Staff
+// ===============================
+function get_mobile_no(staff_id = "") {
+	const ajax_url = sessionStorage.getItem("folder_crud_link");
+	if (!staff_id) return;
+
+	$.ajax({
+		type: "POST",
+		url: ajax_url,
+		data: { staff_id: staff_id, action: "mobile" },
+		success: function (response) {
+			try {
+				const data = JSON.parse(response);
+
+				// Set mobile number
+				if (data.mobile) {
+					$("#phone_no").val(data.mobile);
+				}
+
+				// Set work location if available
+				if (data.work_location) {
+					// Clear any existing selections
+					$("#work_location").val(null).trigger("change");
+
+					// Pre-select location(s)
+					const workLocations = data.work_location.split(",");
+					$("#work_location").val(workLocations).trigger("change");
+				}
+			} catch (e) {
+				console.error("Invalid JSON from server:", response);
+			}
+		},
+		error: function (err) {
+			console.error("Error fetching staff details", err);
+		}
+	});
+}
+
+// ===============================
+// Team Users Section Toggle
+// ===============================
 function team_users_div(this_val = '') {
 	if (this_val) {
 		$(".team_users_class").removeClass("d-none");
@@ -264,120 +225,76 @@ function team_users_div(this_val = '') {
 	}
 }
 
-// Password Validation 
-// function validatePassword() {
-//       const password = document.getElementById("password").value;
-//       const submitBtn = document.getElementsByClassName("createupdate_btn");
-//       const checklist = document.getElementById("checklist");
-//       const strengthBar = document.getElementById("strength-bar");
+// ===============================
+// Password Validation
+// ===============================
+function validatePassword(checkOnly = false) {
+	const password = document.getElementById("password").value;
+	const submitBtns = document.getElementsByClassName("createupdate_btn");
+	const checklist = document.getElementById("checklist");
+	const strengthBar = document.getElementById("strength-bar");
+	const strengthFill = document.getElementById("strength-fill");
 
-//       const length = document.getElementById("length");
-//       const lower = document.getElementById("lower");
-//       const upper = document.getElementById("upper");
-//       const number = document.getElementById("number");
-//       const special = document.getElementById("special");
-//       const strengthFill = document.getElementById("strength-fill");
+	let strength = 0;
 
-//       // Show checklist and strength bar if typing
-//       if (password.length > 0) {
-//         checklist.classList.remove("hidden");
-//         strengthBar.classList.remove("hidden");
-//       } else {
-//         checklist.classList.add("hidden");
-//         strengthBar.classList.add("hidden");
-//         submitBtn.disabled = true;
-//         strengthFill.style.width = "0%";
-//         return;
-//       }
+	// independent regex checks
+	if (password.length >= 8) strength++;
+	if (/[a-z]/.test(password)) strength++;
+	if (/[A-Z]/.test(password)) strength++;
+	if (/[0-9]/.test(password)) strength++;
+	if (/[^A-Za-z0-9]/.test(password)) strength++;
 
-//       let strength = 0;
+	// when just checking on submit, skip visual updates
+	if (checkOnly) return strength;
 
-//       if (password.length >= 8) {
-//         length.classList.add("valid");
-//         strength += 1;
-//       } else {
-//         length.classList.remove("valid");
-//       }
+	// show visual feedback
+	if (password.length > 0) {
+		strengthBar.classList.remove("hidden");
+	} else {
+		strengthBar.classList.add("hidden");
+		Array.from(submitBtns).forEach(btn => btn.disabled = true);
+		strengthFill.style.width = "0%";
+		return 0;
+	}
 
-//       if (/[a-z]/.test(password)) {
-//         lower.classList.add("valid");
-//         strength += 1;
-//       } else {
-//         lower.classList.remove("valid");
-//       }
+	const colors = ["red", "orange", "gold", "dodgerblue", "green"];
+	strengthFill.style.width = (strength * 20) + "%";
+	strengthFill.style.background = colors[strength - 1] || "transparent";
 
-//       if (/[A-Z]/.test(password)) {
-//         upper.classList.add("valid");
-//         strength += 1;
-//       } else {
-//         upper.classList.remove("valid");
-//       }
-
-//       if (/[0-9]/.test(password)) {
-//         number.classList.add("valid");
-//         strength += 1;
-//       } else {
-//         number.classList.remove("valid");
-//       }
-
-//       if (/[^A-Za-z0-9]/.test(password)) {
-//         special.classList.add("valid");
-//         strength += 1;
-//       } else {
-//         special.classList.remove("valid");
-//       }
-
-//       const colors = ["red", "orange", "gold", "dodgerblue", "green"];
-//       strengthFill.style.width = (strength * 20) + "%";
-//       strengthFill.style.background = colors[strength - 1] || "transparent";
-
-//       submitBtn.disabled = strength < 5;
-//     }
-function validatePassword() {
-    const password = document.getElementById("password").value;
-    const submitBtns = document.getElementsByClassName("createupdate_btn");
-    const checklist = document.getElementById("checklist");
-    const strengthBar = document.getElementById("strength-bar");
-
-    const length = document.getElementById("length");
-    const lower = document.getElementById("lower");
-    const upper = document.getElementById("upper");
-    const number = document.getElementById("number");
-    const special = document.getElementById("special");
-    const strengthFill = document.getElementById("strength-fill");
-
-    let strength = 0;
-
-    if (password.length > 0) {
-        // checklist.classList.remove("hidden");
-        strengthBar.classList.remove("hidden");
-    } else {
-        checklist.classList.add("hidden");
-        strengthBar.classList.add("hidden");
-        Array.from(submitBtns).forEach(btn => btn.disabled = true);
-        strengthFill.style.width = "0%";
-        return 0;
-    }
-
-    if (password.length >= 8) { length.classList.add("valid"); strength++; } else { length.classList.remove("valid"); }
-    if (/[a-z]/.test(password)) { lower.classList.add("valid"); strength++; } else { lower.classList.remove("valid"); }
-    if (/[A-Z]/.test(password)) { upper.classList.add("valid"); strength++; } else { upper.classList.remove("valid"); }
-    if (/[0-9]/.test(password)) { number.classList.add("valid"); strength++; } else { number.classList.remove("valid"); }
-    if (/[^A-Za-z0-9]/.test(password)) { special.classList.add("valid"); strength++; } else { special.classList.remove("valid"); }
-
-    const colors = ["red", "orange", "gold", "dodgerblue", "green"];
-    strengthFill.style.width = (strength * 20) + "%";
-    strengthFill.style.background = colors[strength - 1] || "transparent";
-
-    Array.from(submitBtns).forEach(btn => btn.disabled = strength < 5);
-
-    return strength;
+	Array.from(submitBtns).forEach(btn => btn.disabled = strength < 5);
+	return strength;
 }
 
+// ===============================
+// Toggle Password Visibility
+// ===============================
 function togglePasswords() {
-  const fields = [document.getElementById("password"), document.getElementById("confirm_password")];
-  fields.forEach(field => {
-    field.type = field.type === "password" ? "text" : "password";
-  });
+	const fields = [document.getElementById("password"), document.getElementById("confirm_password")];
+	fields.forEach(field => {
+		field.type = field.type === "password" ? "text" : "password";
+	});
 }
 
+// ===============================
+// Role Switching Logic
+// ===============================
+function toggleRoleFields(role) {
+	const staffSection = document.getElementById('staff_section');
+	const phoneField = document.getElementById('phone_no');
+	const staffSelect = document.getElementById('full_name');
+
+	if (!staffSection || !phoneField) return;
+
+	if (role === 'Off Role') {
+		// Hide staff section, make phone editable
+		$(staffSection).hide();
+		$(staffSelect).removeAttr('required');
+		$(phoneField).removeAttr('readonly');
+		$(phoneField).val(''); // allow manual entry
+	} else {
+		// Restore staff mode
+		$(staffSection).show();
+		$(staffSelect).attr('required', 'required');
+		$(phoneField).attr('readonly', 'readonly');
+	}
+}

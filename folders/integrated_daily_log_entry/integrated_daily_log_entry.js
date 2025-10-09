@@ -625,6 +625,7 @@ renderFromFlags = function(flags) {
         setupAutoCbgCalculation();
         fetchLastManureStock(company_id, project_id, app_type, function() {
           setupAutoManureCalculation();
+           setupAutoWeighbridgeFetch();  
         });
       });
     });
@@ -632,6 +633,7 @@ renderFromFlags = function(flags) {
     setupAutoRdfStockCalculation();
     setupAutoCbgCalculation();
     setupAutoManureCalculation();
+     setupAutoWeighbridgeFetch();  
   }
 };
 
@@ -759,6 +761,46 @@ function load_entry_values_if_any() {
       });
     }
   });
+}
+
+
+/* ======================= AUTO FETCH FROM WEIGHBRIDGE ======================= */
+function setupAutoWeighbridgeFetch() {
+  // Bind change event once dynamic fields are rendered
+  $(document).on('change', '[name="values[date_field]"]', function() {
+  const dateVal = $(this).val(); // <— this should be in format YYYY-MM-DD
+  if (!dateVal) return;
+
+  const ajax_url = sessionStorage.getItem("folder_crud_link");
+
+  console.log("Sending date to fetch_weighbridge_data:", dateVal); // Debug
+
+  $.ajax({
+    type: "POST",
+    url: ajax_url,
+    dataType: "json",
+    data: {
+      action: "fetch_weighbridge_data",
+      entry_date: dateVal // <— backend expects this key
+    },
+    success: function(resp) {
+      console.log("Weighbridge Data Response:", resp);
+      if (resp.status && resp.data) {
+        const d = resp.data;
+        $('[name="values[dry_mix_corp]"]').val(d.dry_mix_corp);
+        $('[name="values[wet_mix_corp]"]').val(d.wet_mix_corp);
+        $('[name="values[dry_mix_bwg]"]').val(d.dry_mix_bwg);
+        $('[name="values[wet_segregated_corp]"]').val(d.wet_segregated_corp);
+        $('[name="values[wet_mix_bwg]"]').val(d.wet_mix_bwg);
+        $('[name="values[wet_segregated_bwg]"]').val(d.wet_segregated_bwg);
+      }
+    },
+    error: function(xhr, status, err) {
+      console.error("AJAX error:", status, err);
+    }
+  });
+});
+
 }
 
 function load_projects_for_filter(company_id = "", selected = "") {

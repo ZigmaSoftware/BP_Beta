@@ -1,341 +1,292 @@
-<?php 
-// Get folder Name From Currnent Url 
-$folder_name        = explode("/",$_SERVER['PHP_SELF']);
-$folder_name        = $folder_name[count($folder_name)-2];
+<?php
+// ==============================================
+// USER CRUD (Modified to handle In Role / Off Role)
+// ==============================================
 
-// Database Country Table Name
-$table             = "user";
+// Get folder Name From Current Url 
+$folder_name = explode("/", $_SERVER['PHP_SELF']);
+$folder_name = $folder_name[count($folder_name) - 2];
 
-// Include DB file and Common Functions
+// Database Table
+$table = "user";
+
+// Include DB Config
 include '../../config/dbconfig.php';
 
-// Variables Declaration
-$action             = $_POST['action'];
-$action_obj         = (object) [
-    "status"    => 0,
-    "data"      => "",
-    "error"     => "Action Not Performed"
+// -----------------------------
+// Variable Initialization
+// -----------------------------
+$action = $_POST['action'] ?? '';
+$action_obj = (object)[
+    "status" => 0,
+    "data"   => "",
+    "error"  => "Action Not Performed"
 ];
-$json_array         = "";
-$sql                = "";
 
-$unique_id          = "";
-$prefix             = "";
+$json_array = $sql = "";
+$status = $msg = $error = "";
+$unique_id = $prefix = "";
 
-$data               = "";
-$msg                = "";
-$error              = "";
-$status             = "";
-$test               = ""; // For Developer Testing Purpose
-
+// ===================================================
+// CREATE / UPDATE USER
+// ===================================================
 switch ($action) {
     case 'createupdate':
 
-        $full_name          = $_POST["full_name"];
-        $user_name          = $_POST["user_name"];
-        $password           = $_POST["password"];
-        $user_type          = $_POST["user_type"];
-        $is_active          = $_POST["is_active"];
-        $phone_no           = $_POST["phone_no"];
-        // $address         = $_POST["address"];
-        $confirm_password   = $_POST["confirm_password"];
-        $under_user         = $_POST["under_user"];
-        $work_location_array = $_POST['work_location']; 
-        $work_location = implode(",", $work_location_array);
-        $team_members       = $_POST["team_users"];
-        // $device_id          = $_POST["device_id"];
-        $unique_id          = $_POST["unique_id"];
-        $role = isset($_POST['role']) ? $_POST['role'] : null;
+        // Form Fields
+        $full_name        = $_POST["full_name"] ?? "";
+        $user_name        = $_POST["user_name"] ?? "";
+        $password         = $_POST["password"] ?? "";
+        $user_type        = $_POST["user_type"] ?? "";
+        $is_active        = $_POST["is_active"] ?? 1;
+        $phone_no         = $_POST["phone_no"] ?? "";
+        $confirm_password = $_POST["confirm_password"] ?? "";
+        $under_user       = $_POST["under_user"] ?? "";
+        $team_members     = $_POST["team_users"] ?? "";
+        $unique_id        = $_POST["unique_id"] ?? "";
+        $role             = $_POST["role"] ?? "In Role";
 
+        error_log(print_r($_POST, true), 3, "POST.log");
 
+        // Handle work_location field
+        if (isset($_POST['work_location']) && is_array($_POST['work_location'])) {
+            $work_location_array = array_filter(array_map('trim', $_POST['work_location']));
+            $work_location = !empty($work_location_array) ? implode(",", $work_location_array) : "all";
+        } else {
+            $work_location = "all";
+        }
 
-        $update_where       = "";
-
-        $columns            = [
-            "staff_unique_id"       => $full_name,
+        // Base columns
+        $columns = [
             "user_name"             => $user_name,
             "password"              => $password,
             "phone_no"              => $phone_no,
             "is_active"             => $is_active,
-            // "address"            => $address,
             "user_type_unique_id"   => $user_type,
             "under_user"            => $under_user,
             "team_members"          => $team_members,
-            // "device_id"             => $device_id,
             "work_location"         => $work_location,
             "role"                  => $role,
-            "unique_id"             => unique_id($prefix)
         ];
 
-        
+        // Add staff_unique_id only for In Role users
+        if ($role === "In Role") {
+            $columns["staff_unique_id"] = $full_name;
+        } else {
+            $columns["staff_unique_id"] = ""; // Off Role users don’t have staff linkage
+        }
+
+        // Add unique_id if inserting
+        $columns["unique_id"] = unique_id($prefix);
+
+        // Team Head logic
         if (isset($_POST["is_team_head"])) {
             $columns["is_team_head"] = 1;
-            
-            if (!$_POST["team_id"]) {
-                $columns["team_id"]      = unique_id();
+            if (empty($_POST["team_id"])) {
+                $columns["team_id"] = unique_id();
+            } else {
+                $columns["team_id"] = $_POST["team_id"];
             }
         } else {
-            // $columns["team_id"]      = "";
             $columns["is_team_head"] = 0;
             $columns["team_members"] = '';
         }
-
-        // check already Exist Or not
-        $table_details      = [
-            $table,
-            [
-                "COUNT(unique_id) AS count"
-            ]
-        ];
-        $select_where       = '(user_name = "'.$user_name.'" OR phone_no="'.$phone_no.'")  AND staff_unique_id = "'.$full_name.'"  AND is_delete = 0  ';
-
-        // When Update Check without current id
-        if ($unique_id) {
-            $select_where   .= ' AND unique_id !="'.$unique_id.'" ';
+        
+        // -----------------------------
+        // Duplicate Check (clean version)
+        // -----------------------------
+        $table_details = [$table, ["COUNT(unique_id) AS count"]];
+        $where_parts = [];
+        
+        $where_parts[] = '(user_name = "' . addslashes($user_name) . '" OR phone_no = "' . addslashes($phone_no) . '")';
+        if ($role === "In Role") {
+            $where_parts[] = 'staff_unique_id = "' . addslashes($full_name) . '"';
         }
-
-        $action_obj         = $pdo->select($table_details,$select_where);
-
-        if ($action_obj->status) {
-            $status     = $action_obj->status;
-            $data       = $action_obj->data;
-            $error      = "";
-            $sql        = $action_obj->sql;
-
+        $where_parts[] = 'is_delete = 0';
+        if (!empty($unique_id)) {
+            $where_parts[] = 'unique_id NOT IN ("' . addslashes($unique_id) . '")';
+        }
+        
+        $select_where = implode(' AND ', $where_parts);
+        $dup_check = $pdo->select($table_details, $select_where);
+        
+        if (!$dup_check->status) {
+            echo json_encode([
+                "status" => 0,
+                "msg"    => "error",
+                "error"  => $dup_check->error,
+                "sql"    => $dup_check->sql
+            ]);
+            exit;
+        }
+        
+        $dup_count = (int)($dup_check->data[0]['count'] ?? 0);
+        
+        if ($dup_count > 0) {
+            echo json_encode([
+                "status" => 1,
+                "msg"    => "already",
+                "data"   => $dup_check->data,
+                "sql"    => $dup_check->sql
+            ]);
+            exit;
+        }
+        
+        // -----------------------------
+        // Insert or Update
+        // -----------------------------
+        if (!empty($unique_id)) {
+            unset($columns['unique_id']);
+            $update_where = ["unique_id" => $unique_id];
+            $action_obj = $pdo->update($table, $columns, $update_where);
+            $msg = "update";
         } else {
-            $status     = $action_obj->status;
-            $data       = $action_obj->data;
-            $error      = $action_obj->error;
-            $sql        = $action_obj->sql;
-            $msg        = "error";
+            $action_obj = $pdo->insert($table, $columns);
+            $msg = "create";
         }
-        if ($data[0]["count"]) {
-            $msg        = "already";
-        } else if ($data[0]["count"] == 0) {
-            // Update Begins
-            if($unique_id) {
-
-                unset($columns['unique_id']);
-
-                $update_where   = [
-                    "unique_id"     => $unique_id
-                ];
-
-                $action_obj     = $pdo->update($table,$columns,$update_where);
-
-            // Update Ends
-            } else {
-
-                // Insert Begins            
-                $action_obj     = $pdo->insert($table,$columns);
-                // Insert Ends
-
-            }
-
-            if ($action_obj->status) {
-                $status     = $action_obj->status;
-                $data       = $action_obj->data;
-                $error      = "";
-                $sql        = $action_obj->sql;
-
-                if ($unique_id) {
-                    $msg        = "update";
-                } else {
-                    $msg        = "create";
-                }
-            } else {
-                $status     = $action_obj->status;
-                $data       = $action_obj->data;
-                $error      = $action_obj->error;
-                $sql        = $action_obj->sql;
-                $msg        = "error";
-            }
-        }
-
-        $json_array   = [
-            "status"    => $status,
-            "data"      => $data,
-            "error"     => $error,
-            "msg"       => $msg,
-            "sql"       => $sql
-        ];
-
-        echo json_encode($json_array);
+        
+        echo json_encode([
+            "status" => $action_obj->status ? 1 : 0,
+            "msg"    => $msg,
+            "data"   => $action_obj->data,
+            "error"  => $action_obj->error,
+            "sql"    => $action_obj->sql
+        ]);
 
         break;
 
+    // ===================================================
+    // DATATABLE
+    // ===================================================
     case 'datatable':
-        // DataTable Variables
-        $search     = $_POST['search']['value'];
-        $length     = $_POST['length'];
-        $start      = $_POST['start'];
-        $draw       = $_POST['draw'];
-        $limit      = $length;
+        $search  = $_POST['search']['value'] ?? '';
+        $length  = $_POST['length'] ?? 10;
+        $start   = $_POST['start'] ?? 0;
+        $draw    = $_POST['draw'] ?? 1;
+        $limit   = ($length == '-1') ? "" : $length;
+        $data    = [];
 
-        $data       = [];
-        
-
-        if($length == '-1') {
-            $limit  = "";
-        }
-
-        // Query Variables
-        $json_array     = "";
-        $columns        = [
+        $columns = [
             "@a:=@a+1 s_no",
-            "(SELECT staff_name FROM staff_test AS staff WHERE staff.unique_id = ".$table.".staff_unique_id ) AS name",
+            "(SELECT staff_name FROM staff_test AS staff WHERE staff.employee_id = {$table}.staff_unique_id ) AS name",
             "phone_no",
             "user_name",
-            "(SELECT user_type FROM user_type AS user_type WHERE user_type.unique_id = ".$table.".user_type_unique_id ) AS user_type",
+            "(SELECT user_type FROM user_type AS ut WHERE ut.unique_id = {$table}.user_type_unique_id ) AS user_type",
             "password",
-            // "device_id",
             "work_location",
             "is_active",
             "unique_id"
         ];
-        $table_details  = [
-            $table." , (SELECT @a:= ".$start.") AS a ",
-            $columns
-        ];
-
+        $table_details = [$table . " , (SELECT @a:=" . $start . ") AS a ", $columns];
         $where = " is_delete = '0' ";
 
-        $order_column   = $_POST["order"][0]["column"];
-        $order_dir      = $_POST["order"][0]["dir"];
+        $order_column = $_POST["order"][0]["column"] ?? 0;
+        $order_dir    = $_POST["order"][0]["dir"] ?? 'asc';
 
-        // Datatable Ordering 
-        $order_by       = datatable_sorting($order_column,$order_dir,$columns);
+        $order_by = datatable_sorting($order_column, $order_dir, $columns);
+        $search_sql = datatable_searching($search, $columns);
 
-        // Datatable Searching
-        $search         = datatable_searching($search,$columns);
-
-        if ($search) {
-            if ($where) {
-                $where .= " AND ";
-            }
-
-            $where .= $search;
+        if ($search_sql) {
+            $where .= " AND " . $search_sql;
         }
-        
-        $sql_function   = "SQL_CALC_FOUND_ROWS";
 
-        $result         = $pdo->select($table_details,$where,$limit,$start,$order_by,$sql_function);
-        $total_records  = total_records();
+        $result = $pdo->select($table_details, $where, $limit, $start, $order_by, "SQL_CALC_FOUND_ROWS");
+        $total_records = total_records();
 
         if ($result->status) {
+            foreach ($result->data as $value) {
+                // Format work location
+                if ($value['work_location'] && $value['work_location'] != 'all') {
+                    $ids = explode(',', $value['work_location']);
+                    $locs = [];
+                    foreach ($ids as $id) {
+                        $loc = get_project_name_all($id);
+                        if (!empty($loc[0]['label'])) {
+                            $locs[] = $loc[0]['label'];
+                        }
+                    }
+                    $value['work_location'] = implode(', ', $locs);
+                } elseif ($value['work_location'] == 'all') {
+                    $value['work_location'] = 'ALL Projects';
+                } else {
+                    $value['work_location'] = '-';
+                }
 
-            $res_array      = $result->data;
-
-            foreach ($res_array as $key => $value) {
-                
-                
- if($value['work_location'] != '' ){
- $work_location_ids = explode(',', $value['work_location']);
-$work_locations = [];
-
-foreach ($work_location_ids as $id) {
-    $location_data = work_location($id); // Assuming this returns an array
-    if (!empty($location_data[0]['work_location'])) {
-        $work_locations[] = $location_data[0]['work_location'];
-    }else{
-        
-    }
-}
-
-$value['work_location'] = implode(', ', $work_locations);
-}else{
-    $value['work_location'] ='-';
-}
-
-
-
-               $btn_update = btn_update($folder_name, $value['unique_id']);
+                // Buttons
+                $btn_update = btn_update($folder_name, $value['unique_id']);
                 $btn_toggle = ($value['is_active'] == "1")
                     ? btn_toggle_on($folder_name, $value['unique_id'])
                     : btn_toggle_off($folder_name, $value['unique_id']);
-                
                 $value['unique_id'] = $btn_update . $btn_toggle;
-                
+
                 $value['is_active'] = ($value['is_active'] == "1")
                     ? "<span style='color:green'>Active</span>"
                     : "<span style='color:red'>Inactive</span>";
-                
-                $data[] = array_values($value);
 
+                $data[] = array_values($value);
             }
-            
-            $json_array = [
-                "draw"              => intval($draw),
-                "recordsTotal"      => intval($total_records),
-                "recordsFiltered"   => intval($total_records),
-                "data"              => $data,
-                "testing"           => $result->sql
-            ];
+
+            echo json_encode([
+                "draw" => intval($draw),
+                "recordsTotal" => intval($total_records),
+                "recordsFiltered" => intval($total_records),
+                "data" => $data,
+                "testing" => $result->sql
+            ]);
         } else {
             print_r($result);
         }
-        
-        echo json_encode($json_array);
         break;
-    
-    
-  case 'toggle':
-        $unique_id = $_POST['unique_id'];
-        $is_active = $_POST['is_active']; // 1 or 0
-    
-        $columns = [
-            "is_active" => $is_active
-        ];
-    
-        $update_where = [
-            "unique_id" => $unique_id
-        ];
-    
+
+    // ===================================================
+    // TOGGLE ACTIVE STATUS
+    // ===================================================
+    case 'toggle':
+        $unique_id = $_POST['unique_id'] ?? "";
+        $is_active = $_POST['is_active'] ?? 0;
+
+        $columns = ["is_active" => $is_active];
+        $update_where = ["unique_id" => $unique_id];
+
         $action_obj = $pdo->update($table, $columns, $update_where);
-    
-        if ($action_obj->status) {
-            $status = true;
-            $msg = $is_active ? "Activated Successfully" : "Deactivated Successfully";
-        } else {
-            $status = false;
-            $msg = "Toggle failed!";
-        }
-    
+
         echo json_encode([
-            "status" => $status,
-            "msg" => $msg,
+            "status" => $action_obj->status,
+            "msg" => $is_active ? "Activated Successfully" : "Deactivated Successfully",
             "sql" => $action_obj->sql,
             "error" => $action_obj->error
         ]);
         break;
 
-        case 'user_options':
-
-        $under_user          = $_POST['under_user'];
-
-        $user_name_options  = under_user($under_user);
-
-        $user_name_options  = select_option($user_name_options,"Select");
-
+    // ===================================================
+    // UNDER USER OPTIONS
+    // ===================================================
+    case 'user_options':
+        $under_user = $_POST['under_user'] ?? "";
+        $user_name_options = select_option(under_user($under_user), "Select");
         echo $user_name_options;
-        
         break;
 
-
-        case 'mobile':
-
-        $staff_id         = $_POST['staff_id'];
-
-        $staff_mobile_no  = staff_name_bp($staff_id);
-
-        echo $staff_mobile_no[0]["office_contact_no"];
-        
+    // ===================================================
+    // GET STAFF MOBILE
+    // ===================================================
+    case 'mobile':
+        $staff_id = $_POST['staff_id'] ?? "";
+    
+        // Fetch staff details
+        $staff_details = staff_name_bp($staff_id);
+    
+        $response = [
+            "mobile" => $staff_details[0]["office_contact_no"] ?? "",
+            "work_location" => $staff_details[0]["work_location"] ?? ""
+        ];
+    
+        echo json_encode($response);
         break;
 
 
     default:
-        
+        echo json_encode(["status" => 0, "msg" => "Invalid Action"]);
         break;
 }
-
 ?>

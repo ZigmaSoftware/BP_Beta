@@ -64,7 +64,7 @@ $company_name_options = company_name();
 $company_name_options = select_option($company_name_options,"Select the Company",$company_id);
 
 // Project Name
-$project_options  = get_project_name();
+$project_options  = get_project_name_all();
 $project_options  = select_option($project_options,"Select the Project Name",$project_id);
 
 // Customer
@@ -152,7 +152,7 @@ $today = date('Y-m-d');
           <div class="form-group row">
                         <label class="col-md-2 col-form-label labelright">Company Name</label>
                         <div class="col-md-3">
-                            <select name="company_id" id="company_id"  class="form-control select2"  onchange="get_project_name(this.value);" required>
+                            <select name="company_id" id="company_id"  class="form-control select2"  onchange="get_project_name_all(this.value);" required>
                                 <?= $company_name_options ?>
                             </select>
                         </div>
@@ -235,9 +235,6 @@ $today = date('Y-m-d');
                   <tr id="invoice_items_form">
                   <td>#</td>
                   <td>
-                    <!--<select id="item_name" name="item_name" class="form-control select2">-->
-                    <!--  <?//= select_option(item_name_list(), "Select Item", "") ?>-->
-                    <!--</select>-->
                     
                    <select id="item_name" name="item_name" class="form-control select2"
                             onchange="fetch_item_details(this.value);">
@@ -298,6 +295,75 @@ $today = date('Y-m-d');
                 </tbody>
               </table>
             </div>
+          </div>
+          
+          <div class="col-12">
+              <!--<div class="row">-->
+              <!--      <div class="col-md-6"></div>-->
+              <!--      <div class="col-md-3 text-end">-->
+              <!--          <label for="basic">Basic</label>-->
+              <!--      </div>-->
+              <!--      <div class="col-md-3">-->
+              <!--          <input type="text" class="form-control" id="basic" name="basic" placeholder="Basic total amount" onkeypress='number_only(event);' readonly>-->
+              <!--      </div>-->
+              <!--      <div class="col-md-6"></div>-->
+              <!--      <div class="col-md-3 text-end">-->
+              <!--          <label for="total_gst">Total GST</label>-->
+              <!--      </div>-->
+              <!--      <div class="col-md-3">-->
+              <!--          <input type="text" class="form-control" id="total_gst" name="total_gst" placeholder="Total GST" onkeypress='number_only(event);' readonly>-->
+              <!--      </div>-->
+              <!--      <div class="col-md-6"></div>-->
+              <!--      <div class="col-md-3 text-end">-->
+              <!--          <label for="roundoff">Round Off</label>-->
+              <!--      </div>-->
+              <!--      <div class="col-md-3">-->
+              <!--          <input type="text" class="form-control" id="roundoff" name="roundoff" placeholder="Round Off" onkeypress='number_only(event);' readonly>-->
+              <!--      </div>-->
+
+              <!--      <div class="col-md-6"></div>-->
+              <!--      <div class="col-md-3 text-end">-->
+              <!--          <label for="tot_amount">Total Amount</label>-->
+              <!--      </div>-->
+              <!--      <div class="col-md-3">-->
+              <!--          <input type="text" class="form-control" id="tot_amount" name="tot_amount" placeholder="Total Amount" onkeypress='number_only(event);' readonly>-->
+              <!--      </div>-->
+
+              <!--</div>-->
+              <div class="row mt-3">
+    <div class="col-md-6"></div>
+    <div class="col-md-3 text-end">
+        <label for="basic">Basic</label>
+    </div>
+    <div class="col-md-3">
+        <input type="text" class="form-control" id="basic" name="basic" readonly>
+    </div>
+
+    <div class="col-md-6"></div>
+    <div class="col-md-3 text-end">
+        <label for="total_gst">Total GST</label>
+    </div>
+    <div class="col-md-3">
+        <input type="text" class="form-control" id="total_gst" name="total_gst" readonly>
+    </div>
+
+    <div class="col-md-6"></div>
+    <div class="col-md-3 text-end">
+        <label for="roundoff">Round Off</label>
+    </div>
+    <div class="col-md-3">
+        <input type="text" class="form-control" id="roundoff" name="roundoff">
+    </div>
+
+    <div class="col-md-6"></div>
+    <div class="col-md-3 text-end">
+        <label for="tot_amount">Total Amount</label>
+    </div>
+    <div class="col-md-3">
+        <input type="text" class="form-control" id="tot_amount" name="tot_amount" readonly>
+    </div>
+</div>
+
           </div>
 
           <div class="col-md-12 text-end">

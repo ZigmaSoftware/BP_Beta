@@ -586,7 +586,7 @@ $grade_type_options    = select_option($grade_type_options,"Select The Grade",$g
 $department_options    = department();
 $department_options    = select_option($department_options,"Select The Department",$department);
 
-$work_location_options    = get_project_name();
+$work_location_options    = get_project_name_all();
 $work_location_options    = select_option($work_location_options,"Select Project Name",$work_location);
 
 

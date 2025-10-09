@@ -133,7 +133,7 @@ $company_name_options        = select_option($company_name_options,"Select the C
 $sales_order_options        = sales_order();
 $sales_order_options        = select_option($sales_order_options,"Select the Sales Order",$sales_order);
 
-        $project_options  = get_project_name();
+        $project_options  = get_project_name_all();
 
         $project_options  = select_option($project_options,"Select the Project Name",$project_id);
 // $service_options        = sales_order();
@@ -244,7 +244,7 @@ $today = date('Y-m-d');
                     <div class="form-group row">
                         <label class="col-md-2 col-form-label labelright">Company Name</label>
                         <div class="col-md-3">
-                            <select name="company_id" id="company_id"  class="form-control select2"  onchange="get_project_name(this.value);" required>
+                            <select name="company_id" id="company_id"  class="form-control select2"  onchange="get_project_name_all(this.value);" required>
                                 <?= $company_name_options ?>
                             </select>
                         </div>

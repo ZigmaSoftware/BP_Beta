@@ -393,7 +393,7 @@ switch ($action) {
 
         $company_id          = $_POST['company_id'];
 
-        $project_name_options  = get_project_name("", $company_id);
+        $project_name_options  = get_project_name_all("", $company_id);
 
         $project_name_options  = select_option($project_name_options, "Select the Project Name");
 

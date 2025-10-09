@@ -1,0 +1,46 @@
+[09-Oct-2025 04:36:23 UTC] PHP Parse error:  syntax error, unexpected ''</div>'' (T_CONSTANT_ENCAPSED_STRING) in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/expense_category/crud.php on line 212
+[09-Oct-2025 10:07:47 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'category_name' in 'SELECT' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/expense_category/crud.php(204): db->select(Array, ' is_delete = '0...', '10', '0', '', 'SQL_CALC_FOUND_...')
+#2 {main}
+[09-Oct-2025 10:11:14 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'category_name' in 'SELECT' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/expense_category/crud.php(204): db->select(Array, ' is_delete = '0...', '10', '0', '', 'SQL_CALC_FOUND_...')
+#2 {main}
+[09-Oct-2025 10:28:05 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'category_name' in 'SELECT' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/expense_category/crud.php(269): db->select(Array, 'is_delete = 0', '10', '0', '', 'SQL_CALC_FOUND_...')
+#2 {main}
+[09-Oct-2025 10:28:29 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'category_name' in 'WHERE' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/expense_category/crud.php(74): db->select(Array, '(category_name ...')
+#2 {main}
+[09-Oct-2025 10:28:29 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'category_name' in 'INSERT INTO' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:579
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(579): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/expense_category/crud.php(116): db->insert('expense_categor...', Array)
+#2 {main}
+[09-Oct-2025 10:28:34 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'category_name' in 'WHERE' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/expense_category/crud.php(74): db->select(Array, '(category_name ...')
+#2 {main}
+[09-Oct-2025 10:28:34 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'category_name' in 'INSERT INTO' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:579
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(579): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/expense_category/crud.php(116): db->insert('expense_categor...', Array)
+#2 {main}
+[09-Oct-2025 10:29:17 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'category_name' in 'WHERE' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/expense_category/crud.php(74): db->select(Array, '(category_name ...')
+#2 {main}
+[09-Oct-2025 10:29:17 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'category_name' in 'INSERT INTO' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:579
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(579): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/expense_category/crud.php(116): db->insert('expense_categor...', Array)
+#2 {main}

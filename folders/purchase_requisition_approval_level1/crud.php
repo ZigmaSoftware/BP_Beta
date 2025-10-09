@@ -461,7 +461,7 @@ switch ($action) {
             $columns["unique_id"] = unique_id($prefix);
         }
 
-        // Direct insert or update � no duplicate check
+        // Direct insert or update — no duplicate check
         if ($unique_id) {
             $update_where = [ "unique_id" => $unique_id ];
             $action_obj = $pdo->update($documents_upload, $columns, $update_where);
@@ -537,288 +537,255 @@ switch ($action) {
         
         break;
 
-    case 'approval_modal':
+   case 'approval_modal':
     
-        // DataTable Variables
-        $search     = $_POST['search']['value'];
-        $length     = $_POST['length'];
-        $start      = $_POST['start'];
-        $draw       = $_POST['draw'];
-        $id         = $_POST['id'];
-        $limit      = $length;
-    
-        $unique_id  = $_POST["id"];
-    
-        $table_sub  = "purchase_requisition_items";
-        $data       = [];
-    
-        if ($length == '-1') {
-            $limit  = "";
-        }
-    
-        $columns  = [
-            "@a:=@a+1 s_no",
-            "item_code",
-            "item_description",
-            "quantity AS qty",
-            "quantity",
-            "uom",
-            "budgetary_rate",
-            "item_remarks",
-            "required_delivery_date",
-            "status",
-            "reason",
-            "new_quantity",
-            "main_unique_id",
-            "unique_id"
-        ];
-    
-        $table_details  = [
-            $table_sub . " , (SELECT @a:= " . $start . ") AS a ",
-            $columns
-        ];
-    
-        $where = [
-            "main_unique_id" => $unique_id,
-            "is_delete" => '0'
-        ];
-    
-        $order_column   = $_POST["order"][0]["column"];
-        $order_dir      = $_POST["order"][0]["dir"];
-    
-        $order_by       = datatable_sorting($order_column, $order_dir, $columns);
-    
-        $sql_function   = "SQL_CALC_FOUND_ROWS";
-    
-        $result         = $pdo->select($table_details, $where, $limit, $start, $order_by, $sql_function);
-        // print_r($result);
-        $total_records  = total_records();
-    
-    
-        $main_data = [];
-        
-        $extra_result = $pdo->select("purchase_requisition", "unique_id = " . "'".$id."'");
-        
-        
-        if ($extra_result->status && !empty($extra_result->data)) {
-            $main = $extra_result->data[0];
-    
-            $current_date = date('d-m-Y');
-            
-            $main_data['pr_number']        = $main['pr_number'];
-            $main_data['date']              = $current_date;
-            
-            $main_data['requisition_date']  = date("d-m-Y", strtotime($main['requisition_date']));
-            $main_data['requisition_for']   = $main['requisition_for'];
-            $main_data['requisition_type']  = $main['requisition_type'];
-            
-    
-            $company_data                   = company_name($main['company_id']);
-            $main_data['company_id']        = $company_data[0]['company_name'];
-    
-            $project_data                   = project_name($main['project_id']);
-            $main_data['project_id'] = $project_data[0]['project_code'] . " / " . $project_data[0]['project_name'];
-            
-        }
+    // DataTable Variables
+    $search     = $_POST['search']['value'];
+    $length     = $_POST['length'];
+    $start      = $_POST['start'];
+    $draw       = $_POST['draw'];
+    $id         = $_POST['id'];
+    $limit      = $length;
 
+    $unique_id  = $_POST["id"];
+
+    $table_sub  = "purchase_requisition_items";
+    $data       = [];
+
+    if ($length == '-1') {
+        $limit  = "";
+    }
+
+    $columns  = [
+        "@a:=@a+1 s_no",
+        "item_code",
+        "item_description",
+        "quantity AS qty",
+        "quantity",
+        "uom",
+        "budgetary_rate",
+        "item_remarks",
+        "required_delivery_date",
+        "status",
+        "reason",
+        "new_quantity",
+        "main_unique_id",
+        "unique_id"
+    ];
+
+    $table_details  = [
+        $table_sub . " , (SELECT @a:= " . $start . ") AS a ",
+        $columns
+    ];
+
+    $where = [
+        "main_unique_id" => $unique_id,
+        "is_delete" => '0'
+    ];
+
+    $order_column   = $_POST["order"][0]["column"];
+    $order_dir      = $_POST["order"][0]["dir"];
+
+    $order_by       = datatable_sorting($order_column, $order_dir, $columns);
+
+    $sql_function   = "SQL_CALC_FOUND_ROWS";
+
+    $result         = $pdo->select($table_details, $where, $limit, $start, $order_by, $sql_function);
+    $total_records  = total_records();
+
+    $main_data = [];
     
-        if ($result->status) {
-            $res_array = $result->data;
-    
-            foreach ($res_array as $key => $value) {
-                // Fetch item data
-                $item_data = item_name_list($value["item_code"]);
-                // Check if item is FAB
-                
-                // If item_data empty, try product_master
-                if (empty($item_data)) {
-                    $prod_res = $pdo->select(
-                        ["product_master", ["product_name", "product_code", "description"]],
-                        ["unique_id" => $value["item_code"], "is_delete" => 0]
-                    );
-                    error_log("Passed into the empty item data condition");
-                    error_log(print_r($prod_res, true));
-                    if ($prod_res->status && !empty($prod_res->data)) {
-                        $item_data[0] = [
-                            "item_name" => $prod_res->data[0]["product_name"],
-                            "item_code" => $prod_res->data[0]["product_code"],
-                            "description" => $prod_res->data[0]["description"]
-                        ];
-                        error_log(print_r($item_data, true));
-                    }
+    $extra_result = $pdo->select("purchase_requisition", "unique_id = " . "'".$id."'");
+
+    if ($extra_result->status && !empty($extra_result->data)) {
+        $main = $extra_result->data[0];
+
+        $current_date = date('d-m-Y');
+        
+        $main_data['pr_number']         = $main['pr_number'];
+        $main_data['date']              = $current_date;
+        $main_data['requisition_date']  = date("d-m-Y", strtotime($main['requisition_date']));
+        $main_data['requisition_for']   = $main['requisition_for'];
+        $main_data['requisition_type']  = $main['requisition_type'];
+
+        $company_data                   = company_name($main['company_id']);
+        $main_data['company_id']        = $company_data[0]['company_name'];
+
+        $project_data                   = project_name($main['project_id']);
+        $main_data['project_id']        = $project_data[0]['project_code'] . " / " . $project_data[0]['project_name'];
+    }
+
+    if ($result->status) {
+        $res_array = $result->data;
+
+        foreach ($res_array as $key => $value) {
+            $item_data = item_name_list($value["item_code"]);
+
+            if (empty($item_data)) {
+                $prod_res = $pdo->select(
+                    ["product_master", ["product_name", "product_code", "description"]],
+                    ["unique_id" => $value["item_code"], "is_delete" => 0]
+                );
+                if ($prod_res->status && !empty($prod_res->data)) {
+                    $item_data[0] = [
+                        "item_name" => $prod_res->data[0]["product_name"],
+                        "item_code" => $prod_res->data[0]["product_code"],
+                        "description" => $prod_res->data[0]["description"]
+                    ];
                 }
-                
-                error_log("item_data: " . print_r($item_data, true) . "\n", 3, "log/item.log");
-                
-                $is_fab = !empty($item_data[0]["item_code"]) && strpos($item_data[0]["item_code"], "-FAB-") !== false;
-                
-                // Build display_code smartly
-                if (!empty($item_data[0]["item_name"]) && !empty($item_data[0]["item_code"])) {
-                    $display_code = $item_data[0]["item_name"] . " / " . $item_data[0]["item_code"];
-                } elseif (empty($item_data[0]["item_code"])) {
-                    $display_code = $item_data[0]["item_name"];
-                } elseif (empty($item_data[0]["item_name"])) {
-                    $display_code = $item_data[0]["item_code"];
-                } else {
-                    $display_code = "-";
-                }
-                
-                // Default class
-                $display_class = "no-sublist";
-                
-                // If FAB, check if it has a sublist
-                $sublist = [];
-                if ($is_fab) {
-                    $prod_unique_id = $value["item_code"];
-                    
-                    $pr_unique_id = $value["main_unique_id"];
-                    
-                    $so_id = fetch_pr_so_uid($pr_unique_id);
-                
-                    // First, fetch the type from obom_list for the given product
-                    $obom_res = $pdo->select(
-                        ["obom_list", ["type"]],
+            }
+
+            $is_fab = !empty($item_data[0]["item_code"]) && strpos($item_data[0]["item_code"], "-FAB-") !== false;
+
+            if (!empty($item_data[0]["item_name"]) && !empty($item_data[0]["item_code"])) {
+                $display_code = $item_data[0]["item_name"] . " / " . $item_data[0]["item_code"];
+            } elseif (empty($item_data[0]["item_code"])) {
+                $display_code = $item_data[0]["item_name"];
+            } elseif (empty($item_data[0]["item_name"])) {
+                $display_code = $item_data[0]["item_code"];
+            } else {
+                $display_code = "-";
+            }
+
+            $display_class = "no-sublist";
+            $sublist = [];
+
+            if ($is_fab) {
+                $prod_unique_id = $value["item_code"];
+                $pr_unique_id   = $value["main_unique_id"];
+                $so_id          = fetch_pr_so_uid($pr_unique_id);
+
+                $obom_res = $pdo->select(
+                    ["obom_list", ["type"]],
+                    ["so_unique_id" => $so_id, "is_delete" => 0]
+                );
+
+                $prod_type = ($obom_res->status && !empty($obom_res->data))
+                    ? intval($obom_res->data[0]["type"])
+                    : 0;
+
+                if ($prod_type != 1) {
+                    $sublist_res = $pdo->select(
+                        ["obom_child_table", ["item_unique_id", "qty", "uom_unique_id", "remarks"]],
                         ["so_unique_id" => $so_id, "is_delete" => 0]
                     );
-                    
-                    error_log(print_r($obom_res, true) . "\n", 3, "obom.log");
-                
-                    // Default type = 0 if no record found
-                    $prod_type = ($obom_res->status && !empty($obom_res->data))
-                        ? intval($obom_res->data[0]["type"])
-                        : 0;
-                
-                    // If type == 1, force empty sublist and no toggle
-                    if ($prod_type == 1) {
-                        $display_class = "no-sublist";
-                        $sublist = [];
-                    } else {
-                        // Fetch product sublist as before
-                        $sublist_res = $pdo->select(
-                            ["obom_child_table", ["item_unique_id", "qty", "uom_unique_id", "remarks"]],
-                            ["so_unique_id" => $so_id, "is_delete" => 0]
-                        );
-                
-                        if ($sublist_res->status && !empty($sublist_res->data)) {
-                            $display_class = "fab-toggle"; // <-- only FAB with sublist gets this class
-                
-                            foreach ($sublist_res->data as $idx => $sub) {
-                                $sub_item = $pdo->select(
-                                    ["item_master", ["item_name", "item_code"]],
-                                    ["unique_id" => $sub["item_unique_id"], "is_delete" => 0]
-                                );
-                                $sub_name = ($sub_item->status && !empty($sub_item->data))
-                                    ? $sub_item->data[0]["item_name"] . " / " . $sub_item->data[0]["item_code"]
-                                    : $sub["item_unique_id"];
-                            
-                                $uom = unit_name($sub["uom_unique_id"]);
-                            
-                                // Action buttons for child items
-                                $sub_edit = btn_edit($btn_prefix, $sub["item_unique_id"]);
-                                $sub_del  = btn_delete($btn_prefix, $sub["item_unique_id"]);
-                                
-                                $idx = 0;
-                            
-                                // Add s.no dynamically: parent_sno.child_sno
-                                $sublist[] = [
-                                    "sno"     => $idx + 1,
-                                    "item"    => $sub_name,
-                                    "qty"     => $sub["qty"],
-                                    "uom"     => $uom[0]['unit_name'],
-                                    "remarks" => $sub["remarks"]                            ];
-                            }
-    
-                        } else {
-                            // No sublist found, mark it as no-sublist
-                            $display_class = "no-sublist";
+
+                    if ($sublist_res->status && !empty($sublist_res->data)) {
+                        $display_class = "fab-toggle";
+                        foreach ($sublist_res->data as $idx => $sub) {
+                            $sub_item = $pdo->select(
+                                ["item_master", ["item_name", "item_code"]],
+                                ["unique_id" => $sub["item_unique_id"], "is_delete" => 0]
+                            );
+                            $sub_name = ($sub_item->status && !empty($sub_item->data))
+                                ? $sub_item->data[0]["item_name"] . " / " . $sub_item->data[0]["item_code"]
+                                : $sub["item_unique_id"];
+                            $uom = unit_name($sub["uom_unique_id"]);
+                            $sublist[] = [
+                                "sno"     => $idx + 1,
+                                "item"    => $sub_name,
+                                "qty"     => $sub["qty"],
+                                "uom"     => $uom[0]['unit_name'],
+                                "remarks" => $sub["remarks"]
+                            ];
                         }
                     }
                 }
-    
-                
-                // Wrap display_code with a span + dynamic class
-                $display_code = "<span class='{$display_class}'>" . $display_code . "</span>";
-
-                $uom_data = unit_name($value["uom"]);
-                $value["uom"] = !empty($uom_data[0]['unit_name']) ? $uom_data[0]['unit_name'] : "";
-        
-                $value['required_delivery_date'] = (!empty($value['required_delivery_date']) && $value['required_delivery_date'] != "0000-00-00") ? date("d-m-Y", strtotime($value['required_delivery_date'])) : "-";
-    
-                    if ($value['reason'] == "") {
-                        $value['reason'] = "-";
-                    }
-                        
-                    if ($value['status'] == "1") {
-                        $status_display = "<span style='color: green; font-weight: bold;'>Approved</span>";
-                    } elseif ($value['status'] == "2") {
-                        $status_display = "<span style='color: red; font-weight: bold;'>Cancelled</span>";
-                    }
-                    else {
-                        
-                        $status_display = '<select class="form-control status-select" id="status_val_' . $value['unique_id'] . '" onchange="handle_status(this.value, \''.$value['unique_id'].'\')">
-                                                <option value="">Select the Status</option>
-                                                <option value="1">Approve</option>
-                                                <option value="2">Cancel</option>
-                                            </select>
-
-                                            <div id="cancelReasonDiv_'.$value['unique_id'].'" style="display: none; margin-top: 10px;">
-                                                <textarea id="cancelReason_' . $value['unique_id'] . '" " placeholder="Enter reason for cancellation" class="form-control" rows="4"></textarea>
-                                                <button type="button" class="btn btn-primary mt-2" id="submitCancelReason" onclick="handle_status(document.getElementById(\'status_val_' . $value['unique_id'] . '\').value, \'' . $value['unique_id'] . '\', document.getElementById(\'cancelReason_' . $value['unique_id'] . '\').value)">Submit Reason</button>
-                                            </div>';
-                    }
-                   
-                   
-                    if ($value['status'] === null || $value['status'] === "") {
-                        $quantity_display = '<input type="number" class="form-control quantity-input" id="quantity_'.$value['unique_id'].'" value="'.htmlspecialchars($value['quantity']).'" min="1">';
-                    } else {
-                        $display_quantity = !empty($value['new_quantity']) ? $value['new_quantity'] : $value['quantity'];
-                        $quantity_display = '<span>'.htmlspecialchars($display_quantity).'</span>';
-                    }
-                       
-                    $value['quantity'] = $quantity_display;
-                    $value['status'] = $status_display;
-                    $value['budgetary_rate'] = $value['budgetary_rate'];
-
-
-                $data[] = [
-                    "s_no"                => $value["s_no"],
-                    "item_code"           => $display_code,
-                    "item_description"    => $value["item_description"],
-                    "quantity"            => $value["quantity"],
-                    "uom"                 => $value["uom"],
-                    // "budgetary_rate"      => $value["budgetary_rate"],
-                    "item_remarks"        => $value["item_remarks"],
-                    "required_delivery_date" => $value["required_delivery_date"],
-                    "status"              => $value["status"],
-                    "reason"              => $value["reason"],
-                    "new_quantity"        => $value["new_quantity"],
-                    "unique_id"           => $value["unique_id"],
-                    "sublist"             => $sublist   // <-- 🔑 Important for child rows
-                ];
             }
-    
-            $json_array = [
-                "draw"              => intval($draw),
-                "recordsTotal"      => intval($total_records),
-                "recordsFiltered"   => intval($total_records),
-                "data"              => $data,
-                "main_data"         => $main_data,
-                "testing"           => $result->sql
-            ];
-        } else {
-            $json_array = [
-                "draw"              => intval($draw),
-                "recordsTotal"      => 0,
-                "recordsFiltered"   => 0,
-                "data"              => [],
-                "main_data"         => $main_data,
-                "testing"           => $result->sql
+
+            $display_code = "<span class='{$display_class}'>" . $display_code . "</span>";
+            $uom_data = unit_name($value["uom"]);
+            $value["uom"] = !empty($uom_data[0]['unit_name']) ? $uom_data[0]['unit_name'] : "";
+
+            $value['required_delivery_date'] = (!empty($value['required_delivery_date']) && $value['required_delivery_date'] != "0000-00-00")
+                ? date("d-m-Y", strtotime($value['required_delivery_date'])) : "-";
+
+            if ($value['reason'] == "") {
+                $value['reason'] = "-";
+            }
+
+            if ($value['status'] == "1") {
+                $status_display = "<span style='color: green; font-weight: bold;'>Approved</span>";
+            } elseif ($value['status'] == "2") {
+                $status_display = "<span style='color: red; font-weight: bold;'>Cancelled</span>";
+            } else {
+                $status_display = '<select class="form-control status-select" id="status_val_' . $value['unique_id'] . '" onchange="handle_status(this.value, \''.$value['unique_id'].'\')">
+                    <option value="">Select the Status</option>
+                    <option value="1">Approve</option>
+                    <option value="2">Cancel</option>
+                </select>
+                <div id="cancelReasonDiv_'.$value['unique_id'].'" style="display: none; margin-top: 10px;">
+                    <textarea id="cancelReason_' . $value['unique_id'] . '" placeholder="Enter reason for cancellation" class="form-control" rows="4"></textarea>
+                    <button type="button" class="btn btn-primary mt-2" id="submitCancelReason" onclick="handle_status(document.getElementById(\'status_val_' . $value['unique_id'] . '\').value, \'' . $value['unique_id'] . '\', document.getElementById(\'cancelReason_' . $value['unique_id'] . '\').value)">Submit Reason</button>
+                </div>';
+            }
+
+            if ($value['status'] === null || $value['status'] === "") {
+                $quantity_display = '<input type="number" class="form-control quantity-input" id="quantity_'.$value['unique_id'].'" value="'.htmlspecialchars($value['quantity']).'" min="1">';
+            } else {
+                $display_quantity = !empty($value['new_quantity']) ? $value['new_quantity'] : $value['quantity'];
+                $quantity_display = '<span>'.htmlspecialchars($display_quantity).'</span>';
+            }
+
+            $value['quantity'] = $quantity_display;
+            $value['status']   = $status_display;
+
+            $data[] = [
+                "s_no"                => $value["s_no"],
+                "item_code"           => $display_code,
+                "item_description"    => $value["item_description"],
+                "quantity"            => $value["quantity"],
+                "uom"                 => $value["uom"],
+                "item_remarks"        => $value["item_remarks"],
+                "required_delivery_date" => $value["required_delivery_date"],
+                "status"              => $value["status"],
+                "reason"              => $value["reason"],
+                "new_quantity"        => $value["new_quantity"],
+                "unique_id"           => $value["unique_id"],
+                "sublist"             => $sublist
             ];
         }
-    
-        echo json_encode($json_array);
-        break;
-    
+
+        // ✅ NEW: Determine overall bulk status for the header dropdown
+        $status_check = $pdo->select(
+            ["purchase_requisition_items", ["status"]],
+            ["main_unique_id" => $unique_id, "is_delete" => 0]
+        );
+
+        $all_status = array_column($status_check->data ?? [], "status");
+        if (!empty($all_status)) {
+            $unique_status = array_unique($all_status);
+            if (count($unique_status) === 1) {
+                $main_data['bulk_status'] = $unique_status[0];
+            } else {
+                $main_data['bulk_status'] = "0";
+            }
+        } else {
+            $main_data['bulk_status'] = "0";
+        }
+
+        $json_array = [
+            "draw"              => intval($draw),
+            "recordsTotal"      => intval($total_records),
+            "recordsFiltered"   => intval($total_records),
+            "data"              => $data,
+            "main_data"         => $main_data,
+            "testing"           => $result->sql
+        ];
+    } else {
+        $json_array = [
+            "draw"              => intval($draw),
+            "recordsTotal"      => 0,
+            "recordsFiltered"   => 0,
+            "data"              => [],
+            "main_data"         => $main_data,
+            "testing"           => $result->sql
+        ];
+    }
+
+    echo json_encode($json_array);
+    break;
+
     
     case 'handle_status':
 

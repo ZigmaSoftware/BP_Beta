@@ -616,7 +616,7 @@ if (isset($_POST['lvl_2_status']) && $_POST['lvl_2_status'] !== '') {
     // break;
     
   case 'approval_modal':
-    
+
     // DataTable Variables
     $search     = $_POST['search']['value'];
     $length     = $_POST['length'];
@@ -678,27 +678,23 @@ if (isset($_POST['lvl_2_status']) && $_POST['lvl_2_status'] !== '') {
     $main_data = [];
     
     $extra_result = $pdo->select("purchase_requisition", "unique_id = " . "'".$id."'");
-    
-    
+
     if ($extra_result->status && !empty($extra_result->data)) {
         $main = $extra_result->data[0];
 
         $current_date = date('d-m-Y');
         
         $main_data['pr_number']        = $main['pr_number'];
-        $main_data['date']              = $current_date;
-        
-        $main_data['requisition_date']  = date("d-m-Y", strtotime($main['requisition_date']));
-        $main_data['requisition_for']   = $main['requisition_for'];
-        $main_data['requisition_type']  = $main['requisition_type'];
-        
+        $main_data['date']             = $current_date;
+        $main_data['requisition_date'] = date("d-m-Y", strtotime($main['requisition_date']));
+        $main_data['requisition_for']  = $main['requisition_for'];
+        $main_data['requisition_type'] = $main['requisition_type'];
 
-        $company_data                   = company_name($main['company_id']);
-        $main_data['company_id']        = $company_data[0]['company_name'];
+        $company_data                  = company_name($main['company_id']);
+        $main_data['company_id']       = $company_data[0]['company_name'];
 
-        $project_data                   = project_name($main['project_id']);
-        $main_data['project_id'] = $project_data[0]['project_code'] . " / " . $project_data[0]['project_name'];
-        
+        $project_data                  = project_name($main['project_id']);
+        $main_data['project_id']       = $project_data[0]['project_code'] . " / " . $project_data[0]['project_name'];
     }
 
 
@@ -723,9 +719,8 @@ if (isset($_POST['lvl_2_status']) && $_POST['lvl_2_status'] !== '') {
                 }
             }
             
-                // Check if item is FAB
             $is_fab = !empty($item_data[0]["item_code"]) && strpos($item_data[0]["item_code"], "-FAB-") !== false;
-               // Build display_code smartly
+
             if (!empty($item_data[0]["item_name"]) && !empty($item_data[0]["item_code"])) {
                 $display_code = $item_data[0]["item_name"] . " / " . $item_data[0]["item_code"];
             } elseif (empty($item_data[0]["item_code"])) {
@@ -736,144 +731,133 @@ if (isset($_POST['lvl_2_status']) && $_POST['lvl_2_status'] !== '') {
                 $display_code = "-";
             }
 
-                
-                // Default class
-                $display_class = "no-sublist";
-                
-                // If FAB, check if it has a sublist
-                $sublist = [];
-                if ($is_fab) {
-                    $prod_unique_id = $value["item_code"];
-                    
-                    $pr_unique_id = $value["main_unique_id"];
-                    
-                    $so_id = fetch_pr_so_uid($pr_unique_id);
-                
-                    // First, fetch the type from obom_list for the given product
-                    $obom_res = $pdo->select(
-                        ["obom_list", ["type"]],
+            $display_class = "no-sublist";
+            $sublist = [];
+
+            if ($is_fab) {
+                $prod_unique_id = $value["item_code"];
+                $pr_unique_id = $value["main_unique_id"];
+                $so_id = fetch_pr_so_uid($pr_unique_id);
+            
+                $obom_res = $pdo->select(
+                    ["obom_list", ["type"]],
+                    ["so_unique_id" => $so_id, "is_delete" => 0]
+                );
+            
+                $prod_type = ($obom_res->status && !empty($obom_res->data))
+                    ? intval($obom_res->data[0]["type"])
+                    : 0;
+            
+                if ($prod_type != 1) {
+                    $sublist_res = $pdo->select(
+                        ["obom_child_table", ["item_unique_id", "qty", "uom_unique_id", "remarks"]],
                         ["so_unique_id" => $so_id, "is_delete" => 0]
                     );
-                    
-                    error_log(print_r($obom_res, true) . "\n", 3, "obom.log");
-                
-                    // Default type = 0 if no record found
-                    $prod_type = ($obom_res->status && !empty($obom_res->data))
-                        ? intval($obom_res->data[0]["type"])
-                        : 0;
-                
-                    // If type == 1, force empty sublist and no toggle
-                    if ($prod_type == 1) {
-                        $display_class = "no-sublist";
-                        $sublist = [];
-                    } else {
-                        // Fetch product sublist as before
-                        $sublist_res = $pdo->select(
-                            ["obom_child_table", ["item_unique_id", "qty", "uom_unique_id", "remarks"]],
-                            ["so_unique_id" => $so_id, "is_delete" => 0]
-                        );
-                
-                        if ($sublist_res->status && !empty($sublist_res->data)) {
-                            $display_class = "fab-toggle"; // <-- only FAB with sublist gets this class
-                
-                            foreach ($sublist_res->data as $idx => $sub) {
-                                $sub_item = $pdo->select(
-                                    ["item_master", ["item_name", "item_code"]],
-                                    ["unique_id" => $sub["item_unique_id"], "is_delete" => 0]
-                                );
-                                $sub_name = ($sub_item->status && !empty($sub_item->data))
-                                    ? $sub_item->data[0]["item_name"] . " / " . $sub_item->data[0]["item_code"]
-                                    : $sub["item_unique_id"];
-                            
-                                $uom = unit_name($sub["uom_unique_id"]);
-                            
-                                // Action buttons for child items
-                                $sub_edit = btn_edit($btn_prefix, $sub["item_unique_id"]);
-                                $sub_del  = btn_delete($btn_prefix, $sub["item_unique_id"]);
-                                
-                                $idx = 0;
-                            
-                                // Add s.no dynamically: parent_sno.child_sno
-                                $sublist[] = [
-                                    "sno"     => $idx + 1,
-                                    "item"    => $sub_name,
-                                    "qty"     => $sub["qty"],
-                                    "uom"     => $uom[0]['unit_name'],
-                                    "remarks" => $sub["remarks"]                            ];
-                            }
-    
-                        } else {
-                            // No sublist found, mark it as no-sublist
-                            $display_class = "no-sublist";
+            
+                    if ($sublist_res->status && !empty($sublist_res->data)) {
+                        $display_class = "fab-toggle";
+            
+                        foreach ($sublist_res->data as $idx => $sub) {
+                            $sub_item = $pdo->select(
+                                ["item_master", ["item_name", "item_code"]],
+                                ["unique_id" => $sub["item_unique_id"], "is_delete" => 0]
+                            );
+                            $sub_name = ($sub_item->status && !empty($sub_item->data))
+                                ? $sub_item->data[0]["item_name"] . " / " . $sub_item->data[0]["item_code"]
+                                : $sub["item_unique_id"];
+                        
+                            $uom = unit_name($sub["uom_unique_id"]);
+                        
+                            $sublist[] = [
+                                "sno"     => $idx + 1,
+                                "item"    => $sub_name,
+                                "qty"     => $sub["qty"],
+                                "uom"     => $uom[0]['unit_name'],
+                                "remarks" => $sub["remarks"]
+                            ];
                         }
                     }
                 }
-    
-                
-                // Wrap display_code with a span + dynamic class
-                $display_code = "<span class='{$display_class}'>" . $display_code . "</span>";
+            }
+
+            $display_code = "<span class='{$display_class}'>" . $display_code . "</span>";
 
             $uom_data = unit_name($value["uom"]);
             $value["uom"] = !empty($uom_data[0]['unit_name']) ? $uom_data[0]['unit_name'] : "";
     
-            $value['required_delivery_date'] = (!empty($value['required_delivery_date']) && $value['required_delivery_date'] != "0000-00-00") ? date("d-m-Y", strtotime($value['required_delivery_date'])) : "-";
+            $value['required_delivery_date'] = (!empty($value['required_delivery_date']) && $value['required_delivery_date'] != "0000-00-00")
+                ? date("d-m-Y", strtotime($value['required_delivery_date']))
+                : "-";
 
-                if ($value['lvl_2_reason'] == "") {
-                    $value['lvl_2_reason'] = "-";
-                }
+            if ($value['lvl_2_reason'] == "") {
+                $value['lvl_2_reason'] = "-";
+            }
                     
-                if ($value['lvl_2_status'] == "1") {
-                    $status_display = "<span style='color: green; font-weight: bold;'>Approved</span>";
-                } elseif ($value['lvl_2_status'] == "2") {
-                    $status_display = "<span style='color: red; font-weight: bold;'>Cancelled</span>";
-                }
-                else {
-                    
-                    $status_display = '<select class="form-control status-select" id="status_val_' . $value['unique_id'] . '" onchange="handle_status(this.value, \''.$value['unique_id'].'\')">
-                                            <option value="">Select the Status</option>
-                                            <option value="1">Approve</option>
-                                            <option value="2">Cancel</option>
-                                        </select>
-
-                                        <div id="cancelReasonDiv_'.$value['unique_id'].'" style="display: none; margin-top: 10px;">
-                                            <textarea id="cancelReason_' . $value['unique_id'] . '" " placeholder="Enter reason for cancellation" class="form-control" rows="4"></textarea>
-                                            <button type="button" class="btn btn-primary mt-2" id="submitCancelReason" onclick="handle_status(document.getElementById(\'status_val_' . $value['unique_id'] . '\').value, \'' . $value['unique_id'] . '\', document.getElementById(\'cancelReason_' . $value['unique_id'] . '\').value)">Submit Reason</button>
-                                        </div>';
-                }
+            if ($value['lvl_2_status'] == "1") {
+                $status_display = "<span style='color: green; font-weight: bold;'>Approved</span>";
+            } elseif ($value['lvl_2_status'] == "2") {
+                $status_display = "<span style='color: red; font-weight: bold;'>Cancelled</span>";
+            } else {
+                $status_display = '<select class="form-control status-select-lvl2" id="status_val_' . $value['unique_id'] . '" onchange="handle_status(this.value, \''.$value['unique_id'].'\')">
+                                        <option value="">Select the Status</option>
+                                        <option value="1">Approve</option>
+                                        <option value="2">Cancel</option>
+                                   </select>
+                                   <div id="cancelReasonDiv_'.$value['unique_id'].'" style="display:none;margin-top:10px;">
+                                        <textarea id="cancelReason_' . $value['unique_id'] . '" placeholder="Enter reason for cancellation" class="form-control" rows="4"></textarea>
+                                        <button type="button" class="btn btn-primary mt-2" id="submitCancelReason" 
+                                            onclick="handle_status(document.getElementById(\'status_val_' . $value['unique_id'] . '\').value, \'' . $value['unique_id'] . '\', document.getElementById(\'cancelReason_' . $value['unique_id'] . '\').value)">
+                                            Submit Reason
+                                        </button>
+                                   </div>';
+            }
                
+            if ($value['lvl_2_status'] === null || $value['lvl_2_status'] === "") {
+                $quantity_display = '<input type="number" class="form-control quantity-input" id="quantity_'.$value['unique_id'].'" value="'.htmlspecialchars($value['pr_qty']).'" min="1">';
+            } else {
+                $display_quantity = !empty($value['lvl_2_quantity']) ? $value['lvl_2_quantity'] : $value['pr_qty'];
+                $quantity_display = '<span>'.htmlspecialchars($display_quantity).'</span>';
+            }
+            
+            $quantity_display1 = '<input type="number" class="form-control quantity-input" id="quantity_'.$value['unique_id'].'" value="'.htmlspecialchars($value['l1_qty']).'" min="1">';
                
-                if ($value['lvl_2_status'] === null || $value['lvl_2_status'] === "") {
-                    $quantity_display = '<input type="number" class="form-control quantity-input" id="quantity_'.$value['unique_id'].'" value="'.htmlspecialchars($value['pr_qty']).'" min="1">';
-                } else {
-                    $display_quantity = !empty($value['lvl_2_quantity']) ? $value['lvl_2_quantity'] : $value['pr_qty'];
-                    $quantity_display = '<span>'.htmlspecialchars($display_quantity).'</span>';
-                }
-                
-                $quantity_display1 = '<input type="number" class="form-control quantity-input" id="quantity_'.$value['unique_id'].'" value="'.htmlspecialchars($value['l1_qty']).'" min="1">';
-                   
-                $value['pr_qty'] = $quantity_display;
-                $value['lvl_2_status'] = $status_display;
-                $value['budgetary_rate'] = $value['budgetary_rate'];
-
+            $value['pr_qty'] = $quantity_display;
+            $value['lvl_2_status'] = $status_display;
+            $value['budgetary_rate'] = $value['budgetary_rate'];
 
             $data[] = [
                 "s_no"                    => $value["s_no"],
                 "item_code"               => $display_code,
                 "item_description"        => $value["item_description"],
-                "pr_qty"                  => $quantity_display,     // Editable or static PR Qty
+                "pr_qty"                  => $quantity_display,
                 "l1_qty"                  => $value["l1_qty"],
-                "lvl_2_quantity"          => $quantity_display1,     // L2 Qty (matches JS)
+                "lvl_2_quantity"          => $quantity_display1,
                 "uom"                     => $value["uom"],
-                // "budgetary_rate"          => $value["budgetary_rate"],
                 "item_remarks"            => $value["item_remarks"],
                 "required_delivery_date"  => $value["required_delivery_date"],
                 "lvl_2_status"            => $status_display,
                 "lvl_2_reason"            => $value["lvl_2_reason"],
-            
-                // Include sublist as a proper array (important for JS child rows)
-                "sublist" => $sublist
+                "sublist"                 => $sublist
             ];
+        }
 
+        // ✅ Compute bulk_status_lvl_2 for read-only dropdown logic
+        $status_check_lvl2 = $pdo->select(
+            ["purchase_requisition_items", ["lvl_2_status"]],
+            ["main_unique_id" => $unique_id, "is_delete" => 0, "status" => 1]
+        );
+
+        $all_lvl2_status = array_column($status_check_lvl2->data ?? [], "lvl_2_status");
+
+        if (!empty($all_lvl2_status)) {
+            $unique_lvl2_status = array_unique($all_lvl2_status);
+            if (count($unique_lvl2_status) === 1 && $unique_lvl2_status[0] !== null && $unique_lvl2_status[0] !== "") {
+                $main_data['bulk_status_lvl_2'] = $unique_lvl2_status[0];
+            } else {
+                $main_data['bulk_status_lvl_2'] = "0";
+            }
+        } else {
+            $main_data['bulk_status_lvl_2'] = "0";
         }
 
         $json_array = [
@@ -884,6 +868,7 @@ if (isset($_POST['lvl_2_status']) && $_POST['lvl_2_status'] !== '') {
             "main_data"         => $main_data,
             "testing"           => $result->sql
         ];
+
     } else {
         $json_array = [
             "draw"              => intval($draw),
@@ -897,7 +882,7 @@ if (isset($_POST['lvl_2_status']) && $_POST['lvl_2_status'] !== '') {
 
     echo json_encode($json_array);
     break;
-    
+
     case 'bulk_update_status_lvl_2':
     $main_unique_id = $_POST['main_unique_id'];
     $selectedValue  = $_POST['selectedValue']; // 1 = Approve All, 2 = Reject All

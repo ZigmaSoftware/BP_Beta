@@ -191,153 +191,170 @@ function purchase_sublist_datatable(table_id = "purchase_sublist_datatable") {
 
 
 function open_lvl_2_modal(id) {
-    var tablepop = $("#requisition_approval_modal");
-    $("#approval_modal_form_lvl_2").modal("show");
-    $("#approval_main_id").val(id);
-    
-    $("#bulk_status_select_lvl_2").prop("disabled", false).val("");
-    $("#bulk_status_select_lvl_2 option:first").text("Select Status");
+  var tablepop = $("#requisition_approval_modal");
+  $("#approval_modal_form_lvl_2").modal("show");
 
-    // ✅ Store the requisition ID for AJAX calls
-    $("#approval_main_id").val(id);
+  $("#approval_main_id").val(id);
+  $("#bulk_status_select_lvl_2").prop("disabled", false).val("");
+  $("#bulk_status_select_lvl_2 option:first").text("Select Status");
 
-    var data = { action: "approval_modal", id: id };
-    var ajax_url = sessionStorage.getItem("folder_crud_link");
+  const data = { action: "approval_modal", id: id };
+  const ajax_url = sessionStorage.getItem("folder_crud_link");
 
-    var datatable = tablepop.DataTable({
-        destroy: true,
-        ajax: {
-            url: ajax_url,
-            type: "POST",
-            data: data,
-            dataSrc: function (json) {
-                if (json.main_data) {
-                    $("#pr_number_approval").text(json.main_data.pr_number || "-");
-                    $("#date_approval").text(json.main_data.date || "-");
-                    $("#requisition_date_approval").text(json.main_data.requisition_date || "-");
+  var datatable = tablepop.DataTable({
+    destroy: true,
+    ajax: {
+      url: ajax_url,
+      type: "POST",
+      data: data,
+      dataSrc: function (json) {
+        if (json.main_data) {
+          $("#pr_number_approval").text(json.main_data.pr_number || "-");
+          $("#date_approval").text(json.main_data.date || "-");
+          $("#requisition_date_approval").text(json.main_data.requisition_date || "-");
 
-                    const requisitionForMap = { "1": "Direct", "2": "SO", "3": "Ordered BOM" };
-                    $("#requisition_for_approval").text(requisitionForMap[json.main_data.requisition_for] || "-");
+          const requisitionForMap = { "1": "Direct", "2": "SO", "3": "Ordered BOM" };
+          $("#requisition_for_approval").text(requisitionForMap[json.main_data.requisition_for] || "-");
 
-                    const requisitiontypeMap = {
-                        "1": "Regular",
-                        "683568ca2fe8263239": "Service",
-                        "683588840086c13657": "Capital"
-                    };
-                    $("#requisition_type_approval").text(requisitiontypeMap[json.main_data.requisition_type] || "-");
+          const requisitiontypeMap = {
+            "1": "Regular",
+            "683568ca2fe8263239": "Service",
+            "683588840086c13657": "Capital",
+          };
+          $("#requisition_type_approval").text(
+            requisitiontypeMap[json.main_data.requisition_type] || "-"
+          );
 
-                    $("#company_id_approval").text(json.main_data.company_id || "-");
-                    $("#project_id_approval").text(json.main_data.project_id || "-");
-                }
-                return Array.isArray(json.data) ? json.data : [];
-            }
-        },
-        columns: [
-            { data: "s_no", title: "#" },
-            {
-                data: "item_code",
-                title: "Item Code",
-                render: function (data, type, row) {
-                    let displayText = (data && data !== "null") ? data : (row.item_description || "-");
+          $("#company_id_approval").text(json.main_data.company_id || "-");
+          $("#project_id_approval").text(json.main_data.project_id || "-");
 
-                    if (row.sublist && Array.isArray(row.sublist) && row.sublist.length > 0) {
-                        return `<span class="item-code-toggle" 
-                                    style="cursor:pointer; color:#e96f26;" 
-                                    data-sno="${row.s_no}">
-                                    ${displayText}
-                                </span>`;
-                    } else {
-                        return `<span>${displayText}</span>`;
-                    }
-                }
-            },
-            { data: "item_description", title: "Description", defaultContent: "-" },
-            { data: "pr_qty", title: "PR Qty", defaultContent: "-" },
-            { data: "l1_qty", title: "L1 Qty", defaultContent: "-" },
-            { data: "lvl_2_quantity", title: "L2 Qty", defaultContent: "-" },
-            { data: "uom", title: "UOM", defaultContent: "-" },
-            // { data: "budgetary_rate", title: "Rate", defaultContent: "-" },
-            { data: "item_remarks", title: "Item Remarks", defaultContent: "-" },
-            { data: "required_delivery_date", title: "Delivery Date", defaultContent: "-" },
-            { data: "lvl_2_status", title: "Status", defaultContent: "-" },
-            { data: "lvl_2_reason", title: "Cancelled Reason", defaultContent: "-" }
-        ]
-    });
-
-    // Toggle child items on item_code click
-    tablepop.off("click", "span.item-code-toggle").on("click", "span.item-code-toggle", function () {
-        var tr = $(this).closest("tr");
-        var row = datatable.row(tr);
-
-        if (row.child.isShown()) {
-            row.child.hide();
-            tr.removeClass("shown");
-        } else {
-            let rowData = row.data();
-            let sublist = (rowData && Array.isArray(rowData.sublist)) ? rowData.sublist : [];
-            let parentSno = $(this).data("sno");
-
-            if (sublist.length > 0) {
-                var childHtml = "<table class='table table-bordered table-sm sublist-table'>";
-                childHtml += "<thead><tr><th>S.No</th><th>Item</th><th>Qty</th><th>UOM</th><th>Remarks</th></tr></thead><tbody>";
-
-                // ðŸ”¹ Always start from L1 Qty on load
-                let parentQty = parseFloat(rowData.l1_qty) || 0;
-
-                sublist.forEach(function (sub, index) {
-                    let childQty = parseFloat(sub.qty) || 0;
-                    let totalQty = parentQty * childQty;
-
-                    childHtml += `<tr data-child-index="${index}">
-                                    <td>${parentSno}.${index + 1}</td>
-                                    <td>${sub.item}</td>
-                                    <td class="child-qty">${totalQty}</td>
-                                    <td>${sub.uom}</td>
-                                    <td>${sub.remarks || "-"}</td>
-                                  </tr>`;
-                });
-
-                childHtml += "</tbody></table>";
-
-                row.child(childHtml).show();
-                tr.addClass("shown");
-
-                // ðŸ”¹ Listen for L2 Qty input change â†’ dynamically update child qty
-                $(document).off("input.updateChildQty").on("input.updateChildQty", "input[id^='quantity_']", function () {
-                    const uniqueId = $(this).attr("id").replace("quantity_", "");
-                    const newParentQty = parseFloat($(this).val()) || 0;
-
-                    console.log(`L2 Qty changed â†’ unique_id: ${uniqueId}, new value: ${newParentQty}`);
-
-                    // Update relevant child table under this row only
-                    const childTable = tr.next("tr").find(".sublist-table tbody");
-
-                    childTable.find("tr").each(function (idx) {
-                        let baseQty = parseFloat(sublist[idx].qty) || 0;
-                        let updatedQty = newParentQty * baseQty;
-                        $(this).find(".child-qty").text(updatedQty);
-                    });
-                });
-            }
+          // ✅ Handle bulk_status_lvl_2 to set header dropdown
+          if (json.main_data.bulk_status_lvl_2 === "1") {
+            $("#bulk_status_select_lvl_2")
+              .html("<option value='1' selected>Approved</option>")
+              .prop("disabled", true);
+          } else if (json.main_data.bulk_status_lvl_2 === "2") {
+            $("#bulk_status_select_lvl_2")
+              .html("<option value='2' selected>Rejected</option>")
+              .prop("disabled", true);
+          } else {
+            $("#bulk_status_select_lvl_2").html(`
+              <option value="">Select Status</option>
+              <option value="1">Approve All</option>
+              <option value="2">Reject All</option>
+            `);
+          }
         }
-    });
+
+        return Array.isArray(json.data) ? json.data : [];
+      },
+    },
+    columns: [
+      { data: "s_no", title: "#" },
+      {
+        data: "item_code",
+        title: "Item Code",
+        render: function (data, type, row) {
+          let displayText = data || row.item_description || "-";
+          if (row.sublist && Array.isArray(row.sublist) && row.sublist.length > 0) {
+            return `<span class="item-code-toggle"
+                        style="cursor:pointer; color:#e96f26;"
+                        data-sno="${row.s_no}">
+                        ${displayText}
+                    </span>`;
+          }
+          return `<span>${displayText}</span>`;
+        },
+      },
+      { data: "item_description", title: "Description" },
+      { data: "pr_qty", title: "PR Qty" },
+      { data: "l1_qty", title: "L1 Qty" },
+      { data: "lvl_2_quantity", title: "L2 Qty" },
+      { data: "uom", title: "UOM" },
+      { data: "item_remarks", title: "Item Remarks" },
+      { data: "required_delivery_date", title: "Delivery Date" },
+      { data: "lvl_2_status", title: "Status" },
+      { data: "lvl_2_reason", title: "Rejected Reason" },
+    ],
+  });
+
+  // 🔁 Sublist toggle behavior
+  tablepop.off("click", "span.item-code-toggle").on("click", "span.item-code-toggle", function () {
+    const tr = $(this).closest("tr");
+    const row = datatable.row(tr);
+
+    if (row.child.isShown()) {
+      row.child.hide();
+      tr.removeClass("shown");
+    } else {
+      const rowData = row.data();
+      const sublist = rowData.sublist || [];
+      const parentSno = $(this).data("sno");
+
+      if (sublist.length > 0) {
+        let childHtml = `
+          <table class='table table-bordered table-sm sublist-table'>
+            <thead>
+              <tr>
+                <th>S.No</th>
+                <th>Item</th>
+                <th>Qty</th>
+                <th>UOM</th>
+                <th>Remarks</th>
+              </tr>
+            </thead>
+            <tbody>
+        `;
+
+        const parentQty = parseFloat(rowData.l1_qty) || 0;
+        sublist.forEach((sub, index) => {
+          const childQty = parseFloat(sub.qty) || 0;
+          const totalQty = parentQty * childQty;
+          childHtml += `
+            <tr>
+              <td>${parentSno}.${index + 1}</td>
+              <td>${sub.item}</td>
+              <td class="child-qty">${totalQty}</td>
+              <td>${sub.uom}</td>
+              <td>${sub.remarks || "-"}</td>
+            </tr>
+          `;
+        });
+
+        childHtml += "</tbody></table>";
+        row.child(childHtml).show();
+        tr.addClass("shown");
+
+        // Update child qty dynamically
+        $(document)
+          .off("input.updateChildQty")
+          .on("input.updateChildQty", "input[id^='quantity_']", function () {
+            const newParentQty = parseFloat($(this).val()) || 0;
+            const childTable = tr.next("tr").find(".sublist-table tbody");
+            childTable.find("tr").each(function (idx) {
+              const baseQty = parseFloat(sublist[idx].qty) || 0;
+              $(this).find(".child-qty").text((newParentQty * baseQty).toFixed(2));
+            });
+          });
+      }
+    }
+  });
 }
 
 
-
-// 🔄 Bulk Level 2 status dropdown action
+// ✅ Bulk status handler for Level 2
 $(document).on("change", "#bulk_status_select_lvl_2", function () {
   const selectedValue = $(this).val();
   const main_unique_id = $("#approval_main_id").val();
+  const ajax_url = sessionStorage.getItem("folder_crud_link");
 
-  if (!selectedValue) return; // nothing selected
+  if (!selectedValue) return;
   if (!main_unique_id) {
     sweetalert("No requisition selected.", "error");
     return;
   }
 
-  const actionText =
-    selectedValue === "1" ? "approve all items" : "reject all items";
+  const actionText = selectedValue === "1" ? "approve all items" : "reject all items";
 
   Swal.fire({
     title: "Confirm Level 2 Bulk Action",
@@ -353,32 +370,28 @@ $(document).on("change", "#bulk_status_select_lvl_2", function () {
         type: "POST",
         url: ajax_url,
         data: {
-          action: "bulk_update_status_lvl_2", // <-- your Level 2 CRUD case
+          action: "bulk_update_status_lvl_2",
           main_unique_id: main_unique_id,
           selectedValue: selectedValue,
         },
         success: function (response) {
           try {
-            var res = JSON.parse(response);
+            const res = JSON.parse(response);
             if (res.status) {
-              // ✅ Reload both tables
               $("#requisition_approval_modal").DataTable().ajax.reload(null, false);
               $("#purchase_requisition_datatable").DataTable().ajax.reload(null, false);
 
-              // ✅ Update status field display in modal
               const statusText =
                 selectedValue === "1"
                   ? "<span style='color: green; font-weight: bold;'>Approved</span>"
                   : "<span style='color: red; font-weight: bold;'>Rejected</span>";
 
-              // Replace all dropdowns (if any) in modal with status text
               $("#requisition_approval_modal")
                 .find("select.status-select-lvl2")
                 .each(function () {
                   $(this).replaceWith(statusText);
                 });
 
-              // ✅ Success message
               sweetalert(
                 "All items successfully " +
                   (selectedValue === "1"
@@ -387,10 +400,11 @@ $(document).on("change", "#bulk_status_select_lvl_2", function () {
                 "success"
               );
 
-              // ✅ Change dropdown text & disable for this record
+              // ✅ Reflect final state in header dropdown
               const newLabel = selectedValue === "1" ? "Approved" : "Rejected";
-              $("#bulk_status_select_lvl_2 option:selected").text(newLabel);
-              $("#bulk_status_select_lvl_2").prop("disabled", true);
+              $("#bulk_status_select_lvl_2")
+                .html(`<option value="${selectedValue}" selected>${newLabel}</option>`)
+                .prop("disabled", true);
             } else {
               sweetalert("Error: " + res.error, "error");
             }
@@ -403,11 +417,11 @@ $(document).on("change", "#bulk_status_select_lvl_2", function () {
         },
       });
     } else {
-      // Reset dropdown if cancelled
       $("#bulk_status_select_lvl_2").val("");
     }
   });
 });
+
 
 
 function handle_status(selectedValue, unique_id, cancelReason = "") {

@@ -1185,7 +1185,7 @@ break;
             }
             $row['amount'] = round($finalAmount, 2);
 
-            $total_amount += $row['amount'];
+            $total_amount += $afterDiscount;
 
             error_log("row: " . print_r($row, true) . "\n", 3, "logs/row_logs.txt");
 
@@ -1570,6 +1570,7 @@ function generateGRN($label, &$labelData) {
 
     return $grn;
 }
+
 
 function fetch_grn_number($table)
 {

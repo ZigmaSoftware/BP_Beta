@@ -9,6 +9,8 @@ $table             = "integrated_dailylogsheet_entry";
 
 // Include DB file and Common Functions
 include '../../config/dbconfig.php';
+include '../../config/dbconfig_weighbridge.php';
+
 
 // Variables Declaration
 $action             = $_POST['action'];
@@ -781,6 +783,89 @@ switch ($action) {
         echo json_encode(['status'=>true,'data'=>$res->data[0]]);
     } else {
         echo json_encode(['status'=>false,'data'=>['manure_stock'=>0]]);
+    }
+    break;
+    
+  case 'fetch_weighbridge_data':
+    header('Content-Type: application/json');
+    $entry_date = trim($_POST['entry_date'] ?? '');
+
+    if ($entry_date == '') {
+        echo json_encode(['status' => false, 'error' => 'Missing date']);
+        break;
+    }
+
+    try {
+        $sql = "
+            SELECT
+                SUM(DRY_WASTE) AS dry_mix_corp,
+                SUM(WET_WASTE) AS wet_mix_corp,
+                SUM(MIX_WASTE_NETWEIGHT) AS mix_waste_total
+            FROM (
+                -- Joined records (ticket_weighbridge_bp)
+                SELECT
+                    t1.TicketNo,
+                    t1.VehicleNo,
+                    t1.Date,
+                    t1.Time,
+                    SUM(CASE WHEN t2.MaterialCode = 'DRY WASTE' THEN t2.Weight ELSE 0 END) AS DRY_WASTE,
+                    SUM(CASE WHEN t2.MaterialCode = 'WET WASTE' THEN t2.Weight ELSE 0 END) AS WET_WASTE,
+                    SUM(CASE WHEN t2.MaterialCode = '3' THEN t2.Weight ELSE 0 END) AS MIX_WASTE_NETWEIGHT
+                FROM newweighbridge_bp t1
+                JOIN ticket_weighbridge_bp t2
+                    ON t1.TicketNo = t2.TicketNo
+                WHERE DATE(t1.Date) = :entry_date
+                GROUP BY t1.TicketNo
+
+                UNION ALL
+
+                -- Direct weighbridge entries
+                SELECT
+                    t1.TicketNo,
+                    t1.VehicleNo,
+                    t1.Date,
+                    t1.Time,
+                    0 AS DRY_WASTE,
+                    0 AS WET_WASTE,
+                    t1.NetWeight AS MIX_WASTE_NETWEIGHT
+                FROM newweighbridge_bp t1
+                WHERE DATE(t1.Date) = :entry_date
+                  AND t1.State NOT IN ('FT','FMT')
+                  AND t1.MaterialName NOT IN ('DRY WASTE', 'WET WASTE')
+            ) AS combined;
+        ";
+
+        // Log for debugging
+        error_log("fetch_weighbridge_data SQL for date {$entry_date}\n{$sql}\n", 3, "login.log");
+
+        $stmt = $conn->prepare($sql);
+        $stmt->execute([':entry_date' => $entry_date]);
+        $row = $stmt->fetch(PDO::FETCH_ASSOC) ?: [];
+
+        // Values
+        $dry_mix_corp        = round($row['dry_mix_corp'] ?? 0, 2);
+        $wet_mix_corp        = round($row['wet_mix_corp'] ?? 0, 2);
+        $mix_waste_total     = round($row['mix_waste_total'] ?? 0, 2);
+
+        // Mapping to required fields
+        $dry_mix_bwg         = $mix_waste_total; // ← your requirement
+        $wet_segregated_corp = 0;
+        $wet_mix_bwg         = 0;
+        $wet_segregated_bwg  = 0;
+
+        echo json_encode([
+            'status' => true,
+            'data'   => [
+                'dry_mix_corp'        => $dry_mix_corp,
+                'wet_mix_corp'        => $wet_mix_corp,
+                'dry_mix_bwg'         => $dry_mix_bwg,
+                'wet_segregated_corp' => $wet_segregated_corp,
+                'wet_mix_bwg'         => $wet_mix_bwg,
+                'wet_segregated_bwg'  => $wet_segregated_bwg
+            ]
+        ]);
+    } catch (Exception $e) {
+        echo json_encode(['status' => false, 'error' => $e->getMessage()]);
     }
     break;
 

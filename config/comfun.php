@@ -1034,7 +1034,7 @@ function select_option($options = [], $description = "", $is_selected = [], $is_
         $option_str     = "<option value=''>Select</option>";
 
         if ($description) {
-            $option_str     = "<option value='' selected>" . $description . "</option>";
+            $option_str     = "<option value=''>" . $description . "</option>";
         }
         foreach ($options as $key => $value) {
 
@@ -1293,7 +1293,7 @@ function state($unique_id = '', $country_id = "")
     }
 }
 
-function get_project_name($unique_id = '', $company_id = "")
+function get_project_name_all($unique_id = '', $company_id = "")
 {
     global $pdo;
 
@@ -1342,6 +1342,80 @@ function get_project_name($unique_id = '', $company_id = "")
         return 0;
     }
 }
+
+function get_project_name($unique_id = '', $company_id = "")
+{
+    global $pdo;
+    session_start(); // Ensure session is active
+
+    $table_name    = "project_creation";
+    $table_columns = [
+        "unique_id",
+        "project_name",
+        "project_code"
+    ];
+
+    $table_details = [$table_name, $table_columns];
+
+    // Base condition: fetch all active and non-deleted projects
+    $where = [
+        "is_active" => 1,
+        "is_delete" => 0
+    ];
+
+    // Optional filter: company
+    if (!empty($company_id)) {
+        $where["company_name"] = $company_id;
+    }
+
+    // If a specific project requested, skip the rest
+    if (!empty($unique_id)) {
+        $where = ["unique_id" => $unique_id];
+    }
+
+    // --- Fetch all matching projects ---
+    $projects = $pdo->select($table_details, $where);
+
+    if (!$projects->status || empty($projects->data)) {
+        return 0;
+    }
+
+    // --- SESSION FILTER (done in PHP) ---
+    $session_work = $_SESSION['work_location'] ?? '';
+    $filtered_data = [];
+
+    if (!empty($session_work) && strtolower($session_work) !== 'all') {
+        // Convert to array (handles both string and array)
+        $session_projects = is_array($session_work)
+            ? $session_work
+            : array_map('trim', explode(',', $session_work));
+
+        // Keep only projects whose unique_id matches the session
+        foreach ($projects->data as $row) {
+            if (in_array($row['unique_id'], $session_projects)) {
+                $filtered_data[] = $row;
+            }
+        }
+    } else {
+        // If session empty or 'all', keep all results
+        $filtered_data = $projects->data;
+    }
+
+    // --- Format final output ---
+    if (!empty($filtered_data)) {
+        $formatted = [];
+        foreach ($filtered_data as $row) {
+            $formatted[] = [
+                "unique_id" => $row["unique_id"],
+                "label"     => $row["project_code"] . " / " . $row["project_name"]
+            ];
+        }
+        return $formatted;
+    }
+
+    return 0;
+}
+
 
 
 
@@ -3917,6 +3991,7 @@ function staff_name_bp($employee_id = "", $staff_name = "")
     $table_columns = [
         "employee_id",
         "staff_name",
+        "work_location"
     ];
 
     $table_details = [

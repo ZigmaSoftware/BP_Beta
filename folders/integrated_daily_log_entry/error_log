@@ -218,3 +218,166 @@ Stack trace:
 #0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
 #1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/integrated_daily_log_entry/crud.php(139): db->select(Array, 'is_delete = '0'', '10', '0', '', 'SQL_CALC_FOUND_...')
 #2 {main}
+[09-Oct-2025 15:29:48 Asia/Kolkata] PDOException: SQLSTATE[HY000] [1045] Access denied for user 'zigmaglobal_new_user'@'localhost' (using password: YES) in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:48
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(48): PDO->__construct('mysql:host=loca...', 'zigmaglobal_new...', 'Bq3[1PYLs6q2', Array)
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbconfig_weighbridge.php(32): db->__construct('mysql', 'localhost', 'zigmaglobal_new...', 'Bq3[1PYLs6q2', 'zigmaglo_erp')
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/integrated_daily_log_entry/crud.php(12): include('/home/ie9owkuzk...')
+#3 {main}
+[09-Oct-2025 15:29:48 Asia/Kolkata] PDOException: SQLSTATE[HY000] [1045] Access denied for user 'zigmaglobal_new_user'@'localhost' (using password: YES) in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:48
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(48): PDO->__construct('mysql:host=loca...', 'zigmaglobal_new...', 'Bq3[1PYLs6q2', Array)
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbconfig_weighbridge.php(32): db->__construct('mysql', 'localhost', 'zigmaglobal_new...', 'Bq3[1PYLs6q2', 'zigmaglo_erp')
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/integrated_daily_log_entry/crud.php(12): include('/home/ie9owkuzk...')
+#3 {main}
+[09-Oct-2025 15:30:05 Asia/Kolkata] PDOException: SQLSTATE[HY000] [1045] Access denied for user 'zigmaglobal_new_user'@'localhost' (using password: YES) in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:48
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(48): PDO->__construct('mysql:host=loca...', 'zigmaglobal_new...', 'Bq3[1PYLs6q2', Array)
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbconfig_weighbridge.php(32): db->__construct('mysql', 'localhost', 'zigmaglobal_new...', 'Bq3[1PYLs6q2', 'zigmaglo_erp')
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/integrated_daily_log_entry/crud.php(12): include('/home/ie9owkuzk...')
+#3 {main}
+[09-Oct-2025 15:30:05 Asia/Kolkata] PDOException: SQLSTATE[HY000] [1045] Access denied for user 'zigmaglobal_new_user'@'localhost' (using password: YES) in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:48
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(48): PDO->__construct('mysql:host=loca...', 'zigmaglobal_new...', 'Bq3[1PYLs6q2', Array)
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbconfig_weighbridge.php(32): db->__construct('mysql', 'localhost', 'zigmaglobal_new...', 'Bq3[1PYLs6q2', 'zigmaglo_erp')
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/integrated_daily_log_entry/crud.php(12): include('/home/ie9owkuzk...')
+#3 {main}
+[09-Oct-2025 15:30:10 Asia/Kolkata] PDOException: SQLSTATE[HY000] [1045] Access denied for user 'zigmaglobal_new_user'@'localhost' (using password: YES) in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:48
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(48): PDO->__construct('mysql:host=loca...', 'zigmaglobal_new...', 'Bq3[1PYLs6q2', Array)
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbconfig_weighbridge.php(32): db->__construct('mysql', 'localhost', 'zigmaglobal_new...', 'Bq3[1PYLs6q2', 'zigmaglo_erp')
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/integrated_daily_log_entry/crud.php(12): include('/home/ie9owkuzk...')
+#3 {main}
+[09-Oct-2025 15:30:10 Asia/Kolkata] PDOException: SQLSTATE[HY000] [1045] Access denied for user 'zigmaglobal_new_user'@'localhost' (using password: YES) in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:48
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(48): PDO->__construct('mysql:host=loca...', 'zigmaglobal_new...', 'Bq3[1PYLs6q2', Array)
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbconfig_weighbridge.php(32): db->__construct('mysql', 'localhost', 'zigmaglobal_new...', 'Bq3[1PYLs6q2', 'zigmaglo_erp')
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/integrated_daily_log_entry/crud.php(12): include('/home/ie9owkuzk...')
+#3 {main}
+[09-Oct-2025 15:30:31 Asia/Kolkata] PDOException: SQLSTATE[HY000] [1045] Access denied for user 'zigmaglobal_new_user'@'localhost' (using password: YES) in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:48
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(48): PDO->__construct('mysql:host=loca...', 'zigmaglobal_new...', 'Bq3[1PYLs6q2', Array)
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbconfig_weighbridge.php(32): db->__construct('mysql', 'localhost', 'zigmaglobal_new...', 'Bq3[1PYLs6q2', 'zigmaglo_erp')
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/integrated_daily_log_entry/crud.php(12): include('/home/ie9owkuzk...')
+#3 {main}
+[09-Oct-2025 15:30:31 Asia/Kolkata] PDOException: SQLSTATE[HY000] [1045] Access denied for user 'zigmaglobal_new_user'@'localhost' (using password: YES) in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:48
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(48): PDO->__construct('mysql:host=loca...', 'zigmaglobal_new...', 'Bq3[1PYLs6q2', Array)
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbconfig_weighbridge.php(32): db->__construct('mysql', 'localhost', 'zigmaglobal_new...', 'Bq3[1PYLs6q2', 'zigmaglo_erp')
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/integrated_daily_log_entry/crud.php(12): include('/home/ie9owkuzk...')
+#3 {main}
+[09-Oct-2025 15:30:34 Asia/Kolkata] PDOException: SQLSTATE[HY000] [1045] Access denied for user 'zigmaglobal_new_user'@'localhost' (using password: YES) in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:48
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(48): PDO->__construct('mysql:host=loca...', 'zigmaglobal_new...', 'Bq3[1PYLs6q2', Array)
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbconfig_weighbridge.php(32): db->__construct('mysql', 'localhost', 'zigmaglobal_new...', 'Bq3[1PYLs6q2', 'zigmaglo_erp')
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/integrated_daily_log_entry/crud.php(12): include('/home/ie9owkuzk...')
+#3 {main}
+[09-Oct-2025 15:30:34 Asia/Kolkata] PDOException: SQLSTATE[HY000] [1045] Access denied for user 'zigmaglobal_new_user'@'localhost' (using password: YES) in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:48
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(48): PDO->__construct('mysql:host=loca...', 'zigmaglobal_new...', 'Bq3[1PYLs6q2', Array)
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbconfig_weighbridge.php(32): db->__construct('mysql', 'localhost', 'zigmaglobal_new...', 'Bq3[1PYLs6q2', 'zigmaglo_erp')
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/integrated_daily_log_entry/crud.php(12): include('/home/ie9owkuzk...')
+#3 {main}
+[09-Oct-2025 15:30:36 Asia/Kolkata] PDOException: SQLSTATE[HY000] [1045] Access denied for user 'zigmaglobal_new_user'@'localhost' (using password: YES) in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:48
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(48): PDO->__construct('mysql:host=loca...', 'zigmaglobal_new...', 'Bq3[1PYLs6q2', Array)
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbconfig_weighbridge.php(32): db->__construct('mysql', 'localhost', 'zigmaglobal_new...', 'Bq3[1PYLs6q2', 'zigmaglo_erp')
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/integrated_daily_log_entry/crud.php(12): include('/home/ie9owkuzk...')
+#3 {main}
+[09-Oct-2025 15:30:36 Asia/Kolkata] PDOException: SQLSTATE[HY000] [1045] Access denied for user 'zigmaglobal_new_user'@'localhost' (using password: YES) in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:48
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(48): PDO->__construct('mysql:host=loca...', 'zigmaglobal_new...', 'Bq3[1PYLs6q2', Array)
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbconfig_weighbridge.php(32): db->__construct('mysql', 'localhost', 'zigmaglobal_new...', 'Bq3[1PYLs6q2', 'zigmaglo_erp')
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/integrated_daily_log_entry/crud.php(12): include('/home/ie9owkuzk...')
+#3 {main}
+[09-Oct-2025 15:30:44 Asia/Kolkata] PDOException: SQLSTATE[HY000] [1045] Access denied for user 'zigmaglobal_new_user'@'localhost' (using password: YES) in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:48
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(48): PDO->__construct('mysql:host=loca...', 'zigmaglobal_new...', 'Bq3[1PYLs6q2', Array)
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbconfig_weighbridge.php(32): db->__construct('mysql', 'localhost', 'zigmaglobal_new...', 'Bq3[1PYLs6q2', 'zigmaglo_erp')
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/integrated_daily_log_entry/crud.php(12): include('/home/ie9owkuzk...')
+#3 {main}
+[09-Oct-2025 15:30:44 Asia/Kolkata] PDOException: SQLSTATE[HY000] [1045] Access denied for user 'zigmaglobal_new_user'@'localhost' (using password: YES) in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:48
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(48): PDO->__construct('mysql:host=loca...', 'zigmaglobal_new...', 'Bq3[1PYLs6q2', Array)
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbconfig_weighbridge.php(32): db->__construct('mysql', 'localhost', 'zigmaglobal_new...', 'Bq3[1PYLs6q2', 'zigmaglo_erp')
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/integrated_daily_log_entry/crud.php(12): include('/home/ie9owkuzk...')
+#3 {main}
+[09-Oct-2025 15:30:52 Asia/Kolkata] PDOException: SQLSTATE[HY000] [1045] Access denied for user 'zigmaglobal_new_user'@'localhost' (using password: YES) in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:48
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(48): PDO->__construct('mysql:host=loca...', 'zigmaglobal_new...', 'Bq3[1PYLs6q2', Array)
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbconfig_weighbridge.php(32): db->__construct('mysql', 'localhost', 'zigmaglobal_new...', 'Bq3[1PYLs6q2', 'zigmaglo_erp')
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/integrated_daily_log_entry/crud.php(12): include('/home/ie9owkuzk...')
+#3 {main}
+[09-Oct-2025 15:31:01 Asia/Kolkata] PDOException: SQLSTATE[HY000] [1045] Access denied for user 'zigmaglobal_new_user'@'localhost' (using password: YES) in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:48
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(48): PDO->__construct('mysql:host=loca...', 'zigmaglobal_new...', 'Bq3[1PYLs6q2', Array)
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbconfig_weighbridge.php(32): db->__construct('mysql', 'localhost', 'zigmaglobal_new...', 'Bq3[1PYLs6q2', 'zigmaglo_erp')
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/integrated_daily_log_entry/crud.php(12): include('/home/ie9owkuzk...')
+#3 {main}
+[09-Oct-2025 15:31:01 Asia/Kolkata] PDOException: SQLSTATE[HY000] [1045] Access denied for user 'zigmaglobal_new_user'@'localhost' (using password: YES) in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:48
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(48): PDO->__construct('mysql:host=loca...', 'zigmaglobal_new...', 'Bq3[1PYLs6q2', Array)
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbconfig_weighbridge.php(32): db->__construct('mysql', 'localhost', 'zigmaglobal_new...', 'Bq3[1PYLs6q2', 'zigmaglo_erp')
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/integrated_daily_log_entry/crud.php(12): include('/home/ie9owkuzk...')
+#3 {main}
+[09-Oct-2025 15:31:19 Asia/Kolkata] PDOException: SQLSTATE[HY000] [1045] Access denied for user 'zigmaglobal_new_user'@'localhost' (using password: YES) in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:48
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(48): PDO->__construct('mysql:host=loca...', 'zigmaglobal_new...', 'Bq3[1PYLs6q2', Array)
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbconfig_weighbridge.php(32): db->__construct('mysql', 'localhost', 'zigmaglobal_new...', 'Bq3[1PYLs6q2', 'zigmaglo_erp')
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/integrated_daily_log_entry/crud.php(12): include('/home/ie9owkuzk...')
+#3 {main}
+[09-Oct-2025 15:31:31 Asia/Kolkata] PDOException: SQLSTATE[HY000] [1045] Access denied for user 'zigmaglobal_new_user'@'localhost' (using password: YES) in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:48
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(48): PDO->__construct('mysql:host=loca...', 'zigmaglobal_new...', 'Bq3[1PYLs6q2', Array)
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbconfig_weighbridge.php(32): db->__construct('mysql', 'localhost', 'zigmaglobal_new...', 'Bq3[1PYLs6q2', 'zigmaglo_erp')
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/integrated_daily_log_entry/crud.php(12): include('/home/ie9owkuzk...')
+#3 {main}
+[09-Oct-2025 15:34:10 Asia/Kolkata] PDOException: SQLSTATE[HY000] [1045] Access denied for user 'zigmaglobal_new_user'@'localhost' (using password: YES) in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:48
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(48): PDO->__construct('mysql:host=loca...', 'zigmaglobal_new...', 'Bq3[1PYLs6q2', Array)
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbconfig_weighbridge.php(32): db->__construct('mysql', 'localhost', 'zigmaglobal_new...', 'Bq3[1PYLs6q2', 'zigmaglo_erp')
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/integrated_daily_log_entry/crud.php(12): include('/home/ie9owkuzk...')
+#3 {main}
+[09-Oct-2025 15:35:22 Asia/Kolkata] PDOException: SQLSTATE[HY000] [1045] Access denied for user 'zigmaglobal_new_user'@'localhost' (using password: YES) in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:48
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(48): PDO->__construct('mysql:host=loca...', 'zigmaglobal_new...', 'Bq3[1PYLs6q2', Array)
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbconfig_weighbridge.php(32): db->__construct('mysql', 'localhost', 'zigmaglobal_new...', 'Bq3[1PYLs6q2', 'zigmaglo_erp')
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/integrated_daily_log_entry/crud.php(12): include('/home/ie9owkuzk...')
+#3 {main}
+[09-Oct-2025 15:35:34 Asia/Kolkata] PDOException: SQLSTATE[HY000] [1045] Access denied for user 'zigmaglobal_new_user'@'localhost' (using password: YES) in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:48
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(48): PDO->__construct('mysql:host=loca...', 'zigmaglobal_new...', 'Bq3[1PYLs6q2', Array)
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbconfig_weighbridge.php(32): db->__construct('mysql', 'localhost', 'zigmaglobal_new...', 'Bq3[1PYLs6q2', 'zigmaglo_erp')
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/integrated_daily_log_entry/crud.php(12): include('/home/ie9owkuzk...')
+#3 {main}
+[09-Oct-2025 15:42:29 Asia/Kolkata] PDOException: SQLSTATE[HY000] [1045] Access denied for user 'zigmaglobal_new_user'@'localhost' (using password: YES) in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:48
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(48): PDO->__construct('mysql:host=loca...', 'zigmaglobal_new...', 'Bq3[1PYLs6q2', Array)
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbconfig_weighbridge.php(32): db->__construct('mysql', 'localhost', 'zigmaglobal_new...', 'Bq3[1PYLs6q2', 'zigmaglo_erp')
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/integrated_daily_log_entry/crud.php(12): include('/home/ie9owkuzk...')
+#3 {main}
+[09-Oct-2025 15:42:34 Asia/Kolkata] PDOException: SQLSTATE[HY000] [1045] Access denied for user 'zigmaglobal_new_user'@'localhost' (using password: YES) in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:48
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(48): PDO->__construct('mysql:host=loca...', 'zigmaglobal_new...', 'Bq3[1PYLs6q2', Array)
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbconfig_weighbridge.php(32): db->__construct('mysql', 'localhost', 'zigmaglobal_new...', 'Bq3[1PYLs6q2', 'zigmaglo_erp')
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/integrated_daily_log_entry/crud.php(12): include('/home/ie9owkuzk...')
+#3 {main}
+[09-Oct-2025 15:42:56 Asia/Kolkata] PDOException: SQLSTATE[HY000] [1045] Access denied for user 'zigmaglobal_new_user'@'localhost' (using password: YES) in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:48
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(48): PDO->__construct('mysql:host=loca...', 'zigmaglobal_new...', 'Bq3[1PYLs6q2', Array)
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbconfig_weighbridge.php(32): db->__construct('mysql', 'localhost', 'zigmaglobal_new...', 'Bq3[1PYLs6q2', 'zigmaglo_erp')
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/integrated_daily_log_entry/crud.php(12): include('/home/ie9owkuzk...')
+#3 {main}
+[09-Oct-2025 15:48:03 Asia/Kolkata] PDOException: PDO::__construct(): php_network_getaddresses: getaddrinfo failed: Name or service not known in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:48
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(48): PDO->__construct('mysql:host=zigm...', 'zigmaglobal_new...', 'Bq3[1PYLs6q2', Array)
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbconfig_weighbridge.php(32): db->__construct('mysql', 'zigmaglobal', 'zigmaglobal_new...', 'Bq3[1PYLs6q2', 'zigmaglo_erp')
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/integrated_daily_log_entry/crud.php(12): include('/home/ie9owkuzk...')
+#3 {main}
+
+Next PDOException: SQLSTATE[HY000] [2002] php_network_getaddresses: getaddrinfo failed: Name or service not known in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:48
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(48): PDO->__construct('mysql:host=zigm...', 'zigmaglobal_new...', 'Bq3[1PYLs6q2', Array)
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbconfig_weighbridge.php(32): db->__construct('mysql', 'zigmaglobal', 'zigmaglobal_new...', 'Bq3[1PYLs6q2', 'zigmaglo_erp')
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/integrated_daily_log_entry/crud.php(12): include('/home/ie9owkuzk...')
+#3 {main}
