@@ -842,34 +842,38 @@ switch ($action) {
         $stmt->execute([':entry_date' => $entry_date]);
         $row = $stmt->fetch(PDO::FETCH_ASSOC) ?: [];
 
-        // Values
+        // Core values
         $dry_mix_corp        = round($row['dry_mix_corp'] ?? 0, 2);
         $wet_mix_corp        = round($row['wet_mix_corp'] ?? 0, 2);
         $mix_waste_total     = round($row['mix_waste_total'] ?? 0, 2);
 
-        // Mapping to required fields
-        $dry_mix_bwg         = $mix_waste_total; // ← your requirement
+        // BWG and other mappings
         $wet_segregated_corp = 0;
+        $dry_mix_bwg         = $mix_waste_total;
         $wet_mix_bwg         = 0;
         $wet_segregated_bwg  = 0;
+
+        // Derived totals
+        $complete_mix_corp   = $dry_mix_corp + $wet_mix_corp + $wet_segregated_corp;
+        $complete_mix_bwg    = $wet_mix_bwg + $dry_mix_bwg + $wet_segregated_bwg;
 
         echo json_encode([
             'status' => true,
             'data'   => [
-                'dry_mix_corp'        => $dry_mix_corp,
-                'wet_mix_corp'        => $wet_mix_corp,
-                'dry_mix_bwg'         => $dry_mix_bwg,
-                'wet_segregated_corp' => $wet_segregated_corp,
-                'wet_mix_bwg'         => $wet_mix_bwg,
-                'wet_segregated_bwg'  => $wet_segregated_bwg
+                'dry_mix_corp'          => $dry_mix_corp,
+                'wet_mix_corp'          => $wet_mix_corp,
+                'wet_segregated_corp'   => $wet_segregated_corp,
+                'complete_mix_corp'     => $complete_mix_corp,
+                'dry_mix_bwg'           => $dry_mix_bwg,
+                'wet_mix_bwg'           => $wet_mix_bwg,
+                'wet_segregated_bwg'    => $wet_segregated_bwg,
+                'complete_mix_bwg'      => $complete_mix_bwg
             ]
         ]);
     } catch (Exception $e) {
         echo json_encode(['status' => false, 'error' => $e->getMessage()]);
     }
     break;
-
-
 
 
 

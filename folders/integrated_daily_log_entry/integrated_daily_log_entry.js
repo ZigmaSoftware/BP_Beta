@@ -768,39 +768,74 @@ function load_entry_values_if_any() {
 function setupAutoWeighbridgeFetch() {
   // Bind change event once dynamic fields are rendered
   $(document).on('change', '[name="values[date_field]"]', function() {
-  const dateVal = $(this).val(); // <— this should be in format YYYY-MM-DD
-  if (!dateVal) return;
+    const dateVal = $(this).val(); // <— this should be in format YYYY-MM-DD
+    if (!dateVal) return;
 
-  const ajax_url = sessionStorage.getItem("folder_crud_link");
+    const ajax_url = sessionStorage.getItem("folder_crud_link");
+    console.log("Sending date to fetch_weighbridge_data:", dateVal); // Debug
 
-  console.log("Sending date to fetch_weighbridge_data:", dateVal); // Debug
+    $.ajax({
+      type: "POST",
+      url: ajax_url,
+      dataType: "json",
+      data: {
+        action: "fetch_weighbridge_data",
+        entry_date: dateVal // <— backend expects this key
+      },
+      success: function (resp) {
+        console.log("Weighbridge Data Response:", resp);
+        if (resp.status && resp.data) {
+          const d = resp.data;
 
-  $.ajax({
-    type: "POST",
-    url: ajax_url,
-    dataType: "json",
-    data: {
-      action: "fetch_weighbridge_data",
-      entry_date: dateVal // <— backend expects this key
-    },
-    success: function(resp) {
-      console.log("Weighbridge Data Response:", resp);
-      if (resp.status && resp.data) {
-        const d = resp.data;
-        $('[name="values[dry_mix_corp]"]').val(d.dry_mix_corp);
-        $('[name="values[wet_mix_corp]"]').val(d.wet_mix_corp);
-        $('[name="values[dry_mix_bwg]"]').val(d.dry_mix_bwg);
-        $('[name="values[wet_segregated_corp]"]').val(d.wet_segregated_corp);
-        $('[name="values[wet_mix_bwg]"]').val(d.wet_mix_bwg);
-        $('[name="values[wet_segregated_bwg]"]').val(d.wet_segregated_bwg);
+          // --- Corp fields ---
+          $('[name="values[dry_mix_corp]"]').val(d.dry_mix_corp);
+          $('[name="values[wet_mix_corp]"]').val(d.wet_mix_corp);
+          $('[name="values[wet_segregated_corp]"]').val(d.wet_segregated_corp);
+          $('[name="values[complete_mix_corp]"]').val(d.complete_mix_corp);
+
+          // --- BWG fields ---
+          $('[name="values[dry_mix_bwg]"]').val(d.dry_mix_bwg);
+          $('[name="values[wet_mix_bwg]"]').val(d.wet_mix_bwg);
+          $('[name="values[wet_segregated_bwg]"]').val(d.wet_segregated_bwg);
+          $('[name="values[complete_mix_bwg]"]').val(d.complete_mix_bwg);
+        }
+      },
+      error: function (xhr, status, err) {
+        console.error("AJAX error:", status, err);
       }
-    },
-    error: function(xhr, status, err) {
-      console.error("AJAX error:", status, err);
-    }
+    });
   });
-});
 
+  /* --- AUTO RECALCULATE MIX TOTALS WHEN USER EDITS MANUALLY --- */
+  $(document).on(
+    "input",
+    '[name="values[dry_mix_corp]"], [name="values[wet_mix_corp]"], [name="values[wet_segregated_corp]"], [name="values[dry_mix_bwg]"], [name="values[wet_mix_bwg]"], [name="values[wet_segregated_bwg]"]',
+    function () {
+      const getVal = (n) => parseFloat($(`[name="values[${n}]"]`).val()) || 0;
+
+      // Recalculate Complete Mix (Corp)
+      const dryCorp = getVal("dry_mix_corp");
+      const wetCorp = getVal("wet_mix_corp");
+      const wetSegC = getVal("wet_segregated_corp");
+      const completeCorp = dryCorp + wetCorp + wetSegC;
+      $('[name="values[complete_mix_corp]"]').val(completeCorp.toFixed(2));
+
+      // Recalculate Complete Mix (BWG)
+      const dryBWG = getVal("dry_mix_bwg");
+      const wetBWG = getVal("wet_mix_bwg");
+      const wetSegBW = getVal("wet_segregated_bwg");
+      const completeBWG = dryBWG + wetBWG + wetSegBW;
+      $('[name="values[complete_mix_bwg]"]').val(completeBWG.toFixed(2));
+    }
+  );
+
+  /* --- OPTIONAL: Make Complete Mix fields read-only to prevent manual overwrite --- */
+  $(document).ready(function () {
+    $('[name="values[complete_mix_corp]"], [name="values[complete_mix_bwg]"]').attr("readonly", true).css({
+      "background-color": "#f5f5f5",
+      "cursor": "not-allowed"
+    });
+  });
 }
 
 function load_projects_for_filter(company_id = "", selected = "") {
