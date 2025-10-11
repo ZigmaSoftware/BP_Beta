@@ -211,7 +211,7 @@ switch ($action) {
                     $image_files = explode(',', $value['file_attach']);
                     $image_buttons = "";
                     foreach ($image_files as $image_file) {
-                        $image_path = "../blue_planet_beta/uploads/grn_new/" . trim($image_file);
+                        $image_path = "../blue_planet_erp/uploads/grn_new/" . trim($image_file);
                         $view_button = "<button type='button' onclick=\"new_external_window_image('$image_path')\" style='border: 2px solid #ccc; background:none; cursor:pointer; padding:5px; border-radius:5px; margin-right: 5px;'> <i class='fas fa-image' style='font-size: 20px; color: #555;'></i>
                         </button>";
                         $image_buttons .= $view_button;
@@ -277,9 +277,9 @@ switch ($action) {
             "is_delete"     => 0
         ];
         if($status != ''){
-            $where = " is_delete = '0' AND invoice_date >= '$from' AND invoice_date <= '$to' AND check_status = 1 AND approve_status = '$status'";
+            $where = " is_delete = '0' AND entry_date >= '$from' AND entry_date <= '$to' AND check_status = 1 AND approve_status = '$status'";
         } else {
-            $where = " is_delete = '0' AND invoice_date >= '$from' AND invoice_date <= '$to' AND check_status = 1";
+            $where = " is_delete = '0' AND entry_date >= '$from' AND entry_date <= '$to' AND check_status = 1";
         }
         $order_column   = $_POST["order"][0]["column"];
         $order_dir      = $_POST["order"][0]["dir"];
@@ -425,55 +425,60 @@ switch ($action) {
     break;
 
     case "grn_sublist_datatable":
-        $screen_unique_id = $_POST["screen_unique_id"];
-        $btn_prefix = "grn_sub";
-        $is_update = isset($_POST['is_update']) ? $_POST['is_update'] : false;
-        $po_unique_id = fetch_po_unique_id($sub_table, $screen_unique_id);
-        $po_unique_id = is_array($po_unique_id) ? $po_unique_id[0]["po_unique_id"] : $po_unique_id;
-        $unique_id = fetch_unique_id($sub_table, $screen_unique_id);
-        $unique_id = is_array($unique_id) ? $unique_id[0]["unique_id"] : $unique_id;
-        $po_sc_unique_id = fetch_po_sc_unique_id($po_unique_id);
-        $po_sc_unique_id = is_array($po_sc_unique_id) ? $po_sc_unique_id[0]["screen_unique_id"] : $po_sc_unique_id;
-        $td_data = fetch_tax_discount($po_sc_unique_id);
-        $tax = $td_data['tax'];
-        $tax_name = tax($tax)[0]['tax_name'];
-        $tax = tax($tax)[0]['tax_value'];
-        $discount = $td_data['discount'];
-        $discount_type = $td_data['discount_type'];
-        $total_amount = 0;
-        $taxed_val = 0;
-        $pdo->query("SET @a := 0;");
-        $columns = [
-            "@a := @a + 1 AS s_no",
-            "gs.item_code",
-            "gs.order_qty",
-            "gs.uom",
-            "(gs.now_received_qty - gs.update_qty)",
-            "IF(gs.po_unique_id = '0', 
-                gs.order_qty, 
-                IF(gs.update_qty IS NULL OR gs.update_qty = 0, 
-                    GREATEST(gs.order_qty - COALESCE(grn_sub.total_received_qty, 0), 0), 
-                    gs.update_qty
-                )
-            ) AS update_qty",
-            "poi_items.rate",
-            "'$tax_name' AS tax_name",
-            "$discount_type AS discount_type",
-            "$discount AS discount",
-            "ROUND(((gs.update_qty * poi_items.rate) - ((gs.update_qty * poi_items.rate * $discount) / 100)) + (((gs.update_qty * poi_items.rate - (gs.update_qty * poi_items.rate * $discount / 100)) * $tax) / 100), 2) AS amount",
-            "gs.unique_id"
-        ];
+    $screen_unique_id = $_POST["screen_unique_id"];
+    $btn_prefix = "grn_sub";
+    $is_update = isset($_POST['is_update']) ? $_POST['is_update'] : false;
 
-        error_log("columns: " . print_r($columns, true) . "\n", 3, "columns_log.txt");
+    $po_unique_id = fetch_po_unique_id($sub_table, $screen_unique_id);
+    $po_unique_id = is_array($po_unique_id) ? $po_unique_id[0]["po_unique_id"] : $po_unique_id;
 
+    $unique_id = fetch_unique_id($sub_table, $screen_unique_id);
+    $unique_id = is_array($unique_id) ? $unique_id[0]["unique_id"] : $unique_id;
 
-        $table_details = [
+    $po_sc_unique_id = fetch_po_sc_unique_id($po_unique_id);
+    $po_sc_unique_id = is_array($po_sc_unique_id) ? $po_sc_unique_id[0]["screen_unique_id"] : $po_sc_unique_id;
+
+    $td_data = fetch_tax_discount($po_sc_unique_id);
+    $tax = $td_data['tax'];
+    $tax_info = tax($tax);
+    $tax_name = $tax_info[0]['tax_name'];
+    $tax = (float)$tax_info[0]['tax_value'];
+    $discount = (float)$td_data['discount'];
+    $discount_type = $td_data['discount_type'];
+
+    $pdo->query("SET @a := 0;");
+    $total_amount = 0;
+    $taxed_val = 0;
+
+    $columns = [
+        "@a := @a + 1 AS s_no",
+        "gs.item_code",
+        "gs.order_qty",
+        "gs.uom",
+        "(gs.now_received_qty - gs.update_qty) AS prev_received",
+        "IF(gs.po_unique_id = '0', 
+            gs.order_qty, 
+            IF(gs.update_qty IS NULL OR gs.update_qty = 0, 
+                GREATEST(gs.order_qty - COALESCE(grn_sub.total_received_qty, 0), 0), 
+                gs.update_qty
+            )
+        ) AS update_qty",
+        "poi_items.rate",
+        "'$tax_name' AS tax_name",
+        "$discount_type AS discount_type",
+        "$discount AS discount",
+        // keep SQL-side amount for reference but not used for total
+        "ROUND(((gs.update_qty * poi_items.rate) - ((gs.update_qty * poi_items.rate * $discount) / 100)) + (((gs.update_qty * poi_items.rate - (gs.update_qty * poi_items.rate * $discount / 100)) * $tax) / 100), 2) AS amount",
+        "gs.unique_id"
+    ];
+
+    $table_details = [
         "$sub_table gs 
             LEFT JOIN ( 
                 SELECT 
                     gs2.item_code, 
                     gs2.po_unique_id, 
-                    (gs2.now_received_qty - gs2.update_qty) AS total_received_qty
+                    SUM(gs2.update_qty) AS total_received_qty
                 FROM grn_sublist as gs2
                 LEFT JOIN grn as g ON g.screen_unique_id = gs2.screen_unique_id
                 WHERE gs2.po_unique_id = '$po_unique_id' 
@@ -493,65 +498,95 @@ switch ($action) {
         AND gs.is_delete = 0",
         $columns
     ];
-        $result = $pdo->select($table_details);
-        error_log("result: " . print_r($result, true) . "\n", 3, "row_log.txt");
-        $data = [];
-        if ($result->status) {
-            foreach ($result->data as $row) {
-                $total_amount += isset($row['amount']) ? floatval($row['amount']) : 0;
-                $rate = $row['rate'];
-                $qty = $row['update_qty'];
-                $taxed_val += ($tax * $rate * $qty) / 100;
-                error_log("row: " . print_r($row, true) . "\n", 3, "row_logs.txt");
-                error_log("total: " . $total_amount . "\n", 3, "tot_log.txt");
-                if (!$is_update) {
-                    $item_code = $row['item_code'];
-                    $row['now_received_qty'] = isset($latest_qty_map[$item_code]) ? $latest_qty_map[$item_code] : 0;
-                }
-                $item_data = item_name_list($row["item_code"]);
-                $row["item_code"] = $item_data[0]["item_name"] . " / " . $item_data[0]["item_code"];
-                $uom_data = unit_name($row["uom"]);
-                // Map discount_type to display value
-                $discount_type_display = '';
-                if ($row['discount_type'] == 1) {
-                    $discount_type_display = 'Percentage';
-                } else if ($row['discount_type'] == 2) {
-                    $discount_type_display = 'Amount';
-                } else {
-                    $discount_type_display = 'No Type';
-                }
-                $row['discount_type_display'] = $discount_type_display;
-                $row['discount_type'] = $discount_type_display;
-                $row["uom"] = !empty($uom_data[0]["unit_name"]) ? $uom_data[0]["unit_name"] : $row["uom"];
-                $edit = btn_edit($btn_prefix, $row["unique_id"]);
-                $del = btn_delete($btn_prefix, $row["unique_id"]);
-                $row["unique_id"] = $edit . $del;
-                $data[] = array_merge(array_values($row), [
-                    'item_code' => $row["item_code"],
-                    'order_qty' => $row["order_qty"],
-                    'uom' => $row["uom"],
-                    'now_received_qty' => $row["now_received_qty"],
-                    'unique_id' => $row["unique_id"]
-                ]);
+
+    $result = $pdo->select($table_details);
+    $data = [];
+
+    if ($result->status) {
+        foreach ($result->data as $row) {
+            // --- numeric conversions ---
+            $qty  = isset($row['update_qty']) ? (float)$row['update_qty'] : 0.0;
+            $rate = isset($row['rate'])       ? (float)$row['rate']       : 0.0;
+
+            // --- discount ---
+            $discountAmt = 0.0;
+            if ($discount_type == 1 || $discount_type === 'Percentage') {
+                $discountAmt = ($qty * $rate * $discount) / 100;
+            } elseif ($discount_type == 2 || $discount_type === 'Amount') {
+                $discountAmt = $discount;
             }
-            echo json_encode([
-                "draw" => 1,
-                "recordsTotal" => count($data),
-                "recordsFiltered" => count($data),
-                "data" => $data,
-                "total" => $total_amount,
-                "taxed" => $taxed_val,
-            ]);
-        } else {
-            echo json_encode([
-                "draw" => 1,
-                "recordsTotal" => 0,
-                "recordsFiltered" => 0,
-                "data" => [],
-                "error" => $result->error
+
+            $afterDiscount = max(($qty * $rate) - $discountAmt, 0.0);
+
+            // --- tax ---
+            $rowTax = ($tax * $afterDiscount) / 100;
+
+            // --- per-row display amount ---
+            $row['amount'] = round($afterDiscount + $rowTax, 2);
+
+            // --- accumulate totals ---
+            $total_amount += round($afterDiscount, 2); // pre-tax total
+            $taxed_val    += round($rowTax, 2);        // total tax
+
+            // --- map item and uom ---
+            $item_data = item_name_list($row["item_code"]);
+            $row["item_code"] = $item_data[0]["item_name"] . " / " . $item_data[0]["item_code"];
+
+            $uom_data = unit_name($row["uom"]);
+            $row["uom"] = !empty($uom_data[0]["unit_name"]) ? $uom_data[0]["unit_name"] : $row["uom"];
+
+            // --- discount type display ---
+            if ($discount_type == 1 || $discount_type === 'Percentage') {
+                $row['discount_type_display'] = 'Percentage';
+                $row['discount_type'] = 'Percentage';
+            } elseif ($discount_type == 2 || $discount_type === 'Amount') {
+                $row['discount_type_display'] = 'Amount';
+                $row['discount_type'] = 'Amount';
+            } else {
+                $row['discount_type_display'] = 'No Type';
+                $row['discount_type'] = 'No Type';
+            }
+
+            // --- edit/delete buttons ---
+            $edit = btn_edit($btn_prefix, $row["unique_id"]);
+            $del  = btn_delete($btn_prefix, $row["unique_id"]);
+            $row["unique_id"] = $edit . $del;
+
+            $data[] = array_merge(array_values($row), [
+                'item_code'        => $row["item_code"],
+                'order_qty'        => $row["order_qty"],
+                'uom'              => $row["uom"],
+                'now_received_qty' => $row["now_received_qty"] ?? 0,
+                'update_qty'       => $row["update_qty"],
+                'rate'             => $row["rate"],
+                'tax'              => $tax_name,
+                'discount_type'    => $row["discount_type"],
+                'discount'         => $discount,
+                'discount_type_display' => $row["discount_type_display"],
+                'amount'           => $row['amount'],
+                'unique_id'        => $row["unique_id"]
             ]);
         }
+
+        echo json_encode([
+            "draw"            => 1,
+            "recordsTotal"    => count($data),
+            "recordsFiltered" => count($data),
+            "data"            => $data,
+            "total"           => $total_amount, // ✅ pre-tax, after discount
+            "taxed"           => $taxed_val     // ✅ total GST
+        ]);
+    } else {
+        echo json_encode([
+            "draw" => 1,
+            "recordsTotal" => 0,
+            "recordsFiltered" => 0,
+            "data" => [],
+            "error" => $result->error
+        ]);
+    }
     break;
+
 
     case 'project_name':
         $company_id          = $_POST['company_id'];

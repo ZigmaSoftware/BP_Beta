@@ -81,6 +81,16 @@ $purchase_requisition_category_options        = purchase_requisition_category();
 $purchase_requisition_category_options        = select_option($purchase_requisition_category_options,"Select the Purchase Requisition category",$purchase_requisition_category);
 
 
+$expense_category_list = expense_category();
+$payment_type_list     = payment_type();
+
+// Convert to <option> tags
+$category_options = select_option($expense_category_list, "Select Category", $category_id);
+$payment_type_options = select_option($payment_type_list, "Select Payment Type", $payment_type_id);
+
+
+
+
 // Product Name
 $product_unique_id      = product_name();
 $product_unique_id      = select_option($product_unique_id, "Select", $group_unique_id);
@@ -149,47 +159,37 @@ $today = date('Y-m-d');
           <input type="hidden" id="sublist_unique_id" name="sublist_unique_id" value="">
 
           
-          <div class="form-group row">
-                        <label class="col-md-2 col-form-label labelright">Company Name</label>
-                        <div class="col-md-3">
-                            <select name="company_id" id="company_id"  class="form-control select2"  onchange="get_project_name_all(this.value);" required>
-                                <?= $company_name_options ?>
-                            </select>
-                        </div>
+        <div class="form-group row">
+  <label class="col-md-2 col-form-label labelright">Category Name</label>
+  <div class="col-md-3">
+    <select name="category_id" id="category_id" class="form-control select2" required>
+      <?= $category_options ?>
+    </select>
+  </div>
 
-                        <label class="col-md-2 col-form-label labelright">Project Name</label>
-                        <div class="col-md-3">
-                            <select name="project_id" id="project_id" class="form-control select2" onchange="get_linked_so(this.value);" required>
-                                <?= $project_options ?>
-                            </select>
-                        </div>
-                    </div>
+  <label class="col-md-2 col-form-label labelright">Payment Type</label>
+  <div class="col-md-3">
+    <select name="payment_type_id" id="payment_type_id" class="form-control select2" required>
+      <?= $payment_type_options ?>
+    </select>
+  </div>
+</div>
 
-            
-          <div class="form-group row">
-            <label class="col-md-2 col-form-label labelright">Customer Name</label>
-            <div class="col-md-3">
-              <select name="customer_id" id="customer_id" class="form-control select2" required>
-                <?= $supplier_name_options ?>
-              </select>
-            </div>
 
-            <label class="col-md-2 col-form-label labelright">Invoice Date</label>
-            <div class="col-md-3">
-              <input type="date" name="invoice_date" id="invoice_date" class="form-control" value="<?= $invoice_date ?>" required>
-            </div>
-          </div>
+<div class="form-group row"> <label class="col-md-2 col-form-label labelright">Customer Name</label> <div class="col-md-3"> <select name="customer_id" id="customer_id" class="form-control select2" required> <?= $supplier_name_options ?> </select> </div>
 
-          <div class="form-group row">
-          <label class="col-md-2 col-form-label labelright">Payment Due Date</label>
-          <div class="col-md-3">
-            <input type="date" name="due_date" id="due_date" class="form-control" value="<?= $due_date ?>" required>
-          </div>
-        
-          <label class="col-md-2 col-form-label labelright">Remarks</label>
-            <div class="col-md-3">
-              <textarea name="remarks_main" id="remarks_main" class="form-control" rows="2" placeholder="Enter Remarks"><?= trim(htmlspecialchars($remarks ?? '', ENT_QUOTES)) ?></textarea>
-            </div>
+  <label class="col-md-2 col-form-label labelright">Expense Date</label>
+  <div class="col-md-3">
+    <input type="date" name="invoice_date" id="invoice_date" class="form-control" value="<?= $invoice_date ?>" required>
+  </div>
+</div>
+
+<div class="form-group row">
+  <label class="col-md-2 col-form-label labelright">Remarks</label>
+  <div class="col-md-3">
+    <textarea name="remarks" id="remarks_main" class="form-control" rows="2" placeholder="Enter Remarks"><?= htmlspecialchars($remarks ?? '', ENT_QUOTES) ?></textarea>
+  </div>
+</div>
 
 
                 
@@ -298,38 +298,7 @@ $today = date('Y-m-d');
           </div>
           
           <div class="col-12">
-              <!--<div class="row">-->
-              <!--      <div class="col-md-6"></div>-->
-              <!--      <div class="col-md-3 text-end">-->
-              <!--          <label for="basic">Basic</label>-->
-              <!--      </div>-->
-              <!--      <div class="col-md-3">-->
-              <!--          <input type="text" class="form-control" id="basic" name="basic" placeholder="Basic total amount" onkeypress='number_only(event);' readonly>-->
-              <!--      </div>-->
-              <!--      <div class="col-md-6"></div>-->
-              <!--      <div class="col-md-3 text-end">-->
-              <!--          <label for="total_gst">Total GST</label>-->
-              <!--      </div>-->
-              <!--      <div class="col-md-3">-->
-              <!--          <input type="text" class="form-control" id="total_gst" name="total_gst" placeholder="Total GST" onkeypress='number_only(event);' readonly>-->
-              <!--      </div>-->
-              <!--      <div class="col-md-6"></div>-->
-              <!--      <div class="col-md-3 text-end">-->
-              <!--          <label for="roundoff">Round Off</label>-->
-              <!--      </div>-->
-              <!--      <div class="col-md-3">-->
-              <!--          <input type="text" class="form-control" id="roundoff" name="roundoff" placeholder="Round Off" onkeypress='number_only(event);' readonly>-->
-              <!--      </div>-->
-
-              <!--      <div class="col-md-6"></div>-->
-              <!--      <div class="col-md-3 text-end">-->
-              <!--          <label for="tot_amount">Total Amount</label>-->
-              <!--      </div>-->
-              <!--      <div class="col-md-3">-->
-              <!--          <input type="text" class="form-control" id="tot_amount" name="tot_amount" placeholder="Total Amount" onkeypress='number_only(event);' readonly>-->
-              <!--      </div>-->
-
-              <!--</div>-->
+             
               <div class="row mt-3">
     <div class="col-md-6"></div>
     <div class="col-md-3 text-end">

@@ -282,7 +282,7 @@ $supplier_name_options     = select_option($supplier_name_options,"Select", $sup
 <div class="form-group row">
                 <label class="col-md-5 col-form-label labelright" for="dc_no">DC No</label>
                 <div class="col-md-7">
-                    <input type="text" id="dc_no" name="dc_no" class="form-control" value="<?= $dc_no ?>" required>
+                    <input type="text" id="dc_no" name="dc_no" class="form-control" value="<?= $dc_no ?>" >
                 </div>
                 </div>
             <!--<div class="form-group row">-->

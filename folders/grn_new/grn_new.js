@@ -247,9 +247,11 @@ function recalculateTotalAmount() {
 
     // Total calculation
     let total = basic + paf + freight + other + taxed_charges + round;
+    
+    let final = total + tot_gst;
 
     $("#tot_gst").val(total_taxed.toFixed(2));
-    $("#final_total").text(total.toFixed(2));
+    $("#final_total").text(final.toFixed(2));
 }
 
 
@@ -918,152 +920,102 @@ function fetch_po_items(po_unique_id) {
 }
 
 
-function fetch_po_items_logic(po_unique_id) {
-    let ajax_url = sessionStorage.getItem("folder_crud_link");
+async function fetch_po_items_logic(po_unique_id) {
+  const ajax_url = sessionStorage.getItem("folder_crud_link");
 
-    $.post(ajax_url, {
-        action: "get_po_items_for_grn",
-        unique_id: po_unique_id
-    }).done(function (res) {
-        try {
-            let obj = JSON.parse(res);
-
-            if (obj.status && obj.data.length > 0) {
-
-                // ✅ Set supplier ID and Name
-                $("#supplier_id").val(obj.supplier_id || "");
-                // $("#supplier_name").val(obj.supplier_name || "");
-
-                // ✅ Add PO items to GRN sublist
-                obj.data.forEach((row) => {
-                    add_po_item_to_grn(row, po_unique_id);
-                });
-
-                grn_sublist_datatable("grn_sublist_datatable");
-                Swal.fire("PO Items Loaded", "", "success");
-            } else {
-                Swal.fire("No items found for this PO.");
-            }
-        } catch (e) {
-            console.error("JSON Parse Error (items):", res);
-            Swal.fire("Server error while loading items.");
-        }
+  try {
+    // 🌀 Show loading overlay before anything else
+    Swal.fire({
+      title: "Loading PO Items...",
+      html: `
+        <div id="swal-progress-text" style="margin-bottom:8px;">Starting upload...</div>
+        <progress id="swal-progress-bar" value="0" max="100" style="width:100%; height:15px;"></progress>
+        <br><small><b>Do not close this page while items are being added to GRN.</b></small>
+      `,
+      allowOutsideClick: false,
+      allowEscapeKey: false,
+      allowEnterKey: false,
+      didOpen: () => {
+        Swal.showLoading();
+      },
     });
+
+    const res = await $.post(ajax_url, {
+      action: "get_po_items_for_grn",
+      unique_id: po_unique_id,
+    });
+
+    const obj = JSON.parse(res);
+
+    if (!obj.status || !obj.data?.length) {
+      Swal.close();
+      Swal.fire("No items found for this PO.");
+      return;
+    }
+
+    $("#supplier_id").val(obj.supplier_id || "");
+
+    const totalItems = obj.data.length;
+    const progressBar = document.getElementById("swal-progress-bar");
+    const progressText = document.getElementById("swal-progress-text");
+
+    // Sequentially upload each item
+    for (let i = 0; i < totalItems; i++) {
+      const row = obj.data[i];
+      await add_po_item_to_grn(row, po_unique_id);
+
+      // Calculate percentage
+      const percent = Math.round(((i + 1) / totalItems) * 100);
+
+      // Update Swal UI dynamically
+      progressBar.value = percent;
+      progressText.innerHTML = `Uploading items... <b>${i + 1}</b> / ${totalItems} (${percent}%)`;
+
+      // Delay to prevent server overload
+      await new Promise((resolve) => setTimeout(resolve, 1000));
+      console.log(`✅ Uploaded item ${i + 1}/${totalItems}`);
+    }
+
+    // Refresh sublist datatable
+    await grn_sublist_datatable("grn_sublist_datatable");
+
+    // ✅ Replace loading with success message
+    Swal.fire({
+      icon: "success",
+      title: "PO Items Loaded",
+      text: "All items have been successfully added to the GRN.",
+      timer: 2000,
+      showConfirmButton: false,
+    });
+  } catch (err) {
+    console.error("Error loading PO items:", err);
+    Swal.close();
+    Swal.fire("Server error while loading items.");
+  }
 }
-
-
-// function fetch_po_items_logic(po_unique_id) {
-//     let ajax_url = sessionStorage.getItem("folder_crud_link");
-
-//     $.post(ajax_url, {
-//         action: "get_po_items_for_grn",
-//         unique_id: po_unique_id
-//     }).done(function (res) {
-//         try {
-//             let obj = JSON.parse(res);
-
-//             if (obj.status && obj.data.length > 0) {
-//                 // ✅ Set supplier ID and Name
-//                 $("#supplier_id").val(obj.supplier_id || "");
-//                 $("#supplier_name").val(obj.supplier_name || "");
-
-//                 let tbodyHTML = "";
-
-//                 obj.data.forEach((row, index) => {
-//                     // Use row data from PO items
-//                     let discountTypeOptions = `
-//                         <option value="0">Select Discount Type</option>
-//                         <option value="1">Percentage</option>
-//                         <option value="2">Amount</option>
-//                     `;
-
-//                     tbodyHTML += `
-//                         <tr id="requisition_details_form_${index}">
-//                             <th>${index + 1}</th>
-//                             <th>
-//                                 <select id="item_code_${index}" name="item_code[]" class="form-control select2" disabled>
-//                                     <option selected value="${row.item_code}">${row.item_code}</option>
-//                                 </select>
-//                             </th>
-//                             <th>
-//                                 <input type="text" id="order_qty_${index}" name="order_qty[]" class="form-control" value="${row.lvl_2_quantity}" readonly>
-//                             </th>
-//                             <th>
-//                                 <select name="uom[]" id="uom_${index}" class="form-control select2" disabled>
-//                                     <option selected value="${row.uom}">${row.uom}</option>
-//                                 </select>
-//                             </th>
-//                             <th>
-//                                 <input type="text" id="already_received_qty_${index}" name="already_received_qty[]" class="form-control" value="0" readonly>
-//                             </th>
-//                             <th>
-//                                 <input type="text" id="now_received_qty_${index}" name="now_received_qty[]" class="form-control" value="0" onkeypress="number_only(event);">
-//                             </th>
-//                             <th>
-//                                 <input type="text" id="rate_${index}" name="rate[]" class="form-control" value="${row.rate || ''}" readonly>
-//                             </th>
-//                             <th>
-//                                 <input type="text" id="tax_${index}" name="tax[]" class="form-control" value="${row.tax || ''}" readonly>
-//                             </th>
-//                             <th>
-//                                 <select id="discount_type_${index}" name="discount_type[]" class="form-control" disabled>
-//                                     ${discountTypeOptions}
-//                                 </select>
-//                             </th>
-//                             <th>
-//                                 <input type="text" id="discount_${index}" name="discount[]" class="form-control" value="${row.discount || 0}" readonly>
-//                             </th>
-//                             <th>
-//                                 <input type="text" id="amount_${index}" name="amount[]" class="form-control" value="0" readonly>
-//                             </th>
-//                             <th>
-//                                 <button type="button" class="btn btn-success waves-effect waves-light grn_add_update_btn" onclick="grn_sublist_add_update(${index})">ADD</button>
-//                             </th>
-//                         </tr>
-//                     `;
-//                 });
-
-//                 $("#grn_sublist_datatable tbody").html(tbodyHTML);
-//                 $(".select2").select2(); // reinitialize select2 if used
-
-//                 Swal.fire("PO Items Loaded", "", "success");
-//             } else {
-//                 Swal.fire("No items found for this PO.");
-//             }
-//         } catch (e) {
-//             console.error("JSON Parse Error (items):", res);
-//             Swal.fire("Server error while loading items.");
-//         }
-//     });
-// }
-
-
 
 function add_po_item_to_grn(row, po_unique_id) {
-    let screen_unique_id = $("#screen_unique_id").val();
-    let ajax_url = sessionStorage.getItem("folder_crud_link");
+  const screen_unique_id = $("#screen_unique_id").val();
+  const ajax_url = sessionStorage.getItem("folder_crud_link");
 
-    $.ajax({
-        type: "POST",
-        url: ajax_url,
-        data: {
-            action: "grn_sub_add_update",
-            screen_unique_id: screen_unique_id,
-            item_code: row.item_code,
-            order_qty: row.lvl_2_quantity,
-            // prev_receipt: 0,
-            uom: row.uom,
-            now_received_qty: 0,
-            po_unique_id: po_unique_id,
-            // accepted_qty: 0,
-            // rejected_qty: 0,
-            // rejected_reason: ""
-        },
-        success: function (res) {
-            // Optional feedback per item
-        }
-    });
+  return $.ajax({
+    type: "POST",
+    url: ajax_url,
+    data: {
+      action: "grn_sub_add_update",
+      screen_unique_id: screen_unique_id,
+      item_code: row.item_code,
+      order_qty: row.lvl_2_quantity,
+      uom: row.uom,
+      now_received_qty: 0,
+      po_unique_id: po_unique_id,
+    },
+  });
 }
+
+
+
+
 
 //Upload Functions
 

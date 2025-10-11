@@ -5938,6 +5938,54 @@ function company_name($unique_id = "")
     }
 }
 
+
+
+function expense_category($unique_id = "") {
+    global $pdo;
+
+    $table_name    = "expense_category"; // correct master table
+    $table_columns = ["unique_id", "category_name"];
+
+    $where = [
+        "is_active" => 1,
+        "is_delete" => 0
+    ];
+
+    // If unique_id passed, narrow down
+    if ($unique_id) {
+        $where = ["unique_id" => $unique_id];
+    }
+
+    $result = $pdo->select([$table_name, $table_columns], $where);
+
+    return $result->status ? $result->data : [];
+}
+
+function payment_type($unique_id = "") {
+    global $pdo;
+
+    $table_name    = "payment_type"; // correct master table
+    $table_columns = ["unique_id", "payment_name"];
+
+    $where = [
+        "is_active" => 1,
+        "is_delete" => 0
+    ];
+
+    if ($unique_id) {
+        $where = ["unique_id" => $unique_id];
+    }
+
+    $result = $pdo->select([$table_name, $table_columns], $where);
+
+    return $result->status ? $result->data : [];
+}
+
+
+
+
+
+
 function purchase_requisition_category($unique_id = "")
 {
     global $pdo;

@@ -213,7 +213,7 @@ function recalculateTotalAmount() {
     let total_taxed = taxed_charges + tot_gst;
 
     // Total calculation
-    let total = basic + paf + freight + other + taxed_charges + round;
+    let total = basic + paf + freight + other + total_taxed + round;
 
     $("#tot_gst").val(total_taxed.toFixed(2));
     $("#final_total").text(total.toFixed(2));

@@ -14,7 +14,7 @@ $(document).ready(function () {
         recalculateTotalAmount();
     });
 
-    // ✅ Trigger on GST dropdown changes (important)
+    // âœ… Trigger on GST dropdown changes (important)
     $(document).on("change", "#gst_paf, #gst_freight, #gst_other", function () {
         recalculateTotalAmount();
     });
@@ -27,7 +27,7 @@ $(document).ready(function () {
     if ($("#is_update_mode").val() === "true") {
         const poVal = $("#purchase_order_no").val();
         if (poVal) {
-            get_po_date(poVal); // 👈 manually trigger
+            get_po_date(poVal); // ðŸ‘ˆ manually trigger
         }
     }
     
@@ -503,18 +503,36 @@ function srn_sublist_add_update() {
     var now_received_qty = parseFloat($("#now_received_qty").val()) || 0;
     var already_received_qty = parseFloat($("#already_received_qty").val()) || 0;
     
+    // alert(item_code);
+    // alert(order_qty);
+    // alert(uom);
+    // alert(now_received_qty);
+    // alert(already_received_qty);
+    
     var remarks = $("#remarks").val();
 
     let tot_qty = now_received_qty + already_received_qty;
 
     // If it's an update page, skip the validation on received quantity
     let isUpdatePage = $("#is_update_mode").val() == "true"; // Hidden field for page type
+    // alert(isUpdatePage);
 
     // Check for all required fields
-    if (!item_code || !order_qty || !uom || (isUpdatePage ? false : !now_received_qty)) {
+    let isInvalid = false;
+    
+    if (!item_code || !order_qty || !uom) {
+        isInvalid = true;
+    }
+    
+    if (!isUpdatePage && !now_received_qty) {
+        isInvalid = true;
+    }
+    
+    if (isInvalid) {
         Swal.fire("Please fill all required sublist fields.");
         return;
     }
+
 
     // alert(
     //     "Values:\n" +
@@ -552,10 +570,10 @@ function srn_sublist_add_update() {
                 if (obj.status) {
                     Swal.fire("Item updated");
 
-                    // ✅ Refresh the table
+                    // âœ… Refresh the table
                     srn_sublist_datatable("srn_sublist_datatable");
 
-                    // ✅ Reset the sublist form inputs
+                    // âœ… Reset the sublist form inputs
                     $("#sublist_unique_id").val("");
                     $("#item_code").val(null).trigger("change");
                     $("#uom").val(null).trigger("change");
@@ -606,10 +624,10 @@ function srn_sublist_add_update() {
                 if (obj.status) {
                     Swal.fire(obj.msg === "update" ? "Item updated" : "Item added");
 
-                    // ✅ Refresh the table
+                    // âœ… Refresh the table
                     srn_sublist_datatable("srn_sublist_datatable");
 
-                    // ✅ Reset the sublist form inputs
+                    // âœ… Reset the sublist form inputs
                     $("#sublist_unique_id").val("");
                     $("#item_code").val(null).trigger("change");
                     $("#uom").val(null).trigger("change");
@@ -746,7 +764,7 @@ function srn_sub_edit(unique_id) {
             $("#remarks").val(d.remarks);
             $("#amount").val(d.amount);
 
-            // ✅ Set tax and discount values
+            // âœ… Set tax and discount values
             $("#tax").val(d.tax);
             $("#tax_val").val(response.tax);
             $("#discount_type").val(d.discount_type).trigger("change");
@@ -811,7 +829,7 @@ function srn_sub_delete(unique_id) {
                     $("#tax").val("");
                     $("#discount_type").val("0").trigger("change");
                     $("#discount").val("");
-                    $("#remarks").val(""); // ✅ Clear remarks also
+                    $("#remarks").val(""); // âœ… Clear remarks also
                     let current = parseFloat($("#count_sl").val()) || 0; 
                     $("#count_sl").val(current - 1)
                 }
@@ -949,152 +967,100 @@ function fetch_po_items(po_unique_id) {
 }
 
 
-function fetch_po_items_logic(po_unique_id) {
-    let ajax_url = sessionStorage.getItem("folder_crud_link");
+// Fetch PO Items for SRN
+async function fetch_po_items_logic(po_unique_id) {
+  const ajax_url = sessionStorage.getItem("folder_crud_link");
 
-    $.post(ajax_url, {
-        action: "get_po_items_for_srn",
-        unique_id: po_unique_id
-    }).done(function (res) {
-        try {
-            let obj = JSON.parse(res);
-
-            if (obj.status && obj.data.length > 0) {
-
-                // ✅ Set supplier ID and Name
-                $("#supplier_id").val(obj.supplier_id || "");
-                // $("#supplier_name").val(obj.supplier_name || "");
-
-                // ✅ Add PO items to srn sublist
-                obj.data.forEach((row) => {
-                    add_po_item_to_srn(row, po_unique_id);
-                });
-
-                srn_sublist_datatable("srn_sublist_datatable");
-                Swal.fire("PO Items Loaded", "", "success");
-            } else {
-                Swal.fire("No items found for this PO.");
-            }
-        } catch (e) {
-            console.error("JSON Parse Error (items):", res);
-            Swal.fire("Server error while loading items.");
-        }
+  try {
+    // 🌀 Start loading overlay
+    Swal.fire({
+      title: "Loading PO Items...",
+      html: `
+        <div id="progress-text">Initializing...</div>
+        <progress id="progress-bar" value="0" max="100" style="width:100%;"></progress>
+        <br><b>Please wait — this may take a minute.</b>
+      `,
+      allowOutsideClick: false,
+      allowEscapeKey: false,
+      allowEnterKey: false,
+      didOpen: () => {
+        Swal.showLoading();
+      },
     });
+
+    // --- Fetch PO items from server ---
+    const res = await $.post(ajax_url, {
+      action: "get_po_items_for_srn",
+      unique_id: po_unique_id,
+    });
+
+    const obj = JSON.parse(res);
+
+    if (!obj.status || !obj.data?.length) {
+      Swal.close();
+      Swal.fire("No items found for this PO.");
+      return;
+    }
+
+    // ✅ Set supplier details
+    // $("#supplier_id").val(obj.supplier_id || "");
+    // $("#supplier_name").val(obj.supplier_name || "");
+
+    // --- Sequentially upload each PO item ---
+    for (let i = 0; i < obj.data.length; i++) {
+      const row = obj.data[i];
+      await add_po_item_to_srn(row, po_unique_id);
+
+      // Update progress bar
+      const pct = Math.round(((i + 1) / obj.data.length) * 100);
+      document.getElementById("progress-bar").value = pct;
+      document.getElementById("progress-text").innerHTML = `Processing item ${i + 1} of ${obj.data.length}... (${pct}%)`;
+
+      // Wait 1 second to prevent overload
+      await new Promise((resolve) => setTimeout(resolve, 1000));
+    }
+
+    // --- Refresh SRN sublist table ---
+    await srn_sublist_datatable("srn_sublist_datatable");
+
+    // ✅ Replace loading with success
+    Swal.fire({
+      icon: "success",
+      title: "PO Items Loaded",
+      text: "All items have been successfully added to the SRN.",
+      timer: 2000,
+      showConfirmButton: false,
+    });
+  } catch (e) {
+    console.error("Error loading SRN items:", e);
+    Swal.close();
+    Swal.fire("Server error while loading items.");
+  }
 }
 
-
-// function fetch_po_items_logic(po_unique_id) {
-//     let ajax_url = sessionStorage.getItem("folder_crud_link");
-
-//     $.post(ajax_url, {
-//         action: "get_po_items_for_srn",
-//         unique_id: po_unique_id
-//     }).done(function (res) {
-//         try {
-//             let obj = JSON.parse(res);
-
-//             if (obj.status && obj.data.length > 0) {
-//                 // ✅ Set supplier ID and Name
-//                 $("#supplier_id").val(obj.supplier_id || "");
-//                 $("#supplier_name").val(obj.supplier_name || "");
-
-//                 let tbodyHTML = "";
-
-//                 obj.data.forEach((row, index) => {
-//                     // Use row data from PO items
-//                     let discountTypeOptions = `
-//                         <option value="0">Select Discount Type</option>
-//                         <option value="1">Percentage</option>
-//                         <option value="2">Amount</option>
-//                     `;
-
-//                     tbodyHTML += `
-//                         <tr id="requisition_details_form_${index}">
-//                             <th>${index + 1}</th>
-//                             <th>
-//                                 <select id="item_code_${index}" name="item_code[]" class="form-control select2" disabled>
-//                                     <option selected value="${row.item_code}">${row.item_code}</option>
-//                                 </select>
-//                             </th>
-//                             <th>
-//                                 <input type="text" id="order_qty_${index}" name="order_qty[]" class="form-control" value="${row.lvl_2_quantity}" readonly>
-//                             </th>
-//                             <th>
-//                                 <select name="uom[]" id="uom_${index}" class="form-control select2" disabled>
-//                                     <option selected value="${row.uom}">${row.uom}</option>
-//                                 </select>
-//                             </th>
-//                             <th>
-//                                 <input type="text" id="already_received_qty_${index}" name="already_received_qty[]" class="form-control" value="0" readonly>
-//                             </th>
-//                             <th>
-//                                 <input type="text" id="now_received_qty_${index}" name="now_received_qty[]" class="form-control" value="0" onkeypress="number_only(event);">
-//                             </th>
-//                             <th>
-//                                 <input type="text" id="rate_${index}" name="rate[]" class="form-control" value="${row.rate || ''}" readonly>
-//                             </th>
-//                             <th>
-//                                 <input type="text" id="tax_${index}" name="tax[]" class="form-control" value="${row.tax || ''}" readonly>
-//                             </th>
-//                             <th>
-//                                 <select id="discount_type_${index}" name="discount_type[]" class="form-control" disabled>
-//                                     ${discountTypeOptions}
-//                                 </select>
-//                             </th>
-//                             <th>
-//                                 <input type="text" id="discount_${index}" name="discount[]" class="form-control" value="${row.discount || 0}" readonly>
-//                             </th>
-//                             <th>
-//                                 <input type="text" id="amount_${index}" name="amount[]" class="form-control" value="0" readonly>
-//                             </th>
-//                             <th>
-//                                 <button type="button" class="btn btn-success waves-effect waves-light srn_add_update_btn" onclick="srn_sublist_add_update(${index})">ADD</button>
-//                             </th>
-//                         </tr>
-//                     `;
-//                 });
-
-//                 $("#srn_sublist_datatable tbody").html(tbodyHTML);
-//                 $(".select2").select2(); // reinitialize select2 if used
-
-//                 Swal.fire("PO Items Loaded", "", "success");
-//             } else {
-//                 Swal.fire("No items found for this PO.");
-//             }
-//         } catch (e) {
-//             console.error("JSON Parse Error (items):", res);
-//             Swal.fire("Server error while loading items.");
-//         }
-//     });
-// }
-
-
-
+// Add PO item to SRN sublist (insert or update)
 function add_po_item_to_srn(row, po_unique_id) {
-    let screen_unique_id = $("#screen_unique_id").val();
-    let ajax_url = sessionStorage.getItem("folder_crud_link");
+  const screen_unique_id = $("#screen_unique_id").val();
+  const ajax_url = sessionStorage.getItem("folder_crud_link");
 
-    $.ajax({
-        type: "POST",
-        url: ajax_url,
-        data: {
-            action: "srn_sub_add_update",
-            screen_unique_id: screen_unique_id,
-            item_code: row.item_code,
-            order_qty: row.lvl_2_quantity,
-            // prev_receipt: 0,
-            uom: row.uom,
-            now_received_qty: 0,
-            po_unique_id: po_unique_id,
-            // accepted_qty: 0,
-            // rejected_qty: 0,
-            // rejected_reason: ""
-        },
-        success: function (res) {
-            // Optional feedback per item
-        }
-    });
+  return $.ajax({
+    type: "POST",
+    url: ajax_url,
+    data: {
+      action: "srn_sub_add_update",
+      screen_unique_id: screen_unique_id,
+      item_code: row.item_code,
+      order_qty: row.lvl_2_quantity,
+      uom: row.uom,
+      now_received_qty: 0,
+      po_unique_id: po_unique_id,
+    },
+    error: function (xhr, status, err) {
+      console.error("Error adding SRN item:", row.item_code, err);
+    },
+  });
 }
+
 
 
 function get_project_address(project_id) {

@@ -352,150 +352,7 @@ switch ($action) {
     }
     break;
     
-    // case 'fetch_report':
-    // header('Content-Type: application/json');
 
-    // $from = trim($_POST['from'] ?? '');
-    // $to   = trim($_POST['to']   ?? '');
-    // $comp = trim($_POST['company'] ?? '');
-    // $proj = trim($_POST['project'] ?? '');
-    // $app  = trim($_POST['app'] ?? '');
-
-    // // Canonical order & labels (aligned to your current report)
-    // $order = [
-    //     'entry_date','project_name','week_no',
-    //     'automated_weighbridge',
-    //     'dry_mix_corp','wet_mix_corp','wet_segregated_corp','complete_mix_corp',
-    //     'wet_mix_bwg','dry_mix_bwg','wet_segregated_bwg','complete_mix_bwg',
-    //     'total_waste_actual','total_waste_reported','organic_waste_feed',
-    //     'recycles_generated','rejects_dry_segregation','rejects_wet_segregation',
-    //     'total_inert_disposed','total_rdf_generation','rdf_sold','rdf_stock',
-    //     'slurry_disposed','flare_hrs','cbg_compressor_hrs','raw_biogas_produced',
-    //     'biogas_flared','captive_consumption_gas','digester_temp','fos_tac_ratio',
-    //     'ph_value','cbg_production_kg','cbg_captive_vehicle','cbg_sold_vehicle',
-    //     'cbg_sold_cascades','cbg_sold_pipeline','cbg_total_sold','cbg_stock',
-    //     'manure_production','manure_sold','manure_stock','plant_incharge','remarks'
-    // ];
-
-    // $labels = [
-    //     'entry_date' => 'Date',
-    //     'project_name' => 'Project',
-    //     'week_no'    => 'Week No',
-    //     'automated_weighbridge' => 'Automated Weighbridge',
-    //     'dry_mix_corp' => 'Dry Mix (Corp)',
-    //     'wet_mix_corp' => 'Wet Mix (Corp)',
-    //     'wet_segregated_corp' => 'Wet Segregated (Corp)',
-    //     'complete_mix_corp' => 'Complete Mix (Corp)',
-    //     'wet_mix_bwg' => 'Wet Mix (BWG)',
-    //     'dry_mix_bwg' => 'Dry Mix (BWG)',
-    //     'wet_segregated_bwg' => 'Wet Segregated (BWG)',
-    //     'complete_mix_bwg' => 'Complete Mix (BWG)',
-    //     'total_waste_actual' => 'Total Waste Actual',
-    //     'total_waste_reported' => 'Total Waste Reported',
-    //     'organic_waste_feed' => 'Organic Waste Feed',
-    //     'recycles_generated' => 'Recycles Generated',
-    //     'rejects_dry_segregation' => 'Rejects Dry',
-    //     'rejects_wet_segregation' => 'Rejects Wet',
-    //     'total_inert_disposed' => 'Total Inert Disposed',
-    //     'total_rdf_generation' => 'RDF Generation',
-    //     'rdf_sold' => 'RDF Sold',
-    //     'rdf_stock' => 'RDF Stock',
-    //     'slurry_disposed' => 'Slurry Disposed',
-    //     'flare_hrs' => 'Flare Hours',
-    //     'cbg_compressor_hrs' => 'CBG Compressor Hrs',
-    //     'raw_biogas_produced' => 'Raw Biogas Produced',
-    //     'biogas_flared' => 'Biogas Flared',
-    //     'captive_consumption_gas' => 'Captive Gas Consumption',
-    //     'digester_temp' => 'Digester Temp',
-    //     'fos_tac_ratio' => 'FOS:TAC',
-    //     'ph_value' => 'pH',
-    //     'cbg_production_kg' => 'CBG Production',
-    //     'cbg_captive_vehicle' => 'CBG Captive Vehicle',
-    //     'cbg_sold_vehicle' => 'CBG Sold Vehicle',
-    //     'cbg_sold_cascades' => 'CBG Sold Cascades',
-    //     'cbg_sold_pipeline' => 'CBG Sold Pipeline',
-    //     'cbg_total_sold' => 'CBG Total Sold',
-    //     'cbg_stock' => 'CBG Stock',
-    //     'manure_production' => 'Manure Production',
-    //     'manure_sold' => 'Manure Sold',
-    //     'manure_stock' => 'Manure Stock',
-    //     'plant_incharge' => 'Plant Incharge',
-    //     'remarks' => 'Remarks'
-    // ];
-
-    // // Resolve MASTER config for selected Company/Project/AppType
-    // $masterWhere = "is_delete = 0";
-    // if ($comp !== '') $masterWhere .= " AND company_name = '".$comp."'";
-    // if ($proj !== '') $masterWhere .= " AND project_name = '".$proj."'";
-    // if ($app  !== '') $masterWhere .= " AND application_type = '".$app."'";
-    // $masterWhere .= " ORDER BY id DESC LIMIT 1";
-
-    // $mres = $pdo->select(['integrated_dailylogsheet_master', ['*']], $masterWhere);
-    // if (!$mres->status || empty($mres->data)) {
-    //     echo json_encode(['status'=>false,'message'=>'No master configuration found.']);
-    //     break;
-    // }
-    // $m = $mres->data[0];
-
-    // // Build enabled columns map from MASTER flags
-    // $enabled = [];
-    // if (intval($m['date_field'] ?? 0) === 1) $enabled['entry_date'] = true;
-    // $enabled['project_name'] = true;   
-    // if (intval($m['week_field'] ?? 0) === 1) $enabled['week_no']    = true;
-
-    // foreach ($order as $k) {
-    //     if (in_array($k, ['entry_date','week_no'], true)) continue;
-    //     if (array_key_exists($k, $m) && intval($m[$k]) === 1) $enabled[$k] = true;
-    // }
-
-    // // Columns payload (S.No always first)
-    // $columns = [['key'=>'__sno','label'=>'S.No']];
-    // foreach ($order as $k) {
-    //     if (!empty($enabled[$k])) $columns[] = ['key'=>$k,'label'=>$labels[$k] ?? $k];
-    // }
-
-    // if (count($columns) === 1) {
-    //     echo json_encode(['status'=>false,'message'=>'No fields enabled for this project/type.']);
-    //     break;
-    // }
-
-    // // Prepare select cols for ENTRY (ensure entry_date present for sort/format)
-    // $entryCols = array_values(array_filter(array_map(function($c){
-    //     return $c['key'] === '__sno' ? null : $c['key'];
-    // }, $columns)));
-    // if (!in_array('entry_date', $entryCols, true)) $entryCols[] = 'entry_date';
-    // if (!in_array('project_name', $entryCols, true))  $entryCols[] = 'project_name'; 
-
-    // // Build WHERE for ENTRY
-    // $ew = "is_delete = 0";
-    // if ($comp !== '') $ew .= " AND company_name = '".$comp."'";
-    // if ($proj !== '') $ew .= " AND project_name = '".$proj."'";
-    // if ($app  !== '') $ew .= " AND application_type = '".$app."'";
-    // if ($from !== '') $ew .= " AND entry_date >= '".$from."'";
-    // if ($to   !== '') $ew .= " AND entry_date <= '".$to."'";
-    // $ew .= " ORDER BY entry_date ASC, id ASC";
-
-    // $eres = $pdo->select(['integrated_dailylogsheet_entry', $entryCols], $ew);
-    // $rows = ($eres->status && !empty($eres->data)) ? $eres->data : [];
-    // if (!empty($rows)) {
-    // foreach ($rows as &$r) {
-    //     if (isset($r['project_name']) && $r['project_name'] !== '') {
-    //         // Your helper already used elsewhere in datatable case
-    //         $p = project_name($r['project_name']);
-    //         if (is_array($p) && isset($p[0]['project_name'])) {
-    //             $r['project_name'] = $p[0]['project_name'];
-    //         }
-    //     }
-    //     }
-    //     unset($r); // break reference
-    // }
-
-    // echo json_encode([
-    //     'status'  => true,
-    //     'columns' => $columns,
-    //     'rows'    => $rows
-    // ]);
-    // break;
     
     case 'fetch_report':
     header('Content-Type: application/json');
@@ -786,12 +643,14 @@ switch ($action) {
     }
     break;
     
-  case 'fetch_weighbridge_data':
+ case 'fetch_weighbridge_data':
     header('Content-Type: application/json');
-    $entry_date = trim($_POST['entry_date'] ?? '');
 
-    if ($entry_date == '') {
-        echo json_encode(['status' => false, 'error' => 'Missing date']);
+    // strictly use automated_weighbridge (YYYY-MM-DD expected)
+    $weigh_date = trim($_POST['automated_weighbridge'] ?? '');
+
+    if ($weigh_date === '' || !preg_match('/^\d{4}-\d{2}-\d{2}$/', $weigh_date)) {
+        echo json_encode(['status' => false, 'error' => 'Missing or invalid automated_weighbridge date']);
         break;
     }
 
@@ -812,9 +671,8 @@ switch ($action) {
                     SUM(CASE WHEN t2.MaterialCode = 'WET WASTE' THEN t2.Weight ELSE 0 END) AS WET_WASTE,
                     SUM(CASE WHEN t2.MaterialCode = '3' THEN t2.Weight ELSE 0 END) AS MIX_WASTE_NETWEIGHT
                 FROM newweighbridge_bp t1
-                JOIN ticket_weighbridge_bp t2
-                    ON t1.TicketNo = t2.TicketNo
-                WHERE DATE(t1.Date) = :entry_date
+                JOIN ticket_weighbridge_bp t2 ON t1.TicketNo = t2.TicketNo
+                WHERE DATE(t1.Date) = :weigh_date
                 GROUP BY t1.TicketNo
 
                 UNION ALL
@@ -829,45 +687,41 @@ switch ($action) {
                     0 AS WET_WASTE,
                     t1.NetWeight AS MIX_WASTE_NETWEIGHT
                 FROM newweighbridge_bp t1
-                WHERE DATE(t1.Date) = :entry_date
+                WHERE DATE(t1.Date) = :weigh_date
                   AND t1.State NOT IN ('FT','FMT')
                   AND t1.MaterialName NOT IN ('DRY WASTE', 'WET WASTE')
             ) AS combined;
         ";
 
-        // Log for debugging
-        error_log("fetch_weighbridge_data SQL for date {$entry_date}\n{$sql}\n", 3, "login.log");
+        error_log("fetch_weighbridge_data for automated_weighbridge {$weigh_date}\n{$sql}\n", 3, "login.log");
 
         $stmt = $conn->prepare($sql);
-        $stmt->execute([':entry_date' => $entry_date]);
+        $stmt->execute([':weigh_date' => $weigh_date]);
         $row = $stmt->fetch(PDO::FETCH_ASSOC) ?: [];
 
-        // Core values
-        $dry_mix_corp        = round($row['dry_mix_corp'] ?? 0, 2);
-        $wet_mix_corp        = round($row['wet_mix_corp'] ?? 0, 2);
-        $mix_waste_total     = round($row['mix_waste_total'] ?? 0, 2);
+        $dry_mix_corp    = round($row['dry_mix_corp'] ?? 0, 2);
+        $wet_mix_corp    = round($row['wet_mix_corp'] ?? 0, 2);
+        $mix_waste_total = round($row['mix_waste_total'] ?? 0, 2);
 
-        // BWG and other mappings
         $wet_segregated_corp = 0;
         $dry_mix_bwg         = $mix_waste_total;
         $wet_mix_bwg         = 0;
         $wet_segregated_bwg  = 0;
 
-        // Derived totals
-        $complete_mix_corp   = $dry_mix_corp + $wet_mix_corp + $wet_segregated_corp;
-        $complete_mix_bwg    = $wet_mix_bwg + $dry_mix_bwg + $wet_segregated_bwg;
+        $complete_mix_corp = $dry_mix_corp + $wet_mix_corp + $wet_segregated_corp;
+        $complete_mix_bwg  = $wet_mix_bwg + $dry_mix_bwg + $wet_segregated_bwg;
 
         echo json_encode([
             'status' => true,
             'data'   => [
-                'dry_mix_corp'          => $dry_mix_corp,
-                'wet_mix_corp'          => $wet_mix_corp,
-                'wet_segregated_corp'   => $wet_segregated_corp,
-                'complete_mix_corp'     => $complete_mix_corp,
-                'dry_mix_bwg'           => $dry_mix_bwg,
-                'wet_mix_bwg'           => $wet_mix_bwg,
-                'wet_segregated_bwg'    => $wet_segregated_bwg,
-                'complete_mix_bwg'      => $complete_mix_bwg
+                'dry_mix_corp'        => $dry_mix_corp,
+                'wet_mix_corp'        => $wet_mix_corp,
+                'wet_segregated_corp' => $wet_segregated_corp,
+                'complete_mix_corp'   => $complete_mix_corp,
+                'dry_mix_bwg'         => $dry_mix_bwg,
+                'wet_mix_bwg'         => $wet_mix_bwg,
+                'wet_segregated_bwg'  => $wet_segregated_bwg,
+                'complete_mix_bwg'    => $complete_mix_bwg
             ]
         ]);
     } catch (Exception $e) {

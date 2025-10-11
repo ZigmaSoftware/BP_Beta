@@ -598,7 +598,7 @@ break;
                     $image_files = explode(',', $value['file_attach']);
                     $image_buttons = "";
                     foreach ($image_files as $image_file) {
-                        $image_path = "../blue_planet_beta/uploads/srn/" . trim($image_file);
+                        $image_path = "../blue_planet_erp/uploads/srn/" . trim($image_file);
                         $view_button = "<button type='button' onclick=\"new_external_window_image('$image_path')\" style='border: 2px solid #ccc; background:none; cursor:pointer; padding:5px; border-radius:5px; margin-right: 5px;'> <i class='fas fa-image' style='font-size: 20px; color: #555;'></i>
                         </button>";
                         $image_buttons .= $view_button;
@@ -666,7 +666,7 @@ break;
         $where          = [
             "is_delete"     => 0
         ];
-        $where = " is_delete = '0' AND invoice_date >= '$from' AND invoice_date <= '$to'";
+        $where = " is_delete = '0' AND entry_date >= '$from' AND entry_date <= '$to'";
          
         $order_column   = $_POST["order"][0]["column"];
         $order_dir      = $_POST["order"][0]["dir"];
@@ -1309,7 +1309,7 @@ break;
                     }
                     $row['amount'] = round($finalAmount, 2);
         
-                    $total_amount += $row['amount'];
+                    $total_amount += $afterDiscount;
         
                     error_log("row: " . print_r($row, true) . "\n", 3, "logs/row_logs.txt");
         

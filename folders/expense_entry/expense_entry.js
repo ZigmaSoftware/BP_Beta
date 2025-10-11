@@ -78,46 +78,6 @@ function calculate_amount() {
 
 
 
-// function calculate_amount() {
-//     let qty = parseFloat($("#quantity").val()) || 0;
-//     let rate = parseFloat($("#rate").val()) || 0;
-//     let discount = parseFloat($("#discount").val()) || 0;
-//     let discountType = $("#discount_type").val() || "0";
-//     let taxPercent = parseFloat($("#tax").val()) || 0;
-
-//     // Step 1: Base
-//     let base = qty * rate;
-
-//     // Step 2: Discount
-//     let discountAmt = 0;
-//     if (discountType === "1") {         // Percentage discount
-//         discountAmt = (base * discount) / 100;
-//     } else if (discountType === "2") {  // Amount discount
-//         discountAmt = discount;
-//     }
-
-//     // Step 3: After discount
-//     let afterDiscount = base - discountAmt;
-//     if (afterDiscount < 0) afterDiscount = 0;
-
-//     // Step 4: Tax calculation
-//     let taxAmt = (afterDiscount * taxPercent) / 100;
-
-//     // Step 5: Final total
-//     let totalAmt = afterDiscount + taxAmt;
-
-//     // Step 6: Display
-//     $("#amount").val(totalAmt.toFixed(2));
-
-//     // Optional: Show breakdown if you have fields
-//     $("#basic").val(afterDiscount.toFixed(2));
-//     $("#total_gst").val(taxAmt.toFixed(2));
-//     $("#tot_amount").val(totalAmt.toFixed(2));
-// }
-
-
-
-
 
 // Save main invoice
 function expense_entry_cu(unique_id = "") {
@@ -442,14 +402,14 @@ function init_datatable(table_id = '', form_name = '', action = '') {
             url: ajax_url,
             type: "POST",
             data: function (d) {
-                d.action        = action;
-                d.from_date     = $("#from_date").val();
-                d.to_date       = $("#to_date").val();
-                d.company_name  = $("#company_name").val();
-                d.project_name  = $("#project_name").val();
-                d.customer_name = $("#customer_name").val();
-                // d.status     = $("#status_fill").val(); // future filter
-            }
+  d.action         = action;
+  d.from_date      = $("#from_date").val();
+  d.to_date        = $("#to_date").val();
+  d.category_name  = $("#category_name").val();
+  d.payment_type   = $("#payment_type").val();
+  d.customer_name  = $("#customer_name").val();
+}
+
         }
     });
 }

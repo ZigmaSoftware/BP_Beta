@@ -178,176 +178,257 @@ switch ($action) {
 
     case 'datatable':
 
+    // ---------------------------- INPUTS ---------------------------- //
+    $search     = $_POST['search']['value'] ?? '';
+    $length     = $_POST['length'] ?? 10;
+    $start      = $_POST['start'] ?? 0;
+    $draw       = $_POST['draw'] ?? 1;
+    $limit      = ($length == '-1') ? '' : $length;
+    $data       = [];
 
-        // DataTable Variables
-        $search     = $_POST['search']['value'];
-        $length     = $_POST['length'];
-        $start         = $_POST['start'];
-        $draw         = $_POST['draw'];
-        $limit         = $length;
+    // ---------------------------- BASE QUERY ---------------------------- //
+    $columns = [
+        "@a:=@a+1 AS s_no",
+        "pr_number",
+        "company_id",
+        "project_id",
+        "requisition_for",
+        "requisition_type",
+        "requisition_date",
+        "requested_by",
+        "remarks",
+        "unique_id"
+    ];
 
-        $data        = [];
+    $table_details = [
+        $table . " , (SELECT @a:= " . $start . ") AS a",
+        $columns
+    ];
 
+    $where = "is_delete = 0";
 
-        if ($length == '-1') {
-            $limit  = "";
-        }
+    if (!empty($_POST['pr_number'])) {
+        $pr_number = trim($_POST['pr_number']);
+        $where .= " AND unique_id = '$pr_number'";
+    }
+    if (!empty($_POST['company_name'])) {
+        $company_name = trim($_POST['company_name']);
+        $where .= " AND company_id = '$company_name'";
+    }
+    if (!empty($_POST['project_name'])) {
+        $project_name = trim($_POST['project_name']);
+        $where .= " AND project_id = '$project_name'";
+    }
+    if (!empty($_POST['type_of_service'])) {
+        $type_of_service = trim($_POST['type_of_service']);
+        $where .= " AND requisition_type = '$type_of_service'";
+    }
+    if (!empty($_POST['requisition_for'])) {
+        $requisition_for = trim($_POST['requisition_for']);
+        $where .= " AND requisition_for = '$requisition_for'";
+    }
+    if (!empty($_POST['requisition_date'])) {
+        $requisition_date = trim($_POST['requisition_date']);
+        $where .= " AND requisition_date = '$requisition_date'";
+    }
 
-        // Query Variables
-        $json_array     = "";
-        $columns        = [
-            "@a:=@a+1 s_no",
-            "pr_number",
-            "company_id",
-            "project_id",
-            // "service_type",
-            "requisition_for",
-            "requisition_type",
-            "requisition_date",
-            "requested_by",
-            "remarks",
-            "unique_id"
-        ];
-        $table_details  = [
-            $table . " , (SELECT @a:= " . $start . ") AS a ",
-            $columns
-        ];
-        error_log(print_r($_POST, true) . "\n", 3, "td.log");
-        $where          = [
-            "is_delete"     => 0
-        ];
-        $where = " is_delete = '0' ";
+    // ---------------------------- REQUISITION TYPE/FOR OPTIONS ---------------------------- //
+    $requisition_type_options = [
+        1 => ["unique_id" => "1", "value" => "Regular"],
+        '683568ca2fe8263239' => ["unique_id" => "683568ca2fe8263239", "value" => "Service"],
+        '683588840086c13657' => ["unique_id" => "683588840086c13657", "value" => "Capital"]
+    ];
 
+    $requisition_for_options = [
+        1 => ["unique_id" => "1", "value" => "Direct"],
+        2 => ["unique_id" => "2", "value" => "SO"],
+        3 => ["unique_id" => "3", "value" => "Ordered BOM"]
+    ];
 
-        if (!empty($_POST['pr_number'])) {
-            $pr_number = trim($_POST['pr_number']);
-            $where .= " AND unique_id = '$pr_number'";
-        }
+    // ---------------------------- ORDER / SEARCH ---------------------------- //
+    $order_column = $_POST["order"][0]["column"] ?? 0;
+    $order_dir    = $_POST["order"][0]["dir"] ?? 'asc';
+    $order_by     = datatable_sorting($order_column, $order_dir, $columns);
+    $search_sql   = datatable_searching($search, $columns);
 
-        // echo $_POST['pr_number'];
+    if ($search_sql) {
+        $where .= " AND $search_sql";
+    }
 
-        if (!empty($_POST['company_name'])) {
-            $company_name = trim($_POST['company_name']);
-            $where .= " AND company_id = '$company_name'"; // Assuming company_name is actually a company_id in DB
-        }
+    // ---------------------------- MAIN SELECT ---------------------------- //
+    $sql_function = "SQL_CALC_FOUND_ROWS";
+    $result = $pdo->select($table_details, $where, $limit, $start, $order_by, $sql_function);
+    $total_records = total_records();
 
-        if (!empty($_POST['project_name'])) {
-            $project_name = trim($_POST['project_name']);
-            $where .= " AND project_id = '$project_name'"; // Assuming project_name is actually a project_id
-        }
+    if ($result->status) {
+        foreach ($result->data as $value) {
 
-        if (!empty($_POST['type_of_service'])) {
-            $type_of_service = trim($_POST['type_of_service']);
-            $where .= " AND requisition_type = '$type_of_service'";
-        }
+            // ---------------- COMPANY / PROJECT ---------------- //
+            $company_data = company_name($value['company_id']);
+            $value['company_id'] = $company_data[0]['company_name'] ?? '';
 
-        if (!empty($_POST['requisition_for'])) {
-            $requisition_for = trim($_POST['requisition_for']);
-            $where .= " AND requisition_for = '$requisition_for'";
-        }
+            $proj_data = project_name($value['project_id']);
+            $value['project_id'] = ($proj_data[0]['project_code'] ?? '') . " / " . ($proj_data[0]['project_name'] ?? '');
 
-        if (!empty($_POST['requisition_date'])) {
-            $requisition_date = trim($_POST['requisition_date']);
-            $where .= " AND requisition_date = '$requisition_date'";
-        }
+            // ---------------- REQUISITION MAPPINGS ---------------- //
+            $value['requisition_for']  = $requisition_for_options[$value['requisition_for']]['value'] ?? '-';
+            $value['requisition_type'] = $requisition_type_options[$value['requisition_type']]['value'] ?? '-';
 
-
-
-        $requisition_type_options = [
-            1 => [
-                "unique_id" => "1",
-                "value"     => "Regular"
-            ],
-            '683568ca2fe8263239' => [
-                "unique_id" => "683568ca2fe8263239",
-                "value"     => "Service"
-            ],
-            '683588840086c13657' => [
-                "unique_id" => "683588840086c13657",
-                "value"     => "Capital"
-            ]
-        ];
-
-        $requisition_for_options = [
-            1 => [
-                "unique_id" => "1",
-                "value"     => "Direct"
-            ],
-            2 => [
-                "unique_id" => "2",
-                "value"     => "SO"
-            ],
-            3 => [
-                "unique_id" => "3",
-                "value"     => "Ordered BOM"
-            ]
-        ];
-
-        $order_column   = $_POST["order"][0]["column"];
-        $order_dir      = $_POST["order"][0]["dir"];
-
-        // Datatable Ordering 
-        $order_by       = datatable_sorting($order_column, $order_dir, $columns);
-
-        // Datatable Searching
-        $search         = datatable_searching($search, $columns);
-
-        if ($search) {
-            if ($where) {
-                $where .= " AND ";
-            }
-
-            $where .= $search;
-        }
-
-        $sql_function   = "SQL_CALC_FOUND_ROWS";
-
-        $result         = $pdo->select($table_details, $where, $limit, $start, $order_by, $sql_function);
-        $total_records  = total_records();
-
-        if ($result->status) {
-
-            $res_array      = $result->data;
-
-            foreach ($res_array as $key => $value) {
-
-                // $sub_group_data                 = sub_group_name($value['sub_group_unique_id']);
-
-
-                $company_data                   = company_name($value['company_id']);
-                $value['company_id']            = $company_data[0]['company_name'];
-                
-                $company_data = project_name($value['project_id']);
-                $value['project_id'] = $company_data[0]['project_code'] . " / " . $company_data[0]['project_name'];
-
-                $value['requisition_for']       = $requisition_for_options[$value['requisition_for']]['value'];
-                $value['requisition_type']      = $requisition_type_options[$value['requisition_type']]['value'];
-                
-                $btn_view  = btn_views($folder_name, $value['unique_id']);
-                $btn_print = btn_prints($folder_name, $value['unique_id']);
-                $btn_upload = btn_docs($folder_name, $value['unique_id']);
-
-                $btn_update                     = btn_update($folder_name, $value['unique_id']);
-                $btn_delete                     = btn_delete($folder_name, $value['unique_id']);
-                $value['unique_id']             = $btn_update . $btn_delete . $btn_upload;
-                array_splice($value, -1, 0, [$btn_view, $btn_print]);
-
-                $data[]             = array_values($value);
-            }
-
-            $json_array = [
-                "draw"                => intval($draw),
-                "recordsTotal"         => intval($total_records),
-                "recordsFiltered"     => intval($total_records),
-                "data"                 => $data,
-                "testing"            => $result->sql
+            // ========================================================
+            // STATUS SUMMARY (L1/L2)  →  replaces remarks column
+            // ========================================================
+            $columns_status = [
+                "SUM(CASE WHEN status = 1 THEN 1 ELSE 0 END) AS l1_approved",
+                "SUM(CASE WHEN status = 2 THEN 1 ELSE 0 END) AS l1_rejected",
+                "SUM(CASE WHEN status = 0 THEN 1 ELSE 0 END) AS l1_pending",
+                "SUM(CASE WHEN lvl_2_status = 1 THEN 1 ELSE 0 END) AS l2_approved",
+                "SUM(CASE WHEN lvl_2_status = 2 THEN 1 ELSE 0 END) AS l2_rejected",
+                "SUM(CASE WHEN lvl_2_status = 0 THEN 1 ELSE 0 END) AS l2_pending"
             ];
-        } else {
-            print_r($result);
+            $where_status = [
+                "main_unique_id" => $value['unique_id'],
+                "is_delete"      => 0
+            ];
+            $status_res = $pdo->select(["purchase_requisition_items", $columns_status], $where_status);
+
+            $status_label = 'Pending (L1)';
+            $btn_color = 'warning';
+            if ($status_res->status && !empty($status_res->data)) {
+                $s = $status_res->data[0];
+                if ($s['l1_rejected'] > 0) {
+                    $status_label = 'Rejected (L1)';
+                    $btn_color = 'danger';
+                } elseif ($s['l2_rejected'] > 0) {
+                    $status_label = 'Rejected (L2)';
+                    $btn_color = 'danger';
+                } elseif ($s['l1_pending'] > 0) {
+                    $status_label = 'Pending (L1)';
+                    $btn_color = 'warning';
+                } elseif ($s['l1_approved'] > 0 && $s['l2_pending'] > 0) {
+                    $status_label = 'Pending (L2)';
+                    $btn_color = 'info';
+                } elseif ($s['l1_approved'] > 0 && $s['l2_approved'] > 0) {
+                    $status_label = 'Approved';
+                    $btn_color = 'success';
+                }
+            }
+
+            $value['remarks'] = "<button type='button' class='btn btn-sm btn-$btn_color' onclick=\"showStatusModal('{$value['unique_id']}')\">$status_label</button>";
+
+            // ---------------- BUTTONS ---------------- //
+            $btn_view    = btn_views($folder_name, $value['unique_id']);
+            $btn_print   = btn_prints($folder_name, $value['unique_id']);
+            $btn_upload  = btn_docs($folder_name, $value['unique_id']);
+            $btn_update  = btn_update($folder_name, $value['unique_id']);
+            $btn_delete  = btn_delete($folder_name, $value['unique_id']);
+
+            $value['unique_id'] = $btn_update . $btn_delete . $btn_upload;
+            array_splice($value, -1, 0, [$btn_view, $btn_print]);
+
+            $data[] = array_values($value);
         }
 
-        echo json_encode($json_array);
-        break;
+        $json_array = [
+            "draw"            => intval($draw),
+            "recordsTotal"    => intval($total_records),
+            "recordsFiltered" => intval($total_records),
+            "data"            => $data,
+            "testing"         => $result->sql
+        ];
+    } else {
+        $json_array = [
+            "draw"            => intval($draw),
+            "recordsTotal"    => 0,
+            "recordsFiltered" => 0,
+            "data"            => [],
+            "error"           => $result->error
+        ];
+    }
+
+    echo json_encode($json_array);
+    break;
+    
+   case 'fetch_item_status':
+
+    $main_id = $_POST['main_unique_id'] ?? '';
+
+    $columns = [
+        "item_code",
+        "item_description",
+        "quantity",
+        "uom",
+        "required_delivery_date",
+        "status",
+        "lvl_2_status",
+        "reason",
+        "lvl_2_reason"
+    ];
+
+    $where = [
+        "main_unique_id" => $main_id,
+        "is_delete"      => 0
+    ];
+
+    $result = $pdo->select(["purchase_requisition_items", $columns], $where);
+    $data_array = [];
+
+    if ($result->status && !empty($result->data)) {
+        foreach ($result->data as $row) {
+            // ===== ITEM NAME + CODE =====
+            $display_item = $row['item_code'];
+            $item_info = item_name_list($row['item_code']);
+            if (!empty($item_info) && isset($item_info[0]['item_name'])) {
+                $display_item = $item_info[0]['item_name'] . " / " . $item_info[0]['item_code'];
+            }
+
+            // ===== UOM TEXT =====
+            $uom_name = '';
+            if (!empty($row['uom'])) {
+                $uom_info = unit_name($row['uom']);
+                if (!empty($uom_info) && isset($uom_info[0]['unit_name'])) {
+                    $uom_name = $uom_info[0]['unit_name'];
+                }
+            }
+
+            // ===== LOGIC: if L1 rejected, wipe L2 =====
+            $lvl_1_status = (int) $row['status'];
+            $lvl_2_status = ($lvl_1_status === 2) ? null : (int) $row['lvl_2_status']; // null if rejected
+            $lvl_2_reason = ($lvl_1_status === 2) ? null : $row['lvl_2_reason'];
+
+            // ===== BUILD CLEAN ARRAY =====
+            $data_array[] = [
+                "item_code"             => $display_item,
+                "item_description"      => $row['item_description'],
+                "quantity"              => $row['quantity'],
+                "uom"                   => $uom_name,
+                "required_delivery_date"=> $row['required_delivery_date'],
+                "status"                => $lvl_1_status,
+                "lvl_2_status"          => $lvl_2_status,
+                "reason"                => $row['reason'],
+                "lvl_2_reason"          => $lvl_2_reason
+            ];
+        }
+
+        $json_array = [
+            "status" => true,
+            "data"   => $data_array,
+            "error"  => "",
+            "sql"    => $result->sql
+        ];
+    } else {
+        $json_array = [
+            "status" => false,
+            "data"   => [],
+            "error"  => $result->error,
+            "sql"    => $result->sql
+        ];
+    }
+
+    echo json_encode($json_array);
+    break;
+
+
+
 
         case 'delete':
 

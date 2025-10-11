@@ -980,3 +980,89 @@ document.querySelectorAll("input[type='date']").forEach(function(el) {
         e.preventDefault(); // stops manual typing
     });
 });
+
+
+// =============================================================
+// ITEM-WISE STATUS MODAL HANDLER
+// =============================================================
+function showStatusModal(pr_id) {
+  const ajax_url = sessionStorage.getItem("folder_crud_link");
+
+  Swal.fire({
+    title: "Fetching status...",
+    allowOutsideClick: false,
+    backdrop: true,
+    didOpen: () => Swal.showLoading()
+  });
+
+  $.ajax({
+    url: ajax_url,
+    type: "POST",
+    data: { action: "fetch_item_status", main_unique_id: pr_id },
+    dataType: "json",
+    success: function (resp) {
+      Swal.close();
+      const tbody = $("#itemStatusTable tbody").empty();
+
+      if (!resp.status || !resp.data || resp.data.length === 0) {
+        tbody.append(
+          "<tr><td colspan='9' class='text-center text-muted'>No item data found</td></tr>"
+        );
+        $("#statusModal").modal("show");
+        return;
+      }
+
+      resp.data.forEach((row, i) => {
+        const l1 = renderStatusBadge(row.status);
+        const l2 = row.status == 2 ? "" : renderStatusBadge(row.lvl_2_status); // hide L2 if L1 rejected
+        const reason = row.reason || row.lvl_2_reason || "";
+
+        tbody.append(`
+          <tr>
+            <td>${i + 1}</td>
+            <td>${row.item_code}</td>
+            <td>${row.item_description}</td>
+            <td>${row.quantity}</td>
+            <td>${row.uom}</td>
+            <td>${row.required_delivery_date}</td>
+            <td>${l1}</td>
+            <td>${l2}</td>
+            <td>${reason}</td>
+          </tr>
+        `);
+      });
+
+      $("#statusModal").modal("show");
+    },
+    error: function () {
+      Swal.fire("Error", "Unable to fetch item statuses.", "error");
+    }
+  });
+}
+
+
+// =============================================================
+// STATUS BADGE RENDERER
+// =============================================================
+function renderStatusBadge(statusVal) {
+  switch (parseInt(statusVal)) {
+    case 1:
+      return `<span class="badge bg-success">Approved</span>`;
+    case 2:
+      return `<span class="badge bg-danger">Rejected</span>`;
+    default:
+      return `<span class="badge bg-warning text-dark">Pending</span>`;
+  }
+}
+
+$('#statusModal').on('hidden.bs.modal', function () {
+  setTimeout(() => {
+    if ($.fn.DataTable.isDataTable('#purchase_requisition_datatable')) {
+      $('#purchase_requisition_datatable').DataTable().columns.adjust().responsive.recalc();
+    }
+  }, 250);
+});
+
+window.addEventListener('show.bs.modal', () => {
+  document.body.style.paddingRight = '0px';
+});

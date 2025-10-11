@@ -143,18 +143,18 @@ $type_options = select_option(doc_type_options(), "Select the Document Type", $d
                class="table table-striped dt-responsive nowrap w-100">
           <thead class="table-light">
             <tr>
-              <th>#</th>
-              <th>Invoice No</th>
-              <th>Company</th>
-              <th>Project</th>
-              <th>Customer</th>
-              <th>Invoice Date</th>
-              <th>Due Date</th>
-              <th>Remarks</th>
-              <th>View</th>
-              <th>Print</th>
-              <th>Action</th>
-            </tr>
+  <th>#</th>
+  <th>Invoice No</th>
+  <th>Category</th>
+  <th>Payment Type</th>
+  <th>Customer</th>
+  <th>Invoice Date</th>
+  <th>Remarks</th>
+  <th>View</th>
+  <th>Print</th>
+  <th>Action</th>
+</tr>
+
           </thead>
           <tbody></tbody>                                            
         </table>

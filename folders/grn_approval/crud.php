@@ -430,7 +430,7 @@ switch ($action) {
                     $image_files = explode(',', $value['file_attach']);
                     $image_buttons = "";
                     foreach ($image_files as $image_file) {
-                        $image_path = "../blue_planet_beta/uploads/grn_new/" . trim($image_file);
+                        $image_path = "../blue_planet_erp/uploads/grn_new/" . trim($image_file);
                         $view_button = "<button type='button' onclick=\"new_external_window_image('$image_path')\" style='border: 2px solid #ccc; background:none; cursor:pointer; padding:5px; border-radius:5px; margin-right: 5px;'> <i class='fas fa-image' style='font-size: 20px; color: #555;'></i>
                         </button>";
                         $image_buttons .= $view_button;
@@ -505,9 +505,9 @@ switch ($action) {
         ];
         
         if($status != ''){
-            $where = " is_delete = '0' AND invoice_date >= '$from' AND invoice_date <= '$to' AND check_status = '$status'";
+            $where = " is_delete = '0' AND entry_date >= '$from' AND entry_date <= '$to' AND check_status = '$status'";
         } else {
-            $where = " is_delete = '0' AND invoice_date >= '$from' AND invoice_date <= '$to'";
+            $where = " is_delete = '0' AND entry_date >= '$from' AND entry_date <= '$to'";
         }
 
          
@@ -852,68 +852,94 @@ switch ($action) {
 
 
         $data = [];
-        if ($result->status) {
-            foreach ($result->data as $row) {
-                $total_amount += isset($row['amount']) ? floatval($row['amount']) : 0;
-                $rate = $row['rate'];
-                $qty = $row['update_qty'];
-                $taxed_val += ($tax * $rate * $qty) / 100;
-                error_log("row: " . print_r($row, true) . "\n", 3, "row_logs.txt");
-                error_log("total: " . $total_amount . "\n", 3, "tot_log.txt");
-                if (!$is_update) {
-                    $item_code = $row['item_code'];
-                    $row['now_received_qty'] = isset($latest_qty_map[$item_code]) ? $latest_qty_map[$item_code] : 0;
-                }
+if ($result->status) {
+    foreach ($result->data as $row) {
+        // --- numbers ---
+        $qty   = isset($row['update_qty']) ? (float)$row['update_qty'] : 0.0;
+        $rate  = isset($row['rate'])       ? (float)$row['rate']       : 0.0;
 
-                $item_data = item_name_list($row["item_code"]);
-                $row["item_code"] = $item_data[0]["item_name"] . " / " . $item_data[0]["item_code"];
+        // $discount_type and $discount come from your PO-level settings above
+        $discType = $discount_type;              // 1 = Percentage, 2 = Amount (string/number both ok)
+        $discVal  = (float)$discount;            // value (percent or amount)
+        $base     = $qty * $rate;
 
-                $uom_data = unit_name($row["uom"]);
-                $row["uom"] = !empty($uom_data[0]["unit_name"]) ? $uom_data[0]["unit_name"] : $row["uom"];
-
-                // Map discount_type to display value
-                $discount_type_display = '';
-                if ($row['discount_type'] == 1) {
-                    $discount_type_display = 'Percentage';
-                } else if ($row['discount_type'] == 2) {
-                    $discount_type_display = 'Amount';
-                } else {
-                    $discount_type_display = 'No Type';
-                }
-                $row['discount_type_display'] = $discount_type_display;
-                $row['discount_type'] = $discount_type_display;
-
-
-                $edit = btn_edit($btn_prefix, $row["unique_id"]);
-                $del = btn_delete($btn_prefix, $row["unique_id"]);
-                $row["unique_id"] = $edit . $del;
-
-                $data[] = array_merge(array_values($row), [
-                    'item_code' => $row["item_code"],
-                    'order_qty' => $row["order_qty"],
-                    'uom' => $row["uom"],
-                    'now_received_qty' => $row["now_received_qty"],
-                    'unique_id' => $row["unique_id"]
-                ]);
-            }
-
-            echo json_encode([
-                "draw" => 1,
-                "recordsTotal" => count($data),
-                "recordsFiltered" => count($data),
-                "data" => $data,
-                "total" => $total_amount,
-                "taxed" => $taxed_val,
-            ]);
-        } else {
-            echo json_encode([
-                "draw" => 1,
-                "recordsTotal" => 0,
-                "recordsFiltered" => 0,
-                "data" => [],
-                "error" => $result->error
-            ]);
+        // --- discount ---
+        $discountAmt = 0.0;
+        if ($discType == 1 || $discType === '1' || $discType === 'Percentage') {
+            $discountAmt = ($base * $discVal) / 100;
+        } elseif ($discType == 2 || $discType === '2' || $discType === 'Amount') {
+            $discountAmt = $discVal;
         }
+
+        $afterDiscount = max($base - $discountAmt, 0.0);
+
+        // --- tax (use numeric $tax you set from tax(...)[0]['tax_value']) ---
+        $rowTax = ($tax * $afterDiscount) / 100;
+
+        // --- per-row display amount: afterDiscount + rowTax ---
+        $row['amount'] = round($afterDiscount + $rowTax, 2);
+
+        // --- totals to return (match GRN semantics) ---
+        $total_amount += round($afterDiscount, 2); // pre-tax total
+        $taxed_val    += round($rowTax, 2);        // tax total
+
+        // ----- existing mapping/rendering below -----
+
+        if (!$is_update) {
+            $item_code = $row['item_code'];
+            $row['now_received_qty'] = isset($latest_qty_map[$item_code]) ? $latest_qty_map[$item_code] : 0;
+        }
+
+        $item_data = item_name_list($row["item_code"]);
+        $row["item_code"] = $item_data[0]["item_name"] . " / " . $item_data[0]["item_code"];
+
+        $uom_data = unit_name($row["uom"]);
+        $row["uom"] = !empty($uom_data[0]["unit_name"]) ? $uom_data[0]["unit_name"] : $row["uom"];
+
+        // Map discount type for display
+        if ($discType == 1 || $discType === '1' || $discType === 'Percentage') {
+            $row['discount_type_display'] = 'Percentage';
+            $row['discount_type'] = 'Percentage';
+        } elseif ($discType == 2 || $discType === '2' || $discType === 'Amount') {
+            $row['discount_type_display'] = 'Amount';
+            $row['discount_type'] = 'Amount';
+        } else {
+            $row['discount_type_display'] = 'No Type';
+            $row['discount_type'] = 'No Type';
+        }
+
+        $edit = btn_edit($btn_prefix, $row["unique_id"]);
+        $del  = btn_delete($btn_prefix, $row["unique_id"]);
+        $row["unique_id"] = $edit . $del;
+
+        $data[] = array_merge(array_values($row), [
+            'item_code'        => $row["item_code"],
+            'order_qty'        => $row["order_qty"],
+            'uom'              => $row["uom"],
+            'now_received_qty' => $row["now_received_qty"],
+            'update_qty'       => $row["update_qty"],
+            'rate'             => $row["rate"],
+            'remarks'          => $row["remarks"] ?? '',
+            'tax'              => $row["tax_name"],
+            'discount_type'    => $row["discount_type"],
+            'discount'         => $row["discount"],
+            'discount_type_display' => $row["discount_type_display"],
+            'amount'           => $row['amount'],
+            'unique_id'        => $row["unique_id"],
+        ]);
+    }
+
+    echo json_encode([
+        "draw"            => 1,
+        "recordsTotal"    => count($data),
+        "recordsFiltered" => count($data),
+        "data"            => $data,
+        "total"           => $total_amount, // ✅ pre-tax, after discount (matches GRN)
+        "taxed"           => $taxed_val,    // ✅ total tax only (matches GRN)
+    ]);
+    // ...
+}
+
     break;
 
 

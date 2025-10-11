@@ -546,7 +546,7 @@ break;
                     $image_files = explode(',', $value['file_attach']);
                     $image_buttons = "";
                     foreach ($image_files as $image_file) {
-                        $image_path = "../blue_planet_beta/uploads/grn_new/" . trim($image_file);
+                        $image_path = "../blue_planet_erp/uploads/grn_new/" . trim($image_file);
                         $view_button = "<button type='button' onclick=\"new_external_window_image('$image_path')\" style='border: 2px solid #ccc; background:none; cursor:pointer; padding:5px; border-radius:5px; margin-right: 5px;'> <i class='fas fa-image' style='font-size: 20px; color: #555;'></i>
                         </button>";
                         $image_buttons .= $view_button;
@@ -614,7 +614,7 @@ break;
         $where          = [
             "is_delete"     => 0
         ];
-        $where = " is_delete = '0' AND invoice_date >= '$from' AND invoice_date <= '$to'";
+        $where = " is_delete = '0' AND entry_date >= '$from' AND entry_date <= '$to'";
          
         $order_column   = $_POST["order"][0]["column"];
         $order_dir      = $_POST["order"][0]["dir"];
@@ -1185,7 +1185,7 @@ break;
             }
             $row['amount'] = round($finalAmount, 2);
 
-            $total_amount += $afterDiscount;
+            $total_amount += round($afterDiscount, 2);
 
             error_log("row: " . print_r($row, true) . "\n", 3, "logs/row_logs.txt");
 
@@ -1230,7 +1230,7 @@ break;
                     'discount_type' => $row["discount_type"],
                     'discount' => $row["discount"],
                     'discount_type_display' => $row["discount_type_display"],
-                    'amount' => $row["amount"],
+                    'amount' => $row['amount'],
                     'unique_id' => $row["unique_id"],
                 ]);
 
@@ -1443,6 +1443,8 @@ case "get_po_items_for_grn":
 
     // Step 1: Fetch screen_unique_id and supplier from purchase_order
     $po_result = $pdo->select(["purchase_order", ["screen_unique_id", "supplier_id"]], ["unique_id" => $po_unique_id]);
+        error_log(print_r($po_result, true) . "\n", 3, "po_items.log");
+
 
     if (!$po_result->status || empty($po_result->data)) {
         echo json_encode([
@@ -1475,6 +1477,8 @@ case "get_po_items_for_grn":
         "is_delete" => 0
     ];
     $items_result = $pdo->select($table_details, $where);
+    
+    error_log(print_r($items_result, true) . "\n", 3, "po_items.log");
     
     
 
@@ -1570,7 +1574,6 @@ function generateGRN($label, &$labelData) {
 
     return $grn;
 }
-
 
 function fetch_grn_number($table)
 {
