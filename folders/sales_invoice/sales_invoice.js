@@ -1,37 +1,3 @@
-// $(document).ready(function () {
-//     let main_id = $("#unique_id").val();
-//     if (main_id) {
-//         invoice_items_datatable("invoice_items_datatable");
-//     }
-
-//     $('.select2').select2();
-
-//     // When item is chosen → load details (unit etc.)
-//     $("#item_code").on("change", function () {
-//         const item_name = $(this).val();
-//         if (item_name) {
-//             get_item_details(item_name);
-//         } else {
-//             $("#unit, #quantity, #rate, #discount, #tax, #amount, #remarks").val("");
-//         }
-//     });
-
-//     // Auto calculate amount when qty, rate, discount, tax changes
-//     $("#quantity, #rate, #discount, #tax").on("input", function () {
-//         calculate_amount();
-//     });
-
-//     init_datatable(table_id, form_name, action);
-// });
-
-// var form_name   = 'sales_invoice';
-// var table_id    = 'sales_invoice_datatable';
-// var action      = 'datatable';
-
-// var ajax_url    = sessionStorage.getItem("folder_crud_link");
-// var url         = sessionStorage.getItem("list_link");
-
-
 
 
 // ---------- INIT ----------
@@ -72,29 +38,6 @@ $(document).ready(function () {
 });
 
 
-// function calculate_amount() {
-//     // alert("test");
-//     let qty      = parseFloat($("#quantity").val()) || 0;
-//     let rate     = parseFloat($("#rate").val()) || 0;
-//     let discount = parseFloat($("#discount").val()) || 0;
-//     let discountType = $("#discount_type").val() || 0;  
-//     let tax      = parseFloat($("#tax").val()) || 0;
-
-//     let subtotal = qty * rate;
-//     let after_discount = subtotal;
-
-//     // Apply discount based on type
-//     if (discountType === "1") {        // Percentage
-//         after_discount -= (discount / 100) * subtotal;
-//     } else if (discountType === "2") { // Amount (₹)
-//         after_discount -= discount;
-//     }
-
-//     // Apply tax
-//     let after_tax = after_discount + (after_discount * (tax / 100));
-
-//     $("#amount").val(after_tax.toFixed(2));
-// }
 
 
 function calculate_amount() {
@@ -134,47 +77,6 @@ function calculate_amount() {
 
 
 
-// function calculate_amount() {
-//     let qty = parseFloat($("#quantity").val()) || 0;
-//     let rate = parseFloat($("#rate").val()) || 0;
-//     let discount = parseFloat($("#discount").val()) || 0;
-//     let discountType = $("#discount_type").val() || "0";
-//     let taxPercent = parseFloat($("#tax").val()) || 0;
-
-//     // Step 1: Base
-//     let base = qty * rate;
-
-//     // Step 2: Discount
-//     let discountAmt = 0;
-//     if (discountType === "1") {         // Percentage discount
-//         discountAmt = (base * discount) / 100;
-//     } else if (discountType === "2") {  // Amount discount
-//         discountAmt = discount;
-//     }
-
-//     // Step 3: After discount
-//     let afterDiscount = base - discountAmt;
-//     if (afterDiscount < 0) afterDiscount = 0;
-
-//     // Step 4: Tax calculation
-//     let taxAmt = (afterDiscount * taxPercent) / 100;
-
-//     // Step 5: Final total
-//     let totalAmt = afterDiscount + taxAmt;
-
-//     // Step 6: Display
-//     $("#amount").val(totalAmt.toFixed(2));
-
-//     // Optional: Show breakdown if you have fields
-//     $("#basic").val(afterDiscount.toFixed(2));
-//     $("#total_gst").val(taxAmt.toFixed(2));
-//     $("#tot_amount").val(totalAmt.toFixed(2));
-// }
-
-
-
-
-
 // Save main invoice
 function sales_invoice_cu(unique_id = "") {
     let internet_status = is_online();
@@ -189,7 +91,7 @@ function sales_invoice_cu(unique_id = "") {
         return false;
     }
 
-    // ✅ CHECK: If sublist is empty, stop
+    // âœ… CHECK: If sublist is empty, stop
     let rowCount = $("#invoice_items_datatable tbody tr").length;
     if (rowCount === 0 || $("#invoice_items_datatable tbody").text().includes("No data available")) {
         Swal.fire("Please add at least one item in the sublist before saving.");
@@ -231,77 +133,6 @@ function sales_invoice_cu(unique_id = "") {
     });
 }
 
-
-
-
-// function invoice_item_add_update() {
-//     let main_unique_id = $("#unique_id").val();
-//     let sublist_id = $("#sublist_unique_id").val();
-
-//     if (!main_unique_id) {
-//         Swal.fire("Please save the invoice header before adding items.");
-//         return;
-//     }
-
-//     let item_name     = $("#item_name").val();   
-//     let unit          = $("#unit").val();       
-//     let quantity      = $("#quantity").val();
-//     let rate          = $("#rate").val();
-//     let discount_type = $("#discount_type").val();
-//     let discount      = $("#discount").val();
-//     let tax           = $("#tax").val();
-//     let amount        = $("#amount").val();
-//     let remarks       = $("#remarks").val();
-
-//     // validation check
-//     if (!item_name || quantity <= 0 || rate <= 0) {
-//         Swal.fire("Please fill all required sublist fields (Item, Qty, Rate).");
-//         return;
-//     }
-
-//     $.ajax({
-//         type: "POST",
-//         url: ajax_url,
-//         data: {
-//             action: "invoice_item_add_update",
-//             main_unique_id: main_unique_id,
-//             sublist_unique_id: sublist_id,
-//             item_name,
-//             unit,
-//             quantity,
-//             rate,
-//             discount_type,
-//             discount,
-//             tax,
-//             amount,
-//             remarks
-//         },
-//         success: function (res) {
-//             let obj = JSON.parse(res);
-
-//             if (obj.status) {
-//                 Swal.fire({
-//                     icon: "success",
-//                     title: (obj.msg === "update" ? "Item updated" : "Item added"),
-//                     timer: 1500,
-//                     showConfirmButton: false
-//                 });
-
-//                 invoice_items_datatable("invoice_items_datatable");
-//                 reset_sublist_form();
-//             } else {
-//                 Swal.fire({
-//                     icon: "error",
-//                     title: "Error",
-//                     text: (obj.error || "Operation failed")
-//                 });
-//             }
-//         },
-//         error: function () {
-//             Swal.fire("Network error");
-//         }
-//     });
-// }
 
 
 
@@ -356,7 +187,7 @@ function invoice_item_add_update() {
                     showConfirmButton: false
                 });
                 invoice_items_datatable("invoice_items_datatable");
-                recalc_invoice_totals();   // 🔹 refresh totals
+                recalc_invoice_totals();   // ðŸ”¹ refresh totals
                 reset_sublist_form();
             }
         }
@@ -366,97 +197,65 @@ function invoice_item_add_update() {
 
 
 
-// function recalc_invoice_totals() {
-//     let basic = 0;
-//     let total_gst = 0;
-//     let roundoff = parseFloat($("#roundoff").val()) || 0;
 
-//     $("#invoice_items_datatable tbody tr").each(function () {
-//         const val = parseFloat($(this).find("td:eq(8)").text()) || 0; // 9th col = amount
-//         basic += val;
-//     });
-
-//     // total GST: optional backend calc, here assume 18% sample
-//     total_gst = basic * 0.18; // replace with your actual GST % sum logic
-
-//     if (roundoff > 10) roundoff = 10;
-//     if (roundoff < -10) roundoff = -10;
-//     $("#roundoff").val(roundoff.toFixed(2));
-
-//     const tot_amount = basic + total_gst + roundoff;
-//     basic -= total_gst; 
-//     $("#basic").val(basic.toFixed(2));
-//     $("#total_gst").val(total_gst.toFixed(2));
-//     $("#tot_amount").val(tot_amount.toFixed(2));
-// }
-
-// function recalc_invoice_totals() {
-//     let basic = 0;
-//     let total_gst = 0;
-
-//     // Step 1: Sum line items
-//     $("#invoice_items_datatable tbody tr").each(function () {
-//         const amount = parseFloat($(this).find("td:eq(8)").text()) || 0;
-//         basic += amount;
-//     });
-
-//     // Step 2: Example GST logic
-//     total_gst = basic * 0.18; // or compute dynamically
-
-//     // Step 3: Compute roundoff automatically
-//     const total_before_round = basic + total_gst;
-//     const rounded_total = Math.round(total_before_round);
-//     const auto_roundoff = rounded_total - total_before_round;
-
-//     // Update roundoff field but allow user adjustment
-//     let roundoff = parseFloat($("#roundoff").val());
-//     if (isNaN(roundoff)) roundoff = auto_roundoff;
-
-//     // Step 4: Final total (positive adds, negative subtracts)
-//     let tot_amount = total_before_round + roundoff;
-
-//     // Step 5: Display
-//     $("#basic").val(basic.toFixed(2));
-//     $("#total_gst").val(total_gst.toFixed(2));
-//     $("#roundoff").val(roundoff.toFixed(2));
-//     $("#tot_amount").val(tot_amount.toFixed(2));
-// }
 
 function recalc_invoice_totals() {
     let basic = 0;
     let total_gst = 0;
 
-    // Step 1: Sum line items
     $("#invoice_items_datatable tbody tr").each(function () {
-        const amount = parseFloat($(this).find("td:eq(8)").text()) || 0;
-        basic += amount;
+        const qty  = parseFloat($(this).find("td:eq(3)").text()) || 0;
+        const rate = parseFloat($(this).find("td:eq(4)").text()) || 0;
+
+        const discTypeText = ($(this).find("td:eq(5)").text() || "").trim().toLowerCase();
+        const discount = parseFloat($(this).find("td:eq(6)").text()) || 0;
+
+        // FIX: sanitize GST column
+        const gstText = ($(this).find("td:eq(7)").text() || "").replace(/[^\d.-]/g, "");
+        const gstPercent = parseFloat(gstText) || 0;
+
+        // Step 1: Base
+        const base = qty * rate;
+
+        // Step 2: Discount
+        let discountAmt = 0;
+        if (discTypeText === "1" || discTypeText === "%" || discTypeText.includes("percent")) {
+            discountAmt = (base * discount) / 100;
+        } else if (discTypeText === "2" || discTypeText === "₹" || discTypeText.includes("amount")) {
+            discountAmt = discount;
+        }
+
+        // Step 3: After discount
+        const afterDiscount = Math.max(0, base - discountAmt);
+
+        // Step 4: Tax
+        const gstAmt = (afterDiscount * gstPercent) / 100;
+
+        // Debugging
+        console.log({
+            qty, rate, discount, discTypeText, gstPercent,
+            base, afterDiscount, gstAmt
+        });
+
+        // Step 5: Accumulate
+        basic += afterDiscount;
+        total_gst += gstAmt;
     });
 
-    // Step 2: Calculate GST (example 18% — replace with your actual logic)
-    total_gst = basic * 0.18;
-
-    // Step 3: Read user-provided roundoff value
-    let roundoff = parseFloat($("#roundoff").val()) || 0;
-
-    // Limit roundoff to safe ±10 range
-    if (roundoff > 10) roundoff = 10;
-    if (roundoff < -10) roundoff = -10;
-    $("#roundoff").val(roundoff.toFixed(2));
-
-    // Step 4: Calculate total using user's roundoff
+    const roundoff = parseFloat($("#roundoff").val()) || 0;
     const tot_amount = basic + total_gst + roundoff;
 
-    // Step 5: Display values
     $("#basic").val(basic.toFixed(2));
     $("#total_gst").val(total_gst.toFixed(2));
     $("#tot_amount").val(tot_amount.toFixed(2));
 }
 
+// Update totals when roundoff changes
 $("#roundoff").on("input", function () {
+    // const val = parseFloat($(this).val()) || 0;
+    // $(this).val(val.toFixed(2));
     recalc_invoice_totals();
 });
-
-
 
 
 
@@ -472,39 +271,7 @@ function reset_sublist_form() {
         .addClass("btn-success");
 }
 
-// Load items datatable
-// function invoice_items_datatable(table_id = "invoice_items_datatable") {
-//     let main_unique_id = $("#unique_id").val();
 
-//     let table = $("#" + table_id).DataTable({
-//         destroy: true,
-//         searching: false,
-//         paging: false,
-//         ordering: false,
-//         info: false,
-//         ajax: {
-//             type: "POST",
-//             url: ajax_url,
-//             data: {
-//                 action: "invoice_items_datatable",
-//                 main_unique_id: main_unique_id
-//             }
-//         },
-//         columns: [
-//             { data: "s_no" },
-//             { data: "item" },
-//             { data: "unit" },
-//             { data: "qty" },
-//             { data: "rate" },
-//             { data: "discount_type" },
-//             { data: "discount" },
-//             { data: "tax" },
-//             { data: "amount" },
-//             { data: "remarks" },
-//             { data: "actions" }
-//         ]
-//     });
-// }
 
 function invoice_items_datatable(table_id = "invoice_items_datatable") {
     let main_unique_id = $("#unique_id").val();
@@ -537,7 +304,7 @@ function invoice_items_datatable(table_id = "invoice_items_datatable") {
             { data: "actions" }
         ],
         drawCallback: function () {
-            recalc_invoice_totals(); // 🔹 auto update totals when data changes
+            recalc_invoice_totals(); // ðŸ”¹ auto update totals when data changes
         }
     });
 }

@@ -2801,3 +2801,7 @@ Stack trace:
 #3 /home/ie9owkuzkgd4/public_html/blue_planet_beta/body.php(69): include('/home/ie9owkuzk...')
 #4 /home/ie9owkuzkgd4/public_html/blue_planet_beta/index.php(76): include('/home/ie9owkuzk...')
 #5 {main}
+[13-Oct-2025 15:19:26 Asia/Kolkata] PHP Notice:  Undefined variable: doc_type in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/pending_pr_report/list.php on line 7
+[13-Oct-2025 15:19:26 Asia/Kolkata] PHP Notice:  Undefined variable: requisition_type in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/pending_pr_report/list.php on line 20
+[13-Oct-2025 15:19:26 Asia/Kolkata] PHP Notice:  session_start(): A session had already been started - ignoring in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/comfun.php on line 1349
+[13-Oct-2025 15:19:26 Asia/Kolkata] PHP Notice:  session_start(): A session had already been started - ignoring in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/comfun.php on line 1349

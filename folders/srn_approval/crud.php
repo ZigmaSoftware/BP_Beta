@@ -528,7 +528,7 @@ break;
     break;
 
 
-    case 'entry_date':
+    case 'datatable':
 
         // DataTable Variables
         $search     = $_POST['search']['value'];

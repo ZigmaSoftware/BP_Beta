@@ -884,42 +884,59 @@ if (isset($_POST['lvl_2_status']) && $_POST['lvl_2_status'] !== '') {
     break;
 
     case 'bulk_update_status_lvl_2':
-    $main_unique_id = $_POST['main_unique_id'];
-    $selectedValue  = $_POST['selectedValue']; // 1 = Approve All, 2 = Reject All
-
-    $table_sub = "purchase_requisition_items";
-
-    if (!$main_unique_id || !in_array($selectedValue, [1, 2])) {
+        $main_unique_id = $_POST['main_unique_id'] ?? null;
+        $selectedValue  = $_POST['selectedValue'] ?? null; // 1 = Approve All, 2 = Reject All
+        $reason         = $_POST['reason'] ?? null;        // optional custom reason from JS
+    
+        $table_sub = "purchase_requisition_items";
+    
+        // ✅ Basic validation
+        if (!$main_unique_id || !in_array($selectedValue, [1, 2])) {
+            echo json_encode([
+                "status" => false,
+                "error"  => "Missing or invalid parameters",
+                "msg"    => "invalid_input"
+            ]);
+            exit;
+        }
+    
+        // ✅ Prepare update columns
+        $columns = [
+            "lvl_2_status" => $selectedValue
+        ];
+    
+        if ($selectedValue == 2) {
+            // If rejecting, use typed reason if provided, else default message
+            $columns["lvl_2_reason"] = !empty($reason)
+                ? trim($reason)
+                : "Rejected in bulk action (Level 2)";
+        } else {
+            // If approving, clear previous rejection reason
+            $columns["lvl_2_reason"] = null;
+        }
+    
+        $where = [
+            "main_unique_id" => $main_unique_id,
+            "is_delete" => 0
+        ];
+    
+        // ✅ Perform update
+        $action_obj = $pdo->update($table_sub, $columns, $where);
+    
+        // ✅ Response message
+        $msg = $action_obj->status
+            ? ($selectedValue == 1
+                ? "All items approved successfully (Level 2)"
+                : "All items rejected successfully (Level 2)")
+            : "Bulk update failed (Level 2)";
+    
         echo json_encode([
-            "status" => false,
-            "error"  => "Missing or invalid parameters",
-            "msg"    => "invalid_input"
+            "status" => $action_obj->status,
+            "error"  => $action_obj->error,
+            "msg"    => $msg,
+            "sql"    => $action_obj->sql
         ]);
-        exit;
-    }
-
-    // Update all items under that requisition for level 2
-    $columns = [
-        "lvl_2_status" => $selectedValue,
-        "lvl_2_reason" => ($selectedValue == 2 ? "Rejected in bulk action (L2)" : null)
-    ];
-
-    $where = [
-        "main_unique_id" => $main_unique_id,
-        "is_delete" => 0
-    ];
-
-    $action_obj = $pdo->update($table_sub, $columns, $where);
-
-    $msg = $action_obj->status ? "bulk_update_lvl2_success" : "bulk_update_lvl2_failed";
-
-    echo json_encode([
-        "status" => $action_obj->status,
-        "error"  => $action_obj->error,
-        "msg"    => $msg,
-        "sql"    => $action_obj->sql
-    ]);
-break;
+    break;
 
     
     default:

@@ -5,52 +5,101 @@ include '../../config/dbconfig.php';
 <html>
 <head>
   <title>Integrated Daily Log Sheet Report</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
-  <style>
-    body { font-family: Arial, sans-serif; font-size: 13px; }
-    .report-header { text-align: center; margin-bottom: 15px; }
-    .report-header h3 { margin: 5px 0; }
-    th, td { text-align: center; vertical-align: middle; }
-    thead th { background: #f2f2f2; font-size: 12px; }
-    tbody td { font-size: 12px; }
-    
-    @media print {
-      @page {
-        size: A2 landscape; /* ðŸ‘ˆ You can change to landscape if needed */
-        margin: 10mm;
-      }
-    
-      body * {
-        visibility: hidden;
-      }
-    
-      #report_table, #report_table *, .report-header, .report-header * {
-        visibility: visible;
-      }
-    
-      #report_table {
-        position: absolute;
-        left: 0;
-        top: 60px; /* leaves space for title */
-        width: 100%;
-      }
-    
-      .report-header {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        text-align: center;
-      }
+ 
+<style>
+  .report-header { text-align: center; margin-bottom: 15px; }
+  .report-header h3 { margin: 5px 0; }
+  th, td { text-align: center; vertical-align: middle; }
+  thead th { background: #f2f2f2; font-size: 12px; }
+  tbody td { font-size: 12px; }
+
+  /* Hide company info and logo on screen */
+  .print-company-info,
+  .print-logo {
+    display: none;
+  }
+
+  @media print {
+    @page {
+      size: A1 landscape;
+      margin: 10mm;
     }
 
-  </style>
+    body * {
+      visibility: hidden;
+    }
+
+    /* Make header, address, logo, and table visible */
+    #report_table,
+    #report_table *,
+    .report-header,
+    .report-header *,
+    .print-company-info,
+    .print-company-info *,
+    .print-logo {
+      visibility: visible;
+    }
+
+    /* Header title */
+    .report-header {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      text-align: center;
+    }
+
+    /* Company info (address) */
+    .print-company-info {
+      display: block;
+      position: absolute;
+      top: 33px;
+      left: 0;
+      width: 100%;
+      text-align: center;
+      font-size: 12px;
+      line-height: 1.3;
+      color: #000;
+    }
+
+    /* Logo on right side */
+    .print-logo {
+      display: block;
+      position: absolute;
+      top: 5px;
+      right: 20px;
+      width: 160px;
+      height: auto;
+    }
+
+    /* Table closer to header */
+    #report_table {
+      position: absolute;
+      left: 0;
+      top: 70px; /* compact spacing */
+      width: 100%;
+    }
+  }
+</style>
+
 </head>
 <body class="p-3">
 
 <div class="report-header">
   <h3>Integrated Daily Log Sheet Report</h3>
 </div>
+
+<div class="print-company-info">
+  <strong>BLUE PLANET INTEGRATED WASTE SOLUTIONS LIMITED</strong><br>
+  Powerol Building, Gate Number 2, 2nd Floor, Akruli Road, Kandivali East
+</div>
+
+<img
+  src="https://zigma.in/blue_planet/assets/images/blueplanetbiofuel.PNG"
+  class="print-logo"
+  alt="Blue Planet Biofuel Logo"
+/>
+
 
 <!-- Filters -->
 <div class="row g-3 mb-3">
@@ -89,12 +138,16 @@ include '../../config/dbconfig.php';
 </div>
 
 </div>
+<div class="card">
+            <div class="card-body">
+    
 
 <div class="table-responsive">
   <table class="table table-bordered table-sm align-middle" id="report_table">
     <!-- dynamic -->
   </table>
 </div>
+</div></div>
 
 <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/exceljs/dist/exceljs.min.js"></script>

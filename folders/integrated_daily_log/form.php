@@ -68,7 +68,9 @@ $company_name_options  = select_option(company_name(),"Select the Company",$comp
 $project_options       = select_option(get_project_name(),"Select the Project Name",$project_name);
 
 ?>
-
+<style>.form-check-input[type=checkbox] {
+    margin-right: 8px;
+}</style>
 <div class="row">
     <div class="col-12">
         <div class="card">
@@ -136,11 +138,11 @@ $project_options       = select_option(get_project_name(),"Select the Project Na
                                     </div>
 
                                     <!-- List of checkboxes -->
-                                    <div class="list-group">
+                                    <div class="col-md-12">
                                         <?php
                                         foreach ($checkbox_fields as $field) {
                                             $checked = ($checkbox_values[$field] == 1) ? "checked" : "";
-                                            echo '<div class="form-check list-group-item">';
+                                            echo '<div class="form-check-inline">';
                                             echo '<input class="form-check-input field-checkbox" type="checkbox" id="'.$field.'" name="fields['.$field.']" value="1" '.$checked.'>';
                                             echo '<label class="form-check-label" for="'.$field.'">'.ucwords(str_replace("_"," ",$field)).'</label>';
                                             echo '</div>';
@@ -152,7 +154,7 @@ $project_options       = select_option(get_project_name(),"Select the Project Na
                             </div>
 
                             <!-- Buttons -->
-                            <div class="form-group row btn-action">
+                            <div class="form-group row btn-action mt-3">
                                 <div class="col-md-12">
                                     <?php echo btn_cancel($btn_cancel);?>
                                     <?php echo btn_createupdate($folder_name_org,$unique_id,$btn_text);?>

@@ -361,8 +361,7 @@ function get_application_type_by_project(project_id = "", company_id = "") {
   }
 }
 
-/* ======================= GET FLAGS + RENDER DYNAMIC INPUTS ======================= */
-// <script>
+
 // ====================== GLOBAL STABILIZERS ======================
 let __dlg_req = { xhr: null, seq: 0, lastKey: "", debounce: null };
 let __get_entry_req = { xhr: null };
@@ -519,13 +518,28 @@ function titleCaseFromKey(key) {
   return key.replace(/_/g, ' ').replace(/\b\w/g, s => s.toUpperCase());
 }
 
+// ======================= BUILD FIELD (ENHANCED) =======================
 function buildField(name, cfg) {
   const id = 'input_' + name;
   const label = cfg.label || titleCaseFromKey(name);
   const required = 'required';
-  const wrapCol = `<div class="col-md-6 mb-3">`;
+  const wrapCol = `<div class="col-md-6 ">`;
   let control = '';
 
+  // ✅ Added: Disable future dates (and today) for automated weighment date
+  if (name === 'automated_weighbridge') {
+    const today = new Date();
+    today.setDate(today.getDate() - 1); // yesterday
+    const maxDate = today.toISOString().split('T')[0];
+    const input = `<input type="date" class="form-control" id="${id}" name="values[${name}]" ${required} max="${maxDate}">`;
+    return `
+      ${wrapCol}
+        <label class="col-form-label" for="${id}">${label}</label>
+        ${input}
+      </div>`;
+  }
+
+  // --- existing untouched logic ---
   if (cfg.type === 'textarea') {
     control = `<textarea class="form-control" id="${id}" name="values[${name}]" rows="2" ${required}></textarea>`;
   } else {
@@ -533,7 +547,9 @@ function buildField(name, cfg) {
     const min  = cfg.min  ? ` min="${cfg.min}"`   : '';
     const max  = cfg.max  ? ` max="${cfg.max}"`   : '';
     const type = cfg.type || 'text';
-    let readonly = ['total_waste_actual','total_waste_reported','rdf_stock','cbg_total_sold','cbg_stock','manure_stock'].includes(name) ? 'readonly style="background-color:#f5f5f5;"' : '';
+    let readonly = ['total_waste_actual','total_waste_reported','cbg_total_sold'].includes(name)
+      ? 'readonly style="background-color:#f5f5f5;"'
+      : '';
     const input = `<input type="${type}" class="form-control" id="${id}" name="values[${name}]" ${required}${step}${min}${max} ${readonly}>`;
 
     if (cfg.suffix) {
@@ -555,7 +571,6 @@ function buildField(name, cfg) {
       ${control}
     </div>`;
 }
-
 // ======================= SINGLE renderFromFlags + one-time wiring =======================
 const __wired = { totals:false, rdf:false, cbg:false, manure:false, weighbridge:false };
 
@@ -570,7 +585,28 @@ function renderFromFlags(flags) {
   if (!__wired.cbg)         { setupAutoCbgCalculation();        __wired.cbg = true; }
   if (!__wired.manure)      { setupAutoManureCalculation();     __wired.manure = true; }
   if (!__wired.weighbridge) { setupAutoWeighbridgeFetch();      __wired.weighbridge = true; }
+
+  // ✅ Make the Week field readonly
+  $('[name="values[week_field]"]').attr('readonly', true).css({
+    "background-color": "#f5f5f5",
+    "cursor": "not-allowed"
+  });
 }
+
+
+// ======================= CUSTOM WEEK AUTO-FILL =======================
+$(document).off('change.weekcalc').on('change.weekcalc', '[name="values[date_field]"]', function () {
+  const dateVal = $(this).val();
+  if (!dateVal) return;
+
+  const wkVal = toWeekInputValue(dateVal);
+  if (wkVal) {
+    withProgrammaticChange(() => {
+      $('[name="values[week_field]"]').val(wkVal);
+    });
+  }
+});
+
 
 // ======================= AUTO TOTAL CALCULATION =======================
 function setupAutoTotalCalculation() {
@@ -726,14 +762,20 @@ function setupAutoManureCalculation() {
 
 // ======================= LOAD EXISTING ENTRY (EDIT MODE) =======================
 function toWeekInputValue(entryDate, weekNo) {
-  if (!weekNo) return "";
-  let year = "";
-  if (entryDate) {
-    const d = new Date(entryDate);
-    if (!isNaN(d)) year = d.getFullYear();
-  }
-  if (!year) year = new Date().getFullYear();
-  return `${year}-W${String(weekNo).padStart(2, '0')}`;
+  if (!entryDate) return "";
+
+  const date = new Date(entryDate);
+  if (isNaN(date)) return "";
+
+  // ✅ Added: Financial year starts on April 1
+  const fiscalStart = new Date(date.getFullYear(), 3, 1); // April = month index 3
+  if (date < fiscalStart) fiscalStart.setFullYear(fiscalStart.getFullYear() - 1);
+
+  const msPerWeek = 1000 * 60 * 60 * 24 * 7;
+  const week = Math.floor((date - fiscalStart) / msPerWeek) + 1;
+
+  const fiscalYear = fiscalStart.getFullYear();
+  return `${fiscalYear}-W${String(week).padStart(2, '0')}`;
 }
 
 function load_entry_values_if_any() {
@@ -810,7 +852,7 @@ function setupAutoWeighbridgeFetch() {
       url: ajax_url,
       dataType: "json",
       // Backend currently expects `entry_date`. Send the automated date as that:
-      data: { action: "fetch_weighbridge_data", automated_weighbridge: weighDate } 
+      data: { action: "fetch_weighbridge_data", automated_weighbridge: weighDate }
       // If you prefer a new key (e.g., weigh_date), adjust backend accordingly.
     })
     .done(function (resp) {
@@ -828,6 +870,10 @@ function setupAutoWeighbridgeFetch() {
           $('[name="values[wet_segregated_bwg]"]').val(d.wet_segregated_bwg);
           $('[name="values[complete_mix_bwg]"]').val(d.complete_mix_bwg);
         });
+
+        // 🔔 Kick both the mix-sum and totals calculators after programmatic fill
+        // (They listen to `input` on mix fields; we trigger just one safely.)
+        setTimeout(kickCalculators, 0);
       }
     });
   });
@@ -851,6 +897,20 @@ function setupAutoWeighbridgeFetch() {
   $('[name="values[complete_mix_corp]"], [name="values[complete_mix_bwg]"]')
     .attr("readonly", true)
     .css({ "background-color": "#f5f5f5", "cursor": "not-allowed" });
+
+  // ---- helper to trigger calculators without changing logic
+  function kickCalculators() {
+    if (__progChange > 0) return;
+    const pickOne =
+      $('[name="values[dry_mix_corp]"]')[0] ||
+      $('[name="values[wet_mix_corp]"]')[0] ||
+      $('[name="values[wet_segregated_corp]"]')[0] ||
+      $('[name="values[dry_mix_bwg]"]')[0] ||
+      $('[name="values[wet_mix_bwg]"]')[0] ||
+      $('[name="values[wet_segregated_bwg]"]')[0];
+
+    if (pickOne) $(pickOne).trigger('input'); // fires both mixsum + totals listeners
+  }
 }
 
 // ======================= FILTER HELPERS =======================

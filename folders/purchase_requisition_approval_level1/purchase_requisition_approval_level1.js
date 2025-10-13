@@ -23,6 +23,22 @@ $(document).ready(function () {
     init_datatable(table_id, form_name, action);
 });
 
+// Allow SweetAlert inputs inside Bootstrap modals
+$(document).ready(function () {
+  if ($.fn.modal) {
+    $.fn.modal.Constructor.prototype._enforceFocus = function () {};
+  }
+});
+
+// ✅ Allow typing in SweetAlert2 inputs while a Bootstrap modal is open
+$(document).on('focusin.bs.modal', function (e) {
+  if ($(e.target).closest('.swal2-container').length) {
+    e.stopImmediatePropagation();
+  }
+});
+
+
+
 
 $("#requisition_for, #requisition_type").on("change", function () {
     const requisitionFor = $("#requisition_for").val();
@@ -347,6 +363,7 @@ function open_modal(id) {
 
 
 // 🔄 Bulk status dropdown action
+// 🔄 Bulk status dropdown action
 $(document).on("change", "#bulk_status_select", function () {
   const selectedValue = $(this).val();
   const main_unique_id = $("#approval_main_id").val();
@@ -360,68 +377,184 @@ $(document).on("change", "#bulk_status_select", function () {
 
   const actionText = selectedValue === "1" ? "approve all items" : "reject all items";
 
-  Swal.fire({
-    title: "Confirm Bulk Action",
-    text: `Are you sure you want to ${actionText}?`,
-    icon: "warning",
-    showCancelButton: true,
-    confirmButtonColor: "#3085d6",
-    cancelButtonColor: "#d33",
-    confirmButtonText: "Yes, proceed!"
-  }).then((result) => {
-    if (result.isConfirmed) {
+  // 🔴 Reject case
+  if (selectedValue === "2") {
+    // ✅ Temporarily hide Bootstrap modal
+    $("#approval_modal_form").modal("hide");
+
+    $("#custom-reject-overlay").remove();
+
+    const overlay = $(`
+      <div id="custom-reject-overlay" style="
+        position: fixed;
+        top: 0; left: 0;
+        width: 100vw; height: 100vh;
+        background: rgba(0,0,0,0.45);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 9999;
+        backdrop-filter: blur(2px);">
+        <div style="
+          background: #fff;
+          width: 420px;
+          border-radius: 12px;
+          box-shadow: 0 8px 25px rgba(0,0,0,0.25);
+          padding: 25px 30px;
+          text-align: center;
+          animation: fadeIn 0.25s ease;
+          font-family: 'Segoe UI', sans-serif;">
+          <h4 style="margin-bottom: 10px; color: #d33;">Reject All Items</h4>
+          <p style="font-size: 14px; color: #555;">Please provide the reason for rejection:</p>
+          <textarea id="reject-reason" placeholder="Enter rejection reason..."
+            style="width: 100%; height: 100px; margin-top: 10px; padding: 8px;
+                   border: 1px solid #ccc; border-radius: 6px; resize: none;
+                   font-size: 13px; outline: none;"></textarea>
+          <div style="margin-top: 22px;">
+            <button id="confirm-reject" style="background: #d33; color: white; border: none; padding: 8px 20px;
+              border-radius: 5px; margin-right: 10px; cursor: pointer; font-size: 13px;">Reject All</button>
+            <button id="cancel-reject" style="background: #ccc; color: #333; border: none; padding: 8px 20px;
+              border-radius: 5px; cursor: pointer; font-size: 13px;">Cancel</button>
+          </div>
+        </div>
+      </div>
+    `);
+
+    $("body").append(overlay);
+
+    $("#cancel-reject").on("click", function () {
+      $("#custom-reject-overlay").fadeOut(200, function () {
+        $(this).remove();
+        // ✅ Restore modal visibility
+        $("#approval_modal_form").modal("show");
+      });
+      $("#bulk_status_select").val("");
+    });
+
+    $("#confirm-reject").on("click", function () {
+      const reason = $("#reject-reason").val().trim();
+      if (!reason) {
+        $("#reject-reason").css("border", "1px solid #d33").focus();
+        return;
+      }
+
+      $("#custom-reject-overlay").fadeOut(200, function () {
+        $(this).remove();
+        // ✅ Restore modal visibility
+        $("#approval_modal_form").modal("show");
+      });
+
       $.ajax({
         type: "POST",
         url: ajax_url,
         data: {
           action: "bulk_update_status",
           main_unique_id: main_unique_id,
-          selectedValue: selectedValue
+          selectedValue: selectedValue,
+          reason: reason,
         },
-        success: function (response) {
-          try {
-            var res = JSON.parse(response);
-            if (res.status) {
-              $('#requisition_approval_modal').DataTable().ajax.reload(null, false);
-              $('#purchase_requisition_datatable').DataTable().ajax.reload(null, false);
-
-              const statusText = selectedValue === "1"
-                ? "<span style='color: green; font-weight: bold;'>Approved</span>"
-                : "<span style='color: red; font-weight: bold;'>Rejected</span>";
-
-              $('#requisition_approval_modal')
-                .find('select.status-select')
-                .each(function () {
-                  $(this).replaceWith(statusText);
-                });
-
-              sweetalert(
-                "All items successfully " +
-                  (selectedValue === "1" ? "approved!" : "rejected!"),
-                "success"
-              );
-
-              // ✅ Reflect in dropdown header
-              const newLabel = selectedValue === "1" ? "Approved" : "Rejected";
-              $("#bulk_status_select")
-                .html(`<option value="${selectedValue}" selected>${newLabel}</option>`)
-                .prop("disabled", true);
-
-            } else {
-              sweetalert("Error: " + res.error, "error");
-            }
-          } catch (e) {
-            sweetalert("Invalid server response!", "error");
-          }
-        },
+        success: handleBulkResponse,
         error: function () {
           sweetalert("Network error occurred!", "error");
-        }
+        },
       });
-    } else {
-      $("#bulk_status_select").val("");
-    }
+    });
+
+    return;
+  }
+
+  // 🟢 Approval case
+  $("#approval_modal_form").modal("hide"); // temporarily hide modal for overlay
+
+  const overlay = $(`
+    <div id="custom-approve-overlay" style="
+      position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
+      background: rgba(0,0,0,0.45); display: flex; justify-content: center; align-items: center;
+      z-index: 9999; backdrop-filter: blur(2px);">
+      <div style="background: #fff; width: 380px; border-radius: 12px;
+        box-shadow: 0 8px 25px rgba(0,0,0,0.25); padding: 25px 30px; text-align: center;
+        animation: fadeIn 0.25s ease; font-family: 'Segoe UI', sans-serif;">
+        <h4 style="margin-bottom: 15px; color: #3085d6;">Confirm Bulk Action</h4>
+        <p style="font-size: 14px; color: #555;">Are you sure you want to ${actionText}?</p>
+        <div style="margin-top: 22px;">
+          <button id="confirm-approve" style="background: #3085d6; color: white; border: none; padding: 8px 20px;
+            border-radius: 5px; margin-right: 10px; cursor: pointer; font-size: 13px;">Yes, Proceed</button>
+          <button id="cancel-approve" style="background: #ccc; color: #333; border: none; padding: 8px 20px;
+            border-radius: 5px; cursor: pointer; font-size: 13px;">Cancel</button>
+        </div>
+      </div>
+    </div>
+  `);
+
+  $("body").append(overlay);
+
+  $("#cancel-approve").on("click", function () {
+    $("#custom-approve-overlay").fadeOut(200, function () {
+      $(this).remove();
+      // ✅ Restore modal
+      $("#approval_modal_form").modal("show");
+    });
+    $("#bulk_status_select").val("");
   });
+
+  $("#confirm-approve").on("click", function () {
+    $("#custom-approve-overlay").fadeOut(200, function () {
+      $(this).remove();
+      // ✅ Restore modal
+      $("#approval_modal_form").modal("show");
+    });
+
+    $.ajax({
+      type: "POST",
+      url: ajax_url,
+      data: {
+        action: "bulk_update_status",
+        main_unique_id: main_unique_id,
+        selectedValue: selectedValue,
+      },
+      success: handleBulkResponse,
+      error: function () {
+        sweetalert("Network error occurred!", "error");
+      },
+    });
+  });
+
+  // 🧠 Common Success Handler
+  function handleBulkResponse(response) {
+    try {
+      const res = JSON.parse(response);
+      if (res.status) {
+        $("#requisition_approval_modal").DataTable().ajax.reload(null, false);
+        $("#purchase_requisition_datatable").DataTable().ajax.reload(null, false);
+
+        const statusText =
+          selectedValue === "1"
+            ? "<span style='color: green; font-weight: bold;'>Approved</span>"
+            : "<span style='color: red; font-weight: bold;'>Rejected</span>";
+
+        $("#requisition_approval_modal")
+          .find("select.status-select")
+          .each(function () {
+            $(this).replaceWith(statusText);
+          });
+
+        sweetalert(
+          "All items successfully " +
+            (selectedValue === "1" ? "approved!" : "rejected!"),
+          "success"
+        );
+
+        const newLabel = selectedValue === "1" ? "Approved" : "Rejected";
+        $("#bulk_status_select")
+          .html(`<option value="${selectedValue}" selected>${newLabel}</option>`)
+          .prop("disabled", true);
+      } else {
+        sweetalert("Error: " + res.error, "error");
+      }
+    } catch (e) {
+      sweetalert("Invalid server response!", "error");
+    }
+  }
 });
 
 

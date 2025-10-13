@@ -838,42 +838,53 @@ switch ($action) {
     break;
     
     case 'bulk_update_status':
-    $main_unique_id = $_POST['main_unique_id'];
-    $selectedValue  = $_POST['selectedValue']; // 1 = Approve All, 2 = Reject All
-
-    $table_sub = "purchase_requisition_items";
-
-    if (!$main_unique_id || !in_array($selectedValue, [1, 2])) {
+        $main_unique_id = $_POST['main_unique_id'] ?? null;
+        $selectedValue  = $_POST['selectedValue'] ?? null; // 1 = Approve All, 2 = Reject All
+        $reason         = $_POST['reason'] ?? null;        // manual input for reject
+    
+        $table_sub = "purchase_requisition_items";
+    
+        if (!$main_unique_id || !in_array($selectedValue, [1, 2])) {
+            echo json_encode([
+                "status" => false,
+                "error"  => "Missing or invalid parameters",
+                "msg"    => "invalid_input"
+            ]);
+            exit;
+        }
+    
+        // Build columns dynamically based on action
+        $columns = [
+            "status" => $selectedValue
+        ];
+    
+        if ($selectedValue == 2) {
+            // Use manual reason if provided, fallback to default
+            $columns["reason"] = !empty($reason) ? trim($reason) : "Rejected in bulk action";
+        } else {
+            // Approved → clear any old rejection reason
+            $columns["reason"] = null;
+        }
+    
+        $where = [
+            "main_unique_id" => $main_unique_id,
+            "is_delete" => 0
+        ];
+    
+        $action_obj = $pdo->update($table_sub, $columns, $where);
+    
+        $msg = $action_obj->status
+            ? ($selectedValue == 1 ? "All items approved successfully" : "All items rejected successfully")
+            : "Bulk update failed";
+    
         echo json_encode([
-            "status" => false,
-            "error"  => "Missing or invalid parameters",
-            "msg"    => "invalid_input"
+            "status" => $action_obj->status,
+            "error"  => $action_obj->error,
+            "msg"    => $msg,
+            "sql"    => $action_obj->sql
         ]);
-        exit;
-    }
+    break;
 
-    // Update all items under that requisition
-    $columns = [
-        "status" => $selectedValue,
-        "reason" => ($selectedValue == 2 ? "Rejected in bulk action" : null)
-    ];
-
-    $where = [
-        "main_unique_id" => $main_unique_id,
-        "is_delete" => 0
-    ];
-
-    $action_obj = $pdo->update($table_sub, $columns, $where);
-
-    $msg = $action_obj->status ? "bulk_update_success" : "bulk_update_failed";
-
-    echo json_encode([
-        "status" => $action_obj->status,
-        "error"  => $action_obj->error,
-        "msg"    => $msg,
-        "sql"    => $action_obj->sql
-    ]);
-break;
 
 
     default:

@@ -131,7 +131,8 @@ if ($types_csv) {
 
                             <!-- Data entry fields generated from the selected flags -->
                                     <div class="form-group row">
-                                      <div class="col-md-10">
+                                       
+                                          <div class="col-md-5">
                                         <div id="dailylog_dynamic_fields" class="row"></div>
                                       </div>
                                     </div>
