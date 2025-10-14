@@ -52,6 +52,27 @@ function convert_number_to_words($number) {
     return trim($result) . $points;
 }
 
+function po_data($unique_id){
+    global $pdo; // 👈 make sure $pdo is accessible inside the function
+    
+    $table = "purchase_order";
+    $columns = ["*"];
+    $table_details = [$table, $columns];
+    $where = [
+        "is_delete"  => 0,
+        "unique_id"  => $unique_id
+    ];
+    
+    $result = $pdo->select($table_details, $where);
+    
+    if ($result->status && !empty($result->data)) {
+        return $result->data;
+    } else {
+        return 0;
+    }
+}
+
+
 
 $unique_id          = "";
 $screen_unique_id   = "";
@@ -192,9 +213,13 @@ $product_unique_id      = select_option($product_unique_id, "Select", $group_uni
 $project_options  = get_project_name();
 $project_options  = select_option($project_options,"Select the Project Name",$project_id);
 
+$project_name = get_project_name($project_id)[0];
+
 $purchase_order_no  = get_po_number();
 $purchase_order_no = select_option($purchase_order_no, "Select Purchase Order No",$purchase_number);
 
+$po_num = po_data($purchase_number)[0];
+// print_r($po_data);
 $gst_paf_options     = select_option(tax(), "Select GST", $gst_paf);
 $gst_freight_options = select_option(tax(), "Select GST", $gst_freight);
 $gst_other_options   = select_option(tax(), "Select GST", $gst_other);
@@ -454,6 +479,9 @@ if ($result_items->status) {
         <!--<tr><td>Contact Person:</td><td><//?= $supplier_contacts[0]['contact_person_name'] ?? "-" ?></td></tr>-->
           <tr><td>Challan No :</td><td><?= !empty($deli_challan_no) ? htmlspecialchars($deli_challan_no) : '-' ?></td></tr>
         <tr><td>Gate Inward No :</td><td><?= $inward_type ?? ' - ' ?></td></tr>
+        <tr><td>PO Number :</td><td><?= $po_num['purchase_order_no'] ?? ' - ' ?></td></tr>
+        <tr><td>PO Date :</td><td><?= $po_num['entry_date'] ?? ' - ' ?></td></tr>
+        <tr><td>Project :</td><td><?= $project_name['label'] ?? ' - ' ?></td></tr>
       </table>
     </div>
     

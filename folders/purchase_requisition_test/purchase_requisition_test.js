@@ -428,16 +428,32 @@ function requisition_sublist_add_update() {
             required_delivery_date
         },
         success: function (res) {
-            let obj = JSON.parse(res);
-
+            console.log("🟢 AJAX success triggered");
+            console.log("Raw response:", res);
+        
+            let obj;
+            try {
+                obj = JSON.parse(res);
+            } catch (e) {
+                console.error("❌ JSON parse failed:", e, res);
+                Swal.fire("Error", "Server response invalid", "error");
+                return;
+            }
+        
+            console.log("Parsed object:", obj);
+        
             if (obj.status) {
+                console.log("✅ Item add/update success block reached");
                 Swal.fire(obj.msg === "update" ? "Item updated" : "Item added");
-            
+        
                 reset_sublist_form();
                 afterEditSuccess();
+        
+                console.log("👉 Calling item_refresh()");
+                item_refresh(); // << check if this runs
+        
                 purchase_sublist_datatable("purchase_sublist_datatable");
-            
-                // ✅ Reset button label and color to "Add" (green)
+        
                 $("#sublist_btn_text").text("Add");
                 $(".requisition_sublist_add_btn")
                     .removeClass("btn-primary btn-warning btn-danger")
@@ -446,11 +462,53 @@ function requisition_sublist_add_update() {
                 Swal.fire("Error", obj.error || "Operation failed", "error");
             }
         },
+
         error: function () {
             alert("Network error");
         }
     });
 }
+
+function item_refresh(selected_id = null) {
+  const main_unique_id = $("#unique_id").val();
+  const ajax_url = sessionStorage.getItem("folder_crud_link");
+
+  $.ajax({
+    type: "POST",
+    url: ajax_url,
+    data: {
+      action: "item_refresh",
+      main_unique_id: main_unique_id,
+      selected_id: selected_id // 👈 send current selection if any
+    },
+    dataType: "json",
+    success: function (res) {
+      if (res.status && res.options_html) {
+        const $dropdown = $("#item_code");
+
+        // Replace dropdown options
+        $dropdown.html(res.options_html);
+
+        // Reinitialize select2
+        if ($dropdown.hasClass("select2-hidden-accessible")) {
+          $dropdown.select2("destroy");
+        }
+        $dropdown.select2({ width: "100%" });
+
+        // 👇 If there's a selected_id, mark it as selected
+        if (selected_id) {
+          $dropdown.val(selected_id).trigger("change");
+        }
+      } else {
+        console.warn("Item refresh failed:", res.error);
+      }
+    },
+    error: function (xhr) {
+      console.error("Network error refreshing item list", xhr);
+    }
+  });
+}
+
 
 function reset_sublist_form() {
     $("#sublist_unique_id").val("");
@@ -612,6 +670,8 @@ function pr_sub_edit(unique_id) {
                 }
 
                 $("#item_code").val(d.item_code).trigger("change");
+                
+                item_refresh(d.item_code);
             });
 
             $("#item_description").val(d.item_description);
@@ -666,6 +726,7 @@ function pr_sub_delete(unique_id) {
                     let obj = JSON.parse(res);
                     Swal.fire(obj.msg);
                     purchase_sublist_datatable("purchase_sublist_datatable");
+                    item_refresh();
                 }
             });
         }

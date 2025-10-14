@@ -168,21 +168,21 @@ if (!empty($po['project_id'])) {
 
 }
 
-// ---------- Supplier (fixed to actual columns) ----------
+// ---------- Supplier + Contact Person ----------
 $supplier_name      = '-';
 $supplier_address   = '-';
-$contact_person     = '-';   // no column in table, will stay '-' unless you add it later
+$contact_person     = '-';
 $vendor_contact_no  = '-';
 $supplier_email     = '-';
 $gst_no             = '-';
 $pan_no             = '-';
 
 if (!empty($po['supplier_id'])) {
+
+    // 🟢 1. Fetch supplier basic details
     $res = $pdo->select(
         ['supplier_profile', [
-            'supplier_name','address',
-            'contact_no','email_id',
-            'gst_no','pan_no'
+            'supplier_name','address','email_id','gst_no','pan_no'
         ]],
         ['unique_id' => $po['supplier_id']],
         "",
@@ -193,12 +193,45 @@ if (!empty($po['supplier_id'])) {
         $row               = $res->data[0];
         $supplier_name     = val($row, 'supplier_name', '-');
         $supplier_address  = nl2br(val($row, 'address', '-'));
-        $vendor_contact_no = val($row, 'contact_no', '-');
         $supplier_email    = val($row, 'email_id', '-');
         $gst_no            = val($row, 'gst_no', '-');
         $pan_no            = val($row, 'pan_no', '-');
     }
+
+    // 🟢 2. Fetch contact person & contact no from supplier_contact_person
+    $res2 = $pdo->select(
+        ['supplier_contact_person', ['contact_person_name','contact_person_contact_no']],
+        ['supplier_profile_unique_id' => $po['supplier_id'], 'is_active' => 1, 'is_delete' => 0],
+        "",
+        "LIMIT 1"
+    );
+
+    if ($res2->status && !empty($res2->data)) {
+        $cp = $res2->data[0];
+        $contact_person    = val($cp, 'contact_person_name', '-');
+        $vendor_contact_no = val($cp, 'contact_person_contact_no', '-');
+    }
 }
+
+// ---------- Contact Person (from user table) ----------
+$contact_person_po = '-';
+$contact_no_po     = '-';
+
+if (!empty($po['created_user_id'])) {
+    $user_res = $pdo->select(
+        ['user', ['user_name', 'phone_no']],
+        ['unique_id' => $po['created_user_id']],
+        "",
+        "LIMIT 1"
+    );
+
+    if ($user_res->status && !empty($user_res->data)) {
+        $u = $user_res->data[0];
+        $contact_person_po = val($u, 'user_name', '-');
+        $contact_no_po     = val($u, 'phone_no', '-');
+    }
+}
+
 
 
 // ---------- Items ----------
@@ -224,9 +257,7 @@ $entry_date     = fmtDate(val($po,'entry_date',''));
 $quotation_no   = val($po,'quotation_no','-');
 $quotation_dt   = fmtDate(val($po,'quotation_date',''));
 
-// These two come from PO header (keep if your print template expects them):
-$contact_person_po = val($po,'contact_person','-');
-$contact_no_po     = val($po,'vendor_contact_no','-');
+
 
 // Addresses and remarks (from PO header)
 $billing_addr  = nl2br(val($po,'billing_address',''));
@@ -413,6 +444,64 @@ if (!empty($po['company_id']) && !empty($po['supplier_id'])) {
         }
     }
 }
+
+//ADDRESS
+$project_phone  = '';
+$project_email  = '';
+$project_gstno  = '';
+$project_panno  = '';
+$project_address = '';
+
+$project_unique_id = val($po, 'project_id', ''); // adjust if your field name differs
+
+if (!empty($project_unique_id)) {
+    $proj = $pdo->select(
+        ['project_creation', [
+            'address',
+            'city',
+            'pin_code',
+            'contact_number',
+            'contact_email_id',
+            'gst_number',
+            'pan_number'
+        ]],
+        ['unique_id' => $project_unique_id],
+        "",
+        "LIMIT 1"
+    );
+
+    if ($proj->status && !empty($proj->data)) {
+        $p = $proj->data[0];
+
+        // 🔍 Get city name from cities table using the stored city unique_id
+        $city_name = '';
+        if (!empty($p['city'])) {
+            $city_data = $pdo->select(
+                ['cities', ['city_name']],
+                ['unique_id' => $p['city']],
+                "",
+                "LIMIT 1"
+            );
+            if ($city_data->status && !empty($city_data->data)) {
+                $city_name = $city_data->data[0]['city_name'];
+            }
+        }
+
+        // Combine full address
+        $address_parts = [];
+
+        if (!empty($p['address'])) $address_parts[] = $p['address'];
+        if (!empty($city_name)) $address_parts[] = $city_name;
+        if (!empty($p['pin_code'])) $address_parts[] = $p['pin_code'];
+
+        $project_address = implode(', ', array_filter($address_parts));
+
+        $project_phone   = $p['contact_number'];
+        $project_email   = $p['contact_email_id'];
+        $project_gstno   = $p['gst_number'];
+        $project_panno   = $p['pan_number'];
+    }
+}
 ?>
 
 <!DOCTYPE html>
@@ -450,14 +539,38 @@ if (!empty($po['company_id']) && !empty($po['supplier_id'])) {
 
     <!--<div class="status-watermark"><?= $statusText ?></div>-->
 
-   <div class="col-5 company-info">
-      <h4><?= htmlspecialchars($company['name']) ?></h4>
+<div class="col-5 company-info">
+  <h4><?= htmlspecialchars($company['name']) ?></h4>
+
+  <?php if (strtoupper(trim($company['name'])) === 'BLUE PLANET INTEGRATED WASTE SOLUTIONS LIMITED'): ?>
+      <!-- ✅ Show Project Address & Contact -->
+      <p>
+        <?php if (!empty($project_address)): ?>
+          <?= nl2br(htmlspecialchars($project_address)) ?><br>
+        <?php endif; ?>
+        <?php if (!empty($project_phone)): ?>
+          <strong>Phone:</strong> <?= htmlspecialchars($project_phone) ?><br>
+        <?php endif; ?>
+        <?php if (!empty($project_email)): ?>
+          <strong>Email:</strong> <?= htmlspecialchars($project_email) ?><br>
+        <?php endif; ?>
+        <?php if (!empty($project_gstno)): ?>
+          <strong>GST No:</strong> <?= htmlspecialchars($project_gstno) ?><br>
+        <?php endif; ?>
+        <?php if (!empty($project_panno)): ?>
+          <strong>PAN No:</strong> <?= htmlspecialchars($project_panno) ?><br>
+        <?php endif; ?>
+      </p>
+
+  <?php else: ?>
+      <!-- ✅ Default Company Info -->
       <p>
         <?= nl2br(htmlspecialchars($company['address'])) ?><br>
         Phone: <?= htmlspecialchars($company['phone']) ?> | Email: <?= htmlspecialchars($company['email']) ?><br>
         GST No: <?= htmlspecialchars($company['gst']) ?> | PAN No: <?= htmlspecialchars($company['pan']) ?>
       </p>
-    </div>
+  <?php endif; ?>
+</div>
     <div class="col-5 po-details text-wrap text-break">
       <h2>PURCHASE ORDER</h2>
       <p class="mb-0">
@@ -473,14 +586,20 @@ if (!empty($po['company_id']) && !empty($po['supplier_id'])) {
   <div class="row mb-2">
     <div class="col-6">
       <div class="backgrinfo"><h6>Vendor Details</h6></div>
-        <p>
-          <strong><?= htmlspecialchars($supplier_name) ?></strong><br>
-          <?= $supplier_address ?><br>
-          Email: <?= ($supplier_email === '' || $supplier_email === '-' ? 'No Email Available' : htmlspecialchars($supplier_email)) ?><br>
-          GST No: <?= htmlspecialchars($gst_no) ?><br>
-          PAN No: <?= htmlspecialchars($pan_no) ?><br>
-          MSME No: <?= ($msme_no === '' || $msme_no === '-' ? 'Not Applicable' : htmlspecialchars($msme_no)) ?>
-        </p>
+<p>
+  <strong><?= htmlspecialchars($supplier_name) ?></strong><br>
+  <?= $supplier_address ?><br>
+  <strong>Email:</strong> <?= (!empty($supplier_email) && $supplier_email !== '-') ? htmlspecialchars($supplier_email) : '-' ?><br>
+
+  <strong>GST No:</strong> <?= (!empty($gst_no) && $gst_no !== '-') ? htmlspecialchars($gst_no) : '-' ?><br>
+
+  <strong>PAN No:</strong> <?= (!empty($pan_no) && $pan_no !== '-') ? htmlspecialchars($pan_no) : '-' ?><br>
+
+  <strong>MSME No:</strong> <?= (!empty($msme_no) && $msme_no !== '-') ? htmlspecialchars($msme_no) : '-' ?><br>
+<strong>Contact Person:</strong> <?= htmlspecialchars($contact_person) ?><br>
+
+<strong>Contact No:</strong> <?= htmlspecialchars($vendor_contact_no) ?><br>
+</p>
         <div class="backgrinfo"><h6>Ship To:</h6></div>
         <p><?= $shipping_addr ?></p>
 
@@ -489,11 +608,12 @@ if (!empty($po['company_id']) && !empty($po['supplier_id'])) {
     <div class="col-6">
       <div class="backgrinfo"><h6>Other Details</h6></div>
       <table class="table table-sm table-borderless">
-        <tr><td>DOC No:</td><td>-</td></tr>
+        <!--<tr><td>DOC No:</td><td>-</td></tr>-->
         <tr><td>Quotation:</td><td><?= htmlspecialchars($quotation_no) ?></td></tr>
         <tr><td>Quotation Date:</td><td><?= $quotation_dt ?></td></tr>
         <tr><td>Contact Person:</td><td><?= htmlspecialchars($contact_person_po) ?></td></tr>
-          <tr><td>Contact No:</td><td><?= htmlspecialchars($vendor_contact_no) ?></td></tr>
+<tr><td>Contact No:</td><td><?= htmlspecialchars($contact_no_po) ?></td></tr>
+
         <tr><td>Project:</td><td><?= htmlspecialchars(($project_code !== '' ? $project_code . '/' : '') . ($project_name ?? '-')) ?></td>
         </tr>
       </table>
@@ -520,6 +640,7 @@ if (!empty($po['company_id']) && !empty($po['supplier_id'])) {
   </thead>
   <tbody>
     <?php if (!empty($items)): $sn=1; foreach ($items as $it): ?>
+    <?php if (!empty($it['is_delete']) && $it['is_delete'] == 1) continue; ?>
       <?php
         $itemUid = val($it,'item_code','');
         [$itemName, $hsn] = get_item_name($pdo, $itemUid);
@@ -581,20 +702,48 @@ if (!empty($po['company_id']) && !empty($po['supplier_id'])) {
 </table>
 
   <!-- Totals -->
-  <table class="table table-borderless totals mb-2">
+<table class="table table-borderless totals mb-2">
+  <?php if ((float)val($po, 'freight_amount', 0) != 0.00): ?>
     <tr>
-      <td class="text-end">PO Basic Value:</td>
-      <td style="width: 140px;" class="text-end"><?= fmtNum($po_basic_value) ?></td>
+      <td class="text-end">Freight Charges:</td>
+      <td style="width: 140px;" class="text-end"><?= fmtNum(val($po, 'freight_amount', 0)) ?></td>
     </tr>
+  <?php endif; ?>
+
+  <?php if ((float)val($po, 'other_charges_percentage', 0) != 0.00): ?>
     <tr>
-      <td class="text-end">GST:</td>
-      <td class="text-end"><?= fmtNum($total_gst_value) ?></td>
+      <td class="text-end">Other Charges:</td>
+      <td class="text-end"><?= fmtNum(val($po, 'other_charges_percentage', 0)) ?></td>
     </tr>
+  <?php endif; ?>
+
+  <?php if ((float)val($po, 'packing_forwarding_amount', 0) != 0.00): ?>
     <tr>
-      <td class="text-end">Total PO Value (INR):</td>
-      <td class="text-end"><?= fmtNum($total_po_value) ?></td>
+      <td class="text-end">Packing & Forwarding:</td>
+      <td class="text-end"><?= fmtNum(val($po, 'packing_forwarding_amount', 0)) ?></td>
     </tr>
-  </table>
+  <?php endif; ?>
+
+  <?php if ((float)val($po, 'round_off', 0) != 0.00): ?>
+    <tr>
+      <td class="text-end">Round Off:</td>
+      <td class="text-end"><?= fmtNum(val($po, 'round_off', 0)) ?></td>
+    </tr>
+  <?php endif; ?>
+
+  <tr>
+    <td class="text-end">PO Basic Value:</td>
+    <td class="text-end"><?= fmtNum($po_basic_value) ?></td>
+  </tr>
+  <tr>
+    <td class="text-end">GST:</td>
+    <td class="text-end"><?= fmtNum($total_gst_value) ?></td>
+  </tr>
+  <tr>
+    <td class="text-end"><strong>Total PO Value (INR):</strong></td>
+    <td class="text-end"><strong><?= fmtNum($total_po_value) ?></strong></td>
+  </tr>
+</table>
 
   <p><strong>INR : <?= htmlspecialchars(strtoupper($amount_words)) ?></strong></p>
 
@@ -1188,4 +1337,3 @@ if (!empty($po['company_id']) && !empty($po['supplier_id'])) {
 </div>
 </body>
 </html>
-

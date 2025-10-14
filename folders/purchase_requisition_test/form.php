@@ -61,67 +61,9 @@ if (isset($_GET['unique_id']) && !empty($_GET['unique_id'])) {
         $btn_action = "update";
     }
 
-    // Optionally fetch sublist (used if you need to preload sublist in PHP)
-    // In your structure, sublist is dynamically loaded via DataTable JS, so not strictly required here:
-    /*
-    $items_result = $pdo->select([
-        "purchase_requisition_items",
-        [
-            "item_code",
-            "item_description",
-            "quantity",
-            "uom",
-            "preferred_vendor_id",
-            "budgetary_rate",
-            "item_remarks",
-            "required_delivery_date"
-        ]
-    ], ["main_unique_id" => $unique_id]);
-
-    if ($items_result->status) {
-        $items = $items_result->data;
-    }
-    */
 }
 
 
-// $items              = [];
-
-// if (isset($_GET['unique_id']) && !empty($_GET['unique_id'])) {
-//   $requisition_id = $_GET['unique_id'];
-
-//   $columns = [
-//     "requisition_number", "requisition_date", "requested_by", "sales_order_id", "unit_id", "requisition_type", "remarks"
-//   ];
-
-//   $where = ["requisition_id" => $requisition_id];
-//   $table = "purchase_requisition";
-
-//   $result = $pdo->select([$table, $columns], $where);
-//   if ($result->status) {
-//     $res = $result->data[0];
-//     $requisition_number = $res['requisition_number'];
-//     $requisition_date = $res['requisition_date'];
-//     $requested_by = $res['requested_by'];
-//     $sales_order_id = $res['sales_order_id'];
-//     $unit_id = $res['unit_id'];
-//     $requisition_type = $res['requisition_type'];
-//     $remarks = $res['remarks'];
-//     $btn_text = "Update";
-//     $btn_action = "update";
-//   }
-
-//   $items_result = $pdo->select([
-//     "purchase_requisition_items",
-//     ["item_code", "item_description", "quantity", "uom", "preferred_vendor_id", "budgetary_rate", "remarks", "required_delivery_date"]
-//   ], ["requisition_id" => $requisition_id]);
-
-//   if ($items_result->status) {
-//     $items = $items_result->data;
-//   }
-// }
-
-// item_name_list
 
 $item_name_list_options        = item_name_list();
 $item_name_list_options        = select_option($item_name_list_options,"Select the Item/Code",$item_name_list);
@@ -133,22 +75,16 @@ $company_name_options        = select_option($company_name_options,"Select the C
 $sales_order_options        = sales_order();
 $sales_order_options        = select_option($sales_order_options,"Select the Sales Order",$sales_order);
 
-        $project_options  = get_project_name_all();
+        $project_options  = get_project_name();
 
         $project_options  = select_option($project_options,"Select the Project Name",$project_id);
-// $service_options        = sales_order();
-// $service_options        = select_option($service_options,"Select the Sales Order",$sales_order);
+
 
 $purchase_requisition_category_options        = purchase_requisition_category();
 $purchase_requisition_category_options        = select_option($purchase_requisition_category_options,"Select the Purchase Requisition category",$purchase_requisition_category);
 
 
-// $units              = unit_master_options($unit_id);
-// $requisition_types  = select_option([
-//   ['id' => 'Regular'],
-//   ['id' => 'Service'],
-//   ['id' => 'Capital']
-// ], 'Select', $requisition_type);
+
 
 
 $requisition_type_options = [
@@ -244,7 +180,7 @@ $today = date('Y-m-d');
                     <div class="form-group row">
                         <label class="col-md-2 col-form-label labelright">Company Name</label>
                         <div class="col-md-3">
-                            <select name="company_id" id="company_id"  class="form-control select2"  onchange="get_project_name_all(this.value);" required>
+                            <select name="company_id" id="company_id"  class="form-control select2"  onchange="get_project_name(this.value);" required>
                                 <?= $company_name_options ?>
                             </select>
                         </div>

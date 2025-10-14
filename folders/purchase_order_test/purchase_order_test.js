@@ -40,6 +40,96 @@ function loadSupplierDetails() {
     });
 }
 
+$(document).on("click", "#add_all_btn", function () {
+  const rows = $("#pr_sublist_content table tbody tr");
+  const total = rows.length;
+
+  if (!total) {
+    Swal.fire("No PR items found.");
+    return;
+  }
+
+  let completed = 0;
+  enablePOLeaveWarning(); // Begin persistent guard
+
+  Swal.fire({
+    title: 'Adding all PR items...',
+    html: `<div id="addAllProgress">0 / ${total} items added (0%)</div>
+           <div class="text-warning mt-2" style="font-size:0.9em;">
+             Do not reload or navigate away. Unsaved additions will be lost if you exit before saving the PO.
+           </div>`,
+    allowOutsideClick: false,
+    allowEscapeKey: false,
+    showConfirmButton: false,
+    didOpen: () => Swal.showLoading()
+  });
+
+  rows.each(function (i, tr) {
+    const $r = $(tr);
+    const item_code    = $r.data("item_code");
+    const uom          = $r.data("uom");
+    const quantity     = $r.data("quantity");
+    const pr_unique_id = $r.data("pr_unique_id");
+    const delivery_date= $r.data("delivery_date");
+    const remarks      = $r.data("remarks");
+
+    if (!item_code || !quantity || !uom) return;
+
+    setTimeout(() => {
+      $.ajax({
+        type: "POST",
+        url: ajax_url,
+        data: {
+          action: "po_sub_add_update_modal",
+          screen_unique_id: $("#screen_unique_id").val(),
+          sublist_unique_id: $("#sublist_unique_id").val(),
+          item_code,
+          quantity,
+          uom,
+          pr_unique_id,
+          delivery_date,
+          remarks
+        },
+        success: function (res) {
+          completed++;
+
+          // Remove added row
+          $r.fadeOut(200, () => $r.remove());
+
+          // Update progress
+          const percent = Math.round((completed / total) * 100);
+          $("#addAllProgress").html(`${completed} / ${total} items added (${percent}%)`);
+
+          // Refresh PO table
+          purchase_order_sublist_datatable("purchase_order_sub_datatable");
+          setTimeout(calculate_sublist_totals, 300);
+
+          if (completed === total) {
+            Swal.fire({
+              icon: "success",
+              title: "All PR items added successfully!",
+              html: `
+                <div>${total} / ${total} items added.</div>
+                <div class="text-warning mt-2" style="font-size:0.9em;">
+                  ⚠ These PR items are <b>not yet saved</b> in the Purchase Order.<br>
+                  Please <b>Save</b> the PO to keep changes, or <b>Cancel</b> to discard.
+                </div>`,
+              timer: 4000,
+              showConfirmButton: false
+            });
+          }
+        },
+        error: function () {
+          completed++;
+          const percent = Math.round((completed / total) * 100);
+          $("#addAllProgress").html(`${completed} / ${total} items added (${percent}%)`);
+          console.error("Network error adding item:", item_code);
+        }
+      });
+    }, i * 250);
+  });
+});
+
 $(document).ready(function () {
     // On load
     loadSupplierDetails();

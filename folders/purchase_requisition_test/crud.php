@@ -474,7 +474,7 @@ switch ($action) {
 
         $company_id          = $_POST['company_id'];
 
-        $project_name_options  = get_project_name_all("", $company_id);
+        $project_name_options  = get_project_name("", $company_id);
 
         $project_name_options  = select_option($project_name_options, "Select the Project Name");
 
@@ -712,19 +712,65 @@ break;
     }
     break;
 
+case "item_refresh":
+    $main_unique_id = $_POST['main_unique_id'] ?? '';
+    $selected_id    = $_POST['selected_id'] ?? '';
 
-
-    case "delete_sublist_by_main_id":
-        $main_unique_id = $_POST["main_unique_id"];
-        $update = ["is_delete" => 1];
-        $where = ["main_unique_id" => $main_unique_id];
-        $action_obj = $pdo->update("purchase_requisition_items", $update, $where);
+    if (!$main_unique_id) {
         echo json_encode([
-            "status" => $action_obj->status,
-            "msg" => $action_obj->status ? "deleted" : "failed",
-            "error" => $action_obj->error
+            "status" => false,
+            "error"  => "Missing main_unique_id"
         ]);
         break;
+    }
+
+    // Step 1: Get the normal filtered list (excluding duplicates)
+    $available_items = dynamic_list_exclude("item_master", "unique_id", null, $main_unique_id);
+
+    // Step 2: Prepare a fresh array where selected item (if exists) will go first
+    $final_items = [];
+
+    // Step 3: Fetch selected item details and push to the top if valid
+    if (!empty($selected_id)) {
+        $exists = array_search($selected_id, array_column($available_items, 'unique_id'));
+
+        // If selected item not already in the list, fetch it manually
+        if ($exists === false) {
+            $table_details = [
+                "item_master",
+                [
+                    "unique_id",
+                    "CONCAT(item_name, ' / ', item_code) AS text",
+                    "item_name",
+                    "item_code"
+                ]
+            ];
+            $where = "unique_id = '$selected_id' AND is_delete = 0";
+            $selected_item = $pdo->select($table_details, $where);
+
+            if ($selected_item->status && !empty($selected_item->data)) {
+                $final_items[] = $selected_item->data[0];
+            }
+        } else {
+            // Already in list — move it to the top
+            $final_items[] = $available_items[$exists];
+            unset($available_items[$exists]); // remove it from main array to avoid duplication
+        }
+    }
+
+    // Step 4: Merge the selected item (if any) on top of the remaining list
+    $final_items = array_merge($final_items, array_values($available_items));
+
+    // Step 5: Generate <option> list, marking the selected one
+    $options_html = select_option($final_items, "Select the Item/Code", $selected_id);
+
+    echo json_encode([
+        "status" => true,
+        "options_html" => $options_html
+    ]);
+    break;
+
+
 
     case "pr_sub_edit":
         $unique_id = $_POST["unique_id"];

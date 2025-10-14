@@ -213,6 +213,13 @@ $po_type_options    = select_option($po_type_options,"Select",$po_type);
 <!--<input type="hidden" name="sub_counter" id="sub_counter" value="1">-->
 <!--<input type="hidden" name="sublist_data" id="sublist_data" value=''>-->
 
+<!-- 🔔 Unsaved Warning Banner (initially hidden) -->
+<div id="unsaved_warning_banner"
+     class="alert alert-warning text-center fw-bold py-2"
+     style="display:none; position:sticky; top:0; z-index:1050;">
+  ⚠ Unsaved PR items added — please <b>Save</b> or <b>Cancel</b> this PO before leaving or reloading.
+</div>
+
 <div class="row">
   <div class="col-12">
     <div class="card">

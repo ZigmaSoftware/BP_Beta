@@ -58,6 +58,21 @@
         <input type="hidden" name="latitude" id="latitude" class="form-control" value="" >
         <input type="hidden" name="longitude" id="longitude" class="form-control" value="" >
         <input type="hidden" name="file" id="file" class="form-control" value="<?= $file_str ?>" >
+        
+        <?php 
+            // detect if current page is a form-type (create or update)
+            $is_form_page = preg_match('/(create|update|edit)/i', $file_name_org);
+        ?>
+        
+        <?php if ($is_form_page): ?>
+          <!-- 🔔 Reusable Unsaved Warning Banner -->
+          <div id="unsaved_warning_banner"
+               class="alert alert-warning text-center fw-bold py-2"
+               style="display:none; position:sticky; top:0; z-index:1050;">
+            ⚠ You have unsaved changes — please <b>Save</b> or <b>Cancel</b> before leaving or reloading this page.
+          </div>
+        <?php endif; ?>
+
 
 
         <!-- Breadcrumbs Begins Here -->

@@ -8209,3 +8209,64 @@ function has_grn_or_srn($unique_id) {
 
     return false; // not found in either GRN or SRN
 }
+
+function dynamic_list_exclude($table_name, $column_name, $exclude_uid = null, $main_unique_id = null, $always_include_uid = null)
+{
+    global $pdo;
+
+    if (empty($table_name) || empty($column_name)) {
+        return [];
+    }
+
+    // Step 1: Fetch all active items
+    $columns = [
+        "unique_id",
+        "CONCAT(item_name, ' / ', item_code) AS text",
+        "item_name",
+        "item_code"
+    ];
+
+    $table_details = [$table_name, $columns];
+    $where = "is_active = 1 AND is_delete = 0";
+
+    $result = $pdo->select($table_details, $where);
+    if (!$result->status || empty($result->data)) return [];
+
+    $data = $result->data;
+
+    // Step 2: Collect exclusion list
+    $exclude_ids = [];
+
+    if (!empty($exclude_uid)) {
+        $exclude_ids = is_array($exclude_uid) ? $exclude_uid : [$exclude_uid];
+    }
+
+    if (!empty($main_unique_id)) {
+        $table_details2 = ["purchase_requisition_items", ["item_code"]];
+        $where2 = "main_unique_id = '$main_unique_id' AND is_delete = 0";
+        $existing_items = $pdo->select($table_details2, $where2);
+        if ($existing_items->status && !empty($existing_items->data)) {
+            foreach ($existing_items->data as $row) {
+                $exclude_ids[] = $row['item_code'];
+            }
+        }
+    }
+
+    // Step 3: Filter in PHP
+    if (!empty($exclude_ids)) {
+        $data = array_filter($data, function ($item) use ($exclude_ids, $always_include_uid) {
+            // Allow always_include_uid to bypass exclusion
+            if (!empty($always_include_uid) && $item['unique_id'] == $always_include_uid) {
+                return true;
+            }
+            return !in_array($item['unique_id'], $exclude_ids);
+        });
+    }
+
+    // Step 4: Reindex
+    return array_values($data);
+}
+
+
+
+

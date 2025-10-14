@@ -40,42 +40,6 @@ $(document).ready(function () {
 
 
 
-
-// function calculate_amount() {
-//     let qty = parseFloat($("#quantity").val()) || 0;
-//     let rate = parseFloat($("#rate").val()) || 0;
-//     let discount = parseFloat($("#discount").val()) || 0;
-//     let discountType = $("#discount_type").val() || "0";
-//     let taxPercent = parseFloat($("#tax").val()) || 0;
-
-//     // Step 1: Base
-//     let base = qty * rate;
-
-//     // Step 2: Discount
-//     let discountAmt = 0;
-//     if (discountType === "1") {         
-//         discountAmt = (base * discount) / 100;
-//     } else if (discountType === "2") {  
-//         discountAmt = discount;
-//     }
-
-//     // Step 3: After discount
-//     let afterDiscount = base - discountAmt;
-//     if (afterDiscount < 0) afterDiscount = 0;
-
-//     // Step 4: Tax
-//     let taxAmt = (afterDiscount * taxPercent) / 100;
-
-//     // Step 5: Total before round-off (per item)
-//     let totalAmt = afterDiscount + taxAmt;
-
-//     // Step 6: Display live per-item result
-//     $("#amount").val(totalAmt.toFixed(2));
-
-//     // Step 7: Update invoice totals
-//     recalc_invoice_totals();
-// }
-
 function calculate_amount() {
     let qty = parseFloat($("#quantity").val()) || 0;
     let rate = parseFloat($("#rate").val()) || 0;

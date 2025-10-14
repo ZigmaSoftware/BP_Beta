@@ -1008,34 +1008,35 @@ echo json_encode([
     $project_id = $_POST["project_id"];
     $po_type    = $_POST["po_type"];
 
-    $table     = "purchase_requisition_items as sub 
-                  join purchase_requisition as main 
-                  on main.unique_id = sub.main_unique_id";
+    $table = "purchase_requisition_items AS sub 
+              JOIN purchase_requisition AS main 
+              ON main.unique_id = sub.main_unique_id";
 
     $columns = [
         "main.pr_number AS pr_number",
         "main.sales_order_id",
         "sub.item_code",
         "sub.item_description",
-        "sub.new_quantity",
+        "sub.quantity",
         "sub.uom",
         "sub.required_delivery_date",
         "sub.unique_id",
-        "sub.item_code as item_id",
-        "sub.item_remarks as remarks",
+        "sub.item_code AS item_id",
+        "sub.item_remarks AS remarks",
         "sub.po_add_item"
     ];
 
     $where = "sub.main_unique_id != '' 
-              and main.company_id ='".$company_id."' 
-              and main.project_id ='".$project_id."' 
-              AND main.requisition_type = '$po_type' 
-              and main.is_delete = 0 
-              and sub.is_delete = 0 
-              and lvl_2_status = 1";
+              AND sub.main_unique_id = main.unique_id
+              AND main.company_id = '$company_id'
+              AND main.project_id = '$project_id'
+              AND main.requisition_type = '$po_type'
+              AND main.is_delete = 0 
+              AND sub.is_delete = 0 
+              AND lvl_2_status = 1";
 
     $result = $pdo->select([$table, $columns], $where);
-    
+
     error_log(print_r($result, true), 3, "logs/pr_sub.log");
     error_log(print_r($where, true), 3, "logs/pr_sub.log");
 
@@ -1043,10 +1044,9 @@ echo json_encode([
 
     if ($result->status) {
         foreach ($result->data as $row) {
-            // Base row (the PR item itself)
-            $data[] = $row;
+            $data[] = $row; // base row (main PR item)
 
-            // --- fetch possible child rows like in purchase_sublist_datatable ---
+            // --- Fetch possible child rows like in purchase_sublist_datatable ---
             $prod_unique_id = $row["item_code"];
             $so_id          = $row["sales_order_id"];
 
@@ -1054,84 +1054,125 @@ echo json_encode([
                 ["obom_child_table", ["unique_id", "item_unique_id", "qty", "uom_unique_id", "remarks", "po_add_item"]],
                 ["prod_unique_id" => $prod_unique_id, "so_unique_id" => $so_id, "is_delete" => 0]
             );
-            
-            error_log(print_r($sublist_res, true), 3, "logs/pr_sub.log");
-            error_log(print_r($row, true), 3, "logs/pr_sub.log");
 
+            error_log(print_r($sublist_res, true), 3, "logs/pr_sub.log");
 
             if ($sublist_res->status && !empty($sublist_res->data)) {
                 foreach ($sublist_res->data as $child) {
                     $child_row = $row; // clone base row
-                
+
                     $child_row["item_code"]        = $child["item_unique_id"];
-                    $child_row["new_quantity"]     = number_format($child["qty"] * $row['new_quantity'], 2);
+                    $child_row["quantity"]         = number_format($child["qty"] * $row["quantity"], 2);
                     $child_row["uom"]              = $child["uom_unique_id"];
                     $child_row["remarks"]          = $child["remarks"];
-                    $child_row["item_description"] = item_name_list($row["item_code"])[0]['item_name'] . " - (BOM Child Item)";
-                
-                    // 👇 important: use child unique_id, not parent
+                    $child_row["item_description"] = item_name_list($row["item_code"])[0]["item_name"] . " - (BOM Child Item)";
                     $child_row["unique_id"]        = $child["unique_id"];  
-                    $child_row["po_add_item"]        = $child["po_add_item"];  
+                    $child_row["po_add_item"]      = $child["po_add_item"];  
                     $child_row["is_child"]         = 1;
-                
+
                     $data[] = $child_row;
                 }
-
             }
         }
-        
-        $pr_id = $row['unique_id'];  // parent or child id depending on row
 
-        // render table
-        echo "<table class='table table-bordered'>";
-        echo "<thead><tr><th>#</th><th>PR Number</th><th>Item</th><th>Item Description</th><th>Qty</th><th>UOM</th><th>Remarks</th><th>Delivery Date</th><th>Action</th></tr></thead><tbody>";
-        
+        // --- Header with Add All button ---
+        echo "
+        <div class='d-flex justify-content-between align-items-center mb-2'>
+            <h5 class='mb-0'>Purchase Requisition Sublist</h5>
+            <button type='button' class='btn btn-success' id='add_all_btn'>
+                <i class='bx bx-plus'></i> Add All
+            </button>
+        </div>";
+
+        // --- Render table ---
+        echo "<table class='table table-bordered table-striped'>";
+        echo "<thead>
+                <tr>
+                    <th>#</th>
+                    <th>PR Number</th>
+                    <th>Item</th>
+                    <th>Item Description</th>
+                    <th>Qty</th>
+                    <th>UOM</th>
+                    <th>Remarks</th>
+                    <th>Delivery Date</th>
+                    <th>Action</th>
+                </tr>
+              </thead>
+              <tbody>";
+
         $i = 1;
         foreach ($data as $row) {
-            // 🔎 skip PR rows that are already flagged as added
-            if (isset($row['po_add_item']) && $row['po_add_item'] == 1) {
+            // Skip PR rows already added
+            if (isset($row["po_add_item"]) && $row["po_add_item"] == 1) {
                 continue;
             }
-        
-            // item name
+
+            // --- Item name ---
             $item_data = item_name_list($row["item_code"]);
             $display_item = isset($item_data[0]["item_name"], $item_data[0]["item_code"])
                 ? $item_data[0]["item_name"] . " / " . $item_data[0]["item_code"]
                 : "-";
-        
-            // uom
-            $unit_details = unit_name($row['uom']);
-            $unit = $unit_details[0]['unit_name'] ?? "";
-        
-            $delivery_date = disdate($row['required_delivery_date']);
-            
-            $pr_id = $row['unique_id'];  // parent or child id depending on row
-        
-            echo "<tr>";
+
+            // --- UOM ---
+            $unit_details = unit_name($row["uom"]);
+            $unit = $unit_details[0]["unit_name"] ?? "";
+
+            $delivery_date = disdate($row["required_delivery_date"]);
+
+            // --- Fallback for empty description ---
+            if (
+                empty($row["item_description"]) ||
+                strtolower(trim($row["item_description"])) === "null" ||
+                $row["item_description"] === "0"
+            ) {
+                $row["item_description"] = $item_data[0]["item_name"] ?? "-";
+            }
+
+            // --- Row output with data attributes for Add-All JS ---
+            $remarks_safe = htmlspecialchars($row["remarks"] ?? "", ENT_QUOTES);
+
+            echo "<tr
+                    data-item_code='{$row["item_code"]}'
+                    data-uom='{$row["uom"]}'
+                    data-quantity='{$row["quantity"]}'
+                    data-pr_unique_id='{$row["unique_id"]}'
+                    data-delivery_date='{$row["required_delivery_date"]}'
+                    data-remarks='{$remarks_safe}'
+                  >";
+
             echo "<td>{$i}</td>";
-            echo "<td>{$row['pr_number']}</td>";
+            echo "<td>{$row["pr_number"]}</td>";
             echo "<td>{$display_item}</td>";
-            echo "<td>{$row['item_description']}</td>";
-            echo "<td>{$row['new_quantity']}</td>";
+            echo "<td>{$row["item_description"]}</td>";
+            echo "<td>{$row["quantity"]}</td>";
             echo "<td>{$unit}</td>";
-            echo "<td>{$row['remarks']}</td>";
+            echo "<td>{$row["remarks"]}</td>";
             echo "<td>{$delivery_date}</td>";
-            echo "<td> 
-                <button type='button' id='sub_add' class='btn btn-success po_sublist_add_modal_btn' 
-                    onclick=\"po_sublist_add_update_pop_up('{$row['item_code']}','{$row['uom']}','{$row['new_quantity']}','{$row['unique_id']}','{$row['required_delivery_date']}','{$row['remarks']}')\">
-                    Add
-                </button>
-            </td>";
+            echo "<td>
+                    <button type='button' id='sub_add' class='btn btn-success po_sublist_add_modal_btn'
+                        onclick=\"po_sublist_add_update_pop_up(
+                            '{$row["item_code"]}',
+                            '{$row["uom"]}',
+                            '{$row["quantity"]}',
+                            '{$row["unique_id"]}',
+                            '{$row["required_delivery_date"]}',
+                            '{$remarks_safe}'
+                        )\">
+                        Add
+                    </button>
+                  </td>";
             echo "</tr>";
-        
+
             $i++;
         }
 
-
+        echo "</tbody></table>";
     } else {
         echo "<div class='text-danger'>No sublist found for this PR number.</div>";
     }
     break;
+
 
     case 'project_name':
         $company_id          = $_POST['company_id'];

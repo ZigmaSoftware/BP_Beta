@@ -112,4 +112,29 @@
 
 <!-- Common + App -->
 <script src="assets/js/common.js<?php echo $js_css_file_comment; ?>"></script>
+
+<?php 
+// ✅ Load Unsaved Changes Guard for all Create/Update/Edit pages
+if (preg_match('/(create|update|edit)/i', $file_name_org)) { 
+?>
+  <!-- 🔒 Global Unsaved Changes Guard -->
+  <script src="assets/js/unsaved_guard.js<?php echo $js_css_file_comment; ?>"></script>
+
+  <!-- Optional reusable banner (auto-detected by the script) -->
+  <script>
+    $(function () {
+      if (!$('#unsaved_warning_banner').length) {
+        $('body').prepend(`
+          <div id="unsaved_warning_banner"
+               class="alert alert-warning text-center fw-bold py-2"
+               style="display:none; position:sticky; top:0; z-index:1050;">
+            ⚠ You have unsaved changes — please <b>Save</b> or <b>Cancel</b> before leaving or reloading this page.
+          </div>
+        `);
+      }
+    });
+  </script>
+<?php } ?>
+
+
 <script src="assets/js/app.min.js<?php echo $js_css_file_comment; ?>"></script>
