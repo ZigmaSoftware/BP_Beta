@@ -274,8 +274,7 @@ case 'createupdate':
 
     // Duplicate check
     $table_details = [$table, ["COUNT(unique_id) AS count"]];
-    $select_where = 'item_name = "' . $item_name . '" 
-                     AND is_delete = 0';
+    $select_where = 'group_unique_id = "' . $group_unique_id . '" AND sub_group_unique_id = "' . $sub_group_unique_id . '" AND category_unique_id = "' . $category_unique_id . '" AND item_name = "' . $item_name . '" AND is_delete = 0';
 
     if ($unique_id) {
         $select_where .= ' AND unique_id != "' . $unique_id . '"';

@@ -98,100 +98,6 @@ function check_me (class_name = "") {
 	}
 }
 
-// function user_permission_cu(unique_id = "") {
-
-//     var internet_status  = is_online();
-
-//     if (!internet_status) {
-//         sweetalert("no_internet");
-//         return false;
-// 	}
-
-// 	var is_form = form_validity_check("was-validated");
-
-//     if (is_form) {
-	
-// 	var is_valid  		= 0;
-// 	var data_obj 		= [];
-
-// 	$('.all-checkbox').each(function () {
-// 		if (this.checked) {
-// 			is_valid = 1;
-// 			return false;
-// 		}
-// 	});
-
-//     if (is_valid) {
-
-// 		$('.all-checkbox').each(function () {
-// 			if (this.checked) {
-// 				var this_obj 		= new Object();
-// 				this_obj.main 		= $(this).data("main");
-// 				this_obj.section 	= $(this).data("section");
-// 				this_obj.screen 	= $(this).data("screen");
-// 				this_obj.action 	= $(this).data("action");
-// 				data_obj.push(this_obj);
-// 			}
-// 		});
-
-// 		var json_data = JSON.stringify(data_obj);
-// 		var data 	  = $(".was-validated").serialize();
-// 		data 		 += "&json_data="+json_data;
-
-//         data 		+= "&unique_id="+unique_id+"&action=createupdate";
-
-//         var ajax_url = sessionStorage.getItem("folder_crud_link");
-//         var url      = sessionStorage.getItem("list_link");
-
-//         $.ajax({
-// 			type 	: "POST",
-// 			url 	: ajax_url,
-// 			data 	: data,
-// 			beforeSend 	: function() {
-// 				$(".createupdate_btn").attr("disabled","disabled");
-// 				$(".createupdate_btn").text("Loading...");
-// 			},
-// 			success		: function(data) {
-
-// 				var obj     = JSON.parse(data);
-// 				var msg     = obj.msg;
-// 				var status  = obj.status;
-// 				var error   = obj.error;
-
-// 				if (!status) {
-// 					url 	= '';
-//                     $(".createupdate_btn").text("Error");
-//                     console.log(error);
-// 				} else {
-// 					// if (msg=="already") {
-// 						// Button Change Attribute
-// 						url 		= '';
-
-// 						$(".createupdate_btn").removeAttr("disabled","disabled");
-// 						if (unique_id) {
-// 							$(".createupdate_btn").text("Update");
-// 						} else {
-// 							$(".createupdate_btn").text("Save");
-// 						}
-// 					// }
-// 				}
-// 				sweetalert(msg);
-// 				$("#main_screen").focus();
-// 			},
-// 			error 		: function(data) {
-// 				alert("Network Error");
-// 			}
-// 		});
-
-
-//     } else {
-//         sweetalert("custom",'','',"Please Select Minimum One Permission");
-// 	}
-// 	} else {
-// 		sweetalert("form_alert");
-// 	}
-// }
-
 function user_permission_cu(unique_id = "") {
     if (!is_online()) { sweetalert("no_internet"); return; }
     if (!form_validity_check("was-validated")) { sweetalert("form_alert"); return; }
@@ -265,7 +171,7 @@ function init_datatable(table_id='',form_name='',action='') {
 
 	var datatable = table.DataTable({
 		ordering    : true,
-		searching   : true,
+		searching   : false,
 		"ajax"		: {
 			url 	: ajax_url,
 			type 	: "POST",

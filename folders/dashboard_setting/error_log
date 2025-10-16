@@ -1,0 +1,18 @@
+[16-Oct-2025 09:25:41 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'ss_delete' in 'WHERE' in /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/comfun.php(4029): db->select('staff_test', 'ss_delete = 0 a...')
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_erp/folders/dashboard_setting/crud.php(164): staff_name('staff5fd74fe5b6...')
+#3 {main}
+[16-Oct-2025 09:25:45 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'ss_delete' in 'WHERE' in /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/comfun.php(4029): db->select('staff_test', 'ss_delete = 0 a...')
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_erp/folders/dashboard_setting/crud.php(164): staff_name('staff5fd74fe5b6...')
+#3 {main}
+[16-Oct-2025 09:25:59 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'ss_delete' in 'WHERE' in /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/comfun.php(4029): db->select('staff_test', 'ss_delete = 0 a...')
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_erp/folders/dashboard_setting/crud.php(164): staff_name('staff5fd74fe5b6...')
+#3 {main}

@@ -1,11 +1,10 @@
 
 
-
 // ---------- INIT ----------
 $(document).ready(function () {
     let main_id = $("#unique_id").val();
     if (main_id) {
-        expense_items_datatable("expense_items_datatable");
+        invoice_items_datatable("invoice_items_datatable");
     }
 
     $('.select2').select2();
@@ -37,6 +36,7 @@ $(document).ready(function () {
     $('.select2').select2();
     init_datatable();
 });
+
 
 
 
@@ -76,31 +76,27 @@ function calculate_amount() {
 }
 
 
-// Save main invoice
+
 function expense_entry_cu(unique_id = "") {
-    let internet_status = is_online();
-    if (!internet_status) {
+    if (!is_online()) {
         sweetalert("no_internet");
         return false;
     }
 
-    let is_form = form_validity_check("was-validated");
-    if (!is_form) {
+    if (!form_validity_check("was-validated")) {
         sweetalert("form_alert");
         return false;
     }
 
-    // âœ… CHECK: If sublist is empty, stop
-    let rowCount = $("#expense_items_datatable tbody tr").length;
-    if (rowCount === 0 || $("#expense_items_datatable tbody").text().includes("No data available")) {
-        Swal.fire("Please add at least one item in the sublist before saving.");
+    // Check if item table has entries
+    let rowCount = $("#invoice_items_datatable tbody tr").length;
+    if (rowCount === 0 || $("#invoice_items_datatable tbody").text().includes("No data available")) {
+        Swal.fire("Please add at least one item before saving.");
         return false;
     }
-    
-    let remarks = $("#remarks_main").val().trim();
 
     let data = new FormData($("#expense_entry_form")[0]);
-    data.append("remarks", remarks);
+    data.append("remarks_main", $("#remarks_main").val().trim());
     data.append("action", "createupdate");
     data.append("unique_id", unique_id);
 
@@ -116,15 +112,17 @@ function expense_entry_cu(unique_id = "") {
         },
         success: function (data) {
             let obj = JSON.parse(data);
-            if (!obj.status) {
-                $(".createupdate_btn").text("Error");
-                console.log(obj.error);
-            } else {
+            if (obj.status) {
+                if (obj.data && obj.data.invoice_no) {
+                    $("#invoice_no").val(obj.data.invoice_no);
+                }
                 sweetalert(obj.msg, url);
+            } else {
+                Swal.fire("Database Error: " + (obj.error || "Unknown error"));
             }
         },
         error: function () {
-            alert("Network Error");
+            Swal.fire("Network Error");
         },
         complete: function () {
             $(".createupdate_btn").removeAttr("disabled").text("Save");
@@ -134,9 +132,7 @@ function expense_entry_cu(unique_id = "") {
 
 
 
-
-
-function expense_item_add_update() {
+function invoice_item_add_update() {
     let main_unique_id = $("#unique_id").val();
     let sublist_id = $("#sublist_unique_id").val();
 
@@ -164,7 +160,7 @@ function expense_item_add_update() {
         type: "POST",
         url: ajax_url,
         data: {
-            action: "expense_item_add_update",
+            action: "invoice_item_add_update",
             main_unique_id,
             sublist_unique_id: sublist_id,
             item_name,
@@ -186,13 +182,17 @@ function expense_item_add_update() {
                     timer: 1200,
                     showConfirmButton: false
                 });
-                expense_items_datatable("expense_items_datatable");
+                invoice_items_datatable("invoice_items_datatable");
                 recalc_invoice_totals();   // ðŸ”¹ refresh totals
                 reset_sublist_form();
             }
         }
     });
 }
+
+
+
+
 
 
 function recalc_invoice_totals() {
@@ -238,22 +238,20 @@ function recalc_invoice_totals() {
         total_gst += gstAmt;
     });
 
-    const roundoff = parseFloat($("#roundoff").val()) || 0;
-    const tot_amount = basic + total_gst + roundoff;
+    const round_off = parseFloat($("#round_off").val()) || 0;
+    const tot_amount = basic + total_gst + round_off;
 
     $("#basic").val(basic.toFixed(2));
     $("#total_gst").val(total_gst.toFixed(2));
     $("#tot_amount").val(tot_amount.toFixed(2));
 }
 
-// Update totals when roundoff changes
-$("#roundoff").on("input", function () {
+// Update totals when round_off changes
+$("#round_off").on("input", function () {
     // const val = parseFloat($(this).val()) || 0;
     // $(this).val(val.toFixed(2));
     recalc_invoice_totals();
 });
-
-
 
 
 
@@ -271,7 +269,7 @@ function reset_sublist_form() {
 
 
 
-function expense_items_datatable(table_id = "expense_items_datatable") {
+function invoice_items_datatable(table_id = "invoice_items_datatable") {
     let main_unique_id = $("#unique_id").val();
 
     $("#" + table_id).DataTable({
@@ -284,7 +282,7 @@ function expense_items_datatable(table_id = "expense_items_datatable") {
             type: "POST",
             url: ajax_url,
             data: {
-                action: "expense_items_datatable",
+                action: "invoice_items_datatable",
                 main_unique_id: main_unique_id
             }
         },
@@ -310,11 +308,11 @@ function expense_items_datatable(table_id = "expense_items_datatable") {
 
 
 // Edit sublist item
-function exp_item_edit(unique_id) {
+function inv_item_edit(unique_id) {
     $.ajax({
         type: "POST",
         url: ajax_url,
-        data: { action: "exp_item_edit", unique_id },
+        data: { action: "inv_item_edit", unique_id },
         success: function (res) {
     let d = JSON.parse(res).data;
     $("#sublist_unique_id").val(d.unique_id);
@@ -355,7 +353,7 @@ function inv_item_delete(unique_id) {
                 success: function (res) {
                     let obj = JSON.parse(res);
                     Swal.fire(obj.msg);
-                    expense_items_datatable("expense_items_datatable");
+                    invoice_items_datatable("invoice_items_datatable");
                 }
             });
         }
@@ -423,14 +421,16 @@ function init_datatable(table_id = '', form_name = '', action = '') {
             url: ajax_url,
             type: "POST",
             data: function (d) {
-  d.action         = action;
-  d.from_date      = $("#from_date").val();
-  d.to_date        = $("#to_date").val();
-  d.category_name  = $("#category_name").val();
-  d.payment_type   = $("#payment_type").val();
-  d.customer_name  = $("#customer_name").val();
-}
-
+                d.action        = action;
+                d.from_date     = $("#from_date").val();
+                d.to_date       = $("#to_date").val();
+                d.company_id    = $("#company_name").val(); 
+                d.project_id    = $("#project_name").val();  
+                d.category_name = $("#category_name").val();
+                d.payment_type  = $("#payment_type").val();
+                d.customer_name = $("#customer_name").val();
+                
+            }
         }
     });
 }
@@ -447,7 +447,7 @@ function expense_entry_filter() {
 
 
 // Load projects when company changes
-function get_project_name(company_id = "") {
+function get_project_name_all(company_id = "") {
     if (company_id) {
         $.ajax({
             type: "POST",
@@ -622,7 +622,7 @@ function documents_delete(unique_id) {
 function expense_entry_upload(upload_unique_id) {
     $("#upload_unique_id").val(upload_unique_id);
     documents_datatable(upload_unique_id);
-    $("#exUploadModal").modal("show");
+    $("#siUploadModal").modal("show");
 }
 
 function new_external_window_image(image_url) {

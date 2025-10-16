@@ -136,6 +136,7 @@ $pr_number_options = select_option($pr_number_options, "Select the PR Number");
 
                                 <!-- Audit / Status -->
                                 <th>Prepared By/Dt</th>
+                                <th>Checked By</th>
                                 <th>Authorized By/Dt</th>
                                 <th>Status</th> <!-- Pending / Partially Closed / Closed -->
                             </tr>

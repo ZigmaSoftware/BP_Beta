@@ -40,6 +40,7 @@ switch ($action) {
         $q_rating    = $_POST["q_rating"];
         $d_rating    = $_POST["d_rating"];
         $r_rating    = $_POST["r_rating"];
+        $c_rating    = $_POST["c_rating"];
         $t_rating    = $_POST["t_rating"];
         $remarks     = $_POST["remarks"];
         $is_active   = $_POST["is_active"];
@@ -54,6 +55,7 @@ switch ($action) {
                 "q_rating"     => $q_rating,
                 "d_rating"     => $d_rating,
                 "r_rating"     => $r_rating,
+                "c_rating"     => $c_rating,
                 "t_rating"     => $t_rating,
                 "remarks"      => $remarks,
                 "is_active"    => $is_active,
@@ -138,6 +140,7 @@ switch ($action) {
             "d_rating",
             "r_rating",
             "t_rating",
+            "c_rating",
             "remarks",
             "is_active",
             "unique_id"
@@ -232,22 +235,26 @@ switch ($action) {
                 unset($value['from_period'], $value['to_period']);
 
                 $value['q_rating'] = intval($value['q_rating']) . "/50";
-                $value['d_rating'] = intval($value['d_rating']) . "/30";
-                $value['r_rating'] = intval($value['r_rating']) . "/20";
+                $value['d_rating'] = intval($value['d_rating']) . "/20";
+                $value['r_rating'] = intval($value['r_rating']) . "/10";
+                $value['c_rating'] = intval($value['c_rating']) . "/20";
                 $value['t_rating'] = intval($value['t_rating']) . "/100";
+
 
                 
                 
                 $status_check = "Satisfactory";
                 if (
-                    $value['q_rating'] < 30 ||
-                    $value['d_rating'] < 15 ||
-                    $value['r_rating'] < 10 ||
-                    $value['t_rating'] < 50
+                    $value['q_rating'] < 30 ||  // out of 50
+                    $value['d_rating'] < 10 ||  // out of 20
+                    $value['r_rating'] < 5  ||  // out of 10
+                    $value['c_rating'] < 10 ||  // out of 20
+                    $value['t_rating'] < 50     // total out of 100
                 ) {
                     $status_check = "Unsatisfactory";
                 }
-            
+
+                            
     
                 $value['satisfactory_status'] = $status_check;
                 
@@ -270,6 +277,7 @@ switch ($action) {
                     $value['q_rating'] ,
                     $value['d_rating'] ,
                     $value['r_rating'] ,
+                    $value['c_rating'],
                     $value['t_rating'] ,
                     $value['satisfactory_status'] ,
                     $value['remarks'] ,

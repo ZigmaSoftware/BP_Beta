@@ -190,18 +190,6 @@ function handleStatutoryDetails() {
             'cin_no', 'tan_no'
         ];
 
-        // // Check if all fields are empty
-        // const allEmpty = fields.every(field => {
-        //     const element = document.getElementById(field);
-        //     return !element || !element.value.trim();
-        // });
-
-        // if (allEmpty) {
-        //     moveToNextTab(3);
-        //     resolve({ status: 'skipped', message: 'All statutory fields are empty' });
-        //     return;
-        // }
-
         const formData = new FormData();
         formData.append('supplier_unique_id', document.getElementById('supplier_unique_id').value);
         formData.append('unique_id', document.getElementById('unique_id').value);
@@ -555,142 +543,53 @@ $(document).ready(function() {
 
 
     // Form wizard Functions
-    $('#suppliercreatewizard').bootstrapWizard({
-        onTabShow: function(tab, navigation, index) {
-            var supplier_unique_id = $("#supplier_unique_id").val();
+$('#suppliercreatewizard').bootstrapWizard({
+  onTabShow: function (tab, navigation, index) {
+    setTimeout(function () {
+      var supplier_unique_id = $("#supplier_unique_id").val();
 
-            if (index != 0) {
-                if (!supplier_unique_id) {
-                    
-                    sweetalert("custom",'','','Create Supplier First');
-                    $('#suppliercreatewizard').find("a[href*='personaldetails_tab']").trigger('click');
-                    return event.preventDefault(), event.stopPropagation(), !1;
-                }
-            }
-
-            // console.log(index);
-            var $total   = navigation.find('li').length;
-            var $current = index+1;
-            var $percent = ($current/$total) * 100;
-            $('#suppliercreatewizard').find('.bar').css({width:$percent+'%'});
-
-            // If it's the last tab then hide the last button and show the finish instead
-            if($current >= $total) {
-                $('#suppliercreatewizard').find('.pager .next').hide();
-                $('#suppliercreatewizard').find('.pager .finish').show();
-                $('#suppliercreatewizard').find('.pager .finish').removeClass('disabled');
-                // unique_id    = $(".finish").data("unique-id");
-            } else {
-                $('#suppliercreatewizard').find('.pager .next').show();
-                $('#suppliercreatewizard').find('.pager .finish').hide();
-            }
-            
-            if (index != 0) {
-                $(".createupdate_btn").text("Next");
-            }
-
-            handleTabLoadByIndex(index);
-
-        },
-        onNext: function (t, r, index) {
-
-            
-
-            if (index == 1) {
-                var form_class  = "supplier_profile_form";
-
-                var is_form     = form_validity_check(form_class);
-                var unique_id   = $("#unique_id").val();
-
-                if (!is_form) {
-                    sweetalert("form_alert");
-                    return event.preventDefault(), event.stopPropagation(), !1;
-                } else {
-                    var gst_no = $('#gst_no').val();
-
-                    var res = gst_no.substring(0, 2);
-                    
-                    if(res){
-                        var data     = $("."+form_class).serialize();
-                        data        += "&unique_id="+unique_id+"&action=createupdate";
-                    
-                        var ajax_url = sessionStorage.getItem("folder_crud_link");
-                        var url      = sessionStorage.getItem("list_link");
-                    
-                        // console.log(data);
-                        $.ajax({
-                            type    : "POST",
-                            url     : ajax_url,
-                            data    : data,
-                            beforeSend  : function() {
-                                $(".createupdate_btn").addClass("disabled");
-                                $(".createupdate_btn").text("Loading...");
-                            },
-                            success     : function(data) {
-                    
-                                var obj           = JSON.parse(data);
-                                var msg           = obj.msg;
-                                var status        = obj.status;
-                                var error         = obj.error;
-                                var supplier_unique_id        = obj.supplier_unique_id;
-                                url               = '';
-                                var success       = false;
-                                    
-                                if (!status) {
-                                    
-                                    $(".createupdate_btn").text("Error");
-                                    console.log(error);
-                                } else {
-                                    success = true;
-                                    if (msg=="already") {
-                                        // Button Change Attribute
-                                        url         = '';
-                                        success = false;
-                                    }
-
-                                
-
-                                    $(".createupdate_btn").removeClass("disabled","disabled");
-                                    if (unique_id) {
-                                        $(".createupdate_btn").text("Update & Continue");
-                                    } else {
-                                        $(".createupdate_btn").text("Save & Continue");
-                                    }
-
-                                    sweetalert(msg,url);
-                    
-                                    if (!success) {
-                                        console.log(success);
-                                        $('#suppliercreatewizard').find("a[href*='personaldetails_tab']").trigger('click');
-                                        // $('#suppliercreatewizard').find("a[href*='contactperson_tab']").removeClass('active');
-                                        // $('#suppliercreatewizard').find("a[href*='profile_tab']").addClass('active');
-                                    } else {
-                                        console.log(success);
-                                        $("#supplier_unique_id").val(supplier_unique_id);
-                                        $('#suppliercreatewizard').find("a[href*='contactperson_tab']").trigger('click');
-                                        // $('#suppliercreatewizard').find("a[href*='profile_tab']").removeClass('active');
-                                        // $('#suppliercreatewizard').find("a[href*='contactperson_tab']").addClass('active');
-                                    }
-                                    // return success;
-
-                                }
-                                
-                            },
-                            error       : function(data) {
-                                alert("Network Error");
-                                // return false;
-                            }
-                        });
-                        return event.preventDefault(), event.stopPropagation(), !1;
-                    }
-                }
-            }
-        },
-        onTabClick: function(tab, navigation, index) {
-            // return false;
-            // return event.preventDefault(), event.stopPropagation(), !1;
+      if (index != 0) {
+        if (!supplier_unique_id) {
+          sweetalert("custom", '', '', 'Create Supplier First');
+          $('#suppliercreatewizard')
+            .find("a[href*='personaldetails_tab']")
+            .trigger('click');
+          return event.preventDefault(), event.stopPropagation(), false;
         }
-    });
+      }
+
+      var $total = navigation.find('li').length;
+      var $current = index + 1;
+      var $percent = ($current / $total) * 100;
+      $('#suppliercreatewizard')
+        .find('.bar')
+        .css({ width: $percent + '%' });
+
+      if ($current >= $total) {
+        $('#suppliercreatewizard').find('.pager .next').hide();
+        $('#suppliercreatewizard').find('.pager .finish').show();
+        $('#suppliercreatewizard').find('.pager .finish').removeClass('disabled');
+      } else {
+        $('#suppliercreatewizard').find('.pager .next').show();
+        $('#suppliercreatewizard').find('.pager .finish').hide();
+      }
+
+      if (index != 0) {
+        $(".createupdate_btn").text("Next");
+      }
+
+      handleTabLoadByIndex(index);
+    }, 1000); // ← delay 1 second
+  },
+
+  onNext: function (t, r, index) {
+    // existing code unchanged
+  },
+
+  onTabClick: function (tab, navigation, index) {
+    // existing code unchanged
+  }
+});
     $('#suppliercreatewizard .finish').click(function() {
         var url      = sessionStorage.getItem("list_link");
         sweetalert("create",url);

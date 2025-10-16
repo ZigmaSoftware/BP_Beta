@@ -117,10 +117,6 @@ $sub_group_unique_id      = select_option($sub_group_unique_id, "Select the Sub 
 $category_unique_id      = select_option($category_unique_id, "Select the Category Name", $category_unique_ids);
 
 
-$tax_options     = tax();
-$tax_options     = select_option($tax_options, "Select Tax", $tax);
-
-
 // $data_type_options  = [
 //     1 => [
 //         "unique_id" => 1,
@@ -220,15 +216,8 @@ $tax_options     = select_option($tax_options, "Select Tax", $tax);
                                 </div>
                                 <label class="col-md-2 col-form-label textright" for="gst">Tax (GST %)</label>
                                 <div class="col-md-3">
-                                  <select id="gst" name="gst" class="form-control select2">
-                                    <?= $tax_options ?>
-                                  </select>
+                                    <input type="text" id="gst" name="gst" class="form-control" onkeypress="number_only(event);" value="<?php echo $gst; ?>">
                                 </div>
-
-                            
-                      
-                
-                                
                             </div>
                             
                             

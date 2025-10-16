@@ -1,6 +1,8 @@
 <?php
 // Options
+$category_options = select_option(expense_category(), "Select Category");
 $company_name_options = select_option(company_name(), "Select");
+$payment_type_options = select_option(payment_type(), "Select Payment Type");
 $supplier_name_options = select_option(supplier(), "Select");
 $customer_name_options = select_option(customers(), "Select");
 $project_options = select_option(get_project_name(), "Select the Project Name");
@@ -47,17 +49,30 @@ $type_options = select_option(doc_type_options(), "Select the Document Type", $d
                        value="<?= $to_date ?>" max="<?= $current_month ?>">
               </div>
               <div class="col-md-2">
-                <label class="col-form-label" for="company_name">Company</label>
+                <label class="col-form-label" for="company_name">Company Name</label>
                 <select name="company_name" id="company_name" class="select2 form-control">
                   <?= $company_name_options ?>
                 </select>
               </div>
               <div class="col-md-2">
-                <label class="col-form-label" for="project_name">Project</label>
+                <label class="col-form-label" for="project_name">Project Name</label>
                 <select name="project_name" id="project_name" class="select2 form-control">
                   <?= $project_options ?>
                 </select>
               </div>
+             <div class="col-md-2">
+                  <label class="col-form-label" for="category_name">Category</label>
+                  <select name="category_name" id="category_name" class="select2 form-control">
+                    <?= $category_options ?>
+                  </select>
+                </div>
+                
+                <div class="col-md-2">
+                  <label class="col-form-label" for="payment_type">Payment Type</label>
+                  <select name="payment_type" id="payment_type" class="select2 form-control">
+                    <?= $payment_type_options ?>
+                  </select>
+                </div>
               <div class="col-md-2">
                 <label class="col-form-label" for="customer_name">Customer</label>
                 <select name="customer_name" id="customer_name" class="select2 form-control">
@@ -73,12 +88,12 @@ $type_options = select_option(doc_type_options(), "Select the Document Type", $d
         </div>
         
         <!-- Document Upload Modal -->
-<div class="modal fade" id="exUploadModal" tabindex="-1" role="dialog" aria-labelledby="exUploadModalLabel" aria-hidden="true">
+<div class="modal fade" id="siUploadModal" tabindex="-1" role="dialog" aria-labelledby="siUploadModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg" role="document">
     <div class="modal-content">
 
       <div class="modal-header">
-        <h5 class="modal-title" id="exUploadModalLabel">Upload GRN Document</h5>
+        <h5 class="modal-title" id="siUploadModalLabel">Upload GRN Document</h5>
       </div>
 
       <div class="modal-body">
@@ -143,18 +158,19 @@ $type_options = select_option(doc_type_options(), "Select the Document Type", $d
                class="table table-striped dt-responsive nowrap w-100">
           <thead class="table-light">
             <tr>
-  <th>#</th>
-  <th>Invoice No</th>
-  <th>Category</th>
-  <th>Payment Type</th>
-  <th>Customer</th>
-  <th>Invoice Date</th>
-  <th>Remarks</th>
-  <th>View</th>
-  <th>Print</th>
-  <th>Action</th>
-</tr>
-
+              <th>#</th>
+              <th>Expense No</th>
+              <th>Company Name</th>
+              <th>Project Name</th>
+              <th>Category</th>
+              <th>Payment Type</th>
+              <th>Customer</th>
+              <th>Expense Date</th>
+              <!--<th>Remarks</th>-->
+              <th>View</th>
+              <th>Print</th>
+              <th>Action</th>
+            </tr>
           </thead>
           <tbody></tbody>                                            
         </table>

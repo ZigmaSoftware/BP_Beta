@@ -30,6 +30,7 @@ if(isset($_GET["unique_id"])) {
             "d_rating",
             "r_rating",
             "t_rating",
+            "c_rating",
             "remarks",
             "is_active",
             "unique_id",
@@ -56,6 +57,7 @@ if(isset($_GET["unique_id"])) {
     $q_rating       = $result_values["q_rating"];
     $d_rating       = $result_values["d_rating"];
     $r_rating       = $result_values["r_rating"];
+    $c_rating       = $result_values["c_rating"];
     $t_rating       = $result_values["t_rating"];
     $remarks        = $result_values["remarks"];
     $is_active      = $result_values["is_active"];
@@ -128,22 +130,32 @@ $supplier_name_options     = select_option($supplier_name_options,"Select", $sup
                     </div>
                     
                     <div class="form-group row">
-                        <label class="col-md-2 col-form-label textright" for="d_rating">Delivery (out of 30)</label>
-                        <div class="col-md-3">
-                            <input type="text" name="d_rating" id="d_rating"  onkeypress='number_only(event);'
-                                   class="form-control" 
-                                   value="<?php echo $d_rating; ?>" min="0" max="30" required>
+                            <label class="col-md-2 col-form-label textright" for="d_rating">Delivery (out of 20)</label>
+                            <div class="col-md-3">
+                                <input type="text" name="d_rating" id="d_rating" onkeypress='number_only(event);'
+                                       class="form-control"
+                                       value="<?php echo $d_rating; ?>" min="0" max="20" required>
+                            </div>
                         </div>
-                    </div>
-                    
-                    <div class="form-group row">
-                        <label class="col-md-2 col-form-label textright" for="r_rating">Response (out of 20)</label>
-                        <div class="col-md-3">
-                            <input type="text" name="r_rating" id="r_rating"  onkeypress='number_only(event);'
-                                   class="form-control" 
-                                   value="<?php echo $r_rating; ?>" min="0" max="20" required>
+                        
+                        <div class="form-group row">
+                            <label class="col-md-2 col-form-label textright" for="r_rating">Response (out of 10)</label>
+                            <div class="col-md-3">
+                                <input type="text" name="r_rating" id="r_rating" onkeypress='number_only(event);'
+                                       class="form-control"
+                                       value="<?php echo $r_rating; ?>" min="0" max="10" required>
+                            </div>
                         </div>
-                    </div>
+                        
+                        <div class="form-group row">
+                            <label class="col-md-2 col-form-label textright" for="c_rating">Compliances (out of 20)</label>
+                            <div class="col-md-3">
+                                <input type="text" name="c_rating" id="c_rating" onkeypress='number_only(event);'
+                                       class="form-control"
+                                       value="<?php echo $c_rating; ?>" min="0" max="20" required>
+                            </div>
+                        </div>
+
                     
                     <div class="form-group row">
                         <label class="col-md-2 col-form-label textright" for="t_rating">Total (out of 100)</label>
@@ -229,10 +241,18 @@ function validateInput(id, max) {
     let val = parseInt(el.value) || 0;
 
     if (val > max) {
-        alert(id.toUpperCase() + " rating cannot exceed " + max);
-        el.value = max; // set back to max allowed
+        Swal.fire({
+            icon: "warning",
+            title: "Limit Exceeded",
+            text: id.toUpperCase().replace('_RATING','') + " rating cannot exceed " + max,
+            confirmButtonColor: "#3085d6",
+            confirmButtonText: "OK"
+        }).then(() => {
+            el.value = max;
+            calculateTotal();
+        });
     } else if (val < 0) {
-        el.value = 0; // prevent negative input
+        el.value = 0;
     }
 
     calculateTotal();
@@ -242,23 +262,27 @@ function calculateTotal() {
     let q = parseInt(document.getElementById("q_rating").value) || 0;
     let d = parseInt(document.getElementById("d_rating").value) || 0;
     let r = parseInt(document.getElementById("r_rating").value) || 0;
+    let c = parseInt(document.getElementById("c_rating").value) || 0;
 
-    let total = q + d + r;
+    let total = q + d + r + c;
     document.getElementById("t_rating").value = total;
 }
 
-// Add event listeners with validation
+// Attach input listeners with validation
 document.getElementById("q_rating").addEventListener("input", function() {
     validateInput("q_rating", 50);
 });
 document.getElementById("d_rating").addEventListener("input", function() {
-    validateInput("d_rating", 30);
+    validateInput("d_rating", 20);
 });
 document.getElementById("r_rating").addEventListener("input", function() {
-    validateInput("r_rating", 20);
+    validateInput("r_rating", 10);
+});
+document.getElementById("c_rating").addEventListener("input", function() {
+    validateInput("c_rating", 20);
 });
 
-// Run once on page load (for edit mode)
+// Run once on page load (edit mode)
 window.onload = calculateTotal;
 </script>
 

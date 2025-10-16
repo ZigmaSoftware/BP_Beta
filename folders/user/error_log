@@ -53,3 +53,13 @@ Stack trace:
 #0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
 #1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/user/crud.php(194): db->select(Array, ' is_delete = '0...', '10', '0', '', 'SQL_CALC_FOUND_...')
 #2 {main}
+[16-Oct-2025 15:13:51 Asia/Kolkata] PDOException: SQLSTATE[21000]: Cardinality violation: 1242 Subquery returns more than 1 row in /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_erp/folders/user/crud.php(193): db->select(Array, ' is_delete = '0...', '10', '20', '', 'SQL_CALC_FOUND_...')
+#2 {main}
+[16-Oct-2025 15:14:08 Asia/Kolkata] PDOException: SQLSTATE[21000]: Cardinality violation: 1242 Subquery returns more than 1 row in /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_erp/folders/user/crud.php(193): db->select(Array, ' is_delete = '0...', '10', '20', '', 'SQL_CALC_FOUND_...')
+#2 {main}

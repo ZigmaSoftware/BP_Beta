@@ -45,11 +45,7 @@ $date = date('Y-m-d H:i:s', time());
 switch ($action) {
 
 
-
-
-
-
-case "expense_item_add_update":
+case "invoice_item_add_update":
     $main_unique_id    = $_POST["main_unique_id"];
     $sublist_unique_id = $_POST["sublist_unique_id"];
     $item_name         = $_POST["item_name"];
@@ -111,43 +107,51 @@ break;
 
 
 
+
+
 case "createupdate":
-    $category_id     = $_POST["category_id"];
- $payment_type_id = $_POST["payment_type_id"];
+    $category_id     = $_POST["category_id"] ?? '';
+    $payment_type_id = $_POST["payment_type_id"] ?? '';
+    $customer_id     = $_POST["customer_id"] ?? '';
+    $company_id      = $_POST["company_id"] ?? '';
+    $project_id      = $_POST["project_id"] ?? '';
+    $invoice_date    = $_POST["invoice_date"] ?? '';
+    $remarks         = $_POST["remarks"] ?? '';
 
-    $customer_id  = $_POST["customer_id"];
-    $invoice_date = $_POST["invoice_date"];
-    $remarks      = $_POST["remarks"];
-    $unique_id    = !empty($_POST["unique_id"]) ? $_POST["unique_id"] : unique_id();
+    $unique_id       = !empty($_POST["unique_id"]) ? $_POST["unique_id"] : unique_id("exp");
 
-    // Totals
     $basic       = (float)($_POST["basic"] ?? 0);
     $total_gst   = (float)($_POST["total_gst"] ?? 0);
-    $roundoff    = (float)($_POST["roundoff"] ?? 0);
+    $round_off   = (float)($_POST["round_off"] ?? 0);
     $tot_amount  = (float)($_POST["tot_amount"] ?? 0);
-    
-    $invoice_no = 1;
 
-   $columns = [
+    // Generate invoice number
+    $existing_invoices = fetch_pe_number("expense_entry");
+    $invoice_no = generatePE("ZIG", $existing_invoices);
+
+    $columns = [
     "unique_id"       => $unique_id,
     "category_id"     => $category_id,
     "payment_type_id" => $payment_type_id,
     "customer_id"     => $customer_id,
-    "invoice_no"    => $invoice_no,
+    "company_id"      => $company_id,
+    "project_id"      => $project_id,
+    "invoice_no"      => $invoice_no,
     "invoice_date"    => $invoice_date,
     "remarks"         => $remarks,
     "basic"           => $basic,
     "total_gst"       => $total_gst,
-    "round_off"        => $roundoff,
+    "round_off"       => $round_off,
     "tot_amount"      => $tot_amount,
     "created_user_id" => $_SESSION["sess_user_id"],
     "created"         => date("Y-m-d H:i:s")
 ];
 
 
-    $check = $pdo->select(["expense_entry", ["COUNT(*) AS c"]], ["unique_id" => $unique_id, "is_delete" => 0]);
-    error_log(print_r($check, true) . "\n", 3, "check.log");
-
+    $check = $pdo->select(["expense_entry", ["COUNT(*) AS c"]], [
+        "unique_id" => $unique_id,
+        "is_delete" => 0
+    ]);
 
     if ($check->status && $check->data[0]["c"]) {
         unset($columns["unique_id"], $columns["created_user_id"], $columns["created"]);
@@ -160,11 +164,24 @@ case "createupdate":
         $msg = "create";
     }
 
-    error_log(print_r($result, true) . "\n", 3, "result.log");
-
-    echo json_encode(["status" => true, "msg" => $msg, "data" => ["unique_id" => $unique_id]]);
-break;
-
+    // ✅ Validate and return actual result
+    if ($result->status) {
+        echo json_encode([
+            "status" => true,
+            "msg" => $msg,
+            "data" => [
+                "unique_id" => $unique_id,
+                "invoice_no" => $invoice_no
+            ]
+        ]);
+    } else {
+        echo json_encode([
+            "status" => false,
+            "msg" => "DB Error",
+            "error" => $result->error
+        ]);
+    }
+    break;
 
 
    
@@ -176,9 +193,10 @@ break;
 
     $from_date     = $_POST['from_date'] ?? '';
     $to_date       = $_POST['to_date'] ?? '';
+    $company_id    = $_POST['company_id'] ?? '';   
+    $project_id    = $_POST['project_id'] ?? ''; 
     $category_name = $_POST['category_name'] ?? '';
     $payment_type  = $_POST['payment_type'] ?? '';
-
     $customer_name = $_POST['customer_name'] ?? '';
 
     $data = [];
@@ -186,36 +204,44 @@ break;
     $columns = [
     "@a:=@a+1 s_no",
     "invoice_no",
+    "company_id",
+    "project_id",
     "category_id",
     "payment_type_id",
     "customer_id",
     "invoice_date",
-    "remarks",
     "unique_id"
 ];
 
 
+
     $table_details = [$table . " , (SELECT @a:=" . $start . ") AS a ", $columns];
+    
+    error_log("options: " . print_r($table_details, true) . "\n", 3, "datas_log.txt");
 
     // Build WHERE
     $where = "is_delete = '0'";
-    $conditions = [];
+   $conditions = [];
 
-    if (!empty($from_date) && !empty($to_date)) {
-        $conditions[] = "invoice_date BETWEEN '{$from_date}' AND '{$to_date}'";
-    }
-    if (!empty($category_name)) {
+if (!empty($from_date) && !empty($to_date)) {
+    $conditions[] = "invoice_date BETWEEN '{$from_date}' AND '{$to_date}'";
+}
+if (!empty($company_id)) {
+    $conditions[] = "company_id = '{$company_id}'";
+}
+if (!empty($project_id)) {
+    $conditions[] = "project_id = '{$project_id}'";
+}
+if (!empty($category_name)) {
     $conditions[] = "category_id = '{$category_name}'";
 }
 if (!empty($payment_type)) {
     $conditions[] = "payment_type_id = '{$payment_type}'";
 }
+if (!empty($customer_name)) {
+    $conditions[] = "customer_id = '{$customer_name}'";
+}
 
-
-   
-    if (!empty($customer_name)) {
-        $conditions[] = "customer_id = '{$customer_name}'";
-    }
 
     if ($conditions) {
         $where .= " AND " . implode(" AND ", $conditions);
@@ -231,16 +257,22 @@ if (!empty($payment_type)) {
         $where .= " AND " . $searching;
     }
 
+ error_log("options: " . print_r($where, true) . "\n", 3, "datawhere_log.txt");
+
     $sql_function = "SQL_CALC_FOUND_ROWS";
     $result       = $pdo->select($table_details, $where, $length, $start, $order_by, $sql_function);
+    
+     error_log("options: " . print_r($result, true) . "\n", 3, "dataresult_log.txt");
     
     $total_records = total_records();
 
     if ($result->status) {
         foreach ($result->data as $value) {
-            $value['category_id'] = category_name($value['category_id'])[0]['category_name'] ?? '';
-$value['payment_type_id'] = payment_type_name($value['payment_type_id'])[0]['payment_type_name'] ?? '';
-
+            $value['company_id'] = company_name($value['company_id'])[0]['company_name'] ?? '';
+            $proj                = project_name($value['project_id'])[0] ?? [];
+            $value['project_id'] = ($proj['project_code'] ?? '') . " / " . ($proj['project_name'] ?? '');
+            $value['category_id'] = expense_category($value['category_id'])[0]['category_name'] ?? '';
+            $value['payment_type_id'] = payment_type($value['payment_type_id'])[0]['payment_name'] ?? '';
             $value['customer_id']= customers($value['customer_id'])[0]['customer_name'] ?? '';
 
             $btn_view    = btn_views($folder_name, $value['unique_id']);
@@ -271,6 +303,7 @@ $value['payment_type_id'] = payment_type_name($value['payment_type_id'])[0]['pay
         ]);
     }
     break;
+
 
    
    
@@ -351,7 +384,7 @@ $value['payment_type_id'] = payment_type_name($value['payment_type_id'])[0]['pay
         
 
 
-case "expense_items_datatable":
+case "invoice_items_datatable":
     $main_unique_id = $_POST["main_unique_id"];
     $btn_prefix     = "inv_item";
 
@@ -457,7 +490,7 @@ case "expense_items_datatable":
 
     
     
-    case "exp_item_edit":
+    case "inv_item_edit":
     $unique_id = $_POST["unique_id"];
 
     $columns = [
@@ -513,6 +546,7 @@ case "expense_items_datatable":
     break;
 
 
+   
 
     
     case "get_item_details":
@@ -1009,7 +1043,6 @@ case "expense_items_datatable":
         ];
         
        
-
         echo json_encode([
             "status" => $action_obj->status,
             "data"   => $data_array,
@@ -1088,54 +1121,35 @@ function dbg($msg, $data = null, $dest = null) {
     error_log($line, 3, $dest);
 }
 
-function fetch_si_number($table)
+
+
+function fetch_pe_number($table)
 {
     global $pdo;
-
-    // Define the columns to be fetched (in this case, the invoice_no)
-    $table_columns = [
-        "invoice_no"
-    ];
-
-    // Prepare the details for the query
-    $table_details = [
-        $table,  // Specify the table name
-        $table_columns  // Specify the columns to fetch
-    ];
-
-   
-
-    // Perform the query (assuming your PDO object has a select() method)
-    $result = $pdo->select($table_details);
-
+    $result = $pdo->select([$table, ["invoice_no"]], ["is_delete" => 0]);
     $invoice_nos = [];
-
-    // Check if the query was successful and if data is returned
     if ($result->status && !empty($result->data)) {
-        // Loop through the data and collect all the invoice_no values
         foreach ($result->data as $row) {
             $invoice_nos[] = $row['invoice_no'];
         }
-        error_log($invoice_nos . "\n", 3, "logs/grn_log.txt");
-        return $invoice_nos;
     }
+    return $invoice_nos;
 }
 
-function generateSI($label, &$labelData) {
-    $year = $_SESSION['acc_year'];
+function generatePE($label, &$labelData)
+{
+    $year = $_SESSION['acc_year'] ?? date('y');
     $number = 1;
-
     do {
         $paddedNumber = str_pad($number, 3, '0', STR_PAD_LEFT);
-        $grn = "SI/$year/$label/$paddedNumber";
+        $si = "PE/$year/$label/$paddedNumber";
         $number++;
-    } while (in_array($grn, $labelData));
-
-    // Optionally store the new GRN
-    $labelData[] = $grn;
-
-    return $grn;
+    } while (in_array($si, $labelData));
+    $labelData[] = $si;
+    return $si;
 }
+
+
 
 
 
@@ -1150,6 +1164,5 @@ function get_uom_name($id) {
     $res = $pdo->select(["uom_master", ["uom_name"]], ["unique_id" => $id]);
     return ($res->status && !empty($res->data)) ? $res->data[0]["uom_name"] : $id;
 }
-
 
 

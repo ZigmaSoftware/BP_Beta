@@ -83,6 +83,7 @@ table-striped dt-responsive nowrap w-100">
                             <th> Quality Rating </th>
                             <th> Delivery Rating </th>
                             <th> Response Rating </th>
+                            <th> Compliances Rating </th>
                             <th> Total Rating </th>
                             <th> Satisfactory Status </th>
                             <th> Remarks </th>

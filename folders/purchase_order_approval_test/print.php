@@ -344,7 +344,7 @@ $gross = (float)val($po,'gross_amount',0);
 if ($gross <= 300000) {
     // Level 1
     if ((string)val($po,'status','0') === '1') {
-        $auth_uid = val($po,'updated_user_id','');
+        $auth_uid = val($po,'poa_user_id','');
         $auth_dt  = val($po,'updated','');
         if (!empty($auth_uid)) {
             $n = resolve_user_display_name($auth_uid);
@@ -448,7 +448,7 @@ if (!empty($po['company_id']) && !empty($po['supplier_id'])) {
         }
     ?>
 
-    <div class="status-watermark"><?= $statusText ?></div>
+    <!--<div class="status-watermark"><?= $statusText ?></div>-->
 
    <div class="col-5 company-info">
       <h4><?= htmlspecialchars($company['name']) ?></h4>

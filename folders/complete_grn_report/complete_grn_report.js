@@ -69,6 +69,7 @@ $(document).ready(function() {
             { "data": "rate" },
             { "data": "total_value" },
             { "data": "prepared_by" },
+            { "data": "checked_by" },
             { "data": "authorized_by" },
             { "data": "status" }
         ],

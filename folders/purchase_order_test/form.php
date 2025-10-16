@@ -616,10 +616,10 @@ $po_type_options    = select_option($po_type_options,"Select",$po_type);
                     </div>
                     <div class="row form-group">
                         <div class="col-md-2">
-                            <label class=" form-control-label">&nbsp;<strong>Transport</strong></label>
+                            <label class=" form-control-label">&nbsp;<strong>Other Terms And Conditions:</strong></label>
                         </div>
-                        <div class="col-md-2">
-                            <textarea name="delivery" id="delivery" class="form-control" value="<?php echo $delivery; ?>"></textarea>
+                        <div class="col-md-6">
+                            <textarea name="delivery" id="delivery" class="form-control" rows="3" placeholder="Enter Other terms and Contions here..." value="<?php echo $delivery; ?>"></textarea>
                         </div>
                     </div>
                     <div class="row form-group">

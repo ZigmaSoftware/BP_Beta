@@ -448,7 +448,7 @@ if (!empty($po['company_id']) && !empty($po['supplier_id'])) {
         }
     ?>
 
-    <div class="status-watermark"><?= $statusText ?></div>
+    <!--<div class="status-watermark"><?= $statusText ?></div>-->
 
    <div class="col-5 company-info">
       <h4><?= htmlspecialchars($company['name']) ?></h4>

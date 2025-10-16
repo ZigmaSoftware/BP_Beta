@@ -85,6 +85,7 @@ $(document).ready(function() {
 
             // Audit
             { "data": "prepared_by" },
+            { "data": "checked_by" },
             { "data": "authorized_by" },
 
             // Status

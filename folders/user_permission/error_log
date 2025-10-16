@@ -338,28 +338,488 @@ Stack trace:
 #0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(706): PDOStatement->execute()
 #1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/user_permission/crud.php(255): db->insertMultiple('user_screen_per...', Array, Array)
 #2 {main}
-[30-Sep-2025 09:54:04 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_beta.user_screen_permission_log' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:706
+[25-Sep-2025 15:34:51 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_erp.user_screen_permission_log' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php:706
 Stack trace:
-#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(706): PDOStatement->execute()
-#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/user_permission/crud.php(255): db->insertMultiple('user_screen_per...', Array, Array)
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php(706): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_erp/folders/user_permission/crud.php(255): db->insertMultiple('user_screen_per...', Array, Array)
 #2 {main}
-[03-Oct-2025 13:28:42 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_beta.user_screen_permission_log' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:706
+[29-Sep-2025 16:41:42 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_erp.user_screen_permission_log' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php:706
 Stack trace:
-#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(706): PDOStatement->execute()
-#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/user_permission/crud.php(255): db->insertMultiple('user_screen_per...', Array, Array)
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php(706): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_erp/folders/user_permission/crud.php(255): db->insertMultiple('user_screen_per...', Array, Array)
 #2 {main}
-[03-Oct-2025 13:32:41 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_beta.user_screen_permission_log' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:706
+[29-Sep-2025 16:43:27 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_erp.user_screen_permission_log' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php:706
 Stack trace:
-#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(706): PDOStatement->execute()
-#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/user_permission/crud.php(255): db->insertMultiple('user_screen_per...', Array, Array)
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php(706): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_erp/folders/user_permission/crud.php(255): db->insertMultiple('user_screen_per...', Array, Array)
 #2 {main}
-[07-Oct-2025 11:15:12 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_beta.user_screen_permission_log' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:706
+[29-Sep-2025 16:46:32 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_erp.user_screen_permission_log' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php:706
 Stack trace:
-#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(706): PDOStatement->execute()
-#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/user_permission/crud.php(255): db->insertMultiple('user_screen_per...', Array, Array)
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php(706): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_erp/folders/user_permission/crud.php(255): db->insertMultiple('user_screen_per...', Array, Array)
 #2 {main}
-[13-Oct-2025 14:50:38 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_beta.user_screen_permission_log' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:706
+[29-Sep-2025 16:53:03 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_erp.user_screen_permission_log' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php:706
 Stack trace:
-#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(706): PDOStatement->execute()
-#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/user_permission/crud.php(255): db->insertMultiple('user_screen_per...', Array, Array)
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php(706): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_erp/folders/user_permission/crud.php(255): db->insertMultiple('user_screen_per...', Array, Array)
+#2 {main}
+[29-Sep-2025 16:54:27 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_erp.user_screen_permission_log' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php:706
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php(706): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_erp/folders/user_permission/crud.php(255): db->insertMultiple('user_screen_per...', Array, Array)
+#2 {main}
+[29-Sep-2025 16:54:53 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_erp.user_screen_permission_log' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php:706
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php(706): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_erp/folders/user_permission/crud.php(255): db->insertMultiple('user_screen_per...', Array, Array)
+#2 {main}
+[29-Sep-2025 16:56:06 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_erp.user_screen_permission_log' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php:706
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php(706): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_erp/folders/user_permission/crud.php(255): db->insertMultiple('user_screen_per...', Array, Array)
+#2 {main}
+[29-Sep-2025 16:56:54 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_erp.user_screen_permission_log' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php:706
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php(706): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_erp/folders/user_permission/crud.php(255): db->insertMultiple('user_screen_per...', Array, Array)
+#2 {main}
+[29-Sep-2025 16:57:10 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_erp.user_screen_permission_log' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php:706
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php(706): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_erp/folders/user_permission/crud.php(255): db->insertMultiple('user_screen_per...', Array, Array)
+#2 {main}
+[29-Sep-2025 17:33:19 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_erp.user_screen_permission_log' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php:706
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php(706): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_erp/folders/user_permission/crud.php(255): db->insertMultiple('user_screen_per...', Array, Array)
+#2 {main}
+[29-Sep-2025 17:34:58 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_erp.user_screen_permission_log' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php:706
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php(706): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_erp/folders/user_permission/crud.php(255): db->insertMultiple('user_screen_per...', Array, Array)
+#2 {main}
+[29-Sep-2025 17:35:34 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_erp.user_screen_permission_log' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php:706
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php(706): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_erp/folders/user_permission/crud.php(255): db->insertMultiple('user_screen_per...', Array, Array)
+#2 {main}
+[29-Sep-2025 17:37:11 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_erp.user_screen_permission_log' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php:706
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php(706): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_erp/folders/user_permission/crud.php(255): db->insertMultiple('user_screen_per...', Array, Array)
+#2 {main}
+[29-Sep-2025 17:39:09 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_erp.user_screen_permission_log' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php:706
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php(706): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_erp/folders/user_permission/crud.php(255): db->insertMultiple('user_screen_per...', Array, Array)
+#2 {main}
+[29-Sep-2025 17:44:24 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_erp.user_screen_permission_log' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php:706
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php(706): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_erp/folders/user_permission/crud.php(255): db->insertMultiple('user_screen_per...', Array, Array)
+#2 {main}
+[29-Sep-2025 17:45:02 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_erp.user_screen_permission_log' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php:706
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php(706): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_erp/folders/user_permission/crud.php(255): db->insertMultiple('user_screen_per...', Array, Array)
+#2 {main}
+[29-Sep-2025 17:45:15 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_erp.user_screen_permission_log' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php:706
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php(706): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_erp/folders/user_permission/crud.php(255): db->insertMultiple('user_screen_per...', Array, Array)
+#2 {main}
+[29-Sep-2025 17:54:49 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_erp.user_screen_permission_log' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php:706
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php(706): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_erp/folders/user_permission/crud.php(255): db->insertMultiple('user_screen_per...', Array, Array)
+#2 {main}
+[29-Sep-2025 17:55:19 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_erp.user_screen_permission_log' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php:706
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php(706): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_erp/folders/user_permission/crud.php(255): db->insertMultiple('user_screen_per...', Array, Array)
+#2 {main}
+[29-Sep-2025 17:56:38 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_erp.user_screen_permission_log' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php:706
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php(706): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_erp/folders/user_permission/crud.php(255): db->insertMultiple('user_screen_per...', Array, Array)
+#2 {main}
+[29-Sep-2025 17:56:55 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_erp.user_screen_permission_log' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php:706
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php(706): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_erp/folders/user_permission/crud.php(255): db->insertMultiple('user_screen_per...', Array, Array)
+#2 {main}
+[29-Sep-2025 17:57:10 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_erp.user_screen_permission_log' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php:706
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php(706): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_erp/folders/user_permission/crud.php(255): db->insertMultiple('user_screen_per...', Array, Array)
+#2 {main}
+[29-Sep-2025 17:57:58 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_erp.user_screen_permission_log' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php:706
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php(706): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_erp/folders/user_permission/crud.php(255): db->insertMultiple('user_screen_per...', Array, Array)
+#2 {main}
+[29-Sep-2025 18:02:04 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_erp.user_screen_permission_log' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php:706
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php(706): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_erp/folders/user_permission/crud.php(255): db->insertMultiple('user_screen_per...', Array, Array)
+#2 {main}
+[29-Sep-2025 18:03:14 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_erp.user_screen_permission_log' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php:706
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php(706): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_erp/folders/user_permission/crud.php(255): db->insertMultiple('user_screen_per...', Array, Array)
+#2 {main}
+[29-Sep-2025 18:03:41 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_erp.user_screen_permission_log' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php:706
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php(706): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_erp/folders/user_permission/crud.php(255): db->insertMultiple('user_screen_per...', Array, Array)
+#2 {main}
+[29-Sep-2025 18:04:04 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_erp.user_screen_permission_log' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php:706
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php(706): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_erp/folders/user_permission/crud.php(255): db->insertMultiple('user_screen_per...', Array, Array)
+#2 {main}
+[30-Sep-2025 12:44:12 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_erp.user_screen_permission_log' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php:706
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php(706): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_erp/folders/user_permission/crud.php(255): db->insertMultiple('user_screen_per...', Array, Array)
+#2 {main}
+[30-Sep-2025 14:48:54 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_erp.user_screen_permission_log' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php:706
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php(706): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_erp/folders/user_permission/crud.php(255): db->insertMultiple('user_screen_per...', Array, Array)
+#2 {main}
+[30-Sep-2025 15:01:24 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_erp.user_screen_permission_log' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php:706
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php(706): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_erp/folders/user_permission/crud.php(255): db->insertMultiple('user_screen_per...', Array, Array)
+#2 {main}
+[30-Sep-2025 15:41:57 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_erp.user_screen_permission_log' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php:706
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php(706): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_erp/folders/user_permission/crud.php(255): db->insertMultiple('user_screen_per...', Array, Array)
+#2 {main}
+[30-Sep-2025 15:43:38 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_erp.user_screen_permission_log' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php:706
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php(706): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_erp/folders/user_permission/crud.php(255): db->insertMultiple('user_screen_per...', Array, Array)
+#2 {main}
+[30-Sep-2025 17:49:16 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_erp.user_screen_permission_log' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php:706
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php(706): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_erp/folders/user_permission/crud.php(255): db->insertMultiple('user_screen_per...', Array, Array)
+#2 {main}
+[01-Oct-2025 10:43:47 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_erp.user_screen_permission_log' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php:706
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php(706): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_erp/folders/user_permission/crud.php(255): db->insertMultiple('user_screen_per...', Array, Array)
+#2 {main}
+[01-Oct-2025 11:11:30 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_erp.user_screen_permission_log' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php:706
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php(706): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_erp/folders/user_permission/crud.php(255): db->insertMultiple('user_screen_per...', Array, Array)
+#2 {main}
+[01-Oct-2025 11:11:44 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_erp.user_screen_permission_log' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php:706
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php(706): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_erp/folders/user_permission/crud.php(255): db->insertMultiple('user_screen_per...', Array, Array)
+#2 {main}
+[01-Oct-2025 11:32:03 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_erp.user_screen_permission_log' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php:706
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php(706): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_erp/folders/user_permission/crud.php(255): db->insertMultiple('user_screen_per...', Array, Array)
+#2 {main}
+[01-Oct-2025 12:01:25 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_erp.user_screen_permission_log' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php:706
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php(706): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_erp/folders/user_permission/crud.php(255): db->insertMultiple('user_screen_per...', Array, Array)
+#2 {main}
+[01-Oct-2025 12:02:29 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_erp.user_screen_permission_log' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php:706
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php(706): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_erp/folders/user_permission/crud.php(255): db->insertMultiple('user_screen_per...', Array, Array)
+#2 {main}
+[01-Oct-2025 12:02:44 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_erp.user_screen_permission_log' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php:706
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php(706): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_erp/folders/user_permission/crud.php(255): db->insertMultiple('user_screen_per...', Array, Array)
+#2 {main}
+[03-Oct-2025 10:31:40 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_erp.user_screen_permission_log' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php:706
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php(706): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_erp/folders/user_permission/crud.php(255): db->insertMultiple('user_screen_per...', Array, Array)
+#2 {main}
+[03-Oct-2025 10:32:23 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_erp.user_screen_permission_log' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php:706
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php(706): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_erp/folders/user_permission/crud.php(255): db->insertMultiple('user_screen_per...', Array, Array)
+#2 {main}
+[03-Oct-2025 10:32:45 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_erp.user_screen_permission_log' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php:706
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php(706): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_erp/folders/user_permission/crud.php(255): db->insertMultiple('user_screen_per...', Array, Array)
+#2 {main}
+[03-Oct-2025 10:33:13 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_erp.user_screen_permission_log' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php:706
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php(706): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_erp/folders/user_permission/crud.php(255): db->insertMultiple('user_screen_per...', Array, Array)
+#2 {main}
+[03-Oct-2025 10:37:00 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_erp.user_screen_permission_log' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php:706
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php(706): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_erp/folders/user_permission/crud.php(255): db->insertMultiple('user_screen_per...', Array, Array)
+#2 {main}
+[03-Oct-2025 10:37:55 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_erp.user_screen_permission_log' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php:706
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php(706): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_erp/folders/user_permission/crud.php(255): db->insertMultiple('user_screen_per...', Array, Array)
+#2 {main}
+[03-Oct-2025 10:38:55 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_erp.user_screen_permission_log' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php:706
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php(706): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_erp/folders/user_permission/crud.php(255): db->insertMultiple('user_screen_per...', Array, Array)
+#2 {main}
+[03-Oct-2025 10:51:35 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_erp.user_screen_permission_log' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php:706
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php(706): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_erp/folders/user_permission/crud.php(255): db->insertMultiple('user_screen_per...', Array, Array)
+#2 {main}
+[03-Oct-2025 11:31:42 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_erp.user_screen_permission_log' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php:706
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php(706): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_erp/folders/user_permission/crud.php(255): db->insertMultiple('user_screen_per...', Array, Array)
+#2 {main}
+[03-Oct-2025 11:32:14 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_erp.user_screen_permission_log' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php:706
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php(706): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_erp/folders/user_permission/crud.php(255): db->insertMultiple('user_screen_per...', Array, Array)
+#2 {main}
+[03-Oct-2025 20:15:22 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_erp.user_screen_permission_log' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php:706
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php(706): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_erp/folders/user_permission/crud.php(255): db->insertMultiple('user_screen_per...', Array, Array)
+#2 {main}
+[03-Oct-2025 20:20:15 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_erp.user_screen_permission_log' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php:706
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php(706): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_erp/folders/user_permission/crud.php(255): db->insertMultiple('user_screen_per...', Array, Array)
+#2 {main}
+[04-Oct-2025 11:48:45 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_erp.user_screen_permission_log' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php:706
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php(706): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_erp/folders/user_permission/crud.php(255): db->insertMultiple('user_screen_per...', Array, Array)
+#2 {main}
+[06-Oct-2025 10:08:22 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_erp.user_screen_permission_log' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php:706
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php(706): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_erp/folders/user_permission/crud.php(255): db->insertMultiple('user_screen_per...', Array, Array)
+#2 {main}
+[06-Oct-2025 12:18:28 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_erp.user_screen_permission_log' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php:706
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php(706): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_erp/folders/user_permission/crud.php(255): db->insertMultiple('user_screen_per...', Array, Array)
+#2 {main}
+[06-Oct-2025 12:19:32 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_erp.user_screen_permission_log' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php:706
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php(706): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_erp/folders/user_permission/crud.php(255): db->insertMultiple('user_screen_per...', Array, Array)
+#2 {main}
+[06-Oct-2025 12:20:35 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_erp.user_screen_permission_log' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php:706
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php(706): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_erp/folders/user_permission/crud.php(255): db->insertMultiple('user_screen_per...', Array, Array)
+#2 {main}
+[06-Oct-2025 15:53:23 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_erp.user_screen_permission_log' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php:706
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php(706): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_erp/folders/user_permission/crud.php(255): db->insertMultiple('user_screen_per...', Array, Array)
+#2 {main}
+[07-Oct-2025 10:24:49 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_erp.user_screen_permission_log' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php:706
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php(706): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_erp/folders/user_permission/crud.php(255): db->insertMultiple('user_screen_per...', Array, Array)
+#2 {main}
+[07-Oct-2025 10:26:02 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_erp.user_screen_permission_log' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php:706
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php(706): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_erp/folders/user_permission/crud.php(255): db->insertMultiple('user_screen_per...', Array, Array)
+#2 {main}
+[07-Oct-2025 10:26:48 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_erp.user_screen_permission_log' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php:706
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php(706): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_erp/folders/user_permission/crud.php(255): db->insertMultiple('user_screen_per...', Array, Array)
+#2 {main}
+[07-Oct-2025 14:13:03 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_erp.user_screen_permission_log' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php:706
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php(706): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_erp/folders/user_permission/crud.php(255): db->insertMultiple('user_screen_per...', Array, Array)
+#2 {main}
+[07-Oct-2025 14:18:55 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_erp.user_screen_permission_log' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php:706
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php(706): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_erp/folders/user_permission/crud.php(255): db->insertMultiple('user_screen_per...', Array, Array)
+#2 {main}
+[07-Oct-2025 14:47:44 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_erp.user_screen_permission_log' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php:706
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php(706): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_erp/folders/user_permission/crud.php(255): db->insertMultiple('user_screen_per...', Array, Array)
+#2 {main}
+[08-Oct-2025 10:25:13 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_erp.user_screen_permission_log' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php:706
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php(706): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_erp/folders/user_permission/crud.php(255): db->insertMultiple('user_screen_per...', Array, Array)
+#2 {main}
+[08-Oct-2025 16:59:57 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_erp.user_screen_permission_log' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php:706
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php(706): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_erp/folders/user_permission/crud.php(255): db->insertMultiple('user_screen_per...', Array, Array)
+#2 {main}
+[08-Oct-2025 17:00:23 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_erp.user_screen_permission_log' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php:706
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php(706): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_erp/folders/user_permission/crud.php(255): db->insertMultiple('user_screen_per...', Array, Array)
+#2 {main}
+[08-Oct-2025 17:05:31 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_erp.user_screen_permission_log' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php:706
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php(706): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_erp/folders/user_permission/crud.php(255): db->insertMultiple('user_screen_per...', Array, Array)
+#2 {main}
+[09-Oct-2025 14:11:56 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_erp.user_screen_permission_log' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php:706
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php(706): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_erp/folders/user_permission/crud.php(255): db->insertMultiple('user_screen_per...', Array, Array)
+#2 {main}
+[09-Oct-2025 14:12:56 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_erp.user_screen_permission_log' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php:706
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php(706): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_erp/folders/user_permission/crud.php(255): db->insertMultiple('user_screen_per...', Array, Array)
+#2 {main}
+[09-Oct-2025 15:06:39 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_erp.user_screen_permission_log' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php:706
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php(706): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_erp/folders/user_permission/crud.php(255): db->insertMultiple('user_screen_per...', Array, Array)
+#2 {main}
+[10-Oct-2025 09:25:54 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_erp.user_screen_permission_log' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php:706
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php(706): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_erp/folders/user_permission/crud.php(255): db->insertMultiple('user_screen_per...', Array, Array)
+#2 {main}
+[10-Oct-2025 11:03:03 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_erp.user_screen_permission_log' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php:706
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php(706): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_erp/folders/user_permission/crud.php(255): db->insertMultiple('user_screen_per...', Array, Array)
+#2 {main}
+[10-Oct-2025 11:03:31 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_erp.user_screen_permission_log' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php:706
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php(706): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_erp/folders/user_permission/crud.php(255): db->insertMultiple('user_screen_per...', Array, Array)
+#2 {main}
+[10-Oct-2025 11:50:18 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_erp.user_screen_permission_log' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php:706
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php(706): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_erp/folders/user_permission/crud.php(255): db->insertMultiple('user_screen_per...', Array, Array)
+#2 {main}
+[13-Oct-2025 14:43:18 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_erp.user_screen_permission_log' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php:706
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php(706): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_erp/folders/user_permission/crud.php(255): db->insertMultiple('user_screen_per...', Array, Array)
+#2 {main}
+[13-Oct-2025 14:46:38 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_erp.user_screen_permission_log' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php:706
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php(706): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_erp/folders/user_permission/crud.php(255): db->insertMultiple('user_screen_per...', Array, Array)
+#2 {main}
+[13-Oct-2025 15:02:57 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_erp.user_screen_permission_log' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php:706
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php(706): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_erp/folders/user_permission/crud.php(255): db->insertMultiple('user_screen_per...', Array, Array)
+#2 {main}
+[13-Oct-2025 15:07:46 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_erp.user_screen_permission_log' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php:706
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php(706): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_erp/folders/user_permission/crud.php(255): db->insertMultiple('user_screen_per...', Array, Array)
+#2 {main}
+[13-Oct-2025 15:18:05 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_erp.user_screen_permission_log' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php:706
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php(706): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_erp/folders/user_permission/crud.php(255): db->insertMultiple('user_screen_per...', Array, Array)
+#2 {main}
+[13-Oct-2025 15:18:23 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_erp.user_screen_permission_log' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php:706
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php(706): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_erp/folders/user_permission/crud.php(255): db->insertMultiple('user_screen_per...', Array, Array)
+#2 {main}
+[13-Oct-2025 15:19:40 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_erp.user_screen_permission_log' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php:706
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php(706): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_erp/folders/user_permission/crud.php(255): db->insertMultiple('user_screen_per...', Array, Array)
+#2 {main}
+[13-Oct-2025 15:20:43 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_erp.user_screen_permission_log' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php:706
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php(706): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_erp/folders/user_permission/crud.php(255): db->insertMultiple('user_screen_per...', Array, Array)
+#2 {main}
+[13-Oct-2025 15:21:11 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_erp.user_screen_permission_log' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php:706
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php(706): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_erp/folders/user_permission/crud.php(255): db->insertMultiple('user_screen_per...', Array, Array)
+#2 {main}
+[14-Oct-2025 17:58:03 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_erp.user_screen_permission_log' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php:706
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php(706): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_erp/folders/user_permission/crud.php(255): db->insertMultiple('user_screen_per...', Array, Array)
+#2 {main}
+[15-Oct-2025 11:22:05 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_erp.user_screen_permission_log' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php:706
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php(706): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_erp/folders/user_permission/crud.php(255): db->insertMultiple('user_screen_per...', Array, Array)
+#2 {main}
+[15-Oct-2025 11:22:21 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_erp.user_screen_permission_log' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php:706
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php(706): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_erp/folders/user_permission/crud.php(255): db->insertMultiple('user_screen_per...', Array, Array)
+#2 {main}
+[15-Oct-2025 11:22:38 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_erp.user_screen_permission_log' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php:706
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php(706): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_erp/folders/user_permission/crud.php(255): db->insertMultiple('user_screen_per...', Array, Array)
+#2 {main}
+[15-Oct-2025 15:17:48 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_erp.user_screen_permission_log' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php:706
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php(706): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_erp/folders/user_permission/crud.php(255): db->insertMultiple('user_screen_per...', Array, Array)
+#2 {main}
+[15-Oct-2025 17:15:07 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_erp.user_screen_permission_log' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php:706
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php(706): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_erp/folders/user_permission/crud.php(255): db->insertMultiple('user_screen_per...', Array, Array)
+#2 {main}
+[15-Oct-2025 17:19:59 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_erp.user_screen_permission_log' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php:706
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php(706): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_erp/folders/user_permission/crud.php(255): db->insertMultiple('user_screen_per...', Array, Array)
+#2 {main}
+[16-Oct-2025 11:04:25 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_erp.user_screen_permission_log' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php:706
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php(706): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_erp/folders/user_permission/crud.php(255): db->insertMultiple('user_screen_per...', Array, Array)
+#2 {main}
+[16-Oct-2025 11:26:17 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_erp.user_screen_permission_log' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php:706
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php(706): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_erp/folders/user_permission/crud.php(255): db->insertMultiple('user_screen_per...', Array, Array)
+#2 {main}
+[16-Oct-2025 14:07:16 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_erp.user_screen_permission_log' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php:706
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php(706): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_erp/folders/user_permission/crud.php(255): db->insertMultiple('user_screen_per...', Array, Array)
+#2 {main}
+[16-Oct-2025 14:21:12 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_erp.user_screen_permission_log' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php:706
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php(706): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_erp/folders/user_permission/crud.php(255): db->insertMultiple('user_screen_per...', Array, Array)
+#2 {main}
+[16-Oct-2025 14:41:53 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_erp.user_screen_permission_log' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php:706
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php(706): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_erp/folders/user_permission/crud.php(255): db->insertMultiple('user_screen_per...', Array, Array)
 #2 {main}

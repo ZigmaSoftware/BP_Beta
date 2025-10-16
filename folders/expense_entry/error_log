@@ -2485,38 +2485,138 @@ Stack trace:
 #0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(579): PDOStatement->execute()
 #1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_invoice/crud.php(287): db->insert('sales_invoice', Array)
 #2 {main}
-[10-Oct-2025 15:59:10 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'roundoff' in 'INSERT INTO' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:579
+[13-Oct-2025 14:33:43 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'roundoff' in 'INSERT INTO' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:579
 Stack trace:
 #0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(579): PDOStatement->execute()
-#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/expense_entry/crud.php(154): db->insert('expense_entry', Array)
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_invoice/crud.php(150): db->insert('sales_invoice', Array)
 #2 {main}
-[10-Oct-2025 16:10:40 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'roundoff' in 'INSERT INTO' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:579
+[14-Oct-2025 10:32:20 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'roundoff' in 'INSERT INTO' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:579
 Stack trace:
 #0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(579): PDOStatement->execute()
-#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/expense_entry/crud.php(154): db->insert('expense_entry', Array)
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_invoice/crud.php(150): db->insert('sales_invoice', Array)
 #2 {main}
-[11-Oct-2025 10:59:36 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'roundoff' in 'INSERT INTO' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:579
+[14-Oct-2025 10:45:04 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'roundoff' in 'INSERT INTO' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:579
 Stack trace:
 #0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(579): PDOStatement->execute()
-#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/expense_entry/crud.php(155): db->insert('expense_entry', Array)
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_invoice/crud.php(203): db->insert('sales_invoice', Array)
 #2 {main}
-[11-Oct-2025 11:38:52 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'roundoff' in 'INSERT INTO' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:579
+[14-Oct-2025 10:45:09 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'roundoff' in 'INSERT INTO' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:579
 Stack trace:
 #0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(579): PDOStatement->execute()
-#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/expense_entry/crud.php(154): db->insert('expense_entry', Array)
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_invoice/crud.php(203): db->insert('sales_invoice', Array)
 #2 {main}
-[11-Oct-2025 11:41:14 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'roundoff' in 'INSERT INTO' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:579
+[14-Oct-2025 10:45:23 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'roundoff' in 'INSERT INTO' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:579
 Stack trace:
 #0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(579): PDOStatement->execute()
-#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/expense_entry/crud.php(154): db->insert('expense_entry', Array)
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_invoice/crud.php(203): db->insert('sales_invoice', Array)
 #2 {main}
-[11-Oct-2025 11:44:12 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'roundoff' in 'INSERT INTO' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:579
+[14-Oct-2025 10:45:23 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'roundoff' in 'INSERT INTO' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:579
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(579): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_invoice/crud.php(203): db->insert('sales_invoice', Array)
+#2 {main}
+[14-Oct-2025 10:45:28 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'roundoff' in 'INSERT INTO' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:579
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(579): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_invoice/crud.php(203): db->insert('sales_invoice', Array)
+#2 {main}
+[14-Oct-2025 10:55:32 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'roundoff' in 'INSERT INTO' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:579
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(579): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_invoice/crud.php(221): db->insert('sales_invoice', Array)
+#2 {main}
+[15-Oct-2025 16:23:11 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'company_id' in 'SELECT' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/expense_entry/crud.php(264): db->select(Array, 'is_delete = '0'...', '10', '0', '', 'SQL_CALC_FOUND_...')
+#2 {main}
+[15-Oct-2025 17:07:03 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'company_id' in 'INSERT INTO' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:579
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(579): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/expense_entry/crud.php(175): db->insert('expense_entry', Array)
+#2 {main}
+[15-Oct-2025 18:00:41 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'company_id' in 'SELECT' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/expense_entry/crud.php(264): db->select(Array, 'is_delete = '0'...', '10', '0', '', 'SQL_CALC_FOUND_...')
+#2 {main}
+[16-Oct-2025 11:55:22 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'company_id' in 'SELECT' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/expense_entry/crud.php(264): db->select(Array, 'is_delete = '0'...', '10', '0', '', 'SQL_CALC_FOUND_...')
+#2 {main}
+[16-Oct-2025 12:43:30 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'company_id' in 'SELECT' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/expense_entry/crud.php(264): db->select(Array, 'is_delete = '0'...', '10', '0', '', 'SQL_CALC_FOUND_...')
+#2 {main}
+[16-Oct-2025 13:07:13 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'company_id' in 'INSERT INTO' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:579
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(579): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/expense_entry/crud.php(175): db->insert('expense_entry', Array)
+#2 {main}
+[16-Oct-2025 13:10:54 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'company_id' in 'SELECT' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/expense_entry/crud.php(232): db->select(Array, 'is_delete = '0'...', '10', '0', '', 'SQL_CALC_FOUND_...')
+#2 {main}
+[16-Oct-2025 15:10:59 Asia/Kolkata] PDOException: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'PE/2025-2026/ZIG/001' for key 'invoice_no' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:579
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(579): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/expense_entry/crud.php(161): db->insert('expense_entry', Array)
+#2 {main}
+[16-Oct-2025 15:17:04 Asia/Kolkata] PDOException: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'PE/2025-2026/ZIG/001' for key 'invoice_no' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:579
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(579): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/expense_entry/crud.php(161): db->insert('expense_entry', Array)
+#2 {main}
+[16-Oct-2025 15:21:27 Asia/Kolkata] PDOException: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'PE/2025-2026/ZIG/001' for key 'invoice_no' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:579
 Stack trace:
 #0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(579): PDOStatement->execute()
 #1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/expense_entry/crud.php(157): db->insert('expense_entry', Array)
 #2 {main}
-[11-Oct-2025 11:49:04 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'roundoff' in 'INSERT INTO' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:579
+[16-Oct-2025 15:21:49 Asia/Kolkata] PDOException: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'PE/2025-2026/ZIG/001' for key 'invoice_no' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:579
 Stack trace:
 #0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(579): PDOStatement->execute()
-#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/expense_entry/crud.php(159): db->insert('expense_entry', Array)
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/expense_entry/crud.php(157): db->insert('expense_entry', Array)
+#2 {main}
+[16-Oct-2025 15:23:19 Asia/Kolkata] PDOException: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'PE/2025-2026/ZIG/001' for key 'invoice_no' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:579
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(579): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/expense_entry/crud.php(157): db->insert('expense_entry', Array)
+#2 {main}
+[16-Oct-2025 16:03:48 Asia/Kolkata] PDOException: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'PE/2025-2026/ZIG/003' for key 'invoice_no' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:579
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(579): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/expense_entry/crud.php(157): db->insert('expense_entry', Array)
+#2 {main}
+[16-Oct-2025 16:03:50 Asia/Kolkata] PDOException: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'PE/2025-2026/ZIG/003' for key 'invoice_no' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:579
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(579): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/expense_entry/crud.php(157): db->insert('expense_entry', Array)
+#2 {main}
+[16-Oct-2025 16:03:54 Asia/Kolkata] PDOException: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'PE/2025-2026/ZIG/003' for key 'invoice_no' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:579
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(579): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/expense_entry/crud.php(157): db->insert('expense_entry', Array)
+#2 {main}
+[16-Oct-2025 16:53:34 Asia/Kolkata] PDOException: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'PE/2025-2026/ZIG/003' for key 'invoice_no' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:579
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(579): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/expense_entry/crud.php(163): db->insert('expense_entry', Array)
+#2 {main}
+[16-Oct-2025 16:53:42 Asia/Kolkata] PDOException: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'PE/2025-2026/ZIG/003' for key 'invoice_no' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:579
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(579): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/expense_entry/crud.php(163): db->insert('expense_entry', Array)
+#2 {main}
+[16-Oct-2025 16:56:10 Asia/Kolkata] PDOException: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'PE/2025-2026/ZIG/003' for key 'invoice_no' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:579
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(579): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/expense_entry/crud.php(163): db->insert('expense_entry', Array)
+#2 {main}
+[16-Oct-2025 17:06:38 Asia/Kolkata] PDOException: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'PE/2025-2026/ZIG/003' for key 'invoice_no' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:579
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(579): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/expense_entry/crud.php(163): db->insert('expense_entry', Array)
 #2 {main}

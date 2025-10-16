@@ -102,6 +102,9 @@ switch ($action) {
         "is_active"        => $is_active,
         "is_delete"        => 0
     ];
+    // Always override Plant In-charge with session user type
+    if (session_status() === PHP_SESSION_NONE) { session_start(); }
+    $columns['plant_incharge'] = $_SESSION['sess_user_type'] ?? '';
     if ($entry_date !== null) $columns["entry_date"] = $entry_date;
     if ($week_no   !== null) $columns["week_no"]     = $week_no;
 

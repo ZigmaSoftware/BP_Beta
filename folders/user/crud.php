@@ -165,37 +165,49 @@ switch ($action) {
         $draw    = $_POST['draw'] ?? 1;
         $limit   = ($length == '-1') ? "" : $length;
         $data    = [];
-
+    
+        // 🔹 Dynamic CASE logic for in-role / off-role users
         $columns = [
             "@a:=@a+1 s_no",
-            "(SELECT staff_name FROM staff_test AS staff WHERE staff.employee_id = {$table}.staff_unique_id ) AS name",
-            "phone_no",
-            "user_name",
-            "(SELECT user_type FROM user_type AS ut WHERE ut.unique_id = {$table}.user_type_unique_id ) AS user_type",
-            "password",
-            "work_location",
-            "is_active",
-            "unique_id"
+            "CASE 
+                WHEN {$table}.role = 'inrole' 
+                    THEN (SELECT staff_name 
+                          FROM staff_test AS staff 
+                          WHERE staff.employee_id = {$table}.staff_unique_id 
+                          LIMIT 1)
+                ELSE {$table}.user_name
+             END AS name",
+            "{$table}.phone_no",
+            "{$table}.user_name",
+            "(SELECT ut.user_type 
+              FROM user_type AS ut 
+              WHERE ut.unique_id = {$table}.user_type_unique_id 
+              LIMIT 1) AS user_type",
+            "{$table}.password",
+            "{$table}.work_location",
+            "{$table}.is_active",
+            "{$table}.unique_id"
         ];
+    
         $table_details = [$table . " , (SELECT @a:=" . $start . ") AS a ", $columns];
-        $where = " is_delete = '0' ";
-
+        $where = " {$table}.is_delete = '0' ";
+    
         $order_column = $_POST["order"][0]["column"] ?? 0;
         $order_dir    = $_POST["order"][0]["dir"] ?? 'asc';
-
+    
         $order_by = datatable_sorting($order_column, $order_dir, $columns);
         $search_sql = datatable_searching($search, $columns);
-
+    
         if ($search_sql) {
             $where .= " AND " . $search_sql;
         }
-
+    
         $result = $pdo->select($table_details, $where, $limit, $start, $order_by, "SQL_CALC_FOUND_ROWS");
         $total_records = total_records();
-
+    
         if ($result->status) {
             foreach ($result->data as $value) {
-                // Format work location
+                // 🔹 Format work location nicely
                 if ($value['work_location'] && $value['work_location'] != 'all') {
                     $ids = explode(',', $value['work_location']);
                     $locs = [];
@@ -211,21 +223,21 @@ switch ($action) {
                 } else {
                     $value['work_location'] = '-';
                 }
-
-                // Buttons
+    
+                // 🔹 Action buttons
                 $btn_update = btn_update($folder_name, $value['unique_id']);
                 $btn_toggle = ($value['is_active'] == "1")
                     ? btn_toggle_on($folder_name, $value['unique_id'])
                     : btn_toggle_off($folder_name, $value['unique_id']);
                 $value['unique_id'] = $btn_update . $btn_toggle;
-
+    
                 $value['is_active'] = ($value['is_active'] == "1")
                     ? "<span style='color:green'>Active</span>"
                     : "<span style='color:red'>Inactive</span>";
-
+    
                 $data[] = array_values($value);
             }
-
+    
             echo json_encode([
                 "draw" => intval($draw),
                 "recordsTotal" => intval($total_records),

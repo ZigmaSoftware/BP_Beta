@@ -107,52 +107,6 @@ break;
 
 
 
-// case "createupdate":
-//     $company_id   = $_POST["company_id"];
-//     $project_id   = $_POST["project_id"];
-//     $customer_id  = $_POST["customer_id"];
-//     $invoice_date = $_POST["invoice_date"];
-//     $due_date     = $_POST["due_date"];
-//     $remarks      = $_POST["remarks"];
-//     $unique_id    = !empty($_POST["unique_id"]) ? $_POST["unique_id"] : unique_id();
-
-//     // Totals
-//     $basic       = (float)($_POST["basic"] ?? 0);
-//     $total_gst   = (float)($_POST["total_gst"] ?? 0);
-//     $roundoff    = (float)($_POST["roundoff"] ?? 0);
-//     $tot_amount  = (float)($_POST["tot_amount"] ?? 0);
-
-//     $columns = [
-//         "unique_id"       => $unique_id,
-//         "company_id"      => $company_id,
-//         "project_id"      => $project_id,
-//         "customer_id"     => $customer_id,
-//         "invoice_date"    => $invoice_date,
-//         "due_date"        => $due_date,
-//         "remarks"         => $remarks,
-//         "basic"           => $basic,
-//         "total_gst"       => $total_gst,
-//         "roundoff"        => $roundoff,
-//         "tot_amount"      => $tot_amount,
-//         "created_user_id" => $_SESSION["sess_user_id"],
-//         "created"         => date("Y-m-d H:i:s")
-//     ];
-
-//     $check = $pdo->select(["sales_invoice", ["COUNT(*) AS c"]], ["unique_id" => $unique_id, "is_delete" => 0]);
-
-//     if ($check->status && $check->data[0]["c"]) {
-//         unset($columns["unique_id"], $columns["created_user_id"], $columns["created"]);
-//         $columns["updated_user_id"] = $_SESSION["sess_user_id"];
-//         $columns["updated"] = date("Y-m-d H:i:s");
-//         $pdo->update("sales_invoice", $columns, ["unique_id" => $unique_id]);
-//         $msg = "update";
-//     } else {
-//         $pdo->insert("sales_invoice", $columns);
-//         $msg = "create";
-//     }
-
-//     echo json_encode(["status" => true, "msg" => $msg, "data" => ["unique_id" => $unique_id]]);
-// break;
 
 
 case "createupdate":

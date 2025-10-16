@@ -11,41 +11,35 @@ function get_sunday_date($entry_date,$date)
 return $sunday;
 }
 
-function get_attendance_type($staff_id,$entry_date){
+function get_attendance_type($staff_id, $entry_date) {
     global $pdo;
 
-    $table_name    = "view_bp_test";
-    $where         = [];
-    $table_columns = [
-        "absence_reason",
+    // 1. Check present table first
+    $present_table = "view_bp_present";
+    $present_cols  = ["employee_id"];
+    $present_query = [$present_table, $present_cols];
+    $where_present = "punch_date = '".$entry_date."' and employee_id = '".$staff_id."'";
 
-    ];
+    $present_res = $pdo->select($present_query, $where_present);
 
-    $table_details = [
-        $table_name,
-        $table_columns
-    ];
-
-   $where  = "punch_date = '".$entry_date."' and staff_id = '".$staff_id."'";
-    
-
-    $day_status = $pdo->select($table_details, $where);
-    // print_r($day_status);
-    if (!($day_status->status)) {
-
-        print_r($day_status);
-
-    } else {
-        
-        if(!empty($day_status->data[0])) {
-            $day_sts    = $day_status->data[0]['absence_reason'];
-            // echo $day_sts;
-        }else{
-            $day_sts    = "";
-        }
-        
+    if ($present_res->status && !empty($present_res->data[0])) {
+        return "Present";
     }
-        return $day_sts;
+
+    // 2. If not present, check absence view
+    $absent_table = "erp_absence_view";
+    $absent_cols  = ["absence_reason"];
+    $absent_query = [$absent_table, $absent_cols];
+    $where_absent = "punch_date = '".$entry_date."' and staff_id = '".$staff_id."'";
+
+    $absent_res = $pdo->select($absent_query, $where_absent);
+
+    if ($absent_res->status && !empty($absent_res->data[0])) {
+        return "Absent"; // you can also return $absent_res->data[0]['absence_reason']
+    }
+
+    // 3. Default if no rows in either table
+    return null;
 }
 
 function get_leave_status($staff_id,$entry_date){

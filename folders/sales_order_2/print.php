@@ -392,7 +392,7 @@ if ($result->status) {
         <tr><td>Cust PO Date:</td><td><?= $customer_po_date ?? "-" ?></td></tr>
         <!--<tr><td>Incoterms:</td><td><?= $incoterms ?? "-" ?></td></tr>-->
         <!--<tr><td>End User:</td><td><?= $enduser ?? "-" ?></td></tr>-->
-        <!--<tr><td>Project Code :</td><td><?= $project_options[0]['label'] ?? "-" ?></td></tr>-->
+        <tr><td>Project Code :</td><td><?= $project_options[0]['label'] ?? "-" ?></td></tr>
         <tr><td>Date:</td><td><?= $entry_date ?? "-" ?></td></tr>
         <tr><td>Rev No:</td><td><?= $revision_no ?? "-" ?></td></tr>
         <tr><td>Rev Date:</td><td><?= $revision_date ?? "-" ?></td></tr>

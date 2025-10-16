@@ -154,4 +154,20 @@ if ($types_csv) {
     </div><!-- end col -->
 </div>  
 
+<?php
+// Assuming you already have a helper function to get user type name
+$userTypeId = $_SESSION['sess_user_type'] ?? '';
+$userTypeName = '';
+
+if ($userTypeId) {
+    // e.g. fetch from user_type table
+    $qry = $pdo->select(['user_type', ['user_type']], ['unique_id' => $userTypeId]);
+    if ($qry->status && !empty($qry->data)) {
+        $userTypeName = $qry->data[0]['user_type'];
+    }
+}
+?>
+<script>
+  window.SESS_USER_TYPE = <?= json_encode($userTypeName ?: $_SESSION['designation_type'] ?? '') ?>;
+</script>
 

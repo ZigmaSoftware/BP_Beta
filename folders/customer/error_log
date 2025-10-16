@@ -281,3 +281,603 @@ Stack trace:
 #0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(579): PDOStatement->execute()
 #1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/customer/crud.php(1936): db->insert('cust_billing_de...', Array)
 #2 {main}
+[07-Oct-2025 16:53:17 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'as_delete' in 'WHERE' in /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/comfun.php(3901): db->select('staff_test', 'as_delete = 0 a...')
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_erp/folders/customer/crud.php(1062): staff_name('admin')
+#3 {main}
+[07-Oct-2025 16:53:17 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'as_delete' in 'WHERE' in /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/comfun.php(3901): db->select('staff_test', 'as_delete = 0 a...')
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_erp/folders/customer/crud.php(1062): staff_name('admin')
+#3 {main}
+[07-Oct-2025 16:53:17 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'as_delete' in 'WHERE' in /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/comfun.php(3901): db->select('staff_test', 'as_delete = 0 a...')
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_erp/folders/customer/crud.php(1062): staff_name('admin')
+#3 {main}
+[07-Oct-2025 16:53:17 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'as_delete' in 'WHERE' in /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/comfun.php(3901): db->select('staff_test', 'as_delete = 0 a...')
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_erp/folders/customer/crud.php(1062): staff_name('admin')
+#3 {main}
+[07-Oct-2025 16:53:17 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'as_delete' in 'WHERE' in /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/comfun.php(3901): db->select('staff_test', 'as_delete = 0 a...')
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_erp/folders/customer/crud.php(1062): staff_name('admin')
+#3 {main}
+[07-Oct-2025 16:53:17 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'as_delete' in 'WHERE' in /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/comfun.php(3901): db->select('staff_test', 'as_delete = 0 a...')
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_erp/folders/customer/crud.php(1062): staff_name('admin')
+#3 {main}
+[07-Oct-2025 16:53:17 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'as_delete' in 'WHERE' in /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/comfun.php(3901): db->select('staff_test', 'as_delete = 0 a...')
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_erp/folders/customer/crud.php(1062): staff_name('admin')
+#3 {main}
+[07-Oct-2025 16:53:17 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'as_delete' in 'WHERE' in /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/comfun.php(3901): db->select('staff_test', 'as_delete = 0 a...')
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_erp/folders/customer/crud.php(1062): staff_name('admin')
+#3 {main}
+[07-Oct-2025 16:53:17 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'as_delete' in 'WHERE' in /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/comfun.php(3901): db->select('staff_test', 'as_delete = 0 a...')
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_erp/folders/customer/crud.php(1062): staff_name('admin')
+#3 {main}
+[07-Oct-2025 16:53:17 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'as_delete' in 'WHERE' in /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/comfun.php(3901): db->select('staff_test', 'as_delete = 0 a...')
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_erp/folders/customer/crud.php(1062): staff_name('admin')
+#3 {main}
+[07-Oct-2025 16:56:34 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'as_delete' in 'WHERE' in /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/comfun.php(3901): db->select('staff_test', 'as_delete = 0 a...')
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_erp/folders/customer/crud.php(1062): staff_name('admin')
+#3 {main}
+[07-Oct-2025 16:56:34 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'as_delete' in 'WHERE' in /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/comfun.php(3901): db->select('staff_test', 'as_delete = 0 a...')
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_erp/folders/customer/crud.php(1062): staff_name('admin')
+#3 {main}
+[07-Oct-2025 16:56:34 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'as_delete' in 'WHERE' in /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/comfun.php(3901): db->select('staff_test', 'as_delete = 0 a...')
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_erp/folders/customer/crud.php(1062): staff_name('admin')
+#3 {main}
+[07-Oct-2025 16:56:34 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'as_delete' in 'WHERE' in /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/comfun.php(3901): db->select('staff_test', 'as_delete = 0 a...')
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_erp/folders/customer/crud.php(1062): staff_name('admin')
+#3 {main}
+[07-Oct-2025 16:56:34 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'as_delete' in 'WHERE' in /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/comfun.php(3901): db->select('staff_test', 'as_delete = 0 a...')
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_erp/folders/customer/crud.php(1062): staff_name('admin')
+#3 {main}
+[07-Oct-2025 16:56:34 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'as_delete' in 'WHERE' in /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/comfun.php(3901): db->select('staff_test', 'as_delete = 0 a...')
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_erp/folders/customer/crud.php(1062): staff_name('admin')
+#3 {main}
+[07-Oct-2025 16:56:34 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'as_delete' in 'WHERE' in /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/comfun.php(3901): db->select('staff_test', 'as_delete = 0 a...')
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_erp/folders/customer/crud.php(1062): staff_name('admin')
+#3 {main}
+[07-Oct-2025 16:56:34 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'as_delete' in 'WHERE' in /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/comfun.php(3901): db->select('staff_test', 'as_delete = 0 a...')
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_erp/folders/customer/crud.php(1062): staff_name('admin')
+#3 {main}
+[07-Oct-2025 16:56:34 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'as_delete' in 'WHERE' in /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/comfun.php(3901): db->select('staff_test', 'as_delete = 0 a...')
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_erp/folders/customer/crud.php(1062): staff_name('admin')
+#3 {main}
+[07-Oct-2025 16:56:34 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'as_delete' in 'WHERE' in /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/comfun.php(3901): db->select('staff_test', 'as_delete = 0 a...')
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_erp/folders/customer/crud.php(1062): staff_name('admin')
+#3 {main}
+[07-Oct-2025 16:56:55 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'as_delete' in 'WHERE' in /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/comfun.php(3901): db->select('staff_test', 'as_delete = 0 a...')
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_erp/folders/customer/crud.php(1062): staff_name('admin')
+#3 {main}
+[07-Oct-2025 16:56:55 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'as_delete' in 'WHERE' in /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/comfun.php(3901): db->select('staff_test', 'as_delete = 0 a...')
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_erp/folders/customer/crud.php(1062): staff_name('admin')
+#3 {main}
+[07-Oct-2025 16:56:55 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'as_delete' in 'WHERE' in /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/comfun.php(3901): db->select('staff_test', 'as_delete = 0 a...')
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_erp/folders/customer/crud.php(1062): staff_name('admin')
+#3 {main}
+[07-Oct-2025 16:56:55 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'as_delete' in 'WHERE' in /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/comfun.php(3901): db->select('staff_test', 'as_delete = 0 a...')
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_erp/folders/customer/crud.php(1062): staff_name('admin')
+#3 {main}
+[07-Oct-2025 16:56:55 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'as_delete' in 'WHERE' in /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/comfun.php(3901): db->select('staff_test', 'as_delete = 0 a...')
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_erp/folders/customer/crud.php(1062): staff_name('admin')
+#3 {main}
+[07-Oct-2025 16:56:55 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'as_delete' in 'WHERE' in /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/comfun.php(3901): db->select('staff_test', 'as_delete = 0 a...')
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_erp/folders/customer/crud.php(1062): staff_name('admin')
+#3 {main}
+[07-Oct-2025 16:56:55 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'as_delete' in 'WHERE' in /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/comfun.php(3901): db->select('staff_test', 'as_delete = 0 a...')
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_erp/folders/customer/crud.php(1062): staff_name('admin')
+#3 {main}
+[07-Oct-2025 16:56:55 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'as_delete' in 'WHERE' in /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/comfun.php(3901): db->select('staff_test', 'as_delete = 0 a...')
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_erp/folders/customer/crud.php(1062): staff_name('admin')
+#3 {main}
+[07-Oct-2025 16:56:55 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'as_delete' in 'WHERE' in /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/comfun.php(3901): db->select('staff_test', 'as_delete = 0 a...')
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_erp/folders/customer/crud.php(1062): staff_name('admin')
+#3 {main}
+[07-Oct-2025 16:56:55 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'as_delete' in 'WHERE' in /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/comfun.php(3901): db->select('staff_test', 'as_delete = 0 a...')
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_erp/folders/customer/crud.php(1062): staff_name('admin')
+#3 {main}
+[07-Oct-2025 16:57:07 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'as_delete' in 'WHERE' in /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/comfun.php(3901): db->select('staff_test', 'as_delete = 0 a...')
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_erp/folders/customer/crud.php(1062): staff_name('admin')
+#3 {main}
+[07-Oct-2025 16:57:07 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'as_delete' in 'WHERE' in /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/comfun.php(3901): db->select('staff_test', 'as_delete = 0 a...')
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_erp/folders/customer/crud.php(1062): staff_name('admin')
+#3 {main}
+[07-Oct-2025 16:57:07 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'as_delete' in 'WHERE' in /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/comfun.php(3901): db->select('staff_test', 'as_delete = 0 a...')
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_erp/folders/customer/crud.php(1062): staff_name('admin')
+#3 {main}
+[07-Oct-2025 16:57:07 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'as_delete' in 'WHERE' in /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/comfun.php(3901): db->select('staff_test', 'as_delete = 0 a...')
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_erp/folders/customer/crud.php(1062): staff_name('admin')
+#3 {main}
+[07-Oct-2025 16:57:07 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'as_delete' in 'WHERE' in /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/comfun.php(3901): db->select('staff_test', 'as_delete = 0 a...')
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_erp/folders/customer/crud.php(1062): staff_name('admin')
+#3 {main}
+[07-Oct-2025 16:57:07 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'as_delete' in 'WHERE' in /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/comfun.php(3901): db->select('staff_test', 'as_delete = 0 a...')
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_erp/folders/customer/crud.php(1062): staff_name('admin')
+#3 {main}
+[07-Oct-2025 16:57:07 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'as_delete' in 'WHERE' in /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/comfun.php(3901): db->select('staff_test', 'as_delete = 0 a...')
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_erp/folders/customer/crud.php(1062): staff_name('admin')
+#3 {main}
+[07-Oct-2025 16:57:07 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'as_delete' in 'WHERE' in /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/comfun.php(3901): db->select('staff_test', 'as_delete = 0 a...')
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_erp/folders/customer/crud.php(1062): staff_name('admin')
+#3 {main}
+[07-Oct-2025 16:57:07 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'as_delete' in 'WHERE' in /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/comfun.php(3901): db->select('staff_test', 'as_delete = 0 a...')
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_erp/folders/customer/crud.php(1062): staff_name('admin')
+#3 {main}
+[07-Oct-2025 16:57:07 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'as_delete' in 'WHERE' in /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/comfun.php(3901): db->select('staff_test', 'as_delete = 0 a...')
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_erp/folders/customer/crud.php(1062): staff_name('admin')
+#3 {main}
+[08-Oct-2025 10:00:48 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'as_delete' in 'WHERE' in /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/comfun.php(3901): db->select('staff_test', 'as_delete = 0 a...')
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_erp/folders/customer/crud.php(1062): staff_name('admin')
+#3 {main}
+[08-Oct-2025 10:00:48 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'as_delete' in 'WHERE' in /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/comfun.php(3901): db->select('staff_test', 'as_delete = 0 a...')
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_erp/folders/customer/crud.php(1062): staff_name('admin')
+#3 {main}
+[08-Oct-2025 10:00:48 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'as_delete' in 'WHERE' in /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/comfun.php(3901): db->select('staff_test', 'as_delete = 0 a...')
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_erp/folders/customer/crud.php(1062): staff_name('admin')
+#3 {main}
+[08-Oct-2025 10:00:48 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'as_delete' in 'WHERE' in /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/comfun.php(3901): db->select('staff_test', 'as_delete = 0 a...')
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_erp/folders/customer/crud.php(1062): staff_name('admin')
+#3 {main}
+[08-Oct-2025 10:00:48 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'as_delete' in 'WHERE' in /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/comfun.php(3901): db->select('staff_test', 'as_delete = 0 a...')
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_erp/folders/customer/crud.php(1062): staff_name('admin')
+#3 {main}
+[08-Oct-2025 10:00:48 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'as_delete' in 'WHERE' in /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/comfun.php(3901): db->select('staff_test', 'as_delete = 0 a...')
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_erp/folders/customer/crud.php(1062): staff_name('admin')
+#3 {main}
+[08-Oct-2025 10:00:48 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'as_delete' in 'WHERE' in /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/comfun.php(3901): db->select('staff_test', 'as_delete = 0 a...')
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_erp/folders/customer/crud.php(1062): staff_name('admin')
+#3 {main}
+[08-Oct-2025 10:00:48 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'as_delete' in 'WHERE' in /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/comfun.php(3901): db->select('staff_test', 'as_delete = 0 a...')
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_erp/folders/customer/crud.php(1062): staff_name('admin')
+#3 {main}
+[08-Oct-2025 10:00:48 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'as_delete' in 'WHERE' in /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/comfun.php(3901): db->select('staff_test', 'as_delete = 0 a...')
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_erp/folders/customer/crud.php(1062): staff_name('admin')
+#3 {main}
+[08-Oct-2025 10:00:48 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'as_delete' in 'WHERE' in /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/comfun.php(3901): db->select('staff_test', 'as_delete = 0 a...')
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_erp/folders/customer/crud.php(1062): staff_name('admin')
+#3 {main}
+[08-Oct-2025 10:23:40 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'as_delete' in 'WHERE' in /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/comfun.php(3901): db->select('staff_test', 'as_delete = 0 a...')
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_erp/folders/customer/crud.php(1062): staff_name('admin')
+#3 {main}
+[08-Oct-2025 10:23:40 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'as_delete' in 'WHERE' in /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/comfun.php(3901): db->select('staff_test', 'as_delete = 0 a...')
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_erp/folders/customer/crud.php(1062): staff_name('admin')
+#3 {main}
+[08-Oct-2025 10:23:40 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'as_delete' in 'WHERE' in /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/comfun.php(3901): db->select('staff_test', 'as_delete = 0 a...')
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_erp/folders/customer/crud.php(1062): staff_name('admin')
+#3 {main}
+[08-Oct-2025 10:23:40 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'as_delete' in 'WHERE' in /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/comfun.php(3901): db->select('staff_test', 'as_delete = 0 a...')
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_erp/folders/customer/crud.php(1062): staff_name('admin')
+#3 {main}
+[08-Oct-2025 10:23:40 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'as_delete' in 'WHERE' in /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/comfun.php(3901): db->select('staff_test', 'as_delete = 0 a...')
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_erp/folders/customer/crud.php(1062): staff_name('admin')
+#3 {main}
+[08-Oct-2025 10:23:40 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'as_delete' in 'WHERE' in /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/comfun.php(3901): db->select('staff_test', 'as_delete = 0 a...')
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_erp/folders/customer/crud.php(1062): staff_name('admin')
+#3 {main}
+[08-Oct-2025 10:23:40 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'as_delete' in 'WHERE' in /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/comfun.php(3901): db->select('staff_test', 'as_delete = 0 a...')
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_erp/folders/customer/crud.php(1062): staff_name('admin')
+#3 {main}
+[08-Oct-2025 10:23:40 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'as_delete' in 'WHERE' in /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/comfun.php(3901): db->select('staff_test', 'as_delete = 0 a...')
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_erp/folders/customer/crud.php(1062): staff_name('admin')
+#3 {main}
+[08-Oct-2025 10:23:40 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'as_delete' in 'WHERE' in /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/comfun.php(3901): db->select('staff_test', 'as_delete = 0 a...')
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_erp/folders/customer/crud.php(1062): staff_name('admin')
+#3 {main}
+[08-Oct-2025 10:23:40 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'as_delete' in 'WHERE' in /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/comfun.php(3901): db->select('staff_test', 'as_delete = 0 a...')
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_erp/folders/customer/crud.php(1062): staff_name('admin')
+#3 {main}
+[08-Oct-2025 10:25:03 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'as_delete' in 'WHERE' in /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/comfun.php(3901): db->select('staff_test', 'as_delete = 0 a...')
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_erp/folders/customer/crud.php(1062): staff_name('admin')
+#3 {main}
+[08-Oct-2025 10:25:03 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'as_delete' in 'WHERE' in /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/comfun.php(3901): db->select('staff_test', 'as_delete = 0 a...')
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_erp/folders/customer/crud.php(1062): staff_name('admin')
+#3 {main}
+[08-Oct-2025 10:25:03 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'as_delete' in 'WHERE' in /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/comfun.php(3901): db->select('staff_test', 'as_delete = 0 a...')
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_erp/folders/customer/crud.php(1062): staff_name('admin')
+#3 {main}
+[08-Oct-2025 10:25:03 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'as_delete' in 'WHERE' in /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/comfun.php(3901): db->select('staff_test', 'as_delete = 0 a...')
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_erp/folders/customer/crud.php(1062): staff_name('admin')
+#3 {main}
+[08-Oct-2025 10:25:03 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'as_delete' in 'WHERE' in /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/comfun.php(3901): db->select('staff_test', 'as_delete = 0 a...')
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_erp/folders/customer/crud.php(1062): staff_name('admin')
+#3 {main}
+[08-Oct-2025 10:25:03 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'as_delete' in 'WHERE' in /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/comfun.php(3901): db->select('staff_test', 'as_delete = 0 a...')
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_erp/folders/customer/crud.php(1062): staff_name('admin')
+#3 {main}
+[08-Oct-2025 10:25:03 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'as_delete' in 'WHERE' in /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/comfun.php(3901): db->select('staff_test', 'as_delete = 0 a...')
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_erp/folders/customer/crud.php(1062): staff_name('admin')
+#3 {main}
+[08-Oct-2025 10:25:03 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'as_delete' in 'WHERE' in /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/comfun.php(3901): db->select('staff_test', 'as_delete = 0 a...')
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_erp/folders/customer/crud.php(1062): staff_name('admin')
+#3 {main}
+[08-Oct-2025 10:25:03 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'as_delete' in 'WHERE' in /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/comfun.php(3901): db->select('staff_test', 'as_delete = 0 a...')
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_erp/folders/customer/crud.php(1062): staff_name('admin')
+#3 {main}
+[08-Oct-2025 10:25:03 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'as_delete' in 'WHERE' in /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/comfun.php(3901): db->select('staff_test', 'as_delete = 0 a...')
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_erp/folders/customer/crud.php(1062): staff_name('admin')
+#3 {main}
+[13-Oct-2025 15:57:31 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'as_delete' in 'WHERE' in /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/comfun.php(4029): db->select('staff_test', 'as_delete = 0 a...')
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_erp/folders/customer/crud.php(1062): staff_name('admin')
+#3 {main}
+[13-Oct-2025 15:57:31 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'as_delete' in 'WHERE' in /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/comfun.php(4029): db->select('staff_test', 'as_delete = 0 a...')
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_erp/folders/customer/crud.php(1062): staff_name('admin')
+#3 {main}
+[13-Oct-2025 15:57:31 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'as_delete' in 'WHERE' in /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/comfun.php(4029): db->select('staff_test', 'as_delete = 0 a...')
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_erp/folders/customer/crud.php(1062): staff_name('admin')
+#3 {main}
+[13-Oct-2025 15:57:31 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'as_delete' in 'WHERE' in /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/comfun.php(4029): db->select('staff_test', 'as_delete = 0 a...')
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_erp/folders/customer/crud.php(1062): staff_name('admin')
+#3 {main}
+[13-Oct-2025 15:57:31 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'as_delete' in 'WHERE' in /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/comfun.php(4029): db->select('staff_test', 'as_delete = 0 a...')
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_erp/folders/customer/crud.php(1062): staff_name('admin')
+#3 {main}
+[13-Oct-2025 15:57:31 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'as_delete' in 'WHERE' in /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/comfun.php(4029): db->select('staff_test', 'as_delete = 0 a...')
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_erp/folders/customer/crud.php(1062): staff_name('admin')
+#3 {main}
+[13-Oct-2025 15:57:31 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'as_delete' in 'WHERE' in /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/comfun.php(4029): db->select('staff_test', 'as_delete = 0 a...')
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_erp/folders/customer/crud.php(1062): staff_name('admin')
+#3 {main}
+[13-Oct-2025 15:57:31 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'as_delete' in 'WHERE' in /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/comfun.php(4029): db->select('staff_test', 'as_delete = 0 a...')
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_erp/folders/customer/crud.php(1062): staff_name('admin')
+#3 {main}
+[13-Oct-2025 15:57:31 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'as_delete' in 'WHERE' in /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/comfun.php(4029): db->select('staff_test', 'as_delete = 0 a...')
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_erp/folders/customer/crud.php(1062): staff_name('admin')
+#3 {main}
+[13-Oct-2025 15:57:31 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'as_delete' in 'WHERE' in /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/comfun.php(4029): db->select('staff_test', 'as_delete = 0 a...')
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_erp/folders/customer/crud.php(1062): staff_name('admin')
+#3 {main}
+[15-Oct-2025 14:53:48 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'as_delete' in 'WHERE' in /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/comfun.php(4029): db->select('staff_test', 'as_delete = 0 a...')
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_erp/folders/customer/crud.php(1062): staff_name('admin')
+#3 {main}
+[15-Oct-2025 14:53:48 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'as_delete' in 'WHERE' in /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/comfun.php(4029): db->select('staff_test', 'as_delete = 0 a...')
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_erp/folders/customer/crud.php(1062): staff_name('admin')
+#3 {main}
+[15-Oct-2025 14:53:48 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'as_delete' in 'WHERE' in /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/comfun.php(4029): db->select('staff_test', 'as_delete = 0 a...')
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_erp/folders/customer/crud.php(1062): staff_name('admin')
+#3 {main}
+[15-Oct-2025 14:53:48 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'as_delete' in 'WHERE' in /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/comfun.php(4029): db->select('staff_test', 'as_delete = 0 a...')
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_erp/folders/customer/crud.php(1062): staff_name('admin')
+#3 {main}
+[15-Oct-2025 14:53:48 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'as_delete' in 'WHERE' in /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/comfun.php(4029): db->select('staff_test', 'as_delete = 0 a...')
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_erp/folders/customer/crud.php(1062): staff_name('admin')
+#3 {main}
+[15-Oct-2025 14:53:48 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'as_delete' in 'WHERE' in /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/comfun.php(4029): db->select('staff_test', 'as_delete = 0 a...')
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_erp/folders/customer/crud.php(1062): staff_name('admin')
+#3 {main}
+[15-Oct-2025 14:53:48 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'as_delete' in 'WHERE' in /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/comfun.php(4029): db->select('staff_test', 'as_delete = 0 a...')
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_erp/folders/customer/crud.php(1062): staff_name('admin')
+#3 {main}
+[15-Oct-2025 14:53:48 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'as_delete' in 'WHERE' in /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/comfun.php(4029): db->select('staff_test', 'as_delete = 0 a...')
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_erp/folders/customer/crud.php(1062): staff_name('admin')
+#3 {main}
+[15-Oct-2025 14:53:48 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'as_delete' in 'WHERE' in /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/comfun.php(4029): db->select('staff_test', 'as_delete = 0 a...')
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_erp/folders/customer/crud.php(1062): staff_name('admin')
+#3 {main}
+[15-Oct-2025 14:53:48 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'as_delete' in 'WHERE' in /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/comfun.php(4029): db->select('staff_test', 'as_delete = 0 a...')
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_erp/folders/customer/crud.php(1062): staff_name('admin')
+#3 {main}
+[15-Oct-2025 14:55:45 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'as_delete' in 'WHERE' in /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/comfun.php(4029): db->select('staff_test', 'as_delete = 0 a...')
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_erp/folders/customer/crud.php(1062): staff_name('admin')
+#3 {main}
+[15-Oct-2025 14:55:45 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'as_delete' in 'WHERE' in /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/comfun.php(4029): db->select('staff_test', 'as_delete = 0 a...')
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_erp/folders/customer/crud.php(1062): staff_name('admin')
+#3 {main}
+[15-Oct-2025 14:55:45 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'as_delete' in 'WHERE' in /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/comfun.php(4029): db->select('staff_test', 'as_delete = 0 a...')
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_erp/folders/customer/crud.php(1062): staff_name('admin')
+#3 {main}
+[15-Oct-2025 14:55:45 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'as_delete' in 'WHERE' in /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/comfun.php(4029): db->select('staff_test', 'as_delete = 0 a...')
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_erp/folders/customer/crud.php(1062): staff_name('admin')
+#3 {main}
+[15-Oct-2025 14:55:45 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'as_delete' in 'WHERE' in /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/comfun.php(4029): db->select('staff_test', 'as_delete = 0 a...')
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_erp/folders/customer/crud.php(1062): staff_name('admin')
+#3 {main}
+[15-Oct-2025 14:55:45 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'as_delete' in 'WHERE' in /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/comfun.php(4029): db->select('staff_test', 'as_delete = 0 a...')
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_erp/folders/customer/crud.php(1062): staff_name('admin')
+#3 {main}
+[15-Oct-2025 14:55:45 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'as_delete' in 'WHERE' in /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/comfun.php(4029): db->select('staff_test', 'as_delete = 0 a...')
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_erp/folders/customer/crud.php(1062): staff_name('admin')
+#3 {main}
+[15-Oct-2025 14:55:45 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'as_delete' in 'WHERE' in /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/comfun.php(4029): db->select('staff_test', 'as_delete = 0 a...')
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_erp/folders/customer/crud.php(1062): staff_name('admin')
+#3 {main}
+[15-Oct-2025 14:55:45 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'as_delete' in 'WHERE' in /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/comfun.php(4029): db->select('staff_test', 'as_delete = 0 a...')
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_erp/folders/customer/crud.php(1062): staff_name('admin')
+#3 {main}
+[15-Oct-2025 14:55:45 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'as_delete' in 'WHERE' in /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/comfun.php(4029): db->select('staff_test', 'as_delete = 0 a...')
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_erp/folders/customer/crud.php(1062): staff_name('admin')
+#3 {main}

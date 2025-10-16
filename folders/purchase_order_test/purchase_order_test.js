@@ -39,7 +39,69 @@ function loadSupplierDetails() {
         }
     });
 }
+/* -------------------------------------------------------------
+   🔹 Global PO Unsaved Changes Guard
+   ------------------------------------------------------------- */
+let unsavedPRChanges = false;
 
+// Push an initial history state so popstate will fire later
+window.history.pushState({ page: "po_form" }, "", window.location.href);
+
+// Enable leave warning & show top banner
+function enablePOLeaveWarning() {
+  if (!unsavedPRChanges) {
+    unsavedPRChanges = true;
+    $("#unsaved_warning_banner").slideDown(200);
+    window.addEventListener("beforeunload", poLeaveWarning);
+  }
+}
+
+// Disable warning (used on Save / Cancel)
+function disablePOLeaveWarning() {
+  unsavedPRChanges = false;
+  $("#unsaved_warning_banner").slideUp(200);
+  window.removeEventListener("beforeunload", poLeaveWarning);
+}
+
+// Browser reload / close safeguard
+function poLeaveWarning(e) {
+  e.preventDefault();
+  e.returnValue = "You have unsaved PR items added to this PO. Leaving now will discard them.";
+}
+
+/* 🧱 Back Button Intercept */
+window.onpopstate = function (event) {
+  if (unsavedPRChanges) {
+    // Immediately push back the current URL to block leaving
+    history.pushState({ page: "po_form" }, "", window.location.href);
+
+    // SweetAlert confirmation
+    Swal.fire({
+      icon: "warning",
+      title: "Unsaved changes detected!",
+      html: `
+        <div>You’ve added PR items but haven’t <b>Saved</b> or <b>Cancelled</b> the PO yet.</div>
+        <div class="mt-2 text-danger fw-bold">
+          If you leave now, all added PR items will be lost.
+        </div>
+      `,
+      showCancelButton: true,
+      confirmButtonText: "Leave Anyway",
+      cancelButtonText: "Stay Here",
+      reverseButtons: true
+    }).then((result) => {
+      if (result.isConfirmed) {
+        disablePOLeaveWarning();
+        history.back(); // Perform actual navigation
+      }
+    });
+  }
+};
+
+
+/* -------------------------------------------------------------
+   🔹 Add All PR Items Process
+   ------------------------------------------------------------- */
 $(document).on("click", "#add_all_btn", function () {
   const rows = $("#pr_sublist_content table tbody tr");
   const total = rows.length;
@@ -129,6 +191,15 @@ $(document).on("click", "#add_all_btn", function () {
     }, i * 250);
   });
 });
+
+/* -------------------------------------------------------------
+   🔹 Save / Cancel Buttons Cleanup
+   ------------------------------------------------------------- */
+$(document).on("click", ".btn-success, .btn-secondary", function () {
+  // Assuming green Save and grey Cancel
+  disablePOLeaveWarning();
+});
+
 
 $(document).ready(function () {
     // On load

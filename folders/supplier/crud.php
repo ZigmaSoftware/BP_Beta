@@ -2135,7 +2135,7 @@ case 'documents_datatable':
                 $image_files = explode(',', $value['file_attach']);
                 $image_buttons = "";
                 foreach ($image_files as $image_file) {
-                    $image_path = "../blue_planet_beta/uploads/supplier_creation/" . trim($image_file);
+                    $image_path = "../blue_planet_erp/uploads/supplier_creation/" . trim($image_file);
                     $view_button = "<button type='button' onclick=\"new_external_window_image('$image_path')\" style='border: 2px solid #ccc; background:none; cursor:pointer; padding:5px; border-radius:5px; margin-right: 5px;'> <i class='fas fa-image' style='font-size: 20px; color: #555;'></i>
                     </button>";
                     $image_buttons .= $view_button;

@@ -98,6 +98,13 @@ function bootDailylogsheetPaint(project_id, application_type, company_id) {
 
       // 2) prefill values (simultaneous to user)
       apply_entry_row(entryRow);
+      const $pi = $('[name="values[plant_incharge]"]');
+if ($pi.length) {
+  $pi.val(window.SESS_USER_TYPE || '').prop('readonly', true).css({
+    backgroundColor: '#f5f5f5',
+    cursor: 'not-allowed'
+  });
+}
 
       // 3) kick idempotent stock fetchers & derived calcs
       const company_id_val = $("#company_name").val();
@@ -591,6 +598,15 @@ function renderFromFlags(flags) {
     "background-color": "#f5f5f5",
     "cursor": "not-allowed"
   });
+
+  // ✅ Auto-fill and lock Plant In-charge with session user type
+  const $pi = $('[name="values[plant_incharge]"]');
+  if ($pi.length) {
+    $pi.val(window.SESS_USER_TYPE || '').prop('readonly', true).css({
+      backgroundColor: '#f5f5f5',
+      cursor: 'not-allowed'
+    });
+  }
 }
 
 

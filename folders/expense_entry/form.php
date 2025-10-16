@@ -14,42 +14,52 @@ $due_date     = "";
 $customer_id  = "";
 $remarks      = "";
 
+
 if (isset($_GET['unique_id']) && !empty($_GET['unique_id'])) {
     $unique_id = $_GET['unique_id'];
     $btn_text  = "Update";
     $btn_action = "update";
-} else {
-    $prefix = "Pe";
-     $unique_id =  unique_id($prefix);
-}
 
-
-if (isset($_GET['unique_id']) && !empty($_GET['unique_id'])) {
     $table = "expense_entry";
-   $main_columns = [
-    "company_id",
-    "project_id",
-    "customer_id",
-    "invoice_date",
-    "due_date",
-    "invoice_no",
-    "remarks"
+    $main_columns = [
+  "category_id",
+  "payment_type_id",
+  "customer_id",
+  "company_id",
+  "project_id",
+  "invoice_date",
+  "remarks",
+  "basic",
+  "total_gst",
+  "round_off",
+  "tot_amount",
+  "invoice_no"
 ];
+
 
     $main_result = $pdo->select([$table, $main_columns], ["unique_id" => $unique_id]);
 
     if ($main_result->status && !empty($main_result->data)) {
-    $main_data     = $main_result->data[0];
-    $company_id    = $main_data['company_id'];   
-    $project_id    = $main_data['project_id'];   
-    $customer_id   = $main_data['customer_id'];
-    $invoice_date  = $main_data['invoice_date'];
-    $due_date      = $main_data['due_date'];
-    $invoice_no    = $main_data['invoice_no'];
-    $remarks       = $main_data['remarks'];
+        $main_data = $main_result->data[0];
+        $category_id    = $main_data['category_id'];
+        $payment_type_id= $main_data['payment_type_id'];
+        $customer_id    = $main_data['customer_id'];
+        $company_id    = $main_data['company_id'];
+        $project_id    = $main_data['project_id'];
+        $invoice_date   = $main_data['invoice_date'];
+        $remarks        = $main_data['remarks'];
+        $basic          = $main_data['basic'];
+        $total_gst      = $main_data['total_gst'];
+        $round_off      = $main_data['round_off'];
+        $tot_amount     = $main_data['tot_amount'];
+        $invoice_no     = $main_data['invoice_no'];
+    }
+} else {
+    $unique_id = unique_id("exp");
+    $btn_text  = "Create";
+    $btn_action = "create";
 }
 
-}
 
 
 // item_name_list
@@ -158,8 +168,36 @@ $today = date('Y-m-d');
           <input type="hidden" id="unique_id" name="unique_id" value="<?= $unique_id ?>">
           <input type="hidden" id="sublist_unique_id" name="sublist_unique_id" value="">
 
+            <div class="form-group row">
+                        <label class="col-md-2 col-form-label labelright">Company Name</label>
+                        <div class="col-md-3">
+                            <select name="company_id" id="company_id"  class="form-control select2"  onchange="get_project_name_all(this.value);" required>
+                                <?= $company_name_options ?>
+                            </select>
+                        </div>
+
+                        <label class="col-md-2 col-form-label labelright">Project Name</label>
+                        <div class="col-md-3">
+                            <select name="project_id" id="project_id" class="form-control select2" onchange="get_linked_so(this.value);" required>
+                                <?= $project_options ?>
+                            </select>
+                        </div>
+                    </div>
           
-        <div class="form-group row">
+          
+          
+         
+
+
+<div class="form-group row"> <label class="col-md-2 col-form-label labelright">Customer Name</label> <div class="col-md-3"> <select name="customer_id" id="customer_id" class="form-control select2" required> <?= $supplier_name_options ?> </select> </div>
+
+ <label class="col-md-2 col-form-label labelright">Expense Date</label>
+  <div class="col-md-3">
+    <input type="date" name="invoice_date" id="invoice_date" class="form-control" value="<?= $invoice_date ?>" required>
+  </div>
+</div>
+
+ <div class="form-group row">
   <label class="col-md-2 col-form-label labelright">Category Name</label>
   <div class="col-md-3">
     <select name="category_id" id="category_id" class="form-control select2" required>
@@ -176,13 +214,8 @@ $today = date('Y-m-d');
 </div>
 
 
-<div class="form-group row"> <label class="col-md-2 col-form-label labelright">Customer Name</label> <div class="col-md-3"> <select name="customer_id" id="customer_id" class="form-control select2" required> <?= $supplier_name_options ?> </select> </div>
 
-  <label class="col-md-2 col-form-label labelright">Expense Date</label>
-  <div class="col-md-3">
-    <input type="date" name="invoice_date" id="invoice_date" class="form-control" value="<?= $invoice_date ?>" required>
-  </div>
-</div>
+ 
 
 <div class="form-group row">
   <label class="col-md-2 col-form-label labelright">Remarks</label>
@@ -196,7 +229,7 @@ $today = date('Y-m-d');
           <!-- Invoice Number -->
             <?php if (!empty($unique_id)) : ?>
               <div class="form-group row">
-                <label class="col-md-2 col-form-label labelright">Invoice Number</label>
+                <label class="col-md-2 col-form-label labelright">Expense Number</label>
                 <div class="col-md-3">
                   <input type="text" name="invoice_no" id="invoice_no" class="form-control" 
                          value="<?= $invoice_no ?>" readonly>
@@ -215,7 +248,7 @@ $today = date('Y-m-d');
           <!-- Sublist for Invoice Items -->
           <div class="col-12">
             <div class="table-responsive">
-              <table id="expense_items_datatable" class="table table-bordered table-striped w-100">
+              <table id="invoice_items_datatable" class="table table-bordered table-striped w-100">
                 <thead class="table-light">
                   <tr>
                     <th>#</th>
@@ -281,7 +314,7 @@ $today = date('Y-m-d');
                     <input type="text" id="remarks" name="remarks" class="form-control" placeholder="Remarks">
                   </td>
                   <td>
-                    <button type="button" class="btn btn-success invoice_sublist_add_btn" onclick="expense_item_add_update()">
+                    <button type="button" class="btn btn-success invoice_sublist_add_btn" onclick="invoice_item_add_update()">
                       <span id="sublist_btn_text">Add</span>
                     </button>
                   </td>
@@ -318,10 +351,10 @@ $today = date('Y-m-d');
 
     <div class="col-md-6"></div>
     <div class="col-md-3 text-end">
-        <label for="roundoff">Round Off</label>
+        <label for="round_off">Round Off</label>
     </div>
     <div class="col-md-3">
-        <input type="text" class="form-control" id="roundoff" name="roundoff">
+        <input type="text" class="form-control" id="round_off" name="round_off">
     </div>
 
     <div class="col-md-6"></div>

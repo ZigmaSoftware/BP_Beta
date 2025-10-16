@@ -78,7 +78,8 @@ switch ($action) {
         
             // Audit
             "CONCAT(u1.user_name, '<br>', DATE_FORMAT(srn.created, '%d-%m-%Y')) AS prepared_by",
-            "CONCAT(u2.user_name, '<br>', DATE_FORMAT(srn.updated, '%d-%m-%Y')) AS authorized_by",
+            "CONCAT(u2.user_name) AS checked_by",
+            "CONCAT(u3.user_name, '<br>', DATE_FORMAT(srn.updated, '%d-%m-%Y')) AS authorized_by",
         
             // Status (approval-aware)
             "CASE 
@@ -105,7 +106,9 @@ switch ($action) {
              LEFT JOIN user u1 
                 ON srn.created_user_id = u1.unique_id
              LEFT JOIN user u2 
-                ON srn.approved_by = u2.unique_id",
+                ON srn.checked_by = u2.unique_id
+            LEFT JOIN user u3
+                ON srn.approved_by = u3.unique_id",
             $columns
         ];
 
