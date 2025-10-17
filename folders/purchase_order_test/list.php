@@ -264,6 +264,7 @@ $current_month = date('Y-m-d');
                             <!--<th>Active Status</th>-->
                             <th>View</th>
                             <th>Print</th>
+                            <th>Forclose</th>
                             <th>Action</th>
                         </tr>
                     </thead>

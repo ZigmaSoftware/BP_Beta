@@ -107,72 +107,35 @@ break;
 
 
 
-
-
 case "createupdate":
-    $category_id     = $_POST["category_id"] ?? '';
-    $payment_type_id = $_POST["payment_type_id"] ?? '';
-    $customer_id     = $_POST["customer_id"] ?? '';
-    $company_id      = $_POST["company_id"] ?? '';
-    $project_id      = $_POST["project_id"] ?? '';
-    $invoice_date    = $_POST["invoice_date"] ?? '';
-    $remarks         = $_POST["remarks"] ?? '';
 
-    $unique_id       = !empty($_POST["unique_id"]) ? $_POST["unique_id"] : unique_id("exp");
+    $unique_id        = $_POST["unique_id"] ?? '';
+    $approval_status  = $_POST["approval_status"] ?? 'Pending';
+    $approval_remarks = $_POST["approval_remarks"] ?? '';
 
-    $basic       = (float)($_POST["basic"] ?? 0);
-    $total_gst   = (float)($_POST["total_gst"] ?? 0);
-    $round_off   = (float)($_POST["round_off"] ?? 0);
-    $tot_amount  = (float)($_POST["tot_amount"] ?? 0);
-
-    // Generate invoice number
-    $existing_invoices = fetch_pe_number("expense_entry");
-    $invoice_no = generatePE("ZIG", $existing_invoices);
-
-    $columns = [
-    "unique_id"       => $unique_id,
-    "category_id"     => $category_id,
-    "payment_type_id" => $payment_type_id,
-    "customer_id"     => $customer_id,
-    "company_id"      => $company_id,
-    "project_id"      => $project_id,
-    "invoice_no"      => $invoice_no,
-    "invoice_date"    => $invoice_date,
-    "remarks"         => $remarks,
-    "basic"           => $basic,
-    "total_gst"       => $total_gst,
-    "round_off"       => $round_off,
-    "tot_amount"      => $tot_amount,
-    "created_user_id" => $_SESSION["sess_user_id"],
-    "created"         => date("Y-m-d H:i:s")
-];
-
-
-    $check = $pdo->select(["expense_entry", ["COUNT(*) AS c"]], [
-        "unique_id" => $unique_id,
-        "is_delete" => 0
-    ]);
-
-    if ($check->status && $check->data[0]["c"]) {
-        unset($columns["unique_id"], $columns["created_user_id"], $columns["created"]);
-        $columns["updated_user_id"] = $_SESSION["sess_user_id"];
-        $columns["updated"] = date("Y-m-d H:i:s");
-        $result = $pdo->update("expense_entry", $columns, ["unique_id" => $unique_id]);
-        $msg = "update";
-    } else {
-        $result = $pdo->insert("expense_entry", $columns);
-        $msg = "create";
+    if (empty($unique_id)) {
+        echo json_encode(["status" => false, "msg" => "Invalid record"]);
+        break;
     }
 
-    // ✅ Validate and return actual result
+    $columns = [
+        "approval_status"  => $approval_status,
+        "approval_remarks" => $approval_remarks,
+        "updated_user_id"  => $_SESSION["sess_user_id"],
+        "updated"          => date("Y-m-d H:i:s")
+    ];
+
+    $result = $pdo->update("expense_entry", $columns, ["unique_id" => $unique_id]);
+
     if ($result->status) {
+        // ✅ If Approved, reflect it in Expense Master
+        if ($approval_status === 'Approved') {
+            $pdo->update("expense_master", ["status" => "Approved"], ["expense_unique_id" => $unique_id]);
+        }
+
         echo json_encode([
             "status" => true,
-            "msg" => $msg,
-            "data" => [
-                "unique_id" => $unique_id,
-                "invoice_no" => $invoice_no
-            ]
+            "msg" => "Approval " . strtolower($approval_status) . " successfully"
         ]);
     } else {
         echo json_encode([
@@ -210,7 +173,6 @@ case "createupdate":
     "payment_type_id",
     "customer_id",
     "invoice_date",
-    "approval_status",
     "unique_id"
 ];
 
@@ -275,28 +237,12 @@ if (!empty($customer_name)) {
             $value['category_id'] = expense_category($value['category_id'])[0]['category_name'] ?? '';
             $value['payment_type_id'] = payment_type($value['payment_type_id'])[0]['payment_name'] ?? '';
             $value['customer_id']= customers($value['customer_id'])[0]['customer_name'] ?? '';
-            
-            
-             // ✅ Approval Status display logic (plain colored text)
-            if (isset($value['approval_status'])) {
-                switch ($value['approval_status']) {
-                    case '1':
-                        $value['approval_status'] = "<span style='color: green; font-weight: 600;'>Approved</span>";
-                        break;
-                    case '2':
-                        $value['approval_status'] = "<span style='color: red; font-weight: 600;'>Rejected</span>";
-                        break;
-                    default:
-                        $value['approval_status'] = "<span style='color: orange; font-weight: 600;'>Pending</span>";
-                        break;
-                }
-            }
 
             $btn_view    = btn_views($folder_name, $value['unique_id']);
             $btn_print   = btn_prints($folder_name, $value['unique_id']);
             $btn_upload  = btn_docs($folder_name, $value['unique_id']);
             $btn_update  = btn_update($folder_name, $value['unique_id']);
-            $btn_delete  = btn_delete($folder_name, $value['unique_id']);
+            // $btn_delete  = btn_delete($folder_name, $value['unique_id']);
 
             $value['unique_id'] = $btn_update . $btn_delete . $btn_upload;
             array_splice($value, -1, 0, [$btn_view, $btn_print]);

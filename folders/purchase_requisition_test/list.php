@@ -232,6 +232,7 @@ $pr_number_options = select_option($pr_number_options, "Select the Project Name"
                             <th>Status</th>
                             <th>View</th>
                             <th>Print</th>
+                            <th>Foreclose</th>
                             <th>Action</th>
                         </tr>
                     </thead>

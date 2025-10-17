@@ -172,26 +172,50 @@ switch ($action) {
             "sql"    => $action_obj->sql
         ]);
     break;
+    
+    
+    case 'foreclose':
+    $unique_id = $_POST['unique_id'] ?? '';
+    $response = [];
 
-        
-    case 'datatable':
-    // DataTable Variables
-    $search = $_POST['search']['value'];
-    $length = $_POST['length'];
-    $start  = $_POST['start'];
-    $draw   = $_POST['draw'];
-    $limit  = $length;
+    if (!empty($unique_id)) {
+        $update = $pdo->update(
+            "purchase_order",
+            ["foreclose_status" => 1, "foreclose_date" => date('Y-m-d H:i:s')],
+            ["unique_id" => $unique_id]
+        );
 
-    $data = [];
-
-    if ($length == '-1') {
-        $limit = "";
+        if ($update->status) {
+            $response = ["status" => "success", "message" => "Purchase Order foreclosed successfully"];
+        } else {
+            $response = ["status" => "error", "message" => "Database update failed"];
+        }
+    } else {
+        $response = ["status" => "error", "message" => "Invalid PO ID"];
     }
 
-    // Query Variables
-    $json_array = "";
+    echo json_encode($response);
+    break;
+
+
+        
+  case 'datatable':
+
+    ini_set('display_errors', 1);
+    error_reporting(E_ALL);
+
+    // ---------------------------- INPUTS ---------------------------- //
+    $search = $_POST['search']['value'] ?? '';
+    $length = $_POST['length'] ?? 10;
+    $start  = $_POST['start'] ?? 0;
+    $draw   = $_POST['draw'] ?? 1;
+    $limit  = ($length == '-1') ? '' : $length;
+    $data   = [];
+    $debug_trace = []; // 🧩 store debug info for all POs
+
+    // ---------------------------- BASE QUERY ---------------------------- //
     $columns = [
-        "@a:=@a+1 s_no", 
+        "@a:=@a+1 s_no",
         "purchase_order_no",
         "company_id",
         "project_id",
@@ -205,21 +229,22 @@ switch ($action) {
         "status",
         "lvl_2_status",
         "lvl_3_status",
+        "foreclose_status",
         "unique_id",
-        "status as edit_status"
+        "status as edit_status",
+        "purchase_order_type"
     ];
 
-
     $table_details = [
-        $table." , (SELECT @a:= ".$start.") AS a ",
+        $table . " , (SELECT @a:=" . $start . ") AS a ",
         $columns
     ];
 
-    $where = " is_delete = '0' ";
+    $where = "is_delete = 0";
     $conditions = [];
-    
+
     if (!empty($_POST['from_date']) && !empty($_POST['to_date'])) {
-        $conditions[] = "DATE(created) >= '{$_POST['from_date']}' AND DATE(created) <= '{$_POST['to_date']}'";
+        $conditions[] = "DATE(created) BETWEEN '{$_POST['from_date']}' AND '{$_POST['to_date']}'";
     }
     if (!empty($_POST['company_name'])) {
         $conditions[] = "company_id = '{$_POST['company_name']}'";
@@ -227,149 +252,279 @@ switch ($action) {
     if (!empty($_POST['project_name'])) {
         $conditions[] = "project_id = '{$_POST['project_name']}'";
     }
-    // Approval Status filter (mapped)
-    if (isset($_POST['status']) && $_POST['status'] !== '') {
+
+    // ---------------------------- STATUS FILTER ---------------------------- //
+    if (!empty($_POST['status'])) {
         switch ($_POST['status']) {
             case 'pending_l1':
-                $conditions[] = "(status = '0' OR status IS NULL)";
+                $conditions[] = "(status = 0 OR status IS NULL)";
                 break;
             case 'approved_l1':
-                $conditions[] = "status = '1' AND gross_amount <= 300000";
+                $conditions[] = "status = 1 AND gross_amount <= 300000";
                 break;
             case 'rejected_l1':
-                $conditions[] = "status = '2'";
+                $conditions[] = "status = 2";
                 break;
-    
             case 'pending_l2':
-                $conditions[] = "status = '1' 
-                                 AND appr_gross_amount BETWEEN 300001 AND 1000000
-                                 AND (lvl_2_status = '0' OR lvl_2_status IS NULL)";
+                $conditions[] = "status = 1 AND appr_gross_amount BETWEEN 300001 AND 1000000 AND (lvl_2_status = 0 OR lvl_2_status IS NULL)";
                 break;
             case 'approved_l2':
-                $conditions[] = "lvl_2_status = '1' AND gross_amount <= 1000000";
+                $conditions[] = "lvl_2_status = 1 AND gross_amount <= 1000000";
                 break;
             case 'rejected_l2':
-                $conditions[] = "lvl_2_status = '2'";
+                $conditions[] = "lvl_2_status = 2";
                 break;
-    
             case 'pending_l3':
-                $conditions[] = "status = '1' 
-                                 AND appr_gross_amount > 1000000 
-                                 AND lvl_2_status = '1' 
-                                 AND (lvl_3_status = '0' OR lvl_3_status IS NULL)";
+                $conditions[] = "status = 1 AND appr_gross_amount > 1000000 AND lvl_2_status = 1 AND (lvl_3_status = 0 OR lvl_3_status IS NULL)";
                 break;
             case 'approved_l3':
-                $conditions[] = "lvl_3_status = '1'";
+                $conditions[] = "lvl_3_status = 1";
                 break;
             case 'rejected_l3':
-                $conditions[] = "lvl_3_status = '2'";
+                $conditions[] = "lvl_3_status = 2";
                 break;
         }
     }
-    
 
     if (!empty($conditions)) {
         $where .= " AND " . implode(" AND ", $conditions);
     }
 
-    $order_column = $_POST["order"][0]["column"];
-    $order_dir    = $_POST["order"][0]["dir"];
-    $order_by     = datatable_sorting($order_column,$order_dir,$columns);
-    $search       = datatable_searching($search,$columns);
+    $order_column = $_POST["order"][0]["column"] ?? 0;
+    $order_dir    = $_POST["order"][0]["dir"] ?? 'asc';
+    $order_by     = datatable_sorting($order_column, $order_dir, $columns);
+    $search_sql   = datatable_searching($search, $columns);
+    if ($search_sql) $where .= " AND $search_sql";
 
-    if ($search) {
-        if ($where) {
-            $where .= " AND ";
-        }
-        $where .= $search;
-    }
-    
+    // ---------------------------- FETCH DATA ---------------------------- //
     $sql_function  = "SQL_CALC_FOUND_ROWS";
-    $result        = $pdo->select($table_details,$where,$limit,$start,$order_by,$sql_function);
+    $result        = $pdo->select($table_details, $where, $limit, $start, $order_by, $sql_function);
     $total_records = total_records();
-    
-    if ($result->status) {
-        $res_array = $result->data;
 
-        foreach ($res_array as $key => $value) {
+    if ($result->status) {
+        foreach ($result->data as $value) {
+
+            // ---------------------------- MAP NAMES ---------------------------- //
             $company_data = company_name($value['company_id']);
-            $value['company_id'] = $company_data[0]['company_name'];
-            
+            $value['company_id'] = $company_data[0]['company_name'] ?? '';
+
             $project_data = project_name($value['project_id']);
-            $value['project_id'] = $project_data[0]['project_code'] . " / " . $project_data[0]['project_name'];
-            
+            $value['project_id'] = ($project_data[0]['project_code'] ?? '') . " / " . ($project_data[0]['project_name'] ?? '');
+
             $supplier_data = supplier($value['supplier_id']);
-            $value['supplier_id'] = $supplier_data[0]['supplier_name'];
-            
-            $raw_id = $res_array[$key]['unique_id'];
-            
-            $btn_update = btn_update($folder_name, $raw_id);
-            $btn_delete = btn_delete($folder_name, $raw_id);
-            $btn_upload = btn_docs($folder_name, $raw_id);
+            $value['supplier_id'] = $supplier_data[0]['supplier_name'] ?? '';
+
+            $raw_id = $value['unique_id'];
             $btn_view   = btn_views($folder_name, $raw_id);
             $btn_print  = btn_prints($folder_name, $raw_id);
-            
-            $receipts_exist = has_grn_or_srn($raw_id);
-            
-            // Get unified status
+            $btn_upload = btn_docs($folder_name, $raw_id);
+            $btn_update = btn_update($folder_name, $raw_id);
+            $btn_delete = btn_delete($folder_name, $raw_id);
+
+            // ---------------------------- APPROVAL ---------------------------- //
             $approval = get_final_approval_status($value);
             $value['approval_status'] = $approval['html'];
             $approval_state           = $approval['state'];
-        
-            // Action buttons logic
+
+            // ============================================================
+            // FORECLOSE LOGIC (PO vs GRN / SRN) — FIXED + DEBUG TRACE
+            // ============================================================
+            $foreclose_btn    = "<span class='badge bg-secondary text-light fs-4'>Not Available</span>";
+            $foreclose_status = $value['foreclose_status'] ?? 0;
+            $po_id            = $value['unique_id'];
+            $po_sc_id         = fetch_po_sc_unique_id($po_id);
+            $po_type_id       = $value['purchase_order_type'] ?? '';
+
+            // 🔹 Determine PO Type → SRN (service) or GRN (regular)
+            if ($po_type_id === '683568ca2fe8263239') {
+                $receipt_sub_table = "srn_sublist";
+                $receipt_label     = "SRN";
+            } else {
+                $receipt_sub_table = "grn_sublist";
+                $receipt_label     = "GRN";
+            }
+
+            // ------------------------------------------------------------
+            // 1️⃣ Fetch all PO items
+            // ------------------------------------------------------------
+            $item_result = $pdo->select(["purchase_order_items", ["item_code", "quantity"]], [
+                "screen_unique_id" => $po_sc_id,
+                "is_delete" => 0
+            ]);
+            $po_items = ($item_result->status && !empty($item_result->data)) ? $item_result->data : [];
+
+            $total_items = count($po_items);
+            $fully_received = 0;
+            $partial_received = false;
+            $debug_rows = [];
+
+            // ------------------------------------------------------------
+            // 2️⃣ Loop each PO item and total up receipts
+            // ------------------------------------------------------------
+            foreach ($po_items as $item) {
+                $po_item_id = $item['item_code'];
+                $req_qty    = (float)$item['quantity'];
+                $max_received = 0;
+                $srn_grn_no = '-';
+                $used_source = 'none';
+            
+                // fetch from GRN or SRN sublist using po_unique_id
+                $recv_result = $pdo->select(
+                    [$receipt_sub_table, [
+                        "now_received_qty",
+                        "update_qty",
+                        "order_qty",
+                        "screen_unique_id AS main_no"
+                    ]],
+                    [
+                        "po_unique_id" => $po_id,
+                        "item_code"    => $po_item_id,
+                        "is_delete" => 0
+                    ]
+                );
+            
+                if ($recv_result->status && !empty($recv_result->data)) {
+                    $max_now = 0;
+                    $max_update = 0;
+                    $max_order = 0;
+            
+                    foreach ($recv_result->data as $r) {
+                        $now_val    = (float)($r['now_received_qty'] ?? 0);
+                        $update_val = (float)($r['update_qty'] ?? 0);
+                        $order_val  = (float)($r['order_qty'] ?? 0);
+            
+                        if ($now_val > $max_now) $max_now = $now_val;
+                        if ($update_val > $max_update) $max_update = $update_val;
+                        if ($order_val > $max_order) $max_order = $order_val;
+            
+                        // keep last non-empty main_no
+                        if (!empty($r['main_no'])) {
+                            $srn_grn_no = $r['main_no'];
+                        }
+                    }
+            
+                    // Fallback hierarchy: now_received_qty → update_qty → order_qty
+                    if ($max_now > 0) {
+                        $max_received = $max_now;
+                        $used_source = 'now_received_qty';
+                    } elseif ($max_order > 0) {
+                        $max_received = $max_order;
+                        $used_source = 'order_qty';
+                    }
+                }
+            
+                // compare quantities
+                $status_text = 'Pending';
+                if ($max_received > 0 && $max_received < $req_qty) {
+                    $partial_received = true;
+                    $status_text = 'Partial';
+                }
+                if ($max_received >= $req_qty && $req_qty > 0) {
+                    $fully_received++;
+                    $status_text = 'Completed';
+                }
+            
+                // 🧩 Collect item debug trace
+                $debug_rows[] = [
+                    'PO_No'        => $value['purchase_order_no'],
+                    'PO_Item_ID'   => $po_item_id,
+                    'Order_Qty'    => $req_qty,
+                    "{$receipt_label}_Main_No" => $srn_grn_no,
+                    'Max_Received_Qty' => $max_received,
+                    'Used_Source'  => $used_source,
+                    'Status'       => $status_text
+                ];
+            }
+
+
+            $all_received_done = ($total_items > 0 && $fully_received === $total_items);
+
+            // ------------------------------------------------------------
+            // 3️⃣ Decide display / update logic
+            // ------------------------------------------------------------
+            $l1_status = $value['status']       ?? 0;
+            $l2_status = $value['lvl_2_status'] ?? 0;
+            $l3_status = $value['lvl_3_status'] ?? 0;
+
+            if ($foreclose_status == 1) {
+                $foreclose_btn = "<span class='badge bg-success text-light fs-4'>Foreclosed</span>";
+            } elseif ($all_received_done) {
+                $foreclose_btn = "<span class='badge bg-info text-dark fs-4'>{$receipt_label} Raised</span>";
+                // auto-mark as foreclosed
+                
+            } elseif ($partial_received) {
+                $foreclose_btn = "<button type='button' class='btn btn-sm btn-dark' onclick=\"foreclosePO('{$po_id}')\">Foreclose</button>";
+            } elseif (in_array(2, [$l1_status, $l2_status, $l3_status])) {
+                $foreclose_btn = "<span class='badge bg-secondary text-light fs-4'>Not Available</span>";
+            } elseif ($l1_status == 1 && ($l2_status == 0 || $l3_status == 0)) {
+                $foreclose_btn = "<button type='button' class='btn btn-sm btn-dark' onclick=\"foreclosePO('{$po_id}')\">Foreclose</button>";
+            }
+
+            // keep this PO’s debug rows
+            $debug_trace[$value['purchase_order_no']] = $debug_rows;
+
+            // ============================================================
+            // ACTIONS
+            // ============================================================
+            $receipts_exist = has_grn_or_srn($raw_id);
             $action_buttons = "";
-            if (!$receipts_exist){
+            if (!$receipts_exist) {
                 if ($approval_state == 'approved' || $approval_state == 'pending_l1') {
                     $action_buttons .= $btn_update;
                 }
             }
             $action_buttons .= $btn_delete . $btn_upload;
-            
-            $value['view']      = $btn_view;
-            $value['print']     = $btn_print;
-            $value['unique_id'] = $action_buttons;
-            
-            $view        = $value['view'];
-            $print       = $value['print'];
-            $unique_id   = $value['unique_id'];
-            $edit_status = $value['edit_status'];
-            
-            // remove unwanted fields (internal statuses + extra gross cols)
+
+            // ============================================================
+            // FINAL BUILD
+            // ============================================================
             unset(
+                $value['status'], $value['lvl_2_status'], $value['lvl_3_status'],
+                $value['appr_gross_amount'], $value['lvl_2_gross_amount'], $value['lvl_3_gross_amount']
+            );
+
+            $value['view']       = $btn_view;
+            $value['print']      = $btn_print;
+            $value['foreclose']  = $foreclose_btn;
+            $value['actions']    = $action_buttons;
+
+            $data[] = [
+                $value['s_no'],
+                $value['purchase_order_no'],
+                $value['company_id'],
+                $value['project_id'],
+                $value['supplier_id'],
+                $value['entry_date'],
+                $value['net_amount'],
+                $value['gross_amount'],
+                $value['approval_status'],
                 $value['view'],
                 $value['print'],
-                $value['unique_id'],
-                $value['edit_status'],
-                $value['status'],
-                $value['lvl_2_status'],
-                $value['lvl_3_status'],
-                $value['appr_gross_amount'],
-                $value['lvl_2_gross_amount'],
-                $value['lvl_3_gross_amount']
-            );
-            
-            
-            $value['view']        = $view;
-            $value['print']       = $print;
-            $value['unique_id']   = $unique_id;
-            $value['edit_status'] = $edit_status;
-            
-            $data[] = array_values($value);
+                $value['foreclose'],
+                $value['actions']
+            ];
         }
-        
+
         $json_array = [
             "draw"            => intval($draw),
             "recordsTotal"    => intval($total_records),
             "recordsFiltered" => intval($total_records),
             "data"            => $data,
-            "testing"         => $result->sql
+            "debug_trace"     => $debug_trace   // 🧠 full breakdown per PO
         ];
     } else {
-        print_r($result);
+        $json_array = [
+            "draw" => 0,
+            "recordsTotal" => 0,
+            "recordsFiltered" => 0,
+            "data" => [],
+            "error" => $result->error ?? 'Unknown error'
+        ];
     }
-    
+
     echo json_encode($json_array);
     break;
+
 
         
     case 'documents_add_update':

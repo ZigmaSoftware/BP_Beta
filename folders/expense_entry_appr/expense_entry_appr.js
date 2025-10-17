@@ -77,48 +77,83 @@ function calculate_amount() {
 
 
 
-function expense_entry_cu(unique_id = "") {
+// function expense_entry_appr_cu(unique_id = "") {
+//     if (!is_online()) {
+//         sweetalert("no_internet");
+//         return false;
+//     }
+
+    
+
+//     let data = {
+//         approval_status : $("#approval_status").val(),
+//         approval_remarks : $("#approval_remarks").val(),
+//         action : "createupdate",
+//         unique_id : unique_id
+//     };
+    
+
+//     $.ajax({
+//         type: "POST",
+//         url: ajax_url,
+//         data: data,
+//         cache: false,
+//         contentType: false,
+//         processData: false,
+//         beforeSend: function () {
+//             $(".createupdate_btn").attr("disabled", "disabled").text("Processing...");
+//         },
+//         success: function (data) {
+//             let obj = JSON.parse(data);
+//             if (obj.status) {
+//                 sweetalert(obj.msg, url);
+//             } else {
+//                 Swal.fire("Database Error: " + (obj.error || "Unknown error"));
+//             }
+//         },
+//         error: function () {
+//             Swal.fire("Network Error");
+//         },
+//         complete: function () {
+//             $(".createupdate_btn").removeAttr("disabled").text("Save");
+//         }
+//     });
+// }
+
+
+function expense_entry_appr_cu(unique_id = "") {
     if (!is_online()) {
         sweetalert("no_internet");
         return false;
     }
 
-    if (!form_validity_check("was-validated")) {
-        sweetalert("form_alert");
-        return false;
-    }
-
-    // Check if item table has entries
-    let rowCount = $("#invoice_items_datatable tbody tr").length;
-    if (rowCount === 0 || $("#invoice_items_datatable tbody").text().includes("No data available")) {
-        Swal.fire("Please add at least one item before saving.");
-        return false;
-    }
-
-    let data = new FormData($("#expense_entry_form")[0]);
-    data.append("remarks_main", $("#remarks_main").val().trim());
-    data.append("action", "createupdate");
-    data.append("unique_id", unique_id);
+    let data = {
+        approval_status: $("#approval_status").val(),
+        approval_remarks: $("#approval_remarks").val(),
+        action: "createupdate", // use a separate case to avoid clashing with main createupdate
+        unique_id: unique_id
+    };
 
     $.ajax({
         type: "POST",
         url: ajax_url,
         data: data,
-        cache: false,
-        contentType: false,
-        processData: false,
         beforeSend: function () {
             $(".createupdate_btn").attr("disabled", "disabled").text("Processing...");
         },
         success: function (data) {
             let obj = JSON.parse(data);
-            if (obj.status) {
-                if (obj.data && obj.data.invoice_no) {
-                    $("#invoice_no").val(obj.data.invoice_no);
-                }
-                sweetalert(obj.msg, url);
+            let msg = obj.msg;
+            let status = obj.status;
+            let error = obj.error;
+
+            if (!status) {
+                $(".createupdate_btn").text("Error");
+                console.log(error);
             } else {
-                Swal.fire("Database Error: " + (obj.error || "Unknown error"));
+                // update_Qty(screen_unique_id, $is_update);
+                sweetalert(msg, url);
+                window.location.href = url;
             }
         },
         error: function () {
@@ -129,7 +164,6 @@ function expense_entry_cu(unique_id = "") {
         }
     });
 }
-
 
 
 function invoice_item_add_update() {

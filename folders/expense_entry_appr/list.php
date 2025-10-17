@@ -25,9 +25,9 @@ $type_options = select_option(doc_type_options(), "Select the Document Type", $d
 
 <div class="col-12 text-end mb-2">
   <div class="form-group row">
-    <div class="col-md-12">
-      <?php echo btn_add($btn_add); ?>
-    </div>
+    <!--<div class="col-md-12">-->
+    <!--  <?//php echo btn_add($btn_add); ?>-->
+    <!--</div>-->
   </div>
 </div>
 
@@ -166,7 +166,7 @@ $type_options = select_option(doc_type_options(), "Select the Document Type", $d
               <th>Payment Type</th>
               <th>Customer</th>
               <th>Expense Date</th>
-              <th>Approval Status</th>
+              <!--<th>Remarks</th>-->
               <th>View</th>
               <th>Print</th>
               <th>Action</th>

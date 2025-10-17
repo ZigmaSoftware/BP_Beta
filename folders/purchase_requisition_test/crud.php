@@ -197,6 +197,7 @@ switch ($action) {
         "requisition_date",
         "requested_by",
         "remarks",
+        "foreclose_status",
         "unique_id"
     ];
 
@@ -208,31 +209,25 @@ switch ($action) {
     $where = "is_delete = 0";
 
     if (!empty($_POST['pr_number'])) {
-        $pr_number = trim($_POST['pr_number']);
-        $where .= " AND unique_id = '$pr_number'";
+        $where .= " AND unique_id = '" . trim($_POST['pr_number']) . "'";
     }
     if (!empty($_POST['company_name'])) {
-        $company_name = trim($_POST['company_name']);
-        $where .= " AND company_id = '$company_name'";
+        $where .= " AND company_id = '" . trim($_POST['company_name']) . "'";
     }
     if (!empty($_POST['project_name'])) {
-        $project_name = trim($_POST['project_name']);
-        $where .= " AND project_id = '$project_name'";
+        $where .= " AND project_id = '" . trim($_POST['project_name']) . "'";
     }
     if (!empty($_POST['type_of_service'])) {
-        $type_of_service = trim($_POST['type_of_service']);
-        $where .= " AND requisition_type = '$type_of_service'";
+        $where .= " AND requisition_type = '" . trim($_POST['type_of_service']) . "'";
     }
     if (!empty($_POST['requisition_for'])) {
-        $requisition_for = trim($_POST['requisition_for']);
-        $where .= " AND requisition_for = '$requisition_for'";
+        $where .= " AND requisition_for = '" . trim($_POST['requisition_for']) . "'";
     }
     if (!empty($_POST['requisition_date'])) {
-        $requisition_date = trim($_POST['requisition_date']);
-        $where .= " AND requisition_date = '$requisition_date'";
+        $where .= " AND requisition_date = '" . trim($_POST['requisition_date']) . "'";
     }
 
-    // ---------------------------- REQUISITION TYPE/FOR OPTIONS ---------------------------- //
+    // ---------------------------- OPTIONS ---------------------------- //
     $requisition_type_options = [
         1 => ["unique_id" => "1", "value" => "Regular"],
         '683568ca2fe8263239' => ["unique_id" => "683568ca2fe8263239", "value" => "Service"],
@@ -250,10 +245,7 @@ switch ($action) {
     $order_dir    = $_POST["order"][0]["dir"] ?? 'asc';
     $order_by     = datatable_sorting($order_column, $order_dir, $columns);
     $search_sql   = datatable_searching($search, $columns);
-
-    if ($search_sql) {
-        $where .= " AND $search_sql";
-    }
+    if ($search_sql) $where .= " AND $search_sql";
 
     // ---------------------------- MAIN SELECT ---------------------------- //
     $sql_function = "SQL_CALC_FOUND_ROWS";
@@ -275,7 +267,7 @@ switch ($action) {
             $value['requisition_type'] = $requisition_type_options[$value['requisition_type']]['value'] ?? '-';
 
             // ========================================================
-            // STATUS SUMMARY (L1/L2)  →  replaces remarks column
+            // STATUS SUMMARY (L1/L2)
             // ========================================================
             $columns_status = [
                 "SUM(CASE WHEN status = 1 THEN 1 ELSE 0 END) AS l1_approved",
@@ -293,27 +285,96 @@ switch ($action) {
 
             $status_label = 'Pending (L1)';
             $btn_color = 'warning';
+            $l1_approved = $l1_rejected = $l2_approved = $l2_rejected = 0;
+
             if ($status_res->status && !empty($status_res->data)) {
                 $s = $status_res->data[0];
-                if ($s['l1_rejected'] > 0) {
-                    $status_label = 'Rejected (L1)';
-                    $btn_color = 'danger';
-                } elseif ($s['l2_rejected'] > 0) {
-                    $status_label = 'Rejected (L2)';
-                    $btn_color = 'danger';
+                $l1_approved = $s['l1_approved'];
+                $l1_rejected = $s['l1_rejected'];
+                $l2_approved = $s['l2_approved'];
+                $l2_rejected = $s['l2_rejected'];
+
+                if ($l1_rejected > 0) {
+                    $status_label = 'Rejected (L1)'; $btn_color = 'danger';
+                } elseif ($l2_rejected > 0) {
+                    $status_label = 'Rejected (L2)'; $btn_color = 'danger';
                 } elseif ($s['l1_pending'] > 0) {
-                    $status_label = 'Pending (L1)';
-                    $btn_color = 'warning';
-                } elseif ($s['l1_approved'] > 0 && $s['l2_pending'] > 0) {
-                    $status_label = 'Pending (L2)';
-                    $btn_color = 'info';
-                } elseif ($s['l1_approved'] > 0 && $s['l2_approved'] > 0) {
-                    $status_label = 'Approved';
-                    $btn_color = 'success';
+                    $status_label = 'Pending (L1)'; $btn_color = 'warning';
+                } elseif ($l1_approved > 0 && $s['l2_pending'] > 0) {
+                    $status_label = 'Pending (L2)'; $btn_color = 'info';
+                } elseif ($l1_approved > 0 && $l2_approved > 0) {
+                    $status_label = 'Approved'; $btn_color = 'success';
                 }
             }
 
             $value['remarks'] = "<button type='button' class='btn btn-sm btn-$btn_color' onclick=\"showStatusModal('{$value['unique_id']}')\">$status_label</button>";
+
+            // ========================================================
+            // FORECLOSE LOGIC WITH QUANTITY CHECK
+            // ========================================================
+            $foreclose_btn = "<span class='badge bg-secondary text-light fs-5'>Not Available</span>";
+            $detail_logs = [];
+            $all_items_fully_ordered = true;
+            $has_po = false;
+
+            // ---- STEP 1: Fetch all PR items ----
+            $pr_items = $pdo->select(
+                ["purchase_requisition_items", ["unique_id", "quantity"]],
+                ["main_unique_id" => $value['unique_id'], "is_delete" => 0]
+            );
+
+            if ($pr_items->status && !empty($pr_items->data)) {
+                foreach ($pr_items->data as $pr_item) {
+                    $pr_sub_id = $pr_item['unique_id'];
+                    $req_qty   = (float)$pr_item['quantity'];
+            
+                    // ---- STEP 2: Get total ordered qty + screen IDs ----
+                    $po_items = $pdo->select(
+                        ["purchase_order_items", ["SUM(quantity) AS total_order_qty", "GROUP_CONCAT(DISTINCT screen_unique_id SEPARATOR ', ') AS screen_ids"]],
+                        ["pr_sub_unique_id" => $pr_sub_id, "is_delete" => 0]
+                    );
+            
+                    $ordered_qty = ($po_items->status && !empty($po_items->data[0]['total_order_qty']))
+                        ? (float)$po_items->data[0]['total_order_qty']
+                        : 0;
+            
+                    $screen_id_list = $po_items->data[0]['screen_ids'] ?? '';
+            
+                    if ($ordered_qty > 0) $has_po = true;
+            
+                    // Log each PR item detail
+                    $detail_logs[] = "PR_SUB=$pr_sub_id | REQ_QTY=$req_qty | ORDER_QTY=$ordered_qty | SCREEN_IDS=$screen_id_list";
+            
+                    // If any PR item not fully ordered, mark as incomplete
+                    if ($ordered_qty < $req_qty) {
+                        $all_items_fully_ordered = false;
+                    }
+                }
+            } else {
+                $all_items_fully_ordered = false;
+            }
+
+
+            // ---- STEP 3: Button decision ----
+            $foreclose_status = $value['foreclose_status'] ?? 0;
+
+            if ($foreclose_status == 1) {
+                $foreclose_btn = "<span class='badge bg-success text-light fs-5'>Foreclosed</span>";
+            } elseif ($all_items_fully_ordered && $has_po) {
+                $foreclose_btn = "<span class='badge bg-info text-dark fs-5'>PO Raised</span>";
+            } elseif ($l1_rejected > 0 || $l2_rejected > 0) {
+                $foreclose_btn = "<span class='badge bg-secondary text-light fs-5'>Not Available</span>";
+            } elseif (($l1_approved > 0 || $l2_approved > 0) && $l1_rejected == 0 && $l2_rejected == 0) {
+                $foreclose_btn = "<button type='button' class='btn btn-sm btn-dark' onclick=\"foreclosePR('{$value['unique_id']}')\">Foreclose</button>";
+            } else {
+                $foreclose_btn = "<span class='badge bg-secondary text-light fs-5'>Not Available</span>";
+            }
+
+            // ---- STEP 4: Log results ----
+            $log_line = "PR_NUMBER={$value['pr_number']} | PR_UNIQUE={$value['unique_id']} | ALL_ITEMS_FULLY_ORDERED=" . ($all_items_fully_ordered ? "YES" : "NO") . " | HAS_PO=" . ($has_po ? "YES" : "NO");
+            $log_line .= " | FORECLOSE_STATUS={$foreclose_status}";
+            if (!empty($detail_logs)) $log_line .= " | DETAILS=" . implode(' || ', $detail_logs);
+            file_put_contents(__DIR__ . "/foreclose_debug.log", $log_line . "\n", FILE_APPEND);
 
             // ---------------- BUTTONS ---------------- //
             $btn_view    = btn_views($folder_name, $value['unique_id']);
@@ -322,8 +383,10 @@ switch ($action) {
             $btn_update  = btn_update($folder_name, $value['unique_id']);
             $btn_delete  = btn_delete($folder_name, $value['unique_id']);
 
+            unset($value['foreclose_status']);
+
             $value['unique_id'] = $btn_update . $btn_delete . $btn_upload;
-            array_splice($value, -1, 0, [$btn_view, $btn_print]);
+            array_splice($value, -1, 0, [$btn_view, $btn_print, $foreclose_btn]);
 
             $data[] = array_values($value);
         }
@@ -347,6 +410,7 @@ switch ($action) {
 
     echo json_encode($json_array);
     break;
+
     
    case 'fetch_item_status':
 
@@ -1455,6 +1519,31 @@ case "get_items_by_sales_order":
         echo json_encode($json_array);
         
         break;
+        
+    case 'foreclose':
+    $unique_id = $_POST['unique_id'] ?? '';
+    $response = [];
+    $session_user_id = $_SESSION['sess_user_id'] ?? 'SYSTEM';
+
+    if (!empty($unique_id)) {
+        $update = $pdo->update(
+            "purchase_requisition",
+            ["foreclose_status" => 1, "foreclose_date" => date('Y-m-d H:i:s'), "foreclosed_by" => $session_user_id],
+            ["unique_id" => $unique_id]
+        );
+
+        if ($update->status) {
+            $response = ["status" => "success", "message" => "PR foreclosed successfully"];
+        } else {
+            $response = ["status" => "error", "message" => "Database update failed"];
+        }
+    } else {
+        $response = ["status" => "error", "message" => "Invalid PR ID"];
+    }
+
+    echo json_encode($response);
+    break;
+
     
 
         break;

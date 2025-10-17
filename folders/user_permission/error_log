@@ -823,3 +823,8 @@ Stack trace:
 #0 /home/ie9owkuzkgd4/public_html/blue_planet_erp/config/dbclass.php(706): PDOStatement->execute()
 #1 /home/ie9owkuzkgd4/public_html/blue_planet_erp/folders/user_permission/crud.php(255): db->insertMultiple('user_screen_per...', Array, Array)
 #2 {main}
+[17-Oct-2025 18:05:17 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_beta.user_screen_permission_log' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:706
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(706): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/user_permission/crud.php(255): db->insertMultiple('user_screen_per...', Array, Array)
+#2 {main}

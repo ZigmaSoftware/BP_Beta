@@ -677,6 +677,74 @@ function po_sublist_add_update() {
 }
 
 
+function foreclosePO(po_unique_id) {
+    if (!confirm("Are you sure you want to foreclose this Purchase Order?")) {
+        return;
+    }
+
+    $.ajax({
+        type: "POST",
+        url: ajax_url,
+        data: {
+            action: "foreclose",
+            unique_id: po_unique_id
+        },
+        beforeSend: function () {
+            Swal.fire({
+                title: 'Processing...',
+                text: 'Please wait while we foreclose this Purchase Order.',
+                allowOutsideClick: false,
+                didOpen: () => Swal.showLoading()
+            });
+        },
+        success: function (response) {
+            try {
+                let res = JSON.parse(response);
+                Swal.close();
+
+                if (res.status === 'success') {
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Foreclosed!',
+                        text: 'The Purchase Order has been successfully foreclosed.',
+                        timer: 2000,
+                        showConfirmButton: false,
+                        didClose: () => {
+                            const redirectUrl = sessionStorage.getItem('list_link');
+                            if (redirectUrl) window.location.href = redirectUrl;
+                        }
+                    });
+                    $('#datatable').DataTable().ajax.reload(null, false);
+                } else {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Failed!',
+                        text: res.message || 'Unable to foreclose Purchase Order.'
+                    });
+                }
+            } catch (err) {
+                Swal.close();
+                console.error("Invalid JSON:", response);
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Unexpected Error',
+                    text: 'Something went wrong while processing the request.'
+                });
+            }
+        },
+        error: function (xhr, status, error) {
+            Swal.close();
+            console.error("AJAX Error:", error);
+            Swal.fire({
+                icon: 'error',
+                title: 'Server Error',
+                text: 'Could not connect to the server. Please try again later.'
+            });
+        }
+    });
+}
+
+
 
 function po_sublist_add_update_pop_up(item_code,uom,quantity,pr_unique_id,delivery_date,remarks) {
     let screen_unique_id = $("#screen_unique_id").val();

@@ -254,17 +254,28 @@ function init_datatable(table_id = '', form_name = '', action = '', filter_data 
 		table.DataTable().clear().destroy();
 	}
 
-	table.DataTable({
-		ordering: true,
-		searching: true,
-		pageLength: 10,
-		displayStart: 0, // ✅ Force start from first page
-		ajax: {
-			url: ajax_url,
-			type: "POST",
-			data: data
-		}
-	});
+    table.DataTable({
+    	ordering: true,
+    	searching: true,
+    	pageLength: 10,
+    	displayStart: 0,
+    	ajax: {
+    		url: ajax_url,
+    		type: "POST",
+    		data: data
+    	},
+    	columnDefs: [
+    		{
+    			targets: "_all",
+    			render: function (data, type, row) {
+    				return type === 'display' ? data : data;
+    			},
+    		}
+    	],
+    	// ✅ Add this line
+    	deferRender: false
+    });
+
 }
 
 // Delete Function
@@ -1127,3 +1138,74 @@ $('#statusModal').on('hidden.bs.modal', function () {
 window.addEventListener('show.bs.modal', () => {
   document.body.style.paddingRight = '0px';
 });
+
+function foreclosePR(pr_unique_id) {
+    if (!confirm("Are you sure you want to foreclose this Purchase Requisition?")) {
+        return;
+    }
+
+    $.ajax({
+        type: "POST",
+        url: ajax_url, // ← adjust path as per your setup
+        data: {
+            action: "foreclose",  // this should match your PHP switch case
+            unique_id: pr_unique_id
+        },
+        beforeSend: function () {
+            Swal.fire({
+                title: 'Processing...',
+                text: 'Please wait while we foreclose this PR.',
+                allowOutsideClick: false,
+                didOpen: () => Swal.showLoading()
+            });
+        },
+        success: function (response) {
+            try {
+                let res = JSON.parse(response);
+                Swal.close();
+
+                if (res.status === 'success') {
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Foreclosed!',
+                        text: 'The PR has been successfully foreclosed.',
+                        timer: 2000,
+                        showConfirmButton: false,
+                        didClose: () => {
+                            const redirectUrl = sessionStorage.getItem('list_link');
+                            if (redirectUrl) window.location.href = redirectUrl;
+                        }
+                    });
+
+
+                    // Refresh the DataTable without losing pagination
+                    $('#datatable').DataTable().ajax.reload(null, false);
+                } else {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Failed!',
+                        text: res.message || 'Unable to foreclose PR.'
+                    });
+                }
+            } catch (err) {
+                Swal.close();
+                console.error("Invalid JSON:", response);
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Unexpected Error',
+                    text: 'Something went wrong while processing the request.'
+                });
+            }
+        },
+        error: function (xhr, status, error) {
+            Swal.close();
+            console.error("AJAX Error:", error);
+            Swal.fire({
+                icon: 'error',
+                title: 'Server Error',
+                text: 'Could not connect to the server. Please try again later.'
+            });
+        }
+    });
+}
+

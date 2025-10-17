@@ -171,14 +171,14 @@ $today = date('Y-m-d');
             <div class="form-group row">
                         <label class="col-md-2 col-form-label labelright">Company Name</label>
                         <div class="col-md-3">
-                            <select name="company_id" id="company_id"  class="form-control select2"  onchange="get_project_name(this.value);" required>
+                            <select name="company_id" id="company_id"  class="form-control select2"  onchange="get_project_name(this.value);" disabled required>
                                 <?= $company_name_options ?>
                             </select>
                         </div>
 
                         <label class="col-md-2 col-form-label labelright">Project Name</label>
                         <div class="col-md-3">
-                            <select name="project_id" id="project_id" class="form-control select2" onchange="get_linked_so(this.value);" required>
+                            <select name="project_id" id="project_id" class="form-control select2" onchange="get_linked_so(this.value);" disabled required>
                                 <?= $project_options ?>
                             </select>
                         </div>
@@ -189,25 +189,25 @@ $today = date('Y-m-d');
          
 
 
-<div class="form-group row"> <label class="col-md-2 col-form-label labelright">Supplier Name</label> <div class="col-md-3"> <select name="customer_id" id="customer_id" class="form-control select2" required> <?= $supplier_name_options ?> </select> </div>
+<div class="form-group row"> <label class="col-md-2 col-form-label labelright">Supplier Name</label> <div class="col-md-3"> <select name="customer_id" id="customer_id" class="form-control select2" disabled required> <?= $supplier_name_options ?> </select> </div>
 
  <label class="col-md-2 col-form-label labelright">Expense Date</label>
   <div class="col-md-3">
-    <input type="date" name="invoice_date" id="invoice_date" class="form-control" value="<?= $invoice_date ?>" required>
+    <input type="date" name="invoice_date" id="invoice_date" class="form-control" value="<?= $invoice_date ?>" disabled required>
   </div>
 </div>
 
  <div class="form-group row">
   <label class="col-md-2 col-form-label labelright">Category Name</label>
   <div class="col-md-3">
-    <select name="category_id" id="category_id" class="form-control select2" required>
+    <select name="category_id" id="category_id" class="form-control select2" disabled required>
       <?= $category_options ?>
     </select>
   </div>
 
   <label class="col-md-2 col-form-label labelright">Payment Type</label>
   <div class="col-md-3">
-    <select name="payment_type_id" id="payment_type_id" class="form-control select2" required>
+    <select name="payment_type_id" id="payment_type_id" class="form-control select2" disabled required>
       <?= $payment_type_options ?>
     </select>
   </div>
@@ -220,7 +220,7 @@ $today = date('Y-m-d');
 <div class="form-group row">
   <label class="col-md-2 col-form-label labelright">Remarks</label>
   <div class="col-md-3">
-    <textarea name="remarks" id="remarks_main" class="form-control" rows="2" placeholder="Enter Remarks"><?= htmlspecialchars($remarks ?? '', ENT_QUOTES) ?></textarea>
+    <textarea name="remarks" id="remarks_main" class="form-control" rows="2" placeholder="Enter Remarks" readonly><?= htmlspecialchars($remarks ?? '', ENT_QUOTES) ?></textarea>
   </div>
 </div>
 
@@ -278,20 +278,20 @@ $today = date('Y-m-d');
                     
                   </td>
                   <td>
-                    <select id="unit" name="unit" class="form-control select2">
+                    <select id="unit" name="unit" class="form-control select2" disabled>
                       <?= $uom_unique_id ?>
                     </select>
                   </td>
                   <td>
                     <input type="number" id="quantity" name="quantity" class="form-control"
-                           placeholder="Qty" onkeyup="calculate_amount();" step="1">
+                           placeholder="Qty" onkeyup="calculate_amount();" step="1" disabled>
                   </td>
                   <td>
-                  <input type="number" id="rate" name="rate" class="form-control"placeholder="Rate"onkeyup="calculate_amount();"step="0.01" min="0">
+                  <input type="number" id="rate" name="rate" class="form-control"placeholder="Rate"onkeyup="calculate_amount();"step="0.01" min="0" disabled>
                 </td>
 
                   <td>
-                    <select id="discount_type" name="discount_type" class="form-control" onchange="calculate_amount();">
+                    <select id="discount_type" name="discount_type" class="form-control" onchange="calculate_amount();" disabled>
                       <option value="0">Select Discount Type</option>
                       <option value="1">Percentage (%)</option>
                       <option value="2">Amount (₹)</option>
@@ -299,19 +299,19 @@ $today = date('Y-m-d');
                   </td>
                   <td>
                     <input type="number" id="discount" name="discount" class="form-control"
-                           placeholder="Discount" onkeyup="calculate_amount();" step="1">
+                           placeholder="Discount" onkeyup="calculate_amount();" step="1" disabled>
                   </td>
                  <td>
-                      <select id="tax" name="tax" class="form-control select2" onchange="calculate_amount();">
+                      <select id="tax" name="tax" class="form-control select2" onchange="calculate_amount();" disabled>
                         <?= $tax_options ?>
                       </select>
                     </td>
 
                   <td>
-                    <input type="text" id="amount" name="amount" class="form-control" readonly placeholder="Amount">
+                    <input type="text" id="amount" name="amount" class="form-control" readonly placeholder="Amount" disabled>
                   </td>
                   <td>
-                    <input type="text" id="remarks" name="remarks" class="form-control" placeholder="Remarks">
+                    <input type="text" id="remarks" name="remarks" class="form-control" placeholder="Remarks" disabled>
                   </td>
                   <td>
                     <button type="button" class="btn btn-success invoice_sublist_add_btn" onclick="invoice_item_add_update()">
@@ -337,7 +337,7 @@ $today = date('Y-m-d');
     <div class="col-md-3 text-end">
         <label for="basic">Basic</label>
     </div>
-     <div class="col-md-3">
+    <div class="col-md-3">
       <input type="text" class="form-control" id="basic" name="basic" 
              value="<?= htmlspecialchars($basic ?? '', ENT_QUOTES) ?>" readonly>
     </div>
@@ -357,7 +357,7 @@ $today = date('Y-m-d');
     </div>
     <div class="col-md-3">
       <input type="text" class="form-control" id="round_off" name="round_off" 
-             value="<?= htmlspecialchars($round_off ?? '', ENT_QUOTES) ?>">
+             value="<?= htmlspecialchars($round_off ?? '', ENT_QUOTES) ?>" readonly>
     </div>
 
     <div class="col-md-6"></div>
@@ -371,6 +371,27 @@ $today = date('Y-m-d');
 </div>
 
           </div>
+          
+
+<div class="form-group row mt-4">
+  <label class="col-md-2 col-form-label labelright">Approval Status</label>
+  <div class="col-md-3">
+    <select name="approval_status" id="approval_status" class="form-control select2" required>
+      <option value="">Select</option>
+      <option value="1" <?= ($approval_status ?? '') === 'Approved' ? 'selected' : '' ?>>Approved</option>
+      <option value="2" <?= ($approval_status ?? '') === 'Rejected' ? 'selected' : '' ?>>Rejected</option>
+    </select>
+  </div>
+
+  <label class="col-md-2 col-form-label labelright">Approval Remarks</label>
+  <div class="col-md-3">
+    <textarea name="approval_remarks" id="approval_remarks" class="form-control" rows="2"
+              placeholder="Enter remarks if rejected or any comments"><?= htmlspecialchars($approval_remarks ?? '', ENT_QUOTES) ?></textarea>
+  </div>
+</div>
+
+          
+          
 
           <div class="col-md-12 text-end">
             <?= btn_cancel($btn_cancel); ?>

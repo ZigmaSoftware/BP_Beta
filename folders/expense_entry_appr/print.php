@@ -55,8 +55,8 @@ if (isset($_GET['unique_id']) && !empty($_GET['unique_id'])) {
     $company_addr = $company['address'];
     $company_gst  = $company['gst_number'];
     $company_state = state($company['state'])[0]['state_name'] ?? '-';
-    $company_phone = $company['contact_no'] ?? '';
-    $company_email = $company['contact_email_id'] ?? '';
+    $company_phone = $company['mobile_no'] ?? '';
+    $company_email = $company['email'] ?? '';
     $company_logo = $company['logo'];
 }
 
