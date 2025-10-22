@@ -2704,3 +2704,5 @@ Stack trace:
 [17-Oct-2025 08:29:31 UTC] PHP Notice:  Undefined variable: packing_forwarding_display in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/expense_entry/view.php on line 233
 [17-Oct-2025 08:29:31 UTC] PHP Notice:  Undefined variable: total_gst_amount in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/expense_entry/view.php on line 238
 [17-Oct-2025 08:29:31 UTC] PHP Notice:  Undefined variable: gross_amount in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/expense_entry/view.php on line 243
+[22-Oct-2025 10:12:58 UTC] PHP Parse error:  syntax error, unexpected '>' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/expense_entry/print.php on line 172
+[22-Oct-2025 10:13:00 UTC] PHP Parse error:  syntax error, unexpected '>' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/expense_entry/print.php on line 172

@@ -19,7 +19,7 @@ if (isset($_GET['unique_id']) && !empty($_GET['unique_id'])) {
     $btn_text  = "Update";
     $btn_action = "update";
 } else {
-    $prefix = "pr";
+    $prefix = "si";
      $unique_id =  unique_id($prefix);
 }
 
@@ -32,8 +32,12 @@ if (isset($_GET['unique_id']) && !empty($_GET['unique_id'])) {
     "customer_id",
     "invoice_date",
     "due_date",
+    "remarks",
+    "basic",
+    "total_gst",
+    "round_off",
+    "tot_amount",
     "invoice_no",
-    "remarks"
 ];
 
     $main_result = $pdo->select([$table, $main_columns], ["unique_id" => $unique_id]);
@@ -45,8 +49,12 @@ if (isset($_GET['unique_id']) && !empty($_GET['unique_id'])) {
     $customer_id   = $main_data['customer_id'];
     $invoice_date  = $main_data['invoice_date'];
     $due_date      = $main_data['due_date'];
-    $invoice_no    = $main_data['invoice_no'];
     $remarks       = $main_data['remarks'];
+    $basic          = $main_data['basic'];
+    $total_gst      = $main_data['total_gst'];
+    $round_off      = $main_data['round_off'];
+    $tot_amount     = $main_data['tot_amount'];
+    $invoice_no    = $main_data['invoice_no'];
 }
 
 }
@@ -298,69 +306,46 @@ $today = date('Y-m-d');
           </div>
           
           <div class="col-12">
-              <!--<div class="row">-->
-              <!--      <div class="col-md-6"></div>-->
-              <!--      <div class="col-md-3 text-end">-->
-              <!--          <label for="basic">Basic</label>-->
-              <!--      </div>-->
-              <!--      <div class="col-md-3">-->
-              <!--          <input type="text" class="form-control" id="basic" name="basic" placeholder="Basic total amount" onkeypress='number_only(event);' readonly>-->
-              <!--      </div>-->
-              <!--      <div class="col-md-6"></div>-->
-              <!--      <div class="col-md-3 text-end">-->
-              <!--          <label for="total_gst">Total GST</label>-->
-              <!--      </div>-->
-              <!--      <div class="col-md-3">-->
-              <!--          <input type="text" class="form-control" id="total_gst" name="total_gst" placeholder="Total GST" onkeypress='number_only(event);' readonly>-->
-              <!--      </div>-->
-              <!--      <div class="col-md-6"></div>-->
-              <!--      <div class="col-md-3 text-end">-->
-              <!--          <label for="roundoff">Round Off</label>-->
-              <!--      </div>-->
-              <!--      <div class="col-md-3">-->
-              <!--          <input type="text" class="form-control" id="roundoff" name="roundoff" placeholder="Round Off" onkeypress='number_only(event);' readonly>-->
-              <!--      </div>-->
-
-              <!--      <div class="col-md-6"></div>-->
-              <!--      <div class="col-md-3 text-end">-->
-              <!--          <label for="tot_amount">Total Amount</label>-->
-              <!--      </div>-->
-              <!--      <div class="col-md-3">-->
-              <!--          <input type="text" class="form-control" id="tot_amount" name="tot_amount" placeholder="Total Amount" onkeypress='number_only(event);' readonly>-->
-              <!--      </div>-->
-
-              <!--</div>-->
+             
               <div class="row mt-3">
     <div class="col-md-6"></div>
     <div class="col-md-3 text-end">
         <label for="basic">Basic</label>
     </div>
+    
     <div class="col-md-3">
-        <input type="text" class="form-control" id="basic" name="basic" readonly>
+      <input type="text" class="form-control" id="basic" name="basic" 
+             value="<?= htmlspecialchars($basic ?? '', ENT_QUOTES) ?>" readonly>
     </div>
 
     <div class="col-md-6"></div>
     <div class="col-md-3 text-end">
         <label for="total_gst">Total GST</label>
     </div>
+    
     <div class="col-md-3">
-        <input type="text" class="form-control" id="total_gst" name="total_gst" readonly>
+      <input type="text" class="form-control" id="total_gst" name="total_gst" 
+             value="<?= htmlspecialchars($total_gst ?? '', ENT_QUOTES) ?>" readonly>
     </div>
 
     <div class="col-md-6"></div>
     <div class="col-md-3 text-end">
         <label for="round_off">Round Off</label>
     </div>
-    <div class="col-md-3">
-        <input type="text" class="form-control" id="round_off" name="round_off">
+    
+     <div class="col-md-3">
+      <input type="text" class="form-control" id="round_off" name="round_off" 
+             value="<?= htmlspecialchars($round_off ?? '', ENT_QUOTES) ?>">
     </div>
 
     <div class="col-md-6"></div>
     <div class="col-md-3 text-end">
         <label for="tot_amount">Total Amount</label>
     </div>
+    
     <div class="col-md-3">
-        <input type="text" class="form-control" id="tot_amount" name="tot_amount" readonly>
+      <input type="text" class="form-control" id="tot_amount" name="tot_amount" 
+             value="<?= htmlspecialchars($tot_amount ?? '', ENT_QUOTES) ?>" readonly>
     </div>
 </div>
 

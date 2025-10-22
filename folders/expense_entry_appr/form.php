@@ -33,6 +33,8 @@ if (isset($_GET['unique_id']) && !empty($_GET['unique_id'])) {
   "total_gst",
   "round_off",
   "tot_amount",
+  "approval_status",
+  "approval_remarks",
   "invoice_no"
 ];
 
@@ -52,6 +54,8 @@ if (isset($_GET['unique_id']) && !empty($_GET['unique_id'])) {
         $total_gst      = $main_data['total_gst'];
         $round_off      = $main_data['round_off'];
         $tot_amount     = $main_data['tot_amount'];
+        $approval_status = $main_data['approval_status'];
+        $approval_remarks  = $main_data['approval_remarks'];
         $invoice_no     = $main_data['invoice_no'];
     }
 } else {
@@ -378,8 +382,8 @@ $today = date('Y-m-d');
   <div class="col-md-3">
     <select name="approval_status" id="approval_status" class="form-control select2" required>
       <option value="">Select</option>
-      <option value="1" <?= ($approval_status ?? '') === 'Approved' ? 'selected' : '' ?>>Approved</option>
-      <option value="2" <?= ($approval_status ?? '') === 'Rejected' ? 'selected' : '' ?>>Rejected</option>
+      <option value="1" <?= ($approval_status ?? '') === '1' ? 'selected' : '' ?>>Approved</option>
+      <option value="2" <?= ($approval_status ?? '') === '2' ? 'selected' : '' ?>>Rejected</option>
     </select>
   </div>
 

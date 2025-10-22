@@ -1,0 +1,50 @@
+[22-Oct-2025 17:14:13 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'created_on' in 'INSERT INTO' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:579
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(579): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/task_category/crud.php(87): db->insert('task_category', Array)
+#2 {main}
+[22-Oct-2025 17:14:57 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'created_on' in 'INSERT INTO' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:579
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(579): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/task_category/crud.php(87): db->insert('task_category', Array)
+#2 {main}
+[22-Oct-2025 17:20:21 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'created_on' in 'INSERT INTO' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:579
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(579): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/task_category/crud.php(92): db->insert('task_category', Array)
+#2 {main}
+[22-Oct-2025 18:16:44 Asia/Kolkata] PDOException: SQLSTATE[42000]: Syntax error or access violation: 1327 Undeclared variable: Array in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/task_category/crud.php(133): db->select(Array, Array, Array)
+#2 {main}
+[22-Oct-2025 18:16:47 Asia/Kolkata] PDOException: SQLSTATE[42000]: Syntax error or access violation: 1327 Undeclared variable: Array in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/task_category/crud.php(133): db->select(Array, Array, Array)
+#2 {main}
+[22-Oct-2025 18:17:04 Asia/Kolkata] PDOException: SQLSTATE[42000]: Syntax error or access violation: 1327 Undeclared variable: Array in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/task_category/crud.php(133): db->select(Array, Array, Array)
+#2 {main}
+[22-Oct-2025 18:17:12 Asia/Kolkata] PDOException: SQLSTATE[42000]: Syntax error or access violation: 1327 Undeclared variable: Array in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/task_category/crud.php(133): db->select(Array, Array, Array)
+#2 {main}
+[22-Oct-2025 18:23:46 Asia/Kolkata] PDOException: SQLSTATE[42000]: Syntax error or access violation: 1327 Undeclared variable: Array in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/task_category/crud.php(131): db->select(Array, Array, Array)
+#2 {main}
+[22-Oct-2025 18:25:40 Asia/Kolkata] PDOException: SQLSTATE[42000]: Syntax error or access violation: 1327 Undeclared variable: Array in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/task_category/crud.php(131): db->select(Array, Array, Array)
+#2 {main}
+[22-Oct-2025 18:26:26 Asia/Kolkata] PDOException: SQLSTATE[42000]: Syntax error or access violation: 1327 Undeclared variable: Array in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/task_category/crud.php(131): db->select(Array, Array, Array)
+#2 {main}

@@ -110,109 +110,277 @@ function convert_number_to_words($number) {
 }
 ?>
 
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--<meta charset="UTF-8">-->
+<!--<title>Expense Print</title>-->
+<!--<link href="../../assets/css/app.min.css" rel="stylesheet">-->
+<!--<style>-->
+<!--body {font-size: 13px; color: #000; margin: 20px; }-->
+<!--.invoice-box { border: 1px solid #919191; padding: 20px; }-->
+<!--.header-table td { vertical-align: top; }-->
+<!--h2 { font-size: 18px; text-align: center; margin-bottom: 20px; text-transform: uppercase; }-->
+<!--.table { width: 100%; border-collapse: collapse; margin-top: 10px; }-->
+<!--.table th, .table td { border: 1px solid #919191; padding: 6px 8px; text-align: left; }-->
+<!--.table th { background: #f0f0f0; }-->
+<!--.text-right { text-align: right; }-->
+<!--.text-center { text-align: center; }-->
+<!--.signature { margin-top: 50px; text-align: right; }-->
+<!--.signature img { height: 50px; }-->
+<!--</style>-->
+<!--</head>-->
+
+<!--<body>-->
+
+<!--<div class="invoice-box">-->
+<!--    <h2>Expense</h2>-->
+
+<!--    <table width="100%" class="header-table">-->
+<!--        <tr>-->
+<!--            <td width="50%">-->
+<!--                <img src="/blue_planet_beta/uploads/company_creation/<?= $company_logo ?>" style="height:60px;">-->
+<!--                <p><strong><?= strtoupper($company_name) ?></strong><br>-->
+<!--                <?= $company_addr ?><br>-->
+<!--                Phone: <?= $company_phone ?><br>-->
+<!--                Email: <?= $company_email ?><br>-->
+<!--                GSTIN: <strong><?= $company_gst ?></strong><br>-->
+<!--                State: <?= $company_state ?>-->
+<!--                </p>-->
+<!--            </td>-->
+<!--            <td width="50%" align="right">-->
+<!--                <table border="0">-->
+<!--                    <tr><td><strong>Expense For:</strong></td><td><?= expense_category($category_id)[0]['category_name'] ?? '-' ?></td></tr>-->
+<!--                    <tr><td><strong>Expense No:</strong></td><td><?= $invoice_no ?></td></tr>-->
+<!--                    <tr><td><strong>Date:</strong></td><td><?= date('d/m/Y', strtotime($invoice_date)) ?></td></tr>-->
+<!--                </table>-->
+<!--            </td>-->
+<!--        </tr>-->
+<!--    </table>-->
+
+<!--    <table class="table">-->
+<!--        <thead>-->
+<!--            <tr>-->
+<!--                <th style="width:5%;">#</th>-->
+<!--                <th>Description of Goods</th>-->
+<!--                <th style="width:15%;" class="text-right">Quantity</th>-->
+<!--                <th style="width:20%;" class="text-right">Price/Unit (₹)</th>-->
+<!--                <th style="width:20%;" class="text-right">Amount (₹)</th>-->
+<!--            </tr>-->
+<!--        </thead>-->
+<!--        <tbody>-->
+             <?php
+// <!--            if (!empty($items)) {
+// <!--                $i = 1;
+// <!--                foreach ($items as $row) {
+                    // echo "<tr>
+                    //     <td class='text-center'>{$i}</td>
+                    //     <td>{$row['item_name']}</td>
+                    //     <td class='text-right'>{$row['quantity']}</td>
+                    //     <td class='text-right'>{$row['rate']}</td>
+                    //     <td class='text-right'>{$row['amount']}</td>
+                    // </tr>";
+// <!--                    $i++;
+// <!--                }
+// <!--            } else {
+// <!--                echo "<tr><td colspan='5' class='text-center'>No items found</td></tr>";
+// <!--            }
+             ?>
+<!--            <tr>-->
+<!--                <td class="text-right" colspan="4"><strong>Total</strong></td>-->
+<!--                <td class="text-right"><strong>₹ <?= number_format($tot_amount, 2) ?></strong></td>-->
+<!--            </tr>-->
+<!--        </tbody>-->
+<!--    </table>-->
+
+<!--    <table width="100%" style="margin-top:10px;">-->
+<!--        <tr>-->
+<!--            <td width="70%">-->
+<!--                <strong>Amount in Words:</strong><br>-->
+<!--                <?= ucwords(convert_number_to_words(round($tot_amount))) ?> Rupees only-->
+<!--            </td>-->
+<!--            <td width="30%" align="right">-->
+<!--                <strong>Paid:</strong> ₹ <?= number_format($tot_amount, 2) ?>-->
+<!--            </td>-->
+<!--        </tr>-->
+<!--    </table>-->
+
+<!--    <div class="signature">-->
+<!--        <p><strong>For <?= strtoupper($company_name) ?>:</strong></p>-->
+<!--        <img src="../../assets/images/signature.png" alt="signature"><br>-->
+<!--        <span>Authorized Signatory</span>-->
+<!--    </div>-->
+<!--</div>-->
+
+<!--</body>-->
+<!--</html>-->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Expense Print</title>
-<link href="../../assets/css/app.min.css" rel="stylesheet">
-<style>
-body { font-family: Arial, sans-serif; font-size: 13px; color: #000; margin: 20px; }
-.invoice-box { border: 1px solid #ddd; padding: 20px; }
-.header-table td { vertical-align: top; }
-h2 { font-size: 18px; text-align: center; margin-bottom: 20px; text-transform: uppercase; }
-.table { width: 100%; border-collapse: collapse; margin-top: 10px; }
-.table th, .table td { border: 1px solid #000; padding: 6px 8px; text-align: left; }
-.table th { background: #f0f0f0; }
-.text-right { text-align: right; }
-.text-center { text-align: center; }
-.signature { margin-top: 50px; text-align: right; }
-.signature img { height: 50px; }
-</style>
+  <meta charset="UTF-8">
+  <title>Expense</title>
+  <link href="../../assets/css/app.min.css" rel="stylesheet">
+  <style>
+    body {
+      font-size: 12px;
+      color: #000;
+      background: #fff;
+    }
+    .header-box {
+    border: 1px solid #000;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+    .invoice-box {
+      border: 1px solid #000;
+      padding: 20px;
+      margin: 20px auto;
+      background: #fff;
+    }
+    h3 {
+      text-align: center;
+      font-weight: 700;
+      margin-bottom: 15px;
+      font-size:24px;
+      text-transform: capitalize;
+    }
+    .table-bordered td, .table-bordered th {
+      border: 1px solid #000 !important;
+      vertical-align: middle;
+    }
+    .header-table td {
+      vertical-align: top;
+      padding-bottom: 10px;
+    }
+    .signature {
+      margin-top: 30px;
+      text-align: right;
+    }
+    .signature img {
+      height: 60px;
+      margin-bottom: 5px;
+    }
+    .table thead th {
+      background: #f2f2f2;
+    }
+    .text-right {
+      text-align: right !important;
+    }
+    .text-center {
+      text-align: center !important;
+    }
+    @media print {
+      body { margin: 0; }
+      .invoice-box { border: none; padding: 0; }
+    }
+  </style>
 </head>
-
 <body>
 
-<div class="invoice-box">
-    <h2>Expense</h2>
+<div class="container mt-4 mb-5 invoice-box">
 
-    <table width="100%" class="header-table">
-        <tr>
-            <td width="50%">
-                <img src="/blue_planet_beta/uploads/company_creation/<?= $company_logo ?>" style="height:60px;">
-                <p><strong><?= strtoupper($company_name) ?></strong><br>
-                <?= $company_addr ?><br>
-                Phone: <?= $company_phone ?><br>
-                Email: <?= $company_email ?><br>
-                GSTIN: <strong><?= $company_gst ?></strong><br>
-                State: <?= $company_state ?>
-                </p>
-            </td>
-            <td width="50%" align="right">
-                <table border="0">
-                    <tr><td><strong>Expense For:</strong></td><td><?= expense_category($category_id)[0]['category_name'] ?? '-' ?></td></tr>
-                    <tr><td><strong>Expense No:</strong></td><td><?= $invoice_no ?></td></tr>
-                    <tr><td><strong>Date:</strong></td><td><?= date('d/m/Y', strtotime($invoice_date)) ?></td></tr>
-                </table>
-            </td>
-        </tr>
-    </table>
+  <h3><b>Expense</b></h3>
 
-    <table class="table">
-        <thead>
-            <tr>
-                <th style="width:5%;">#</th>
-                <th>Description of Goods</th>
-                <th style="width:15%;" class="text-right">Quantity</th>
-                <th style="width:20%;" class="text-right">Price/Unit (₹)</th>
-                <th style="width:20%;" class="text-right">Amount (₹)</th>
-            </tr>
-        </thead>
-        <tbody>
-            <?php 
-            if (!empty($items)) {
-                $i = 1;
-                foreach ($items as $row) {
-                    echo "<tr>
-                        <td class='text-center'>{$i}</td>
-                        <td>{$row['item_name']}</td>
-                        <td class='text-right'>{$row['quantity']}</td>
-                        <td class='text-right'>{$row['rate']}</td>
-                        <td class='text-right'>{$row['amount']}</td>
-                    </tr>";
-                    $i++;
-                }
-            } else {
-                echo "<tr><td colspan='5' class='text-center'>No items found</td></tr>";
-            }
-            ?>
-            <tr>
-                <td class="text-right" colspan="4"><strong>Total</strong></td>
-                <td class="text-right"><strong>₹ <?= number_format($tot_amount, 2) ?></strong></td>
-            </tr>
-        </tbody>
-    </table>
-
-    <table width="100%" style="margin-top:10px;">
-        <tr>
-            <td width="70%">
-                <strong>Amount in Words:</strong><br>
-                <?= ucwords(convert_number_to_words(round($tot_amount))) ?> Rupees only
-            </td>
-            <td width="30%" align="right">
-                <strong>Paid:</strong> ₹ <?= number_format($tot_amount, 2) ?>
-            </td>
-        </tr>
-    </table>
-
-    <div class="signature">
-        <p><strong>For <?= strtoupper($company_name) ?>:</strong></p>
-        <img src="../../assets/images/signature.png" alt="signature"><br>
-        <span>Authorized Signatory</span>
+    <!-- Header -->
+    <div class="header-box">
+      <div class="row">
+          <div class="col-md-2 text-center">
+         <img src="/blue_planet_beta/uploads/company_creation/<?= $company_logo ?>" alt="Logo" height="70">
+        </div>
+        <div class="col-md-10 text-start">
+      
+          <h2><strong><?= strtoupper($company_name) ?></strong></h2>
+          <?= $company_addr ?>
+          <div class="d-flex justify-content-between">
+              <div>  Phone: <?= $company_phone ?></div>
+              <div>    Email: <?= $company_email ?></div>
+          </div>
+         <div class="d-flex justify-content-between">
+              <div>   GSTIN: <strong><?= $company_gst ?></strong></div>
+              <div>   State: <?= $company_state ?></div>
+          </div>
+       
+        
+        
+      
+        </div>
+        
+      </div>
     </div>
+      <!-- Expense Info -->
+    <table class="table table-bordered mb-3 mt-2">
+      <tr>
+        <td><span class="info-label">Expense For:</span> </td>
+        <td><span class="info-label">Expense Details:</span></td>
+      </tr>
+      <tr>
+        <td><?= expense_category($category_id)[0]['category_name'] ?? '-' ?></td>
+        <td>No: <strong><?= $invoice_no ?></strong><br>Date: <strong><?= date('d/m/Y', strtotime($invoice_date)) ?></strong></td>
+      </tr>
+    </table>
+
+  
+
+  <!-- Item Table -->
+  <table class="table table-bordered ">
+    <thead>
+      <tr>
+        <th style="width:5%">#</th>
+        <th>Description of Goods</th>
+        <th style="width:15%" class="text-center">Quantity</th>
+        <th style="width:20%" class="text-center">Price/Unit (₹)</th>
+        <th style="width:20%" class="text-center">Amount (₹)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <?php 
+      if (!empty($items)) {
+          $i = 1;
+          foreach ($items as $row) {
+              echo "<tr>
+                  <td class='text-center'>{$i}</td>
+                  <td>{$row['item_name']}</td>
+                  <td class='text-center'>{$row['quantity']}</td>
+                  <td class='text-end'>₹ ".number_format($row['rate'],2)."</td>
+                  <td class='text-end'>₹ ".number_format($row['amount'],2)."</td>
+              </tr>";
+              $i++;
+          }
+      } else {
+          echo "<tr><td colspan='5' class='text-center'>No items found</td></tr>";
+      }
+      ?>
+      <tr>
+        <td colspan="4" class="text-end fw-bold">Total</td>
+        <td class="text-end fw-bold">₹ <?= number_format($tot_amount, 2) ?></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <!-- Totals and Amount in Words -->
+  <table width="100%" class="mt-3">
+    <tr>
+      <td width="70%">
+        <strong>Amount in Words:</strong><br>
+        <?= ucwords(convert_number_to_words(round($tot_amount))) ?> Rupees only
+      </td>
+      <td width="30%" align="right">
+        <strong>Paid:</strong> ₹ <?= number_format($tot_amount, 2) ?>
+      </td>
+    </tr>
+  </table>
+
+  <!-- Signature Section -->
+  <div class="signature mt-4">
+    <p><strong>For <?= strtoupper($company_name) ?>:</strong></p>
+    <img src="../../assets/images/signature.png" alt="signature"><br>
+    <span>Authorized Signatory</span>
+  </div>
+
 </div>
 
 </body>
 </html>
-
 

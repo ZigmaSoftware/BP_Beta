@@ -269,40 +269,49 @@ if (!empty($customer_name)) {
 
     if ($result->status) {
         foreach ($result->data as $value) {
-            $value['company_id'] = company_name($value['company_id'])[0]['company_name'] ?? '';
-            $proj                = project_name($value['project_id'])[0] ?? [];
-            $value['project_id'] = ($proj['project_code'] ?? '') . " / " . ($proj['project_name'] ?? '');
-            $value['category_id'] = expense_category($value['category_id'])[0]['category_name'] ?? '';
-            $value['payment_type_id'] = payment_type($value['payment_type_id'])[0]['payment_name'] ?? '';
-            $value['customer_id']= customers($value['customer_id'])[0]['customer_name'] ?? '';
-            
-            
-             // ✅ Approval Status display logic (plain colored text)
-            if (isset($value['approval_status'])) {
-                switch ($value['approval_status']) {
-                    case '1':
-                        $value['approval_status'] = "<span style='color: green; font-weight: 600;'>Approved</span>";
-                        break;
-                    case '2':
-                        $value['approval_status'] = "<span style='color: red; font-weight: 600;'>Rejected</span>";
-                        break;
-                    default:
-                        $value['approval_status'] = "<span style='color: orange; font-weight: 600;'>Pending</span>";
-                        break;
-                }
-            }
+    $value['company_id'] = company_name($value['company_id'])[0]['company_name'] ?? '';
+    $proj                = project_name($value['project_id'])[0] ?? [];
+    $value['project_id'] = ($proj['project_code'] ?? '') . " / " . ($proj['project_name'] ?? '');
+    $value['category_id'] = expense_category($value['category_id'])[0]['category_name'] ?? '';
+    $value['payment_type_id'] = payment_type($value['payment_type_id'])[0]['payment_name'] ?? '';
+    $value['customer_id'] = customers($value['customer_id'])[0]['customer_name'] ?? '';
 
-            $btn_view    = btn_views($folder_name, $value['unique_id']);
-            $btn_print   = btn_prints($folder_name, $value['unique_id']);
-            $btn_upload  = btn_docs($folder_name, $value['unique_id']);
-            $btn_update  = btn_update($folder_name, $value['unique_id']);
-            $btn_delete  = btn_delete($folder_name, $value['unique_id']);
-
-            $value['unique_id'] = $btn_update . $btn_delete . $btn_upload;
-            array_splice($value, -1, 0, [$btn_view, $btn_print]);
-
-            $data[] = array_values($value);
+    // ✅ Approval Status display logic
+    $approval_raw = $value['approval_status'];
+    if (isset($value['approval_status'])) {
+        switch ($value['approval_status']) {
+            case '1':
+                $value['approval_status'] = "<span style='color: green; font-weight: 600;'>Approved</span>";
+                break;
+            case '2':
+                $value['approval_status'] = "<span style='color: red; font-weight: 600;'>Rejected</span>";
+                break;
+            default:
+                $value['approval_status'] = "<span style='color: orange; font-weight: 600;'>Pending</span>";
+                break;
         }
+    }
+
+    // ✅ Button generation
+    $btn_view   = btn_views($folder_name, $value['unique_id']);
+    $btn_print  = btn_prints($folder_name, $value['unique_id']);
+    $btn_upload = btn_docs($folder_name, $value['unique_id']);
+    $btn_update = btn_update($folder_name, $value['unique_id']);
+    $btn_delete = btn_delete($folder_name, $value['unique_id']);
+
+    // ✅ Hide edit & delete buttons if Approved or Rejected
+    if ($approval_raw == '1' || $approval_raw == '2') {
+        $btn_update = '';
+        $btn_delete = '';
+    }
+
+    // ✅ Maintain order of buttons
+    $value['unique_id'] = $btn_update . $btn_delete . $btn_upload;
+    array_splice($value, -1, 0, [$btn_view, $btn_print]);
+
+    $data[] = array_values($value);
+}
+
 
         echo json_encode([
             "draw"            => intval($draw),

@@ -205,6 +205,83 @@ switch ($action) {
             error_log("insert: " . print_r($action_obj, true) . "\n", 3, "insert.log");
             $msg        = "create";
         }
+        
+        // ==========================================================
+    // 🔸 LOGIC: Auto-Close PO if all items are fully received
+    // ==========================================================
+    if (!empty($purchase_order_no)) {
+        $sub_table = "srn_sublist"; 
+    
+        // 1️⃣ Fetch all PO items (order_qty, now_received_qty, update_qty)
+        $columns = [
+            "item_code",
+            "order_qty",
+            "now_received_qty",
+            "update_qty"
+        ];
+        $table_details = [$sub_table, $columns];
+        $where = [
+            "po_unique_id" => $purchase_order_no,
+            "is_delete" => 0
+        ];
+    
+        $items_obj = $pdo->select($table_details, $where);
+    
+        $all_completed = true;
+    
+        if ($items_obj->status && !empty($items_obj->data)) {
+            foreach ($items_obj->data as $row) {
+                $order_qty  = (float)$row['order_qty'];
+                $received   = (float)$row['now_received_qty'];
+                $updated    = (float)$row['update_qty'];
+        
+                error_log("Item: {$row['item_code']} | order=$order_qty | received=$received | update=$updated\n", 3, "logs/po_close_log.txt");
+        
+                // 🧠 Revised logic:
+                // - If received == 0 → assume already closed (ignore)
+                // - Otherwise, ensure received + updated >= order_qty
+                if (!($received == 0 || round($received + $updated, 2) >= round($order_qty, 2))) {
+                    $all_completed = false;
+                    break;
+                }
+            }
+        } else {
+            $all_completed = false;
+            error_log("⚠️ No items found for PO $po_unique_id in sublist\n", 3, "logs/po_close_log.txt");
+        }
+
+    
+        // 2️⃣ If all items completed, mark PO as closed
+        if ($all_completed) {
+            // Find matching PO unique_id from main srn's PO number (for cross-verification)
+            $po_result = $pdo->select(
+                ["purchase_order", ["unique_id"]],
+                ["unique_id" => $purchase_order_no, "is_delete" => 0]
+            );
+    
+            if ($po_result->status && !empty($po_result->data[0]['unique_id'])) {
+                $po_uid = $po_result->data[0]['unique_id'];
+    
+                $po_update = [
+                    "closed"        => 1,
+                    "closed_by"     => $user_id,
+                    "closed_date"   => $date
+                ];
+    
+                $update_result = $pdo->update("purchase_order", $po_update, ["unique_id" => $po_uid]);
+                if ($update_result->status) {
+                    error_log("✅ PO auto-closed successfully: $po_uid\n", 3, "logs/po_close_log.txt");
+                } else {
+                    error_log("❌ Failed to close PO $po_uid: " . $update_result->error . "\n", 3, "logs/po_close_log.txt");
+                }
+            } else {
+                error_log("⚠️ No matching PO found for srn’s PO number: $purchase_order_no\n", 3, "logs/po_close_log.txt");
+            }
+        } else {
+            error_log("🟡 PO not closed – pending quantities exist for PO $purchase_order_no\n", 3, "logs/po_close_log.txt");
+        }
+    }
+
     
         echo json_encode([
             "status" => $action_obj->status,
@@ -778,18 +855,18 @@ break;
                     $status = '<span class="text-danger fw-bold">Check & Approval Rejected</span>';
                     // No update/delete buttons if checked
                     $btn_update = btn_update($folder_name, $value['unique_id']);
-                    $btn_delete = $is_admin ? btn_delete($folder_name, $value['unique_id']) : '';
+                    $btn_delete = btn_delete($folder_name, $value['unique_id']);
                     $btns = $btn_update . $btn_delete;
                 } elseif ($srn_check_status == 2 && $srn_approve_status == 0) {
                     $status = '<span class="text-danger fw-bold">Check Rejected</span>';
                     // No update/delete buttons if checked
                     $btn_update = btn_update($folder_name, $value['unique_id']);
-                    $btn_delete = $is_admin ? btn_delete($folder_name, $value['unique_id']) : '';
+                    $btn_delete = btn_delete($folder_name, $value['unique_id']);
                     $btns = $btn_update . $btn_delete;
                 } else {
                     // Only show buttons if not checked or approved
                     $btn_update = btn_update($folder_name, $value['unique_id']);
-                    $btn_delete = $is_admin ? btn_delete($folder_name, $value['unique_id']) : '';
+                    $btn_delete = btn_delete($folder_name, $value['unique_id']);
                     $btns = $btn_update . $btn_delete;
                     $status = '<span class="text-warning fw-bold">Pending</span>';
                 }
@@ -874,6 +951,52 @@ break;
             $sql        = $action_obj->sql;
             $msg        = "error";
         }
+        
+        // ==========================================================
+        // 🔸 LOGIC: Reopen PO when SRN is deleted
+        // ==========================================================
+        if ($action_obj->status) {
+        
+            // Step 1️⃣: Fetch SRN details before deletion
+            $srn_result = $pdo->select(
+                ["srn", ["po_number"]],
+                ["unique_id" => $unique_id, "is_delete" => 1]
+            );
+        
+            if ($srn_result->status && !empty($srn_result->data[0]['po_number'])) {
+                $po_number = $srn_result->data[0]['po_number'];
+        
+                // Step 2️⃣: Find matching PO unique_id from purchase_order table
+                $po_result = $pdo->select(
+                    ["purchase_order", ["unique_id"]],
+                    ["unique_id" => $po_number, "is_delete" => 0]
+                );
+        
+                if ($po_result->status && !empty($po_result->data[0]['unique_id'])) {
+                    $po_uid = $po_result->data[0]['unique_id'];
+        
+                    // Step 3️⃣: Update PO closed = 0 (reopen)
+                    $po_update = [
+                        "closed" => 0,
+                        "updated_user_id" => $user_id,
+                        "updated" => $date
+                    ];
+        
+                    $update_result = $pdo->update("purchase_order", $po_update, ["unique_id" => $po_uid]);
+        
+                    if ($update_result->status) {
+                        error_log("🔓 PO reopened due to srn deletion (PO: $po_uid, srn: $unique_id)\n", 3, "logs/po_close_log.txt");
+                    } else {
+                        error_log("⚠️ Failed to reopen PO $po_uid after srn deletion: {$update_result->error}\n", 3, "logs/po_close_log.txt");
+                    }
+                } else {
+                    error_log("⚠️ No matching PO found for srn deletion (po_number: $po_number)\n", 3, "logs/po_close_log.txt");
+                }
+            } else {
+                error_log("⚠️ No srn data found to fetch PO for reopening (unique_id: $unique_id)\n", 3, "logs/po_close_log.txt");
+            }
+        }
+
 
         $json_array   = [
             "status"    => $status,

@@ -7163,10 +7163,12 @@ function get_po_number($unique_id = '', $project_id = '', $company_id = '', $ven
         "gross_amount",
         "status",
         "lvl_2_status",
-        "lvl_3_status"
+        "lvl_3_status",
+        "closed",
+        "foreclose_status"
     ];
 
-    $where = ["is_delete" => 0];
+    $where = ["is_delete" => 0, "foreclose_status" => 0, "closed" => 0];
 
     if ($unique_id) {
         $where['unique_id'] = $unique_id;

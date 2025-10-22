@@ -1765,3 +1765,43 @@ Stack trace:
 [15-Oct-2025 09:51:27 UTC] PHP Notice:  Undefined variable: packing_forwarding_display in /home/ie9owkuzkgd4/public_html/blue_planet_erp/folders/grn_new/view.php on line 233
 [15-Oct-2025 09:51:27 UTC] PHP Notice:  Undefined variable: total_gst_amount in /home/ie9owkuzkgd4/public_html/blue_planet_erp/folders/grn_new/view.php on line 238
 [15-Oct-2025 09:51:27 UTC] PHP Notice:  Undefined variable: gross_amount in /home/ie9owkuzkgd4/public_html/blue_planet_erp/folders/grn_new/view.php on line 243
+[18-Oct-2025 12:54:38 Asia/Kolkata] PDOException: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'acc_year' cannot be null in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:579
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(579): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/grn_new/crud.php(1036): db->insert('grn_sublist', Array)
+#2 {main}
+[18-Oct-2025 12:54:38 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'po_unique_id' in 'WHERE' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/grn_new/crud.php(1057): db->select(Array, Array)
+#2 {main}
+[18-Oct-2025 12:54:39 Asia/Kolkata] PDOException: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'acc_year' cannot be null in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:579
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(579): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/grn_new/crud.php(1036): db->insert('grn_sublist', Array)
+#2 {main}
+[18-Oct-2025 12:54:39 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'po_unique_id' in 'WHERE' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/grn_new/crud.php(1057): db->select(Array, Array)
+#2 {main}
+[18-Oct-2025 12:55:35 Asia/Kolkata] PDOException: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'acc_year' cannot be null in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:579
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(579): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/grn_new/crud.php(1036): db->insert('grn_sublist', Array)
+#2 {main}
+[18-Oct-2025 12:55:36 Asia/Kolkata] PDOException: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'acc_year' cannot be null in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:579
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(579): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/grn_new/crud.php(1036): db->insert('grn_sublist', Array)
+#2 {main}
+[18-Oct-2025 13:03:23 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'po_unique_id' in 'WHERE' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/grn_new/crud.php(1057): db->select(Array, Array)
+#2 {main}
+[18-Oct-2025 13:07:29 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'po_unique_id' in 'WHERE' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/grn_new/crud.php(1057): db->select(Array, Array)
+#2 {main}

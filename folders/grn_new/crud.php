@@ -54,128 +54,184 @@ $date = date('Y-m-d H:i:s', time());
 switch ($action) {
     
     case "createupdate":
-        $supplier_invoice_no    = $_POST["supplier_invoice_no"];
-        $invoice_date           = $_POST["invoice_date"];
-        $inward_type            = $_POST["inward_type"];
-        $dc_no                  = $_POST["dc_no"];
-        $po_number              = $_POST["po_number"];
-        $eway_bill_no           = $_POST["eway_bill_no"];
-        $eway_bill_date         = $_POST["eway_bill_date"];
-        $paf                    = $_POST["paf"];
-        $freight                = $_POST["freight"];
-        $other                  = $_POST["other"];
-        $round                  = $_POST["round"];
-        $gst_paf                = $_POST["gst_paf"];
-        $gst_freight            = $_POST["gst_freight"];
-        $gst_other              = $_POST["gst_other"];
-        $supplier_name          = $_POST["supplier_id"];        
-        $po_status              = $_POST["po_status"];
-        $company_id             = $_POST["company_id"];
-        $project_id             = $_POST["project_id"];
-        $purchase_order_no      = $_POST["purchase_order_no"];
-		$description            = isset($_POST["description"]) && trim($_POST["description"]) !== '' ? $_POST["description"] : null;
-        $unique_id = !empty($_POST["unique_id"]) ? $_POST["unique_id"] : unique_id();
-        $screen_unique_id = !empty($_POST["screen_unique_id"]) ? $_POST["screen_unique_id"] : unique_id();
-        
-        $today                  = date("Y-m-d");
 
-        $labelData = [];
-        $labelData = fetch_grn_number($table);
-        error_log("labelData: " . print_r($labelData, true) . "\n", 3, "logs/logs/cu_error_log.txt");
+    $supplier_invoice_no    = $_POST["supplier_invoice_no"];
+    $invoice_date           = $_POST["invoice_date"];
+    $inward_type            = $_POST["inward_type"];
+    $dc_no                  = $_POST["dc_no"];
+    $po_number              = $_POST["po_number"];
+    $eway_bill_no           = $_POST["eway_bill_no"];
+    $eway_bill_date         = $_POST["eway_bill_date"];
+    $paf                    = $_POST["paf"];
+    $freight                = $_POST["freight"];
+    $other                  = $_POST["other"];
+    $round                  = $_POST["round"];
+    $gst_paf                = $_POST["gst_paf"];
+    $gst_freight            = $_POST["gst_freight"];
+    $gst_other              = $_POST["gst_other"];
+    $supplier_name          = $_POST["supplier_id"];        
+    $po_status              = $_POST["po_status"];
+    $company_id             = $_POST["company_id"];
+    $project_id             = $_POST["project_id"];
+    $purchase_order_no      = $_POST["purchase_order_no"];
+    $description            = isset($_POST["description"]) && trim($_POST["description"]) !== '' ? $_POST["description"] : null;
+    $unique_id              = !empty($_POST["unique_id"]) ? $_POST["unique_id"] : unique_id();
+    $screen_unique_id       = !empty($_POST["screen_unique_id"]) ? $_POST["screen_unique_id"] : unique_id();
+    $po_unique_id           = $_POST["po_unique_id"] ?? ''; // 🔸 Add this if not already in POST
 
-        $company_data                   = company_code($company_id);
-        $company_name                   = $company_data[0]['company_code'];
+    $today = date("Y-m-d");
 
-        error_log("company_label: " . $company_name . "\n", 3, "logs/cu_error_log.txt");
+    $labelData = fetch_grn_number($table);
+    $company_data = company_code($company_id);
+    $company_name = $company_data[0]['company_code'] ?? 'ZIGMA';
 
+    if (!empty($_POST["unique_id"])) {
+        // Existing GRN
+        $existing_grn = $pdo->select([$table, ["grn_number"]], ['unique_id' => $_POST["unique_id"], 'is_delete' => 0]);
+        $grn_number = ($existing_grn->status && !empty($existing_grn->data[0]['grn_number']))
+            ? $existing_grn->data[0]['grn_number']
+            : generateGRN($company_name, $labelData);
+        $grn_doc = generateDoc($labelData);
+    } else {
+        // New GRN
+        $grn_number = generateGRN($company_name, $labelData);
+        $grn_doc = generateDoc($labelData);
+    }
 
-        if (!empty($_POST["unique_id"])) {
-            // If unique_id exists, fetch the existing grn_number for this unique_id
-            $existing_grn = $pdo->select([$table, ["grn_number"]], ['unique_id' => $_POST["unique_id"], 'is_delete' => 0]);
-            if ($existing_grn->status && !empty($existing_grn->data[0]['grn_number'])) {
-            $grn_number = $existing_grn->data[0]['grn_number'];
-            } else {
-            // Fallback: generate a new GRN if not found (should not happen in normal update)
-            $grn_number = generateGRN($company_name, $labelData);
-            }
-            
-            if ($existing_doc->status && !empty($existing_doc->data[0]['doc_no'])) {
-                $grn_doc = $existing_srn->data[0]['doc_no'];
-            } else {
-            // Fallback: generate a new srn if not found (should not happen in normal update)
-                $grn_doc = generateDoc($labelData);
-            }
-        } else {
-            // No unique_id, so generate a new GRN number
-            $grn_number = generateGRN($company_name, $labelData);
-            $grn_doc = generateDoc($labelData);
-        }
-        error_log("grn_no: " . $grn_number . "\n", 3, "logs/cu_error_log.txt");
-       
+    $columns = [
+        "entry_date"            => $today,  
+        "supplier_invoice_no"   => $supplier_invoice_no,
+        "screen_unique_id"      => $screen_unique_id,
+        "eway_bill_no"          => $eway_bill_no,
+        "invoice_date"          => $invoice_date,
+        "inward_type"           => $inward_type,
+        "eway_bill_date"        => $eway_bill_date,
+        "dc_no"                 => $dc_no,
+        "po_number"             => $purchase_order_no,
+        "grn_number"            => $grn_number,
+        "paf"                   => $paf,
+        "freight"               => $freight,
+        "other"                 => $other,
+        "round"                 => $round,
+        "gst_paf"               => $gst_paf,
+        "gst_freight"           => $gst_freight,
+        "gst_other"             => $gst_other,
+        "supplier_name"         => $supplier_name,
+        "po_status"             => $po_status,
+        "check_status"          => 0,
+        "approve_status"        => 0,
+        "description"           => $description,
+        "company_id"            => $company_id,
+        "project_id"            => $project_id,  
+        "created_user_id"       => $user_id,
+        "created"               => $date,
+        "unique_id"             => $unique_id
+    ];
+
+    // Check if GRN already exists
+    $check_query = [$table, ["COUNT(unique_id) AS count"]];
+    $check_where = 'unique_id = "' . $unique_id . '" AND is_delete = 0';
+    $action_obj  = $pdo->select($check_query, $check_where);
+
+    if ($action_obj->status && $action_obj->data[0]["count"]) {
+        unset($columns["unique_id"], $columns["created_user_id"], $columns["created"], $columns["entry_date"]);
+        $columns["updated_user_id"] = $user_id;
+        $columns["updated"] = $date;
+
+        $update_where = ["unique_id" => $unique_id];
+        $action_obj = $pdo->update($table, $columns, $update_where);
+        $msg = "update";
+    } else {
+        $action_obj = $pdo->insert($table, $columns);
+        $msg = "create";
+    }
+
+    // ==========================================================
+    // 🔸 LOGIC: Auto-Close PO if all items are fully received
+    // ==========================================================
+    if (!empty($purchase_order_no)) {
+        $sub_table = "grn_sublist"; 
+    
+        // 1️⃣ Fetch all PO items (order_qty, now_received_qty, update_qty)
         $columns = [
-            "entry_date"            => $today,  
-            "supplier_invoice_no"   => $supplier_invoice_no,
-            // "mode_type"             => $mode_type,
-            "screen_unique_id" => $screen_unique_id,
-            "eway_bill_no"          => $eway_bill_no,
-            "invoice_date"          => $invoice_date,
-            "inward_type"           => $inward_type,
-            "eway_bill_date"        => $eway_bill_date,
-            "dc_no"                 => $dc_no,
-            "po_number"             => $purchase_order_no,
-            "grn_number"            => $grn_number,
-            "paf"                   => $paf,
-            "freight"               => $freight,
-            "other"                 => $other,
-            "round"                 => $round,
-            "gst_paf"               => $gst_paf,
-            "gst_freight"           => $gst_freight,
-            "gst_other"             => $gst_other,
-            "supplier_name"         => $supplier_name,
-            "po_status"             => $po_status,
-            "check_status"          => 0, // Default value for check status
-            "checked_by"            => null,
-            "check_remarks"         => null,
-            "approve_status"        => 0, // Default value for approve status
-            "approved_by"           => null,
-            "status_remark"         => null,
-            "description"           => $description,
-            "company_id"            => $company_id,
-            "project_id"            => $project_id,  
-            "created_user_id"       => $user_id,
-            "created"               => $date,
-            "unique_id"             => $unique_id
+            "item_code",
+            "order_qty",
+            "now_received_qty",
+            "update_qty"
+        ];
+        $table_details = [$sub_table, $columns];
+        $where = [
+            "po_unique_id" => $purchase_order_no,
+            "is_delete" => 0
         ];
     
-        // Check if it exists
-        $check_query = [$table, ["COUNT(unique_id) AS count"]];
-        $check_where = 'unique_id = "' . $unique_id . '" AND is_delete = 0';
+        $items_obj = $pdo->select($table_details, $where);
     
-        $action_obj = $pdo->select($check_query, $check_where);
+        $all_completed = true;
     
-        if ($action_obj->status && $action_obj->data[0]["count"]) {
-            // Update mode — do NOT change pr_number
-            unset($columns["unique_id"], $columns["created_user_id"], $columns["created"], $columns["customer_id"], $columns["company_id"], $columns["entry_date"]);
-            $columns["updated_user_id"] = $user_id;
-            $columns["updated"]         = $date;
-    
-            $update_where = ["unique_id" => $unique_id];
-            $action_obj   = $pdo->update($table, $columns, $update_where);
-            $msg          = "update";
+        if ($items_obj->status && !empty($items_obj->data)) {
+            foreach ($items_obj->data as $row) {
+                $order_qty  = (float)$row['order_qty'];
+                $received   = (float)$row['now_received_qty'];
+                $updated    = (float)$row['update_qty'];
+        
+                error_log("Item: {$row['item_code']} | order=$order_qty | received=$received | update=$updated\n", 3, "logs/po_close_log.txt");
+        
+                // 🧠 Revised logic:
+                // - If received == 0 → assume already closed (ignore)
+                // - Otherwise, ensure received + updated >= order_qty
+                if (!($received == 0 || round($received + $updated, 2) >= round($order_qty, 2))) {
+                    $all_completed = false;
+                    break;
+                }
+            }
         } else {
-            // Now insert
-            $action_obj = $pdo->insert($table, $columns);
-            $msg        = "create";
+            $all_completed = false;
+            error_log("⚠️ No items found for PO $po_unique_id in sublist\n", 3, "logs/po_close_log.txt");
         }
+
     
-        echo json_encode([
-            "status" => $action_obj->status,
-            "data"   => ["unique_id" => $unique_id],
-            "error"  => $action_obj->error,
-            "msg"    => $msg,
-            "sql"    => $action_obj->sql
-        ]);
-    break;
+        // 2️⃣ If all items completed, mark PO as closed
+        if ($all_completed) {
+            // Find matching PO unique_id from main GRN's PO number (for cross-verification)
+            $po_result = $pdo->select(
+                ["purchase_order", ["unique_id"]],
+                ["unique_id" => $purchase_order_no, "is_delete" => 0]
+            );
+    
+            if ($po_result->status && !empty($po_result->data[0]['unique_id'])) {
+                $po_uid = $po_result->data[0]['unique_id'];
+    
+                $po_update = [
+                    "closed"        => 1,
+                    "closed_by"     => $user_id,
+                    "closed_date"   => $date
+                ];
+    
+                $update_result = $pdo->update("purchase_order", $po_update, ["unique_id" => $po_uid]);
+                if ($update_result->status) {
+                    error_log("✅ PO auto-closed successfully: $po_uid\n", 3, "logs/po_close_log.txt");
+                } else {
+                    error_log("❌ Failed to close PO $po_uid: " . $update_result->error . "\n", 3, "logs/po_close_log.txt");
+                }
+            } else {
+                error_log("⚠️ No matching PO found for GRN’s PO number: $purchase_order_no\n", 3, "logs/po_close_log.txt");
+            }
+        } else {
+            error_log("🟡 PO not closed – pending quantities exist for PO $purchase_order_no\n", 3, "logs/po_close_log.txt");
+        }
+    }
+
+    echo json_encode([
+        "status" => $action_obj->status,
+        "data"   => ["unique_id" => $unique_id],
+        "error"  => $action_obj->error,
+        "msg"    => $msg,
+        "sql"    => $action_obj->sql
+    ]);
+
+break;
+
 
 case "update_qty":
     $screen_unique_id = $_POST['screen_unique_id'];
@@ -700,11 +756,11 @@ break;
                 } elseif ($grn_approve_status == 1) {
                     $status = '<span class="text-success fw-bold">Approved</span>';
                     // Only show delete button if admin
-                    $btns = $is_admin ? btn_delete($folder_name, $value['unique_id']) : '';
+                    $btns = btn_delete($folder_name, $value['unique_id']);
                 } else {
                     // Only show buttons if not checked or approved
                     $btn_update = btn_update($folder_name, $value['unique_id']);
-                    $btn_delete = $is_admin ? btn_delete($folder_name, $value['unique_id']) : '';
+                    $btn_delete = btn_delete($folder_name, $value['unique_id']);
                     $btns = $btn_update . $btn_delete;
                     $status = '<span class="text-warning fw-bold">Pending</span>';
                 }
@@ -786,6 +842,52 @@ break;
             $sql        = $action_obj->sql;
             $msg        = "error";
         }
+        
+        // ==========================================================
+        // 🔸 LOGIC: Reopen PO when GRN is deleted
+        // ==========================================================
+        if ($action_obj->status) {
+        
+            // Step 1️⃣: Fetch GRN details before deletion
+            $grn_result = $pdo->select(
+                ["grn", ["po_number"]],
+                ["unique_id" => $unique_id, "is_delete" => 1]
+            );
+        
+            if ($grn_result->status && !empty($grn_result->data[0]['po_number'])) {
+                $po_number = $grn_result->data[0]['po_number'];
+        
+                // Step 2️⃣: Find matching PO unique_id from purchase_order table
+                $po_result = $pdo->select(
+                    ["purchase_order", ["unique_id"]],
+                    ["unique_id" => $po_number, "is_delete" => 0]
+                );
+        
+                if ($po_result->status && !empty($po_result->data[0]['unique_id'])) {
+                    $po_uid = $po_result->data[0]['unique_id'];
+        
+                    // Step 3️⃣: Update PO closed = 0 (reopen)
+                    $po_update = [
+                        "closed" => 0,
+                        "updated_user_id" => $user_id,
+                        "updated" => $date
+                    ];
+        
+                    $update_result = $pdo->update("purchase_order", $po_update, ["unique_id" => $po_uid]);
+        
+                    if ($update_result->status) {
+                        error_log("🔓 PO reopened due to GRN deletion (PO: $po_uid, GRN: $unique_id)\n", 3, "logs/po_close_log.txt");
+                    } else {
+                        error_log("⚠️ Failed to reopen PO $po_uid after GRN deletion: {$update_result->error}\n", 3, "logs/po_close_log.txt");
+                    }
+                } else {
+                    error_log("⚠️ No matching PO found for GRN deletion (po_number: $po_number)\n", 3, "logs/po_close_log.txt");
+                }
+            } else {
+                error_log("⚠️ No GRN data found to fetch PO for reopening (unique_id: $unique_id)\n", 3, "logs/po_close_log.txt");
+            }
+        }
+
 
         $json_array   = [
             "status"    => $status,

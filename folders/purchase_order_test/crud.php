@@ -232,7 +232,8 @@ switch ($action) {
         "foreclose_status",
         "unique_id",
         "status as edit_status",
-        "purchase_order_type"
+        "purchase_order_type",
+        "closed"
     ];
 
     $table_details = [
@@ -331,6 +332,7 @@ switch ($action) {
             // ============================================================
             $foreclose_btn    = "<span class='badge bg-secondary text-light fs-4'>Not Available</span>";
             $foreclose_status = $value['foreclose_status'] ?? 0;
+            $closed_status    = $value['closed'] ?? 0;
             $po_id            = $value['unique_id'];
             $po_sc_id         = fetch_po_sc_unique_id($po_id);
             $po_type_id       = $value['purchase_order_type'] ?? '';
@@ -448,7 +450,10 @@ switch ($action) {
 
             if ($foreclose_status == 1) {
                 $foreclose_btn = "<span class='badge bg-success text-light fs-4'>Foreclosed</span>";
-            } elseif ($all_received_done) {
+            } elseif ($closed_status == 1) {
+                $foreclose_btn = "<span class='badge bg-success text-light fs-4'>Closed</span>";
+            }
+            elseif ($all_received_done) {
                 $foreclose_btn = "<span class='badge bg-info text-dark fs-4'>{$receipt_label} Raised</span>";
                 // auto-mark as foreclosed
                 

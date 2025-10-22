@@ -2813,3 +2813,29 @@ Stack trace:
 #3 /home/ie9owkuzkgd4/public_html/blue_planet_beta/body.php(84): include('/home/ie9owkuzk...')
 #4 /home/ie9owkuzkgd4/public_html/blue_planet_beta/index.php(76): include('/home/ie9owkuzk...')
 #5 {main}
+[18-Oct-2025 09:42:26 Asia/Kolkata] PHP Notice:  Undefined variable: doc_type in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/pending_pr_report/list.php on line 7
+[18-Oct-2025 09:42:26 Asia/Kolkata] PHP Notice:  Undefined variable: requisition_type in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/pending_pr_report/list.php on line 20
+[18-Oct-2025 09:42:26 Asia/Kolkata] PHP Notice:  session_start(): A session had already been started - ignoring in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/comfun.php on line 1349
+[18-Oct-2025 09:42:26 Asia/Kolkata] PHP Notice:  session_start(): A session had already been started - ignoring in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/comfun.php on line 1349
+[18-Oct-2025 13:03:40 Asia/Kolkata] PHP Notice:  Undefined variable: doc_type in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/pending_pr_report/list.php on line 7
+[18-Oct-2025 13:03:40 Asia/Kolkata] PHP Notice:  Undefined variable: requisition_type in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/pending_pr_report/list.php on line 20
+[18-Oct-2025 13:03:40 Asia/Kolkata] PHP Notice:  session_start(): A session had already been started - ignoring in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/comfun.php on line 1349
+[18-Oct-2025 13:03:40 Asia/Kolkata] PHP Notice:  session_start(): A session had already been started - ignoring in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/comfun.php on line 1349
+[22-Oct-2025 16:31:51 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'department_type' in 'SELECT' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/comfun.php(38): db->select(Array, Array)
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/task_category/form.php(10): department_type()
+#3 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/task_category/create.php(5): include('/home/ie9owkuzk...')
+#4 /home/ie9owkuzkgd4/public_html/blue_planet_beta/body.php(84): include('/home/ie9owkuzk...')
+#5 /home/ie9owkuzkgd4/public_html/blue_planet_beta/index.php(76): include('/home/ie9owkuzk...')
+#6 {main}
+[22-Oct-2025 16:31:55 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'department_type' in 'SELECT' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/comfun.php(38): db->select(Array, Array)
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/task_category/form.php(10): department_type()
+#3 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/task_category/create.php(5): include('/home/ie9owkuzk...')
+#4 /home/ie9owkuzkgd4/public_html/blue_planet_beta/body.php(84): include('/home/ie9owkuzk...')
+#5 /home/ie9owkuzkgd4/public_html/blue_planet_beta/index.php(76): include('/home/ie9owkuzk...')
+#6 {main}
