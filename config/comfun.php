@@ -3932,12 +3932,11 @@ function user_name_value($unique_id = "")
     }
 }
 // BID Type Function
-function staff_name($unique_id = "",$staff_name = "")
+function staff_name($unique_id = "", $staff_name = "", $project_name = "")
 {
     global $pdo;
 
-    $table_name    = "staff_test";
-    $where         = [];
+    $table_name = "staff_test";
     $table_columns = [
         "unique_id",
         "staff_name",
@@ -3948,40 +3947,41 @@ function staff_name($unique_id = "",$staff_name = "")
         "work_location"
     ];
 
-    $table_details = [
-        $table_name,
-        $table_columns
+    // Base condition
+    $where = [
+        "is_delete" => 0,
+        "is_active" => 1,
+        "relieve_status !=" => "Inactive"
     ];
 
-    // $where     = [
-    //     "is_active" => 1,
-    //     "is_delete" => 0
-    //     ""
-    // ];
-
-    $where = "is_delete = 0 and is_active = 1 and relieve_status != 'Inactive'";
-
     if ($unique_id) {
-        $table_details      = $table_name;
-        $where              = [];
+        $where = [];
+        $where["is_active"] = 1;
         $where["unique_id"] = $unique_id;
     }
 
     if ($staff_name) {
-        $table_details      = $table_name;
-        $where              = [];
+        $where = [];
+        $where["is_active"] = 1;
         $where["staff_name"] = $staff_name;
     }
 
-    $staff_name_list = $pdo->select($table_details, $where);
+    if ($project_name) {
+        $where = [];
+        $where["is_active"] = 1;
+        $where["work_location"] = $project_name;
+    }
+
+    $staff_name_list = $pdo->select([$table_name, $table_columns], $where);
 
     if ($staff_name_list->status) {
         return $staff_name_list->data;
     } else {
-        print_r($staff_name_list);
+        return $staff_name_list;
         return 0;
     }
 }
+
 function staff_name_bp($employee_id = "", $staff_name = "")
 {
     global $pdo;
@@ -8269,6 +8269,47 @@ function dynamic_list_exclude($table_name, $column_name, $exclude_uid = null, $m
     return array_values($data);
 }
 
+function task_category($unique_id = "", $department = "")
+{
+    global $pdo;
 
+    $table_name    = "task_category";
+    $where         = [];
+    $table_columns = [
+        "unique_id",
+        "task_category_name"
+    ];
+
+    $table_details = [
+        $table_name,
+        $table_columns
+    ];
+
+    $where     = [
+        "is_active" => 1,
+        "is_delete" => 0
+    ];
+
+    if ($unique_id) {
+
+        $where["unique_id"] .= $unique_id;
+    }
+    
+    if ($department){
+        $where["department_unique_id"] = $department;
+    }
+
+
+    $task = $pdo->select($table_details, $where);
+
+    // print_r($department);
+
+    if ($task->status) {
+        return $task->data;
+    } else {
+        print_r($task);
+        return 0;
+    }
+}
 
 

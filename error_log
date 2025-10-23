@@ -2839,3 +2839,57 @@ Stack trace:
 #4 /home/ie9owkuzkgd4/public_html/blue_planet_beta/body.php(84): include('/home/ie9owkuzk...')
 #5 /home/ie9owkuzkgd4/public_html/blue_planet_beta/index.php(76): include('/home/ie9owkuzk...')
 #6 {main}
+[23-Oct-2025 10:24:48 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'decription' in 'SELECT' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/task_category/form.php(23): db->select(Array, Array)
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/task_category/update.php(5): include('/home/ie9owkuzk...')
+#3 /home/ie9owkuzkgd4/public_html/blue_planet_beta/body.php(84): include('/home/ie9owkuzk...')
+#4 /home/ie9owkuzkgd4/public_html/blue_planet_beta/index.php(76): include('/home/ie9owkuzk...')
+#5 {main}
+[23-Oct-2025 10:25:32 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'decription' in 'SELECT' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/task_category/form.php(22): db->select(Array, Array)
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/task_category/update.php(5): include('/home/ie9owkuzk...')
+#3 /home/ie9owkuzkgd4/public_html/blue_planet_beta/body.php(84): include('/home/ie9owkuzk...')
+#4 /home/ie9owkuzkgd4/public_html/blue_planet_beta/index.php(76): include('/home/ie9owkuzk...')
+#5 {main}
+[23-Oct-2025 10:26:18 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'decription' in 'SELECT' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/task_category/form.php(26): db->select(Array, Array)
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/task_category/update.php(5): include('/home/ie9owkuzk...')
+#3 /home/ie9owkuzkgd4/public_html/blue_planet_beta/body.php(84): include('/home/ie9owkuzk...')
+#4 /home/ie9owkuzkgd4/public_html/blue_planet_beta/index.php(76): include('/home/ie9owkuzk...')
+#5 {main}
+[23-Oct-2025 11:25:25 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_beta.project_master' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/shift_roaster/form.php(69): db->select(Array, 'is_active=1 AND...')
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_beta/body.php(84): include('/home/ie9owkuzk...')
+#3 /home/ie9owkuzkgd4/public_html/blue_planet_beta/index.php(76): include('/home/ie9owkuzk...')
+#4 {main}
+[23-Oct-2025 11:26:08 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_beta.project_master' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/shift_roaster/form.php(69): db->select(Array, 'is_active=1 AND...')
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_beta/body.php(84): include('/home/ie9owkuzk...')
+#3 /home/ie9owkuzkgd4/public_html/blue_planet_beta/index.php(76): include('/home/ie9owkuzk...')
+#4 {main}
+[23-Oct-2025 15:51:13 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'task_category_unique_id' in 'SELECT' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/task_sub_category/form.php(27): db->select(Array, Array)
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/task_sub_category/update.php(5): include('/home/ie9owkuzk...')
+#3 /home/ie9owkuzkgd4/public_html/blue_planet_beta/body.php(84): include('/home/ie9owkuzk...')
+#4 /home/ie9owkuzkgd4/public_html/blue_planet_beta/index.php(76): include('/home/ie9owkuzk...')
+#5 {main}
+[23-Oct-2025 15:52:28 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'task_category_unique_id' in 'SELECT' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/task_sub_category/form.php(27): db->select(Array, Array)
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/task_sub_category/update.php(5): include('/home/ie9owkuzk...')
+#3 /home/ie9owkuzkgd4/public_html/blue_planet_beta/body.php(84): include('/home/ie9owkuzk...')
+#4 /home/ie9owkuzkgd4/public_html/blue_planet_beta/index.php(76): include('/home/ie9owkuzk...')
+#5 {main}

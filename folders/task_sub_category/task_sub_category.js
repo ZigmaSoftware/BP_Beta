@@ -1,3 +1,6 @@
+// ==========================
+// 🧠 INITIALIZATION
+// ==========================
 $(document).ready(function () {
     init_datatable(table_id, form_name, action);
 });
@@ -5,12 +8,15 @@ $(document).ready(function () {
 let ajax_url = sessionStorage.getItem("folder_crud_link");
 let list_url = sessionStorage.getItem("list_link");
 
-var form_name   = "task_category";
-var table_id    = "category_datatable";
-var action      = "datatable";
+var form_name = "task_sub_category";
+var table_id  = "sub_category_datatable";
+var action    = "datatable";
 
-function task_category_cu() {
-    let formdata = new FormData($("#task_category_form")[0]);
+// ==========================
+// 💾 CREATE / UPDATE
+// ==========================
+function task_sub_category_cu() {
+    let formdata = new FormData($("#task_sub_category_form")[0]);
     formdata.append("action", "createupdate");
 
     $.ajax({
@@ -21,13 +27,12 @@ function task_category_cu() {
         contentType: false,
         success: function (response) {
             console.log(response);
-
             let res = (typeof response === "string") ? JSON.parse(response) : response;
 
             if (res.status == 1) {
                 Swal.fire({
                     title: "Success",
-                    text: res.error,
+                    text: res.error || "Task sub-category saved successfully!",
                     icon: "success",
                     confirmButtonText: "OK",
                     timer: 1800,
@@ -37,8 +42,8 @@ function task_category_cu() {
                 });
             } else {
                 Swal.fire({
-                    title: "Failed to Add",
-                    text: "Error: " + res.error,
+                    title: "Failed",
+                    text: res.error || "Unable to save sub-category.",
                     icon: "error",
                     confirmButtonText: "OK"
                 });
@@ -61,15 +66,13 @@ function task_category_cu() {
 function init_datatable(table_id = "", form_name = "", action = "", filter_data = {}) {
     let table = $("#" + table_id);
 
-    // Destroy previous instance to avoid duplication
+    // Prevent duplicate initialization
     if ($.fn.DataTable.isDataTable(table)) {
         table.DataTable().destroy();
     }
 
-    // Base data for request
-    let data = { action: action, ...filter_data };
+    let data = Object.assign({ action: action }, filter_data);
 
-    // Initialize DataTable
     table.DataTable({
         ordering: true,
         searching: true,
@@ -81,18 +84,17 @@ function init_datatable(table_id = "", form_name = "", action = "", filter_data 
             data: data
         },
         columns: [
-            { data: "s_no", title: "S.No" },
-            { data: "department_unique_id", title: "Department" },
-            { data: "task_category_name", title: "Category Name" },
+            { data: "s_no", title: "S.No", width: "5%" },
+            { data: "department_name", title: "Department" },
+            { data: "task_category_name", title: "Category" },
+            { data: "task_sub_category_name", title: "Sub-Category" },
             { data: "description", title: "Description" },
-            // { data: "created", title: "Created On" },
-            // { data: "updated", title: "Updated On" },
-            { data: "action", title: "Action" }
+            { data: "action", title: "Action", orderable: false, searchable: false, className: "text-center" }
         ],
         order: [[0, "asc"]],
         responsive: true,
         language: {
-            emptyTable: "No categories found"
+            emptyTable: "No sub-categories found"
         }
     });
 }
@@ -100,40 +102,38 @@ function init_datatable(table_id = "", form_name = "", action = "", filter_data 
 // ==========================
 // 🔍 FILTER FUNCTION
 // ==========================
-function task_category_filter() {
-    let dept_id = $("#filter_department").val();
+function task_sub_category_filter() {
+    let dept_id  = $("#filter_department").val();
+    let cat_id   = $("#filter_category").val();
 
-    // Build FormData-like object
-    let filter_data = {
-        department: dept_id
-    };
+    let filter_data = {};
+    if (dept_id) filter_data.department = dept_id;
+    if (cat_id)  filter_data.category = cat_id;
 
-    // Re-initialize DataTable with filter
     init_datatable(table_id, form_name, action, filter_data);
 }
 
-// =========================
-// 🗑️TOGGLE FUNCTION
-// =========================
-function task_category_toggle(unique_id, element) {
+// ==========================
+// 🗑️ TOGGLE ACTIVE/INACTIVE
+// ==========================
+function task_sub_category_toggle(unique_id, current_status) {
     if (!unique_id) {
         Swal.fire({
             title: "Invalid Action",
-            text: "Unique ID missing — cannot update record status.",
+            text: "Unique ID missing — cannot change status.",
             icon: "warning",
             confirmButtonText: "OK"
         });
         return;
     }
 
-    // element now carries 0 (active) or 1 (inactive)
-    let isDeactivate = (element == 0); 
+    let isDeactivate = (current_status == 0); // 1 = active, toggle → deactivate
     let actionText   = isDeactivate ? "Deactivate" : "Activate";
     let confirmIcon  = isDeactivate ? "⚠️" : "✅";
 
     Swal.fire({
-        title: `${actionText} Category?`,
-        text: `Are you sure you want to ${actionText.toLowerCase()} this category?`,
+        title: `${actionText} Sub-Category?`,
+        text: `Are you sure you want to ${actionText.toLowerCase()} this sub-category?`,
         icon: "question",
         showCancelButton: true,
         confirmButtonColor: isDeactivate ? "#d33" : "#3085d6",
@@ -156,7 +156,7 @@ function task_category_toggle(unique_id, element) {
                     if (res.status == 1) {
                         Swal.fire({
                             title: "Success",
-                            text: res.error || `Category ${actionText.toLowerCase()}d successfully.`,
+                            text: res.error || `Sub-category ${actionText.toLowerCase()}d successfully.`,
                             icon: "success",
                             timer: 1500,
                             showConfirmButton: false
@@ -168,7 +168,7 @@ function task_category_toggle(unique_id, element) {
                     } else {
                         Swal.fire({
                             title: "Failed",
-                            text: "Error: " + (res.error || "Unable to update category status."),
+                            text: res.error || "Unable to update sub-category status.",
                             icon: "error",
                             confirmButtonText: "OK"
                         });
@@ -187,3 +187,24 @@ function task_category_toggle(unique_id, element) {
     });
 }
 
+function task_list(department){
+    let date = "";
+    if(department){
+        data = {
+            "department": department,
+            "action": "task_list"
+        }
+    }
+    
+    $.ajax({
+        type: "POST",
+        url: ajax_url,
+        data: data,
+        success: function(res){
+            $("#category").html(res);
+        },
+        error: function (xhr, status, error) {
+            console.log("error: "+error);
+        }
+    })
+}

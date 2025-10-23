@@ -1,0 +1,95 @@
+[23-Oct-2025 13:22:10 Asia/Kolkata] PDOException: SQLSTATE[HY093]: Invalid parameter number: parameter was not defined in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/task_sub_category/crud.php(127): db->select(Array, Array)
+#2 {main}
+[23-Oct-2025 13:24:58 Asia/Kolkata] PDOException: SQLSTATE[HY093]: Invalid parameter number: parameter was not defined in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/task_sub_category/crud.php(127): db->select(Array, Array)
+#2 {main}
+[23-Oct-2025 14:32:06 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'task_category_unique_id' in 'WHERE' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/task_sub_category/crud.php(57): db->select(Array, Array)
+#2 {main}
+[23-Oct-2025 14:32:06 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'task_category_unique_id' in 'INSERT INTO' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:579
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(579): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/task_sub_category/crud.php(91): db->insert('task_sub_catego...', Array)
+#2 {main}
+[23-Oct-2025 14:32:35 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'task_category_unique_id' in 'WHERE' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/task_sub_category/crud.php(57): db->select(Array, Array)
+#2 {main}
+[23-Oct-2025 14:32:35 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'task_category_unique_id' in 'INSERT INTO' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:579
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(579): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/task_sub_category/crud.php(91): db->insert('task_sub_catego...', Array)
+#2 {main}
+[23-Oct-2025 14:33:29 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'task_category_unique_id' in 'WHERE' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/task_sub_category/crud.php(57): db->select(Array, Array)
+#2 {main}
+[23-Oct-2025 14:33:29 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'task_category_unique_id' in 'INSERT INTO' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:579
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(579): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/task_sub_category/crud.php(89): db->insert('task_sub_catego...', Array)
+#2 {main}
+[23-Oct-2025 14:34:14 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'task_category_unique_id' in 'WHERE' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/task_sub_category/crud.php(57): db->select(Array, Array)
+#2 {main}
+[23-Oct-2025 14:34:14 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'task_category_unique_id' in 'INSERT INTO' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:579
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(579): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/task_sub_category/crud.php(89): db->insert('task_sub_catego...', Array)
+#2 {main}
+[23-Oct-2025 14:35:05 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'task_category_unique_id' in 'WHERE' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/task_sub_category/crud.php(57): db->select(Array, Array)
+#2 {main}
+[23-Oct-2025 14:35:05 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'task_category_unique_id' in 'INSERT INTO' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:579
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(579): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/task_sub_category/crud.php(89): db->insert('task_sub_catego...', Array)
+#2 {main}
+[23-Oct-2025 14:35:11 Asia/Kolkata] PDOException: SQLSTATE[HY093]: Invalid parameter number: parameter was not defined in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/task_sub_category/crud.php(126): db->select(Array, Array)
+#2 {main}
+[23-Oct-2025 15:40:36 Asia/Kolkata] PDOException: SQLSTATE[HY093]: Invalid parameter number: parameter was not defined in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/task_sub_category/crud.php(126): db->select(Array, Array)
+#2 {main}
+[23-Oct-2025 15:43:08 Asia/Kolkata] PDOException: SQLSTATE[HY093]: Invalid parameter number: parameter was not defined in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/task_sub_category/crud.php(126): db->select(Array, Array)
+#2 {main}
+[23-Oct-2025 15:44:07 Asia/Kolkata] PDOException: SQLSTATE[HY093]: Invalid parameter number: parameter was not defined in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/task_sub_category/crud.php(126): db->select(Array, Array)
+#2 {main}
+[23-Oct-2025 15:44:13 Asia/Kolkata] PDOException: SQLSTATE[HY093]: Invalid parameter number: parameter was not defined in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/task_sub_category/crud.php(126): db->select(Array, Array)
+#2 {main}
+[23-Oct-2025 15:44:15 Asia/Kolkata] PDOException: SQLSTATE[HY093]: Invalid parameter number: parameter was not defined in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/task_sub_category/crud.php(126): db->select(Array, Array)
+#2 {main}
+[23-Oct-2025 15:45:04 Asia/Kolkata] PDOException: SQLSTATE[HY093]: Invalid parameter number: parameter was not defined in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/task_sub_category/crud.php(126): db->select(Array, Array)
+#2 {main}

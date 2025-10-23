@@ -2671,3 +2671,226 @@ Stack trace:
 #0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
 #1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_invoice/print.php(14): db->select(Array, Array)
 #2 {main}
+[23-Oct-2025 09:47:21 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'item_description' in 'SELECT' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_invoice/print.php(60): db->select(Array, Array)
+#2 {main}
+[23-Oct-2025 09:49:55 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'item_description' in 'SELECT' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_invoice/print.php(60): db->select(Array, Array)
+#2 {main}
+[23-Oct-2025 09:49:59 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'item_description' in 'SELECT' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_invoice/print.php(60): db->select(Array, Array)
+#2 {main}
+[23-Oct-2025 09:50:07 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'item_description' in 'SELECT' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_invoice/print.php(60): db->select(Array, Array)
+#2 {main}
+[23-Oct-2025 09:53:38 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'item_description' in 'SELECT' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_invoice/print.php(60): db->select(Array, Array)
+#2 {main}
+[23-Oct-2025 09:53:39 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'item_description' in 'SELECT' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_invoice/print.php(60): db->select(Array, Array)
+#2 {main}
+[23-Oct-2025 10:01:55 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'item_description' in 'SELECT' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_invoice/print.php(60): db->select(Array, Array)
+#2 {main}
+[23-Oct-2025 10:04:00 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'item_description' in 'SELECT' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_invoice/print.php(68): db->select(Array, Array)
+#2 {main}
+[23-Oct-2025 10:04:36 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'item_description' in 'SELECT' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_invoice/print.php(68): db->select(Array, Array)
+#2 {main}
+[23-Oct-2025 10:04:51 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'item_description' in 'SELECT' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_invoice/print.php(68): db->select(Array, Array)
+#2 {main}
+[23-Oct-2025 10:05:07 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'item_description' in 'SELECT' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_invoice/print.php(68): db->select(Array, Array)
+#2 {main}
+[23-Oct-2025 10:05:54 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'item_description' in 'SELECT' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_invoice/print.php(68): db->select(Array, Array)
+#2 {main}
+[23-Oct-2025 10:09:38 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'uom' in 'SELECT' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_invoice/print.php(77): db->select(Array, Array)
+#2 {main}
+[23-Oct-2025 10:09:42 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'uom' in 'SELECT' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_invoice/print.php(77): db->select(Array, Array)
+#2 {main}
+[23-Oct-2025 10:09:47 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'uom' in 'SELECT' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_invoice/print.php(77): db->select(Array, Array)
+#2 {main}
+[23-Oct-2025 10:09:55 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'uom' in 'SELECT' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_invoice/print.php(77): db->select(Array, Array)
+#2 {main}
+[23-Oct-2025 10:10:14 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'item_description' in 'SELECT' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_invoice/print.php(60): db->select(Array, Array)
+#2 {main}
+[23-Oct-2025 10:10:15 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'item_description' in 'SELECT' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_invoice/print.php(60): db->select(Array, Array)
+#2 {main}
+[23-Oct-2025 10:10:29 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'uom' in 'SELECT' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_invoice/print.php(77): db->select(Array, Array)
+#2 {main}
+[23-Oct-2025 10:11:15 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'item_description' in 'SELECT' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_invoice/print.php(68): db->select(Array, Array)
+#2 {main}
+[23-Oct-2025 10:12:08 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'item_description' in 'SELECT' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_invoice/print.php(68): db->select(Array, Array)
+#2 {main}
+[23-Oct-2025 10:12:34 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'item_description' in 'SELECT' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_invoice/print.php(68): db->select(Array, Array)
+#2 {main}
+[23-Oct-2025 10:16:03 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'item_description' in 'SELECT' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_invoice/print.php(60): db->select(Array, Array)
+#2 {main}
+[23-Oct-2025 10:28:42 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'item_description' in 'SELECT' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_invoice/print.php(60): db->select(Array, Array)
+#2 {main}
+[23-Oct-2025 10:31:16 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'item_description' in 'SELECT' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_invoice/print.php(60): db->select(Array, Array)
+#2 {main}
+[23-Oct-2025 10:43:38 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'item_description' in 'SELECT' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_invoice/print.php(60): db->select(Array, Array)
+#2 {main}
+[23-Oct-2025 10:43:43 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'item_description' in 'SELECT' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_invoice/print.php(60): db->select(Array, Array)
+#2 {main}
+[23-Oct-2025 05:53:38 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_invoice/print.php on line 552
+[23-Oct-2025 06:28:12 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_invoice/print.php on line 552
+[23-Oct-2025 06:28:13 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_invoice/print.php on line 552
+[23-Oct-2025 06:30:41 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_invoice/print.php on line 552
+[23-Oct-2025 06:30:52 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_invoice/print.php on line 552
+[23-Oct-2025 06:31:59 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_invoice/print.php on line 552
+[23-Oct-2025 06:35:56 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_invoice/print.php on line 552
+[23-Oct-2025 06:38:03 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_invoice/print.php on line 552
+[23-Oct-2025 12:11:44 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_beta.customer_creation' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_invoice/print.php(159): db->select(Array, Array, '', 'LIMIT 1')
+#2 {main}
+[23-Oct-2025 12:11:44 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'item_description' in 'SELECT' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_invoice/print.php(175): db->select(Array, Array)
+#2 {main}
+[23-Oct-2025 06:42:39 UTC] PHP Fatal error:  Cannot redeclare get_item_name() (previously declared in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_invoice/print.php:19) in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_invoice/crud.php on line 1151
+[23-Oct-2025 06:43:39 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_invoice/print.php on line 540
+[23-Oct-2025 06:43:45 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_invoice/print.php on line 540
+[23-Oct-2025 06:45:37 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_invoice/print.php on line 540
+[23-Oct-2025 06:48:59 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_invoice/print.php on line 540
+[23-Oct-2025 06:53:15 UTC] PHP Fatal error:  Cannot redeclare get_item_name() (previously declared in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_invoice/print.php:17) in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_invoice/crud.php on line 1151
+[23-Oct-2025 06:53:18 UTC] PHP Fatal error:  Cannot redeclare get_item_name() (previously declared in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_invoice/print.php:17) in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_invoice/crud.php on line 1151
+[23-Oct-2025 06:53:20 UTC] PHP Fatal error:  Cannot redeclare get_item_name() (previously declared in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_invoice/print.php:17) in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_invoice/crud.php on line 1151
+[23-Oct-2025 06:53:22 UTC] PHP Fatal error:  Cannot redeclare get_item_name() (previously declared in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_invoice/print.php:17) in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_invoice/crud.php on line 1151
+[23-Oct-2025 06:53:39 UTC] PHP Fatal error:  Cannot redeclare get_item_name() (previously declared in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_invoice/print.php:17) in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_invoice/crud.php on line 1151
+[23-Oct-2025 06:53:41 UTC] PHP Fatal error:  Cannot redeclare get_item_name() (previously declared in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_invoice/print.php:17) in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_invoice/crud.php on line 1151
+[23-Oct-2025 06:54:00 UTC] PHP Fatal error:  Cannot redeclare get_item_name() (previously declared in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_invoice/print.php:17) in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_invoice/crud.php on line 1151
+[23-Oct-2025 06:55:14 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_invoice/print.php on line 552
+[23-Oct-2025 12:25:52 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'item_description' in 'SELECT' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_invoice/print.php(60): db->select(Array, Array)
+#2 {main}
+[23-Oct-2025 12:37:21 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'item_description' in 'SELECT' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_invoice/print.php(60): db->select(Array, Array)
+#2 {main}
+[23-Oct-2025 07:17:19 UTC] PHP Fatal error:  Cannot redeclare get_item_name() (previously declared in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_invoice/print.php:19) in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_invoice/crud.php on line 1151
+[23-Oct-2025 12:48:02 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'item_description' in 'SELECT' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_invoice/print.php(70): db->select(Array, Array)
+#2 {main}
+[23-Oct-2025 07:18:34 UTC] PHP Fatal error:  Cannot redeclare get_item_name() (previously declared in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_invoice/print.php:19) in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_invoice/crud.php on line 1151
+[23-Oct-2025 07:18:58 UTC] PHP Fatal error:  Cannot redeclare get_item_name() (previously declared in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_invoice/print.php:19) in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_invoice/crud.php on line 1151
+[23-Oct-2025 07:19:02 UTC] PHP Fatal error:  Cannot redeclare get_item_name() (previously declared in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_invoice/print.php:19) in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_invoice/crud.php on line 1151
+[23-Oct-2025 07:19:12 UTC] PHP Fatal error:  Cannot redeclare get_item_name() (previously declared in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_invoice/print.php:19) in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_invoice/crud.php on line 1151
+[23-Oct-2025 07:19:18 UTC] PHP Fatal error:  Cannot redeclare get_item_name() (previously declared in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_invoice/print.php:19) in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_invoice/crud.php on line 1151
+[23-Oct-2025 07:19:29 UTC] PHP Fatal error:  Cannot redeclare get_item_name() (previously declared in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_invoice/print.php:19) in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_invoice/crud.php on line 1151
+[23-Oct-2025 07:20:46 UTC] PHP Fatal error:  Cannot redeclare get_item_name() (previously declared in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_invoice/print.php:6) in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_invoice/crud.php on line 1151
+[23-Oct-2025 12:51:07 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'item_description' in 'SELECT' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_invoice/print.php(77): db->select(Array, Array)
+#2 {main}
+[23-Oct-2025 12:52:26 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'item_description' in 'SELECT' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_invoice/print.php(66): db->select(Array, Array)
+#2 {main}
+[23-Oct-2025 12:56:10 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'item_description' in 'SELECT' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_invoice/print.php(70): db->select(Array, Array)
+#2 {main}
+[23-Oct-2025 12:56:12 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'item_description' in 'SELECT' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_invoice/print.php(70): db->select(Array, Array)
+#2 {main}
+[23-Oct-2025 07:26:24 UTC] PHP Fatal error:  Cannot redeclare get_item_name() (previously declared in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_invoice/print.php:19) in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_invoice/crud.php on line 1151
+[23-Oct-2025 07:36:26 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_invoice/print.php on line 552
+[23-Oct-2025 07:36:28 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_invoice/print.php on line 552
+[23-Oct-2025 07:36:29 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_invoice/print.php on line 552
+[23-Oct-2025 07:36:30 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_invoice/print.php on line 552
+[23-Oct-2025 07:36:31 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_invoice/print.php on line 552
+[23-Oct-2025 07:36:31 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_invoice/print.php on line 552
+[23-Oct-2025 07:36:31 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_invoice/print.php on line 552
+[23-Oct-2025 07:36:31 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_invoice/print.php on line 552
+[23-Oct-2025 07:36:31 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_invoice/print.php on line 552
+[23-Oct-2025 07:38:31 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_invoice/print.php on line 552
+[23-Oct-2025 07:38:54 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_invoice/print.php on line 552
+[23-Oct-2025 07:38:56 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_invoice/print.php on line 552
+[23-Oct-2025 09:04:50 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/sales_invoice/print.php on line 552

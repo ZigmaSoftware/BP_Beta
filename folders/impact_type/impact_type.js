@@ -1,16 +1,22 @@
+// ==========================
+// 🧠 INITIALIZATION
+// ==========================
+let ajax_url = sessionStorage.getItem("folder_crud_link");
+let list_url = sessionStorage.getItem("list_link");
+
+var form_name = "impact_type";
+var table_id  = "impact_datatable";
+var action    = "datatable";
+
 $(document).ready(function () {
     init_datatable(table_id, form_name, action);
 });
 
-let ajax_url = sessionStorage.getItem("folder_crud_link");
-let list_url = sessionStorage.getItem("list_link");
-
-var form_name   = "task_category";
-var table_id    = "category_datatable";
-var action      = "datatable";
-
-function task_category_cu() {
-    let formdata = new FormData($("#task_category_form")[0]);
+// ==========================
+// 💾 CREATE / UPDATE
+// ==========================
+function impact_type_cu() {
+    let formdata = new FormData($("#impact_type_form")[0]);
     formdata.append("action", "createupdate");
 
     $.ajax({
@@ -27,7 +33,7 @@ function task_category_cu() {
             if (res.status == 1) {
                 Swal.fire({
                     title: "Success",
-                    text: res.error,
+                    text: res.error || "Impact Type saved successfully!",
                     icon: "success",
                     confirmButtonText: "OK",
                     timer: 1800,
@@ -37,8 +43,8 @@ function task_category_cu() {
                 });
             } else {
                 Swal.fire({
-                    title: "Failed to Add",
-                    text: "Error: " + res.error,
+                    title: "Failed",
+                    text: res.error || "Unable to save Impact Type.",
                     icon: "error",
                     confirmButtonText: "OK"
                 });
@@ -61,15 +67,14 @@ function task_category_cu() {
 function init_datatable(table_id = "", form_name = "", action = "", filter_data = {}) {
     let table = $("#" + table_id);
 
-    // Destroy previous instance to avoid duplication
+    // Prevent duplicate initialization
     if ($.fn.DataTable.isDataTable(table)) {
         table.DataTable().destroy();
     }
 
-    // Base data for request
-    let data = { action: action, ...filter_data };
+    // Base data for request (avoid ES6 spread for old browsers)
+    let data = Object.assign({ action: action }, filter_data || {});
 
-    // Initialize DataTable
     table.DataTable({
         ordering: true,
         searching: true,
@@ -81,59 +86,50 @@ function init_datatable(table_id = "", form_name = "", action = "", filter_data 
             data: data
         },
         columns: [
-            { data: "s_no", title: "S.No" },
-            { data: "department_unique_id", title: "Department" },
-            { data: "task_category_name", title: "Category Name" },
+            { data: "s_no", title: "S.No", width: "5%" },
+            { data: "impact_type", title: "Impact Type Name" },
             { data: "description", title: "Description" },
-            // { data: "created", title: "Created On" },
-            // { data: "updated", title: "Updated On" },
-            { data: "action", title: "Action" }
+            { data: "status_label", title: "Status", className: "text-center" },
+            { data: "action", title: "Action", className: "text-center", orderable: false, searchable: false }
         ],
         order: [[0, "asc"]],
         responsive: true,
         language: {
-            emptyTable: "No categories found"
+            emptyTable: "No Impact Types found"
         }
     });
 }
 
 // ==========================
-// 🔍 FILTER FUNCTION
+// 🔍 FILTER FUNCTION (optional)
 // ==========================
-function task_category_filter() {
-    let dept_id = $("#filter_department").val();
-
-    // Build FormData-like object
-    let filter_data = {
-        department: dept_id
-    };
-
-    // Re-initialize DataTable with filter
-    init_datatable(table_id, form_name, action, filter_data);
+function impact_type_filter() {
+    // In this module, there’s no department filter, 
+    // but keeping structure for future expansion.
+    init_datatable(table_id, form_name, action);
 }
 
-// =========================
-// 🗑️TOGGLE FUNCTION
-// =========================
-function task_category_toggle(unique_id, element) {
+// ==========================
+// 🗑️ TOGGLE ACTIVE/INACTIVE
+// ==========================
+function impact_type_toggle(unique_id, current_status) {
     if (!unique_id) {
         Swal.fire({
             title: "Invalid Action",
-            text: "Unique ID missing — cannot update record status.",
+            text: "Unique ID missing — cannot change status.",
             icon: "warning",
             confirmButtonText: "OK"
         });
         return;
     }
 
-    // element now carries 0 (active) or 1 (inactive)
-    let isDeactivate = (element == 0); 
+    let isDeactivate = (current_status == 0); // 1 = active → deactivate
     let actionText   = isDeactivate ? "Deactivate" : "Activate";
     let confirmIcon  = isDeactivate ? "⚠️" : "✅";
 
     Swal.fire({
-        title: `${actionText} Category?`,
-        text: `Are you sure you want to ${actionText.toLowerCase()} this category?`,
+        title: `${actionText} Impact Type?`,
+        text: `Are you sure you want to ${actionText.toLowerCase()} this Impact Type?`,
         icon: "question",
         showCancelButton: true,
         confirmButtonColor: isDeactivate ? "#d33" : "#3085d6",
@@ -156,7 +152,7 @@ function task_category_toggle(unique_id, element) {
                     if (res.status == 1) {
                         Swal.fire({
                             title: "Success",
-                            text: res.error || `Category ${actionText.toLowerCase()}d successfully.`,
+                            text: res.error || `Impact Type ${actionText.toLowerCase()}d successfully.`,
                             icon: "success",
                             timer: 1500,
                             showConfirmButton: false
@@ -168,7 +164,7 @@ function task_category_toggle(unique_id, element) {
                     } else {
                         Swal.fire({
                             title: "Failed",
-                            text: "Error: " + (res.error || "Unable to update category status."),
+                            text: res.error || "Unable to update Impact Type status.",
                             icon: "error",
                             confirmButtonText: "OK"
                         });
@@ -186,4 +182,3 @@ function task_category_toggle(unique_id, element) {
         }
     });
 }
-
