@@ -1,6 +1,6 @@
     <?php
 // ===========================================================
-// 🧠 IMPACT TYPE CRUD HANDLER
+// 🧠 PROBLEM TYPE CRUD HANDLER
 // ===========================================================
 
 // Get folder name dynamically
@@ -8,7 +8,7 @@ $folder_name = explode("/", $_SERVER['PHP_SELF']);
 $folder_name = $folder_name[count($folder_name) - 2];
 
 // Table name
-$table = "impact_type";
+$table = "problem_type";
 
 // Include config
 include '../../config/dbconfig.php';
@@ -30,14 +30,14 @@ $action_obj = (object)[
 switch ($action):
     
     case "createupdate":
-        $impact_type  = trim($_POST['impact_type'] ?? '');
+        $problem_type  = trim($_POST['problem_type'] ?? '');
         $description  = trim($_POST['description'] ?? '');
         $active       = $_POST['active'] ?? 1;
         $update_form  = $_POST['update_form'] ?? 0;
         $unique_id    = !empty($_POST['unique_id']) ? $_POST['unique_id'] : unique_id();
     
-        if (empty($impact_type)) {
-            $action_obj->error = "Impact Type name cannot be empty.";
+        if (empty($problem_type)) {
+            $action_obj->error = "Problem Type name cannot be empty.";
             echo json_encode($action_obj);
             break;
         }
@@ -45,20 +45,20 @@ switch ($action):
         // Build columns
         $columns = [
             "unique_id"   => $unique_id,
-            "impact_type" => $impact_type,
+            "problem_type" => $problem_type,
             "description" => $description,
             "is_active"   => $active
         ];
     
         // Check duplicate (same name)
-        $dup_check = $pdo->select([$table, ["COUNT(*) as cnt"]], ["impact_type" => $impact_type, "is_delete" => 0]);
+        $dup_check = $pdo->select([$table, ["COUNT(*) as cnt"]], ["problem_type" => $problem_type, "is_delete" => 0]);
         $exists = $dup_check->data[0]['cnt'] ?? 0;
     
         if ($update_form != 0) {
             // Update mode
             if ($exists == 0) {
                 $action_obj->status = 0;
-                $action_obj->error  = "Impact Type does not exist.";
+                $action_obj->error  = "Problem Type does not exist.";
             } else {
                 $columns["updated"] = $now;
                 $columns["updated_user_id"] = $user_id;
@@ -66,16 +66,16 @@ switch ($action):
                 $update_result = $pdo->update($table, $columns, ["unique_id" => $unique_id]);
                 if ($update_result->status) {
                     $action_obj->status = 1;
-                    $action_obj->error  = "Impact Type updated successfully.";
+                    $action_obj->error  = "Problem Type updated successfully.";
                 } else {
-                    $action_obj->error  = "Failed to update Impact Type.";
+                    $action_obj->error  = "Failed to update Problem Type.";
                 }
             }
         } else {
             // Insert mode
             if ($exists > 0) {
                 $action_obj->status = 0;
-                $action_obj->error  = "Impact Type already exists.";
+                $action_obj->error  = "Problem Type already exists.";
             } else {
                 $columns["created"] = $now;
                 $columns["created_user_id"] = $user_id;
@@ -85,9 +85,9 @@ switch ($action):
                 error_log(print_r($insert_result, true) . "\n", 3, "insert.log");
                 if ($insert_result->status) {
                     $action_obj->status = 1;
-                    $action_obj->error  = "Impact Type created successfully.";
+                    $action_obj->error  = "Problem Type created successfully.";
                 } else {
-                    $action_obj->error  = "Failed to create Impact Type.";
+                    $action_obj->error  = "Failed to create Problem Type.";
                 }
             }
         }
@@ -103,7 +103,7 @@ switch ($action):
         $columns = [
             "@a:=@a+1 AS s_no",
             "t.unique_id",
-            "t.impact_type",
+            "t.problem_type",
             "t.description",
             "t.is_active as status_label",
             "t.is_active"
@@ -156,9 +156,9 @@ switch ($action):
     
             if ($update_result->status) {
                 $action_obj->status = 1;
-                $action_obj->error  = "Impact Type " . ($mode === "activate" ? "activated" : "deactivated") . " successfully.";
+                $action_obj->error  = "Problem Type " . ($mode === "activate" ? "activated" : "deactivated") . " successfully.";
             } else {
-                $action_obj->error = "Failed to update Impact Type status.";
+                $action_obj->error = "Failed to update Problem Type status.";
             }
         } else {
             $action_obj->error = "Invalid request — missing unique ID or mode.";

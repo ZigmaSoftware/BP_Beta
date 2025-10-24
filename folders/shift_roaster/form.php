@@ -171,7 +171,7 @@ $project_options  = select_option($project_options,"Select the Project Name",$pr
                             <!-- Buttons -->
                             <div class="form-group row btn-action">
                                 <div class="col-md-12">
-                                    <?php echo btn_createupdate($folder_name_org, $unique_id, $btn_text); ?>
+                                    <?php // echo btn_createupdate($folder_name_org, $unique_id, $btn_text); ?>
                                     <?php echo btn_cancel($btn_cancel); ?>
                                 </div>
                             </div>

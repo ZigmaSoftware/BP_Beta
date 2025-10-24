@@ -2893,3 +2893,30 @@ Stack trace:
 #3 /home/ie9owkuzkgd4/public_html/blue_planet_beta/body.php(84): include('/home/ie9owkuzk...')
 #4 /home/ie9owkuzkgd4/public_html/blue_planet_beta/index.php(76): include('/home/ie9owkuzk...')
 #5 {main}
+[24-Oct-2025 15:00:22 Asia/Kolkata] PDOException: SQLSTATE[HY093]: Invalid parameter number: parameter was not defined in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/comfun.php(3975): db->select(Array, Array)
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/periodic_creation/form.php(53): staff_name()
+#3 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/periodic_creation/create.php(5): include('/home/ie9owkuzk...')
+#4 /home/ie9owkuzkgd4/public_html/blue_planet_beta/body.php(84): include('/home/ie9owkuzk...')
+#5 /home/ie9owkuzkgd4/public_html/blue_planet_beta/index.php(76): include('/home/ie9owkuzk...')
+#6 {main}
+[24-Oct-2025 15:00:58 Asia/Kolkata] PDOException: SQLSTATE[HY093]: Invalid parameter number: parameter was not defined in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/comfun.php(3975): db->select(Array, Array)
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/periodic_creation/form.php(53): staff_name()
+#3 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/periodic_creation/create.php(5): include('/home/ie9owkuzk...')
+#4 /home/ie9owkuzkgd4/public_html/blue_planet_beta/body.php(84): include('/home/ie9owkuzk...')
+#5 /home/ie9owkuzkgd4/public_html/blue_planet_beta/index.php(76): include('/home/ie9owkuzk...')
+#6 {main}
+[24-Oct-2025 15:01:12 Asia/Kolkata] PDOException: SQLSTATE[HY093]: Invalid parameter number: parameter was not defined in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/comfun.php(3975): db->select(Array, Array)
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/periodic_creation/form.php(53): staff_name()
+#3 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/periodic_creation/create.php(5): include('/home/ie9owkuzk...')
+#4 /home/ie9owkuzkgd4/public_html/blue_planet_beta/body.php(84): include('/home/ie9owkuzk...')
+#5 /home/ie9owkuzkgd4/public_html/blue_planet_beta/index.php(76): include('/home/ie9owkuzk...')
+#6 {main}

@@ -1,401 +1,270 @@
-[15-Jun-2025 17:14:29 Asia/Kolkata] PHP Notice:  Undefined variable: department_name in /home/ie9owkuzkgd4/public_html/g_admin/folders/periodic_creation/crud.php on line 210
-[15-Jun-2025 17:14:29 Asia/Kolkata] PHP Notice:  Undefined variable: action_btn in /home/ie9owkuzkgd4/public_html/g_admin/folders/periodic_creation/crud.php on line 234
-[15-Jun-2025 17:14:29 Asia/Kolkata] PHP Notice:  Undefined variable: action_btn in /home/ie9owkuzkgd4/public_html/g_admin/folders/periodic_creation/crud.php on line 234
-[15-Jun-2025 17:14:29 Asia/Kolkata] PHP Notice:  Undefined variable: action_btn in /home/ie9owkuzkgd4/public_html/g_admin/folders/periodic_creation/crud.php on line 234
-[15-Jun-2025 17:14:29 Asia/Kolkata] PHP Notice:  Undefined variable: action_btn in /home/ie9owkuzkgd4/public_html/g_admin/folders/periodic_creation/crud.php on line 234
-[15-Jun-2025 17:14:29 Asia/Kolkata] PHP Notice:  Undefined variable: action_btn in /home/ie9owkuzkgd4/public_html/g_admin/folders/periodic_creation/crud.php on line 234
-[15-Jun-2025 17:14:29 Asia/Kolkata] PHP Notice:  Undefined variable: action_btn in /home/ie9owkuzkgd4/public_html/g_admin/folders/periodic_creation/crud.php on line 234
-[15-Jun-2025 17:14:29 Asia/Kolkata] PHP Notice:  Undefined variable: action_btn in /home/ie9owkuzkgd4/public_html/g_admin/folders/periodic_creation/crud.php on line 234
-[15-Jun-2025 17:14:29 Asia/Kolkata] PHP Notice:  Undefined variable: action_btn in /home/ie9owkuzkgd4/public_html/g_admin/folders/periodic_creation/crud.php on line 234
-[15-Jun-2025 17:14:29 Asia/Kolkata] PHP Notice:  Undefined variable: action_btn in /home/ie9owkuzkgd4/public_html/g_admin/folders/periodic_creation/crud.php on line 234
-[15-Jun-2025 17:14:29 Asia/Kolkata] PHP Notice:  Undefined variable: action_btn in /home/ie9owkuzkgd4/public_html/g_admin/folders/periodic_creation/crud.php on line 234
-[21-Jun-2025 16:48:41 Asia/Kolkata] PHP Notice:  Undefined variable: department_name in /home/ie9owkuzkgd4/public_html/g_admin/folders/periodic_creation/crud.php on line 210
-[21-Jun-2025 16:48:41 Asia/Kolkata] PHP Notice:  Undefined variable: action_btn in /home/ie9owkuzkgd4/public_html/g_admin/folders/periodic_creation/crud.php on line 234
-[21-Jun-2025 16:48:41 Asia/Kolkata] PHP Notice:  Undefined variable: action_btn in /home/ie9owkuzkgd4/public_html/g_admin/folders/periodic_creation/crud.php on line 234
-[21-Jun-2025 16:48:41 Asia/Kolkata] PHP Notice:  Undefined variable: action_btn in /home/ie9owkuzkgd4/public_html/g_admin/folders/periodic_creation/crud.php on line 234
-[21-Jun-2025 16:48:41 Asia/Kolkata] PHP Notice:  Undefined variable: action_btn in /home/ie9owkuzkgd4/public_html/g_admin/folders/periodic_creation/crud.php on line 234
-[21-Jun-2025 16:48:41 Asia/Kolkata] PHP Notice:  Undefined variable: action_btn in /home/ie9owkuzkgd4/public_html/g_admin/folders/periodic_creation/crud.php on line 234
-[21-Jun-2025 16:48:41 Asia/Kolkata] PHP Notice:  Undefined variable: action_btn in /home/ie9owkuzkgd4/public_html/g_admin/folders/periodic_creation/crud.php on line 234
-[21-Jun-2025 16:48:41 Asia/Kolkata] PHP Notice:  Undefined variable: action_btn in /home/ie9owkuzkgd4/public_html/g_admin/folders/periodic_creation/crud.php on line 234
-[21-Jun-2025 16:48:41 Asia/Kolkata] PHP Notice:  Undefined variable: action_btn in /home/ie9owkuzkgd4/public_html/g_admin/folders/periodic_creation/crud.php on line 234
-[21-Jun-2025 16:48:41 Asia/Kolkata] PHP Notice:  Undefined variable: action_btn in /home/ie9owkuzkgd4/public_html/g_admin/folders/periodic_creation/crud.php on line 234
-[21-Jun-2025 16:48:41 Asia/Kolkata] PHP Notice:  Undefined variable: action_btn in /home/ie9owkuzkgd4/public_html/g_admin/folders/periodic_creation/crud.php on line 234
-[26-Jun-2025 17:35:35 Asia/Kolkata] PHP Notice:  Undefined variable: department_name in /home/ie9owkuzkgd4/public_html/g_admin/folders/periodic_creation/crud.php on line 210
-[26-Jun-2025 17:35:35 Asia/Kolkata] PHP Notice:  Undefined variable: action_btn in /home/ie9owkuzkgd4/public_html/g_admin/folders/periodic_creation/crud.php on line 234
-[26-Jun-2025 17:35:35 Asia/Kolkata] PHP Notice:  Undefined variable: action_btn in /home/ie9owkuzkgd4/public_html/g_admin/folders/periodic_creation/crud.php on line 234
-[26-Jun-2025 17:35:35 Asia/Kolkata] PHP Notice:  Undefined variable: action_btn in /home/ie9owkuzkgd4/public_html/g_admin/folders/periodic_creation/crud.php on line 234
-[26-Jun-2025 17:35:35 Asia/Kolkata] PHP Notice:  Undefined variable: action_btn in /home/ie9owkuzkgd4/public_html/g_admin/folders/periodic_creation/crud.php on line 234
-[26-Jun-2025 17:35:35 Asia/Kolkata] PHP Notice:  Undefined variable: action_btn in /home/ie9owkuzkgd4/public_html/g_admin/folders/periodic_creation/crud.php on line 234
-[26-Jun-2025 17:35:35 Asia/Kolkata] PHP Notice:  Undefined variable: action_btn in /home/ie9owkuzkgd4/public_html/g_admin/folders/periodic_creation/crud.php on line 234
-[26-Jun-2025 17:35:35 Asia/Kolkata] PHP Notice:  Undefined variable: action_btn in /home/ie9owkuzkgd4/public_html/g_admin/folders/periodic_creation/crud.php on line 234
-[26-Jun-2025 17:35:35 Asia/Kolkata] PHP Notice:  Undefined variable: action_btn in /home/ie9owkuzkgd4/public_html/g_admin/folders/periodic_creation/crud.php on line 234
-[26-Jun-2025 17:35:35 Asia/Kolkata] PHP Notice:  Undefined variable: action_btn in /home/ie9owkuzkgd4/public_html/g_admin/folders/periodic_creation/crud.php on line 234
-[26-Jun-2025 17:35:35 Asia/Kolkata] PHP Notice:  Undefined variable: action_btn in /home/ie9owkuzkgd4/public_html/g_admin/folders/periodic_creation/crud.php on line 234
-[02-Jul-2025 16:56:21 Asia/Kolkata] PHP Notice:  Undefined variable: department_name in /home/ie9owkuzkgd4/public_html/g_admin/folders/periodic_creation/crud.php on line 210
-[02-Jul-2025 16:56:21 Asia/Kolkata] PHP Notice:  Undefined variable: action_btn in /home/ie9owkuzkgd4/public_html/g_admin/folders/periodic_creation/crud.php on line 234
-[02-Jul-2025 16:56:21 Asia/Kolkata] PHP Notice:  Undefined variable: action_btn in /home/ie9owkuzkgd4/public_html/g_admin/folders/periodic_creation/crud.php on line 234
-[02-Jul-2025 16:56:21 Asia/Kolkata] PHP Notice:  Undefined variable: action_btn in /home/ie9owkuzkgd4/public_html/g_admin/folders/periodic_creation/crud.php on line 234
-[02-Jul-2025 16:56:21 Asia/Kolkata] PHP Notice:  Undefined variable: action_btn in /home/ie9owkuzkgd4/public_html/g_admin/folders/periodic_creation/crud.php on line 234
-[02-Jul-2025 16:56:21 Asia/Kolkata] PHP Notice:  Undefined variable: action_btn in /home/ie9owkuzkgd4/public_html/g_admin/folders/periodic_creation/crud.php on line 234
-[02-Jul-2025 16:56:21 Asia/Kolkata] PHP Notice:  Undefined variable: action_btn in /home/ie9owkuzkgd4/public_html/g_admin/folders/periodic_creation/crud.php on line 234
-[02-Jul-2025 16:56:21 Asia/Kolkata] PHP Notice:  Undefined variable: action_btn in /home/ie9owkuzkgd4/public_html/g_admin/folders/periodic_creation/crud.php on line 234
-[02-Jul-2025 16:56:21 Asia/Kolkata] PHP Notice:  Undefined variable: action_btn in /home/ie9owkuzkgd4/public_html/g_admin/folders/periodic_creation/crud.php on line 234
-[02-Jul-2025 16:56:21 Asia/Kolkata] PHP Notice:  Undefined variable: action_btn in /home/ie9owkuzkgd4/public_html/g_admin/folders/periodic_creation/crud.php on line 234
-[02-Jul-2025 16:56:21 Asia/Kolkata] PHP Notice:  Undefined variable: action_btn in /home/ie9owkuzkgd4/public_html/g_admin/folders/periodic_creation/crud.php on line 234
-[09-Jul-2025 14:25:38 Asia/Kolkata] PHP Notice:  Undefined variable: department_name in /home/ie9owkuzkgd4/public_html/g_admin/folders/periodic_creation/crud.php on line 210
-[09-Jul-2025 14:25:38 Asia/Kolkata] PHP Notice:  Undefined variable: action_btn in /home/ie9owkuzkgd4/public_html/g_admin/folders/periodic_creation/crud.php on line 234
-[09-Jul-2025 14:25:38 Asia/Kolkata] PHP Notice:  Undefined variable: action_btn in /home/ie9owkuzkgd4/public_html/g_admin/folders/periodic_creation/crud.php on line 234
-[09-Jul-2025 14:25:38 Asia/Kolkata] PHP Notice:  Undefined variable: action_btn in /home/ie9owkuzkgd4/public_html/g_admin/folders/periodic_creation/crud.php on line 234
-[09-Jul-2025 14:25:38 Asia/Kolkata] PHP Notice:  Undefined variable: action_btn in /home/ie9owkuzkgd4/public_html/g_admin/folders/periodic_creation/crud.php on line 234
-[09-Jul-2025 14:25:38 Asia/Kolkata] PHP Notice:  Undefined variable: action_btn in /home/ie9owkuzkgd4/public_html/g_admin/folders/periodic_creation/crud.php on line 234
-[09-Jul-2025 14:25:38 Asia/Kolkata] PHP Notice:  Undefined variable: action_btn in /home/ie9owkuzkgd4/public_html/g_admin/folders/periodic_creation/crud.php on line 234
-[09-Jul-2025 14:25:38 Asia/Kolkata] PHP Notice:  Undefined variable: action_btn in /home/ie9owkuzkgd4/public_html/g_admin/folders/periodic_creation/crud.php on line 234
-[09-Jul-2025 14:25:38 Asia/Kolkata] PHP Notice:  Undefined variable: action_btn in /home/ie9owkuzkgd4/public_html/g_admin/folders/periodic_creation/crud.php on line 234
-[09-Jul-2025 14:25:38 Asia/Kolkata] PHP Notice:  Undefined variable: action_btn in /home/ie9owkuzkgd4/public_html/g_admin/folders/periodic_creation/crud.php on line 234
-[09-Jul-2025 14:25:38 Asia/Kolkata] PHP Notice:  Undefined variable: action_btn in /home/ie9owkuzkgd4/public_html/g_admin/folders/periodic_creation/crud.php on line 234
-[14-Jul-2025 12:55:02 Asia/Kolkata] PHP Notice:  Undefined variable: department_name in /home/ie9owkuzkgd4/public_html/g_admin/folders/periodic_creation/crud.php on line 210
-[14-Jul-2025 12:55:02 Asia/Kolkata] PHP Notice:  Undefined variable: action_btn in /home/ie9owkuzkgd4/public_html/g_admin/folders/periodic_creation/crud.php on line 234
-[14-Jul-2025 12:55:02 Asia/Kolkata] PHP Notice:  Undefined variable: action_btn in /home/ie9owkuzkgd4/public_html/g_admin/folders/periodic_creation/crud.php on line 234
-[14-Jul-2025 12:55:02 Asia/Kolkata] PHP Notice:  Undefined variable: action_btn in /home/ie9owkuzkgd4/public_html/g_admin/folders/periodic_creation/crud.php on line 234
-[14-Jul-2025 12:55:02 Asia/Kolkata] PHP Notice:  Undefined variable: action_btn in /home/ie9owkuzkgd4/public_html/g_admin/folders/periodic_creation/crud.php on line 234
-[14-Jul-2025 12:55:02 Asia/Kolkata] PHP Notice:  Undefined variable: action_btn in /home/ie9owkuzkgd4/public_html/g_admin/folders/periodic_creation/crud.php on line 234
-[14-Jul-2025 12:55:02 Asia/Kolkata] PHP Notice:  Undefined variable: action_btn in /home/ie9owkuzkgd4/public_html/g_admin/folders/periodic_creation/crud.php on line 234
-[14-Jul-2025 12:55:02 Asia/Kolkata] PHP Notice:  Undefined variable: action_btn in /home/ie9owkuzkgd4/public_html/g_admin/folders/periodic_creation/crud.php on line 234
-[14-Jul-2025 12:55:02 Asia/Kolkata] PHP Notice:  Undefined variable: action_btn in /home/ie9owkuzkgd4/public_html/g_admin/folders/periodic_creation/crud.php on line 234
-[14-Jul-2025 12:55:02 Asia/Kolkata] PHP Notice:  Undefined variable: action_btn in /home/ie9owkuzkgd4/public_html/g_admin/folders/periodic_creation/crud.php on line 234
-[14-Jul-2025 12:55:02 Asia/Kolkata] PHP Notice:  Undefined variable: action_btn in /home/ie9owkuzkgd4/public_html/g_admin/folders/periodic_creation/crud.php on line 234
-[16-Jul-2025 11:08:15 Asia/Kolkata] PHP Notice:  Undefined variable: department_name in /home/ie9owkuzkgd4/public_html/g_admin/folders/periodic_creation/crud.php on line 210
-[16-Jul-2025 11:08:15 Asia/Kolkata] PHP Notice:  Undefined variable: action_btn in /home/ie9owkuzkgd4/public_html/g_admin/folders/periodic_creation/crud.php on line 234
-[16-Jul-2025 11:08:15 Asia/Kolkata] PHP Notice:  Undefined variable: action_btn in /home/ie9owkuzkgd4/public_html/g_admin/folders/periodic_creation/crud.php on line 234
-[16-Jul-2025 11:08:15 Asia/Kolkata] PHP Notice:  Undefined variable: action_btn in /home/ie9owkuzkgd4/public_html/g_admin/folders/periodic_creation/crud.php on line 234
-[16-Jul-2025 11:08:15 Asia/Kolkata] PHP Notice:  Undefined variable: action_btn in /home/ie9owkuzkgd4/public_html/g_admin/folders/periodic_creation/crud.php on line 234
-[16-Jul-2025 11:08:15 Asia/Kolkata] PHP Notice:  Undefined variable: action_btn in /home/ie9owkuzkgd4/public_html/g_admin/folders/periodic_creation/crud.php on line 234
-[16-Jul-2025 11:08:15 Asia/Kolkata] PHP Notice:  Undefined variable: action_btn in /home/ie9owkuzkgd4/public_html/g_admin/folders/periodic_creation/crud.php on line 234
-[16-Jul-2025 11:08:15 Asia/Kolkata] PHP Notice:  Undefined variable: action_btn in /home/ie9owkuzkgd4/public_html/g_admin/folders/periodic_creation/crud.php on line 234
-[16-Jul-2025 11:08:15 Asia/Kolkata] PHP Notice:  Undefined variable: action_btn in /home/ie9owkuzkgd4/public_html/g_admin/folders/periodic_creation/crud.php on line 234
-[16-Jul-2025 11:08:15 Asia/Kolkata] PHP Notice:  Undefined variable: action_btn in /home/ie9owkuzkgd4/public_html/g_admin/folders/periodic_creation/crud.php on line 234
-[16-Jul-2025 11:08:15 Asia/Kolkata] PHP Notice:  Undefined variable: action_btn in /home/ie9owkuzkgd4/public_html/g_admin/folders/periodic_creation/crud.php on line 234
-[16-Jul-2025 11:09:15 Asia/Kolkata] PHP Notice:  Undefined variable: department_name in /home/ie9owkuzkgd4/public_html/g_admin/folders/periodic_creation/crud.php on line 210
-[16-Jul-2025 11:09:15 Asia/Kolkata] PHP Notice:  Undefined variable: action_btn in /home/ie9owkuzkgd4/public_html/g_admin/folders/periodic_creation/crud.php on line 234
-[16-Jul-2025 11:09:15 Asia/Kolkata] PHP Notice:  Undefined variable: action_btn in /home/ie9owkuzkgd4/public_html/g_admin/folders/periodic_creation/crud.php on line 234
-[16-Jul-2025 11:09:15 Asia/Kolkata] PHP Notice:  Undefined variable: action_btn in /home/ie9owkuzkgd4/public_html/g_admin/folders/periodic_creation/crud.php on line 234
-[16-Jul-2025 11:09:15 Asia/Kolkata] PHP Notice:  Undefined variable: action_btn in /home/ie9owkuzkgd4/public_html/g_admin/folders/periodic_creation/crud.php on line 234
-[16-Jul-2025 11:09:15 Asia/Kolkata] PHP Notice:  Undefined variable: action_btn in /home/ie9owkuzkgd4/public_html/g_admin/folders/periodic_creation/crud.php on line 234
-[16-Jul-2025 11:09:15 Asia/Kolkata] PHP Notice:  Undefined variable: action_btn in /home/ie9owkuzkgd4/public_html/g_admin/folders/periodic_creation/crud.php on line 234
-[16-Jul-2025 11:09:15 Asia/Kolkata] PHP Notice:  Undefined variable: action_btn in /home/ie9owkuzkgd4/public_html/g_admin/folders/periodic_creation/crud.php on line 234
-[16-Jul-2025 11:09:15 Asia/Kolkata] PHP Notice:  Undefined variable: action_btn in /home/ie9owkuzkgd4/public_html/g_admin/folders/periodic_creation/crud.php on line 234
-[16-Jul-2025 11:09:15 Asia/Kolkata] PHP Notice:  Undefined variable: action_btn in /home/ie9owkuzkgd4/public_html/g_admin/folders/periodic_creation/crud.php on line 234
-[16-Jul-2025 11:09:15 Asia/Kolkata] PHP Notice:  Undefined variable: action_btn in /home/ie9owkuzkgd4/public_html/g_admin/folders/periodic_creation/crud.php on line 234
-[16-Jul-2025 11:09:18 Asia/Kolkata] PHP Notice:  Undefined variable: _unique_id in /home/ie9owkuzkgd4/public_html/g_admin/folders/periodic_creation/view.php on line 172
-[16-Jul-2025 11:09:18 Asia/Kolkata] PHP Notice:  Undefined index: s_no in /home/ie9owkuzkgd4/public_html/g_admin/folders/periodic_creation/view.php on line 212
-[16-Jul-2025 11:09:18 Asia/Kolkata] PHP Notice:  Undefined variable: department_name in /home/ie9owkuzkgd4/public_html/g_admin/folders/periodic_creation/view.php on line 213
-[16-Jul-2025 11:09:18 Asia/Kolkata] PHP Notice:  Trying to access array offset on value of type null in /home/ie9owkuzkgd4/public_html/g_admin/folders/periodic_creation/view.php on line 213
-[16-Jul-2025 11:09:18 Asia/Kolkata] PHP Notice:  Trying to access array offset on value of type null in /home/ie9owkuzkgd4/public_html/g_admin/folders/periodic_creation/view.php on line 213
-[16-Jul-2025 11:09:18 Asia/Kolkata] PHP Notice:  Undefined variable: category_name in /home/ie9owkuzkgd4/public_html/g_admin/folders/periodic_creation/view.php on line 216
-[16-Jul-2025 11:09:18 Asia/Kolkata] PHP Notice:  Trying to access array offset on value of type null in /home/ie9owkuzkgd4/public_html/g_admin/folders/periodic_creation/view.php on line 216
-[16-Jul-2025 11:09:18 Asia/Kolkata] PHP Notice:  Trying to access array offset on value of type null in /home/ie9owkuzkgd4/public_html/g_admin/folders/periodic_creation/view.php on line 216
-[16-Jul-2025 11:09:18 Asia/Kolkata] PHP Notice:  Undefined index: site_id in /home/ie9owkuzkgd4/public_html/g_admin/folders/periodic_creation/view.php on line 219
-[16-Jul-2025 11:09:18 Asia/Kolkata] PHP Notice:  Undefined index: level in /home/ie9owkuzkgd4/public_html/g_admin/folders/periodic_creation/view.php on line 222
-[16-Jul-2025 11:09:18 Asia/Kolkata] PHP Notice:  Undefined index: starting_count in /home/ie9owkuzkgd4/public_html/g_admin/folders/periodic_creation/view.php on line 225
-[16-Jul-2025 11:09:18 Asia/Kolkata] PHP Notice:  Undefined index: ending_count in /home/ie9owkuzkgd4/public_html/g_admin/folders/periodic_creation/view.php on line 226
-[16-Jul-2025 11:09:18 Asia/Kolkata] PHP Notice:  Undefined variable: limit in /home/ie9owkuzkgd4/public_html/g_admin/folders/periodic_creation/view.php on line 280
-[16-Jul-2025 11:09:18 Asia/Kolkata] PHP Notice:  Undefined variable: start in /home/ie9owkuzkgd4/public_html/g_admin/folders/periodic_creation/view.php on line 280
-[16-Jul-2025 11:09:26 Asia/Kolkata] PHP Notice:  Undefined variable: site_data in /home/ie9owkuzkgd4/public_html/g_admin/folders/periodic_creation/crud.php on line 814
-[16-Jul-2025 11:09:26 Asia/Kolkata] PHP Notice:  Undefined offset: 0 in /home/ie9owkuzkgd4/public_html/g_admin/folders/periodic_creation/crud.php on line 834
-[16-Jul-2025 11:09:26 Asia/Kolkata] PHP Notice:  Trying to access array offset on value of type null in /home/ie9owkuzkgd4/public_html/g_admin/folders/periodic_creation/crud.php on line 834
-[16-Jul-2025 11:15:17 Asia/Kolkata] PHP Notice:  Undefined variable: department_name in /home/ie9owkuzkgd4/public_html/g_admin/folders/periodic_creation/crud.php on line 210
-[16-Jul-2025 11:15:17 Asia/Kolkata] PHP Notice:  Undefined variable: action_btn in /home/ie9owkuzkgd4/public_html/g_admin/folders/periodic_creation/crud.php on line 234
-[16-Jul-2025 11:15:17 Asia/Kolkata] PHP Notice:  Undefined variable: action_btn in /home/ie9owkuzkgd4/public_html/g_admin/folders/periodic_creation/crud.php on line 234
-[16-Jul-2025 11:15:17 Asia/Kolkata] PHP Notice:  Undefined variable: action_btn in /home/ie9owkuzkgd4/public_html/g_admin/folders/periodic_creation/crud.php on line 234
-[16-Jul-2025 11:15:17 Asia/Kolkata] PHP Notice:  Undefined variable: action_btn in /home/ie9owkuzkgd4/public_html/g_admin/folders/periodic_creation/crud.php on line 234
-[16-Jul-2025 11:15:17 Asia/Kolkata] PHP Notice:  Undefined variable: action_btn in /home/ie9owkuzkgd4/public_html/g_admin/folders/periodic_creation/crud.php on line 234
-[16-Jul-2025 11:15:17 Asia/Kolkata] PHP Notice:  Undefined variable: action_btn in /home/ie9owkuzkgd4/public_html/g_admin/folders/periodic_creation/crud.php on line 234
-[16-Jul-2025 11:15:17 Asia/Kolkata] PHP Notice:  Undefined variable: action_btn in /home/ie9owkuzkgd4/public_html/g_admin/folders/periodic_creation/crud.php on line 234
-[16-Jul-2025 11:15:17 Asia/Kolkata] PHP Notice:  Undefined variable: action_btn in /home/ie9owkuzkgd4/public_html/g_admin/folders/periodic_creation/crud.php on line 234
-[16-Jul-2025 11:15:17 Asia/Kolkata] PHP Notice:  Undefined variable: action_btn in /home/ie9owkuzkgd4/public_html/g_admin/folders/periodic_creation/crud.php on line 234
-[16-Jul-2025 11:15:17 Asia/Kolkata] PHP Notice:  Undefined variable: action_btn in /home/ie9owkuzkgd4/public_html/g_admin/folders/periodic_creation/crud.php on line 234
-[16-Jul-2025 11:18:39 Asia/Kolkata] PHP Notice:  Undefined variable: site_data in /home/ie9owkuzkgd4/public_html/g_admin/folders/periodic_creation/crud.php on line 814
-[16-Jul-2025 11:18:39 Asia/Kolkata] PHP Notice:  Undefined offset: 0 in /home/ie9owkuzkgd4/public_html/g_admin/folders/periodic_creation/crud.php on line 834
-[16-Jul-2025 11:18:39 Asia/Kolkata] PHP Notice:  Trying to access array offset on value of type null in /home/ie9owkuzkgd4/public_html/g_admin/folders/periodic_creation/crud.php on line 834
-[16-Jul-2025 12:16:21 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_beta.periodic_creation_sub' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+[23-Oct-2025 17:59:40 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_beta.impact_type' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
 Stack trace:
 #0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
-#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/periodic_creation/crud.php(320): db->select(Array, Array, '', '0', '', 'SQL_CALC_FOUND_...')
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/impact_type/crud.php(110): db->select(Array, Array)
 #2 {main}
-[16-Jul-2025 12:21:28 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_beta.periodic_creation_sub' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+[23-Oct-2025 17:59:54 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_beta.impact_type' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
 Stack trace:
 #0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
-#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/periodic_creation/crud.php(320): db->select(Array, Array, '', '0', '', 'SQL_CALC_FOUND_...')
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/impact_type/crud.php(54): db->select(Array, Array)
 #2 {main}
-[16-Jul-2025 12:22:02 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_beta.periodic_creation_sub' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+[23-Oct-2025 17:59:54 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_beta.impact_type' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:579
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(579): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/impact_type/crud.php(84): db->insert('impact_type', Array)
+#2 {main}
+[23-Oct-2025 18:06:48 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_beta.impact_type' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
 Stack trace:
 #0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
-#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/periodic_creation/crud.php(320): db->select(Array, Array, '', '0', '', 'SQL_CALC_FOUND_...')
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/impact_type/crud.php(54): db->select(Array, Array)
 #2 {main}
-[16-Jul-2025 12:22:05 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'department_type' in 'SELECT' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+[23-Oct-2025 18:06:48 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_beta.impact_type' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:579
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(579): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/impact_type/crud.php(84): db->insert('impact_type', Array)
+#2 {main}
+[23-Oct-2025 18:08:54 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_beta.impact_type' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/impact_type/crud.php(54): db->select(Array, Array)
+#2 {main}
+[23-Oct-2025 18:08:54 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_beta.impact_type' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:579
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(579): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/impact_type/crud.php(84): db->insert('impact_type', Array)
+#2 {main}
+[23-Oct-2025 18:08:56 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_beta.impact_type' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/impact_type/crud.php(54): db->select(Array, Array)
+#2 {main}
+[23-Oct-2025 18:08:56 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_beta.impact_type' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:579
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(579): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/impact_type/crud.php(84): db->insert('impact_type', Array)
+#2 {main}
+[24-Oct-2025 14:26:52 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_beta.periodic_creation_main' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/periodic_creation/crud.php(224): db->select(Array, ' is_active = 1 ...', '10', '0', '', 'SQL_CALC_FOUND_...')
+#2 {main}
+[24-Oct-2025 15:58:24 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'designation_id' in 'SELECT' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/comfun.php(4724): db->select(Array, Array)
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/periodic_creation/crud.php(225): user_name('', 'YEPL076')
+#3 {main}
+[24-Oct-2025 16:12:50 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'designation_id' in 'SELECT' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/comfun.php(4724): db->select(Array, Array)
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/periodic_creation/crud.php(225): user_name('', 'YEPL059')
+#3 {main}
+[24-Oct-2025 16:12:52 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'designation_id' in 'SELECT' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/comfun.php(4724): db->select(Array, Array)
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/periodic_creation/crud.php(225): user_name('', 'TEST001')
+#3 {main}
+[24-Oct-2025 16:13:45 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'designation_id' in 'SELECT' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/comfun.php(4724): db->select(Array, Array)
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/periodic_creation/crud.php(226): user_name('', 'YEPL076')
+#3 {main}
+[24-Oct-2025 16:14:35 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'designation_id' in 'SELECT' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/comfun.php(4724): db->select(Array, Array)
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/periodic_creation/crud.php(226): user_name('', 'TEST001')
+#3 {main}
+[24-Oct-2025 17:25:38 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'screen_unique_id' in 'INSERT INTO' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:579
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(579): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/periodic_creation/crud.php(150): db->insert('periodic_creati...', Array)
+#2 {main}
+[24-Oct-2025 17:26:33 Asia/Kolkata] PDOException: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`blue_planet_beta`.`periodic_creation_sub`, CONSTRAINT `fk_periodic_creation_main` FOREIGN KEY (`form_unique_id`) REFERENCES `periodic_creation_main` (`unique_id`) ON DELETE CASCADE) in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:579
+Stack trace:
+#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(579): PDOStatement->execute()
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/periodic_creation/crud.php(148): db->insert('periodic_creati...', Array)
+#2 {main}
+[24-Oct-2025 18:19:03 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'department_type' in 'SELECT' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
 Stack trace:
 #0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
 #1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/comfun.php(38): db->select(Array, Array)
-#2 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/periodic_creation/crud.php(771): department_type(NULL)
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/periodic_creation/crud.php(202): department_type('6541cf66bb99464...')
 #3 {main}
-[16-Jul-2025 12:22:05 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_beta.site_creation' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+[24-Oct-2025 18:19:03 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_beta.site_creation' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
 Stack trace:
 #0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
 #1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/comfun.php(84): db->select(Array, Array, '', '', 'site_name ASC')
-#2 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/periodic_creation/crud.php(834): site_name(NULL)
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/periodic_creation/crud.php(204): site_name('68999c195c70144...')
 #3 {main}
-[16-Jul-2025 12:22:05 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'mobile_no' in 'SELECT' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
-Stack trace:
-#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
-#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/periodic_creation/crud.php(630): db->select(Array, 'user_name = '' ...')
-#2 {main}
-[16-Jul-2025 12:42:58 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'department_type' in 'SELECT' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+[24-Oct-2025 18:19:03 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'department_type' in 'SELECT' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
 Stack trace:
 #0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
 #1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/comfun.php(38): db->select(Array, Array)
-#2 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/periodic_creation/crud.php(771): department_type(NULL)
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/periodic_creation/crud.php(202): department_type('6541cf66bb99464...')
 #3 {main}
-[16-Jul-2025 12:42:58 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_beta.site_creation' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+[24-Oct-2025 18:19:03 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_beta.site_creation' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
 Stack trace:
 #0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
 #1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/comfun.php(84): db->select(Array, Array, '', '', 'site_name ASC')
-#2 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/periodic_creation/crud.php(834): site_name(NULL)
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/periodic_creation/crud.php(204): site_name('688cac8aa6d4e41...')
 #3 {main}
-[16-Jul-2025 12:42:58 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'mobile_no' in 'SELECT' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
-Stack trace:
-#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
-#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/periodic_creation/crud.php(630): db->select(Array, 'user_name = '' ...')
-#2 {main}
-[16-Jul-2025 12:42:59 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'department_type' in 'SELECT' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+[24-Oct-2025 18:19:03 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'department_type' in 'SELECT' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
 Stack trace:
 #0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
 #1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/comfun.php(38): db->select(Array, Array)
-#2 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/periodic_creation/crud.php(771): department_type(NULL)
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/periodic_creation/crud.php(202): department_type('6541cf5d2327934...')
 #3 {main}
-[16-Jul-2025 12:42:59 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_beta.site_creation' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+[24-Oct-2025 18:19:03 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_beta.site_creation' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
 Stack trace:
 #0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
 #1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/comfun.php(84): db->select(Array, Array, '', '', 'site_name ASC')
-#2 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/periodic_creation/crud.php(834): site_name(NULL)
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/periodic_creation/crud.php(204): site_name('68999635f39f257...')
 #3 {main}
-[16-Jul-2025 12:42:59 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'mobile_no' in 'SELECT' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+[24-Oct-2025 18:19:03 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'department_type' in 'SELECT' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
 Stack trace:
 #0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
-#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/periodic_creation/crud.php(630): db->select(Array, 'user_name = '' ...')
-#2 {main}
-[16-Jul-2025 12:43:30 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_beta.periodic_creation_sub' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/comfun.php(38): db->select(Array, Array)
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/periodic_creation/crud.php(202): department_type('674eb6d9dfc2c79...')
+#3 {main}
+[24-Oct-2025 18:19:03 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_beta.site_creation' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
 Stack trace:
 #0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
-#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/periodic_creation/crud.php(320): db->select(Array, Array, '', '0', '', 'SQL_CALC_FOUND_...')
-#2 {main}
-[16-Jul-2025 12:45:05 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_beta.periodic_creation_sub' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/comfun.php(84): db->select(Array, Array, '', '', 'site_name ASC')
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/periodic_creation/crud.php(204): site_name('688caa361cb2b60...')
+#3 {main}
+[24-Oct-2025 18:19:03 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'department_type' in 'SELECT' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
 Stack trace:
 #0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
-#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/periodic_creation/crud.php(320): db->select(Array, Array, '', '0', '', 'SQL_CALC_FOUND_...')
-#2 {main}
-[17-Jul-2025 09:59:15 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_beta.periodic_creation_sub' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/comfun.php(38): db->select(Array, Array)
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/periodic_creation/crud.php(202): department_type('6541cf70e167f60...')
+#3 {main}
+[24-Oct-2025 18:19:03 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_beta.site_creation' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
 Stack trace:
 #0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
-#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/periodic_creation/crud.php(320): db->select(Array, Array, '', '0', '', 'SQL_CALC_FOUND_...')
-#2 {main}
-[17-Jul-2025 13:06:52 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_beta.periodic_creation_sub' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/comfun.php(84): db->select(Array, Array, '', '', 'site_name ASC')
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/periodic_creation/crud.php(204): site_name('688cb05151c8e14...')
+#3 {main}
+[24-Oct-2025 18:19:03 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'department_type' in 'SELECT' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
 Stack trace:
 #0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
-#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/periodic_creation/crud.php(320): db->select(Array, Array, '', '0', '', 'SQL_CALC_FOUND_...')
-#2 {main}
-[17-Jul-2025 13:07:15 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_beta.periodic_creation_sub' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/comfun.php(38): db->select(Array, Array)
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/periodic_creation/crud.php(202): department_type('6541cf7b4467441...')
+#3 {main}
+[24-Oct-2025 18:19:03 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_beta.site_creation' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
 Stack trace:
 #0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
-#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/periodic_creation/crud.php(320): db->select(Array, Array, '', '0', '', 'SQL_CALC_FOUND_...')
-#2 {main}
-[17-Jul-2025 13:07:24 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_beta.periodic_creation_sub' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/comfun.php(84): db->select(Array, Array, '', '', 'site_name ASC')
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/periodic_creation/crud.php(204): site_name('688cb05151c8e14...')
+#3 {main}
+[24-Oct-2025 18:19:03 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'department_type' in 'SELECT' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
 Stack trace:
 #0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
-#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/periodic_creation/crud.php(320): db->select(Array, Array, '', '0', '', 'SQL_CALC_FOUND_...')
-#2 {main}
-[17-Jul-2025 13:13:41 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_beta.periodic_creation_sub' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/comfun.php(38): db->select(Array, Array)
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/periodic_creation/crud.php(202): department_type('6541cf70e167f60...')
+#3 {main}
+[24-Oct-2025 18:19:03 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_beta.site_creation' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
 Stack trace:
 #0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
-#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/periodic_creation/crud.php(320): db->select(Array, Array, '', '0', '', 'SQL_CALC_FOUND_...')
-#2 {main}
-[17-Jul-2025 13:14:34 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_beta.periodic_creation_sub' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/comfun.php(84): db->select(Array, Array, '', '', 'site_name ASC')
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/periodic_creation/crud.php(204): site_name('688ca7c04f6f255...')
+#3 {main}
+[24-Oct-2025 18:19:03 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'department_type' in 'SELECT' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
 Stack trace:
 #0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
-#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/periodic_creation/crud.php(320): db->select(Array, Array, '', '0', '', 'SQL_CALC_FOUND_...')
-#2 {main}
-[17-Jul-2025 13:15:09 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_beta.periodic_creation_sub' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/comfun.php(38): db->select(Array, Array)
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/periodic_creation/crud.php(202): department_type('6541cf66bb99464...')
+#3 {main}
+[24-Oct-2025 18:19:03 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_beta.site_creation' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
 Stack trace:
 #0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
-#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/periodic_creation/crud.php(320): db->select(Array, Array, '', '0', '', 'SQL_CALC_FOUND_...')
-#2 {main}
-[17-Jul-2025 13:16:13 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_beta.periodic_creation_sub' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/comfun.php(84): db->select(Array, Array, '', '', 'site_name ASC')
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/periodic_creation/crud.php(204): site_name('688caa361cb2b60...')
+#3 {main}
+[24-Oct-2025 18:19:03 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'department_type' in 'SELECT' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
 Stack trace:
 #0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
-#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/periodic_creation/crud.php(320): db->select(Array, Array, '', '0', '', 'SQL_CALC_FOUND_...')
-#2 {main}
-[17-Jul-2025 13:16:45 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_beta.periodic_creation_sub' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/comfun.php(38): db->select(Array, Array)
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/periodic_creation/crud.php(202): department_type('6541cf66bb99464...')
+#3 {main}
+[24-Oct-2025 18:19:03 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_beta.site_creation' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
 Stack trace:
 #0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
-#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/periodic_creation/crud.php(320): db->select(Array, Array, '', '0', '', 'SQL_CALC_FOUND_...')
-#2 {main}
-[17-Jul-2025 13:17:05 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_beta.periodic_creation_sub' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/comfun.php(84): db->select(Array, Array, '', '', 'site_name ASC')
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/periodic_creation/crud.php(204): site_name('688caa361cb2b60...')
+#3 {main}
+[24-Oct-2025 18:19:03 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'department_type' in 'SELECT' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
 Stack trace:
 #0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
-#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/periodic_creation/crud.php(320): db->select(Array, Array, '', '0', '', 'SQL_CALC_FOUND_...')
-#2 {main}
-[17-Jul-2025 13:17:53 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_beta.periodic_creation_sub' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/comfun.php(38): db->select(Array, Array)
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/periodic_creation/crud.php(202): department_type('6541cf5d2327934...')
+#3 {main}
+[24-Oct-2025 18:19:03 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_beta.site_creation' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
 Stack trace:
 #0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
-#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/periodic_creation/crud.php(320): db->select(Array, Array, '', '0', '', 'SQL_CALC_FOUND_...')
-#2 {main}
-[17-Jul-2025 13:18:10 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_beta.periodic_creation_sub' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/comfun.php(84): db->select(Array, Array, '', '', 'site_name ASC')
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/periodic_creation/crud.php(204): site_name('688c9f5e1664981...')
+#3 {main}
+[24-Oct-2025 18:19:03 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'department_type' in 'SELECT' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
 Stack trace:
 #0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
-#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/periodic_creation/crud.php(320): db->select(Array, Array, '', '0', '', 'SQL_CALC_FOUND_...')
-#2 {main}
-[17-Jul-2025 13:19:36 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_beta.periodic_creation_sub' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/comfun.php(38): db->select(Array, Array)
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/periodic_creation/crud.php(202): department_type('6541cf66bb99464...')
+#3 {main}
+[24-Oct-2025 18:19:03 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_beta.site_creation' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
 Stack trace:
 #0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
-#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/periodic_creation/crud.php(320): db->select(Array, Array, '', '0', '', 'SQL_CALC_FOUND_...')
-#2 {main}
-[17-Jul-2025 13:19:42 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_beta.periodic_creation_sub' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/comfun.php(84): db->select(Array, Array, '', '', 'site_name ASC')
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/periodic_creation/crud.php(204): site_name('688ca7c04f6f255...')
+#3 {main}
+[24-Oct-2025 18:19:03 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'department_type' in 'SELECT' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
 Stack trace:
 #0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
-#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/periodic_creation/crud.php(320): db->select(Array, Array, '', '0', '', 'SQL_CALC_FOUND_...')
-#2 {main}
-[17-Jul-2025 13:28:08 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_beta.periodic_creation_sub' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/comfun.php(38): db->select(Array, Array)
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/periodic_creation/crud.php(202): department_type('6541cf66bb99464...')
+#3 {main}
+[24-Oct-2025 18:19:03 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_beta.site_creation' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
 Stack trace:
 #0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
-#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/periodic_creation/crud.php(320): db->select(Array, Array, '', '0', '', 'SQL_CALC_FOUND_...')
-#2 {main}
-[17-Jul-2025 13:29:34 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_beta.periodic_creation_sub' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/comfun.php(84): db->select(Array, Array, '', '', 'site_name ASC')
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/periodic_creation/crud.php(204): site_name('688cac8aa6d4e41...')
+#3 {main}
+[24-Oct-2025 18:19:03 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'department_type' in 'SELECT' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
 Stack trace:
 #0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
-#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/periodic_creation/crud.php(320): db->select(Array, Array, '', '0', '', 'SQL_CALC_FOUND_...')
-#2 {main}
-[17-Jul-2025 13:30:17 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_beta.periodic_creation_sub' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/comfun.php(38): db->select(Array, Array)
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/periodic_creation/crud.php(202): department_type('6541cf85cc13851...')
+#3 {main}
+[24-Oct-2025 18:19:03 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_beta.site_creation' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
 Stack trace:
 #0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
-#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/periodic_creation/crud.php(320): db->select(Array, Array, '', '0', '', 'SQL_CALC_FOUND_...')
-#2 {main}
-[17-Jul-2025 13:30:51 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_beta.periodic_creation_sub' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/comfun.php(84): db->select(Array, Array, '', '', 'site_name ASC')
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/periodic_creation/crud.php(204): site_name('689999ee7548e36...')
+#3 {main}
+[24-Oct-2025 18:19:03 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'department_type' in 'SELECT' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
 Stack trace:
 #0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
-#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/periodic_creation/crud.php(320): db->select(Array, Array, '', '0', '', 'SQL_CALC_FOUND_...')
-#2 {main}
-[17-Jul-2025 13:31:49 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_beta.periodic_creation_sub' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/comfun.php(38): db->select(Array, Array)
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/periodic_creation/crud.php(202): department_type('6541cf85cc13851...')
+#3 {main}
+[24-Oct-2025 18:19:03 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_beta.site_creation' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
 Stack trace:
 #0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
-#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/periodic_creation/crud.php(320): db->select(Array, Array, '', '0', '', 'SQL_CALC_FOUND_...')
-#2 {main}
-[17-Jul-2025 13:34:38 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_beta.periodic_creation_sub' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/comfun.php(84): db->select(Array, Array, '', '', 'site_name ASC')
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/periodic_creation/crud.php(204): site_name('689999ee7548e36...')
+#3 {main}
+[24-Oct-2025 18:19:03 Asia/Kolkata] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'department_type' in 'SELECT' in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
 Stack trace:
 #0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
-#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/periodic_creation/crud.php(320): db->select(Array, Array, '', '0', '', 'SQL_CALC_FOUND_...')
-#2 {main}
-[17-Jul-2025 13:36:06 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_beta.periodic_creation_sub' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/comfun.php(38): db->select(Array, Array)
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/periodic_creation/crud.php(202): department_type('6541cf85cc13851...')
+#3 {main}
+[24-Oct-2025 18:19:03 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_beta.site_creation' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
 Stack trace:
 #0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
-#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/periodic_creation/crud.php(320): db->select(Array, Array, '', '0', '', 'SQL_CALC_FOUND_...')
-#2 {main}
-[17-Jul-2025 13:37:55 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_beta.periodic_creation_sub' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
-Stack trace:
-#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
-#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/periodic_creation/crud.php(320): db->select(Array, Array, '', '0', '', 'SQL_CALC_FOUND_...')
-#2 {main}
-[17-Jul-2025 13:40:05 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_beta.periodic_creation_sub' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
-Stack trace:
-#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
-#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/periodic_creation/crud.php(320): db->select(Array, Array, '', '0', '', 'SQL_CALC_FOUND_...')
-#2 {main}
-[17-Jul-2025 13:40:08 Asia/Kolkata] ➡️ STAFF ID RECEIVED: 
-[17-Jul-2025 13:40:08 Asia/Kolkata] 📦 Staff Fetch Result: stdClass Object
-(
-    [sql] => SELECT  department FROM staff WHERE unique_id = :unique_id AND is_delete = :is_delete<br />
-    [data] => Array
-        (
-        )
-
-    [status] => 1
-    [error] => PDOStatement Object
-        (
-            [queryString] => SELECT  department FROM staff WHERE unique_id = :unique_id AND is_delete = :is_delete
-        )
-
-    [result] => 
-)
-
-[17-Jul-2025 13:40:08 Asia/Kolkata] ❌ No department found or staff record missing.
-[17-Jul-2025 13:40:08 Asia/Kolkata] ✅ Final JSON Response: {"department_name":"Unknown","category_options":"<option value=\"\">Select [Main Category - Category]<\/option>"}
-[17-Jul-2025 13:40:49 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_beta.periodic_creation_sub' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
-Stack trace:
-#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
-#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/periodic_creation/crud.php(320): db->select(Array, Array, '', '0', '', 'SQL_CALC_FOUND_...')
-#2 {main}
-[17-Jul-2025 13:40:57 Asia/Kolkata] ➡️ STAFF ID RECEIVED: 
-[17-Jul-2025 13:40:57 Asia/Kolkata] 📦 Staff Fetch Result: stdClass Object
-(
-    [sql] => SELECT  department FROM staff WHERE unique_id = :unique_id AND is_delete = :is_delete<br />
-    [data] => Array
-        (
-        )
-
-    [status] => 1
-    [error] => PDOStatement Object
-        (
-            [queryString] => SELECT  department FROM staff WHERE unique_id = :unique_id AND is_delete = :is_delete
-        )
-
-    [result] => 
-)
-
-[17-Jul-2025 13:40:57 Asia/Kolkata] ❌ No department found or staff record missing.
-[17-Jul-2025 13:40:57 Asia/Kolkata] ✅ Final JSON Response: {"department_name":"Unknown","category_options":"<option value=\"\">Select [Main Category - Category]<\/option>"}
-[17-Jul-2025 14:15:52 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_beta.periodic_creation_sub' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
-Stack trace:
-#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
-#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/periodic_creation/crud.php(320): db->select(Array, Array, '', '0', '', 'SQL_CALC_FOUND_...')
-#2 {main}
-[17-Jul-2025 14:15:55 Asia/Kolkata] ➡️ STAFF ID RECEIVED: 
-[17-Jul-2025 14:15:55 Asia/Kolkata] 📦 Staff Fetch Result: stdClass Object
-(
-    [sql] => SELECT  department FROM staff WHERE unique_id = :unique_id AND is_delete = :is_delete<br />
-    [data] => Array
-        (
-        )
-
-    [status] => 1
-    [error] => PDOStatement Object
-        (
-            [queryString] => SELECT  department FROM staff WHERE unique_id = :unique_id AND is_delete = :is_delete
-        )
-
-    [result] => 
-)
-
-[17-Jul-2025 14:15:55 Asia/Kolkata] ❌ No department found or staff record missing.
-[17-Jul-2025 14:15:55 Asia/Kolkata] ✅ Final JSON Response: {"department_name":"Unknown","category_options":"<option value=\"\">Select [Main Category - Category]<\/option>"}
-[17-Jul-2025 14:15:56 Asia/Kolkata] ➡️ STAFF ID RECEIVED: 
-[17-Jul-2025 14:15:56 Asia/Kolkata] 📦 Staff Fetch Result: stdClass Object
-(
-    [sql] => SELECT  department FROM staff WHERE unique_id = :unique_id AND is_delete = :is_delete<br />
-    [data] => Array
-        (
-        )
-
-    [status] => 1
-    [error] => PDOStatement Object
-        (
-            [queryString] => SELECT  department FROM staff WHERE unique_id = :unique_id AND is_delete = :is_delete
-        )
-
-    [result] => 
-)
-
-[17-Jul-2025 14:15:56 Asia/Kolkata] ❌ No department found or staff record missing.
-[17-Jul-2025 14:15:56 Asia/Kolkata] ✅ Final JSON Response: {"department_name":"Unknown","category_options":"<option value=\"\">Select [Main Category - Category]<\/option>"}
-[17-Jul-2025 14:19:31 Asia/Kolkata] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blue_planet_beta.periodic_creation_sub' doesn't exist in /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php:306
-Stack trace:
-#0 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/dbclass.php(306): PDOStatement->execute()
-#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/periodic_creation/crud.php(675): db->select(Array, 'screen_unique_i...')
-#2 {main}
+#1 /home/ie9owkuzkgd4/public_html/blue_planet_beta/config/comfun.php(84): db->select(Array, Array, '', '', 'site_name ASC')
+#2 /home/ie9owkuzkgd4/public_html/blue_planet_beta/folders/periodic_creation/crud.php(204): site_name('689999ee7548e36...')
+#3 {main}

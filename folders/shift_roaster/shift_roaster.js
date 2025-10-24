@@ -44,6 +44,80 @@ $(document).ready(function () {
 });
 
 
+$(document).on('click', '.add_row_btn', function() {
+    const row = $(this).closest('tr');
+    const emp_id = row.find('.shift_input').first().data('emp');
+    const project_id = $('#project_id').val();
+    const month_year = $('#month_year').val();
+
+    let shifts = {};
+    row.find('.shift_input').each(function() {
+        const date = $(this).data('date');
+        const shift_name = $(this).val();
+        const is_weekoff = $(this).closest('td').find('.weekoff_check').is(':checked') ? 1 : 0;
+        if (shift_name) {
+            shifts[date] = { shift_name, is_weekoff };
+        }
+    });
+
+    $.ajax({
+        type: 'POST',
+        url: sessionStorage.getItem('folder_crud_link'),
+        data: {
+            action: 'add_shift_details',
+            project_id,
+            month_year,
+            employee_id: emp_id,
+            shifts
+        },
+        success: function(res) {
+            try {
+                const result = typeof res === 'string' ? JSON.parse(res) : res;
+                if (result.status == 1) {
+                    Swal.fire('Success', result.msg, 'success');
+                    // Change button to "Update"
+                    row.find('.add_row_btn')
+                        .text('Update')
+                        .removeClass('btn-success')
+                        .addClass('btn-warning');
+                } else {
+                    Swal.fire('Error', result.msg || 'Unable to save data', 'error');
+                }
+            } catch (err) {
+                console.error(err, res);
+            }
+        }
+    });
+});
+
+
+// ==========================================================
+// ✅ Auto-load roster when editing (prefilled Project + Month)
+// ==========================================================
+$(document).ready(function () {
+    const project_id = $('#project_id').val();
+    const month_year = $('#month_year').val();
+    const ajax_url = sessionStorage.getItem("folder_crud_link");
+
+    // Only load if both fields have value (i.e., in edit mode)
+    if (project_id && month_year) {
+        $.ajax({
+            type: "POST",
+            url: ajax_url,
+            data: { action: "get_roster_table", project_id, month_year },
+            beforeSend: function () {
+                $('#roster_table_container').html("<p class='text-center text-muted'>Loading roster...</p>");
+            },
+            success: function (response) {
+                $('#roster_table_container').html(response);
+            },
+            error: function (xhr) {
+                console.log(xhr.responseText);
+                $('#roster_table_container').html("<div class='alert alert-danger'>Error loading roster table.</div>");
+            }
+        });
+    }
+});
 
 // ==========================================================
 // ✅ Create / Update Shift Roster

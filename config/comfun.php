@@ -2365,8 +2365,6 @@ function user_type($unique_id = "")
     ];
 
     if ($unique_id) {
-
-        $where              = [];
         $where["unique_id"] = $unique_id;
     }
 
@@ -3020,7 +3018,7 @@ function qualification($graduation_type = "")
 
 
 
-function designation($grade = "")
+function designation($grade = "", $unique_id = "")
 {
     global $pdo;
 
@@ -3044,6 +3042,11 @@ function designation($grade = "")
     if ($grade) {
 
         $where["grade_type"] .= $grade;
+    }
+    
+    if ($unique_id) {
+
+        $where["unique_id"] .= $unique_id;
     }
 
     $designation = $pdo->select($table_details, $where);
@@ -3991,6 +3994,10 @@ function staff_name_bp($employee_id = "", $staff_name = "")
     $table_columns = [
         "employee_id",
         "staff_name",
+        "office_contact_no",
+        "designation_unique_id",
+        "file_name",
+        "department",
         "work_location"
     ];
 
@@ -4691,53 +4698,35 @@ function delivery_via_type($unique_id = "")
 }
 
 
-function user_name($unique_id = "")
+function user_name($unique_id = "", $staff_unique_id = "")
 {
-
     global $pdo;
 
-    $return_result = [
-        "user_name"      => "",
-        "staff_name"     => ""
+    $table_name    = "user";
+    $table_columns = [
+        "unique_id",
+        "user_name",
+        "(SELECT a.staff_name FROM staff_test a WHERE a.unique_id = user.staff_unique_id) AS staff_name",
+        "staff_unique_id",
+        "phone_no",
+        "user_type_unique_id"
     ];
 
+    $table_details = [$table_name, $table_columns];
+    $where = ["is_active" => 1, "is_delete" => 0];
+
     if ($unique_id) {
-        $table_name    = "user";
-        $where         = [];
-        $table_columns = [
-            "unique_id",
-            "user_name",
-            "(SELECT a.staff_name FROM staff_test a WHERE a.unique_id = user.staff_unique_id) AS staff_name",
-            "staff_unique_id"
-        ];
-
-        $table_details = [
-            $table_name,
-            $table_columns
-        ];
-
-        $where     = [
-            "is_active" => 1,
-            "is_delete" => 0
-        ];
-
-        if ($unique_id) {
-
-            $where              = [];
-
-            $where["unique_id"] = $unique_id;
-        }
-
-        $user_name_id = $pdo->select($table_details, $where);
-
-        if ($user_name_id->status) {
-            return $user_name_id->data;
-        } else {
-            print_r($user_name_id);
-            return 0;
-        }
+        $where["unique_id"] = $unique_id;
+    } elseif ($staff_unique_id) {
+        $where["staff_unique_id"] = $staff_unique_id;
+    } else {
+        return [];
     }
+
+    $result = $pdo->select($table_details, $where);
+    return ($result->status && !empty($result->data)) ? $result->data : [];
 }
+
 // under user Function
 function team_user($user_id = "")
 {

@@ -483,10 +483,19 @@ return (value).toFixed(2).replace(/(\d)(?=(\d{2})+\d\.)/g, '$1,');
 }
 
 function number_only(event) {
+  const allowedKeys = [
+    'Backspace', 'Delete', 'ArrowLeft', 'ArrowRight', 'Tab', 'Home', 'End'
+  ];
 
- if((event.keyCode < 46)||(event.keyCode > 57)) event.returnValue = false;
+  // Allow navigation and control keys
+  if (allowedKeys.includes(event.key)) return;
 
+  // Allow digits and one dot
+  if (!/[0-9.]/.test(event.key)) {
+    event.preventDefault();
+  }
 }
+
 
 function same_item_repeat_validation(input_name = "",input_id = "",input_value = ""){
 
